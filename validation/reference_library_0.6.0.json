@@ -1,0 +1,47 @@
+{
+  "package_version": "0.6.0",
+  "status": "passed",
+  "cases": [
+    {
+      "id": "octet-300s",
+      "status": "passed",
+      "relative_differences": {
+        "kon_M_inv_s_inv": 5.4093199030713635e-05,
+        "koff_s_inv": 0.00011035796095448802,
+        "kd_M": 0.00016446005615589065
+      },
+      "run": "runs/reference-library-0.6.0/octet-300s",
+      "reportable": false,
+      "ci_status": "withheld_reliability_check",
+      "source_manifest_sha256": "af9a2431cda383adac651b9dfa6ac729181f140f40a8d87b9074207a1f195a0a",
+      "diagnostics": [
+        "serially_correlated_residuals_review_model_and_block_length"
+      ],
+      "scope": "One public processed Octet RED384 experiment, five sensorgrams; author TitrationAnalysis point estimates only. Not native Octet or Prism equivalence; uncertainty withheld by current reliability gate."
+    },
+    {
+      "id": "octet-600s",
+      "status": "passed",
+      "relative_differences": {
+        "kon_M_inv_s_inv": 6.234445084862816e-05,
+        "koff_s_inv": 0.00013521052288290036,
+        "kd_M": 0.00019756729095576908
+      },
+      "run": "runs/reference-library-0.6.0/octet-600s",
+      "reportable": false,
+      "ci_status": "withheld_reliability_check",
+      "source_manifest_sha256": "af9a2431cda383adac651b9dfa6ac729181f140f40a8d87b9074207a1f195a0a",
+      "diagnostics": [
+        "serially_correlated_residuals_review_model_and_block_length"
+      ],
+      "scope": "One public processed Octet RED384 experiment, five sensorgrams; author TitrationAnalysis point estimates only. Not native Octet or Prism equivalence; uncertainty withheld by current reliability gate."
+    }
+  ],
+  "missing_evidence": [
+    "Native instrument-matched SPR/Biacore export and reference analysis",
+    "Native Octet software matched analysis",
+    "Prism project with matched model, constraints, weighting and uncertainty",
+    "Independent laboratory experiments spanning instruments and assay failure modes",
+    "Measured ELISA independent QC, matrix, dilution, hook and intermediate precision studies"
+  ]
+}

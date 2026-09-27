@@ -1,0 +1,47 @@
+{
+  "package_version": "0.7.1",
+  "wheel_sha256": "120077fcef84a87b0758dda060f6d907eb290a8402b6fcec3515094e1f58b587",
+  "installed_module_location_verified": true,
+  "render_and_verify_after_install": true,
+  "independent_qc_wheel_smoke": true,
+  "status": "passed",
+  "temporary_workspace": "/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-alff8pgb",
+  "installed_from": "built wheel, not editable source",
+  "n_curves": 25,
+  "max_kd_relative_difference": 0.0,
+  "intervals_and_states_matched": true,
+  "equilibrium_historical_run_max_kd_relative_difference": 5.825580544627229e-07,
+  "kinetic_max_relative_difference": {
+    "300": 0.0,
+    "600": 0.0
+  },
+  "dose_max_relative_difference": {
+    "dose-ec50-synthetic": 0.0,
+    "dose-ic50-synthetic": 0.0,
+    "dose-public-example": 0.0,
+    "dose-potency-synthetic": 0.0
+  },
+  "dose_historical_run_max_relative_difference": {
+    "dose-ec50-synthetic": 2.220446049250313e-16,
+    "dose-ic50-synthetic": 0.0,
+    "dose-public-example": 1.305666685880169e-09,
+    "dose-potency-synthetic": 0.0
+  },
+  "elisa_group_wheel_matches_source_exactly": true,
+  "elisa_group_committed_run_max_relative_difference": {
+    "elisa-synthetic": 0.0,
+    "elisa-synthetic-qc": 0.0,
+    "groups-paired-synthetic": 0.0,
+    "groups-welch-synthetic": 0.0
+  },
+  "new_0_7_fixtures": {
+    "multigroup_synthetic/config_dunnett.json": "wheel_matches_source_exactly",
+    "multigroup_synthetic/config_games_howell.json": "wheel_matches_source_exactly",
+    "elisa_dilution_5pl/config.json": "wheel_matches_source_exactly",
+    "kinetics_single_cycle/config.json": "wheel_matches_source_exactly",
+    "dose_synthetic/config_potency_equivalence.json": "wheel_matches_source_exactly"
+  },
+  "plate_import_from_wheel": true,
+  "comparison_tolerance": 1e-08,
+  "scope": "independent Python environment on the same macOS host; no cross-platform claim"
+}

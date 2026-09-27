@@ -1,0 +1,35 @@
+[
+  {
+    "repository": "jbkinney/16_titeseq",
+    "commit": "54130c8fc6081bbfa8301c41e1afcfa6a5d79590",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/jbkinney/16_titeseq/54130c8fc6081bbfa8301c41e1afcfa6a5d79590/README.md",
+    "local_path": "data/raw/titeseq/README.md",
+    "sha256": "eeb4b57970f35e120ba4c867edfc1cbb1c53bd5ab71a653b07846afacd7656bd",
+    "downloaded_utc": "2026-09-20T12:12:05.785128+00:00"
+  },
+  {
+    "repository": "jbkinney/16_titeseq",
+    "commit": "54130c8fc6081bbfa8301c41e1afcfa6a5d79590",
+    "path": "data/titration_curves.csv",
+    "url": "https://raw.githubusercontent.com/jbkinney/16_titeseq/54130c8fc6081bbfa8301c41e1afcfa6a5d79590/data/titration_curves.csv",
+    "local_path": "data/raw/titeseq/titration_curves.csv",
+    "sha256": "eb2687f449e4360829ea0b3af74bfacc25ad42de9240a6409d16ce42a2e0a29d",
+    "downloaded_utc": "2026-09-20T12:12:06.352173+00:00"
+  },
+  {
+    "repository": "jbkinney/16_titeseq",
+    "commit": "54130c8fc6081bbfa8301c41e1afcfa6a5d79590",
+    "path": "figure_4_accuracy.py",
+    "url": "https://raw.githubusercontent.com/jbkinney/16_titeseq/54130c8fc6081bbfa8301c41e1afcfa6a5d79590/figure_4_accuracy.py",
+    "local_path": "data/raw/titeseq/figure_4_accuracy.py",
+    "sha256": "0b48c24a4ddcbb94441f8cf613a6b95f32d66c7afa0e0a61b5e5653ba3ae890e",
+    "downloaded_utc": "2026-09-20T12:12:07.014240+00:00"
+  },
+  {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5268739/fullTextXML",
+    "local_path": "data/raw/titeseq/article.xml",
+    "sha256": "207b3e6545b9c35aecf52ac31016c434892fd2ee356ee0aa4b21ce6d993611e8",
+    "downloaded_utc": "2026-09-20T12:13:07.007947+00:00"
+  }
+]

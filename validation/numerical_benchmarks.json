@@ -1,0 +1,18 @@
+{
+  "bindcurve_version": "0.2.0",
+  "public_curves": 25,
+  "max_kd_relative_difference": 0.00012672889538001275,
+  "max_prediction_relative_scale_difference": 1.942490911142316e-05,
+  "max_objective_relative_difference": 3.1921507659404824e-09,
+  "coverage": {
+    "seed": 48219,
+    "simulations": 100,
+    "covered": 98,
+    "acceptance_count": [
+      89,
+      100
+    ],
+    "scope": "fitted baseline, linear homoscedastic Gaussian response, one specified concentration design"
+  },
+  "prism_benchmark": "not_completed"
+}

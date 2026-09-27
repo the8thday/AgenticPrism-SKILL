@@ -1,0 +1,31 @@
+{
+  "nominal_level": 0.95,
+  "design": [
+    "One synthetic 1:1 design only: five concentrations, 300 s association, 600 s",
+    "dissociation, 2 s sampling, per-curve Rmax, default 200 replicates / block 20."
+  ],
+  "scenarios": [
+    {
+      "ar1_phi": 0.0,
+      "seed": 11,
+      "simulations": 200,
+      "with_interval": 200,
+      "covered": {
+        "kon_M_inv_s_inv": 186,
+        "koff_s_inv": 189,
+        "kd_M": 187
+      }
+    },
+    {
+      "ar1_phi": 0.9,
+      "seed": 12,
+      "simulations": 200,
+      "with_interval": 200,
+      "covered": {
+        "kon_M_inv_s_inv": 153,
+        "koff_s_inv": 166,
+        "kd_M": 161
+      }
+    }
+  ]
+}

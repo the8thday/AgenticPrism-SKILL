@@ -1,0 +1,43 @@
+{
+  "repository": "DukeCHSI/TitrationAnalysis",
+  "commit": "cb8112503658d24c4c6576503243fa506bf99e27",
+  "files": [
+    {
+      "path": "LICENSE",
+      "local_path": "source/LICENSE",
+      "url": "https://raw.githubusercontent.com/DukeCHSI/TitrationAnalysis/cb8112503658d24c4c6576503243fa506bf99e27/LICENSE",
+      "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661"
+    },
+    {
+      "path": "README.md",
+      "local_path": "source/README.md",
+      "url": "https://raw.githubusercontent.com/DukeCHSI/TitrationAnalysis/cb8112503658d24c4c6576503243fa506bf99e27/README.md",
+      "sha256": "9d0c482e38f8059fdaed4c98b5afe4d42b27d1fa42c0d9a9fd1bda0f60d6f9c0"
+    },
+    {
+      "path": "Example Files - BLI/BLI Example Tray 1.zip",
+      "local_path": "source/BLI Example Tray 1.zip",
+      "url": "https://raw.githubusercontent.com/DukeCHSI/TitrationAnalysis/cb8112503658d24c4c6576503243fa506bf99e27/Example%20Files%20-%20BLI/BLI%20Example%20Tray%201.zip",
+      "sha256": "1cd80249341e28f0d7496d247b8f5a96b6262a0a96acae7c07e410a7a3be636d"
+    },
+    {
+      "path": "Example Files - BLI/Example Data Info Sheet - BLI.xlsx",
+      "local_path": "source/Example Data Info Sheet - BLI.xlsx",
+      "url": "https://raw.githubusercontent.com/DukeCHSI/TitrationAnalysis/cb8112503658d24c4c6576503243fa506bf99e27/Example%20Files%20-%20BLI/Example%20Data%20Info%20Sheet%20-%20BLI.xlsx",
+      "sha256": "b23a86d9b97aa15336ab929873f7d8d7334f39dcb8af7899a1155a6e705296c6"
+    },
+    {
+      "path": "Example Files - BLI/Titration Analysis_BLI_Report_Example.csv",
+      "local_path": "source/Titration Analysis_BLI_Report_Example.csv",
+      "url": "https://raw.githubusercontent.com/DukeCHSI/TitrationAnalysis/cb8112503658d24c4c6576503243fa506bf99e27/Example%20Files%20-%20BLI/Titration%20Analysis_BLI_Report_Example.csv",
+      "sha256": "3fe3f104e735bafaa35c2c42c047780f0f19b0d144e2612d56f6495657040cfa"
+    },
+    {
+      "path": "KineticsToolkit - TitrationAnalysis v1.0 - v13.m",
+      "local_path": "source/KineticsToolkit - TitrationAnalysis v1.0 - v13.m",
+      "url": "https://raw.githubusercontent.com/DukeCHSI/TitrationAnalysis/cb8112503658d24c4c6576503243fa506bf99e27/KineticsToolkit%20-%20TitrationAnalysis%20v1.0%20-%20v13.m",
+      "sha256": "589f1d71094b6f700e85ab40184cdfdb83bd7cf907b01b13b7068619fce39e7e"
+    }
+  ],
+  "citation": "Li et al., TitrationAnalysis, Gates Open Research 2023;7:107, doi:10.12688/gatesopenres.14743.1"
+}

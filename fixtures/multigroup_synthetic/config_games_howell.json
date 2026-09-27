@@ -1,0 +1,18 @@
+{
+  "analysis_type": "multi_group_comparison",
+  "input": "data.csv",
+  "source": "Synthetic four-group independent-animal serum IFN-gamma fold change (higher = more immune activation); seed 20260926; not measured biology",
+  "comparison": {
+    "groups": [
+      "isotype",
+      "mAb-A",
+      "mAb-B",
+      "mAb-C"
+    ],
+    "outcome": "serum_ifng_fold_change",
+    "unit": "fold",
+    "rationale": "One prespecified value per independently randomized animal; each animal in one group",
+    "design": "welch_anova",
+    "post_hoc": "games_howell_all_pairs"
+  }
+}

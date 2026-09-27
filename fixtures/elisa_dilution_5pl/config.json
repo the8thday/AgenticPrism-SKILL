@@ -1,0 +1,23 @@
+{
+  "analysis_type": "elisa_quantification",
+  "input": "data.csv",
+  "source": "Synthetic asymmetric ELISA with dilution series; seed 20260926; not measured biology",
+  "direction": "increasing",
+  "assay": {
+    "analyte": "synthetic antibody",
+    "response_definition": "unsubtracted OD450",
+    "matrix": "buffer",
+    "rationale": "Synthetic asymmetric standards; 5PL declared before fitting from method development"
+  },
+  "fit": {
+    "model": "5pl",
+    "weighting": "relative"
+  },
+  "qc": {
+    "min_passing_levels": 6
+  },
+  "dilution_linearity": {
+    "required": true,
+    "summary_policy": "in_range_dilutions_with_linearity"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "repository": "sanchisivan/ic50-studio",
+  "commit": "d4f29357e26dc986392c293f4c2dcd8833059c5d",
+  "license": "MIT; source/LICENSE retained",
+  "files": [
+    {
+      "path": "source/example_dose_response.csv",
+      "sha256": "a97129678b0172af0826a0b14f823ee8adc2845541cc8e1a6cf7b4f9bafccbd0",
+      "url": "https://raw.githubusercontent.com/sanchisivan/ic50-studio/d4f29357e26dc986392c293f4c2dcd8833059c5d/example_dose_response.csv"
+    },
+    {
+      "path": "source/LICENSE",
+      "sha256": "e8cc235d3fa3366ace1ddb26d2349f9596686ee8d65d586dbd0ad64691aba001",
+      "url": "https://raw.githubusercontent.com/sanchisivan/ic50-studio/d4f29357e26dc986392c293f4c2dcd8833059c5d/LICENSE"
+    }
+  ],
+  "data_sha256": "cdedfeb140660b3c2afb69a8f7e61cd89738b4529871d80473f04be892dc91ac",
+  "scope": "Public application example, not measured antibody biology. Upstream file does not state a physical dose unit. source_unit preserves this unknown. The upstream app's IC50 targets response=50; this fixture is a new relative-half-plateau reanalysis, not a numerical equivalence comparison."
+}

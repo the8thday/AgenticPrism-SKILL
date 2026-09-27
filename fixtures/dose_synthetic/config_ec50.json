@@ -1,0 +1,13 @@
+{
+  "analysis_type": "dose_response_4pl",
+  "input": "ec50.csv",
+  "source": "Synthetic antibody-project-style fluorescence AU 4PL fixture; seed 20260923; not measured biology.",
+  "assay": {
+    "endpoint": "EC50",
+    "direction": "increasing",
+    "tested_agent": "Fixture titrant",
+    "response_definition": "fluorescence AU",
+    "relative_half_response_supported": true,
+    "rationale": "The generated mean is a known symmetric 4PL; this test fixture supports a relative half-response demonstration."
+  }
+}

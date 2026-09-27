@@ -1,0 +1,42 @@
+{
+  "seed": 20260928,
+  "margin_hill_ratio": [
+    0.8,
+    1.25
+  ],
+  "confidence_level": 0.9,
+  "design": "11 doses (incl. zero) x 3 wells per curve; shared plateaus 0.06/2.2; reference C50 50, test 25 ng/mL; 3% proportional noise",
+  "note": "Single simulated design with independent wells; no plate effects. Margins are illustrative, not recommendations.",
+  "results": [
+    {
+      "true_hill_ratio": 1.0,
+      "repetitions": 400,
+      "n_evaluated": 400,
+      "pass_rate": 1.0,
+      "acceptance_max_pass_rate": "none (power or clearly nonparallel)"
+    },
+    {
+      "true_hill_ratio": 1.25,
+      "repetitions": 400,
+      "n_evaluated": 400,
+      "pass_rate": 0.0575,
+      "acceptance_max_pass_rate": 0.07179449471770337,
+      "passed": true
+    },
+    {
+      "true_hill_ratio": 0.8,
+      "repetitions": 400,
+      "n_evaluated": 400,
+      "pass_rate": 0.0425,
+      "acceptance_max_pass_rate": 0.07179449471770337,
+      "passed": true
+    },
+    {
+      "true_hill_ratio": 1.5,
+      "repetitions": 400,
+      "n_evaluated": 400,
+      "pass_rate": 0.0,
+      "acceptance_max_pass_rate": "none (power or clearly nonparallel)"
+    }
+  ]
+}

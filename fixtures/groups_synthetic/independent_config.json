@@ -1,0 +1,13 @@
+{
+  "analysis_type": "group_comparison",
+  "input": "independent.csv",
+  "source": "Synthetic independent two-group response; values copied from demonstration only",
+  "comparison": {
+    "design": "independent_welch",
+    "group_a": "control",
+    "group_b": "treated",
+    "outcome": "response",
+    "unit": "AU",
+    "rationale": "Separate independent unit IDs in each group"
+  }
+}

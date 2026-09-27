@@ -1,0 +1,7 @@
+{
+  "kon_M_inv_s_inv": 80000.0,
+  "koff_s_inv": 0.002,
+  "kd_M": 2.5e-08,
+  "seed": 24681,
+  "noise_sd": 0.003
+}

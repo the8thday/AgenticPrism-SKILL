@@ -1,0 +1,17 @@
+{
+  "analysis_type": "elisa_quantification",
+  "input": "data.csv",
+  "source": "Synthetic three-plate independent QC example; seed 260926; no measured assay validation",
+  "direction": "increasing",
+  "assay": {
+    "analyte": "synthetic protein",
+    "response_definition": "unsubtracted OD450",
+    "matrix": "buffer",
+    "rationale": "Synthetic monotonic 4PL standards; no matrix or blank correction"
+  },
+  "independent_qc": {
+    "required": true,
+    "preparation_independent": true,
+    "rationale": "Synthetic independently generated controls excluded from calibration fit; real use requires separate QC preparation evidence"
+  }
+}

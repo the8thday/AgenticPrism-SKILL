@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "formats_checked": {
+    "svg": 60,
+    "pdf": 60,
+    "png": 60
+  },
+  "physical_dimensions": "85 mm x 102 mm; 300 dpi raster, vector dimensions checked independently",
+  "theme_data_axes_and_prediction_hashes_equal": true,
+  "scientific_artifact_hashes_verified": true,
+  "broken_local_documentation_links": []
+}

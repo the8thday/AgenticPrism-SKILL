@@ -1,0 +1,12 @@
+{
+  "analysis_type": "binding_kinetics",
+  "input": "data.csv",
+  "provenance": "import_manifest.json",
+  "source": "Li et al. TitrationAnalysis, Gates Open Research 2023;7:107, doi:10.12688/gatesopenres.14743.1. Octet RED384 processed Time1/Data1 exports, CC BY 4.0; CH31–AE.A244 gp120. Input already processed by source workflow; no new reference subtraction.",
+  "assay": {
+    "one_to_one_supported": null,
+    "independent_cycles": null,
+    "concentration_known": true,
+    "rationale": "Supply actual experimental justification before fitting."
+  }
+}

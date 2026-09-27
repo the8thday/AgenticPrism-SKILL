@@ -1,0 +1,23 @@
+{
+  "fit_groups": 1,
+  "images_loaded": true,
+  "standard": {
+    "visible": 1,
+    "theme_matches": true,
+    "downloads_match": true
+  },
+  "prism_like": {
+    "visible": 1,
+    "theme_matches": true,
+    "downloads_match": true
+  },
+  "external_resources": 0,
+  "mobile_no_overflow": true,
+  "offline_images_loaded": true,
+  "offline_switch": true,
+  "download_name": "kinetics-001__standard.pdf",
+  "download_matches_export_sha256": true,
+  "download_sha256": "26eea9241ac220063944b73fe71010aa6c278270377f580784b000bb2ad5fc18",
+  "javascript_errors": [],
+  "file_navigation": "CLI blocks file://; full HTML reloaded into a fresh offline browser document"
+}

@@ -1,0 +1,14 @@
+{
+  "seed": 20260922,
+  "kd_nM_by_experiment": {
+    "A-E1": 8,
+    "A-E2": 10,
+    "A-E3": 12
+  },
+  "baseline": 30,
+  "amplitude": 500,
+  "response_noise_sd": 6,
+  "below_range_kd_nM": 0.001,
+  "expected_flat": "failed",
+  "expected_below_range": "limited"
+}

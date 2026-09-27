@@ -1,0 +1,148 @@
+{
+  "adapter": "octet_results_txt_v1",
+  "source": "Li et al. TitrationAnalysis, Gates Open Research 2023;7:107, doi:10.12688/gatesopenres.14743.1. Octet RED384 processed Time1/Data1 exports, CC BY 4.0; CH31–AE.A244 gp120. Input already processed by source workflow; no new reference subtraction.",
+  "configuration": {
+    "format": "octet_results_txt",
+    "source": "Li et al. TitrationAnalysis, Gates Open Research 2023;7:107, doi:10.12688/gatesopenres.14743.1. Octet RED384 processed Time1/Data1 exports, CC BY 4.0; CH31–AE.A244 gp120. Input already processed by source workflow; no new reference subtraction.",
+    "time_unit": "s",
+    "concentration_unit": "M",
+    "response_unit": "nm",
+    "traces": [
+      {
+        "file": "source/selected_traces/A2Results.txt",
+        "fit_group_id": "CH31-gp120",
+        "sample_id": "CH31-gp120",
+        "experiment_id": "author-tray-1",
+        "curve_id": "A2",
+        "sensor_id": "A2",
+        "cycle_id": "1",
+        "association_start": 360.0,
+        "dissociation_start": 660.0
+      },
+      {
+        "file": "source/selected_traces/B2Results.txt",
+        "fit_group_id": "CH31-gp120",
+        "sample_id": "CH31-gp120",
+        "experiment_id": "author-tray-1",
+        "curve_id": "B2",
+        "sensor_id": "B2",
+        "cycle_id": "1",
+        "association_start": 360.0,
+        "dissociation_start": 660.0
+      },
+      {
+        "file": "source/selected_traces/C2Results.txt",
+        "fit_group_id": "CH31-gp120",
+        "sample_id": "CH31-gp120",
+        "experiment_id": "author-tray-1",
+        "curve_id": "C2",
+        "sensor_id": "C2",
+        "cycle_id": "1",
+        "association_start": 360.0,
+        "dissociation_start": 660.0
+      },
+      {
+        "file": "source/selected_traces/D2Results.txt",
+        "fit_group_id": "CH31-gp120",
+        "sample_id": "CH31-gp120",
+        "experiment_id": "author-tray-1",
+        "curve_id": "D2",
+        "sensor_id": "D2",
+        "cycle_id": "1",
+        "association_start": 360.0,
+        "dissociation_start": 660.0
+      },
+      {
+        "file": "source/selected_traces/F2Results.txt",
+        "fit_group_id": "CH31-gp120",
+        "sample_id": "CH31-gp120",
+        "experiment_id": "author-tray-1",
+        "curve_id": "F2",
+        "sensor_id": "F2",
+        "cycle_id": "1",
+        "association_start": 360.0,
+        "dissociation_start": 660.0
+      }
+    ]
+  },
+  "input_files": [
+    {
+      "original_path": "<repository>/fixtures/kinetics_octet/source/selected_traces/A2Results.txt",
+      "sha256": "80d2e4a6e065fd025bfe55ae1ef6572b71f9d6af20407f84f922c37b7367c881",
+      "role": "sample",
+      "export_header": {
+        "Conc1": "1E-06",
+        "Start1": "360",
+        "Stop1": "1559.8",
+        "Kobs": "0.00022198762659549",
+        "Error Kobs": "2.5506481892688E-06",
+        "Koff": "0",
+        "Error Koff": "0"
+      },
+      "snapshot_path": "source_files/000_A2Results.txt"
+    },
+    {
+      "original_path": "<repository>/fixtures/kinetics_octet/source/selected_traces/B2Results.txt",
+      "sha256": "a00003f834c08aaa6f86749756633efbae06afc3e95051e2fe831f73bee6d21e",
+      "role": "sample",
+      "export_header": {
+        "Conc1": "6E-07",
+        "Start1": "360",
+        "Stop1": "1559.8",
+        "Kobs": "0.00022198762659549",
+        "Error Kobs": "2.5506481892688E-06",
+        "Koff": "0",
+        "Error Koff": "0"
+      },
+      "snapshot_path": "source_files/001_B2Results.txt"
+    },
+    {
+      "original_path": "<repository>/fixtures/kinetics_octet/source/selected_traces/C2Results.txt",
+      "sha256": "9378e1295737aac3eeb4d192de79688ba4f12712fc36359b413c72ae7fd47760",
+      "role": "sample",
+      "export_header": {
+        "Conc1": "3E-07",
+        "Start1": "360",
+        "Stop1": "1559.8",
+        "Kobs": "0.00022198762659549",
+        "Error Kobs": "2.5506481892688E-06",
+        "Koff": "0",
+        "Error Koff": "0"
+      },
+      "snapshot_path": "source_files/002_C2Results.txt"
+    },
+    {
+      "original_path": "<repository>/fixtures/kinetics_octet/source/selected_traces/D2Results.txt",
+      "sha256": "c853aee4e7a95f4892b3c1d272d5b5101db9b1621f2635142d54dc11ddf8820f",
+      "role": "sample",
+      "export_header": {
+        "Conc1": "1.5E-07",
+        "Start1": "360",
+        "Stop1": "1559.8",
+        "Kobs": "0.00022198762659549",
+        "Error Kobs": "2.5506481892688E-06",
+        "Koff": "0",
+        "Error Koff": "0"
+      },
+      "snapshot_path": "source_files/003_D2Results.txt"
+    },
+    {
+      "original_path": "<repository>/fixtures/kinetics_octet/source/selected_traces/F2Results.txt",
+      "sha256": "0382285a489e5fb15d672b3538dd7583508f5b2c3492cc87a2deaa80861281fa",
+      "role": "sample",
+      "export_header": {
+        "Conc1": "4E-08",
+        "Start1": "360",
+        "Stop1": "1559.8",
+        "Kobs": "0.00022198762659549",
+        "Error Kobs": "2.5506481892688E-06",
+        "Koff": "0",
+        "Error Koff": "0"
+      },
+      "snapshot_path": "source_files/004_F2Results.txt"
+    }
+  ],
+  "data_sha256": "c0e9e2b86b47bb7f2017aa427e7099c56ad26c846a0e0d38ab151cbfd3788a0f",
+  "fit_columns_ignored": true,
+  "preprocessing": "No reference/baseline subtraction, smoothing or fitting applied by importer; original Data1 retained."
+}

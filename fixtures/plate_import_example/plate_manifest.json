@@ -1,0 +1,21 @@
+{
+  "format": "plate_grid_csv",
+  "target": "elisa_quantification",
+  "source": "Synthetic 96-well ELISA reader export and plate map; seed 20260926; not measured biology",
+  "constants": {
+    "concentration_unit": "ng/mL",
+    "response_unit": "OD450"
+  },
+  "plates": [
+    {
+      "plate_id": "plate-1",
+      "readout": "reader_od450.csv",
+      "layers": {
+        "role": "layout_role.csv",
+        "sample_id": "layout_sample.csv",
+        "concentration": "layout_concentration.csv",
+        "dilution_factor": "layout_dilution.csv"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "analysis_type": "dose_response_4pl",
+  "input": "potency.csv",
+  "source": "Synthetic ELISA-style binding OD450 for a reference and a test antibody, three independent plates; seed 20260925; not measured biology. Equivalence margins and acceptance limits below are illustrative, not historical.",
+  "assay": {
+    "endpoint": "EC50",
+    "direction": "increasing",
+    "tested_agent": "Reference and test antibodies (synthetic)",
+    "response_definition": "OD450 binding signal",
+    "relative_half_response_supported": true,
+    "rationale": "Generated from parallel symmetric 4PL curves with proportional noise; demonstrates relative weighting, replicate summary and relative potency."
+  },
+  "fit": {
+    "weighting": "relative"
+  },
+  "replicates": {
+    "independent_unit": "experiment_id",
+    "conditions_comparable": true
+  },
+  "comparisons": [
+    {
+      "id": "Test-vs-Ref-E1",
+      "reference_curve": "Ref-E1",
+      "test_curve": "Test-E1"
+    },
+    {
+      "id": "Test-vs-Ref-E2",
+      "reference_curve": "Ref-E2",
+      "test_curve": "Test-E2"
+    },
+    {
+      "id": "Test-vs-Ref-E3",
+      "reference_curve": "Ref-E3",
+      "test_curve": "Test-E3"
+    }
+  ],
+  "comparison_settings": {
+    "parallelism_method": "equivalence",
+    "equivalence": {
+      "confidence_level": 0.9,
+      "hill_ratio_limits": [
+        0.8,
+        1.25
+      ],
+      "bottom_difference_limits": [
+        -0.05,
+        0.05
+      ],
+      "top_difference_limits": [
+        -0.3,
+        0.3
+      ],
+      "rationale": "Illustrative margins for a synthetic demonstration; real margins must come from historical reference-vs-reference assay data"
+    },
+    "rp_acceptance_limits": [
+      0.8,
+      1.25
+    ],
+    "rp_acceptance_rationale": "Illustrative lot-comparison limits; the synthetic test antibody has true RP 2, so failure is expected"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Equilibrium Binding KD"
+  short_description: "Fit equilibrium KD with diagnostics and offline reports"
+  default_prompt: "Use $equilibrium-binding to analyze this titration CSV and create a Chinese Prism-like report."

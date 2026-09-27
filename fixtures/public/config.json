@@ -1,0 +1,32 @@
+{
+  "input": "titration.csv",
+  "source": "Adams et al., eLife 2016, doi:10.7554/eLife.23156; jbkinney/16_titeseq commit 54130c8fc6081bbfa8301c41e1afcfa6a5d79590. Processed flow-cytometry titration readings; not raw FCS. Date preserved, independence not inferred.",
+  "assay": {
+    "equilibrium_supported": true,
+    "signal_proportional": true,
+    "single_site_supported": true,
+    "concentration_basis": "total",
+    "free_approximation_supported": true,
+    "interpretation": "KD",
+    "rationale": "公开 scFv–fluorescein 示例：依据原研究的平衡滴定及单点模型设置，将加入 fluorescein 浓度近似为游离浓度。此假设仅用于复现该研究；没有重新验证其原始实验。"
+  },
+  "fit": {
+    "baseline_mode": "zero_control",
+    "residual_scale": "log",
+    "kd_bounds_M": [
+      1e-14,
+      0.1
+    ]
+  },
+  "uncertainty": {
+    "parameter_ci": "profile_f",
+    "level": 0.95
+  },
+  "replicates": {
+    "independent_unit": "none"
+  },
+  "sensitivity": [
+    "alternate_loss",
+    "exclude_highest"
+  ]
+}

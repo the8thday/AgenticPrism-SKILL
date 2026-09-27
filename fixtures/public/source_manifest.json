@@ -1,0 +1,11 @@
+{
+  "source_sha256": "eb2687f449e4360829ea0b3af74bfacc25ad42de9240a6409d16ce42a2e0a29d",
+  "source_path": "source/titration_curves.csv",
+  "source_url": "https://raw.githubusercontent.com/jbkinney/16_titeseq/54130c8fc6081bbfa8301c41e1afcfa6a5d79590/data/titration_curves.csv",
+  "normalized_sha256": "36dc5d2ddc08b8c62ac1e84aff897ac6d6098a08fed9c704280dc55a7ce2a1a5",
+  "article_doi": "10.7554/eLife.23156",
+  "license_status": "Article is open access; a separate repository data license was not established from the preserved README. Preserve attribution; no new license asserted over source data.",
+  "selected_curves": 25,
+  "selected_observations": 275,
+  "historical_baseline": "historical_curve_fits.csv copied from previous local Demo; reference only, regenerated tests required."
+}

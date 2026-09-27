@@ -1,0 +1,39 @@
+{
+  "package_version": "0.6.0",
+  "created_utc": "2026-09-26T11:54:05.372332+00:00",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "python": "3.13.9",
+  "test_command": ".venv/bin/python -m pytest -q",
+  "test_output": "........................................................................ [ 76%]\n......................                                                   [100%]\n94 passed in 55.52s",
+  "status": "passed",
+  "implementation_sha256": {
+    "__init__.py": "30171f5b74bafc3af163ca284e069be8ed92eff5145b9147627d964ec357cdc8",
+    "cli.py": "33586a3ff856160c6b08d8a584d9a0806ae7bc00a5c99dd8c7c732ebe6ca1f3d",
+    "dose_fit.py": "3e1585c3dba2003530f72ebf2d4e13e87c6bbfc474c712832efcb2adf5bb2a10",
+    "dose_report.py": "3970f29a16d049590c59241c994b3776559585f853b9ce147aae1551fe4c9824",
+    "dose_schema.py": "e5f13442cb8bd609a30c98d807a46789f427400c5c5f503ad47854fedd9fdd84",
+    "dose_workflow.py": "6b5d216dae598f9341d709605d63770a5e2f28b9b003d89e090049e2bbfecbe7",
+    "elisa.py": "cff19e116edbcf3d955c191f0806f918daf78360a45fc6b5bb7f8ad5563da3b1",
+    "elisa_validation.py": "f12e52bfb92b9eb175f57953e6a37ab7ea5ff7e3e801529eefafd4813ef23a2b",
+    "fit.py": "b7654bed4d47008e2145e8be68f950f5009f3fb7f11ac2f9b05d7c56ec6a3da0",
+    "groups.py": "2286a922cea06ad66e619b2a63ce7624297390668a8ee480e1332296305e55a3",
+    "kinetics_fit.py": "95b4ac7cda3475be5754afae7205aa22b51c4aa88cac8864e6c5a913d22ceafa",
+    "kinetics_report.py": "77665a80d0bba304f0f2d123a55d084f69500daa8e094d8931acb9ac09373d6f",
+    "kinetics_schema.py": "5370015634def54bfdcc99f6abc3665d064d38a708fdbfe45f1a21d4bf50980d",
+    "kinetics_workflow.py": "206d2d60bfebe4f7429edbada5104253a42ec2589a3181bf86ac73e625047b48",
+    "octet_import.py": "9bdf1636c28c4a0b2f3eff658711e9a07070ba13f1b1d3e7112fec2155f0c81f",
+    "report.py": "a30d1ee4571faaf979a88e0250e5b24e1aa4301386cc967af70a8394def2956c",
+    "schema.py": "697f22f2c93050e5d1a066df5cb397573fd7c9274356691a3a00a73e387f96e3",
+    "simple_report.py": "ab8348fb8b64923fae5353c06fba0f6a6daf6f7ec09afc6845477368578f3472",
+    "simple_workflow.py": "2bef0525487bb39d61a4574f1d4f335ee12639a8177da0f0b79e039015087777",
+    "workflow.py": "a5878762d1042ac8413035f412185eb0f14d6cd39e10cd0b413fb977c7027abd"
+  },
+  "wheel_sha256": "db185bcb1fa8a0688d27a9204e6b02d071858aab6cc2a6ccd0e7e2038cf89ad9",
+  "skill_validation": {
+    "agentic-prism": "passed",
+    "binding-kinetics": "passed",
+    "elisa-quantification": "passed"
+  },
+  "cross_platform_ci": "configured_not_executed",
+  "live_agent_evaluation": "protocol_added_not_executed"
+}

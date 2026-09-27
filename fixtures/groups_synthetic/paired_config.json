@@ -1,0 +1,13 @@
+{
+  "analysis_type": "group_comparison",
+  "input": "paired.csv",
+  "source": "Synthetic donor-paired response; seed 20260923; not measured biology",
+  "comparison": {
+    "design": "paired_t",
+    "group_a": "control",
+    "group_b": "treated",
+    "outcome": "response",
+    "unit": "AU",
+    "rationale": "Both conditions measured once per independent donor"
+  }
+}

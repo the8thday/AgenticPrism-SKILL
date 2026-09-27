@@ -1,0 +1,28 @@
+{
+  "public_curves": 25,
+  "images_loaded": true,
+  "standard": {
+    "visible": 25,
+    "downloads_match": true,
+    "theme_match": true
+  },
+  "prism_like": {
+    "visible": 25,
+    "downloads_match": true,
+    "theme_match": true
+  },
+  "external_resource_count": 0,
+  "mobile_no_page_overflow": true,
+  "offline_images_loaded": true,
+  "offline_switch": true,
+  "offline_download_name": "curve-001__standard.pdf",
+  "offline_download_failure": null,
+  "javascript_errors": [],
+  "failures": [],
+  "file_navigation": "CLI blocks file://; reconstructed self-contained HTML tested in a fresh offline browser document",
+  "synthetic_curves": 5,
+  "failed_curve_visible": true,
+  "limited_curve_visible": true,
+  "limit_status_translated": true,
+  "download_matches_export_sha256": true
+}

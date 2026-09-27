@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "scope": "Public processed Octet RED384 Time1/Data1 exports; matched 1:1 global model, five concentrations, per-sensor Rmax, explicit 300/600 s windows and stride 5. Reference is authors' TitrationAnalysis output, not native Octet or Prism.",
+  "source_repository_commit": "cb8112503658d24c4c6576503243fa506bf99e27",
+  "maximum_allowed_relative_difference": 0.002,
+  "comparisons": [
+    {
+      "dissociation_fit_window_s": 300,
+      "fit_group_id": "CH31-gp120",
+      "n_sensorgrams": 5,
+      "n_fit_points": 3005,
+      "ci_status": "conditional_block_bootstrap",
+      "diagnostics": [
+        "serially_correlated_residuals_review_model_and_block_length"
+      ],
+      "parameters": {
+        "kon_M_inv_s_inv": {
+          "computed": 4989.9709922205875,
+          "published_TitrationAnalysis": 4990.240930316442,
+          "relative_difference": 5.4093199030713635e-05
+        },
+        "koff_s_inv": {
+          "computed": 0.000515493927319412,
+          "published_TitrationAnalysis": 0.0005154370447381543,
+          "relative_difference": 0.00011035796095448802
+        },
+        "kd_M": {
+          "computed": 1.0330599679298176e-07,
+          "published_TitrationAnalysis": 1.0328900987661716e-07,
+          "relative_difference": 0.00016446005615589065
+        }
+      }
+    },
+    {
+      "dissociation_fit_window_s": 600,
+      "fit_group_id": "CH31-gp120",
+      "n_sensorgrams": 5,
+      "n_fit_points": 4505,
+      "ci_status": "conditional_block_bootstrap",
+      "diagnostics": [
+        "serially_correlated_residuals_review_model_and_block_length"
+      ],
+      "parameters": {
+        "kon_M_inv_s_inv": {
+          "computed": 5682.021367686899,
+          "published_TitrationAnalysis": 5682.375632275209,
+          "relative_difference": 6.234445084862816e-05
+        },
+        "koff_s_inv": {
+          "computed": 0.00029403464574737716,
+          "published_TitrationAnalysis": 0.000293994894543961,
+          "relative_difference": 0.00013521052288290036
+        },
+        "kd_M": {
+          "computed": 5.174824709733116e-08,
+          "published_TitrationAnalysis": 5.173802535582221e-08,
+          "relative_difference": 0.00019756729095576908
+        }
+      }
+    }
+  ],
+  "kd_300s_to_600s_ratio": 1.9963187660961297,
+  "interpretation": "The same experiment gives materially different KD estimates across these defensible dissociation windows; investigate model/processing before interpreting absolute affinity."
+}

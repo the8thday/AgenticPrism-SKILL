@@ -1,0 +1,22 @@
+{
+  "kon_M_inv_s_inv": 200000.0,
+  "koff_s_inv": 0.0005,
+  "rmax": 100.0,
+  "concentrations_nM": [
+    0.5,
+    1.5,
+    4.5,
+    13.5,
+    40.5
+  ],
+  "association_s": 120,
+  "intermediate_dissociation_s": 60,
+  "final_dissociation_s": 1800,
+  "noise_sd": 0.3,
+  "rmax_by_sensor": {
+    "A1": 100.0,
+    "B1": 80.0
+  },
+  "seed": 20260926,
+  "raw_channel_artifacts": "bulk 0.15 RU per nM during association (both channels); active-channel drift 0.002 RU/s"
+}

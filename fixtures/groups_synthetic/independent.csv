@@ -1,0 +1,17 @@
+observation_id,independent_unit_id,group,outcome,value,unit
+0-control,donor-0,control,response,11.793114642537237,AU
+0-treated,treated-0,treated,response,13.270190409800898,AU
+1-control,donor-1,control,response,10.352335067813724,AU
+1-treated,treated-1,treated,response,12.723877513695587,AU
+2-control,donor-2,control,response,7.837316872371291,AU
+2-treated,treated-2,treated,response,9.714324572999857,AU
+3-control,donor-3,control,response,10.417447040596869,AU
+3-treated,treated-3,treated,response,12.229662721620576,AU
+4-control,donor-4,control,response,9.468171550855654,AU
+4-treated,treated-4,treated,response,11.397794727882497,AU
+5-control,donor-5,control,response,8.796350354541945,AU
+5-treated,treated-5,treated,response,10.11801238052873,AU
+6-control,donor-6,control,response,10.212266239938193,AU
+6-treated,treated-6,treated,response,12.23023759153938,AU
+7-control,donor-7,control,response,8.423480825502502,AU
+7-treated,treated-7,treated,response,10.000834931063444,AU

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "wheel": "agentic_prism-0.5.0-py3-none-any.whl",
+  "wheel_sha256": "6ed989b2f883a0183c7c36c64365b9a30d78152b6a76c28c020fc3330a502be9",
+  "installed_version": "0.5.0",
+  "new_modules_exact_match": [
+    "elisa-synthetic",
+    "groups-paired-synthetic",
+    "groups-welch-synthetic"
+  ],
+  "platform_scope": "same macOS host, Python 3.13"
+}

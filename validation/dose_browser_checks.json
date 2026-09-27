@@ -1,0 +1,24 @@
+{
+  "curves": 2,
+  "images_loaded": true,
+  "source_unit_caveat": true,
+  "standard": {
+    "visible": 2,
+    "theme_matches": true,
+    "downloads_match": true
+  },
+  "prism_like": {
+    "visible": 2,
+    "theme_matches": true,
+    "downloads_match": true
+  },
+  "external_resources": 0,
+  "mobile_no_overflow": true,
+  "offline_images_loaded": true,
+  "offline_switch": true,
+  "download_name": "dose-001__standard.pdf",
+  "download_matches_export_sha256": true,
+  "download_sha256": "8d4de27726a7b43bea5da0fe0c48b2cfa48b6f6ba9e11fb2ac6d1938427a83d2",
+  "javascript_errors": [],
+  "file_navigation": "CLI blocks file://; complete HTML reloaded into a fresh offline document"
+}

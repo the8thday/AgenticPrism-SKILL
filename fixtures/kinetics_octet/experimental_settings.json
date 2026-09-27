@@ -1,0 +1,51 @@
+{
+  "sheet": "20220509_CH31_A244_CH505_info v",
+  "analyses": [
+    {
+      "Incl.": "Y",
+      "Block/Chip/Tray": 1,
+      "Position/Channel/Sensor": "A2,B2,C2,D2,F2",
+      "Analyte": "Cat_CH31 (3412)",
+      "Ligand": "AE_A244_gp120",
+      "Baseline": 0,
+      "Association": 300,
+      "Dissociation": 300,
+      "Asso. Skip": 0,
+      "Disso. Skip": 0,
+      "All Concentrations": "1.00E-06,6.00E-07,3.00E-07,1.50E-07,4.00E-08",
+      "Incl. Conc.": "All",
+      "Bulkshift": "N",
+      "Regen.": "Y",
+      "Bsl Start": 360,
+      "Base Corr": "N",
+      "Global Rmax": "N"
+    },
+    {
+      "Incl.": "Y",
+      "Block/Chip/Tray": 1,
+      "Position/Channel/Sensor": "A2,B2,C2,D2,F2",
+      "Analyte": "Cat_CH31 (3412)",
+      "Ligand": "AE_A244_gp120",
+      "Baseline": 0,
+      "Association": 300,
+      "Dissociation": 600,
+      "Asso. Skip": 0,
+      "Disso. Skip": 0,
+      "All Concentrations": "1.00E-06,6.00E-07,3.00E-07,1.50E-07,4.00E-08",
+      "Incl. Conc.": "All",
+      "Bulkshift": "N",
+      "Regen.": "Y",
+      "Bsl Start": 360,
+      "Base Corr": "N",
+      "Global Rmax": "N"
+    }
+  ],
+  "units": {
+    "time": "s",
+    "response": "nm",
+    "concentration": "M"
+  },
+  "source_sampling_Hz": 5,
+  "author_fitting_stride": 5,
+  "reference_is": "Published TitrationAnalysis output; not a new native Octet software run"
+}

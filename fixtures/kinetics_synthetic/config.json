@@ -1,0 +1,15 @@
+{
+  "analysis_type": "binding_kinetics",
+  "input": "data.csv",
+  "source": "Synthetic 1:1 traces; seed 24681; not measured biology.",
+  "assay": {
+    "one_to_one_supported": true,
+    "independent_cycles": true,
+    "concentration_known": true,
+    "rationale": "模拟真值一对一模型，独立完整结合/解离曲线。"
+  },
+  "uncertainty": {
+    "replicates": 200,
+    "block_length": 10
+  }
+}

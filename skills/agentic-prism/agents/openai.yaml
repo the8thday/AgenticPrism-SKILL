@@ -1,0 +1,4 @@
+interface:
+  display_name: "AgenticPrism"
+  short_description: "Route Prism-style analysis to validated scientific modules"
+  default_prompt: "Use $agentic-prism to choose the appropriate analysis for my experimental data."

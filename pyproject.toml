@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-prism"
+version = "0.7.1"
+description = "Auditable binding, kinetics, dose-response, ELISA calibration and group-comparison analysis for modular Agent Skills"
+requires-python = ">=3.12"
+dependencies = ["numpy", "scipy>=1.15", "pandas", "matplotlib"]
+
+[project.scripts]
+agentic-prism = "agentic_prism.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

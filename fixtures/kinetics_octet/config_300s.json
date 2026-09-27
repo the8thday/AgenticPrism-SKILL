@@ -1,0 +1,26 @@
+{
+  "analysis_type": "binding_kinetics",
+  "input": "imported/data.csv",
+  "provenance": "imported/import_manifest.json",
+  "source": "Li et al. TitrationAnalysis, Gates Open Research 2023;7:107, doi:10.12688/gatesopenres.14743.1. Octet RED384 processed Time1/Data1 exports, CC BY 4.0; CH31–AE.A244 gp120. Input already processed by source workflow; no new reference subtraction. Reference analysis #1: association 300 s, dissociation 300 s; two analyses use the same experiment, not independent replicates.",
+  "assay": {
+    "one_to_one_supported": true,
+    "independent_cycles": true,
+    "concentration_known": true,
+    "rationale": "依据作者信息表和一对一全局拟合方程复现该公开分析；保留对真实曲线模型偏差的诊断，不将作者采用模型视为机制已证实。"
+  },
+  "preprocessing": {
+    "stride": 5
+  },
+  "fit": {
+    "rmax": "per_curve",
+    "offset": "fixed_zero",
+    "dissociation_duration_s": 300
+  },
+  "uncertainty": {
+    "method": "block_bootstrap",
+    "replicates": 200,
+    "block_length": 20,
+    "seed": 20260922
+  }
+}

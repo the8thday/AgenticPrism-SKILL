@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "created_utc": "2026-09-22T11:00:53.411660+00:00",
+  "status": "local_release_validated",
+  "global_skill_installation": false,
+  "implemented_modules": [
+    "equilibrium-binding"
+  ],
+  "planned_modules": [
+    "elisa-quantification",
+    "dose-response",
+    "binding-kinetics",
+    "group-comparison"
+  ],
+  "sha256": {
+    "requirements-lock.txt": "235024970fe14659d50491e727c03aebd23d13a9b6cccaea5283fe4b9d1e93f0",
+    "skills/agentic-prism/SKILL.md": "9b3eab4bbb6dee12557302c340187b581b0cb1f51192d4c48440e9baa043c7bb",
+    "skills/agentic-prism/agents/openai.yaml": "50a3ebfea804389c3a3b6dc8270ec543d2b0e55f0b6656e285f07d41e8719d1f",
+    "skills/agentic-prism/references/module-registry.md": "3947e0b9d349a25c094a46a9422748a42e8c8f22fb52d0c65ca656ec742b9121",
+    "skills/equilibrium-binding/SKILL.md": "180f085bcff23dd35221eb199bbf6ea32413e0baff4460c51f6f5f974b9b4a3f",
+    "skills/equilibrium-binding/agents/openai.yaml": "f9d73348cd01c1d4d7e1a0bf85d53f4eb472fc5fa80803fc57349f21ca8394a2",
+    "skills/equilibrium-binding/references/equilibrium-binding.md": "c135870781a3c84b0b355bc913dbccf09caee285f8150f013bb925de25a988cc",
+    "skills/equilibrium-binding/references/input-schema.md": "b43085af4125e6c39e39eb14c51da21867898e5b45f8d1ba072c227860674e34",
+    "skills/equilibrium-binding/references/report-and-plotting.md": "d984358c1684e136dcc8948f74d9805fc4661a0330264fe2ff080d01be2641ee",
+    "src/agentic_prism/__init__.py": "883e92425408dbedb36c378aebaf46b9658358ade4ce5eb6ba4aa150480d58e0",
+    "src/agentic_prism/cli.py": "b3957e4dce1f195182694e84a2022b59b7a4a5f8dcdf9450059723575a4a7337",
+    "src/agentic_prism/fit.py": "39ae798d62eca6eba695723451e7c7c5ef115bb173e52a6c8ea6a20496b314a1",
+    "src/agentic_prism/report.py": "c15befd4dcb4f2dbf066e2387c044c0fc578fe4d284fabfae22547c53801769d",
+    "src/agentic_prism/schema.py": "b64b16e554f7829e6c9335e98025c73aa1c762775d17364e093dff3b5fed1220",
+    "src/agentic_prism/workflow.py": "14b8973407e6d2208d79d7604921fc96ec53816ec82c6b9d07c02464c92bf16a",
+    "validation/artifact_checks.json": "e28b720e1411bdf625a5fba0fad2ca484bc84140960ede87649133d59c951ac6",
+    "validation/browser_checks.json": "142b59f16579f336b22606f7d79300ef5eccb60cf4757d345c37995f56c07865",
+    "validation/clean_environment.json": "4a48d307628b084772196e5a58bf08da8781f950f8cb5ec02c174b290d0ebe9f",
+    "validation/numerical_benchmarks.json": "921b33bc07a0f5eb6f380c0707025fe35ef16a5f66f82f7285c116b148e2d974",
+    "validation/pytest.xml": "7c80dc301a9ff60f392c520fdb0cf1ef5e34836d84407208aa04e7205a495579"
+  }
+}

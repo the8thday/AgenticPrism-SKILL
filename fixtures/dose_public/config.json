@@ -1,0 +1,14 @@
+{
+  "analysis_type": "dose_response_4pl",
+  "input": "data.csv",
+  "source": "IC50 Studio public example_dose_response.csv at pinned commit; illustrative data with unspecified physical dose units; reanalyzed as relative 4PL IC50, which differs from the upstream fixed-response-50 definition.",
+  "assay": {
+    "endpoint": "IC50",
+    "direction": "decreasing",
+    "tested_agent": "Fixture titrant",
+    "response_definition": "Public example response, arbitrary units",
+    "relative_half_response_supported": true,
+    "rationale": "Both example curves decline with concentration; this is a numerical example of relative half-response fitting only, with no biological or potency-unit claim."
+  },
+  "provenance": "source_manifest.json"
+}

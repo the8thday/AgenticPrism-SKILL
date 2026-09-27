@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "created_utc": "2026-09-23T00:23:15.102317+00:00",
+  "status": "local_release_validated_with_declared_boundaries",
+  "global_skill_installation": false,
+  "implemented_modules": [
+    "equilibrium-binding",
+    "binding-kinetics"
+  ],
+  "planned_modules": [
+    "elisa-quantification",
+    "dose-response",
+    "group-comparison"
+  ],
+  "sha256": {
+    "pyproject.toml": "75e78b2ad7692bacd7b88dce8a6b02708f23c11cdbc8ba3e2faffe8eef3ecd40",
+    "requirements-lock.txt": "9980edd048c23834d17f515c7fd1f09ff7c9f3242411fdd6c9a5702af7844306",
+    "skills/agentic-prism/SKILL.md": "8e33d7b2d47b94317ef4d2c84d6830546cda78c779bf8d727ad8e9115977e58b",
+    "skills/agentic-prism/references/module-registry.md": "35826dc648c45fccbe3849a9d10833cacaa2668c33f307e5eeeb683066f1e578",
+    "skills/binding-kinetics/SKILL.md": "9262e4a48f380d2857640f69baa0f836b1a83bc70570864757a9fa972101ecbb",
+    "skills/binding-kinetics/references/input-and-model.md": "b882eb9b94ca1ccb7ef67ad2cb47ccf2b47ddaca4fe0658fc85fe50d03704e0f",
+    "skills/binding-kinetics/references/octet-results-txt.md": "ee64e75591ee244557c79199f627559d7e39c2300daa1cb0a417e341cfbf911c",
+    "skills/equilibrium-binding/SKILL.md": "180f085bcff23dd35221eb199bbf6ea32413e0baff4460c51f6f5f974b9b4a3f",
+    "skills/equilibrium-binding/references/equilibrium-binding.md": "c135870781a3c84b0b355bc913dbccf09caee285f8150f013bb925de25a988cc",
+    "skills/equilibrium-binding/references/input-schema.md": "b43085af4125e6c39e39eb14c51da21867898e5b45f8d1ba072c227860674e34",
+    "skills/equilibrium-binding/references/report-and-plotting.md": "d984358c1684e136dcc8948f74d9805fc4661a0330264fe2ff080d01be2641ee",
+    "src/agentic_prism/__init__.py": "5b0660bde919f9bd03d26ab5db2a789ed5dc16863f5689bd62ee85712e5e042d",
+    "src/agentic_prism/cli.py": "22918ec8da1d96eab5c428c5d9587f39b266b02af8f8a488d3fae79eab97fe09",
+    "src/agentic_prism/fit.py": "39ae798d62eca6eba695723451e7c7c5ef115bb173e52a6c8ea6a20496b314a1",
+    "src/agentic_prism/kinetics_fit.py": "6bea4c0fb5b416df4f1330c46e97d77ef1b1ce829965e926a07e4eb9cbc13c8d",
+    "src/agentic_prism/kinetics_report.py": "e96c670caf2d27d19ff03de9dec022bf2c3019d94932984a83ab6dd8e872ecfc",
+    "src/agentic_prism/kinetics_schema.py": "aa092cd58e5b7ddd1c4a60eb8787b576a92047bdbb389312b3c93b24455e4bb2",
+    "src/agentic_prism/kinetics_workflow.py": "57a4045c2c51043e7da0af1f6c0f77970ca8e58835e2a0ff2742ddff8c45affc",
+    "src/agentic_prism/octet_import.py": "9bdf1636c28c4a0b2f3eff658711e9a07070ba13f1b1d3e7112fec2155f0c81f",
+    "src/agentic_prism/report.py": "c15befd4dcb4f2dbf066e2387c044c0fc578fe4d284fabfae22547c53801769d",
+    "src/agentic_prism/schema.py": "b64b16e554f7829e6c9335e98025c73aa1c762775d17364e093dff3b5fed1220",
+    "src/agentic_prism/workflow.py": "af52ceb76dda92fdc07a26ad6dab0e6a647c3d260775eb7af62a44112a62eb06",
+    "validation/kinetics_browser_checks.json": "d51edfe430dc8d72097d0f8bf1ad2a3ef3a4280d2427dd88c833b69a804d006d",
+    "validation/kinetics_numerical_benchmarks.json": "d3b280173ea0fe1931e8e961239b1e9cfe4a2e38aeb4003f24d6023c79738ba2",
+    "validation/clean_environment.json": "8eab8f56fac13ff81fc3672c2e89fbb4c8ba085db368a24655c5b184576203d5",
+    "fixtures/kinetics_octet/source_manifest.json": "af9a2431cda383adac651b9dfa6ac729181f140f40a8d87b9074207a1f195a0a",
+    "runs/octet-300s/manifest.json": "cfa29f31836d90aab411818235d577c7f7f79e9b4b6288e16e41de7b10e97745",
+    "runs/octet-600s/manifest.json": "ca4bbbec55c14d2ba231977eefe32294953fe5997f4fce529e727b4b36983ff4"
+  }
+}

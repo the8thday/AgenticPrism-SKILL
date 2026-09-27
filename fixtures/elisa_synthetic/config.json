@@ -1,0 +1,12 @@
+{
+  "analysis_type": "elisa_quantification",
+  "input": "data.csv",
+  "source": "Synthetic ELISA calibration; seed 20260923; not measured biology",
+  "direction": "increasing",
+  "assay": {
+    "analyte": "synthetic protein",
+    "response_definition": "unsubtracted OD450",
+    "matrix": "buffer",
+    "rationale": "Synthetic monotonic 4PL standards; no matrix or blank correction"
+  }
+}

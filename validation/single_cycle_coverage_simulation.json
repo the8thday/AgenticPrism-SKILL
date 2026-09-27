@@ -1,0 +1,47 @@
+{
+  "nominal_level": 0.95,
+  "design": [
+    "One design: five injections (0.5-40.5 nM, x3 steps), 120 s association, 60 s intermediate",
+    "dissociation, 1800 s final dissociation, 1 s sampling, one sensor, Rmax 100 RU.",
+    "A first run at 2 s sampling gave 30 points per intermediate dissociation, below 2 x block length",
+    "(40), so no interval was computable (ci_status insufficient_points_for_block_length); see validation."
+  ],
+  "scenarios": [
+    {
+      "ar1_phi": 0.0,
+      "seed": 31,
+      "simulations": 150,
+      "with_reportable_interval": 150,
+      "withheld_by_reliability_gates": 0,
+      "covered": {
+        "kon_M_inv_s_inv": 139,
+        "koff_s_inv": 137,
+        "kd_M": 141
+      },
+      "coverage": {
+        "kon_M_inv_s_inv": 0.9266666666666666,
+        "koff_s_inv": 0.9133333333333333,
+        "kd_M": 0.94
+      },
+      "acceptance_min_coverage": 0.9144097391598955,
+      "passed": false
+    },
+    {
+      "ar1_phi": 0.9,
+      "seed": 32,
+      "simulations": 100,
+      "with_reportable_interval": 0,
+      "withheld_by_reliability_gates": 100,
+      "covered": {
+        "kon_M_inv_s_inv": 0,
+        "koff_s_inv": 0,
+        "kd_M": 0
+      },
+      "coverage": {
+        "kon_M_inv_s_inv": null,
+        "koff_s_inv": null,
+        "kd_M": null
+      }
+    }
+  ]
+}

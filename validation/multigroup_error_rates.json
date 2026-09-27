@@ -1,0 +1,185 @@
+{
+  "seed": 20260926,
+  "alpha": 0.05,
+  "groups": [
+    "control",
+    "g1",
+    "g2",
+    "g3"
+  ],
+  "note": "Normal data; independent units; one simulation design per scenario. Not evidence for skewed data, outliers, clustered units or repeated measures.",
+  "results": [
+    {
+      "scenario": "null_equal_variance_n6",
+      "family": "dunnett_vs_control",
+      "design": "one_way_anova",
+      "repetitions": 1000,
+      "omnibus_rejection_rate": 0.041,
+      "family_wise_error_rate": 0.038,
+      "simultaneous_coverage": 0.962,
+      "acceptance_bounds": {
+        "max_error": 0.06378404875209022,
+        "min_coverage": 0.9362159512479097
+      },
+      "seconds": 25.8,
+      "passed": true
+    },
+    {
+      "scenario": "null_equal_variance_n6",
+      "family": "tukey_all_pairs",
+      "design": "one_way_anova",
+      "repetitions": 1000,
+      "omnibus_rejection_rate": 0.047,
+      "family_wise_error_rate": 0.044,
+      "simultaneous_coverage": 0.956,
+      "acceptance_bounds": {
+        "max_error": 0.06378404875209022,
+        "min_coverage": 0.9362159512479097
+      },
+      "seconds": 104.6,
+      "passed": true
+    },
+    {
+      "scenario": "null_equal_variance_n6",
+      "family": "holm_welch_vs_control",
+      "design": "welch_anova",
+      "repetitions": 1000,
+      "omnibus_rejection_rate": 0.049,
+      "family_wise_error_rate": 0.038,
+      "simultaneous_coverage": 0.962,
+      "acceptance_bounds": {
+        "max_error": 0.06378404875209022,
+        "min_coverage": 0.9362159512479097
+      },
+      "seconds": 0.9,
+      "passed": true
+    },
+    {
+      "scenario": "null_equal_variance_n6",
+      "family": "games_howell_all_pairs",
+      "design": "welch_anova",
+      "repetitions": 300,
+      "omnibus_rejection_rate": 0.06,
+      "family_wise_error_rate": 0.06,
+      "simultaneous_coverage": 0.94,
+      "acceptance_bounds": {
+        "max_error": 0.07516611478423584,
+        "min_coverage": 0.9248338852157642
+      },
+      "seconds": 251.4,
+      "passed": true
+    },
+    {
+      "scenario": "null_unequal_variance_small_high_sd_group",
+      "family": "dunnett_vs_control",
+      "design": "one_way_anova",
+      "repetitions": 1000,
+      "omnibus_rejection_rate": 0.204,
+      "family_wise_error_rate": 0.195,
+      "simultaneous_coverage": 0.805,
+      "acceptance_bounds": "none (misspecified contrast)",
+      "seconds": 25.0
+    },
+    {
+      "scenario": "null_unequal_variance_small_high_sd_group",
+      "family": "tukey_all_pairs",
+      "design": "one_way_anova",
+      "repetitions": 1000,
+      "omnibus_rejection_rate": 0.183,
+      "family_wise_error_rate": 0.193,
+      "simultaneous_coverage": 0.807,
+      "acceptance_bounds": "none (misspecified contrast)",
+      "seconds": 102.0
+    },
+    {
+      "scenario": "null_unequal_variance_small_high_sd_group",
+      "family": "holm_welch_vs_control",
+      "design": "welch_anova",
+      "repetitions": 1000,
+      "omnibus_rejection_rate": 0.069,
+      "family_wise_error_rate": 0.057,
+      "simultaneous_coverage": 0.943,
+      "acceptance_bounds": {
+        "max_error": 0.06378404875209022,
+        "min_coverage": 0.9362159512479097
+      },
+      "seconds": 0.9,
+      "passed": false
+    },
+    {
+      "scenario": "null_unequal_variance_small_high_sd_group",
+      "family": "games_howell_all_pairs",
+      "design": "welch_anova",
+      "repetitions": 300,
+      "omnibus_rejection_rate": 0.07333333333333333,
+      "family_wise_error_rate": 0.07666666666666666,
+      "simultaneous_coverage": 0.9233333333333333,
+      "acceptance_bounds": {
+        "max_error": 0.07516611478423584,
+        "min_coverage": 0.9248338852157642
+      },
+      "seconds": 283.2,
+      "passed": false
+    },
+    {
+      "scenario": "alternative_equal_variance_coverage",
+      "family": "dunnett_vs_control",
+      "design": "one_way_anova",
+      "repetitions": 1000,
+      "omnibus_rejection_rate": 0.776,
+      "family_wise_error_rate": 0.0,
+      "simultaneous_coverage": 0.955,
+      "acceptance_bounds": {
+        "max_error": 0.06378404875209022,
+        "min_coverage": 0.9362159512479097
+      },
+      "seconds": 27.7,
+      "passed": true
+    },
+    {
+      "scenario": "alternative_equal_variance_coverage",
+      "family": "tukey_all_pairs",
+      "design": "one_way_anova",
+      "repetitions": 1000,
+      "omnibus_rejection_rate": 0.819,
+      "family_wise_error_rate": 0.0,
+      "simultaneous_coverage": 0.944,
+      "acceptance_bounds": {
+        "max_error": 0.06378404875209022,
+        "min_coverage": 0.9362159512479097
+      },
+      "seconds": 117.0,
+      "passed": true
+    },
+    {
+      "scenario": "alternative_equal_variance_coverage",
+      "family": "holm_welch_vs_control",
+      "design": "welch_anova",
+      "repetitions": 1000,
+      "omnibus_rejection_rate": 0.705,
+      "family_wise_error_rate": 0.0,
+      "simultaneous_coverage": 0.955,
+      "acceptance_bounds": {
+        "max_error": 0.06378404875209022,
+        "min_coverage": 0.9362159512479097
+      },
+      "seconds": 0.9,
+      "passed": true
+    },
+    {
+      "scenario": "alternative_equal_variance_coverage",
+      "family": "games_howell_all_pairs",
+      "design": "welch_anova",
+      "repetitions": 300,
+      "omnibus_rejection_rate": 0.6666666666666666,
+      "family_wise_error_rate": 0.0,
+      "simultaneous_coverage": 0.97,
+      "acceptance_bounds": {
+        "max_error": 0.07516611478423584,
+        "min_coverage": 0.9248338852157642
+      },
+      "seconds": 260.2,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "seed": 20260924,
+  "repetitions": 100,
+  "nominal_level": 0.95,
+  "design": "One IC50 design, 10 positive doses plus zero, triplicate rows, additive independent normal response noise SD 1.5, known four-parameter generating model; no biological variability or model misspecification.",
+  "truth_midpoint_mg_per_mL": 0.00035,
+  "intervals_closed": 100,
+  "reportable": 100,
+  "truth_covered": 94,
+  "coverage_over_all_simulations": 0.94,
+  "coverage_among_closed_intervals": 0.94,
+  "ci_status_counts": {
+    "two_sided_profile_f": 100
+  },
+  "interpretation": "A limited smoke benchmark for the stated iid design, not universal nominal coverage or a Prism comparison.",
+  "extended_scenarios": [
+    {
+      "name": "relative_weighting_proportional_cv8",
+      "seed": 101,
+      "simulations": 200,
+      "reportable": 200,
+      "covered": 191,
+      "coverage_among_reportable": 0.955,
+      "acceptance_min": 0.88
+    },
+    {
+      "name": "unweighted_misspecified_proportional_cv8",
+      "seed": 101,
+      "simulations": 200,
+      "reportable": 200,
+      "covered": 187,
+      "coverage_among_reportable": 0.935,
+      "acceptance_min": null
+    },
+    {
+      "name": "fixed_plateaus_0_100_iid_sd4",
+      "seed": 102,
+      "simulations": 200,
+      "reportable": 200,
+      "covered": 193,
+      "coverage_among_reportable": 0.965,
+      "acceptance_min": 0.88
+    },
+    {
+      "name": "relative_potency_parallel_iid_sd3_true_rp2",
+      "seed": 103,
+      "simulations": 200,
+      "reportable": 186,
+      "covered": 179,
+      "coverage_among_reportable": 0.9623655913978495,
+      "acceptance_min": 0.88,
+      "note": "Non-reportable comparisons include ones rejected by the parallelism F test at alpha 0.05."
+    }
+  ]
+}

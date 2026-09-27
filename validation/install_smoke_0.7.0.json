@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "fixtures": [
+    "public/config.json",
+    "kinetics_synthetic/config.json",
+    "dose_synthetic/config_ec50.json",
+    "elisa_independent_qc/config.json",
+    "groups_synthetic/paired_config.json",
+    "groups_synthetic/independent_config.json",
+    "multigroup_synthetic/config_dunnett.json",
+    "elisa_dilution_5pl/config.json",
+    "kinetics_single_cycle/config.json",
+    "dose_synthetic/config_potency_equivalence.json"
+  ],
+  "plate_import": true,
+  "cwd": "temporary directory outside repository",
+  "installed_runtime": true,
+  "render_preserves_results": true,
+  "package_version": "0.7.0",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "wheel_sha256": "81d77d74853bc9a4566869932a3981e101b6b419b98498eba3bb289a4ff79db0",
+  "command": "ISOLATED_VENV/bin/python scripts/validate_install_smoke.py",
+  "scope": "macOS host only; cross-platform CI not executed"
+}

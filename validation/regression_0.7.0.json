@@ -1,0 +1,32 @@
+{
+  "package_version": "0.7.0",
+  "kinetics_byte_identical": {
+    "octet-300s": {
+      "fit_results.csv": true,
+      "curve_parameters.csv": true,
+      "bootstrap.csv": true,
+      "predictions.csv": true,
+      "window_sensitivity.csv": true
+    },
+    "octet-600s": {
+      "fit_results.csv": true,
+      "curve_parameters.csv": true,
+      "bootstrap.csv": true,
+      "predictions.csv": true,
+      "window_sensitivity.csv": true
+    }
+  },
+  "elisa": {
+    "unknown_wells_existing_columns_identical": true,
+    "unknown_wells_added_columns": [
+      "ci_low",
+      "ci_high",
+      "ci_status"
+    ],
+    "sample_summary_existing_columns_identical": true
+  },
+  "groups": {
+    "groups-paired-synthetic": "comparison.csv identical except the 0.5.1 diagnostics text format",
+    "groups-welch-synthetic": "comparison.csv identical except the 0.5.1 diagnostics text format"
+  }
+}

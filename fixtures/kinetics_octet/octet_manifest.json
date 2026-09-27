@@ -1,0 +1,64 @@
+{
+  "format": "octet_results_txt",
+  "source": "Li et al. TitrationAnalysis, Gates Open Research 2023;7:107, doi:10.12688/gatesopenres.14743.1. Octet RED384 processed Time1/Data1 exports, CC BY 4.0; CH31–AE.A244 gp120. Input already processed by source workflow; no new reference subtraction.",
+  "time_unit": "s",
+  "concentration_unit": "M",
+  "response_unit": "nm",
+  "traces": [
+    {
+      "file": "source/selected_traces/A2Results.txt",
+      "fit_group_id": "CH31-gp120",
+      "sample_id": "CH31-gp120",
+      "experiment_id": "author-tray-1",
+      "curve_id": "A2",
+      "sensor_id": "A2",
+      "cycle_id": "1",
+      "association_start": 360.0,
+      "dissociation_start": 660.0
+    },
+    {
+      "file": "source/selected_traces/B2Results.txt",
+      "fit_group_id": "CH31-gp120",
+      "sample_id": "CH31-gp120",
+      "experiment_id": "author-tray-1",
+      "curve_id": "B2",
+      "sensor_id": "B2",
+      "cycle_id": "1",
+      "association_start": 360.0,
+      "dissociation_start": 660.0
+    },
+    {
+      "file": "source/selected_traces/C2Results.txt",
+      "fit_group_id": "CH31-gp120",
+      "sample_id": "CH31-gp120",
+      "experiment_id": "author-tray-1",
+      "curve_id": "C2",
+      "sensor_id": "C2",
+      "cycle_id": "1",
+      "association_start": 360.0,
+      "dissociation_start": 660.0
+    },
+    {
+      "file": "source/selected_traces/D2Results.txt",
+      "fit_group_id": "CH31-gp120",
+      "sample_id": "CH31-gp120",
+      "experiment_id": "author-tray-1",
+      "curve_id": "D2",
+      "sensor_id": "D2",
+      "cycle_id": "1",
+      "association_start": 360.0,
+      "dissociation_start": 660.0
+    },
+    {
+      "file": "source/selected_traces/F2Results.txt",
+      "fit_group_id": "CH31-gp120",
+      "sample_id": "CH31-gp120",
+      "experiment_id": "author-tray-1",
+      "curve_id": "F2",
+      "sensor_id": "F2",
+      "cycle_id": "1",
+      "association_start": 360.0,
+      "dissociation_start": 660.0
+    }
+  ]
+}

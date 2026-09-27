@@ -1,0 +1,19 @@
+{
+  "analysis_type": "binding_kinetics",
+  "input": "data.csv",
+  "source": "Synthetic double-referenced single-cycle SPR series; seed 20260926; not measured biology",
+  "assay": {
+    "one_to_one_supported": true,
+    "independent_cycles": false,
+    "concentration_known": true,
+    "injection_design": "single_cycle",
+    "rationale": "Synthetic ideal 1:1 single-cycle series generated for implementation testing; no regeneration between injections"
+  },
+  "preprocessing": {
+    "reference_mode": "double_reference"
+  },
+  "uncertainty": {
+    "replicates": 200,
+    "block_length": 20
+  }
+}

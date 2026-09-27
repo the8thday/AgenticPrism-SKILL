@@ -1,0 +1,180 @@
+{
+  "status": "passed",
+  "source_repository_commit": "d4f29357e26dc986392c293f4c2dcd8833059c5d",
+  "scope": "Two synthetic truth curves plus two public application-example curves; SciPy curve_fit performs an independent simultaneous four-parameter numerical refit. Source application IC50 uses a different fixed-response-50 estimand; no software or measured-biology equivalence claim.",
+  "maximum_allowed_relative_difference": 0.0001,
+  "max_observed_relative_difference": 5.823437865259962e-07,
+  "comparisons": [
+    {
+      "run": "dose-ec50-synthetic",
+      "curve_id": "ec50-curve",
+      "endpoint": "EC50",
+      "unit": "nM",
+      "half_response": 24.60569698691299,
+      "ci_canonical": [
+        2.3208448866288047e-08,
+        2.6104162181601652e-08
+      ],
+      "independent_full_parameter_fit": {
+        "half_response_canonical": 2.4605697332335943e-08,
+        "hill_slope_signed": 1.2554679630660934,
+        "objective_sse": 72.38985068158199
+      },
+      "relative_differences": {
+        "half_response_canonical": 1.4038332052379587e-08,
+        "hill_slope_signed": 4.7379345557985175e-08,
+        "objective_sse": 7.582823258189819e-14
+      }
+    },
+    {
+      "run": "dose-ic50-synthetic",
+      "curve_id": "ic50-curve",
+      "endpoint": "IC50",
+      "unit": "ug/mL",
+      "half_response": 0.3516862132189929,
+      "ci_canonical": [
+        0.00032702410923842194,
+        0.00037839054431632106
+      ],
+      "independent_full_parameter_fit": {
+        "half_response_canonical": 0.0003516860084168311,
+        "hill_slope_signed": -1.0653461745838717,
+        "objective_sse": 72.8881827155687
+      },
+      "relative_differences": {
+        "half_response_canonical": 5.823437865259962e-07,
+        "hill_slope_signed": 5.060749499463668e-07,
+        "objective_sse": 1.5826673305241457e-11
+      }
+    },
+    {
+      "run": "dose-public-example",
+      "curve_id": "Compound-A",
+      "endpoint": "IC50",
+      "unit": "source_unit",
+      "half_response": 0.8844752462378803,
+      "ci_canonical": [
+        0.7975307066474512,
+        0.9811146291221096
+      ],
+      "independent_full_parameter_fit": {
+        "half_response_canonical": 0.8844748096038467,
+        "hill_slope_signed": -1.0834659559251791,
+        "objective_sse": 87.10650826647083
+      },
+      "relative_differences": {
+        "half_response_canonical": 4.936647475251021e-07,
+        "hill_slope_signed": 2.526108222600243e-08,
+        "objective_sse": 5.07083264267294e-12
+      }
+    },
+    {
+      "run": "dose-public-example",
+      "curve_id": "Compound-B",
+      "endpoint": "IC50",
+      "unit": "source_unit",
+      "half_response": 2.434037453967565,
+      "ci_canonical": [
+        2.240114444724224,
+        2.6621386759167622
+      ],
+      "independent_full_parameter_fit": {
+        "half_response_canonical": 2.434037452499352,
+        "hill_slope_signed": -1.1633767144688039,
+        "objective_sse": 48.103092728857476
+      },
+      "relative_differences": {
+        "half_response_canonical": 6.03200600579612e-10,
+        "hill_slope_signed": 5.708733181730707e-07,
+        "objective_sse": 1.051680964536672e-11
+      }
+    }
+  ],
+  "relative_potency_benchmark": {
+    "run": "dose-potency-synthetic",
+    "weighting": "relative (1/Ycurve^2)",
+    "independent_method": "SciPy least_squares over all parameters with relative residuals; no plateau projection",
+    "curves": [
+      {
+        "curve_id": "Ref-E1",
+        "relative_difference_c50": 2.1151758122783804e-09,
+        "relative_difference_objective": 1.5520917884259688e-13
+      },
+      {
+        "curve_id": "Test-E1",
+        "relative_difference_c50": 2.4553363786594673e-09,
+        "relative_difference_objective": 1.099120794378905e-13
+      },
+      {
+        "curve_id": "Ref-E2",
+        "relative_difference_c50": 1.0305225783824312e-08,
+        "relative_difference_objective": 7.993605777301127e-14
+      },
+      {
+        "curve_id": "Test-E2",
+        "relative_difference_c50": 2.2990125359001468e-09,
+        "relative_difference_objective": 5.384581669432009e-14
+      },
+      {
+        "curve_id": "Ref-E3",
+        "relative_difference_c50": 8.052203348540843e-11,
+        "relative_difference_objective": 1.9317880628477724e-13
+      },
+      {
+        "curve_id": "Test-E3",
+        "relative_difference_c50": 5.314393369815207e-10,
+        "relative_difference_objective": 5.3179682879545e-14
+      }
+    ],
+    "comparisons": [
+      {
+        "comparison_id": "Test-vs-Ref-E1",
+        "relative_potency": 1.970731050679329,
+        "rp_ci": [
+          1.8440028451075574,
+          2.106351811016211
+        ],
+        "independent_relative_potency": 1.9707310523481256,
+        "relative_difference_rp": 8.467906376097289e-10,
+        "relative_difference_parallelism_F": 5.24691401437849e-13
+      },
+      {
+        "comparison_id": "Test-vs-Ref-E2",
+        "relative_potency": 1.9133719867568597,
+        "rp_ci": [
+          1.7955404262979617,
+          2.038970654507132
+        ],
+        "independent_relative_potency": 1.9133719867278132,
+        "relative_difference_rp": 1.518074554951454e-11,
+        "relative_difference_parallelism_F": 4.889422200449189e-13
+      },
+      {
+        "comparison_id": "Test-vs-Ref-E3",
+        "relative_potency": 1.9263182215247439,
+        "rp_ci": [
+          1.8158033180861604,
+          2.043607674916747
+        ],
+        "independent_relative_potency": 1.926318222420005,
+        "relative_difference_rp": 4.647524587397811e-10,
+        "relative_difference_parallelism_F": 3.6615155352137663e-13
+      }
+    ],
+    "potency_summary": [
+      {
+        "reference_sample": "Ref-mAb",
+        "test_sample": "Test-mAb",
+        "n_comparisons": 3,
+        "n_experiments": 3,
+        "n_not_reportable": 0,
+        "geometric_mean_rp": 1.9366520554871482,
+        "ci_low": 1.8635998718299729,
+        "ci_high": 2.0125678482364626,
+        "log10_sd_between_experiments": 0.006722223626219297,
+        "status": "summarized_log_t"
+      }
+    ],
+    "max_relative_difference": 1.0305225783824312e-08
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "octet-300s",
+      "config": "fixtures/kinetics_octet/config_300s.json",
+      "source_manifest": "fixtures/kinetics_octet/source_manifest.json",
+      "reference_csv": "fixtures/kinetics_octet/source/Titration Analysis_BLI_Report_Example.csv",
+      "reference_row": 0,
+      "parameter_columns": {
+        "kon_M_inv_s_inv": "ka",
+        "koff_s_inv": "kd",
+        "kd_M": "KD"
+      },
+      "relative_tolerance": 0.002,
+      "expected_reportable": false,
+      "expected_ci_status": "withheld_reliability_check",
+      "scope": "One public processed Octet RED384 experiment, five sensorgrams; author TitrationAnalysis point estimates only. Not native Octet or Prism equivalence; uncertainty withheld by current reliability gate."
+    },
+    {
+      "id": "octet-600s",
+      "config": "fixtures/kinetics_octet/config_600s.json",
+      "source_manifest": "fixtures/kinetics_octet/source_manifest.json",
+      "reference_csv": "fixtures/kinetics_octet/source/Titration Analysis_BLI_Report_Example.csv",
+      "reference_row": 1,
+      "parameter_columns": {
+        "kon_M_inv_s_inv": "ka",
+        "koff_s_inv": "kd",
+        "kd_M": "KD"
+      },
+      "relative_tolerance": 0.002,
+      "expected_reportable": false,
+      "expected_ci_status": "withheld_reliability_check",
+      "scope": "One public processed Octet RED384 experiment, five sensorgrams; author TitrationAnalysis point estimates only. Not native Octet or Prism equivalence; uncertainty withheld by current reliability gate."
+    }
+  ],
+  "missing_evidence": [
+    "Native instrument-matched SPR/Biacore export and reference analysis",
+    "Native Octet software matched analysis",
+    "Prism project with matched model, constraints, weighting and uncertainty",
+    "Independent laboratory experiments spanning instruments and assay failure modes",
+    "Measured ELISA independent QC, matrix, dilution, hook and intermediate precision studies"
+  ]
+}

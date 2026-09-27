@@ -1,0 +1,43 @@
+{
+  "seed": 20260923,
+  "curves": {
+    "ec50": {
+      "endpoint": "EC50",
+      "direction": "increasing",
+      "midpoint_input_unit": 25.0,
+      "input_unit": "nM",
+      "bottom": 8.0,
+      "top": 102.0,
+      "hill_magnitude": 1.25,
+      "noise_sd": 1.5,
+      "independent_experiments": 1
+    },
+    "ic50": {
+      "endpoint": "IC50",
+      "direction": "decreasing",
+      "midpoint_input_unit": 0.35,
+      "input_unit": "ug/mL",
+      "bottom": 7.0,
+      "top": 95.0,
+      "hill_magnitude": 1.1,
+      "noise_sd": 1.5,
+      "independent_experiments": 1
+    }
+  },
+  "potency": {
+    "endpoint": "EC50",
+    "direction": "increasing",
+    "input_unit": "ng/mL",
+    "reference_midpoint_input_unit": 50.0,
+    "relative_potency": 2.0,
+    "bottom": 0.06,
+    "top_range": [
+      2.4,
+      2.8
+    ],
+    "hill_magnitude": 1.3,
+    "noise_cv": 0.06,
+    "plate_log10_shift_sd": 0.06,
+    "independent_experiments": 3
+  }
+}

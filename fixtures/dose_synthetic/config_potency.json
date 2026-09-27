@@ -1,0 +1,37 @@
+{
+  "analysis_type": "dose_response_4pl",
+  "input": "potency.csv",
+  "source": "Synthetic ELISA-style binding OD450 for a reference and a test antibody, three independent plates; seed 20260925; not measured biology.",
+  "assay": {
+    "endpoint": "EC50",
+    "direction": "increasing",
+    "tested_agent": "Reference and test antibodies (synthetic)",
+    "response_definition": "OD450 binding signal",
+    "relative_half_response_supported": true,
+    "rationale": "Generated from parallel symmetric 4PL curves with proportional noise; demonstrates relative weighting, replicate summary and relative potency."
+  },
+  "fit": {
+    "weighting": "relative"
+  },
+  "replicates": {
+    "independent_unit": "experiment_id",
+    "conditions_comparable": true
+  },
+  "comparisons": [
+    {
+      "id": "Test-vs-Ref-E1",
+      "reference_curve": "Ref-E1",
+      "test_curve": "Test-E1"
+    },
+    {
+      "id": "Test-vs-Ref-E2",
+      "reference_curve": "Ref-E2",
+      "test_curve": "Test-E2"
+    },
+    {
+      "id": "Test-vs-Ref-E3",
+      "reference_curve": "Ref-E3",
+      "test_curve": "Test-E3"
+    }
+  ]
+}
