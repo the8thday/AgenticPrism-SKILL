@@ -1,0 +1,39 @@
+{
+  "sources": [
+    {
+      "title": "tolerance 3.0.0 nptol.int help: set.seed(100); rlogis(200,5,1); alpha=.10, P=.95, side=1 (prose says two-sided; executed call is one-sided)",
+      "url": "https://cran.r-project.org/web/packages/tolerance/refman/tolerance.html#nptol.int",
+      "data": "nonparametric_logistic.csv",
+      "data_sha256": "66eb40ac98656fbc5a126fcece988796436b8548014066043fabe51d16d5768b",
+      "help_source_sha256": "afff25ebf05b66ce78ac1d3381b080f4890f139c0fea3e2d1e5d991284ac9cb6",
+      "exporter_sha256": "cabaab956a24a3655fa28861c92e2e3fa20991074b9ba94a02073368ed031cd0"
+    },
+    {
+      "title": "Burdick and Graybill 1984, Technometrics 26:131-136, section 6 / table 4",
+      "url": "https://www.stat.cmu.edu/technometrics/80-89/VOL-26-02/v2602131.pdf",
+      "download_sha256": "52f3048d0fddfb3a69f32f894e6786959a828d07d3b8d0d8bdd98f0d5074e6ca",
+      "data": "bottles.csv",
+      "data_sha256": "8d8625f80ca9b3fceeed6609a680e2720e0f1408b3765ec526054ef266df42b4",
+      "published_95_shortest_mls": [
+        0.00193,
+        0.02159
+      ]
+    },
+    {
+      "title": "Young 2016, R Journal 8/2:200-212, pp202-203 milk example",
+      "url": "https://journal.r-project.org/articles/RJ-2016-041/RJ-2016-041.pdf",
+      "download_sha256": "fac13f4fba409012661c4de639a6f67ffc0a54a041639b37295830a33bad00fa",
+      "data": "milk.csv",
+      "data_sha256": "e26a08563c345fa770a349e9685b8743391e5375bd2a29a25eaf301a2e10ad26",
+      "published_95_confidence_90_content_lower": 0.9610333
+    },
+    {
+      "title": "R tolerance 3.0.0 validation-only",
+      "url": "https://cran.r-project.org/src/contrib/tolerance_3.0.0.tar.gz",
+      "download_sha256": "ee56c3d3ad4b8ffc010ef2b7246b6ec20decf3de80912a05a837bb8a412c675e"
+    }
+  ],
+  "generator_sha256": "e45e291408c88a662a3c432a87f65e8743679996015520c1445adcded5ecbcd4",
+  "existing_fixture_sources": "../variance_reml/source_manifest.json; ../ada_public/source_manifest.json",
+  "scope": "Small numeric worked examples transcribed with attribution; papers not redistributed. New configs reference unchanged public/synthetic inputs."
+}

@@ -1,0 +1,29 @@
+{
+  "analysis_type": "ada_cut_point",
+  "input": "data.csv",
+  "source": "rADA 1.1.9 lognormAssay public simulated data; artificial NC=1 unused; Lot column in source identifies donor material, not reagent lot.",
+  "assay": {
+    "tier": "screening",
+    "signal_unit": "AU",
+    "population": "rADA_simulated",
+    "drug_naive": true,
+    "representative_negative_panel": true,
+    "independent_subjects": true,
+    "balanced_crossed_design": true,
+    "single_reagent_lot": true,
+    "rationale": "Published complete simulated panel; reagent-lot label is synthetic metadata, not reported experimental evidence."
+  },
+  "cut_point": {
+    "false_positive_rate": 0.05,
+    "target_rationale": "Fixture target; not a universal regulatory default",
+    "normalization": "none",
+    "transformation": "log",
+    "method": "parametric"
+  },
+  "outliers": {
+    "prespecified": true,
+    "rationale": "Retain every observation for this fixture",
+    "analytical": "none",
+    "biological": "none"
+  }
+}

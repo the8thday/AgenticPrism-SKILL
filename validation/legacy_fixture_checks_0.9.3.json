@@ -1,0 +1,1124 @@
+{
+  "baseline_commit": "4210c0a5a95e699efe12adc6bb33219544f89fd2",
+  "script_sha256": "e15349a389e3d4377a3e83b42ecab60217f4d227840d2af44061428585848960",
+  "fixtures": {
+    "public/config.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json",
+        "sample_summary.csv",
+        "sensitivity.csv"
+      ],
+      "declared_changes": []
+    },
+    "kinetics_synthetic/config.json": {
+      "byte_identical_artifacts": [
+        "bootstrap.csv",
+        "config.resolved.json",
+        "curve_parameters.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "window_sensitivity.csv"
+      ],
+      "declared_changes": []
+    },
+    "dose_synthetic/config_ec50.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ],
+      "declared_changes": []
+    },
+    "elisa_independent_qc/config.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "cross_plate_qc.csv",
+        "diagnostics.json",
+        "dilution_linearity.csv",
+        "independent_qc.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv",
+        "standards_qc.csv",
+        "unknown_wells.csv"
+      ],
+      "declared_changes": []
+    },
+    "groups_synthetic/paired_config.json": {
+      "byte_identical_artifacts": [
+        "comparison.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "groups_synthetic/independent_config.json": {
+      "byte_identical_artifacts": [
+        "comparison.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "multigroup_synthetic/config_dunnett.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "elisa_dilution_5pl/config.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "cross_plate_qc.csv",
+        "diagnostics.json",
+        "dilution_linearity.csv",
+        "independent_qc.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv",
+        "standards_qc.csv",
+        "unknown_wells.csv"
+      ],
+      "declared_changes": []
+    },
+    "kinetics_single_cycle/config.json": {
+      "byte_identical_artifacts": [
+        "bootstrap.csv",
+        "config.resolved.json",
+        "curve_parameters.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "window_sensitivity.csv"
+      ],
+      "declared_changes": []
+    },
+    "dose_synthetic/config_potency_equivalence.json": {
+      "byte_identical_artifacts": [
+        "comparison_grid.csv",
+        "comparisons.csv",
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "parallelism_equivalence.csv",
+        "potency_summary.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ],
+      "declared_changes": []
+    },
+    "repeated_synthetic/config_rm.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "repeated_synthetic/config_mixed.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "repeated_two_way_synthetic/config_two_way_anova.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json",
+        "tests.csv"
+      ],
+      "declared_changes": []
+    },
+    "repeated_two_way_synthetic/config_two_way_mixed.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json",
+        "tests.csv"
+      ],
+      "declared_changes": []
+    },
+    "survival_synthetic/config.json": {
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "survival_synthetic/config_adjusted.json": {
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "tumor_growth_synthetic/config.json": {
+      "byte_identical_artifacts": [
+        "arm_day_summary.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "dropout.csv",
+        "growth_rates.csv",
+        "growth_tests.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "model_contrasts.csv",
+        "normalized_data.csv",
+        "observed_tgi.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "interpretation_states/config_boundary.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "interpretation_states/config_no_events_arm.json": {
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "interpretation_states/config_dropout.json": {
+      "byte_identical_artifacts": [
+        "arm_day_summary.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "dropout.csv",
+        "growth_rates.csv",
+        "growth_tests.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "model_contrasts.csv",
+        "normalized_data.csv",
+        "observed_tgi.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "interpretation_ovarian/config.json": {
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "nonparametric/config_public_mw.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "nonparametric/config_public_signed.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "nonparametric/config_public_kw.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "nonparametric/config_public_friedman.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "nonparametric/config_fixture_mw.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "nonparametric/config_fixture_signed.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "nonparametric/config_fixture_kw.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "nonparametric/config_fixture_friedman.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "mmrm/config_synthetic_unstructured_satterthwaite.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "mmrm/config_synthetic_unstructured_kenward_roger.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "mmrm/config_synthetic_ar1_satterthwaite.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "mmrm/config_synthetic_ar1_kenward_roger.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "ada_public/config.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "ada_synthetic/config_fixed.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "ada_synthetic/config_floating.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "ada_synthetic/config_dynamic.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "ada_synthetic/config_confirmatory.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "ada_synthetic/config_titer.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "ada_synthetic/config_nonparametric.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "ada_synthetic/config_boxcox.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "variance_reml/config_ep05_1.json": {
+      "byte_identical_artifacts": [
+        "input.csv",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "variance_reml/config_ep05_2.json": {
+      "byte_identical_artifacts": [
+        "input.csv",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "variance_reml/config_ep05_3.json": {
+      "byte_identical_artifacts": [
+        "input.csv",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "variance_reml/config_penicillin.json": {
+      "byte_identical_artifacts": [
+        "input.csv",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "variance_reml/config_nested.json": {
+      "byte_identical_artifacts": [
+        "input.csv",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "variance_reml/config_unbalanced.json": {
+      "byte_identical_artifacts": [
+        "input.csv",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "variance_reml/config_mixed_fixed.json": {
+      "byte_identical_artifacts": [
+        "input.csv",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "variance_reml/config_boundary.json": {
+      "byte_identical_artifacts": [
+        "input.csv",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "intervals_092/config_ada_confirmatory_nonparametric.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "intervals_092/config_ada_confirmatory_parametric.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "intervals_092/config_ada_fixed_nonparametric.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "intervals_092/config_ada_fixed_parametric.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "intervals_092/config_ada_floating_nonparametric.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "intervals_092/config_ada_floating_parametric.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "intervals_092/config_ada_titer_nonparametric.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "intervals_092/config_ada_titer_parametric.json": {
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "diagnostics.json",
+        "input.csv",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "declared_changes": [
+        {
+          "artifact": "config.resolved.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        },
+        {
+          "artifact": "interpretation_facts.json",
+          "change": "declared inert defaults, explicit fixture setting or dependent source hashes; other JSON equal"
+        }
+      ]
+    },
+    "intervals_092/config_boundary_mls.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "intervals_092/config_ep05_1_mls.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "intervals_092/config_ep05_2_mls.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "intervals_092/config_ep05_3_mls.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "intervals_092/config_mixed_fixed_mls.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "intervals_092/config_nested_mls.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "intervals_092/config_penicillin_mls.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ],
+      "declared_changes": []
+    },
+    "intervals_092/config_unbalanced_mls.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ],
+      "declared_changes": []
+    }
+  },
+  "configurations": 65,
+  "byte_identical_count": 573,
+  "declared_change_count": 48,
+  "status": "passed"
+}

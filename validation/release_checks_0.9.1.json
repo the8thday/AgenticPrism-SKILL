@@ -1,0 +1,224 @@
+{
+  "version": "0.9.1",
+  "branch": "dev/0.9.1",
+  "status": "local_checks_passed_live_agent_gate_pending",
+  "pytest": {
+    "passed": 385,
+    "warnings": 4,
+    "seconds": 185.55,
+    "new_tests": 36
+  },
+  "quick_validate": {
+    "skills": [
+      "ada-cut-point",
+      "variance-components",
+      "agentic-prism"
+    ],
+    "all_passed": true
+  },
+  "benchmarks": {
+    "rows": 8,
+    "all_within_prespecified_tolerances": true,
+    "published_example_passed": true
+  },
+  "calibration_misses_disclosed": true,
+  "smoke": {
+    "status": "passed",
+    "fixtures": [
+      "public/config.json",
+      "kinetics_synthetic/config.json",
+      "dose_synthetic/config_ec50.json",
+      "elisa_independent_qc/config.json",
+      "groups_synthetic/paired_config.json",
+      "groups_synthetic/independent_config.json",
+      "multigroup_synthetic/config_dunnett.json",
+      "elisa_dilution_5pl/config.json",
+      "kinetics_single_cycle/config.json",
+      "dose_synthetic/config_potency_equivalence.json",
+      "repeated_synthetic/config_rm.json",
+      "repeated_synthetic/config_mixed.json",
+      "repeated_two_way_synthetic/config_two_way_anova.json",
+      "repeated_two_way_synthetic/config_two_way_mixed.json",
+      "survival_synthetic/config.json",
+      "survival_synthetic/config_adjusted.json",
+      "tumor_growth_synthetic/config.json",
+      "interpretation_states/config_boundary.json",
+      "interpretation_states/config_no_events_arm.json",
+      "interpretation_states/config_dropout.json",
+      "interpretation_ovarian/config.json",
+      "nonparametric/config_public_mw.json",
+      "nonparametric/config_public_signed.json",
+      "nonparametric/config_public_kw.json",
+      "nonparametric/config_public_friedman.json",
+      "nonparametric/config_fixture_mw.json",
+      "nonparametric/config_fixture_signed.json",
+      "nonparametric/config_fixture_kw.json",
+      "nonparametric/config_fixture_friedman.json",
+      "mmrm/config_synthetic_unstructured_satterthwaite.json",
+      "mmrm/config_synthetic_unstructured_kenward_roger.json",
+      "mmrm/config_synthetic_ar1_satterthwaite.json",
+      "mmrm/config_synthetic_ar1_kenward_roger.json",
+      "ada_public/config.json",
+      "ada_synthetic/config_fixed.json",
+      "ada_synthetic/config_floating.json",
+      "ada_synthetic/config_dynamic.json",
+      "ada_synthetic/config_confirmatory.json",
+      "ada_synthetic/config_titer.json",
+      "ada_synthetic/config_nonparametric.json",
+      "ada_synthetic/config_boxcox.json",
+      "variance_reml/config_ep05_1.json",
+      "variance_reml/config_ep05_2.json",
+      "variance_reml/config_ep05_3.json",
+      "variance_reml/config_penicillin.json",
+      "variance_reml/config_nested.json",
+      "variance_reml/config_unbalanced.json",
+      "variance_reml/config_mixed_fixed.json",
+      "variance_reml/config_boundary.json"
+    ],
+    "optional_r_available": true,
+    "plate_import": true,
+    "cwd": "temporary directory outside repository",
+    "installed_runtime": true,
+    "render_preserves_results": true,
+    "render_preserves_interpretation_facts": true
+  },
+  "clean_environment_passed": true,
+  "facts_exact_matches": 39,
+  "preservation": {
+    "historical_validation_files_unchanged": 341,
+    "tracked_run_files_unchanged": 687,
+    "ada_numerical_source_byte_identical": true,
+    "old_crossed_anova_source_byte_identical": true,
+    "wheel_source_files_matched": [
+      "agentic_prism/__init__.py",
+      "agentic_prism/ada.py",
+      "agentic_prism/ada_evidence.py",
+      "agentic_prism/ada_workflow.py",
+      "agentic_prism/calibration.py",
+      "agentic_prism/cli.py",
+      "agentic_prism/doctor.py",
+      "agentic_prism/dose_fit.py",
+      "agentic_prism/dose_report.py",
+      "agentic_prism/dose_schema.py",
+      "agentic_prism/dose_workflow.py",
+      "agentic_prism/elisa.py",
+      "agentic_prism/elisa_validation.py",
+      "agentic_prism/equivalence.py",
+      "agentic_prism/fit.py",
+      "agentic_prism/groups.py",
+      "agentic_prism/interpretation.py",
+      "agentic_prism/kinetics_fit.py",
+      "agentic_prism/kinetics_report.py",
+      "agentic_prism/kinetics_schema.py",
+      "agentic_prism/kinetics_workflow.py",
+      "agentic_prism/mixed_inference.py",
+      "agentic_prism/mmrm.py",
+      "agentic_prism/multigroup.py",
+      "agentic_prism/nonparametric.py",
+      "agentic_prism/octet_import.py",
+      "agentic_prism/plate_import.py",
+      "agentic_prism/precision.py",
+      "agentic_prism/precision_evidence.py",
+      "agentic_prism/precision_workflow.py",
+      "agentic_prism/r_bridge.py",
+      "agentic_prism/repeated.py",
+      "agentic_prism/repeated_report.py",
+      "agentic_prism/repeated_two_way.py",
+      "agentic_prism/report.py",
+      "agentic_prism/schema.py",
+      "agentic_prism/simple_report.py",
+      "agentic_prism/simple_workflow.py",
+      "agentic_prism/survival.py",
+      "agentic_prism/survival_report.py",
+      "agentic_prism/time_to_event.py",
+      "agentic_prism/tumor_growth.py",
+      "agentic_prism/tumor_report.py",
+      "agentic_prism/variance_components.py",
+      "agentic_prism/workflow.py",
+      "agentic_prism/r_scripts/install.R",
+      "agentic_prism/r_scripts/packages.csv",
+      "agentic_prism/r_scripts/runner.R"
+    ],
+    "wheel_sha256": "6c917e29c4170ba46bfc562e24818fc096857d9099b280aeba7e7aab3fe3b5df",
+    "build_files_unchanged": 34
+  },
+  "sdist_sha256": "cd369ecf0195d31ac53769b166fdec0e96817a109275a888297044c2fb9e567a",
+  "live_agent": {
+    "status": "not_run_auto_review_rejected",
+    "claude_cli_available": true,
+    "scenarios": [
+      "V1-undeclared-precision",
+      "V2-zero-variance-guarantee",
+      "A5-calibration-supersession"
+    ],
+    "reason": "Automatic approval review rejected potential repository-data export to external Claude; destination-specific user approval requested and pending."
+  },
+  "commands": [
+    ".venv/bin/python -m pytest -q",
+    ".venv/bin/python scripts/validate_ada_calibration_091.py",
+    ".venv/bin/python scripts/validate_variance_benchmarks.py",
+    ".venv/bin/python scripts/validate_variance_calibration.py",
+    ".venv/bin/python scripts/validate_legacy_091.py",
+    ".venv/bin/python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/<changed-skill>",
+    "uv build --directory <temporary source copy> --out-dir <root>/dist",
+    "uv build --sdist --directory <temporary source copy> --out-dir <root>/dist",
+    ".venv/bin/python scripts/validate_clean_environment.py",
+    "/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-bz0559rn/venv/bin/python scripts/validate_install_smoke.py",
+    ".venv/bin/python scripts/validate_optional_r_091.py"
+  ],
+  "log_hashes": {
+    "pytest": {
+      "path": "/tmp/pytest091-final.log",
+      "sha256": "c00065d7a4992259dcb9110c0ee88c5b27aa3cd03bde611fc5b16fca327a6298"
+    },
+    "quick_validate": {
+      "path": "/tmp/skills091-final.log",
+      "sha256": "ea2e38cff45d4c7173a1e872e4b0847400818c57407941bc6cd2bba3a62265d9"
+    },
+    "ada_calibration": {
+      "path": "/tmp/ada091.log",
+      "sha256": "daf15b450728803e5d87f8714fd3452d160a30f69df94d17a627d2f89853dfbf"
+    },
+    "variance_benchmark": {
+      "path": "/tmp/vcbench091-range-final.log",
+      "sha256": "7d91f49d8ba1b4ed1dd07bb41c752e029cbf8a0e7e622fc3801cbd38e5a7652e"
+    },
+    "variance_calibration": {
+      "path": "/tmp/vccal091-range-fixed.log",
+      "sha256": "816737e2c8e4abf5ecea3c92d9179d35f9691c9681146a26f587fe187878ec2b"
+    },
+    "legacy": {
+      "path": "/tmp/legacy091.log",
+      "sha256": "92da7490c7a1c67ccecea7a0693d1a9fab3f196495c889510fdfe9adbe0f99ae"
+    },
+    "build": {
+      "path": "/tmp/build091-final.log",
+      "sha256": "e82efb8f06ca329bf3424cc886146711f186a875b6d1c27574eedc41ba7aa14d"
+    },
+    "sdist_documentation_refresh": {
+      "path": "/tmp/sdist091-final.log",
+      "sha256": "a0ccd9a04178d48dd445903177874328752772d4a76a511ccf9c14e2837a6f95"
+    },
+    "clean_environment": {
+      "path": "/tmp/clean091-final.log",
+      "sha256": "78294df61fff483c41145e0f678b021c0cb0b39dbda10362821e800510e917c0"
+    },
+    "isolated_install_smoke": {
+      "path": "/tmp/smoke091-range-fixed.log",
+      "sha256": "0e0f78e2f8666fa9b9fdf212619ab2ab8d8513821f63fa57e631e768269440eb"
+    },
+    "optional_r": {
+      "path": "/tmp/optional091-final.log",
+      "sha256": "bda072cad8b430fe4a439e496b36440db3832f95c2cf49f5fab838d40422eb1c"
+    }
+  },
+  "record_hashes": {
+    "ada_calibration": "e2a7d531a8c981ab7cc7d904b3d17f319397cfab6841c26e526518007fc4eda3",
+    "variance_benchmarks": "8c497215485f039b46a97e70679e0440924563d2d032e2af1cf8c837c685d646",
+    "variance_calibration": "706683e3b15d8f04b37c716f5ff73b81cfd42d57165e3256e63ffeef33d0798e",
+    "legacy_fixture_checks": "bb2ca5d853f16a019a0c67231a1525f0357d55615667b904782d16d5b88445a1",
+    "clean_environment": "c9937c2a24e9e5bd2d2479cde6ae353fc009f9709d4607579e4a3d11f31e905b",
+    "optional_r_checks": "268f32439a9e20068c4463553ef3a803c0e299033757f684cc74bf1176d1e600"
+  },
+  "scope": "Same macOS host, isolated Python wheel environment. New runtime methods pure Python; VCA/lme4 validation-only. No old-method R benchmarks or calibration rerun. No push/publication/main merge/0.10 work."
+}

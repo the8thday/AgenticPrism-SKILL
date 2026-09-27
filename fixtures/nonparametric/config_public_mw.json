@@ -1,0 +1,26 @@
+{
+  "analysis_type": "nonparametric",
+  "schema_version": 1,
+  "input": "public_mw.csv",
+  "source": "Official R stats mw worked data; Hollander and Wolfe 1973; two-sided test with confidence interval added where applicable. No antibody biological claim.",
+  "comparison": {
+    "design": "mann_whitney",
+    "groups": [
+      "A",
+      "B"
+    ],
+    "outcome": "published_measurement",
+    "unit": "source_unit",
+    "rationale": "Worked numerical example: independent units/complete blocks; common shift or symmetric differences assumed for the numerical comparison, not inferred from a normality test.",
+    "independent_units": true,
+    "rank_model_appropriate": true,
+    "location_shift_or_symmetry": true,
+    "inference": "auto",
+    "confidence_level": 0.95,
+    "post_hoc": "none",
+    "adjustment": "holm"
+  },
+  "report": {
+    "plot_style": "prism_like"
+  }
+}

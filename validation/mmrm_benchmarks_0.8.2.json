@@ -1,0 +1,1990 @@
+{
+  "script_sha256": "ad92e5bba72e0beb39f468273830cecb64b9a12b33936566b5a85dceedbff791",
+  "rows": [
+    {
+      "fixture": "config_public_fev_ar1_kenward_roger.json",
+      "checks": [
+        {
+          "field": "beta",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "beta_covariance",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "covariance_matrix",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "f_statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "df_numerator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "df_denominator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "p_value",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:ci_low",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:ci_low",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:ci_low",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:ci_low",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "gls_beta",
+          "max_absolute": 2.4082069671749196e-09,
+          "max_relative": 2.0345028315635934e-09,
+          "max_scaled": 8.976170917662785e-10,
+          "tolerance_scaled": 0.002
+        }
+      ],
+      "max_relative_difference": 2.0345028315635934e-09,
+      "max_scaled_difference": 8.976170917662785e-10,
+      "input_sha256": "408aedc51c8612dc39e9aadadf11cdeb00fa84fefff8cf1d0e2da20bba9981b5",
+      "R_output_sha256": "bdd1cadceeaee6ddebb3a30a23ec03450ee3ea2290128a14a69343e558912a83"
+    },
+    {
+      "fixture": "config_public_fev_ar1_satterthwaite.json",
+      "checks": [
+        {
+          "field": "beta",
+          "max_absolute": 1.1565930435608607e-09,
+          "max_relative": 9.773707077121673e-10,
+          "max_scaled": 4.312132872996699e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "beta_covariance",
+          "max_absolute": 5.101457589695713e-10,
+          "max_relative": 1.0550553080940858e-09,
+          "max_scaled": 5.101457589695713e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "covariance_matrix",
+          "max_absolute": 2.984558200580523e-08,
+          "max_relative": 8.516410294968183e-09,
+          "max_scaled": 6.1395784012319154e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "f_statistic",
+          "max_absolute": 6.007705999344637e-10,
+          "max_relative": 1.8429836631175887e-09,
+          "max_scaled": 6.007705999344637e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "df_numerator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "df_denominator",
+          "max_absolute": 2.417113478259125e-07,
+          "max_relative": 7.248394036801891e-10,
+          "max_scaled": 7.248394036801891e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "p_value",
+          "max_absolute": 4.3542369709825834e-10,
+          "max_relative": 5.398366258115687e-10,
+          "max_scaled": 4.3542369709825834e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:estimate",
+          "max_absolute": 3.6629543842536805e-10,
+          "max_relative": 1.0089303566005258e-10,
+          "max_scaled": 1.0089303566005258e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:standard_error",
+          "max_absolute": 2.2977419966707657e-10,
+          "max_relative": 1.9815442280206285e-10,
+          "max_scaled": 1.9815442280206285e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:df",
+          "max_absolute": 3.468022669039783e-08,
+          "max_relative": 6.866837225381989e-11,
+          "max_scaled": 6.866837225381989e-11,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:statistic",
+          "max_absolute": 9.362959296765894e-10,
+          "max_relative": 2.990475895602721e-10,
+          "max_scaled": 2.990475895602721e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:p_unadjusted",
+          "max_absolute": 5.771110369104382e-12,
+          "max_relative": 3.1305246858352483e-09,
+          "max_scaled": 5.771110369104382e-12,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:ci_low",
+          "max_absolute": 9.429843572661412e-10,
+          "max_relative": 1.3027316367699554e-09,
+          "max_scaled": 9.429843572661412e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:ci_high",
+          "max_absolute": 2.1039348041540507e-10,
+          "max_relative": 3.218397062714926e-11,
+          "max_scaled": 3.218397062714926e-11,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:estimate",
+          "max_absolute": 5.489084742293926e-10,
+          "max_relative": 1.5049864937924867e-10,
+          "max_scaled": 1.5049864937924867e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:standard_error",
+          "max_absolute": 2.4949953214559173e-10,
+          "max_relative": 2.21074729947989e-10,
+          "max_scaled": 2.21074729947989e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:df",
+          "max_absolute": 1.2705049812211655e-07,
+          "max_relative": 2.458750516780824e-10,
+          "max_scaled": 2.458750516780824e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:statistic",
+          "max_absolute": 2.280837740897823e-10,
+          "max_relative": 7.057610553562416e-11,
+          "max_scaled": 7.057610553562416e-11,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:p_unadjusted",
+          "max_absolute": 1.0433392431258293e-12,
+          "max_relative": 7.971516372228556e-10,
+          "max_scaled": 1.0433392431258293e-12,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:ci_low",
+          "max_absolute": 7.889955355722122e-11,
+          "max_relative": 9.639398911018471e-11,
+          "max_scaled": 7.889955355722122e-11,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:ci_high",
+          "max_absolute": 1.1767165020160064e-09,
+          "max_relative": 1.8170367996054618e-10,
+          "max_scaled": 1.8170367996054618e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:estimate",
+          "max_absolute": 5.770317557107774e-10,
+          "max_relative": 2.1565660565387325e-10,
+          "max_scaled": 2.1565660565387325e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:standard_error",
+          "max_absolute": 2.8956215203379543e-10,
+          "max_relative": 2.4575929624512856e-10,
+          "max_scaled": 2.4575929624512856e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:df",
+          "max_absolute": 2.2074891603551805e-07,
+          "max_relative": 4.211263402447703e-10,
+          "max_scaled": 4.211263402447703e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:statistic",
+          "max_absolute": 6.836131660747924e-11,
+          "max_relative": 3.010269029056951e-11,
+          "max_scaled": 3.010269029056951e-11,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:p_unadjusted",
+          "max_absolute": 4.3398236393432654e-12,
+          "max_relative": 1.842377728223288e-10,
+          "max_scaled": 4.3398236393432654e-12,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:ci_low",
+          "max_absolute": 1.5301937494882623e-10,
+          "max_relative": 5.516612092716748e-10,
+          "max_scaled": 1.5301937494882623e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:ci_high",
+          "max_absolute": 1.307082442281171e-09,
+          "max_relative": 2.3221443355463462e-10,
+          "max_scaled": 2.3221443355463462e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:estimate",
+          "max_absolute": 7.625544640177395e-11,
+          "max_relative": 1.860926277366645e-11,
+          "max_scaled": 1.860926277366645e-11,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:standard_error",
+          "max_absolute": 2.290461154075274e-10,
+          "max_relative": 1.9798613553925334e-10,
+          "max_scaled": 1.9798613553925334e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:df",
+          "max_absolute": 3.131594894512091e-08,
+          "max_relative": 6.201940340425574e-11,
+          "max_scaled": 6.201940340425574e-11,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:statistic",
+          "max_absolute": 6.35360208889324e-10,
+          "max_relative": 1.793768796304182e-10,
+          "max_scaled": 1.793768796304182e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:p_unadjusted",
+          "max_absolute": 1.021806716929724e-12,
+          "max_relative": 2.355234366006132e-09,
+          "max_scaled": 1.021806716929724e-12,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:ci_low",
+          "max_absolute": 4.985380996913591e-10,
+          "max_relative": 4.162187228787624e-10,
+          "max_scaled": 4.162187228787624e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:ci_high",
+          "max_absolute": 6.51048992494907e-10,
+          "max_relative": 9.303823420327057e-11,
+          "max_scaled": 9.303823420327057e-11,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "gls_beta",
+          "max_absolute": 1.2516139236140589e-09,
+          "max_relative": 1.0571321218629627e-09,
+          "max_scaled": 4.664038044666086e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "gls_beta_covariance",
+          "max_absolute": 8.341858315219497e-10,
+          "max_relative": 1.7154328082395773e-09,
+          "max_scaled": 8.341858315219497e-10,
+          "tolerance_scaled": 0.002
+        }
+      ],
+      "max_relative_difference": 8.516410294968183e-09,
+      "max_scaled_difference": 6.1395784012319154e-09,
+      "input_sha256": "408aedc51c8612dc39e9aadadf11cdeb00fa84fefff8cf1d0e2da20bba9981b5",
+      "R_output_sha256": "9b0b175b86ebda15a295a06c6ae0be3983c91b700d039c09935b8eb8f4b967c9"
+    },
+    {
+      "fixture": "config_public_fev_unstructured_kenward_roger.json",
+      "checks": [
+        {
+          "field": "beta",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "beta_covariance",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "covariance_matrix",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "f_statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "df_numerator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "df_denominator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "p_value",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:ci_low",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:ci_low",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:ci_low",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:ci_low",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast3:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "gls_beta",
+          "max_absolute": 1.643798827116738e-05,
+          "max_relative": 5.0421591069243135e-05,
+          "max_scaled": 1.643798827116738e-05,
+          "tolerance_scaled": 0.002
+        }
+      ],
+      "max_relative_difference": 5.0421591069243135e-05,
+      "max_scaled_difference": 1.643798827116738e-05,
+      "input_sha256": "408aedc51c8612dc39e9aadadf11cdeb00fa84fefff8cf1d0e2da20bba9981b5",
+      "R_output_sha256": "824f30206cd2f0c182cdd342cd365e89fb4b7418f84a6107ad2e36bdb471748a"
+    },
+    {
+      "fixture": "config_public_fev_unstructured_satterthwaite.json",
+      "checks": [
+        {
+          "field": "beta",
+          "max_absolute": 7.854512062976937e-08,
+          "max_relative": 4.095647714065715e-08,
+          "max_scaled": 3.599124086956032e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "beta_covariance",
+          "max_absolute": 4.513291029795141e-08,
+          "max_relative": 1.457612708809994e-07,
+          "max_scaled": 4.513291029795141e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "covariance_matrix",
+          "max_absolute": 3.6749652219114637e-06,
+          "max_relative": 1.8109158535420188e-06,
+          "max_scaled": 1.636275023586542e-06,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "f_statistic",
+          "max_absolute": 2.592792691658019e-08,
+          "max_relative": 1.004751154511019e-07,
+          "max_scaled": 2.592792691658019e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "df_numerator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "df_denominator",
+          "max_absolute": 5.808940215956682e-06,
+          "max_relative": 3.92731140315783e-08,
+          "max_scaled": 3.92731140315783e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "p_value",
+          "max_absolute": 1.8501692400363368e-08,
+          "max_relative": 2.1626802645108672e-08,
+          "max_scaled": 1.8501692400363368e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:estimate",
+          "max_absolute": 1.1864098681257929e-07,
+          "max_relative": 3.1432955930515724e-08,
+          "max_scaled": 3.1432955930515724e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:standard_error",
+          "max_absolute": 3.378833435263573e-09,
+          "max_relative": 3.145556571458096e-09,
+          "max_scaled": 3.145556571458096e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:df",
+          "max_absolute": 1.443232520159654e-06,
+          "max_relative": 9.915911111925568e-09,
+          "max_scaled": 9.915911111925568e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:statistic",
+          "max_absolute": 1.215028744283586e-07,
+          "max_relative": 3.4578512632484536e-08,
+          "max_scaled": 3.4578512632484536e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:p_unadjusted",
+          "max_absolute": 2.497133710747945e-10,
+          "max_relative": 4.240365938452981e-07,
+          "max_scaled": 2.497133710747945e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:ci_low",
+          "max_absolute": 1.2752515177183454e-07,
+          "max_relative": 1.205657353508558e-07,
+          "max_scaled": 1.205657353508558e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:ci_high",
+          "max_absolute": 1.0975682229741324e-07,
+          "max_relative": 1.690880437735578e-08,
+          "max_scaled": 1.690880437735578e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:estimate",
+          "max_absolute": 2.5235578959836857e-08,
+          "max_relative": 6.761358086385536e-09,
+          "max_scaled": 6.761358086385536e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:standard_error",
+          "max_absolute": 4.585130275458482e-09,
+          "max_relative": 5.338650484078962e-09,
+          "max_scaled": 4.585130275458482e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:df",
+          "max_absolute": 2.0498874846452964e-06,
+          "max_relative": 1.4110143024991703e-08,
+          "max_scaled": 1.4110143024991703e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:statistic",
+          "max_absolute": 6.182652612096717e-09,
+          "max_relative": 1.422707759347538e-09,
+          "max_scaled": 1.422707759347538e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:p_unadjusted",
+          "max_absolute": 4.350337296887656e-13,
+          "max_relative": 1.6769651451721336e-08,
+          "max_scaled": 4.350337296887656e-13,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:ci_low",
+          "max_absolute": 1.3252878350300534e-08,
+          "max_relative": 8.494799498848662e-09,
+          "max_scaled": 8.494799498848662e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:ci_high",
+          "max_absolute": 3.721827912528397e-08,
+          "max_relative": 6.303341833839785e-09,
+          "max_scaled": 6.303341833839785e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:estimate",
+          "max_absolute": 2.7206681352254236e-10,
+          "max_relative": 8.831597286283373e-11,
+          "max_scaled": 8.831597286283373e-11,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:standard_error",
+          "max_absolute": 1.2902161228289799e-08,
+          "max_relative": 1.870892126049933e-08,
+          "max_scaled": 1.2902161228289799e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:df",
+          "max_absolute": 5.502007013546972e-06,
+          "max_relative": 4.2023283002237225e-08,
+          "max_scaled": 4.2023283002237225e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:statistic",
+          "max_absolute": 8.396854411785171e-08,
+          "max_relative": 1.8797237466639525e-08,
+          "max_scaled": 1.8797237466639525e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:p_unadjusted",
+          "max_absolute": 6.267154160812926e-12,
+          "max_relative": 3.694166037318063e-07,
+          "max_scaled": 6.267154160812926e-12,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:ci_low",
+          "max_absolute": 3.397619252609729e-08,
+          "max_relative": 2.546936881201538e-08,
+          "max_scaled": 2.546936881201538e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:ci_high",
+          "max_absolute": 3.343205889905221e-08,
+          "max_relative": 6.925748944885597e-09,
+          "max_scaled": 6.925748944885597e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:estimate",
+          "max_absolute": 1.863139686975046e-08,
+          "max_relative": 4.235817020184595e-09,
+          "max_scaled": 4.235817020184595e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:standard_error",
+          "max_absolute": 9.38808586425921e-09,
+          "max_relative": 5.586316881389121e-09,
+          "max_scaled": 5.586316881389121e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:df",
+          "max_absolute": 1.0575217288533167e-06,
+          "max_relative": 7.928099213008615e-09,
+          "max_scaled": 7.928099213008615e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:statistic",
+          "max_absolute": 3.5346894300403164e-09,
+          "max_relative": 1.350499790659234e-09,
+          "max_scaled": 1.350499790659234e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:p_unadjusted",
+          "max_absolute": 1.0557288203372206e-10,
+          "max_relative": 1.0679291879756796e-08,
+          "max_scaled": 1.0557288203372206e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:ci_low",
+          "max_absolute": 5.602752928268728e-09,
+          "max_relative": 3.9088986601357396e-08,
+          "max_scaled": 5.602752928268728e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast3:ci_high",
+          "max_absolute": 4.286554755594807e-08,
+          "max_relative": 4.953412791001893e-09,
+          "max_scaled": 4.953412791001893e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "gls_beta",
+          "max_absolute": 1.642463533996219e-05,
+          "max_relative": 5.0380632527011734e-05,
+          "max_scaled": 1.642463533996219e-05,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "gls_beta_covariance",
+          "max_absolute": 1.3422957151065784e-05,
+          "max_relative": 4.292009845309825e-05,
+          "max_scaled": 1.3422957151065784e-05,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "published_vignette_coefficients",
+          "max_absolute": 1.7712072941655777e-07,
+          "max_relative": 1.3843746400236171e-06,
+          "max_scaled": 1.7712072941655777e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "published_vignette_covariance",
+          "max_absolute": 9.869129968365087e-06,
+          "max_relative": 7.490255867522933e-07,
+          "max_scaled": 6.76791888865047e-07,
+          "tolerance_scaled": 0.002
+        }
+      ],
+      "max_relative_difference": 5.0380632527011734e-05,
+      "max_scaled_difference": 1.642463533996219e-05,
+      "input_sha256": "408aedc51c8612dc39e9aadadf11cdeb00fa84fefff8cf1d0e2da20bba9981b5",
+      "R_output_sha256": "f081b8d320fa8378a833d3b8537b94e22bcefdd96b856706cff1f0f8fe14b836"
+    },
+    {
+      "fixture": "config_synthetic_ar1_kenward_roger.json",
+      "checks": [
+        {
+          "field": "beta",
+          "max_absolute": 5.551115123125783e-17,
+          "max_relative": 1.0185811022540707e-15,
+          "max_scaled": 5.551115123125783e-17,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "beta_covariance",
+          "max_absolute": 6.938893903907228e-18,
+          "max_relative": 1.8474427342586757e-16,
+          "max_scaled": 6.938893903907228e-18,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "covariance_matrix",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "f_statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "df_numerator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "df_denominator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "p_value",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:estimate",
+          "max_absolute": 5.551115123125783e-17,
+          "max_relative": 2.6095860438628e-16,
+          "max_scaled": 5.551115123125783e-17,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:df",
+          "max_absolute": 3.552713678800501e-13,
+          "max_relative": 4.911436456830287e-15,
+          "max_scaled": 4.911436456830287e-15,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:statistic",
+          "max_absolute": 1.1102230246251565e-16,
+          "max_relative": 2.3250453710497406e-16,
+          "max_scaled": 1.1102230246251565e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:ci_low",
+          "max_absolute": 2.220446049250313e-16,
+          "max_relative": 2.5257509318506205e-16,
+          "max_scaled": 2.220446049250313e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:ci_high",
+          "max_absolute": 2.220446049250313e-16,
+          "max_relative": 1.7020606571223197e-16,
+          "max_scaled": 1.7020606571223197e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:df",
+          "max_absolute": 3.552713678800501e-13,
+          "max_relative": 4.850270144890962e-15,
+          "max_scaled": 4.850270144890962e-15,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:p_unadjusted",
+          "max_absolute": 6.938893903907228e-17,
+          "max_relative": 6.789095889590143e-16,
+          "max_scaled": 6.938893903907228e-17,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:ci_low",
+          "max_absolute": 2.220446049250313e-16,
+          "max_relative": 6.29212246196409e-16,
+          "max_scaled": 2.220446049250313e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:ci_high",
+          "max_absolute": 2.220446049250313e-16,
+          "max_relative": 1.2188494265941108e-16,
+          "max_scaled": 1.2188494265941108e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:estimate",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:statistic",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:p_unadjusted",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:ci_low",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "gls_beta",
+          "max_absolute": 2.7787400713741306e-09,
+          "max_relative": 1.5855612995538637e-08,
+          "max_scaled": 2.7787400713741306e-09,
+          "tolerance_scaled": 0.002
+        }
+      ],
+      "max_relative_difference": 1.5855612995538637e-08,
+      "max_scaled_difference": 2.7787400713741306e-09,
+      "input_sha256": "1f936ad8cc32acc80ef72a8fc6f5cb1c7176e563e9f5d346c34fde8a387ec771",
+      "R_output_sha256": "7636663070a962fae2b8b025ac8e6fa82b1bbfdafbab33ca709b8a89eed08a49"
+    },
+    {
+      "fixture": "config_synthetic_ar1_satterthwaite.json",
+      "checks": [
+        {
+          "field": "beta",
+          "max_absolute": 2.4487079031132453e-12,
+          "max_relative": 1.3971656735759534e-11,
+          "max_scaled": 2.4487079031132453e-12,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "beta_covariance",
+          "max_absolute": 1.131311017088521e-10,
+          "max_relative": 1.1262720310355098e-09,
+          "max_scaled": 1.131311017088521e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "covariance_matrix",
+          "max_absolute": 1.7123449325140427e-09,
+          "max_relative": 1.124572618442373e-09,
+          "max_scaled": 1.124572618442373e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "f_statistic",
+          "max_absolute": 2.0190020766364114e-09,
+          "max_relative": 1.155706612134694e-09,
+          "max_scaled": 1.155706612134694e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "df_numerator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "df_denominator",
+          "max_absolute": 7.949769553761143e-08,
+          "max_relative": 1.4139713777223358e-09,
+          "max_scaled": 1.4139713777223358e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "p_value",
+          "max_absolute": 3.620536093151827e-10,
+          "max_relative": 1.971683972501273e-09,
+          "max_scaled": 3.620536093151827e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:estimate",
+          "max_absolute": 2.922939668081881e-13,
+          "max_relative": 1.3740775313959573e-12,
+          "max_scaled": 2.922939668081881e-13,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:standard_error",
+          "max_absolute": 2.5234159206632967e-10,
+          "max_relative": 5.628539060854185e-10,
+          "max_scaled": 2.5234159206632967e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:df",
+          "max_absolute": 8.905458059871307e-08,
+          "max_relative": 1.2311318990049425e-09,
+          "max_scaled": 1.2311318990049425e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:statistic",
+          "max_absolute": 2.677134069983822e-10,
+          "max_relative": 5.642280364514049e-10,
+          "max_scaled": 2.677134069983822e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:p_unadjusted",
+          "max_absolute": 1.9169943410446422e-10,
+          "max_relative": 3.0113539130393365e-10,
+          "max_scaled": 1.9169943410446422e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:ci_low",
+          "max_absolute": 6.509001115873048e-10,
+          "max_relative": 7.345735659071382e-10,
+          "max_scaled": 6.509001115873048e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:ci_high",
+          "max_absolute": 6.503155791648396e-10,
+          "max_relative": 4.958439456295269e-10,
+          "max_scaled": 4.958439456295269e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:estimate",
+          "max_absolute": 3.982703056237824e-12,
+          "max_relative": 5.422838684692804e-12,
+          "max_scaled": 3.982703056237824e-12,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:standard_error",
+          "max_absolute": 2.5154528460191727e-10,
+          "max_relative": 5.631360802434574e-10,
+          "max_scaled": 2.5154528460191727e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:df",
+          "max_absolute": 8.962167896697792e-08,
+          "max_relative": 1.2235417574525617e-09,
+          "max_scaled": 1.2235417574525617e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:statistic",
+          "max_absolute": 9.169789372265313e-10,
+          "max_relative": 5.577132279817611e-10,
+          "max_scaled": 5.577132279817611e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:p_unadjusted",
+          "max_absolute": 1.9512641502572592e-10,
+          "max_relative": 1.868572561332499e-09,
+          "max_scaled": 1.9512641502572592e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:ci_low",
+          "max_absolute": 6.437620436727798e-10,
+          "max_relative": 1.7880239885043023e-09,
+          "max_scaled": 6.437620436727798e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:ci_high",
+          "max_absolute": 6.51727338762953e-10,
+          "max_relative": 3.563486021618563e-10,
+          "max_scaled": 3.563486021618563e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:estimate",
+          "max_absolute": 3.7481129311345285e-13,
+          "max_relative": 2.302202117372189e-12,
+          "max_scaled": 3.7481129311345285e-13,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:standard_error",
+          "max_absolute": 2.5234159206632967e-10,
+          "max_relative": 5.628539060854185e-10,
+          "max_scaled": 2.5234159206632967e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:df",
+          "max_absolute": 8.906785353701707e-08,
+          "max_relative": 1.2313153902709693e-09,
+          "max_scaled": 1.2313153902709693e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:statistic",
+          "max_absolute": 2.035596691207786e-10,
+          "max_relative": 5.605516973396447e-10,
+          "max_scaled": 2.035596691207786e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:p_unadjusted",
+          "max_absolute": 1.5270151809687604e-10,
+          "max_relative": 2.1280717458259674e-10,
+          "max_scaled": 1.5270151809687604e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:ci_low",
+          "max_absolute": 6.509872640947378e-10,
+          "max_relative": 5.159938855940213e-10,
+          "max_scaled": 5.159938855940213e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:ci_high",
+          "max_absolute": 6.502376415085109e-10,
+          "max_relative": 6.946930913664294e-10,
+          "max_scaled": 6.502376415085109e-10,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "gls_beta",
+          "max_absolute": 2.781188779277244e-09,
+          "max_relative": 1.5869584652052867e-08,
+          "max_scaled": 2.781188779277244e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "gls_beta_covariance",
+          "max_absolute": 3.0094201783348318e-09,
+          "max_relative": 1.4299517887351639e-07,
+          "max_scaled": 3.0094201783348318e-09,
+          "tolerance_scaled": 0.002
+        }
+      ],
+      "max_relative_difference": 1.4299517887351639e-07,
+      "max_scaled_difference": 3.0094201783348318e-09,
+      "input_sha256": "1f936ad8cc32acc80ef72a8fc6f5cb1c7176e563e9f5d346c34fde8a387ec771",
+      "R_output_sha256": "87204cf12564f7a0209cb074675796e7f78f40dd9ef670c50696c87d37f318dc"
+    },
+    {
+      "fixture": "config_synthetic_unstructured_kenward_roger.json",
+      "checks": [
+        {
+          "field": "beta",
+          "max_absolute": 5.551115123125783e-16,
+          "max_relative": 1.5830793617032678e-15,
+          "max_scaled": 5.551115123125783e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "beta_covariance",
+          "max_absolute": 1.1102230246251565e-16,
+          "max_relative": 1.115689302816173e-15,
+          "max_scaled": 1.1102230246251565e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "covariance_matrix",
+          "max_absolute": 2.886579864025407e-15,
+          "max_relative": 1.779174104982736e-15,
+          "max_scaled": 1.779174104982736e-15,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "f_statistic",
+          "max_absolute": 3.1086244689504383e-15,
+          "max_relative": 1.8038439950631505e-15,
+          "max_scaled": 1.8038439950631505e-15,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "df_numerator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "df_denominator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "p_value",
+          "max_absolute": 6.661338147750939e-16,
+          "max_relative": 3.384642294725703e-15,
+          "max_scaled": 6.661338147750939e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:estimate",
+          "max_absolute": 2.498001805406602e-16,
+          "max_relative": 1.203906818848139e-15,
+          "max_scaled": 2.498001805406602e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:standard_error",
+          "max_absolute": 5.551115123125783e-17,
+          "max_relative": 2.045552739138821e-16,
+          "max_scaled": 5.551115123125783e-17,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:df",
+          "max_absolute": 8.881784197001252e-14,
+          "max_relative": 3.103129551906653e-15,
+          "max_scaled": 3.103129551906653e-15,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:statistic",
+          "max_absolute": 7.771561172376096e-16,
+          "max_relative": 1.0164311103357053e-15,
+          "max_scaled": 7.771561172376096e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:p_unadjusted",
+          "max_absolute": 3.3306690738754696e-16,
+          "max_relative": 7.388808390398474e-16,
+          "max_scaled": 3.3306690738754696e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:ci_low",
+          "max_absolute": 1.1102230246251565e-16,
+          "max_relative": 2.300483907775969e-16,
+          "max_scaled": 1.1102230246251565e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast0:ci_high",
+          "max_absolute": 3.3306690738754696e-16,
+          "max_relative": 3.7106933994306697e-16,
+          "max_scaled": 3.3306690738754696e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:estimate",
+          "max_absolute": 8.881784197001252e-16,
+          "max_relative": 1.1863024632518696e-15,
+          "max_scaled": 8.881784197001252e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:standard_error",
+          "max_absolute": 2.7755575615628914e-16,
+          "max_relative": 6.221595334785784e-16,
+          "max_scaled": 2.7755575615628914e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:df",
+          "max_absolute": 4.618527782440651e-14,
+          "max_relative": 1.6062672514494306e-15,
+          "max_scaled": 1.6062672514494306e-15,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:statistic",
+          "max_absolute": 3.1086244689504383e-15,
+          "max_relative": 1.8523026784133862e-15,
+          "max_scaled": 1.8523026784133862e-15,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:p_unadjusted",
+          "max_absolute": 6.245004513516506e-16,
+          "max_relative": 5.996927485411691e-15,
+          "max_scaled": 6.245004513516506e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:ci_low",
+          "max_absolute": 1.7763568394002505e-15,
+          "max_relative": 4.608625509568928e-15,
+          "max_scaled": 1.7763568394002505e-15,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast1:ci_high",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:estimate",
+          "max_absolute": 3.885780586188048e-16,
+          "max_relative": 2.418881663428809e-15,
+          "max_scaled": 3.885780586188048e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:standard_error",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:df",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:statistic",
+          "max_absolute": 7.216449660063518e-16,
+          "max_relative": 2.399601117363191e-15,
+          "max_scaled": 7.216449660063518e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:p_unadjusted",
+          "max_absolute": 4.440892098500626e-16,
+          "max_relative": 5.799629759869833e-16,
+          "max_scaled": 4.440892098500626e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:ci_low",
+          "max_absolute": 2.220446049250313e-16,
+          "max_relative": 1.4643918278751255e-16,
+          "max_scaled": 1.4643918278751255e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "contrast2:ci_high",
+          "max_absolute": 2.220446049250313e-16,
+          "max_relative": 1.858106179935521e-16,
+          "max_scaled": 1.858106179935521e-16,
+          "tolerance_scaled": 1e-10
+        },
+        {
+          "field": "gls_beta",
+          "max_absolute": 5.625780055140694e-07,
+          "max_relative": 3.129979315383983e-06,
+          "max_scaled": 5.625780055140694e-07,
+          "tolerance_scaled": 0.002
+        }
+      ],
+      "max_relative_difference": 3.129979315383983e-06,
+      "max_scaled_difference": 5.625780055140694e-07,
+      "input_sha256": "1f936ad8cc32acc80ef72a8fc6f5cb1c7176e563e9f5d346c34fde8a387ec771",
+      "R_output_sha256": "1c7bd2e29d8e3a49ea735fce6603f5dd07d92721d8a3e703d31b5c15b0081b10"
+    },
+    {
+      "fixture": "config_synthetic_unstructured_satterthwaite.json",
+      "checks": [
+        {
+          "field": "beta",
+          "max_absolute": 5.3349479722797355e-08,
+          "max_relative": 1.3614655492625425e-07,
+          "max_scaled": 5.3349479722797355e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "beta_covariance",
+          "max_absolute": 2.175896932771204e-08,
+          "max_relative": 8.656292763255667e-07,
+          "max_scaled": 2.175896932771204e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "covariance_matrix",
+          "max_absolute": 3.5063272862956296e-07,
+          "max_relative": 8.667480772489394e-07,
+          "max_scaled": 3.3640968322146136e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "f_statistic",
+          "max_absolute": 2.4709967716418646e-07,
+          "max_relative": 1.5292151246120243e-07,
+          "max_scaled": 1.5292151246120243e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "df_numerator",
+          "max_absolute": 0.0,
+          "max_relative": 0.0,
+          "max_scaled": 0.0,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "df_denominator",
+          "max_absolute": 1.0592146754362375e-05,
+          "max_relative": 3.583991678918717e-07,
+          "max_scaled": 3.583991678918717e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "p_value",
+          "max_absolute": 5.401087660450443e-08,
+          "max_relative": 2.5029816463019285e-07,
+          "max_scaled": 5.401087660450443e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:estimate",
+          "max_absolute": 2.8828721077012176e-09,
+          "max_relative": 1.389394267376709e-08,
+          "max_scaled": 2.8828721077012176e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:standard_error",
+          "max_absolute": 7.908849031235121e-08,
+          "max_relative": 2.874671270359535e-07,
+          "max_scaled": 7.908849031235121e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:df",
+          "max_absolute": 1.5850142574436177e-05,
+          "max_relative": 5.537743851204255e-07,
+          "max_scaled": 5.537743851204255e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:statistic",
+          "max_absolute": 2.2728043413966503e-07,
+          "max_relative": 3.013611563029586e-07,
+          "max_scaled": 2.2728043413966503e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:p_unadjusted",
+          "max_absolute": 1.3770557655279347e-07,
+          "max_relative": 3.013899136858979e-07,
+          "max_scaled": 1.3770557655279347e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:ci_low",
+          "max_absolute": 2.2800846094517269e-07,
+          "max_relative": 4.633068804257342e-07,
+          "max_scaled": 2.2800846094517269e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast0:ci_high",
+          "max_absolute": 2.222427167852814e-07,
+          "max_relative": 2.449994214401181e-07,
+          "max_scaled": 2.222427167852814e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:estimate",
+          "max_absolute": 6.460045087752775e-08,
+          "max_relative": 8.628409822101622e-08,
+          "max_scaled": 6.460045087752775e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:standard_error",
+          "max_absolute": 1.3849782209973682e-08,
+          "max_relative": 3.003005548357189e-08,
+          "max_scaled": 1.3849782209973682e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:df",
+          "max_absolute": 1.6274258740622827e-07,
+          "max_relative": 5.659987357023766e-09,
+          "max_scaled": 5.659987357023766e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:statistic",
+          "max_absolute": 9.132122458233027e-08,
+          "max_relative": 5.625404437780837e-08,
+          "max_scaled": 5.625404437780837e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:p_unadjusted",
+          "max_absolute": 1.965728659014676e-08,
+          "max_relative": 1.7030436132097194e-07,
+          "max_scaled": 1.965728659014676e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:ci_low",
+          "max_absolute": 2.9800183987127582e-08,
+          "max_relative": 7.031986193099074e-08,
+          "max_scaled": 2.9800183987127582e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast1:ci_high",
+          "max_absolute": 9.940071765690561e-08,
+          "max_relative": 5.1739679405609376e-08,
+          "max_scaled": 5.1739679405609376e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:estimate",
+          "max_absolute": 4.404535430824197e-09,
+          "max_relative": 2.7418043178796117e-08,
+          "max_scaled": 4.404535430824197e-09,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:standard_error",
+          "max_absolute": 3.900708056558955e-08,
+          "max_relative": 7.017324741465566e-08,
+          "max_scaled": 3.900708056558955e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:df",
+          "max_absolute": 4.1736202760489505e-06,
+          "max_relative": 1.410917446342341e-07,
+          "max_scaled": 1.410917446342341e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:statistic",
+          "max_absolute": 2.820348726784161e-08,
+          "max_relative": 9.759128384191256e-08,
+          "max_scaled": 2.820348726784161e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:p_unadjusted",
+          "max_absolute": 2.165528967257302e-08,
+          "max_relative": 2.7956732141997878e-08,
+          "max_scaled": 2.165528967257302e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:ci_low",
+          "max_absolute": 1.0650347870289067e-07,
+          "max_relative": 6.777787104137485e-08,
+          "max_scaled": 6.777787104137485e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "contrast2:ci_high",
+          "max_absolute": 1.1531254950902792e-07,
+          "max_relative": 9.224463239267858e-08,
+          "max_scaled": 9.224463239267858e-08,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "gls_beta",
+          "max_absolute": 5.092285252361606e-07,
+          "max_relative": 3.0686720209092036e-06,
+          "max_scaled": 5.092285252361606e-07,
+          "tolerance_scaled": 0.002
+        },
+        {
+          "field": "gls_beta_covariance",
+          "max_absolute": 3.725029220080778e-07,
+          "max_relative": 1.2827445298917497e-05,
+          "max_scaled": 3.725029220080778e-07,
+          "tolerance_scaled": 0.002
+        }
+      ],
+      "max_relative_difference": 1.2827445298917497e-05,
+      "max_scaled_difference": 5.537743851204255e-07,
+      "input_sha256": "1f936ad8cc32acc80ef72a8fc6f5cb1c7176e563e9f5d346c34fde8a387ec771",
+      "R_output_sha256": "05cc3d51b40fa954163598ac3d7f664cbb4d4400628a1129f3631ada48bd2cbe"
+    }
+  ],
+  "pbkrtest_compound_symmetry_check": {
+    "mmrm": {
+      "num_df": 3,
+      "denom_df": 77.99995285105432,
+      "f_stat": 38.03958621494298,
+      "p_val": 2.986467660753215e-15
+    },
+    "pbkrtest": {
+      "ndf": 3,
+      "ddf": 77.99999999999955,
+      "Fstat": 38.0396082325696,
+      "p.value": 2.986406830112883e-15,
+      "F.scaling": 1,
+      "FstatU": 38.0396082325696,
+      "p.valueU": 2.986406830112883e-15,
+      "aux": [
+        0.23076923076923228,
+        0.07692307692307743,
+        1.012820512820513,
+        0.9743589743589742,
+        0.9487179487179483,
+        0.355855855855856,
+        1
+      ]
+    },
+    "checks": [
+      {
+        "field": "Fstat",
+        "max_absolute": 2.201762661968587e-05,
+        "max_relative": 5.788079226545328e-07,
+        "max_scaled": 5.788079226545328e-07,
+        "tolerance_scaled": 0.002
+      },
+      {
+        "field": "ddf",
+        "max_absolute": 4.714894522805935e-05,
+        "max_relative": 6.044736567699951e-07,
+        "max_scaled": 6.044736567699951e-07,
+        "tolerance_scaled": 0.002
+      },
+      {
+        "field": "p.value",
+        "max_absolute": 6.083064033189955e-20,
+        "max_relative": 2.0369173991475305e-05,
+        "max_scaled": 6.083064033189955e-20,
+        "tolerance_scaled": 0.002
+      }
+    ]
+  },
+  "scope": "Public FEV1 worked model and synthetic fixture, common US/AR1 covariance. KR bridge equals direct mmrm. nlme GLS validates fit independently. pbkrtest validates a separate complete compound-symmetry special case with mmrm Kenward-Roger-Linear covariance adjustment; not a pbkrtest AR1 or US claim.",
+  "status": "passed"
+}

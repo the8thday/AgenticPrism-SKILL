@@ -1,0 +1,77 @@
+{
+  "package_version": "0.8.2",
+  "wheel_sha256": "dfaff7f762a9bd5faa585a11b03cbc189b88574a569493f83edb972076179686",
+  "installed_module_location_verified": true,
+  "render_and_verify_after_install": true,
+  "independent_qc_wheel_smoke": true,
+  "status": "passed",
+  "temporary_workspace": "/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-ruogvp_0",
+  "installed_from": "built wheel, not editable source",
+  "n_curves": 25,
+  "max_kd_relative_difference": 0.0,
+  "intervals_and_states_matched": true,
+  "equilibrium_historical_run_max_kd_relative_difference": 5.825580544627229e-07,
+  "kinetic_max_relative_difference": {
+    "300": 0.0,
+    "600": 0.0
+  },
+  "dose_max_relative_difference": {
+    "dose-ec50-synthetic": 0.0,
+    "dose-ic50-synthetic": 0.0,
+    "dose-public-example": 0.0,
+    "dose-potency-synthetic": 0.0
+  },
+  "dose_historical_run_max_relative_difference": {
+    "dose-ec50-synthetic": 2.220446049250313e-16,
+    "dose-ic50-synthetic": 0.0,
+    "dose-public-example": 1.305666685880169e-09,
+    "dose-potency-synthetic": 0.0
+  },
+  "elisa_group_wheel_matches_source_exactly": true,
+  "elisa_group_committed_run_max_relative_difference": {
+    "elisa-synthetic": 0.0,
+    "elisa-synthetic-qc": 0.0,
+    "groups-paired-synthetic": 0.0,
+    "groups-welch-synthetic": 0.0
+  },
+  "new_0_7_fixtures": {
+    "multigroup_synthetic/config_dunnett.json": "wheel_matches_source_exactly",
+    "multigroup_synthetic/config_games_howell.json": "wheel_matches_source_exactly",
+    "elisa_dilution_5pl/config.json": "wheel_matches_source_exactly",
+    "kinetics_single_cycle/config.json": "wheel_matches_source_exactly",
+    "dose_synthetic/config_potency_equivalence.json": "wheel_matches_source_exactly"
+  },
+  "new_0_8_fixtures": {
+    "repeated_synthetic/config_rm.json": "wheel_matches_source_exactly",
+    "repeated_synthetic/config_mixed.json": "wheel_matches_source_exactly",
+    "repeated_two_way_synthetic/config_two_way_anova.json": "wheel_matches_source_exactly",
+    "repeated_two_way_synthetic/config_two_way_mixed.json": "wheel_matches_source_exactly",
+    "survival_synthetic/config.json": "wheel_matches_source_exactly",
+    "survival_synthetic/config_adjusted.json": "wheel_matches_source_exactly",
+    "tumor_growth_synthetic/config.json": "wheel_matches_source_exactly"
+  },
+  "new_0_8_1_fixtures": {
+    "interpretation_states/config_boundary.json": "wheel_matches_source_exactly",
+    "interpretation_states/config_no_events_arm.json": "wheel_matches_source_exactly",
+    "interpretation_states/config_dropout.json": "wheel_matches_source_exactly",
+    "interpretation_ovarian/config.json": "wheel_matches_source_exactly"
+  },
+  "new_0_8_2_fixtures": {
+    "nonparametric/config_public_mw.json": "wheel_matches_source_exactly",
+    "nonparametric/config_public_signed.json": "wheel_matches_source_exactly",
+    "nonparametric/config_public_kw.json": "wheel_matches_source_exactly",
+    "nonparametric/config_public_friedman.json": "wheel_matches_source_exactly",
+    "nonparametric/config_fixture_mw.json": "wheel_matches_source_exactly",
+    "nonparametric/config_fixture_signed.json": "wheel_matches_source_exactly",
+    "nonparametric/config_fixture_kw.json": "wheel_matches_source_exactly",
+    "nonparametric/config_fixture_friedman.json": "wheel_matches_source_exactly",
+    "mmrm/config_synthetic_unstructured_satterthwaite.json": "wheel_matches_source_exactly",
+    "mmrm/config_synthetic_unstructured_kenward_roger.json": "wheel_matches_source_exactly",
+    "mmrm/config_synthetic_ar1_satterthwaite.json": "wheel_matches_source_exactly",
+    "mmrm/config_synthetic_ar1_kenward_roger.json": "wheel_matches_source_exactly"
+  },
+  "interpretation_facts_wheel_source_exact_matches": 23,
+  "plate_import_from_wheel": true,
+  "comparison_tolerance": 1e-08,
+  "scope": "independent Python environment on the same macOS host; no cross-platform claim"
+}

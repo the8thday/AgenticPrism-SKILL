@@ -161,6 +161,7 @@ def link_skills(target, dry):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    parser.add_argument("--with-r", action="store_true", help="install pinned optional R packages for Kenward-Roger; R must already exist")
     parser.add_argument("--dev", action="store_true", help="also install pytest and validation-only tools from the lock file")
     parser.add_argument("--force", action="store_true", help="delete and recreate .venv")
     parser.add_argument("--python", help=f"Python version for uv to use (default {VALIDATED_PYTHON})")
@@ -171,6 +172,12 @@ def main():
     args = parser.parse_args()
     say(f"AgenticPrism {version()} at {ROOT}")
     create_environment(args)
+    if args.with_r:
+        rscript = shutil.which("Rscript")
+        if not rscript:
+            raise SystemExit("--with-r requires an existing R installation; Python runtime remains installed")
+        run([rscript, "--vanilla", ROOT / "src/agentic_prism/r_scripts/install.R", ROOT / ".r-lib",
+             ROOT / "src/agentic_prism/r_scripts/packages.csv"], args.dry_run)
     report = {} if args.skip_self_check else self_check(args.dry_run)
     if args.link_skills:
         link_skills(args.link_skills, args.dry_run)

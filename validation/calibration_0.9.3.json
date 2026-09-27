@@ -1,0 +1,336 @@
+{
+  "criterion": "0.9.3 calibration. Frozen before execution: seed 20261005, 1000 datasets per row.\n\nAll targets are evaluated exactly from the generating Gaussian model (no single\nfuture Bernoulli draws). MCSE is reported for every estimate. Criteria:\nA  Mee beta-expectation interval (beta .80): |mean content - .80| <= .02 + 2 MCSE.\nB  Bias t interval (90%) covers the true mean: coverage >= .90 - 2 SE.\nC  Between-run CV MLS interval (90%) covers the true intermediate SD: coverage >= .90 - 2 SE.\n   Designs for A-C: runs x replicates 6x3 with between/within variance ratio 0, .5, 2;\n   6 runs with 2-3 unequal replicates, ratio .5; 3x3 with ratio 2 (small).\nD  ADA sensitivity upper prediction limit (95%): mean conditional probability that\n   a new run's true sensitivity is at or below the limit >= .95 - .02 - 2 MCSE.\n   6 runs 2-fold dilutions; 6 runs 3-fold; 3 runs 2-fold. Run log-EC50 SD .25,\n   signal noise SD .04 (log), 2 replicates, cut 1.35 on signal/NC.\nE  Two-way (subject x run) bootstrap lower bound, confidence .90, 2000 reps:\n   P(conditional FPR >= target) >= .90 - 2 SE; mean FPR reported. Log-scale\n   Gaussian panels, subject var .09, residual .01, run var 0 or .04:\n   screening .05 with 80 x 6; confirmatory-rate .01 with 300 x 6. A 50-subject\n   screening row checks that the tail-support gate withholds every panel.\nF  Descriptive only: probability that a mid-level QC meets the declared ICH M10\n   point rules (bias 20, CV 20, total error 30) in a 6x3 design, by true bias/CV.\nNo seed, scenario or criterion is changed after running.\n",
+  "seed": 20261005,
+  "script_sha256": "8e5f6f303d32752760dd6e54b93d8522f61ed8c2140f145bf8ee1f8cb2517a3b",
+  "code_sha256": {
+    "method_validation.py": "b1716f6c150c41011caa523d7492d89f8898bb0042878a93ef924d0430c6bf11",
+    "ada_performance.py": "31d2c725797fa9841b91b19e69e50dbe68205d3857edd0f7ee8cd0801d849cb0",
+    "ada_bounds.py": "208e3df40024bf800318194b68724badf909becf7cce053e4109741c3df5d5f0",
+    "variance_intervals.py": "ca42ba0f5f3debc8140f54acfc585238cb930b33b6e2ce66c81c5e0688692196"
+  },
+  "precision": [
+    {
+      "design": "6x3_ratio0",
+      "replicates_per_run": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "variance_ratio": 0.0,
+      "A_tolerance_mean_content": {
+        "estimate": 0.8205158511823506,
+        "mcse": 0.002496096478130869,
+        "target": 0.8,
+        "tolerance": 0.02,
+        "passed": true
+      },
+      "B_bias_interval_coverage": {
+        "estimate": 0.952,
+        "mcse": 0.006759881655768837,
+        "bound": 0.8810263340389898,
+        "passed": true
+      },
+      "C_intermediate_cv_mls_coverage": {
+        "estimate": 0.902,
+        "mcse": 0.009401914698613255,
+        "bound": 0.8810263340389898,
+        "passed": true
+      }
+    },
+    {
+      "design": "6x3_ratio0.5",
+      "replicates_per_run": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "variance_ratio": 0.5,
+      "A_tolerance_mean_content": {
+        "estimate": 0.807662142030911,
+        "mcse": 0.002822064483554792,
+        "target": 0.8,
+        "tolerance": 0.02,
+        "passed": true
+      },
+      "B_bias_interval_coverage": {
+        "estimate": 0.924,
+        "mcse": 0.008379976133617564,
+        "bound": 0.8810263340389898,
+        "passed": true
+      },
+      "C_intermediate_cv_mls_coverage": {
+        "estimate": 0.911,
+        "mcse": 0.009004387819280108,
+        "bound": 0.8810263340389898,
+        "passed": true
+      }
+    },
+    {
+      "design": "6x3_ratio2",
+      "replicates_per_run": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "variance_ratio": 2.0,
+      "A_tolerance_mean_content": {
+        "estimate": 0.8053201871058602,
+        "mcse": 0.0035767273035017255,
+        "target": 0.8,
+        "tolerance": 0.02,
+        "passed": true
+      },
+      "B_bias_interval_coverage": {
+        "estimate": 0.909,
+        "mcse": 0.009094998625618366,
+        "bound": 0.8810263340389898,
+        "passed": true
+      },
+      "C_intermediate_cv_mls_coverage": {
+        "estimate": 0.9,
+        "mcse": 0.009486832980505136,
+        "bound": 0.8810263340389898,
+        "passed": true
+      }
+    },
+    {
+      "design": "6_unbalanced_ratio0.5",
+      "replicates_per_run": [
+        3,
+        2,
+        3,
+        3,
+        2,
+        3
+      ],
+      "variance_ratio": 0.5,
+      "A_tolerance_mean_content": {
+        "estimate": 0.8048644397336246,
+        "mcse": 0.0030730838020997337,
+        "target": 0.8,
+        "tolerance": 0.02,
+        "passed": true
+      },
+      "B_bias_interval_coverage": {
+        "estimate": 0.908,
+        "mcse": 0.009139803061335619,
+        "bound": 0.8810263340389898,
+        "passed": true
+      },
+      "C_intermediate_cv_mls_coverage": {
+        "estimate": 0.895,
+        "mcse": 0.009694070352540258,
+        "bound": 0.8810263340389898,
+        "passed": true
+      }
+    },
+    {
+      "design": "3x3_ratio2",
+      "replicates_per_run": [
+        3,
+        3,
+        3
+      ],
+      "variance_ratio": 2.0,
+      "A_tolerance_mean_content": {
+        "estimate": 0.7850657134079165,
+        "mcse": 0.005652786154964147,
+        "target": 0.8,
+        "tolerance": 0.02,
+        "passed": true
+      },
+      "B_bias_interval_coverage": {
+        "estimate": 0.926,
+        "mcse": 0.008277922444671728,
+        "bound": 0.8810263340389898,
+        "passed": true
+      },
+      "C_intermediate_cv_mls_coverage": {
+        "estimate": 0.92,
+        "mcse": 0.008579044235810886,
+        "bound": 0.8810263340389898,
+        "passed": true
+      }
+    }
+  ],
+  "sensitivity": [
+    {
+      "design": "6_runs_2fold",
+      "runs": 6,
+      "fold": 2.0,
+      "evaluable": 1000,
+      "censored_datasets": 0,
+      "mean_conditional_coverage": 0.9399177606698726,
+      "mcse": 0.0027941386024424347,
+      "bound": 0.9244117227951151,
+      "passed": true
+    },
+    {
+      "design": "6_runs_3fold",
+      "runs": 6,
+      "fold": 3.0,
+      "evaluable": 1000,
+      "censored_datasets": 0,
+      "mean_conditional_coverage": 0.9209918993786935,
+      "mcse": 0.004037487607011816,
+      "bound": 0.9219250247859763,
+      "passed": false
+    },
+    {
+      "design": "3_runs_2fold",
+      "runs": 3,
+      "fold": 2.0,
+      "evaluable": 1000,
+      "censored_datasets": 0,
+      "mean_conditional_coverage": 0.940221779861469,
+      "mcse": 0.004409389693343403,
+      "bound": 0.9211812206133131,
+      "passed": true
+    }
+  ],
+  "two_way_bootstrap": [
+    {
+      "scenario": "screening_80x6_run0",
+      "subjects": 80,
+      "runs": 6,
+      "target": 0.05,
+      "run_variance": 0.0,
+      "withheld_by_tail_gate": 0,
+      "evaluable": 1000,
+      "confidence_attainment": {
+        "estimate": 0.961,
+        "mcse": 0.006122009474020767,
+        "bound": 0.8810263340389898,
+        "passed": true
+      },
+      "mean_fpr": 0.08982052277337907,
+      "mean_fpr_mcse": 0.000822126612061137
+    },
+    {
+      "scenario": "screening_80x6_run.04",
+      "subjects": 80,
+      "runs": 6,
+      "target": 0.05,
+      "run_variance": 0.04,
+      "withheld_by_tail_gate": 0,
+      "evaluable": 1000,
+      "confidence_attainment": {
+        "estimate": 0.949,
+        "mcse": 0.006956938982052382,
+        "bound": 0.8810263340389898,
+        "passed": true
+      },
+      "mean_fpr": 0.12334956920716841,
+      "mean_fpr_mcse": 0.0016972738962515342
+    },
+    {
+      "scenario": "rate01_300x6_run0",
+      "subjects": 300,
+      "runs": 6,
+      "target": 0.01,
+      "run_variance": 0.0,
+      "withheld_by_tail_gate": 0,
+      "evaluable": 1000,
+      "confidence_attainment": {
+        "estimate": 0.962,
+        "mcse": 0.006046155803483734,
+        "bound": 0.8810263340389898,
+        "passed": true
+      },
+      "mean_fpr": 0.01973945869635941,
+      "mean_fpr_mcse": 0.00019633665986302967
+    },
+    {
+      "scenario": "rate01_300x6_run.04",
+      "subjects": 300,
+      "runs": 6,
+      "target": 0.01,
+      "run_variance": 0.04,
+      "withheld_by_tail_gate": 0,
+      "evaluable": 1000,
+      "confidence_attainment": {
+        "estimate": 0.967,
+        "mcse": 0.005648982209212561,
+        "bound": 0.8810263340389898,
+        "passed": true
+      },
+      "mean_fpr": 0.03550200076088622,
+      "mean_fpr_mcse": 0.0006605732903240882
+    },
+    {
+      "scenario": "screening_50x6_gate",
+      "subjects": 50,
+      "runs": 6,
+      "target": 0.05,
+      "run_variance": 0.0,
+      "withheld_by_tail_gate": 1000,
+      "gate_passed": true
+    }
+  ],
+  "m10_rule_operating_characteristics": [
+    {
+      "true_bias_percent": 0.0,
+      "true_intermediate_cv_percent": 10.0,
+      "probability_meets_rules": 1.0,
+      "mcse": 0.0
+    },
+    {
+      "true_bias_percent": 0.0,
+      "true_intermediate_cv_percent": 15.0,
+      "probability_meets_rules": 0.917,
+      "mcse": 0.008724161850859943
+    },
+    {
+      "true_bias_percent": 0.0,
+      "true_intermediate_cv_percent": 18.0,
+      "probability_meets_rules": 0.728,
+      "mcse": 0.014071815803228808
+    },
+    {
+      "true_bias_percent": 10.0,
+      "true_intermediate_cv_percent": 10.0,
+      "probability_meets_rules": 0.999,
+      "mcse": 0.0009994998749374613
+    },
+    {
+      "true_bias_percent": 10.0,
+      "true_intermediate_cv_percent": 15.0,
+      "probability_meets_rules": 0.861,
+      "mcse": 0.010939789760319894
+    },
+    {
+      "true_bias_percent": 10.0,
+      "true_intermediate_cv_percent": 18.0,
+      "probability_meets_rules": 0.66,
+      "mcse": 0.014979986648859203
+    },
+    {
+      "true_bias_percent": 15.0,
+      "true_intermediate_cv_percent": 10.0,
+      "probability_meets_rules": 0.92,
+      "mcse": 0.008579044235810886
+    },
+    {
+      "true_bias_percent": 15.0,
+      "true_intermediate_cv_percent": 15.0,
+      "probability_meets_rules": 0.66,
+      "mcse": 0.014979986648859203
+    },
+    {
+      "true_bias_percent": 15.0,
+      "true_intermediate_cv_percent": 18.0,
+      "probability_meets_rules": 0.42,
+      "mcse": 0.015607690412101338
+    }
+  ],
+  "seconds": 88.26110982894897
+}

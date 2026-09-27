@@ -1,0 +1,31 @@
+{
+  "analysis_type": "time_to_event",
+  "input": "no_events_arm.csv",
+  "source": "Synthetic survival fixture with mAb-high events set to zero; interpretation guard",
+  "study": {
+    "endpoint": "Humane endpoint: tumor volume >= 2000 mm3 or body-weight loss > 20% (treated as the event)",
+    "time_origin": "randomization",
+    "time_unit": "day",
+    "censoring_rationale": "Alive without endpoint at the day-60 study end, or death judged unrelated to tumor burden (one animal, day 33)",
+    "rationale": "Ten mice randomized per arm; comparisons against vehicle declared before the study"
+  },
+  "comparison": {
+    "arms": [
+      "vehicle",
+      "mAb-low",
+      "mAb-high"
+    ],
+    "control_arm": "vehicle",
+    "post_hoc": "arm_vs_control",
+    "logrank_inference": "asymptotic",
+    "permutation_draws": 9999,
+    "seed": 20260930,
+    "covariates": [],
+    "landmarks": [
+      28,
+      100
+    ],
+    "conf_type": "log-log",
+    "confidence_level": 0.95
+  }
+}

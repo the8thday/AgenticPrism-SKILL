@@ -1,0 +1,17 @@
+{
+  "source": "lme4::Penicillin",
+  "worked_example": "https://pages.cs.wisc.edu/~st850-1/text/1SimpleH.pdf",
+  "worked_source_sha256": "7045d75349423fb304e15490ef684d8fea30b807e2452dc679b850d1f82a712e",
+  "data_sha256": "8d7e09b5c2519c595a7515028cba5ea149dcd9f99aa08e423534bd139a1eae1f",
+  "export": "Rscript --vanilla; .libPaths(c(\".r-lib\",.libPaths())); data(Penicillin,package=\"lme4\"); write.csv(Penicillin,...,row.names=FALSE)",
+  "attribution": "Davies and Goldsmith (1972), Statistical Methods in Research and Production, section 6.6, as distributed by lme4. Johns Hopkins Statistics for Laboratory Scientists 140.615 published computation.",
+  "scope": "144 measurements: 24 plates x 6 samples. No ADA or clinical application claim; used for the reusable variance primitive.",
+  "additional_lecture_source": "https://www.biostat.jhsph.edu/~iruczins/teaching/materials/code/me2/c.me2.html",
+  "additional_lecture_sha256": "6db2553d3ca02bb8883bbfd1d1a51115f3add53691968e28ba035ae73d13f141",
+  "worked_example_attribution": "Douglas Bates, 11 January 2011, section 4, printed page 11",
+  "printed_variances": [
+    0.7169,
+    3.7309,
+    0.3024
+  ]
+}

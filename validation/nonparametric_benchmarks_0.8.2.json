@@ -1,0 +1,1100 @@
+{
+  "R_versions": "R version 4.6.0 (2026-04-24) ; dunn.test  1.4.1",
+  "script_sha256": "c8605794703623f70d448e498fcd6a43661c0e0898a4a195cf3328f98a8cab62",
+  "exact_extreme_tail_checks": [
+    {
+      "n_per_group": 12,
+      "python": 7.39602301050679e-07,
+      "R": 7.39602301050679e-07,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "n_per_group": 20,
+      "python": 1.4508889103849688e-11,
+      "R": 1.4508889103849688e-11,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "n_per_group": 49,
+      "python": 7.850029192963324e-29,
+      "R": 7.850029192963402e-29,
+      "absolute_difference": 7.73516752307299e-43,
+      "relative_difference": 9.853679945555654e-15,
+      "relative_tolerance": 1e-12
+    }
+  ],
+  "extreme_oracle_code_sha256": "a3b8209027fac7a34fff259c2ee451c6abf5feef30fc4a6e2a45650947cafb15",
+  "published_directional_MW_check": {
+    "R_p_greater": 0.1272061272061272,
+    "Python_exact_two_sided_p_divided_by_two": 0.1272061272061272,
+    "absolute_difference": 0.0,
+    "scope": "Original Hollander-Wolfe MW directional example reproduced via exact-tail identity. The product still exposes two-sided inference only."
+  },
+  "oracle_sha256": "f54e2423430da32a66ffa9addb59f5325cfd4782d7df2e95b94d780a6964ee0c",
+  "rows": [
+    {
+      "fixture": "config_fixture_friedman.json",
+      "variant": "configured",
+      "max_absolute_difference": 1.0658141036401503e-14,
+      "max_relative_difference": 5.402235052363537e-15,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 1.0658141036401503e-14,
+          "relative": 1.4750105898591366e-15,
+          "python": 7.225806451612914,
+          "R": 7.225806451612903,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 1.457167719820518e-16,
+          "relative": 5.402235052363537e-15,
+          "python": 0.026973423142389617,
+          "R": 0.026973423142389763,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "df",
+          "absolute": 0,
+          "relative": 0.0,
+          "python": 2,
+          "R": 2,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "c95a973fad524b18337d9640421a0e8432eec4ff82ff155044173d21a5d2c748",
+      "input_sha256": "6851d0f18c82a514bb0ce3c86c011086627aa41ca48ca930451f62f0f7045a78",
+      "dunn_native_step_values": []
+    },
+    {
+      "fixture": "config_fixture_kw.json",
+      "variant": "configured",
+      "max_absolute_difference": 5.551115123125783e-17,
+      "max_relative_difference": 2.3467988001526645e-16,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 3.10709371293002,
+          "R": 3.10709371293002,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 2.7755575615628914e-17,
+          "relative": 1.3123421132391828e-16,
+          "python": 0.21149649421156902,
+          "R": 0.21149649421156905,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "df",
+          "absolute": 0,
+          "relative": 0.0,
+          "python": 2,
+          "R": 2,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.7606733609377494,
+          "R": 0.7606733609377494,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:p_unadjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.4468521898712413,
+          "R": 0.4468521898712413,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.637777180670043,
+          "R": 0.637777180670043,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.7574177649251457,
+          "R": 1.7574177649251457,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:p_unadjusted",
+          "absolute": 1.3877787807814457e-17,
+          "relative": 1.7600991001144984e-16,
+          "python": 0.07884662748200753,
+          "R": 0.07884662748200755,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:p_adjusted",
+          "absolute": 5.551115123125783e-17,
+          "relative": 2.3467988001526645e-16,
+          "python": 0.2365398824460226,
+          "R": 0.23653988244602264,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.9967444039873964,
+          "R": 0.9967444039873964,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:p_unadjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.3188885903350215,
+          "R": 0.3188885903350215,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.637777180670043,
+          "R": 0.637777180670043,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "7216ef18120e81a80791296dbda3dcdd16f3abd2e8688f0eab42b4bf1360d903",
+      "input_sha256": "25f4974a63037c667ec4c889d74d044615ed55366383d0bcc58b90b6dc615f2b",
+      "dunn_native_step_values": [
+        {
+          "pair": "A - B",
+          "statistic": 0.7606733609377494,
+          "p_unadjusted": 0.4468521898712413,
+          "p_adjusted": 0.637777180670043,
+          "native_step_value": 0.4468521898712413
+        },
+        {
+          "pair": "A - C",
+          "statistic": 1.7574177649251457,
+          "p_unadjusted": 0.07884662748200755,
+          "p_adjusted": 0.23653988244602264,
+          "native_step_value": 0.23653988244602264
+        },
+        {
+          "pair": "B - C",
+          "statistic": 0.9967444039873964,
+          "p_unadjusted": 0.3188885903350215,
+          "p_adjusted": 0.637777180670043,
+          "native_step_value": 0.637777180670043
+        }
+      ]
+    },
+    {
+      "fixture": "config_fixture_kw.json",
+      "variant": "bonferroni",
+      "max_absolute_difference": 5.551115123125783e-17,
+      "max_relative_difference": 2.3467988001526645e-16,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 3.10709371293002,
+          "R": 3.10709371293002,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 2.7755575615628914e-17,
+          "relative": 1.3123421132391828e-16,
+          "python": 0.21149649421156902,
+          "R": 0.21149649421156905,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "df",
+          "absolute": 0,
+          "relative": 0.0,
+          "python": 2,
+          "R": 2,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.7606733609377494,
+          "R": 0.7606733609377494,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:p_unadjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.4468521898712413,
+          "R": 0.4468521898712413,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.0,
+          "R": 1,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.7574177649251457,
+          "R": 1.7574177649251457,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:p_unadjusted",
+          "absolute": 1.3877787807814457e-17,
+          "relative": 1.7600991001144984e-16,
+          "python": 0.07884662748200753,
+          "R": 0.07884662748200755,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:p_adjusted",
+          "absolute": 5.551115123125783e-17,
+          "relative": 2.3467988001526645e-16,
+          "python": 0.2365398824460226,
+          "R": 0.23653988244602264,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.9967444039873964,
+          "R": 0.9967444039873964,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:p_unadjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.3188885903350215,
+          "R": 0.3188885903350215,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.9566657710050644,
+          "R": 0.9566657710050644,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "267f8b0020667286da8a8dd9b6971b6bceb887a7d354e9741b5fea842257f0fe",
+      "input_sha256": "25f4974a63037c667ec4c889d74d044615ed55366383d0bcc58b90b6dc615f2b",
+      "dunn_native_step_values": [
+        {
+          "pair": "A - B",
+          "statistic": 0.7606733609377494,
+          "p_unadjusted": 0.4468521898712413,
+          "p_adjusted": 1,
+          "native_step_value": 1
+        },
+        {
+          "pair": "A - C",
+          "statistic": 1.7574177649251457,
+          "p_unadjusted": 0.07884662748200755,
+          "p_adjusted": 0.23653988244602264,
+          "native_step_value": 0.23653988244602264
+        },
+        {
+          "pair": "B - C",
+          "statistic": 0.9967444039873964,
+          "p_unadjusted": 0.3188885903350215,
+          "p_adjusted": 0.9566657710050644,
+          "native_step_value": 0.9566657710050644
+        }
+      ]
+    },
+    {
+      "fixture": "config_fixture_mw.json",
+      "variant": "configured",
+      "max_absolute_difference": 1.0662337333664298e-05,
+      "max_relative_difference": 0.7049680404564623,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 71.5,
+          "R": 71.5,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 8.326672684688674e-17,
+          "relative": 9.856505777810657e-16,
+          "python": 0.0844789509831568,
+          "R": 0.08447895098315672,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "estimate",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.999934318323655,
+          "R": 0.999934318323655,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_low",
+          "absolute": 1.0662337333664298e-05,
+          "relative": 0.7049680404564623,
+          "python": -2.5786905713757818e-05,
+          "R": -1.512456838009352e-05,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_high",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.0000648294476315,
+          "R": 1.0000648294476315,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "achieved_confidence_level",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.95,
+          "R": 0.95,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "c550b31e73a091da0d07e492f777ce64c346feddf8bc3839968ff9667e4bbc35",
+      "input_sha256": "f1d261a7a857d566425539279ea580dbd3fe29b8474f32425c9a12eec1335d6d",
+      "dunn_native_step_values": []
+    },
+    {
+      "fixture": "config_fixture_mw.json",
+      "variant": "asymptotic",
+      "max_absolute_difference": 1.0662337333664298e-05,
+      "max_relative_difference": 0.7049680404564623,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 71.5,
+          "R": 71.5,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 8.326672684688674e-17,
+          "relative": 9.856505777810657e-16,
+          "python": 0.0844789509831568,
+          "R": 0.08447895098315672,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "estimate",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.999934318323655,
+          "R": 0.999934318323655,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_low",
+          "absolute": 1.0662337333664298e-05,
+          "relative": 0.7049680404564623,
+          "python": -2.5786905713757818e-05,
+          "R": -1.512456838009352e-05,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_high",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.0000648294476315,
+          "R": 1.0000648294476315,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "achieved_confidence_level",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.95,
+          "R": 0.95,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "c550b31e73a091da0d07e492f777ce64c346feddf8bc3839968ff9667e4bbc35",
+      "input_sha256": "f1d261a7a857d566425539279ea580dbd3fe29b8474f32425c9a12eec1335d6d",
+      "dunn_native_step_values": []
+    },
+    {
+      "fixture": "config_fixture_signed.json",
+      "variant": "configured",
+      "max_absolute_difference": 1.2945089937099752e-05,
+      "max_relative_difference": 1.2945273648386807e-05,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 23.5,
+          "R": 23.5,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 1.1102230246251565e-16,
+          "relative": 2.351112990497241e-16,
+          "python": 0.47221168404601166,
+          "R": 0.47221168404601155,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "estimate",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.5,
+          "R": 0.5,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_low",
+          "absolute": 1.2945089937099752e-05,
+          "relative": 1.2945273648386807e-05,
+          "python": -0.9999728635308736,
+          "R": -0.9999858086208107,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_high",
+          "absolute": 2.6645352591003757e-15,
+          "relative": 1.7763183502756745e-15,
+          "python": 1.5000325018805665,
+          "R": 1.5000325018805638,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "achieved_confidence_level",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.95,
+          "R": 0.95,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "3a2854948a4233f134d7625853077992785d1d4c70c70f10b0b4edb1c1ce7468",
+      "input_sha256": "a5b6c34589a3291f8f27960206e413b31bab15d114bde7f9e51fcfa98867a661",
+      "dunn_native_step_values": []
+    },
+    {
+      "fixture": "config_fixture_signed.json",
+      "variant": "asymptotic",
+      "max_absolute_difference": 1.2945089937099752e-05,
+      "max_relative_difference": 1.2945273648386807e-05,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 23.5,
+          "R": 23.5,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 1.1102230246251565e-16,
+          "relative": 2.351112990497241e-16,
+          "python": 0.47221168404601166,
+          "R": 0.47221168404601155,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "estimate",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.5,
+          "R": 0.5,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_low",
+          "absolute": 1.2945089937099752e-05,
+          "relative": 1.2945273648386807e-05,
+          "python": -0.9999728635308736,
+          "R": -0.9999858086208107,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_high",
+          "absolute": 2.6645352591003757e-15,
+          "relative": 1.7763183502756745e-15,
+          "python": 1.5000325018805665,
+          "R": 1.5000325018805638,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "achieved_confidence_level",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.95,
+          "R": 0.95,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "3a2854948a4233f134d7625853077992785d1d4c70c70f10b0b4edb1c1ce7468",
+      "input_sha256": "a5b6c34589a3291f8f27960206e413b31bab15d114bde7f9e51fcfa98867a661",
+      "dunn_native_step_values": []
+    },
+    {
+      "fixture": "config_public_friedman.json",
+      "variant": "configured",
+      "max_absolute_difference": 1.0658141036401503e-14,
+      "max_relative_difference": 5.2428662794164865e-15,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 1.0658141036401503e-14,
+          "relative": 9.564998366001348e-16,
+          "python": 11.142857142857132,
+          "R": 11.142857142857142,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 1.9949319973733282e-17,
+          "relative": 5.2428662794164865e-15,
+          "python": 0.003805040775511383,
+          "R": 0.003805040775511363,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "df",
+          "absolute": 0,
+          "relative": 0.0,
+          "python": 2,
+          "R": 2,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "6a6b85ccfb9bf62849794fadbb357a8a5ce5b37e878cf00b47273c783ab23f1c",
+      "input_sha256": "519cc27bd7fe455bd164265d022fa95a8cf96a94297c463695a79f4a5ab7a0cf",
+      "dunn_native_step_values": []
+    },
+    {
+      "fixture": "config_public_kw.json",
+      "variant": "configured",
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "max_relative_difference": 2.8291665582629603e-16,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.7714285714285722,
+          "R": 0.7714285714285722,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.6799647735788936,
+          "R": 0.6799647735788936,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "df",
+          "absolute": 0,
+          "relative": 0.0,
+          "python": 2,
+          "R": 2,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.6414269805898184,
+          "R": 0.6414269805898184,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:p_unadjusted",
+          "absolute": 1.1102230246251565e-16,
+          "relative": 2.1299434399524748e-16,
+          "python": 0.5212453081148148,
+          "R": 0.521245308114815,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.0,
+          "R": 1,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": -0.22677868380553654,
+          "R": -0.22677868380553654,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:p_unadjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.8205958397554408,
+          "R": 0.8205958397554408,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.0,
+          "R": 1,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": -0.8552359741197582,
+          "R": -0.8552359741197582,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:p_unadjusted",
+          "absolute": 1.1102230246251565e-16,
+          "relative": 2.8291665582629603e-16,
+          "python": 0.3924205244765818,
+          "R": 0.3924205244765817,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.0,
+          "R": 1,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "9952b348ddfff1b9c31721c9b2049e8b9d94e17016a3588e541713e7d1e910b5",
+      "input_sha256": "6d217731ef2314b1a8b6224fdec4d945546dff02c8bb6d8067568b92d4e009c6",
+      "dunn_native_step_values": [
+        {
+          "pair": "A - B",
+          "statistic": 0.6414269805898184,
+          "p_unadjusted": 0.521245308114815,
+          "p_adjusted": 1,
+          "native_step_value": 1
+        },
+        {
+          "pair": "A - C",
+          "statistic": -0.22677868380553654,
+          "p_unadjusted": 0.8205958397554408,
+          "p_adjusted": 1,
+          "native_step_value": 0.8205958397554408
+        },
+        {
+          "pair": "B - C",
+          "statistic": -0.8552359741197582,
+          "p_unadjusted": 0.3924205244765817,
+          "p_adjusted": 1,
+          "native_step_value": 1
+        }
+      ]
+    },
+    {
+      "fixture": "config_public_kw.json",
+      "variant": "bonferroni",
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "max_relative_difference": 2.8291665582629603e-16,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.7714285714285722,
+          "R": 0.7714285714285722,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.6799647735788936,
+          "R": 0.6799647735788936,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "df",
+          "absolute": 0,
+          "relative": 0.0,
+          "python": 2,
+          "R": 2,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.6414269805898184,
+          "R": 0.6414269805898184,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:p_unadjusted",
+          "absolute": 1.1102230246251565e-16,
+          "relative": 2.1299434399524748e-16,
+          "python": 0.5212453081148148,
+          "R": 0.521245308114815,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-B:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.0,
+          "R": 1,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": -0.22677868380553654,
+          "R": -0.22677868380553654,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:p_unadjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.8205958397554408,
+          "R": 0.8205958397554408,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "A-C:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.0,
+          "R": 1,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": -0.8552359741197582,
+          "R": -0.8552359741197582,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:p_unadjusted",
+          "absolute": 1.1102230246251565e-16,
+          "relative": 2.8291665582629603e-16,
+          "python": 0.3924205244765818,
+          "R": 0.3924205244765817,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "B-C:p_adjusted",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 1.0,
+          "R": 1,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "64cbb0bdaa8ba66da204b1837baa21a9dd595eb3b8b40d0d601a94167a653e5a",
+      "input_sha256": "6d217731ef2314b1a8b6224fdec4d945546dff02c8bb6d8067568b92d4e009c6",
+      "dunn_native_step_values": [
+        {
+          "pair": "A - B",
+          "statistic": 0.6414269805898184,
+          "p_unadjusted": 0.521245308114815,
+          "p_adjusted": 1,
+          "native_step_value": 1
+        },
+        {
+          "pair": "A - C",
+          "statistic": -0.22677868380553654,
+          "p_unadjusted": 0.8205958397554408,
+          "p_adjusted": 1,
+          "native_step_value": 1
+        },
+        {
+          "pair": "B - C",
+          "statistic": -0.8552359741197582,
+          "p_unadjusted": 0.3924205244765817,
+          "p_adjusted": 1,
+          "native_step_value": 1
+        }
+      ]
+    },
+    {
+      "fixture": "config_public_mw.json",
+      "variant": "configured",
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 35.0,
+          "R": 35,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.2544122544122544,
+          "R": 0.2544122544122544,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "estimate",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.30500000000000005,
+          "R": 0.30500000000000005,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "ci_low",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": -0.15000000000000002,
+          "R": -0.15000000000000002,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "ci_high",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.7599999999999999,
+          "R": 0.7599999999999999,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "achieved_confidence_level",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.9600399600399601,
+          "R": 0.9600399600399601,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "1adee22417960aebd4bfb5bc64ea47c16a189956fae1018f2fd799c8bf06121c",
+      "input_sha256": "225c501f73c45043b8a72601b6b4d728e27edf54f936ef3adacb53d5926b3a7d",
+      "dunn_native_step_values": []
+    },
+    {
+      "fixture": "config_public_mw.json",
+      "variant": "asymptotic",
+      "max_absolute_difference": 6.661338147750939e-16,
+      "max_relative_difference": 3.885396263535491e-15,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 35.0,
+          "R": 35,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 1.1102230246251565e-16,
+          "relative": 4.538495064893034e-16,
+          "python": 0.24462360512698333,
+          "R": 0.24462360512698345,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "estimate",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.3025083390415723,
+          "R": 0.3025083390415723,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_low",
+          "absolute": 5.828670879282072e-16,
+          "relative": 3.885396263535491e-15,
+          "python": -0.1500148371990849,
+          "R": -0.15001483719908432,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_high",
+          "absolute": 6.661338147750939e-16,
+          "relative": 8.765578740559296e-16,
+          "python": 0.7599427653222943,
+          "R": 0.7599427653222937,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "achieved_confidence_level",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.95,
+          "R": 0.95,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "4ccb78bb84a9572103588158fa1ee8ef6d5522cebf7ccc7a38d26f817d5b5e20",
+      "input_sha256": "225c501f73c45043b8a72601b6b4d728e27edf54f936ef3adacb53d5926b3a7d",
+      "dunn_native_step_values": []
+    },
+    {
+      "fixture": "config_public_signed.json",
+      "variant": "configured",
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 40.0,
+          "R": 40,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.0390625,
+          "R": 0.0390625,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "estimate",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.4600000000000001,
+          "R": 0.4600000000000001,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "ci_low",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.010000000000000009,
+          "R": 0.010000000000000009,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "ci_high",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.786,
+          "R": 0.786,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "achieved_confidence_level",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.9609375,
+          "R": 0.9609375,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "7597751826baa2091f16b5c486c2185a7f598f8acbff7f063517da63c463c32e",
+      "input_sha256": "2a1b9de022f9430017fa6d18a348e416b37a0726cce71ffeb07c24dfad1b4cba",
+      "dunn_native_step_values": []
+    },
+    {
+      "fixture": "config_public_signed.json",
+      "variant": "asymptotic",
+      "max_absolute_difference": 2.4132113188191084e-05,
+      "max_relative_difference": 3.070075488759015e-05,
+      "checks": [
+        {
+          "field": "statistic",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 40.0,
+          "R": 40,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "p_value",
+          "absolute": 2.0816681711721685e-17,
+          "relative": 4.729883273138315e-16,
+          "python": 0.04401098401295143,
+          "R": 0.04401098401295145,
+          "tolerance_absolute": 1e-10
+        },
+        {
+          "field": "estimate",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.4600023726295658,
+          "R": 0.4600023726295658,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_low",
+          "absolute": 6.92154666914746e-16,
+          "relative": 6.947989111066898e-14,
+          "python": 0.009961942309498152,
+          "R": 0.009961942309498845,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "ci_high",
+          "absolute": 2.4132113188191084e-05,
+          "relative": 3.070075488759015e-05,
+          "python": 0.7860671228002271,
+          "R": 0.7860429906870389,
+          "tolerance_absolute": 0.0003
+        },
+        {
+          "field": "achieved_confidence_level",
+          "absolute": 0.0,
+          "relative": 0.0,
+          "python": 0.95,
+          "R": 0.95,
+          "tolerance_absolute": 1e-10
+        }
+      ],
+      "R_output_sha256": "d9cf2f757863308e52e00c12cd154a2831bc57c3be2d241a4c938ad483f95fbe",
+      "input_sha256": "2a1b9de022f9430017fa6d18a348e416b37a0726cce71ffeb07c24dfad1b4cba",
+      "dunn_native_step_values": []
+    }
+  ],
+  "status": "passed",
+  "scope": "Dunn Z and raw p from dunn.test; adjusted p from stats::p.adjust. dunn.test Holm returns non-monotone step values requiring its stopping rule, not canonical adjusted p. Native values preserved. Two-sided tests. Explicit exact=FALSE for ties/zeros; no R 4.6 conditional exact or Edgeworth claim. Relative differences can be unstable near zero; main fixture bounds are absolute. The added tiny exact-tail cases use a separate relative tolerance of 1e-12. Bounds are declared before their checks."
+}

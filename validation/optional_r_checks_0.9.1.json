@@ -1,0 +1,56 @@
+{
+  "precision_results_byte_identical_with_without_R": true,
+  "status": "passed",
+  "wheel_sha256": "6c917e29c4170ba46bfc562e24818fc096857d9099b280aeba7e7aab3fe3b5df",
+  "interpreter": "/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-bz0559rn/venv/bin/python",
+  "ada_results_byte_identical_with_without_R": true,
+  "scope": "Same isolated wheel environment, hide R from PATH vs existing pinned R library. No new R runtime method and no fresh R compiler install.",
+  "rows": [
+    {
+      "R_on_PATH": false,
+      "doctor": {
+        "returncode": 0,
+        "stdout": "{\n  \"package_version\": \"0.9.1\",\n  \"package_location\": \"/private/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-bz0559rn/venv/lib/python3.13/site-packages/agentic_prism\",\n  \"python\": \"3.13.9\",\n  \"python_executable\": \"/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-bz0559rn/venv/bin/python\",\n  \"platform\": \"macOS-27.0-arm64-64bit\",\n  \"dependencies\": {\n    \"numpy\": \"2.5.3\",\n    \"scipy\": \"1.18.1\",\n    \"pandas\": \"3.0.6\",\n    \"matplotlib\": \"3.11.2\",\n    \"statsmodels\": \"0.15.0\"\n  },\n  \"notes\": [],\n  \"problems\": [],\n  \"status\": \"ok\",\n  \"dependency_pin_mismatches\": {},\n  \"collection_root\": \"~/AgenticPrism-SKILL\",\n  \"collection_version\": \"0.9.1\",\n  \"optional_r\": {\n    \"available\": false,\n    \"reason\": \"This method requires optional R. Install R and run install.py --with-r; Python methods remain available.\"\n  }\n}\n",
+        "stderr": ""
+      },
+      "ada": {
+        "returncode": 0,
+        "stdout": "{\"run\": \"/private/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/ap091-optional-q0p3nz91/ada-False\", \"n_curves\": 1, \"n_failed\": 0, \"n_unreportable_fits\": 0, \"n_withheld_wells\": 0, \"interpretation\": \"Read reportable/status and diagnostics; exit zero means execution completed, not scientific validation\"}\n",
+        "stderr": ""
+      },
+      "precision": {
+        "returncode": 0,
+        "stdout": "{\"output\": \"/private/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/ap091-optional-q0p3nz91/precision-False\", \"status\": \"estimated\", \"interpretation\": \"Precision estimates do not establish SOP acceptance\"}\n",
+        "stderr": ""
+      },
+      "existing_kr": {
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "RuntimeError: This method requires optional R. Install R and run install.py --with-r; Python methods remain available.\n"
+      }
+    },
+    {
+      "R_on_PATH": true,
+      "doctor": {
+        "returncode": 0,
+        "stdout": "{\n  \"package_version\": \"0.9.1\",\n  \"package_location\": \"/private/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-bz0559rn/venv/lib/python3.13/site-packages/agentic_prism\",\n  \"python\": \"3.13.9\",\n  \"python_executable\": \"/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-bz0559rn/venv/bin/python\",\n  \"platform\": \"macOS-27.0-arm64-arm-64bit-Mach-O\",\n  \"dependencies\": {\n    \"numpy\": \"2.5.3\",\n    \"scipy\": \"1.18.1\",\n    \"pandas\": \"3.0.6\",\n    \"matplotlib\": \"3.11.2\",\n    \"statsmodels\": \"0.15.0\"\n  },\n  \"notes\": [],\n  \"problems\": [],\n  \"status\": \"ok\",\n  \"dependency_pin_mismatches\": {},\n  \"collection_root\": \"~/AgenticPrism-SKILL\",\n  \"collection_version\": \"0.9.1\",\n  \"optional_r\": {\n    \"available\": true,\n    \"r_environment\": {\n      \"R\": \"R version 4.6.0 (2026-04-24)\",\n      \"packages\": {\n        \"jsonlite\": \"2.0.0\",\n        \"generics\": \"0.1.4\",\n        \"Rcpp\": \"1.1.2\",\n        \"backports\": \"1.5.1\",\n        \"cli\": \"3.6.6\",\n        \"rlang\": \"1.3.0\",\n        \"rbibutils\": \"2.4.1\",\n        \"glue\": \"1.8.1\",\n        \"magrittr\": \"2.0.5\",\n        \"stringi\": \"1.8.9\",\n        \"brio\": \"1.1.5\",\n        \"evaluate\": \"1.0.5\",\n        \"praise\": \"1.0.0\",\n        \"ps\": \"1.9.3\",\n        \"R6\": \"2.6.1\",\n        \"withr\": \"3.0.3\",\n        \"pkgconfig\": \"2.0.3\",\n        \"otel\": \"0.2.0\",\n        \"utf8\": \"1.2.6\",\n        \"fs\": \"2.1.0\",\n        \"rprojroot\": \"2.1.1\",\n        \"crayon\": \"1.5.3\",\n        \"checkmate\": \"2.3.4\",\n        \"lifecycle\": \"1.0.5\",\n        \"Rdpack\": \"2.6.6\",\n        \"RcppEigen\": \"0.3.4.0.2\",\n        \"desc\": \"1.4.3\",\n        \"processx\": \"3.9.0\",\n        \"diffobj\": \"0.3.9\",\n        \"TMB\": \"1.9.25\",\n        \"vctrs\": \"0.7.3\",\n        \"callr\": \"3.8.0\",\n        \"waldo\": \"0.6.2\",\n        \"stringr\": \"1.6.0\",\n        \"pillar\": \"1.11.1\",\n        \"pkgbuild\": \"1.4.8\",\n        \"tibble\": \"3.3.1\",\n        \"pkgload\": \"1.5.3\",\n        \"testthat\": \"3.3.2\",\n        \"mmrm\": \"0.3.18\"\n      },\n      \"loaded_packages\": {\n        \"compiler\": \"4.6.0\",\n        \"backports\": \"1.5.1\",\n        \"Matrix\": \"1.7.5\",\n        \"generics\": \"0.1.4\",\n        \"mmrm\": \"0.3.18\",\n        \"graphics\": \"4.6.0\",\n        \"tools\": \"4.6.0\",\n        \"TMB\": \"1.9.25\",\n        \"utils\": \"4.6.0\",\n        \"grDevices\": \"4.6.0\",\n        \"Rcpp\": \"1.1.2\",\n        \"stats\": \"4.6.0\",\n        \"datasets\": \"4.6.0\",\n        \"nlme\": \"3.1.169\",\n        \"grid\": \"4.6.0\",\n        \"checkmate\": \"2.3.4\",\n        \"methods\": \"4.6.0\",\n        \"jsonlite\": \"2.0.0\",\n        \"rbibutils\": \"2.4.1\",\n        \"Rdpack\": \"2.6.6\",\n        \"base\": \"4.6.0\",\n        \"lattice\": \"0.22.9\"\n      },\n      \"scripts_sha256\": {\n        \"install.R\": \"60bb9c053aab97ae92bcecc995cd2890e8069400b04965eddc67460124d482d9\",\n        \"packages.csv\": \"51fe4fdc00b598bfdc88dd59a1a3250f53d29acf541f6e9fb338d46e1ce747b6\",\n        \"runner.R\": \"3576754cff85ee2d7af2fcab9d7a0fb95bc28f0243c5300c12e8d084aad28919\"\n      }\n    }\n  }\n}\n",
+        "stderr": ""
+      },
+      "ada": {
+        "returncode": 0,
+        "stdout": "{\"run\": \"/private/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/ap091-optional-q0p3nz91/ada-True\", \"n_curves\": 1, \"n_failed\": 0, \"n_unreportable_fits\": 0, \"n_withheld_wells\": 0, \"interpretation\": \"Read reportable/status and diagnostics; exit zero means execution completed, not scientific validation\"}\n",
+        "stderr": ""
+      },
+      "precision": {
+        "returncode": 0,
+        "stdout": "{\"output\": \"/private/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/ap091-optional-q0p3nz91/precision-True\", \"status\": \"estimated\", \"interpretation\": \"Precision estimates do not establish SOP acceptance\"}\n",
+        "stderr": ""
+      },
+      "existing_kr": {
+        "returncode": 0,
+        "stdout": "{\"run\": \"/private/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/ap091-optional-q0p3nz91/kr-True\", \"n_groups\": 3, \"n_contrasts\": 3, \"n_failed\": 0, \"n_unreportable_fits\": 0, \"n_withheld_wells\": 0, \"interpretation\": \"Read reportable/status and diagnostics; exit zero means execution completed, not scientific validation\"}\n",
+        "stderr": ""
+      }
+    }
+  ]
+}

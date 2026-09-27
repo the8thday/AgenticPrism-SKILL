@@ -1,0 +1,128 @@
+{
+  "package_version": "0.9.3",
+  "wheel_sha256": "faeffaf3d18f29fc69eca0d9f7ffba232c23ae90217497077836b9ad92173b01",
+  "installed_module_location_verified": true,
+  "render_and_verify_after_install": true,
+  "independent_qc_wheel_smoke": true,
+  "status": "passed",
+  "temporary_workspace": "/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-2mc208ml",
+  "installed_from": "built wheel, not editable source",
+  "n_curves": 25,
+  "max_kd_relative_difference": 0.0,
+  "intervals_and_states_matched": true,
+  "equilibrium_historical_run_max_kd_relative_difference": 5.825580544627229e-07,
+  "kinetic_max_relative_difference": {
+    "300": 0.0,
+    "600": 0.0
+  },
+  "dose_max_relative_difference": {
+    "dose-ec50-synthetic": 0.0,
+    "dose-ic50-synthetic": 0.0,
+    "dose-public-example": 0.0,
+    "dose-potency-synthetic": 0.0
+  },
+  "dose_historical_run_max_relative_difference": {
+    "dose-ec50-synthetic": 2.220446049250313e-16,
+    "dose-ic50-synthetic": 0.0,
+    "dose-public-example": 1.305666685880169e-09,
+    "dose-potency-synthetic": 0.0
+  },
+  "elisa_group_wheel_matches_source_exactly": true,
+  "elisa_group_committed_run_max_relative_difference": {
+    "elisa-synthetic": 0.0,
+    "elisa-synthetic-qc": 0.0,
+    "groups-paired-synthetic": 0.0,
+    "groups-welch-synthetic": 0.0
+  },
+  "new_0_7_fixtures": {
+    "multigroup_synthetic/config_dunnett.json": "wheel_matches_source_exactly",
+    "multigroup_synthetic/config_games_howell.json": "wheel_matches_source_exactly",
+    "elisa_dilution_5pl/config.json": "wheel_matches_source_exactly",
+    "kinetics_single_cycle/config.json": "wheel_matches_source_exactly",
+    "dose_synthetic/config_potency_equivalence.json": "wheel_matches_source_exactly"
+  },
+  "new_0_8_fixtures": {
+    "repeated_synthetic/config_rm.json": "wheel_matches_source_exactly",
+    "repeated_synthetic/config_mixed.json": "wheel_matches_source_exactly",
+    "repeated_two_way_synthetic/config_two_way_anova.json": "wheel_matches_source_exactly",
+    "repeated_two_way_synthetic/config_two_way_mixed.json": "wheel_matches_source_exactly",
+    "survival_synthetic/config.json": "wheel_matches_source_exactly",
+    "survival_synthetic/config_adjusted.json": "wheel_matches_source_exactly",
+    "tumor_growth_synthetic/config.json": "wheel_matches_source_exactly"
+  },
+  "new_0_8_1_fixtures": {
+    "interpretation_states/config_boundary.json": "wheel_matches_source_exactly",
+    "interpretation_states/config_no_events_arm.json": "wheel_matches_source_exactly",
+    "interpretation_states/config_dropout.json": "wheel_matches_source_exactly",
+    "interpretation_ovarian/config.json": "wheel_matches_source_exactly"
+  },
+  "new_0_8_2_fixtures": {
+    "nonparametric/config_public_mw.json": "wheel_matches_source_exactly",
+    "nonparametric/config_public_signed.json": "wheel_matches_source_exactly",
+    "nonparametric/config_public_kw.json": "wheel_matches_source_exactly",
+    "nonparametric/config_public_friedman.json": "wheel_matches_source_exactly",
+    "nonparametric/config_fixture_mw.json": "wheel_matches_source_exactly",
+    "nonparametric/config_fixture_signed.json": "wheel_matches_source_exactly",
+    "nonparametric/config_fixture_kw.json": "wheel_matches_source_exactly",
+    "nonparametric/config_fixture_friedman.json": "wheel_matches_source_exactly",
+    "mmrm/config_synthetic_unstructured_satterthwaite.json": "wheel_matches_source_exactly",
+    "mmrm/config_synthetic_unstructured_kenward_roger.json": "wheel_matches_source_exactly",
+    "mmrm/config_synthetic_ar1_satterthwaite.json": "wheel_matches_source_exactly",
+    "mmrm/config_synthetic_ar1_kenward_roger.json": "wheel_matches_source_exactly"
+  },
+  "new_0_9_0_fixtures": {
+    "ada_public/config.json": "wheel_matches_source_exactly",
+    "ada_synthetic/config_fixed.json": "wheel_matches_source_exactly",
+    "ada_synthetic/config_floating.json": "wheel_matches_source_exactly",
+    "ada_synthetic/config_dynamic.json": "wheel_matches_source_exactly",
+    "ada_synthetic/config_confirmatory.json": "wheel_matches_source_exactly",
+    "ada_synthetic/config_titer.json": "wheel_matches_source_exactly",
+    "ada_synthetic/config_nonparametric.json": "wheel_matches_source_exactly",
+    "ada_synthetic/config_boxcox.json": "wheel_matches_source_exactly"
+  },
+  "new_0_9_1_fixtures": {
+    "variance_reml/config_ep05_1.json": "wheel_matches_source_exactly",
+    "variance_reml/config_ep05_2.json": "wheel_matches_source_exactly",
+    "variance_reml/config_ep05_3.json": "wheel_matches_source_exactly",
+    "variance_reml/config_penicillin.json": "wheel_matches_source_exactly",
+    "variance_reml/config_nested.json": "wheel_matches_source_exactly",
+    "variance_reml/config_unbalanced.json": "wheel_matches_source_exactly",
+    "variance_reml/config_mixed_fixed.json": "wheel_matches_source_exactly",
+    "variance_reml/config_boundary.json": "wheel_matches_source_exactly"
+  },
+  "new_0_9_2_fixtures": {
+    "intervals_092/config_ada_confirmatory_nonparametric.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ada_confirmatory_parametric.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ada_fixed_nonparametric.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ada_fixed_parametric.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ada_floating_nonparametric.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ada_floating_parametric.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ada_titer_nonparametric.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ada_titer_parametric.json": "wheel_matches_source_exactly",
+    "intervals_092/config_boundary_mls.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ep05_1_mls.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ep05_2_mls.json": "wheel_matches_source_exactly",
+    "intervals_092/config_ep05_3_mls.json": "wheel_matches_source_exactly",
+    "intervals_092/config_mixed_fixed_mls.json": "wheel_matches_source_exactly",
+    "intervals_092/config_nested_mls.json": "wheel_matches_source_exactly",
+    "intervals_092/config_penicillin_mls.json": "wheel_matches_source_exactly",
+    "intervals_092/config_unbalanced_mls.json": "wheel_matches_source_exactly"
+  },
+  "new_0_9_3_fixtures": {
+    "method_validation/config_accuracy_precision.json": "wheel_matches_source_exactly",
+    "method_validation/config_accuracy_precision_unbalanced.json": "wheel_matches_source_exactly",
+    "method_validation/config_dilution_hook.json": "wheel_matches_source_exactly",
+    "method_validation/config_dilution_linearity.json": "wheel_matches_source_exactly",
+    "method_validation/config_parallelism.json": "wheel_matches_source_exactly",
+    "method_validation/config_selectivity.json": "wheel_matches_source_exactly",
+    "method_validation/config_specificity.json": "wheel_matches_source_exactly",
+    "method_validation/config_stability.json": "wheel_matches_source_exactly",
+    "ada_performance/config_ada_two_way_bootstrap.json": "wheel_matches_source_exactly",
+    "ada_performance/config_drug_tolerance.json": "wheel_matches_source_exactly",
+    "ada_performance/config_sensitivity.json": "wheel_matches_source_exactly"
+  },
+  "interpretation_facts_wheel_source_exact_matches": 66,
+  "plate_import_from_wheel": true,
+  "comparison_tolerance": 1e-08,
+  "scope": "independent Python environment on the same macOS host; no cross-platform claim"
+}

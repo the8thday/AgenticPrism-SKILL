@@ -1,0 +1,38 @@
+{
+  "version": "0.8.0",
+  "wheel_sha256": "1d83f73167eee77f35c560c35c77d8f2c3aed38fc87b1fa939915cc2def416ef",
+  "status": "passed",
+  "scope": "Independent installed wheel on the same macOS host; no cross-platform claim",
+  "records": [
+    {
+      "fixture": "config_rm.json",
+      "results_and_bootstrap_match_source_exactly": true,
+      "analyze_render_verify": true,
+      "render_preserves_all_scientific_hashes": true
+    },
+    {
+      "fixture": "config_mixed_wald.json",
+      "results_and_bootstrap_match_source_exactly": true,
+      "analyze_render_verify": true,
+      "render_preserves_all_scientific_hashes": true
+    },
+    {
+      "fixture": "config_mixed.json",
+      "results_and_bootstrap_match_source_exactly": true,
+      "analyze_render_verify": true,
+      "render_preserves_all_scientific_hashes": true
+    },
+    {
+      "fixture": "config_two_way_anova.json",
+      "results_and_bootstrap_match_source_exactly": true,
+      "analyze_render_verify": true,
+      "render_preserves_all_scientific_hashes": true
+    },
+    {
+      "fixture": "config_two_way_mixed.json",
+      "results_and_bootstrap_match_source_exactly": true,
+      "analyze_render_verify": true,
+      "render_preserves_all_scientific_hashes": true
+    }
+  ]
+}

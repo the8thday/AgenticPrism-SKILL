@@ -1,0 +1,932 @@
+{
+  "criterion": "0.9.2 frozen checks: R abs/relative tolerance 5e-6*max(1,abs(reference)).\nPublished bottle endpoints absolute 5.1e-6 (five printed decimal places);\npublished milk lower endpoint absolute 5.1e-8 (seven decimal places).\n",
+  "script_sha256": "180aa675cc423537ddf61b661afabfbbabb2dc014915190c42ea5e43952f1283",
+  "oracle_script_sha256": "774c7ab3211ef42617f343476215334a6e6d33890c91593770012c942d5e30a5",
+  "source_manifest_sha256": "4c37675cdcf10455b34408dba0acb453512c0dc3ab94cb14850b27a5e8383f6d",
+  "oracle": {
+    "R": "R version 4.6.0 (2026-04-24)",
+    "tolerance": "3.0.0",
+    "rows": {
+      "config_boundary_mls": {
+        "mean_squares": [
+          0.6797835410639359,
+          0.8201681511977603,
+          0.5035073520767394
+        ],
+        "df": [
+          5,
+          18,
+          48
+        ],
+        "total": [
+          0.45812404381845423,
+          1.016142204246507
+        ],
+        "upper": [
+          0.18065277148252912,
+          0.3600786938547055,
+          0.7302041319823768
+        ],
+        "correlation": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "config_ep05_1_mls": {
+        "mean_squares": [
+          4.646764879860066,
+          4.6423823141013365,
+          1.9533974804426946
+        ],
+        "df": [
+          19,
+          20,
+          40
+        ],
+        "total": [
+          2.542077831802186,
+          5.224372837991587
+        ],
+        "upper": [
+          1.1047895926796514,
+          3.321044392800922,
+          2.947489741165848
+        ],
+        "correlation": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "config_ep05_2_mls": {
+        "mean_squares": [
+          16.787470664613682,
+          9.37238131387609,
+          3.720280527591978
+        ],
+        "df": [
+          19,
+          20,
+          40
+        ],
+        "total": [
+          6.292198133444742,
+          13.922143685879153
+        ],
+        "upper": [
+          5.635752948427319,
+          6.8121724383342945,
+          5.613547063064369
+        ],
+        "correlation": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "config_ep05_3_mls": {
+        "mean_squares": [
+          79.27080116973144,
+          30.346406921813458,
+          16.284020984290734
+        ],
+        "df": [
+          19,
+          20,
+          40
+        ],
+        "total": [
+          26.231452741631973,
+          60.022968176385916
+        ],
+        "upper": [
+          29.848429606792436,
+          20.03022865636035,
+          24.5710283117847
+        ],
+        "correlation": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "config_mixed_fixed_mls": {
+        "mean_squares": [
+          38.67934812790821,
+          3.680359366687537,
+          2.1834650970659624,
+          0.4595261115496725
+        ],
+        "df": [
+          4.976985115030594,
+          17.33509167445984,
+          2.9847501274127404,
+          43.00000000000014
+        ],
+        "total": [
+          2.5697339842206217,
+          21.339138113640058
+        ],
+        "upper": [
+          14.070989362067694,
+          2.305456029419412,
+          1.1738143820998215,
+          0.6821963087681366
+        ],
+        "correlation": [
+          [
+            1,
+            0.0022110663244517188,
+            0.00010891068226964665,
+            2.785085723956989e-15
+          ],
+          [
+            0.0022110663244517205,
+            1,
+            0.01826540062107205,
+            1.4296716761014732e-15
+          ],
+          [
+            0.00010891068226964766,
+            0.01826540062107203,
+            1,
+            2.6529555656736535e-16
+          ],
+          [
+            2.78527105589194e-15,
+            1.4277791631669348e-15,
+            2.5637883339659204e-16,
+            1
+          ]
+        ]
+      },
+      "config_nested_mls": {
+        "mean_squares": [
+          71.8248725618309,
+          3.3819509993550225,
+          0.7209864068758784
+        ],
+        "df": [
+          5,
+          18,
+          48
+        ],
+        "total": [
+          3.637389127588431,
+          37.34822901500714
+        ],
+        "upper": [
+          25.844728177363628,
+          1.9224953253339727,
+          1.0455999326175778
+        ],
+        "correlation": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "config_penicillin_mls": {
+        "mean_squares": [
+          4.603864734299523,
+          89.84444444444436,
+          0.30241545893720184
+        ],
+        "df": [
+          23,
+          5,
+          115
+        ],
+        "total": [
+          2.444645310037249,
+          23.540000802557547
+        ],
+        "upper": [
+          1.2978350106350856,
+          16.327845724516102,
+          0.3811589131570561
+        ],
+        "correlation": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "config_unbalanced_mls": {
+        "mean_squares": [
+          21.876311502853223,
+          1.4912026125792601,
+          0.7461620491686256
+        ],
+        "df": [
+          4.98286363852708,
+          17.762887783207812,
+          47.99999999999993
+        ],
+        "total": [
+          1.5585299957458638,
+          11.910187573626665
+        ],
+        "upper": [
+          7.863064423469037,
+          0.7306191291207879,
+          1.0821105375802476
+        ],
+        "correlation": [
+          [
+            1,
+            0.00056885523557766,
+            9.300900917557029e-17
+          ],
+          [
+            0.0005688552355776403,
+            1,
+            -2.8151374056364243e-16
+          ],
+          [
+            9.08533182456309e-17,
+            -2.860000293102526e-16,
+            1
+          ]
+        ]
+      },
+      "config_ada_confirmatory_nonparametric": {
+        "lower": 11.160597306576104,
+        "rank": 6
+      },
+      "config_ada_confirmatory_parametric": {
+        "lower": 13.469213449053958,
+        "k": 2.089923001886596
+      },
+      "config_ada_titer_nonparametric": {
+        "lower": 4.184112469830873,
+        "rank": 6
+      },
+      "config_ada_floating_nonparametric": {
+        "lower": 0.07656033977761598,
+        "rank": 5
+      },
+      "config_ada_titer_parametric": {
+        "lower": 4.604003513293582,
+        "k": 2.8293620482026602
+      },
+      "config_ada_floating_parametric": {
+        "lower": 0.2966508032563072,
+        "k": 1.474271423634916
+      },
+      "config_ada_fixed_parametric": {
+        "lower": 4.309336166811983,
+        "k": 1.474346271223238
+      },
+      "config_ada_fixed_nonparametric": {
+        "lower": 4.084536076610489,
+        "rank": 5
+      },
+      "config_public": {
+        "lower": 3.038942226649059,
+        "k": 1.4590288522737136
+      },
+      "published_nonparametric_logistic": {
+        "lower": 1.47012382370621,
+        "rank": 6
+      },
+      "public_nonparametric_pairs": {
+        "lower": 2.6171002748445353,
+        "rank": 5
+      },
+      "published_milk": {
+        "lower": 0.9610332832496422,
+        "k": -1.9259909722631354
+      }
+    }
+  },
+  "rows": [
+    {
+      "name": "config_boundary_mls",
+      "fields": [
+        {
+          "field": "mean_squares",
+          "max_absolute_difference": 2.55351295663786e-15,
+          "max_relative_difference": 3.7563618451857955e-15,
+          "passed": true
+        },
+        {
+          "field": "df",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "total",
+          "max_absolute_difference": 1.5543122344752192e-15,
+          "max_relative_difference": 1.529620783370353e-15,
+          "passed": true
+        },
+        {
+          "field": "upper",
+          "max_absolute_difference": 2.220446049250313e-15,
+          "max_relative_difference": 3.994652061433455e-15,
+          "passed": true
+        },
+        {
+          "field": "correlation",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ep05_1_mls",
+      "fields": [
+        {
+          "field": "mean_squares",
+          "max_absolute_difference": 2.4868995751603507e-14,
+          "max_relative_difference": 5.351894574952632e-15,
+          "passed": true
+        },
+        {
+          "field": "df",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "total",
+          "max_absolute_difference": 4.440892098500626e-15,
+          "max_relative_difference": 8.500335324857566e-16,
+          "passed": true
+        },
+        {
+          "field": "upper",
+          "max_absolute_difference": 1.4876988529977098e-14,
+          "max_relative_difference": 1.3465902130642972e-14,
+          "passed": true
+        },
+        {
+          "field": "correlation",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ep05_2_mls",
+      "fields": [
+        {
+          "field": "mean_squares",
+          "max_absolute_difference": 4.618527782440651e-14,
+          "max_relative_difference": 2.7511754895727374e-15,
+          "passed": true
+        },
+        {
+          "field": "df",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "total",
+          "max_absolute_difference": 2.4868995751603507e-14,
+          "max_relative_difference": 1.786290697231307e-15,
+          "passed": true
+        },
+        {
+          "field": "upper",
+          "max_absolute_difference": 3.2862601528904634e-14,
+          "max_relative_difference": 5.831093348063649e-15,
+          "passed": true
+        },
+        {
+          "field": "correlation",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ep05_3_mls",
+      "fields": [
+        {
+          "field": "mean_squares",
+          "max_absolute_difference": 1.1368683772161603e-13,
+          "max_relative_difference": 1.4341577988873149e-15,
+          "passed": true
+        },
+        {
+          "field": "df",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "total",
+          "max_absolute_difference": 7.105427357601002e-14,
+          "max_relative_difference": 1.183784736656259e-15,
+          "passed": true
+        },
+        {
+          "field": "upper",
+          "max_absolute_difference": 1.1368683772161603e-13,
+          "max_relative_difference": 3.808804658042879e-15,
+          "passed": true
+        },
+        {
+          "field": "correlation",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_mixed_fixed_mls",
+      "fields": [
+        {
+          "field": "mean_squares",
+          "max_absolute_difference": 1.8474111129762605e-13,
+          "max_relative_difference": 4.7762209095848296e-15,
+          "passed": true
+        },
+        {
+          "field": "df",
+          "max_absolute_difference": 3.979039320256561e-13,
+          "max_relative_difference": 9.253579814550111e-15,
+          "passed": true
+        },
+        {
+          "field": "total",
+          "max_absolute_difference": 1.7763568394002505e-14,
+          "max_relative_difference": 3.1106744224832747e-15,
+          "passed": true
+        },
+        {
+          "field": "upper",
+          "max_absolute_difference": 3.019806626980426e-14,
+          "max_relative_difference": 7.377435243709421e-15,
+          "passed": true
+        },
+        {
+          "field": "correlation",
+          "max_absolute_difference": 7.234900600305976e-15,
+          "max_relative_difference": 2.5975570977199243,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_nested_mls",
+      "fields": [
+        {
+          "field": "mean_squares",
+          "max_absolute_difference": 3.268496584496461e-13,
+          "max_relative_difference": 5.543520447173471e-15,
+          "passed": true
+        },
+        {
+          "field": "df",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "total",
+          "max_absolute_difference": 4.902744876744691e-13,
+          "max_relative_difference": 1.3127114741570976e-14,
+          "passed": true
+        },
+        {
+          "field": "upper",
+          "max_absolute_difference": 3.517186542012496e-13,
+          "max_relative_difference": 1.3608912881092168e-14,
+          "passed": true
+        },
+        {
+          "field": "correlation",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_penicillin_mls",
+      "fields": [
+        {
+          "field": "mean_squares",
+          "max_absolute_difference": 1.3216094885137863e-12,
+          "max_relative_difference": 3.06743088432216e-14,
+          "passed": true
+        },
+        {
+          "field": "df",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "total",
+          "max_absolute_difference": 5.542233338928781e-13,
+          "max_relative_difference": 2.354389613413537e-14,
+          "passed": true
+        },
+        {
+          "field": "upper",
+          "max_absolute_difference": 4.298783551348606e-13,
+          "max_relative_difference": 3.644184388729657e-14,
+          "passed": true
+        },
+        {
+          "field": "correlation",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_unbalanced_mls",
+      "fields": [
+        {
+          "field": "mean_squares",
+          "max_absolute_difference": 7.105427357601002e-15,
+          "max_relative_difference": 2.2318671108953503e-15,
+          "passed": true
+        },
+        {
+          "field": "df",
+          "max_absolute_difference": 2.1316282072803006e-13,
+          "max_relative_difference": 1.9428877603387683e-14,
+          "passed": true
+        },
+        {
+          "field": "total",
+          "max_absolute_difference": 3.659295089164516e-13,
+          "max_relative_difference": 3.0724076061299653e-14,
+          "passed": true
+        },
+        {
+          "field": "upper",
+          "max_absolute_difference": 2.2737367544323206e-13,
+          "max_relative_difference": 2.8916674619196246e-14,
+          "passed": true
+        },
+        {
+          "field": "correlation",
+          "max_absolute_difference": 3.697577659516067e-15,
+          "max_relative_difference": 40.698322647052926,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ada_confirmatory_nonparametric",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "rank",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ada_confirmatory_parametric",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 7.123190925995004e-13,
+          "max_relative_difference": 5.288498064818565e-14,
+          "passed": true
+        },
+        {
+          "field": "k",
+          "max_absolute_difference": 4.551914400963142e-13,
+          "max_relative_difference": 2.1780297153790258e-13,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ada_titer_nonparametric",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "rank",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ada_floating_nonparametric",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "rank",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ada_titer_parametric",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 1.616484723854228e-13,
+          "max_relative_difference": 3.5110414646444037e-14,
+          "passed": true
+        },
+        {
+          "field": "k",
+          "max_absolute_difference": 7.887024366937112e-13,
+          "max_relative_difference": 2.787562790681846e-13,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ada_floating_parametric",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 7.172040739078511e-14,
+          "max_relative_difference": 2.417671100280772e-13,
+          "passed": true
+        },
+        {
+          "field": "k",
+          "max_absolute_difference": 3.6259883984257613e-13,
+          "max_relative_difference": 2.459512095463155e-13,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ada_fixed_parametric",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 6.306066779870889e-14,
+          "max_relative_difference": 1.4633499304223635e-14,
+          "passed": true
+        },
+        {
+          "field": "k",
+          "max_absolute_difference": 3.4705571749782393e-13,
+          "max_relative_difference": 2.35396340921918e-13,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_ada_fixed_nonparametric",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "rank",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "config_public",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 1.7363888105137448e-13,
+          "max_relative_difference": 5.713793422221137e-14,
+          "passed": true
+        },
+        {
+          "field": "k",
+          "max_absolute_difference": 3.710365348297273e-13,
+          "max_relative_difference": 2.543037680519569e-13,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "published_nonparametric_logistic",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "rank",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "public_nonparametric_pairs",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        },
+        {
+          "field": "rank",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "published_milk",
+      "fields": [
+        {
+          "field": "lower",
+          "max_absolute_difference": 2.0761170560490427e-14,
+          "max_relative_difference": 2.1602967266948874e-14,
+          "passed": true
+        },
+        {
+          "field": "k",
+          "max_absolute_difference": 9.394707234378075e-13,
+          "max_relative_difference": 4.87785631899345e-13,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "published_examples": [
+    {
+      "name": "Burdick-Graybill 1984 shortest MLS lower",
+      "observed": 0.0019308170355270605,
+      "published": 0.00193,
+      "tolerance": 5.1e-06,
+      "absolute_difference": 8.17035527060422e-07,
+      "passed": true
+    },
+    {
+      "name": "Burdick-Graybill 1984 shortest MLS upper",
+      "observed": 0.021585585190086964,
+      "published": 0.02159,
+      "tolerance": 5.1e-06,
+      "absolute_difference": 4.414809913037138e-06,
+      "passed": true
+    },
+    {
+      "name": "Young 2016 milk lower tolerance limit",
+      "observed": 0.961033283249663,
+      "published": 0.9610333,
+      "tolerance": 5.1e-08,
+      "absolute_difference": 1.675033700632156e-08,
+      "passed": true
+    }
+  ],
+  "published_nonparametric_help_example": {
+    "result": {
+      "lower_bound": 1.47012382370621,
+      "order": 6,
+      "n_independent_pairs": 200,
+      "attained_confidence_continuous": 0.9376575049577053,
+      "confidence_level": 0.9,
+      "percentile_probability": 0.05,
+      "method": "binomial lower order statistic",
+      "confidence_direction": "P(conditional FPR >= target) >= confidence",
+      "limitations": [
+        "Requires prespecified mutually independent subject/run pairs, not pooled repeated cells.",
+        "A few independent runs can give a very low cut point and high mean FPR, especially for the titer tail.",
+        "Attained confidence is exact for continuous iid responses; ties are conservative for the >= positive rule."
+      ]
+    },
+    "R_result": {
+      "lower": 1.47012382370621,
+      "rank": 6
+    },
+    "data_sha256": "66eb40ac98656fbc5a126fcece988796436b8548014066043fabe51d16d5768b",
+    "scope": "Reproduces the published package help code, which uses side=1; its prose label says two-sided. No printed numeric endpoint is present in the help file."
+  },
+  "scope": "R independently checks mean-square matrices and MLS/MOVER arithmetic, tolerance checks normal/order-statistic bounds. Mixed-panel NCT effective-df and general unbalanced MOVER are approximations assessed separately by simulation; not package-equivalence claims."
+}

@@ -1,0 +1,16 @@
+observation_id,independent_unit_id,group,outcome,value,unit
+A-0,A-0,A,published_measurement,1.15,source_unit
+A-1,A-1,A,published_measurement,0.88,source_unit
+A-2,A-2,A,published_measurement,0.9,source_unit
+A-3,A-3,A,published_measurement,0.74,source_unit
+A-4,A-4,A,published_measurement,1.21,source_unit
+B-0,B-0,B,published_measurement,0.8,source_unit
+B-1,B-1,B,published_measurement,0.83,source_unit
+B-2,B-2,B,published_measurement,1.89,source_unit
+B-3,B-3,B,published_measurement,1.04,source_unit
+B-4,B-4,B,published_measurement,1.45,source_unit
+B-5,B-5,B,published_measurement,1.38,source_unit
+B-6,B-6,B,published_measurement,1.91,source_unit
+B-7,B-7,B,published_measurement,1.64,source_unit
+B-8,B-8,B,published_measurement,0.73,source_unit
+B-9,B-9,B,published_measurement,1.46,source_unit

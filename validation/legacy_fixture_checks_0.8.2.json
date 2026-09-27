@@ -1,0 +1,418 @@
+{
+  "baseline_commit": "536e99f0f12867739fe730e0bed81ca6c186ed90",
+  "script_sha256": "73ac873d4406a34c6c904e987ddf420aa3b7b642f08b682787632a27f5697615",
+  "fixtures": {
+    "public/config.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json",
+        "sample_summary.csv",
+        "sensitivity.csv"
+      ],
+      "explanatory_changes": []
+    },
+    "kinetics_synthetic/config.json": {
+      "byte_identical_artifacts": [
+        "bootstrap.csv",
+        "config.resolved.json",
+        "curve_parameters.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "window_sensitivity.csv"
+      ],
+      "explanatory_changes": []
+    },
+    "dose_synthetic/config_ec50.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ],
+      "explanatory_changes": []
+    },
+    "elisa_independent_qc/config.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "cross_plate_qc.csv",
+        "diagnostics.json",
+        "dilution_linearity.csv",
+        "independent_qc.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv",
+        "standards_qc.csv",
+        "unknown_wells.csv"
+      ],
+      "explanatory_changes": []
+    },
+    "groups_synthetic/paired_config.json": {
+      "byte_identical_artifacts": [
+        "comparison.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "groups_synthetic/independent_config.json": {
+      "byte_identical_artifacts": [
+        "comparison.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "multigroup_synthetic/config_dunnett.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "elisa_dilution_5pl/config.json": {
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "cross_plate_qc.csv",
+        "diagnostics.json",
+        "dilution_linearity.csv",
+        "independent_qc.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv",
+        "standards_qc.csv",
+        "unknown_wells.csv"
+      ],
+      "explanatory_changes": []
+    },
+    "kinetics_single_cycle/config.json": {
+      "byte_identical_artifacts": [
+        "bootstrap.csv",
+        "config.resolved.json",
+        "curve_parameters.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "window_sensitivity.csv"
+      ],
+      "explanatory_changes": []
+    },
+    "dose_synthetic/config_potency_equivalence.json": {
+      "byte_identical_artifacts": [
+        "comparison_grid.csv",
+        "comparisons.csv",
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "parallelism_equivalence.csv",
+        "potency_summary.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ],
+      "explanatory_changes": []
+    },
+    "repeated_synthetic/config_rm.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "repeated_synthetic/config_mixed.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ],
+      "explanatory_changes": [
+        {
+          "name": "interpretation_facts.json",
+          "reason": "Updated bootstrap evidence limitation only; all estimates, pointers and source hashes unchanged."
+        }
+      ]
+    },
+    "repeated_two_way_synthetic/config_two_way_anova.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json",
+        "tests.csv"
+      ],
+      "explanatory_changes": []
+    },
+    "repeated_two_way_synthetic/config_two_way_mixed.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json",
+        "tests.csv"
+      ],
+      "explanatory_changes": []
+    },
+    "survival_synthetic/config.json": {
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "survival_synthetic/config_adjusted.json": {
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "tumor_growth_synthetic/config.json": {
+      "byte_identical_artifacts": [
+        "arm_day_summary.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "dropout.csv",
+        "growth_rates.csv",
+        "growth_tests.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "model_contrasts.csv",
+        "normalized_data.csv",
+        "observed_tgi.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "interpretation_states/config_boundary.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "interpretation_states/config_no_events_arm.json": {
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "interpretation_states/config_dropout.json": {
+      "byte_identical_artifacts": [
+        "arm_day_summary.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "dropout.csv",
+        "growth_rates.csv",
+        "growth_tests.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "model_contrasts.csv",
+        "normalized_data.csv",
+        "observed_tgi.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "interpretation_ovarian/config.json": {
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    },
+    "repeated_synthetic/config_mixed_wald.json": {
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ],
+      "explanatory_changes": []
+    }
+  },
+  "byte_identical_count": 295,
+  "status": "passed"
+}

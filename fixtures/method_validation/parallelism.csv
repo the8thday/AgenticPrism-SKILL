@@ -1,0 +1,13 @@
+observation_id,sample_id,dilution_factor,status,value,exclude,exclusion_reason
+o0000,P1,8,quantified,50.13773,false,
+o0001,P1,16,quantified,24.88129,false,
+o0002,P1,32,quantified,12.1145,false,
+o0003,P1,64,quantified,6.20457,false,
+o0004,P2,8,quantified,50.47873,false,
+o0005,P2,16,quantified,24.66604,false,
+o0006,P2,32,quantified,12.90397,false,
+o0007,P2,64,quantified,6.2685,false,
+o0008,P3,8,quantified,51.19604,false,
+o0009,P3,16,quantified,29.29396,false,
+o0010,P3,32,quantified,16.30504,false,
+o0011,P3,64,quantified,9.03979,false,

@@ -1,9 +1,143 @@
-# Validation — AgenticPrism development 0.7.1
+# Validation — AgenticPrism development 0.9.3
+
+## 0.9.3 — method validation, ADA sensitivity/drug tolerance, two-way bootstrap bound
+
+[Release evidence](RELEASE_0.9.3.md): new method-validation Skill (accuracy/precision with total
+error, dilution linearity and hook, parallelism with trend, selectivity, specificity, stability),
+ADA sensitivity and drug tolerance, a two-way bootstrap nonparametric lower bound, and MLS as the
+default precision interval. 188 fields agree with an independent R oracle (max relative 3.4e-12).
+Calibration (script committed before running): 17 of 18 rows with criteria pass; the sensitivity
+prediction limit with 3-fold dilution spacing misses (92.1% vs 92.2%). Five live-agent scenarios
+pass. No printed worked example of the Mee interval was available.
+
+## 0.9.2 — precision intervals and ADA lower confidence bounds
+
+[Release evidence](RELEASE_0.9.2.md): orthogonal MLS, unbalanced correlated
+MOVER, boundary upper bounds, and parametric/independent-pair ADA lower limits.
+Reviewer 84.6% / 95.6% coverage reproduced. Nested-crossed lot upper-bound
+miss (92.8%) and conservative nonparametric titer FPR are disclosed.
+All calibration rows include MCSE; historical records are preserved.
+See [release checks](release_checks_0.9.2.json) and
+[live-agent attempts](agent-scenarios/0.9.2/RESULTS.md).
+
+
+## 0.9.1 — ADA recalibration and general precision REML
+
+[Release record](RELEASE_0.9.1.md): reviewer ADA numbers reproduced using exact
+conditional FPR; old floating/IQR failure labels superseded. New Python nested/
+crossed REML with unbalanced data and Satterthwaite intervals, regenerated VCA/
+lme4 comparisons and EP05 worked example. Small three-lot total coverage and
+true-zero component inference miss their bounds; all rows and MCSE are recorded.
+Live-agent gate is pending explicit external-Claude authorization following an
+automatic review rejection. See [checks](release_checks_0.9.1.json).
+
 
 > The published distribution contains these records but not `runs/`, `tests/`,
 > `scripts/` or the agent-session transcripts. Links to those items below resolve
 > only in the development repository; the results they document are summarized
 > in the text.
+
+## Scoped ADA cut points and shared variance components — 2026-09-27 (0.9.0)
+
+Adds a Python ADA specialist for complete balanced drug-naive negative panels:
+point screening/confirmatory/titer percentiles, declared normalization and
+transformations, audited outlier policies, fixed/floating gates and a reusable
+subject/run crossed ANOVA primitive. Dynamic deployment, lower cut-point bounds,
+separate analyst/day/plate REML, sensitivity/drug tolerance and full method
+validation are not implemented. New ADA runs save interpretation facts.
+
+Nine regenerated R comparison rows pass; positive component estimates agree
+with lme4 within 8.072245e-7 relative. Published rADA scalar percentiles and the
+Bates Penicillin variance example are reproduced at printed precision. A second
+lecture's printed sample-variance discrepancy is retained as a miss. Nine
+cut-point and three component-interval calibration rows each use 1,000 datasets:
+floating parametric screening (6.8349%), biological-IQR exclusion (7.1579%) and
+unanticipated future shift (61.5628%) miss their fixed FPR bounds. All three
+component simultaneous-coverage rows pass (95.9%, 96.1%, 96.9%).
+
+Full pytest: 349 passed. Both changed Skills validate. Legacy regression retains
+428 byte-identical artifacts across 34 configurations; installed wheel/source
+facts match in 31 configurations. All four final live-agent stopping guards
+pass, but A1/A3 narrative overgeneralizations remain. See
+[0.9.0 evidence](RELEASE_0.9.0.md), [release checks](release_checks_0.9.0.json)
+and [scenario assessment](agent-scenarios/0.9.0/RESULTS.md) for exact scope,
+misses, defects and installation results. Work remains local on dev/0.9.0.
+
+## Rank tests, MMRM and runtime discovery — 2026-09-27 (0.8.2)
+
+Adds MW/signed-rank with HL intervals, KW/Dunn and Friedman, plus marginal
+US/AR(1) MMRM with Python Satterthwaite or optional pinned R Kenward–Roger.
+The runtime guide now checks the collection `.venv` before PATH. Both new
+analysis types save interpretation facts. New R benchmarks include public
+worked examples and fixtures; the KR/direct-mmrm maximum relative difference
+is 6.0e-15, and Python MMRM/direct-mmrm is 1.810916e-6. An exact-MW tail cancellation
+was fixed; the tiny-tail R comparison is within 9.86e-15 relative. Approximate
+rank endpoints have limited near-zero precision, detailed in the release record.
+
+All 20 rank-test calibration rows met their fixed evaluable-run bounds; two
+tied signed-rank rows had 384 and 31 reduced-confidence intervals that were
+excluded from the 95% coverage denominator. US/Satterthwaite missed interaction
+rejection (7.0%); US/KR missed interaction/family rejection (7.1%/6.7%) and
+coverage (93.3%). Both AR(1) rows passed. B=999 bootstrap coverage was
+95.5%/94.0%/95.6% across the three fixed rows (3/3 rows passed all bounds).
+Each row generated 1,000 datasets; no bounds, seeds or scenarios were retuned.
+
+The full suite passed 306 tests. The final wheel's facts match source exactly
+for 23 configurations; isolated install smoke passed 33 configurations.
+Optional-R checks covered absent R and an existing pinned R library. Legacy
+fixtures retain 295 byte-identical artifacts across 22 configs; one facts
+limitation was updated without changing numerical results. See
+[0.8.2 release evidence](RELEASE_0.8.2.md) for every row, R scope, preserved
+failures, live-agent scores and remaining limits. Historical evidence below is
+unchanged; no 0.9 work was started.
+
+## Interpretation facts — 2026-09-27 (0.8.1)
+
+Adds a source-linked facts artifact to repeated-measures, time-to-event and
+tumor-growth, with no new statistical method. Twelve configurations reproduce
+170 legacy scientific artifacts byte for byte against dev/0.8.0; 487 facts
+values match their saved sources exactly. The published R ovarian log-rank
+example matches within 9.18e-15 relative. Existing R benchmarks were rerun.
+The full suite passed 250 tests; four changed Skills passed quick validation.
+All three new RM/RI simulation rows used 1,000 draws and passed their fixed
+inference bounds; all 3,000 facts/state checks passed. Survival and tumor
+calibrations reproduce the earlier limits and comparator shortfalls.
+Live-agent core misuse checks passed in the final three scenarios, with one
+partial workflow result (runtime location); there was no independent human
+re-score. See [0.8.1 release evidence](RELEASE_0.8.1.md) for every simulation
+row, omissions and installation evidence. Other 0.8 follow-ups remain open.
+
+## Satterthwaite, arm × time, time to event and tumor growth — 2026-09-27 (0.8.0)
+
+Adds Satterthwaite inference and arm × condition designs to repeated measures,
+and two new Skills: time-to-event and tumor-growth (nine Skills in total). All
+new estimators agree with R (lmerTest, afex, emmeans, survival, nlme) on public
+datasets and fixtures to within 1e-6 relative (most to 1e-8 or better). See
+[RELEASE_0.8.0.md](RELEASE_0.8.0.md) for the observed numbers.
+Calibration simulations with bounds fixed before running:
+repeated-measures Satterthwaite held 4.7–5.5% type I error and 94.9–96.0%
+simultaneous coverage (8–12 units, including weak clustering, where it was
+withheld in 33% of datasets at the variance boundary); split-plot GG and the
+two-way Satterthwaite tests held 4.5–5.2%. One miss: the one-factor parametric
+bootstrap (199 refits) covered 93.4% against a 93.6% bound at 12 units.
+Survival: permutation log-rank 4.3–4.9% at n = 6–10 per arm, compared with 6.6%
+for the asymptotic test at n = 6. Log-log KM limits covered 96.4% and log
+limits 91.9%. Tumor growth: rate-difference family coverage 95.1% under MAR
+dropout, where survivor-based observed TGI fell to 92.2%. Twelve live-agent
+scenarios passed. The appendix of that record keeps the first 0.8.0 commit's
+evidence; the entry below describes that commit only, and its 100-experiment
+smoke check is superseded.
+
+## Repeated measurements — 2026-09-27 (0.8.0)
+
+One-factor RM ANOVA with GG correction, and Gaussian random-intercept REML
+with explicit missingness policy and parametric bootstrap or asymptotic Wald
+inference. Independent R/nlme fitting comparisons, prespecified simulations,
+input/refusal tests and installed-wheel checks are in
+[RELEASE_0.8.0.md](RELEASE_0.8.0.md). The 100-experiment mixed-model simulation
+is a coarse smoke check (93% simultaneous coverage); it does not establish
+nominal coverage in other designs. No KR/Satterthwaite, random slopes,
+treatment-by-time, AR(1) or general MMRM implementation is claimed.
 
 ## Installable distribution — 2026-09-27 (0.7.1)
 

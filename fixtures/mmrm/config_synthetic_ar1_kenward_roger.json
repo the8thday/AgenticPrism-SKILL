@@ -1,0 +1,34 @@
+{
+  "analysis_type": "mmrm",
+  "schema_version": 1,
+  "input": "synthetic.csv",
+  "source": "Synthetic Gaussian complete vectors with fixed missing cells, seed 823; no measured biology.",
+  "comparison": {
+    "groups": [
+      "v0",
+      "v1",
+      "v2"
+    ],
+    "arms": [
+      "A",
+      "B"
+    ],
+    "control_arm": "A",
+    "outcome": "simulated_response",
+    "unit": "AU",
+    "rationale": "Predeclared arm by visit comparison with independent subjects and common within-subject covariance; numerical validation example.",
+    "independent_units": true,
+    "covariance_appropriate": true,
+    "covariance_rationale": "Declared homogeneous ar1 within-subject covariance for this numerical example.",
+    "covariates": [],
+    "covariance": "ar1",
+    "inference": "kenward_roger",
+    "missing_policy": "available_case",
+    "missingness_rationale": "Available-case MAR assumption for this numerical example; it is not empirically established.",
+    "confidence_level": 0.95,
+    "post_hoc": "arm_vs_control_each_condition"
+  },
+  "report": {
+    "plot_style": "prism_like"
+  }
+}

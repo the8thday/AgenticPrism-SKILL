@@ -1,0 +1,19 @@
+{
+  "analysis_type": "repeated_measures",
+  "input": "complete.csv",
+  "source": "Synthetic Gaussian random-intercept fixture; seed 20260927; no measured biology",
+  "comparison": {
+    "design": "one_way_rm_anova",
+    "groups": [
+      "control",
+      "mAb-A",
+      "mAb-B",
+      "mAb-C"
+    ],
+    "outcome": "cytokine_response",
+    "unit": "pg/mL",
+    "rationale": "Each synthetic donor contributes one unit-level value per condition; contrasts declared vs control",
+    "post_hoc": "vs_control",
+    "control": "control"
+  }
+}

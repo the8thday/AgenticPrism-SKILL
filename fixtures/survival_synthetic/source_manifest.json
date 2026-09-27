@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "seed": 20260930,
+  "generator": "scripts/prepare_survival_fixtures.py",
+  "hazards_per_day": {
+    "vehicle": 0.05555555555555555,
+    "mAb-low": 0.03333333333333333,
+    "mAb-high": 0.01818181818181818
+  },
+  "baseline_volume_log_hazard_per_mm3": 0.004,
+  "study_end_day": 60,
+  "manual_edit": "row 26 (zero-based 25) censored at day 33 to illustrate an unrelated death"
+}

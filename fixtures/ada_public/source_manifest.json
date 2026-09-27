@@ -1,0 +1,26 @@
+{
+  "source": "https://cran.r-project.org/src/contrib/rADA_1.1.9.tar.gz",
+  "version": "1.1.9",
+  "license": "GPL-3 package; retain source attribution",
+  "worked_example": "https://cran.r-project.org/web/packages/rADA/vignettes/rada_vignette.html",
+  "source_sha256": "82b22c855d22bea6b60b551d77a1d13d6ed277c982fd57f01d20ce8a2ab6875c",
+  "vignette_sha256": "f911a1b950e03ddaaf678dcbfdf42e8257c189a75bd08d3cce6373b52a410308",
+  "data_sha256": "541e7d5258bc0bd1c87b7635808b89e244a74ed65dd75a9f50eee9564aa9e1ab",
+  "canonical_sha256": "742ccec5dab23c7e551664bd3f3e147b597ec228b7a2c3da3ffede826afca372",
+  "generator_sha256": "87696627bb69908b4226f02fda9e22b236001b599aff3d7929d5fe87e5b7488e",
+  "scope": "Simulated public data. Vignette nonparametric CP on CV-filtered raw wells is reproduced as a scalar primitive check; product uses cell means and complete subjects, not that filtering or its intervals.",
+  "published_nonparametric_cp": {
+    "D1_Op1": 24.18815,
+    "D1_Op2": 26.08928,
+    "D2_Op1": 26.62153,
+    "D2_Op2": 25.50627,
+    "D3_Op1": 24.61321,
+    "D3_Op2": 28.24917,
+    "all": 26.57031
+  },
+  "transformations": [
+    "CSV exported using R load() and write.csv; values unchanged",
+    "Canonical wide to long; preserve ID/day/operator/replicate",
+    "Source Lot is donor-specific, not a reagent-lot variable; no experimental lot claim"
+  ]
+}

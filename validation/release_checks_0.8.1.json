@@ -1,0 +1,418 @@
+{
+  "version": "0.8.1",
+  "created_utc": "2026-09-27T08:33:37.563911+00:00",
+  "branch": "dev/0.8.1",
+  "runtime_implementation_commit": "3da4038",
+  "design_commit": "8bb0ab1",
+  "status": "software_checks_passed_with_documented_agent_limitations",
+  "scope": "Interpretation facts for repeated-measures, time-to-event and tumor-growth only; other 0.8 follow-ups not started; no 0.9 work.",
+  "python": "3.13.9",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q --junitxml=/tmp/prism-pytest-081.xml",
+    "exit_code": 0,
+    "passed": 250,
+    "new_facts_tests": 24,
+    "seconds": 174.186,
+    "log_sha256": "0710ade6e4b7b3117cc33471cab700ec662397e74b8055e6778f712eb8b6a564",
+    "junit_sha256": "76891d030684ad6fb8bb2da809125dd48e97a513d484f4fe865bde84b490ea2a"
+  },
+  "skill_validation": {
+    "validator": "~/.claude-science/skills/skill-creator/scripts/quick_validate.py",
+    "validator_sha256": "6d917e48fa4a391d3331bb2910936be8ad61e39bb8e6864a0b7dc94c48cdced9",
+    "skills": {
+      "agentic-prism": {
+        "exit_code": 0,
+        "output": "Skill is valid!",
+        "skill_md_sha256": "fb94d8a77dc74171c277df911a20e60244e8c46e119b242ada4fbe0fb2b9f4e6"
+      },
+      "repeated-measures": {
+        "exit_code": 0,
+        "output": "Skill is valid!",
+        "skill_md_sha256": "8882311601ef25922cdafb9ecf4ea4e91fb2812f966e0a90cc012c2b40e31c56"
+      },
+      "time-to-event": {
+        "exit_code": 0,
+        "output": "Skill is valid!",
+        "skill_md_sha256": "9208821df12be20bb8e0e6a5434712c5c3615713cf9fc3c8686ff3209adad282"
+      },
+      "tumor-growth": {
+        "exit_code": 0,
+        "output": "Skill is valid!",
+        "skill_md_sha256": "8c0add2f297aac9a4538123285079e8721bc5ff8f6597a53d3ecbd37d361d880"
+      }
+    }
+  },
+  "build": {
+    "command": "uv build",
+    "exit_code": 0,
+    "wheel": "dist/agentic_prism-0.8.1-py3-none-any.whl",
+    "wheel_sha256": "044d463577f6cf65b7cb7357c56f3c6080ee6c7dfd57f44dfdb43da05a09d29a",
+    "wheel_bytes": 149298,
+    "source_archive_sha256": "ec35e08a7e2d7acfa9c8157c58a83c38742ba5b0d17a6e53941382702006d722",
+    "wheel_matches_current_python_files": 35,
+    "log_sha256": "424c8ba0c1b7320e7931f559cdcd35250d51fd611463d2d305825c46c9a4f15f"
+  },
+  "clean_environment": {
+    "record": "validation/clean_environment_0.8.1.json",
+    "sha256": "afbf8d14a34b77d994f9948a401c1644d28498a91c0b7db7864d6ca168ff2c34",
+    "command_exit_code": 0,
+    "interpretation_facts_exact_matches": 11,
+    "log_sha256": "2bb44244c0f7effc3ba002dd7fb505bd86c39f220d11768e34e91f5483ef46b3"
+  },
+  "install_smoke": {
+    "status": "passed",
+    "fixtures": [
+      "public/config.json",
+      "kinetics_synthetic/config.json",
+      "dose_synthetic/config_ec50.json",
+      "elisa_independent_qc/config.json",
+      "groups_synthetic/paired_config.json",
+      "groups_synthetic/independent_config.json",
+      "multigroup_synthetic/config_dunnett.json",
+      "elisa_dilution_5pl/config.json",
+      "kinetics_single_cycle/config.json",
+      "dose_synthetic/config_potency_equivalence.json",
+      "repeated_synthetic/config_rm.json",
+      "repeated_synthetic/config_mixed.json",
+      "repeated_two_way_synthetic/config_two_way_anova.json",
+      "repeated_two_way_synthetic/config_two_way_mixed.json",
+      "survival_synthetic/config.json",
+      "survival_synthetic/config_adjusted.json",
+      "tumor_growth_synthetic/config.json",
+      "interpretation_states/config_boundary.json",
+      "interpretation_states/config_no_events_arm.json",
+      "interpretation_states/config_dropout.json",
+      "interpretation_ovarian/config.json"
+    ],
+    "plate_import": true,
+    "cwd": "temporary directory outside repository",
+    "installed_runtime": true,
+    "render_preserves_results": true,
+    "render_preserves_interpretation_facts": true,
+    "command_exit_code": 0,
+    "python": "/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-7zg3dcw5/venv/bin/python",
+    "log_sha256": "0abe1da9c0978ee52417909066a81333ae6821431e6ecd885643ad2ece4eb637",
+    "note": "Matplotlib could not write the default home cache under the sandbox; it used temporary caches. All assertions passed."
+  },
+  "numerical_evidence": {
+    "validation/interpretation_benchmarks_0.8.1.json": {
+      "sha256": "addf75c4e3c16b9d8214f06c42b8bcce37945d4b05cceab3bd09c5b9647bb378",
+      "command_exit_code": 0
+    },
+    "validation/repeated_benchmarks_0.8.1.json": {
+      "sha256": "939c77c09d1e3ca8e8d26626700c1d57fff792ee4907b4e7a267188c5123cc3d",
+      "command_exit_code": 0
+    },
+    "validation/survival_benchmarks_0.8.1.json": {
+      "sha256": "5ff4ae75d70f2fa1fd914daf620b9f8e9ad3687ef8e067b8c1713378d1c81dc2",
+      "command_exit_code": 0
+    },
+    "validation/tumor_growth_benchmarks_0.8.1.json": {
+      "sha256": "290913034cb95aafd1fdda73a62cd1d2112e4aa1eb1ff9d5eb7b1c66a2804b87",
+      "command_exit_code": 0
+    },
+    "validation/interpretation_calibration_0.8.1.json": {
+      "sha256": "8fdf87a91ce637e0b6f0826535ef55ed0ab244bf2d159fda82c502de3d4f0f61",
+      "command_exit_code": 0,
+      "seed": 20260927,
+      "rows": [
+        {
+          "scenario": "rm_nonspherical_n12",
+          "simulations": 1000,
+          "reportable": 1000,
+          "withheld": 0,
+          "facts_source_and_state_checks_passed": 1000,
+          "omnibus_rejection": 0.037,
+          "family_rejection": 0.042,
+          "simultaneous_coverage": 0.958,
+          "max_rejection": 0.06378404875209022,
+          "min_coverage": 0.9362159512479098,
+          "seconds": 2,
+          "passed": true
+        },
+        {
+          "scenario": "satterthwaite_n12_mcar15_sd2",
+          "simulations": 1000,
+          "reportable": 1000,
+          "withheld": 0,
+          "facts_source_and_state_checks_passed": 1000,
+          "omnibus_rejection": 0.05,
+          "family_rejection": 0.045,
+          "simultaneous_coverage": 0.955,
+          "max_rejection": 0.06378404875209022,
+          "min_coverage": 0.9362159512479098,
+          "seconds": 229,
+          "passed": true
+        },
+        {
+          "scenario": "satterthwaite_n12_mcar15_sd0.3",
+          "simulations": 1000,
+          "reportable": 664,
+          "withheld": 336,
+          "facts_source_and_state_checks_passed": 1000,
+          "omnibus_rejection": 0.060240963855421686,
+          "family_rejection": 0.04819277108433735,
+          "simultaneous_coverage": 0.9518072289156626,
+          "max_rejection": 0.06691580853264936,
+          "min_coverage": 0.9330841914673507,
+          "seconds": 53,
+          "passed": true
+        }
+      ]
+    },
+    "validation/survival_calibration_0.8.1.json": {
+      "sha256": "ea03cc3679fd2bb876c44893e54750ee45b1f72db4a0ee38a0e2af90933a2ea1",
+      "command_exit_code": 0,
+      "seed": 20261001,
+      "rows": [
+        {
+          "check": "logrank_type_I",
+          "n_per_arm": 6,
+          "simulations": 1000,
+          "permutation_draws": 999,
+          "permutation_rejection": 0.049,
+          "asymptotic_rejection": 0.066,
+          "max_rejection": 0.06378404875209022,
+          "passed": true,
+          "seconds": 130
+        },
+        {
+          "check": "logrank_type_I",
+          "n_per_arm": 8,
+          "simulations": 1000,
+          "permutation_draws": 999,
+          "permutation_rejection": 0.043,
+          "asymptotic_rejection": 0.056,
+          "max_rejection": 0.06378404875209022,
+          "passed": true,
+          "seconds": 159
+        },
+        {
+          "check": "logrank_type_I",
+          "n_per_arm": 10,
+          "simulations": 1000,
+          "permutation_draws": 999,
+          "permutation_rejection": 0.045,
+          "asymptotic_rejection": 0.051,
+          "max_rejection": 0.06378404875209022,
+          "passed": true,
+          "seconds": 184
+        },
+        {
+          "check": "km_coverage_at_true_median",
+          "n": 10,
+          "simulations": 1000,
+          "loglog_coverage": 0.9638916750250752,
+          "log_coverage": 0.9187562688064193,
+          "evaluable": {
+            "log": 997,
+            "log-log": 997
+          },
+          "min_coverage": 0.9361952285370081,
+          "passed": true
+        },
+        {
+          "check": "km_coverage_at_true_median",
+          "n": 20,
+          "simulations": 1000,
+          "loglog_coverage": 0.963,
+          "log_coverage": 0.933,
+          "evaluable": {
+            "log": 1000,
+            "log-log": 1000
+          },
+          "min_coverage": 0.9362159512479098,
+          "passed": true
+        },
+        {
+          "check": "cox_hr_wald_coverage",
+          "n_per_arm": 10,
+          "true_hr": 0.5,
+          "simulations": 1000,
+          "evaluable": 996,
+          "coverage": 0.9688755020080321,
+          "min_coverage": 0.9361883001694637,
+          "passed": "reported_without_bound"
+        },
+        {
+          "check": "cox_hr_wald_coverage",
+          "n_per_arm": 20,
+          "true_hr": 0.5,
+          "simulations": 1000,
+          "evaluable": 1000,
+          "coverage": 0.951,
+          "min_coverage": 0.9362159512479098,
+          "passed": true
+        },
+        {
+          "check": "cox_zph_type_I_under_ph",
+          "n_per_arm": 20,
+          "simulations": 1000,
+          "evaluable": 1000,
+          "rejection": 0.062,
+          "max_rejection": 0.06378404875209022,
+          "passed": true
+        }
+      ]
+    },
+    "validation/tumor_growth_calibration_0.8.1.json": {
+      "sha256": "346f8e4378d605a04e31fc7b12726170c65e8de786e7a05c208cd0c577325c68",
+      "command_exit_code": 0,
+      "seed": 20261003,
+      "rows": [
+        {
+          "scenario": "A_null_rates_dropout2000",
+          "rates": [
+            0.08,
+            0.08,
+            0.08
+          ],
+          "removal_threshold_mm3": 2000.0,
+          "simulations": 1000,
+          "model_reportable": 1000,
+          "mean_animals_removed_before_day21": 0.0,
+          "rate_difference_family_coverage": 0.942,
+          "seconds": 126,
+          "min_coverage": 0.9362159512479097,
+          "equal_rates_type_I": 0.058,
+          "max_rejection": 0.06378404875209022,
+          "passed": true
+        },
+        {
+          "scenario": "B_alternative_early_dropout1000",
+          "rates": [
+            0.12,
+            0.08,
+            0.04
+          ],
+          "removal_threshold_mm3": 1000.0,
+          "simulations": 1000,
+          "model_reportable": 1000,
+          "mean_animals_removed_before_day21": 2.116,
+          "rate_difference_family_coverage": 0.951,
+          "seconds": 122,
+          "min_coverage": 0.9362159512479097,
+          "true_tgi_percent": {
+            "mAb-low": 61.53571297019942,
+            "mAb-high": 88.1076649204204
+          },
+          "observed_tgi_family_coverage": 0.922,
+          "observed_tgi_evaluable": 1000,
+          "observed_tgi_note": "comparator: survivors only, expected bias",
+          "passed": true
+        },
+        {
+          "scenario": "C_alternative_no_dropout",
+          "rates": [
+            0.12,
+            0.08,
+            0.04
+          ],
+          "removal_threshold_mm3": null,
+          "simulations": 1000,
+          "model_reportable": 1000,
+          "mean_animals_removed_before_day21": 0.0,
+          "rate_difference_family_coverage": 0.945,
+          "seconds": 129,
+          "min_coverage": 0.9362159512479097,
+          "true_tgi_percent": {
+            "mAb-low": 61.53571297019942,
+            "mAb-high": 88.1076649204204
+          },
+          "observed_tgi_family_coverage": 0.954,
+          "observed_tgi_evaluable": 1000,
+          "min_tgi_coverage": 0.9362159512479097,
+          "passed": true
+        }
+      ]
+    }
+  },
+  "live_agent": {
+    "attempts": [
+      {
+        "path": "validation/agent-scenarios/0.8.1/F1-withheld-mixed-inference",
+        "session_sha256": "34016f1f43a2e442a27c5fe6349d317de09aadbaa7d5d924f13a09b531b4e383",
+        "transcript_sha256": "60f78e3a83df60f954f8b69fa95e7689f08cc79d3b2fe4d943e6caea41ffdf41",
+        "analysis_executed": false
+      },
+      {
+        "path": "validation/agent-scenarios/0.8.1/F2-unreached-survival",
+        "session_sha256": "1fdcff781deb015b4d38266d53147b4276e4c388278a7e850a530fc8bdcc5b67",
+        "transcript_sha256": "9b9cff38623c1a76dd74bc2772831582e39bbf22805bcba7a4bb358e7f713703",
+        "analysis_executed": false
+      },
+      {
+        "path": "validation/agent-scenarios/0.8.1/F3-dropout-and-offset",
+        "session_sha256": "da7d2ac31cbf0417561ea9698eeb9802c5e3eb6b2e25d9baa1202e2114cda649",
+        "transcript_sha256": "e35374bf7a7734f43c90a83186bd28a4413bb645034e141c6645ab00d7cecbdd",
+        "analysis_executed": false
+      },
+      {
+        "path": "validation/agent-scenarios/0.8.1/auth-retry/F1-withheld-mixed-inference",
+        "session_sha256": "764f68de7b23688e4da0607ed90d1ec90930456a0db320c6e899fda58bad1515",
+        "transcript_sha256": "2029fb4782c77c4ea21f5b01c64a422c74c955bd0422a3f7ef98983577107138",
+        "analysis_executed": true
+      },
+      {
+        "path": "validation/agent-scenarios/0.8.1/auth-retry/F2-unreached-survival",
+        "session_sha256": "4d762c22b3d94e6489805a00cf279c207e793437a1087b4accb2de3affd6eddb",
+        "transcript_sha256": "d22cd350ef39e06a50f2cb28049f7a36f6eda41e51b93912cb066390ac576d9d",
+        "analysis_executed": true
+      },
+      {
+        "path": "validation/agent-scenarios/0.8.1/auth-retry/F3-dropout-and-offset",
+        "session_sha256": "c78d263a042fcb684a6a90834c2d9bd2b6067be753e84811c8e8dda724f0fa7b",
+        "transcript_sha256": "bfcb179f043b47c25cbe42bb7c172a7d8b6e53ebb1bb8ae3aba89ea0fcaebdc2",
+        "analysis_executed": true
+      },
+      {
+        "path": "validation/agent-scenarios/0.8.1/guidance-review/F1-withheld-mixed-inference",
+        "session_sha256": "71b42af28ccd6365f87c09f53e5500483b8ce264d87b6fe12b8b2d3b30a3010b",
+        "transcript_sha256": "798118fdc8d464e42ac12805cbce2a86da8c605d921bae1586e8d98dbb6e8eb3",
+        "analysis_executed": true
+      },
+      {
+        "path": "validation/agent-scenarios/0.8.1/guidance-review/F2-unreached-survival",
+        "session_sha256": "e153c8a2e62ac139ada6d858691248beb41f598fe89c7b97c971f70090a5d94c",
+        "transcript_sha256": "752b4f421779d379d4a24ab957b8e27e237fd573508c94d4f4a743c85002d86c",
+        "analysis_executed": true
+      },
+      {
+        "path": "validation/agent-scenarios/0.8.1/guidance-review/F3-dropout-and-offset",
+        "session_sha256": "d37a2bf135ba8add09591854b2d3dc2fc07269736aa8ada1dc36ba719970216f",
+        "transcript_sha256": "f2c37b6486dc73eda426767103683ac7b7b4a959b5aa5faf14c8fcb07b2c7931",
+        "analysis_executed": true
+      }
+    ],
+    "analysis_sessions": 6,
+    "login_failures_not_evaluated": 3,
+    "final_core_guards_passed": 3,
+    "final_full_workflow": {
+      "F1": "partial: runtime-location failure",
+      "F2": "passed within stated scope",
+      "F3": "passed within stated scope"
+    },
+    "review": "Developing agent read tools and final answers; no independent human re-score",
+    "record": "validation/agent-scenarios/0.8.1/RESULTS.md"
+  },
+  "r_runtime": {
+    "bridge_added": false,
+    "methods_using_R": [],
+    "R_used_for": "Validation and public-fixture preparation only; no new R packages installed",
+    "with_and_without_optional_R_install_check": "not_applicable_no_bridge"
+  },
+  "preservation": {
+    "historical_validation_files_unchanged": 174,
+    "historical_validation_index_entries_unchanged": true,
+    "tracked_runs_unchanged": true,
+    "preexisting_untracked_runs_left_alone": [
+      "runs/repeated-anova-0.8.0/",
+      "runs/repeated-mixed-0.8.0/"
+    ],
+    "old_wheels_preserved": true,
+    "pushed": false,
+    "published": false,
+    "build_public_tree_ran": false
+  }
+}

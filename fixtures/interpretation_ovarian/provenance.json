@@ -1,0 +1,14 @@
+{
+  "source": "R survival::survdiff, first two-sample worked example, ovarian dataset",
+  "url": "https://www.stat.ethz.ch/R-manual/R-devel/library/survival/html/survdiff.html",
+  "dataset_url": "https://www.stat.ethz.ch/R-manual/R-devel/library/survival/html/ovarian.html",
+  "r_version": "R version 4.6.0 (2026-04-24) survival 3.8.6",
+  "survdiff_help_text_sha256": "5c9aec07144977105fb6a0f4eb7cb43d66c6e10243000e5977df250e35d91b1b",
+  "r_script_sha256": "2f5ec8ad4eb9b229d868cdcf15b09e2baae5b34a57957b6444aa89a2d8a6543a",
+  "script_sha256": "b98968b46052870390a8fb8e3801bffe0af3ab2da550cb9bb61f0e213acd0cf7",
+  "input_sha256": "822a871afee2bd3ba8f59913e1bea19bb8a115e7ad42d9f15f2821ca73d930ff",
+  "reference_sha256": "7f4808f0e0bc5e040f501a364126363bdd56591b53ed01fc12ee95dd6f6498e4",
+  "scope": "Reproduces the log-rank example and Cox-score identity. KM and Efron HR are supplementary, not claims of published worked results.",
+  "package_license": "LGPL (>= 2)",
+  "license_note": "Third-party R survival data; package license read from installed metadata. No ownership or separate data-license claim."
+}

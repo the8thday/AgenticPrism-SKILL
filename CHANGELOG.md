@@ -1,0 +1,151 @@
+# Changelog
+
+Release notes for AgenticPrism, newest first. What was actually checked for each release is in
+[validation/README.md](validation/README.md) and the linked release records. Entries up to 0.9.2 were
+moved here unchanged from the README when it was restructured in 0.9.3.
+
+## 0.9.3 — method validation, ADA sensitivity and drug tolerance
+
+- New [method-validation](skills/method-validation/SKILL.md) Skill for ICH M10-style ligand-binding
+  experiments from back-calculated concentrations: accuracy and precision with total error, dilution
+  linearity and hook effect, parallelism with a per-sample trend check, selectivity, specificity and
+  stability. Acceptance criteria are always declared by the user with their source. Supplements: bias
+  interval, MLS interval for between-run CV, Mee (1984) beta-expectation interval (accuracy profile).
+- ADA: `ada_sensitivity` (per-run crossing of the cut point and a prediction limit for a future run) and
+  `ada_drug_tolerance`; a two-way (subject x run) bootstrap nonparametric lower bound that uses every
+  panel cell (mean FPR about 9% for a 5% target, versus about 28.6% for the six-pair bound).
+- Precision: MLS is the default interval for intermediate precision.
+- Evidence: 188 fields agree with an independent R oracle (max relative 3.4e-12); 17 of 18 calibration
+  rows pass, the sensitivity limit with 3-fold dilution spacing misses (92.1% vs 92.2%); five
+  live-agent scenarios pass. See [validation/RELEASE_0.9.3.md](validation/RELEASE_0.9.3.md).
+
+## 0.9.2: precision intervals and ADA lower bounds
+
+Optional MLS intervals use exact orthogonal mean squares; unbalanced designs
+use correlated quadratic-form MOVER with REML moment estimates. Five total-
+variance calibration designs and two fitted-model bootstrap checks pass the
+prespecified bound. The nested-crossed lot upper bound still misses (92.8%,
+MCSE 0.8174 percentage points); it is disclosed in facts. Satterthwaite stays
+available and remains the legacy default; new interval options require a gate.
+
+ADA lower bounds target FPR **at least** the declared rate with confidence,
+not an upper FPR limit. Parametric bounds use crossed components/effective df;
+nonparametric bounds use prespecified independent subject/run pairs. All 12
+Gaussian calibration rows pass; six-pair nonparametric titer bounds are very
+conservative (mean FPR about 14% for a 0.1% target). These are scoped statistical
+procedures, not full assay validation. Sensitivity, drug tolerance, dynamic
+cut points and full method validation remain unimplemented.
+
+See [0.9.2 evidence](validation/RELEASE_0.9.2.md), including every MCSE,
+matched R/published examples and live-agent status. No new runtime R dependency.
+
+## 0.9.1: ADA recalibration and precision components
+
+ADA point calculations are unchanged. Exact conditional-FPR calibration
+supersedes the noisy 0.9.0 floating/IQR screening failure labels. Reviewer
+numbers are reproduced; titer remains a miss under the new prespecified criterion.
+[variance-components](skills/variance-components/SKILL.md) adds Python REML
+for nested/crossed random intercepts, unbalanced data and fixed adjustments,
+with SD/CV and Satterthwaite intervals. Three-lot total-precision intervals
+undercover in calibration; zero-variance component inference is unreliable.
+The reviewer subsequently ran V1/V2/A5 and recorded three passes in commit 237de01.
+See [0.9.1 evidence](validation/RELEASE_0.9.1.md) and saved interpretation facts.
+No new runtime R dependency. Full method validation, ADA sensitivity/drug
+tolerance and dynamic deployment remain unimplemented; 0.9.2 adds lower cut-point bounds.
+
+## Additions in 0.8.2
+
+Group comparison adds Mann–Whitney and signed-rank location estimates/intervals,
+Kruskal–Wallis with Dunn (Holm/Bonferroni), and complete-block Friedman.
+Exact small-sample inference is limited to untied data; ties use explicit normal
+approximations. See the [rank-test contract](skills/group-comparison/references/nonparametric.md).
+Repeated measures adds [MMRM](skills/repeated-measures/references/mmrm.md) with
+common unstructured or ordered-visit AR(1) covariance: Python REML/Satterthwaite,
+and optional R `mmrm` Kenward–Roger. New methods save interpretation facts.
+Runtime discovery now checks the collection's `.venv` before PATH.
+In the tested design (12 units per arm, three visits, 15% MCAR), US/KR
+interaction rejection was 7.1% and simultaneous coverage 93.3%, missing the
+prespecified bounds. R agreement does not establish calibrated small-sample inference.
+Validation scope, bootstrap B=999 calibration and limitations are in the
+[0.8.2 release record](validation/RELEASE_0.8.2.md).
+
+Only Kenward–Roger requires R. After installing R, opt in with
+`python3 install.py --with-r`; pinned packages live in `.r-lib/`. `doctor`
+reports their availability/versions. Outside a collection, set
+`AGENTIC_PRISM_R_LIB` to that library. Missing R refuses KR; Python methods work.
+
+## Interpretation facts in 0.8.1
+
+Repeated-measures, time-to-event and tumor-growth runs now save a hashed
+`interpretation_facts.json`: estimands, model, primary results and intervals,
+reportability, reasons for withholding, diagnostics and material limitations,
+with pointers to the saved numerical results. The Skills use it as the basis
+for interpretation; the HTML report includes an offline download.
+This release adds no statistical method or new configuration option. Other
+specialists and historical runs retain their existing output contracts.
+See the [artifact contract](skills/agentic-prism/references/interpretation-facts.md)
+and [0.8.1 evidence](validation/RELEASE_0.8.1.md).
+
+## Additions in 0.8.0
+
+One-factor repeated-measures ANOVA always applies Greenhouse–Geisser correction.
+A separate Gaussian random-intercept REML workflow supports partial missing
+measurements with an explicit MAR rationale and predeclared simultaneous contrast
+families, with Satterthwaite small-sample t/F (numerically equal to R lmerTest),
+centered parametric bootstrap, or explicitly selected asymptotic Wald inference.
+Treatment arm × scheduled time point designs (each unit in one arm) are supported
+by split-plot ANOVA with GG correction (equal to afex/car) for complete data and a
+two-way random-intercept model with Satterthwaite type III tests (equal to
+lmerTest; contrasts equal to emmeans) when measurements are missing. The
+0.8.0 random-intercept contract has no KR, random-slope or AR(1) option; the 0.8.2 MMRM contract adds US/AR(1) and optional KR. Continuous-time
+tumor growth with random slopes is the tumor-growth Skill below. Checks against R on
+public datasets (nlme::Orthodont, nlme::BodyWeight, ChickWeight) and null
+calibration simulations are in [0.8.0 evidence](validation/RELEASE_0.8.0.md).
+A new time-to-event Skill covers Kaplan–Meier, log-rank (including an exact
+permutation option for small animal arms) and Cox models; every statistic was
+compared with R `survival` on its public `lung` and `veteran` data. A tumor-growth
+Skill fits arm-specific growth rates with animal random intercepts and slopes
+(equal to lmerTest) and reports observed TGI%/T/C% with Fieller limits.
+
+```sh
+.venv/bin/agentic-prism analyze --config fixtures/repeated_synthetic/config_rm.json --output runs/my-rm
+.venv/bin/agentic-prism analyze --config fixtures/repeated_synthetic/config_mixed.json --output runs/my-mixed
+.venv/bin/agentic-prism analyze --config fixtures/repeated_two_way_synthetic/config_two_way_mixed.json --output runs/my-arm-by-day
+.venv/bin/agentic-prism analyze --config fixtures/survival_synthetic/config.json --output runs/my-survival
+.venv/bin/agentic-prism analyze --config fixtures/tumor_growth_synthetic/config.json --output runs/my-tumor-growth
+```
+
+## Additions in 0.7.0
+
+- One-way multi-group comparison with predeclared contrast families, checked
+  against first-principles formulas and SciPy, with family-wise error and
+  simultaneous-coverage simulations.
+- Plate-reader grid + plate-map import (`import-plate`), copying cells exactly
+  and hashing every source file.
+- ELISA: predeclared 5PL, delta-method unknown intervals, within-plate dilution
+  linearity with a hook/matrix pattern flag.
+- Relative potency: equivalence-margin parallelism and RP acceptance limits.
+- Kinetics: single-cycle (sequential injection) 1:1 model and explicit double
+  referencing, including blank-cycle columns from the Octet importer.
+- Recorded live-agent scenario sessions (see
+  [agent scenarios](validation/agent-scenarios/README.md)).
+
+Observed numbers, simulation results (including the scenarios that missed a
+prespecified bound) and evidence limits are in
+[validation/RELEASE_0.7.0.md](validation/RELEASE_0.7.0.md). No git remote is
+configured, so the three-platform CI workflow has not actually run.
+
+## Reliability additions in 0.6.0
+
+Kinetic reliability blockers now withhold reportable intervals and retain audit
+estimates separately; deterministic dissociation-window checks are saved. ELISA
+supports independently prepared low/mid/high controls that never enter the fit,
+with per-plate recovery/CV gates and descriptive cross-plate summaries. Legacy
+LLOQ/ULOQ keys are plate screening bounds, not validated assay limits.
+
+The [reference library](validation/reference-library/README.md) reruns current
+code against pinned public data. [Misuse scenarios](validation/agent-scenarios/README.md),
+backend rejection tests, wheel installation checks and a three-platform CI
+workflow cover different layers of reliability. See the
+[release evidence and remaining gaps](validation/RELIABILITY_0.6.0.md).
+A workflow definition is not evidence of an executed cross-platform or live-agent test.

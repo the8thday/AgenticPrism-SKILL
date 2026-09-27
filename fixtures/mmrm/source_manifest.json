@@ -1,0 +1,23 @@
+{
+  "source": "https://openpharma.github.io/mmrm/v0.3.18/articles/introduction.html",
+  "generator_sha256": "595be2bcab905799ee4f36e23126d655d901f9057659de75ee75808a1d819e6d",
+  "R_script_sha256": "ec18e515c7f194e5085bf63c51c5f843ef515244067423600a781490d1360a00",
+  "published_model": "FEV1 ~ RACE + SEX + ARMCD * AVISIT + us(AVISIT | USUBJID), REML Satterthwaite",
+  "scope": "Worked model via equivalent cell-means coding, BFGS reltol=1e-12. Original default-optimizer worked output is separately preserved; covariance differences are reported. AR1 and KR are separately labelled extensions, not the published introduction output.",
+  "files_sha256": {
+    "config_public_fev_ar1_kenward_roger.json": "72612ac2f6b6f66d12d996a7d9f0a4c496ef1cf724b1fc1055556a7beced18d7",
+    "config_public_fev_ar1_satterthwaite.json": "c08b177acc24332305282e013d8c7e8ca95b327d3f36be5314f491f405eb6c00",
+    "config_public_fev_unstructured_kenward_roger.json": "6132d9a0609b1e80179cc8a47b3263df8c1b8189c1623af993d05d2e2b606065",
+    "config_public_fev_unstructured_satterthwaite.json": "6011f096315da67cd58857927fd5e02aab0ea9bfad52ddb98e2e87bec361ba40",
+    "config_synthetic_ar1_kenward_roger.json": "3d64ea76384cac3059f4cde2909a99c9412921ee47d34d44c88a0eb540874262",
+    "config_synthetic_ar1_satterthwaite.json": "f5559b0d9d795d1dd88a71deaa6357dea038ef81bc47341ac7c90079af0bb084",
+    "config_synthetic_unstructured_kenward_roger.json": "3ce3651e3829a9e8b9b6e5b3ee0aa4f8147209cdbafc12be71277606996ca52e",
+    "config_synthetic_unstructured_satterthwaite.json": "78b20366af142d24ba75ac5217891761dbbde4aef86ab7354ac1f1bcf53c821c",
+    "public_fev.csv": "408aedc51c8612dc39e9aadadf11cdeb00fa84fefff8cf1d0e2da20bba9981b5",
+    "public_raw.csv": "f0f3a54fd07feb28aa5d791d2714f54ab9ad03ff076b058b53cacef323cba0d2",
+    "published_reference.json": "bb2271963140725ebfb55317ffb5a36d804a50c6480c77c5a4be81e19b8aeb73",
+    "published_reference.json.default.json": "713d521e18d2716a77bccd1a89c2d95a99d1068d7a5da42a607dd9acd6c6c37a",
+    "published_reference.json.omissions.json": "bb35c02a94b6253e66acd676e680b5beac15adad6476199d90af72b1dca167b5",
+    "synthetic.csv": "1f936ad8cc32acc80ef72a8fc6f5cb1c7176e563e9f5d346c34fde8a387ec771"
+  }
+}

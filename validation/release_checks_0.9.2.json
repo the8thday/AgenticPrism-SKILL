@@ -1,0 +1,283 @@
+{
+  "version": "0.9.2",
+  "branch": "dev/0.9.2",
+  "baseline_commit": "237de011c2ffe0f88b486848589ef4189793328e",
+  "numerical_commit": "d35b953",
+  "status": "local_release_checks_passed_calibration_miss_disclosed",
+  "pytest": {
+    "passed": 422,
+    "warnings": 8,
+    "seconds": 191.45,
+    "new_tests": 37
+  },
+  "quick_validate": {
+    "skills": [
+      "agentic-prism",
+      "ada-cut-point",
+      "variance-components"
+    ],
+    "all_passed": true
+  },
+  "benchmarks": {
+    "variance_fixtures": 8,
+    "all_within_prespecified_tolerances": true,
+    "published_examples": [
+      "Burdick-Graybill 1984 bottles",
+      "Young 2016 milk",
+      "tolerance 3.0.0 published logistic help example"
+    ]
+  },
+  "calibration": {
+    "precision_designs": 5,
+    "precision_fitted_parametric_bootstrap_rows": 2,
+    "ada_rows": 12,
+    "simulations_per_row": 1000,
+    "new_misses": [
+      {
+        "scenario": "unbalanced_nested_crossed_fixed",
+        "interval": "lot one-sided upper",
+        "coverage": 0.928,
+        "mcse": 0.00817410545564467,
+        "bound": 0.9362159512479097
+      }
+    ]
+  },
+  "legacy": {
+    "configurations": 50,
+    "byte_identical_artifacts": 492,
+    "declared_non_numeric_exceptions_only": true
+  },
+  "smoke": {
+    "status": "passed",
+    "fixtures": [
+      "public/config.json",
+      "kinetics_synthetic/config.json",
+      "dose_synthetic/config_ec50.json",
+      "elisa_independent_qc/config.json",
+      "groups_synthetic/paired_config.json",
+      "groups_synthetic/independent_config.json",
+      "multigroup_synthetic/config_dunnett.json",
+      "elisa_dilution_5pl/config.json",
+      "kinetics_single_cycle/config.json",
+      "dose_synthetic/config_potency_equivalence.json",
+      "repeated_synthetic/config_rm.json",
+      "repeated_synthetic/config_mixed.json",
+      "repeated_two_way_synthetic/config_two_way_anova.json",
+      "repeated_two_way_synthetic/config_two_way_mixed.json",
+      "survival_synthetic/config.json",
+      "survival_synthetic/config_adjusted.json",
+      "tumor_growth_synthetic/config.json",
+      "interpretation_states/config_boundary.json",
+      "interpretation_states/config_no_events_arm.json",
+      "interpretation_states/config_dropout.json",
+      "interpretation_ovarian/config.json",
+      "nonparametric/config_public_mw.json",
+      "nonparametric/config_public_signed.json",
+      "nonparametric/config_public_kw.json",
+      "nonparametric/config_public_friedman.json",
+      "nonparametric/config_fixture_mw.json",
+      "nonparametric/config_fixture_signed.json",
+      "nonparametric/config_fixture_kw.json",
+      "nonparametric/config_fixture_friedman.json",
+      "mmrm/config_synthetic_unstructured_satterthwaite.json",
+      "mmrm/config_synthetic_unstructured_kenward_roger.json",
+      "mmrm/config_synthetic_ar1_satterthwaite.json",
+      "mmrm/config_synthetic_ar1_kenward_roger.json",
+      "ada_public/config.json",
+      "ada_synthetic/config_fixed.json",
+      "ada_synthetic/config_floating.json",
+      "ada_synthetic/config_dynamic.json",
+      "ada_synthetic/config_confirmatory.json",
+      "ada_synthetic/config_titer.json",
+      "ada_synthetic/config_nonparametric.json",
+      "ada_synthetic/config_boxcox.json",
+      "variance_reml/config_ep05_1.json",
+      "variance_reml/config_ep05_2.json",
+      "variance_reml/config_ep05_3.json",
+      "variance_reml/config_penicillin.json",
+      "variance_reml/config_nested.json",
+      "variance_reml/config_unbalanced.json",
+      "variance_reml/config_mixed_fixed.json",
+      "variance_reml/config_boundary.json",
+      "intervals_092/config_ada_confirmatory_nonparametric.json",
+      "intervals_092/config_ada_confirmatory_parametric.json",
+      "intervals_092/config_ada_fixed_nonparametric.json",
+      "intervals_092/config_ada_fixed_parametric.json",
+      "intervals_092/config_ada_floating_nonparametric.json",
+      "intervals_092/config_ada_floating_parametric.json",
+      "intervals_092/config_ada_titer_nonparametric.json",
+      "intervals_092/config_ada_titer_parametric.json",
+      "intervals_092/config_boundary_mls.json",
+      "intervals_092/config_ep05_1_mls.json",
+      "intervals_092/config_ep05_2_mls.json",
+      "intervals_092/config_ep05_3_mls.json",
+      "intervals_092/config_mixed_fixed_mls.json",
+      "intervals_092/config_nested_mls.json",
+      "intervals_092/config_penicillin_mls.json",
+      "intervals_092/config_unbalanced_mls.json"
+    ],
+    "optional_r_available": true,
+    "plate_import": true,
+    "cwd": "temporary directory outside repository",
+    "installed_runtime": true,
+    "render_preserves_results": true,
+    "render_preserves_interpretation_facts": true
+  },
+  "clean_environment_passed": true,
+  "facts_exact_matches": 55,
+  "optional_r": {
+    "status": "passed",
+    "new_methods_python_only": true,
+    "new_method_results_byte_identical_with_without_R": true
+  },
+  "preservation": {
+    "historical_validation_files_unchanged": 369,
+    "tracked_run_files_unchanged": 687,
+    "baseline": "237de01",
+    "build_files_unchanged": 34,
+    "wheel_source_files_matched": [
+      "agentic_prism/precision_evidence.py",
+      "agentic_prism/kinetics_schema.py",
+      "agentic_prism/ada.py",
+      "agentic_prism/nonparametric.py",
+      "agentic_prism/mixed_inference.py",
+      "agentic_prism/kinetics_report.py",
+      "agentic_prism/dose_report.py",
+      "agentic_prism/variance_intervals.py",
+      "agentic_prism/precision_workflow.py",
+      "agentic_prism/fit.py",
+      "agentic_prism/survival.py",
+      "agentic_prism/dose_schema.py",
+      "agentic_prism/elisa.py",
+      "agentic_prism/r_bridge.py",
+      "agentic_prism/simple_report.py",
+      "agentic_prism/multigroup.py",
+      "agentic_prism/survival_report.py",
+      "agentic_prism/dose_fit.py",
+      "agentic_prism/__init__.py",
+      "agentic_prism/repeated_report.py",
+      "agentic_prism/groups.py",
+      "agentic_prism/tumor_growth.py",
+      "agentic_prism/repeated_two_way.py",
+      "agentic_prism/variance_components.py",
+      "agentic_prism/kinetics_workflow.py",
+      "agentic_prism/precision.py",
+      "agentic_prism/interpretation.py",
+      "agentic_prism/cli.py",
+      "agentic_prism/repeated.py",
+      "agentic_prism/elisa_validation.py",
+      "agentic_prism/kinetics_fit.py",
+      "agentic_prism/dose_workflow.py",
+      "agentic_prism/plate_import.py",
+      "agentic_prism/ada_workflow.py",
+      "agentic_prism/workflow.py",
+      "agentic_prism/equivalence.py",
+      "agentic_prism/simple_workflow.py",
+      "agentic_prism/mmrm.py",
+      "agentic_prism/octet_import.py",
+      "agentic_prism/ada_evidence.py",
+      "agentic_prism/doctor.py",
+      "agentic_prism/report.py",
+      "agentic_prism/interval_evidence.py",
+      "agentic_prism/calibration.py",
+      "agentic_prism/schema.py",
+      "agentic_prism/time_to_event.py",
+      "agentic_prism/ada_bounds.py",
+      "agentic_prism/tumor_report.py",
+      "agentic_prism/r_scripts/install.R",
+      "agentic_prism/r_scripts/packages.csv",
+      "agentic_prism/r_scripts/runner.R"
+    ],
+    "wheel_sha256": "642cfe30990de903a9ef210c130def9719b8a64fcc3c83203eea648398c98e26",
+    "sdist_sha256": "aa61825165e6882d614b3785b52e8e39601d07308e231bffb30e764b44891d22"
+  },
+  "commands": [
+    ".venv/bin/python -m pytest -q",
+    ".venv/bin/python scripts/validate_variance_benchmarks.py",
+    ".venv/bin/python scripts/validate_intervals_benchmarks.py",
+    ".venv/bin/python scripts/validate_variance_calibration_092.py",
+    ".venv/bin/python scripts/validate_ada_bounds_calibration.py",
+    ".venv/bin/python scripts/validate_legacy_092.py",
+    ".venv/bin/python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/<changed-skill>",
+    "uv build --directory <temporary source copy> --out-dir <root>/dist",
+    ".venv/bin/python scripts/validate_clean_environment.py",
+    "/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-du8f2g2c/venv/bin/python scripts/validate_install_smoke.py",
+    ".venv/bin/python scripts/validate_optional_r_092.py"
+  ],
+  "log_hashes": {
+    "pytest092-final": {
+      "path": "validation/release_logs_0.9.2/pytest092-final.log",
+      "sha256": "e74d248cdd6b6bb54ed3cfd30122c1896f3ca1ee9bbef3c7f9d06ac9c7f43197"
+    },
+    "skills092-final": {
+      "path": "validation/release_logs_0.9.2/skills092-final.log",
+      "sha256": "13b6b720ac7d49aec3680946512524388b3359464f2672dfb580667e48101836"
+    },
+    "ada092": {
+      "path": "validation/release_logs_0.9.2/ada092.log",
+      "sha256": "dc0adbf394710365008c01e29b0dc69a07c86643f28ce1f5a58ec34bc06f4ae9"
+    },
+    "variance092-final2": {
+      "path": "validation/release_logs_0.9.2/variance092-final2.log",
+      "sha256": "4d2d09797b0687e6520930284a1249b2ba01862d8b3cb5fd0568c3cc336b1151"
+    },
+    "vcbench092-final": {
+      "path": "validation/release_logs_0.9.2/vcbench092-final.log",
+      "sha256": "7d91f49d8ba1b4ed1dd07bb41c752e029cbf8a0e7e622fc3801cbd38e5a7652e"
+    },
+    "intervalbench092-final": {
+      "path": "validation/release_logs_0.9.2/intervalbench092-final.log",
+      "sha256": "6becb38f8bda414220f93662e03e385ac9095e1a798544d461b052301c52917d"
+    },
+    "legacy092-final": {
+      "path": "validation/release_logs_0.9.2/legacy092-final.log",
+      "sha256": "b6d902bf60aaa96563432f26e2aeb093c5bccd6dba4db180ba759e4911a2af90"
+    },
+    "clean092": {
+      "path": "validation/release_logs_0.9.2/clean092.log",
+      "sha256": "4e1c41c72d4f89bcb55bdf929eebe02ac28ddb27d2963f3373473b957ac152dd"
+    },
+    "smoke092": {
+      "path": "validation/release_logs_0.9.2/smoke092.log",
+      "sha256": "b713aacf6bc99870cf310d074174f592fb5f55c45342cff568e95cd1818d1c14"
+    },
+    "optional092": {
+      "path": "validation/release_logs_0.9.2/optional092.log",
+      "sha256": "bda072cad8b430fe4a439e496b36440db3832f95c2cf49f5fab838d40422eb1c"
+    }
+  },
+  "record_hashes": {
+    "variance_benchmarks": "85e128dfcb6ee129eedd7d39ae88ec973c9655eadf011cdcf057cd5ca4fdefce",
+    "intervals_benchmarks": "2f71b8d82cdb06daff4ec828ba183554ff37df3254634f180cef59f133601a44",
+    "variance_calibration": "bb9a25786d3b31403e1f6056ef20ec3f0dbf0ff3167e1194841ab07b36a36ec7",
+    "ada_bounds_calibration": "b3cbb2e1cb784ed7768af9e4da07517cb4a5d2333468d841704d6eecc537dcdd",
+    "legacy_fixture_checks": "cfb1a7de599eefd45e3c5f8e0289eef8f1d761661d05201e3cf522b399614603",
+    "clean_environment": "be0e69200d180bcff03ac6ef0eb219fd5577ba08ef4196b2bce1af1d26025230",
+    "optional_r_checks": "9cff6aec84dbab4e2ec195aa42da45525b02f99d463c6b893416044d84f97d41"
+  },
+  "scope": "Same macOS host, isolated installed wheel. No new runtime R dependency. Changed REML failure recovery benchmarked; unchanged methods checked by fixture byte identity without R/calibration reruns. No push/publication/main merge/0.10.",
+  "calibration_code_note": "ADA calibration used the preserved ada_bounds_at_calibration.py snapshot. Afterwards normal_lower input validation was extended to permit probabilities below 0.5 for the published milk example; the arithmetic and all calibrated upper-percentile paths are unchanged. Both file hashes are retained.",
+  "calibration_code_hashes": {
+    "validation/attempt_logs_0.9.2/ada_bounds_at_calibration.py": "2b15f51e69453ff9f2cdfa6792b06be469e53ad663c5179b72f28eff02bf7174",
+    "src/agentic_prism/ada_bounds.py": "fb13261c70c19dfca1ceb79ce75c5fe4e21f4952a4bcc5fa427479b8ee1215d0"
+  },
+  "live_agent": {
+    "status": "four_scenarios_passed_after_guidance_fixes",
+    "scorer": "developing assistant; not independent human review",
+    "pending": [],
+    "accepted_attempts": {
+      "V3-mls-scope": "final-run",
+      "V4-boundary-upper": "final-run",
+      "A6-bound-direction": "final-run",
+      "A7-independent-tail": "focused-final"
+    },
+    "failed_attempts_retained": true,
+    "record": "validation/agent-scenarios/0.9.2/RESULTS.md",
+    "accepted_transcript_sha256": {
+      "V3-mls-scope": "21b730691010137eae1b7e98bedcb4555d3e807292507ad55120d89715dbad46",
+      "V4-boundary-upper": "0e88b1a08c7dedb88f7435e67d26db159fa2a0ebab77f225d9cfc2a434989453",
+      "A6-bound-direction": "0c14ce7b169da418a92a77f408dee3f358e91ad17930d05a0e447342cf75e48b",
+      "A7-independent-tail": "50a16ef6d8b7d005ebb0178bb0a00322a7014113ec4d42ebdd960d58e4c6b8ee"
+    }
+  }
+}

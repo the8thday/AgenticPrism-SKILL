@@ -6,7 +6,7 @@ Human-oriented instructions are in [README.md](README.md).
 
 ## What you are installing
 
-Six Agent Skills (`skills/`) plus one versioned Python runtime (`src/`,
+Seven Agent Skills (`skills/`) plus one versioned Python runtime (`src/`,
 `install.py`). They are **one unit**: every Skill finds its runtime at
 `<root>/.venv`, where `<root>` is the cloned repository. Therefore:
 

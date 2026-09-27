@@ -1,0 +1,281 @@
+_W_i_l_c_o_x_o_n _R_a_n_k _S_u_m _a_n_d _S_i_g_n_e_d _R_a_n_k _T_e_s_t_s
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Performs one- and two-sample Wilcoxon tests on vectors of data;
+     the latter is also known as ‘Mann-Whitney’ test.
+
+_U_s_a_g_e:
+
+     wilcox.test(x, ...)
+     
+     ## Default S3 method:
+     wilcox.test(x, y = NULL,
+                 alternative = c("two.sided", "less", "greater"),
+                 mu = 0, paired = FALSE, exact = NULL, correct = TRUE,
+                 conf.int = FALSE, conf.level = 0.95,
+                 tol.root = 1e-4, digits.rank = Inf, ...)
+     
+     ## S3 method for class 'formula'
+     wilcox.test(formula, data, subset, na.action = na.pass, ...)
+     
+_A_r_g_u_m_e_n_t_s:
+
+       x: numeric vector of data values.  Non-finite (e.g., infinite or
+          missing) values will be omitted.
+
+       y: an optional numeric vector of data values: as with ‘x’
+          non-finite values will be omitted.
+
+alternative: a character string specifying the alternative hypothesis,
+          must be one of ‘"two.sided"’ (default), ‘"greater"’ or
+          ‘"less"’.  You can specify just the initial letter.
+
+      mu: a number specifying an optional parameter used to form the
+          null hypothesis.  See ‘Details’.
+
+  paired: a logical indicating whether you want a paired test.
+
+   exact: a logical indicating whether an exact p-value should be
+          computed.
+
+ correct: a logical indicating whether to apply continuity correction
+          in the normal approximation for the p-value, or an integer k
+          between 0 and 3 giving the number of correction terms to use
+          from the Edgeworth series for the normal approximation.
+
+conf.int: a logical indicating whether a confidence interval should be
+          computed.
+
+conf.level: confidence level of the interval.
+
+tol.root: (when ‘conf.int’ is true:) a positive numeric tolerance, used
+          in ‘uniroot(*, tol=tol.root)’ calls.
+
+digits.rank: a number; if finite, ‘rank(signif(r, digits.rank))’ will
+          be used to compute ranks for the test statistic instead of
+          (the default) ‘rank(r)’.
+
+ formula: a formula of the form ‘lhs ~ rhs’ where ‘lhs’ is a numeric
+          variable giving the data values and ‘rhs’ either ‘1’ for a
+          one-sample or paired test or a factor with two levels giving
+          the corresponding groups. If ‘lhs’ is of class ‘"Pair"’ and
+          ‘rhs’ is ‘1’, a paired test is done, see Examples.
+
+    data: an optional matrix or data frame (or similar: see
+          ‘model.frame’) containing the variables in the formula
+          ‘formula’.  By default the variables are taken from
+          ‘environment(formula)’.
+
+  subset: an optional vector specifying a subset of observations to be
+          used.
+
+na.action: a function which indicates what should happen when the data
+          contain ‘NA’s.
+
+     ...: further arguments to be passed to or from methods.  For the
+          ‘formula’ method, this includes arguments of the default
+          method, but not ‘paired’.
+
+_D_e_t_a_i_l_s:
+
+     The formula interface is only applicable for the 2-sample tests.
+
+     If only ‘x’ is given, or if both ‘x’ and ‘y’ are given and
+     ‘paired’ is ‘TRUE’, a Wilcoxon signed rank test of the null that
+     the distribution of ‘x’ (in the one sample case) or of ‘x - y’ (in
+     the paired two sample case) is symmetric about ‘mu’ is performed.
+
+     Otherwise, if both ‘x’ and ‘y’ are given and ‘paired’ is ‘FALSE’,
+     a Wilcoxon rank sum test (equivalent to the Mann-Whitney test: see
+     the Note) is carried out.  In this case, the null hypothesis is
+     that the distributions of ‘x’ and ‘y’ differ by a location shift
+     of ‘mu’ and the alternative is that they differ by some other
+     location shift (and the one-sided alternative ‘"greater"’ is that
+     ‘x’ is shifted to the right of ‘y’).
+
+     By default (if ‘exact’ is not specified), an exact p-value is
+     computed if the samples contain less than 50 finite values.
+     Otherwise, a normal approximation is used.  If there are ties,
+     exact inference is performed using the conditional/permutation
+     distribution given the observed ranks, using an implementation of
+     the Streitberg-Röhmel shift algorithm (Streitberg and Röhmel 1986;
+     Streitberg and Röhmel 1987) contributed by Torsten Hothorn.
+
+     If the normal approximation is used and there are no ties,
+     improved asymptotic p-values can be obtained via including up to k
+     = 3 correction terms of the Edgeworth series for the normal
+     approximation, as given in Fellingham and Stoker (1964) for the
+     signed rank test and in Fix and Hodges Jr. (1955) for the rank sum
+     test.
+
+     For stability reasons, it may be advisable to use rounded data or
+     to set ‘digits.rank = 7’, say, such that determination of ties
+     does not depend on very small numeric differences (see the
+     example).
+
+     Optionally (if argument ‘conf.int’ is true), a nonparametric
+     confidence interval and an estimator for the pseudomedian
+     (one-sample case) or for the difference of the location parameters
+     ‘x-y’ is computed.  (The pseudomedian of a distribution F is the
+     median of the distribution of (u+v)/2, where u and v are
+     independent, each with distribution F.  If F is symmetric, then
+     the pseudomedian and median coincide.  See Hollander and Wolfe
+     (1973, page 34).)  Note that in the two-sample case the estimator
+     for the difference in location parameters does *not* estimate the
+     difference in medians (a common misconception) but rather the
+     median of the difference between a sample from ‘x’ and a sample
+     from ‘y’.
+
+     If exact p-values are available, an exact confidence interval is
+     obtained by the algorithm described in Bauer (1972), and the
+     Hodges-Lehmann estimator is employed.  Otherwise, the returned
+     confidence interval and point estimate are based on normal
+     approximations.  These are continuity-corrected for the interval
+     but _not_ the estimate (as the correction depends on the
+     ‘alternative’).
+
+     With small samples it may not be possible to achieve very high
+     confidence interval coverages. If this happens a warning will be
+     given and an interval with lower coverage will be substituted.
+
+     When ‘x’ (and ‘y’ if applicable) are valid, the function now
+     always returns, also in the ‘conf.int = TRUE’ case when a
+     confidence interval cannot be computed, in which case the interval
+     boundaries and sometimes the ‘estimate’ now contain ‘NaN’.
+
+_V_a_l_u_e:
+
+     A list with class ‘"htest"’ containing the following components:
+
+statistic: the value of the test statistic with a name describing it.
+
+parameter: the parameter(s) for the exact distribution of the test
+          statistic.
+
+ p.value: the p-value for the test.
+
+null.value: the location parameter ‘mu’.
+
+alternative: a character string describing the alternative hypothesis.
+
+  method: the type of test applied.
+
+data.name: a character string giving the names of the data.
+
+conf.int: a confidence interval for the location parameter.  (Only
+          present if argument ‘conf.int = TRUE’.)
+
+estimate: an estimate of the location parameter.  (Only present if
+          argument ‘conf.int = TRUE’.)
+
+_W_a_r_n_i_n_g:
+
+     This function can take very long time to run if ‘exact = TRUE’ and
+     one sample is large (several thousands or more).
+
+_N_o_t_e:
+
+     The literature is not unanimous about the definitions of the
+     Wilcoxon rank sum and Mann-Whitney tests.  The two most common
+     definitions correspond to the sum of the ranks of the first sample
+     with the minimum value (m(m+1)/2 for a first sample of size m)
+     subtracted or not: R subtracts.  It seems Wilcoxon's original
+     paper used the unadjusted sum of the ranks but subsequent tables
+     subtracted the minimum.
+
+     R's value can also be computed as the number of all pairs ‘(x[i],
+     y[j])’ for which ‘y[j]’ is not greater than ‘x[i]’, the most
+     common definition of the Mann-Whitney test.
+
+_R_e_f_e_r_e_n_c_e_s:
+
+     Bauer DF (1972). “Constructing Confidence Sets Using Rank
+     Statistics.” _Journal of the American Statistical Association_,
+     *67*(339), 687-690. doi:10.1080/01621459.1972.10481279
+     <https://doi.org/10.1080/01621459.1972.10481279>.
+
+     Fellingham SA, Stoker DJ (1964). “An Approximation for the Exact
+     Distribution of the Wilcoxon Test for Symmetry.” _Journal of the
+     American Statistical Association_, *59*(307), 899-905.
+     doi:10.1080/01621459.1964.10480738
+     <https://doi.org/10.1080/01621459.1964.10480738>.
+
+     Fix E, Hodges Jr. JL (1955). “Significance Probabilities of the
+     Wilcoxon Test.” _The Annals of Mathematical Statistics_, *26*(2),
+     301-312. doi:10.1214/aoms/1177728547
+     <https://doi.org/10.1214/aoms/1177728547>.
+
+     Hollander M, Wolfe DA (1973). _Nonparametric Statistical Methods_.
+     John Wiley & Sons, New York. ISBN 9780471406358. Pages 27-33
+     (one-sample), 68-75 (two-sample).
+
+     Streitberg B, Röhmel J (1986). “Exact Distributions for
+     Permutation and Rank Tests: An Introduction to Some Recently
+     Published Algorithms.” _Statistical Software Newsletter_, *12*(1),
+     10-17. ISSN 0173-5896.
+
+     Streitberg B, Röhmel J (1987). “Exakte Verteilungen für Rang- und
+     Randomisierungstests im allgemeinen c-Stichprobenfall.” _EDV in
+     Medizin und Biologie_, *18*(1), 12-19. ISSN 0300-8282.
+     <https://ul.qucosa.de/api/qucosa%3A12624/attachment/ATT-0/>.
+
+_S_e_e _A_l_s_o:
+
+     ‘psignrank’, ‘pwilcox’.
+
+     ‘wilcox_test’ in package ‘coin’ for exact, asymptotic and Monte
+     Carlo _conditional_ p-values, including in the presence of ties.
+
+     ‘kruskal.test’ for testing homogeneity in location parameters in
+     the case of two or more samples; ‘t.test’ for an alternative under
+     normality assumptions [or large samples]
+
+_E_x_a_m_p_l_e_s:
+
+     require(graphics)
+     ## One-sample test.
+     ## Hollander & Wolfe (1973), 29f.
+     ## Hamilton depression scale factor measurements in 9 patients with
+     ##  mixed anxiety and depression, taken at the first (x) and second
+     ##  (y) visit after initiation of a therapy (administration of a
+     ##  tranquilizer).
+     x <- c(1.83,  0.50,  1.62,  2.48, 1.68, 1.88, 1.55, 3.06, 1.30)
+     y <- c(0.878, 0.647, 0.598, 2.05, 1.06, 1.29, 1.06, 3.14, 1.29)
+     wilcox.test(x, y, paired = TRUE, alternative = "greater")
+     wilcox.test(y - x, alternative = "less")    # The same.
+     wilcox.test(y - x, alternative = "less",
+                 exact = FALSE, correct = FALSE) # H&W large sample
+                                                 # approximation
+     
+     ## Formula interface to one-sample and paired tests
+     
+     depression <- data.frame(first = x, second = y, change = y - x)
+     wilcox.test(change ~ 1, data = depression)
+     wilcox.test(Pair(first, second) ~ 1, data = depression)
+     
+     ## Two-sample test.
+     ## Hollander & Wolfe (1973), 69f.
+     ## Permeability constants of the human chorioamnion (a placental
+     ##  membrane) at term (x) and between 12 to 26 weeks gestational
+     ##  age (y).  The alternative of interest is greater permeability
+     ##  of the human chorioamnion for the term pregnancy.
+     x <- c(0.80, 0.83, 1.89, 1.04, 1.45, 1.38, 1.91, 1.64, 0.73, 1.46)
+     y <- c(1.15, 0.88, 0.90, 0.74, 1.21)
+     wilcox.test(x, y, alternative = "g")        # greater
+     wilcox.test(x, y, alternative = "greater",
+                 exact = FALSE, correct = FALSE) # H&W large sample
+                                                 # approximation
+     
+     wilcox.test(rnorm(10), rnorm(10, 2), conf.int = TRUE)
+     
+     ## Formula interface.
+     boxplot(Ozone ~ Month, data = airquality)
+     wilcox.test(Ozone ~ Month, data = airquality,
+                 subset = Month %in% c(5, 8))
+     
+     ## accuracy in ties determination via 'digits.rank':
+     wilcox.test( 4:2,      3:1,     paired=TRUE) 
+     wilcox.test((4:2)/10, (3:1)/10, paired=TRUE) 
+     wilcox.test((4:2)/10, (3:1)/10, paired=TRUE, digits.rank = 9) # same ties as (4:2, 3:1)
+     

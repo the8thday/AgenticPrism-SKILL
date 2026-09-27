@@ -1,0 +1,28 @@
+{
+  "analysis_type": "variance_components",
+  "input": "ep05_2.csv",
+  "source": "VCA EP05-A2 public example or explicitly synthetic design; see source_manifest.json",
+  "design": {
+    "random_terms": [
+      [
+        "day"
+      ],
+      [
+        "day",
+        "run"
+      ]
+    ],
+    "fixed_numeric": [],
+    "fixed_categorical": [],
+    "independent_random_effects": true,
+    "gaussian_homoscedastic_errors": true,
+    "representative_levels": true,
+    "rationale": "Fixture reproduces declared Gaussian random intercept model; this statement is not evidence for a real assay"
+  },
+  "inference": {
+    "cv_reference": 75.4064476411768,
+    "cv_rationale": "Declared fixed reference of 100 assay units for synthetic precision; public fixtures use published sample mean",
+    "sum_interval": "satterthwaite"
+  },
+  "response_unit": "source units (unspecified)"
+}

@@ -1,0 +1,29 @@
+{
+  "analysis_type": "ada_cut_point",
+  "input": "titer.csv",
+  "source": "Synthetic ADA validation panel; not team data",
+  "assay": {
+    "tier": "titer",
+    "signal_unit": "AU",
+    "population": "synthetic_negative",
+    "drug_naive": true,
+    "representative_negative_panel": true,
+    "independent_subjects": true,
+    "balanced_crossed_design": true,
+    "single_reagent_lot": true,
+    "rationale": "Prespecified complete crossed negative panel; equal technical replicates."
+  },
+  "cut_point": {
+    "false_positive_rate": 0.001,
+    "target_rationale": "Fixture target; not a universal regulatory default",
+    "normalization": "none",
+    "transformation": "log",
+    "method": "parametric"
+  },
+  "outliers": {
+    "prespecified": true,
+    "rationale": "Retain every observation for this fixture",
+    "analytical": "none",
+    "biological": "none"
+  }
+}

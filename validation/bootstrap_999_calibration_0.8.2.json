@@ -1,0 +1,49 @@
+{
+  "seed": 20260929,
+  "bootstrap_reps": 999,
+  "results": [
+    {
+      "scenario": "units8_subject_sd2",
+      "simulations": 1000,
+      "reportable": 1000,
+      "withheld": 0,
+      "max_rejection": 0.06378404875209022,
+      "min_coverage": 0.9362159512479098,
+      "omnibus_rejection": 0.044,
+      "family_rejection": 0.044,
+      "simultaneous_coverage": 0.955,
+      "passed": true
+    },
+    {
+      "scenario": "units12_subject_sd2",
+      "simulations": 1000,
+      "reportable": 1000,
+      "withheld": 0,
+      "max_rejection": 0.06378404875209022,
+      "min_coverage": 0.9362159512479098,
+      "omnibus_rejection": 0.048,
+      "family_rejection": 0.059,
+      "simultaneous_coverage": 0.94,
+      "passed": true
+    },
+    {
+      "scenario": "units12_subject_sd0.3",
+      "simulations": 1000,
+      "reportable": 1000,
+      "withheld": 0,
+      "max_rejection": 0.06378404875209022,
+      "min_coverage": 0.9362159512479098,
+      "omnibus_rejection": 0.045,
+      "family_rejection": 0.044,
+      "simultaneous_coverage": 0.956,
+      "passed": true
+    }
+  ],
+  "resumed_records": 2095,
+  "resume_sha256": "668e131a2e043b1506e11d0e81ca2389ebe6febf5fc7e08e25bb32835f8245c1",
+  "workers": 10,
+  "script_sha256": "645b4005f87ebbe1b4f43fb907ebd60cfdf8517f200aa4f6d59a658a06a00d10",
+  "draws_sha256": "497a8281f173fd4e56690ab0b92a0bf4a926dc22f39c6b32eaf06b180fa1c7da",
+  "seconds": 2287.5227851867676,
+  "scope": "Null Gaussian compound symmetry, four conditions, 15% MCAR, conditions versus first only."
+}

@@ -1,0 +1,13 @@
+{
+  "sources": {
+    "fixtures/repeated_synthetic/complete.csv": "4ba53a8dd735c29456b0d1ae5bdbc8d427c11b729559e8651668c34456ee3910",
+    "fixtures/survival_synthetic/survival.csv": "9a31376b0ea1acb6530b9c8e191aa6bd04a2cc83f59d6675a536b05a2104374d",
+    "fixtures/tumor_growth_synthetic/tumors.csv": "e05703df51c5831cee8e39dc6ed728c51999560f97cac21aad42283e0ccce16a"
+  },
+  "script_sha256": "b98968b46052870390a8fb8e3801bffe0af3ab2da550cb9bb61f0e213acd0cf7",
+  "fixture_sha256": {
+    "boundary.csv": "a25935701119cad4667520000fd8f6eb21d989fe18a79f30c0a310bf40417ba9",
+    "no_events_arm.csv": "9a66be6d94e6edf352ef0d1aeded4014c0838c2ddde44ec72823c279d509fa12",
+    "tumors.csv": "e05703df51c5831cee8e39dc6ed728c51999560f97cac21aad42283e0ccce16a"
+  }
+}

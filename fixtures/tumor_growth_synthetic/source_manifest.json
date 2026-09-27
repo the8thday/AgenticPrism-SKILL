@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "seed": 20261002,
+  "generator": "scripts/prepare_tumor_growth_fixtures.py",
+  "log_growth_rates_per_day": {
+    "vehicle": 0.12,
+    "mAb-low": 0.08,
+    "mAb-high": 0.04
+  },
+  "baseline_mm3": 100,
+  "random_intercept_sd": 0.15,
+  "random_slope_sd": 0.015,
+  "residual_sd": 0.12,
+  "humane_endpoint_mm3": 2000.0,
+  "days": [
+    0,
+    3,
+    7,
+    10,
+    14,
+    17,
+    21,
+    24,
+    28
+  ]
+}

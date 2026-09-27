@@ -1,0 +1,20 @@
+{
+  "analysis_type": "ada_sensitivity",
+  "input": "sensitivity.csv",
+  "source": "Synthetic fixture; not team data",
+  "assay": {
+    "signal_unit": "AU",
+    "pc_unit": "ng/mL",
+    "positive_control": "Synthetic affinity-purified polyclonal anti-drug antibody",
+    "independent_runs": true,
+    "rationale": "Synthetic fixture: six runs on separate days with fresh PC dilution series."
+  },
+  "cut_point": {
+    "value": 1.35,
+    "deployment": "ratio",
+    "source": "Synthetic floating screening cut point for this fixture (normally an ada_cut_point run and its results.json hash)"
+  },
+  "statistics": {
+    "prediction_confidence": 0.95
+  }
+}

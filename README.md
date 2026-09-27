@@ -1,70 +1,66 @@
 # AgenticPrism — modular scientific analysis skills
 
-**English** | [简体中文](README.zh-CN.md)
+**English** | [简体中文](README.zh-CN.md) | [Changelog](CHANGELOG.md)
 
-Agent Skills that reproduce GraphPad Prism-style analyses common in antibody
-drug development, backed by one versioned Python package for fitting, statistics
-and reporting. An AI agent reads a Skill, checks whether the analysis applies to
-the experiment, writes an explicit JSON config and runs the command-line tool.
-Every run saves its inputs, configuration, hashes, results, diagnostics and a
-self-contained offline HTML report.
+Agent Skills for the statistical analyses of antibody and biologics research
+and development, from binding characterization to in vivo efficacy,
+bioanalytical validation and immunogenicity. An AI agent reads a Skill, checks
+that the analysis fits the experiment, writes an explicit JSON config and runs
+one versioned Python package. Every run saves its inputs, configuration,
+hashes, results, diagnostics, an `interpretation_facts.json` for the agent's
+narrative (in most modules) and an offline HTML report.
 
-Local development version **0.7.1**.
+Local development version **0.9.3**.
 
 > **AI agents:** to install this collection for a user, follow
 > [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md).
 
-| Analysis | Skill | What it reports |
-|---|---|---|
-| Equilibrium binding | [equilibrium-binding](skills/equilibrium-binding/SKILL.md) | Single-site KD with profile-F interval; summary across independent experiments |
-| BLI / SPR kinetics | [binding-kinetics](skills/binding-kinetics/SKILL.md) | Global 1:1 kon, koff and kinetic KD from independent cycles or single-cycle series; explicit reference or double referencing; block-bootstrap intervals; Octet `Results.txt` import |
-| Dose response | [dose-response](skills/dose-response/SKILL.md) | Relative EC50/IC50 from a symmetric 4PL (optional fixed plateaus, relative 1/Y² weighting); summary across experiments; reference-vs-test relative potency with parallelism by F test or by predeclared equivalence margins, optional RP acceptance limits |
-| ELISA quantification | [elisa-quantification](skills/elisa-quantification/SKILL.md) | Plate-specific 4PL or predeclared 5PL standard curve; standard back-calculation QC, independent controls and per-plate screening bounds; unknown interpolation within that range with dilution correction, calibration-conditional intervals and dilution-linearity checks |
-| Group comparison | [group-comparison](skills/group-comparison/SKILL.md) | Two groups: Welch or paired t test. Three or more independent groups: classic or Welch one-way ANOVA with a predeclared Dunnett, Tukey-Kramer, Games-Howell or Holm-Welch family |
-| Router | [agentic-prism](skills/agentic-prism/SKILL.md) | Picks the specialist by experimental purpose |
+## What it covers
 
-Plate-reader grids plus a plate map convert to the long input tables with
-`agentic-prism import-plate`. Repeated-measures ANOVA, mixed-effects models and
-survival analysis are not implemented. See the
-[module registry](skills/agentic-prism/references/module-registry.md).
+| Stage | Question | Skill | Methods |
+|---|---|---|---|
+| Binding characterization | Equilibrium affinity (KD) | [equilibrium-binding](skills/equilibrium-binding/SKILL.md) | Single-site model with profile-F interval; summary over independent experiments |
+| | Association and dissociation rates | [binding-kinetics](skills/binding-kinetics/SKILL.md) | Global 1:1 fit of independent-cycle or single-cycle BLI/SPR data, reference or double referencing, block-bootstrap intervals with reliability gates, Octet `Results.txt` import |
+| In vitro function | EC50/IC50 and relative potency | [dose-response](skills/dose-response/SKILL.md) | Symmetric 4PL, relative midpoint with profile interval, parallel-line relative potency with F-test or equivalence-margin parallelism |
+| | Concentration from a standard curve | [elisa-quantification](skills/elisa-quantification/SKILL.md) | Per-plate 4PL/5PL, back-calculation QC, independent QC gates, delta-method unknown intervals, dilution linearity; plate-grid import |
+| In vivo efficacy | Tumor volumes over time | [tumor-growth](skills/tumor-growth/SKILL.md) | Log-volume random-slope model: growth rates, doubling times, rate differences, model T/C; observed TGI% and T/C% with Fieller limits and dropout diagnostics |
+| | Survival, time to humane endpoint | [time-to-event](skills/time-to-event/SKILL.md) | Kaplan–Meier, log-rank (asymptotic or permutation), Cox hazard ratios, proportional-hazards test |
+| | Body weight or other scheduled measurements | [repeated-measures](skills/repeated-measures/SKILL.md) | RM and split-plot ANOVA with GG correction, random-intercept models with Satterthwaite, marginal US/AR(1) MMRM with optional Kenward–Roger |
+| Bioanalysis and immunogenicity | Method validation (ICH M10-style, ligand-binding assays) | [method-validation](skills/method-validation/SKILL.md) | Accuracy/precision with total error, dilution linearity and hook effect, parallelism with trend check, selectivity, specificity, stability; accuracy profile |
+| | ADA cut points, sensitivity, drug tolerance | [ada-cut-point](skills/ada-cut-point/SKILL.md) | Screening/confirmatory/titer cut points, fixed or floating, confidence lower bounds; positive-control sensitivity with a run-to-run prediction limit; drug tolerance |
+| | Repeatability and intermediate precision | [variance-components](skills/variance-components/SKILL.md) | REML for nested/crossed factors, unbalanced data, MLS/MOVER intervals |
+| Any stage | Comparing groups | [group-comparison](skills/group-comparison/SKILL.md) | Welch or paired t, one-way ANOVA with Dunnett/Tukey/Games-Howell/Holm families, Mann–Whitney and signed-rank with Hodges–Lehmann, Kruskal–Wallis with Dunn, Friedman |
 
-**No numerical equivalence to GraphPad Prism is claimed.** What has actually
-been checked, and its limits, is recorded in [validation/README.md](validation/README.md).
+The [router Skill](skills/agentic-prism/SKILL.md) picks the specialist from the
+experiment; the [module registry](skills/agentic-prism/references/module-registry.md)
+lists exact capabilities and boundaries.
 
-## Reliability additions in 0.6.0
+## How correctness is checked
 
-Kinetic reliability blockers now withhold reportable intervals and retain audit
-estimates separately; deterministic dissociation-window checks are saved. ELISA
-supports independently prepared low/mid/high controls that never enter the fit,
-with per-plate recovery/CV gates and descriptive cross-plate summaries. Legacy
-LLOQ/ULOQ keys are plate screening bounds, not validated assay limits.
+Each method is compared with an established implementation on public or
+fixture data, and its intervals and error rates are checked by simulation
+with pass/fail bounds fixed before running. Misses are reported as misses.
+Details, scope and every number: [validation/README.md](validation/README.md).
 
-The [reference library](validation/reference-library/README.md) reruns current
-code against pinned public data. [Misuse scenarios](validation/agent-scenarios/README.md),
-backend rejection tests, wheel installation checks and a three-platform CI
-workflow cover different layers of reliability. See the
-[release evidence and remaining gaps](validation/RELIABILITY_0.6.0.md).
-A workflow definition is not evidence of an executed cross-platform or live-agent test.
+| Module | Compared with | Largest difference | Calibration by simulation |
+|---|---|---|---|
+| Equilibrium binding | BindCurve 0.2.0 (25 curves) | KD 1.3e-4 relative | CI coverage check |
+| Kinetics | Published TitrationAnalysis fits of Octet RED384 data | rates/KD 2e-4 relative | Bootstrap coverage; single-cycle koff 91.3% vs 91.4% bound (miss) |
+| Dose response | Independent SciPy four-parameter refit | 5.8e-7 relative | 4PL and relative-potency coverage |
+| ELISA | Independent full-parameter fit with root finding | 3.9e-10 | Unknown-interval coverage |
+| Group comparison | SciPy; R `wilcox.test`, `kruskal.test`, `friedman.test`, `dunn.test` | F 1e-10 relative; rank statistics exact or 1e-14; HL interval endpoints within 3e-4 absolute (root tolerance) | Family-wise error; Welch procedures miss with a 4-unit high-variance group |
+| Repeated measures, MMRM | R nlme, lmerTest, afex, emmeans, mmrm, pbkrtest | 1.8e-6 relative (df, MMRM) | Satterthwaite passes; unstructured MMRM with 12 units per arm misses (7.0–7.1%) |
+| Time to event | R survival (lung, veteran) | 1.6e-14 relative | Permutation log-rank, KM log-log, Cox and PH test pass |
+| Tumor growth | R lmerTest | 1.9e-7 relative | Rate-difference coverage under dropout passes |
+| ADA cut points | R base/car/lme4; rADA vignette | 2.1e-12 relative | Lower bounds pass; point titer cut point misses |
+| Precision components | R VCA and lme4; CLSI EP05 example | 9.3e-7 absolute | MLS total passes; one component upper bound misses (92.8%) |
+| Method validation, ADA sensitivity | R VCA `anovaVCA`, `lm`, `binom.test`, `t.test`, `approx` | 3.4e-12 relative | 17/18 pass; sensitivity limit with 3-fold dilutions misses |
 
-## Additions in 0.7.0
-
-- One-way multi-group comparison with predeclared contrast families, checked
-  against first-principles formulas and SciPy, with family-wise error and
-  simultaneous-coverage simulations.
-- Plate-reader grid + plate-map import (`import-plate`), copying cells exactly
-  and hashing every source file.
-- ELISA: predeclared 5PL, delta-method unknown intervals, within-plate dilution
-  linearity with a hook/matrix pattern flag.
-- Relative potency: equivalence-margin parallelism and RP acceptance limits.
-- Kinetics: single-cycle (sequential injection) 1:1 model and explicit double
-  referencing, including blank-cycle columns from the Octet importer.
-- Recorded live-agent scenario sessions (see
-  [agent scenarios](validation/agent-scenarios/README.md)).
-
-Observed numbers, simulation results (including the scenarios that missed a
-prespecified bound) and evidence limits are in
-[validation/RELEASE_0.7.0.md](validation/RELEASE_0.7.0.md). No git remote is
-configured, so the three-platform CI workflow has not actually run.
+Live-agent misuse scenarios (for example asking for a verdict without
+acceptance criteria, omitting a hook effect, or quoting positive-control
+sensitivity as a patient detection limit) are recorded per release in
+[validation/agent-scenarios](validation/agent-scenarios/README.md).
+**No numerical equivalence to GraphPad Prism is claimed.**
 
 ## Installation
 
@@ -99,11 +95,15 @@ This creates symlinks and never overwrites existing entries. Do not copy Skill
 folders: a copied Skill cannot find its runtime. Each Skill locates the runtime
 from its real location and checks it with `agentic-prism doctor --collection
 <clone>` ([runtime instructions](skills/agentic-prism/references/runtime.md)).
-The six Skills and the package are one version and must stay together.
+The twelve Skills and the package are one version and must stay together.
 
 Platform evidence: install and results were checked on macOS (uv with Python
 3.13, and pip with Python 3.14; identical results). Linux and Windows are
 expected to work but the CI workflow has not yet run. See [validation/RELEASE_0.7.1.md](validation/RELEASE_0.7.1.md).
+
+**Optional R.** Only MMRM Kenward–Roger needs R. After installing R, opt in with
+`python3 install.py --with-r`; pinned packages live in `.r-lib/`, and `doctor`
+reports them. Without R, only that method refuses; everything else runs.
 
 ## Usage
 
@@ -121,12 +121,15 @@ expected to work but the CI workflow has not yet run. See [validation/RELEASE_0.
 .venv/bin/agentic-prism analyze --config fixtures/elisa_dilution_5pl/config.json --output runs/my-5pl-run
 .venv/bin/agentic-prism analyze --config fixtures/kinetics_single_cycle/config.json --output runs/my-sck-run
 .venv/bin/agentic-prism import-plate --manifest fixtures/plate_import_example/plate_manifest.json --output runs/my-plate-import
+.venv/bin/agentic-prism analyze --config fixtures/method_validation/config_accuracy_precision.json --output runs/my-ap-run
+.venv/bin/agentic-prism analyze --config fixtures/ada_performance/config_sensitivity.json --output runs/my-ada-sensitivity
 ```
 
 Each analysis needs a new output directory; earlier results are never
 overwritten. `render` only restyles figures: it verifies the result hashes and
-never refits. Reports are single self-contained HTML files with all figures and
-downloads embedded, so they can be copied on their own.
+never refits. Curve-fitting reports embed figures and downloads in one HTML file. ADA and
+precision reports display results offline but link to adjacent artifact files;
+copy their complete run directory to preserve downloads.
 
 Start new data from a fixture config, and fill in the applicability evidence
 according to the input contract:
@@ -137,15 +140,16 @@ according to the input contract:
 - ELISA: `fixtures/elisa_synthetic/config.json`, [input contract](skills/elisa-quantification/references/input-and-model.md)
 - Group statistics: `fixtures/groups_synthetic/*_config.json`, `fixtures/multigroup_synthetic/*.json`, [input contract](skills/group-comparison/references/input-and-model.md)
 - Plate-reader grids: `fixtures/plate_import_example/plate_manifest.json`, [grid format](skills/elisa-quantification/references/input-and-model.md#plate-reader-grids-070)
+- Method validation: `fixtures/method_validation/config_*.json`, [input contract](skills/method-validation/references/contract.md)
+- ADA cut points, sensitivity, drug tolerance: `fixtures/ada_synthetic/`, `fixtures/ada_performance/`, [input contract](skills/ada-cut-point/references/contract.md)
 
 Do not copy the `true` applicability flags from simulated data as if they had
 been verified for a real experiment.
 
 ## Example reports
 
-Every command in [Usage](#usage) writes a new run directory with a single
-self-contained `report.html` (figures and downloads embedded) that opens
-offline in a browser. Precomputed example reports are not included in this
+Every command in [Usage](#usage) writes a new run directory with `report.html`
+that opens offline in a browser. Keep the run directory for complete artifacts. Precomputed example reports are not included in this
 repository.
 
 ## Outputs and exit codes
@@ -205,11 +209,23 @@ upper or lower bounds that imply statistical guarantees.
   hook/matrix flag is a pattern, not a diagnosis.
 - **Group statistics:** one predeclared Welch or paired t contrast, or a one-way
   ANOVA over ≥3 independent groups with a predeclared contrast family, on
-  unit-level observations. Repeated measures across more than two conditions,
-  mixed effects, covariates and nonparametric tests are not included. Welch
+  unit-level observations. Repeated measures across more than two conditions and scoped random-intercept
+  mixed models use the separate repeated-measures specialist. Rank tests use the separate nonparametric contract; baseline numeric covariates
+  are supported only in the MMRM contract. Welch
   procedures with a group below six units are flagged as possibly liberal.
 - **Data provenance:** public fixtures keep the authors' data and source
   checksums, and reproduce specific published settings. They are not general
   defaults for antibody experiments and do not establish independence between
   experiments. Where a separate data license could not be confirmed, none is
   asserted over third-party data.
+- **In vivo and longitudinal:** repeated measures use compound-symmetry random
+  intercepts, split-plot ANOVA or marginal US/AR(1) MMRM; tumor growth is
+  exponential on the log scale with MAR removal; time-to-event has no competing
+  risks, frailty or interval censoring. Small-sample misses are listed in the
+  validation records.
+- **Bioanalysis and immunogenicity:** method validation starts from
+  back-calculated concentrations (no calibration-curve fitting, carry-over or
+  incurred-sample reanalysis); acceptance criteria are always user-declared.
+  ADA cut points need complete balanced negative panels from one reagent lot;
+  dynamic cut points are not implemented. Positive-control sensitivity is not
+  the sensitivity for patients' antibodies.

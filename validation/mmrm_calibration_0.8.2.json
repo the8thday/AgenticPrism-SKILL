@@ -1,0 +1,65 @@
+{
+  "seed": 20260930,
+  "script_sha256": "6b90c6887366db839431d8a591ba1e279283493150a217729b5af35bcea7aec8",
+  "draws_sha256": "d08f0942f1ae04e3d51ea35f9075aa8bd6e00222efe1f313feccf0c40a3a9a07",
+  "results": [
+    {
+      "covariance": "unstructured",
+      "inference": "satterthwaite",
+      "simulations": 1000,
+      "reportable": 1000,
+      "withheld": 0,
+      "max_rejection": 0.06378404875209022,
+      "min_coverage": 0.9362159512479098,
+      "errors": [],
+      "omnibus_rejection": 0.07,
+      "family_rejection": 0.055,
+      "simultaneous_coverage": 0.945,
+      "passed": false
+    },
+    {
+      "covariance": "unstructured",
+      "inference": "kenward_roger",
+      "simulations": 1000,
+      "reportable": 1000,
+      "withheld": 0,
+      "max_rejection": 0.06378404875209022,
+      "min_coverage": 0.9362159512479098,
+      "errors": [],
+      "omnibus_rejection": 0.071,
+      "family_rejection": 0.067,
+      "simultaneous_coverage": 0.933,
+      "passed": false
+    },
+    {
+      "covariance": "ar1",
+      "inference": "satterthwaite",
+      "simulations": 1000,
+      "reportable": 1000,
+      "withheld": 0,
+      "max_rejection": 0.06378404875209022,
+      "min_coverage": 0.9362159512479098,
+      "errors": [],
+      "omnibus_rejection": 0.057,
+      "family_rejection": 0.043,
+      "simultaneous_coverage": 0.957,
+      "passed": true
+    },
+    {
+      "covariance": "ar1",
+      "inference": "kenward_roger",
+      "simulations": 1000,
+      "reportable": 1000,
+      "withheld": 0,
+      "max_rejection": 0.06378404875209022,
+      "min_coverage": 0.9362159512479098,
+      "errors": [],
+      "omnibus_rejection": 0.053,
+      "family_rejection": 0.048,
+      "simultaneous_coverage": 0.952,
+      "passed": true
+    }
+  ],
+  "seconds": 1330.8695662021637,
+  "scope": "Gaussian null, matching common covariance, three visits, 12 subjects per arm, 15% MCAR. No MNAR, misspecified-covariance, unequal-arm-covariance or covariate-calibration claim."
+}

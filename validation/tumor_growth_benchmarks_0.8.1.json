@@ -1,0 +1,30 @@
+{
+  "records": {
+    "bodyweight": {
+      "slope_max_relative_difference": 1.617372902273928e-12,
+      "slope_se_max_relative_difference": 1.6856960272093602e-11,
+      "slope_df_max_relative_difference": 3.913821955414676e-08,
+      "equal_slopes_f_relative_difference": 3.430500328249764e-11,
+      "equal_slopes_ddf_relative_difference": 3.8486044906527184e-08,
+      "difference_df_max_relative_difference": 3.855851382628117e-08
+    },
+    "chickweight": {
+      "slope_max_relative_difference": 4.835734035424366e-10,
+      "slope_se_max_relative_difference": 5.437037597921801e-08,
+      "slope_df_max_relative_difference": 1.3689621713997013e-07,
+      "equal_slopes_f_relative_difference": 1.1030556146263137e-07,
+      "equal_slopes_ddf_relative_difference": 1.3386758845879143e-07,
+      "difference_df_max_relative_difference": 1.3443315649563914e-07
+    },
+    "r_version": "R version 4.6.0 (2026-04-24) lmerTest 3.2.1",
+    "fixture": {
+      "slope_max_relative_difference": 3.3920766195905117e-10,
+      "slope_se_max_relative_difference": 5.7982335377460004e-08,
+      "slope_df_max_relative_difference": 1.9292120967406845e-07,
+      "equal_slopes_f_relative_difference": 1.1374347064219137e-07,
+      "equal_slopes_ddf_relative_difference": 1.8932545486904928e-07,
+      "difference_df_max_relative_difference": 1.9025452813181687e-07
+    }
+  },
+  "passed": true
+}

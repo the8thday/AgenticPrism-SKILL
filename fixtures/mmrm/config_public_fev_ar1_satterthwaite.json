@@ -1,0 +1,39 @@
+{
+  "analysis_type": "mmrm",
+  "schema_version": 1,
+  "input": "public_fev.csv",
+  "source": "R mmrm::fev_data, official introduction vignette; simulated clinical example, not antibody efficacy data. Published model uses RACE + SEX + ARMCD * AVISIT + us.",
+  "comparison": {
+    "groups": [
+      "VIS1",
+      "VIS2",
+      "VIS3",
+      "VIS4"
+    ],
+    "arms": [
+      "PBO",
+      "TRT"
+    ],
+    "control_arm": "PBO",
+    "outcome": "FEV1",
+    "unit": "source_unit",
+    "rationale": "Predeclared arm by visit comparison with independent subjects and common within-subject covariance; numerical validation example.",
+    "independent_units": true,
+    "covariance_appropriate": true,
+    "covariance_rationale": "Declared homogeneous ar1 within-subject covariance for this numerical example.",
+    "covariates": [
+      "race_black",
+      "race_white",
+      "sex_female"
+    ],
+    "covariance": "ar1",
+    "inference": "satterthwaite",
+    "missing_policy": "available_case",
+    "missingness_rationale": "Available-case MAR assumption for this numerical example; it is not empirically established.",
+    "confidence_level": 0.95,
+    "post_hoc": "arm_vs_control_each_condition"
+  },
+  "report": {
+    "plot_style": "prism_like"
+  }
+}

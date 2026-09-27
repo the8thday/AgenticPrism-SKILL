@@ -1,0 +1,70 @@
+{
+  "seed": 20261003,
+  "results": [
+    {
+      "scenario": "A_null_rates_dropout2000",
+      "rates": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "removal_threshold_mm3": 2000.0,
+      "simulations": 1000,
+      "model_reportable": 1000,
+      "mean_animals_removed_before_day21": 0.0,
+      "rate_difference_family_coverage": 0.942,
+      "seconds": 125,
+      "min_coverage": 0.9362159512479097,
+      "equal_rates_type_I": 0.058,
+      "max_rejection": 0.06378404875209022,
+      "passed": true
+    },
+    {
+      "scenario": "B_alternative_early_dropout1000",
+      "rates": [
+        0.12,
+        0.08,
+        0.04
+      ],
+      "removal_threshold_mm3": 1000.0,
+      "simulations": 1000,
+      "model_reportable": 1000,
+      "mean_animals_removed_before_day21": 2.116,
+      "rate_difference_family_coverage": 0.951,
+      "seconds": 120,
+      "min_coverage": 0.9362159512479097,
+      "true_tgi_percent": {
+        "mAb-low": 61.53571297019942,
+        "mAb-high": 88.1076649204204
+      },
+      "observed_tgi_family_coverage": 0.922,
+      "observed_tgi_evaluable": 1000,
+      "observed_tgi_note": "comparator: survivors only, expected bias",
+      "passed": true
+    },
+    {
+      "scenario": "C_alternative_no_dropout",
+      "rates": [
+        0.12,
+        0.08,
+        0.04
+      ],
+      "removal_threshold_mm3": null,
+      "simulations": 1000,
+      "model_reportable": 1000,
+      "mean_animals_removed_before_day21": 0.0,
+      "rate_difference_family_coverage": 0.945,
+      "seconds": 129,
+      "min_coverage": 0.9362159512479097,
+      "true_tgi_percent": {
+        "mAb-low": 61.53571297019942,
+        "mAb-high": 88.1076649204204
+      },
+      "observed_tgi_family_coverage": 0.954,
+      "observed_tgi_evaluable": 1000,
+      "min_tgi_coverage": 0.9362159512479097,
+      "passed": true
+    }
+  ],
+  "scope": "One generating model (exponential growth, Gaussian random intercept/slope on log scale), MAR threshold removal. No Gompertz growth, informative (MNAR) removal, cage effects or measurement-error heteroscedasticity."
+}

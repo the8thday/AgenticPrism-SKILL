@@ -1,0 +1,114 @@
+_K_r_u_s_k_a_l-_W_a_l_l_i_s _R_a_n_k _S_u_m _T_e_s_t
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Performs a Kruskal-Wallis rank sum test.
+
+_U_s_a_g_e:
+
+     kruskal.test(x, ...)
+     
+     ## Default S3 method:
+     kruskal.test(x, g, ...)
+     
+     ## S3 method for class 'formula'
+     kruskal.test(formula, data, subset, na.action, ...)
+     
+_A_r_g_u_m_e_n_t_s:
+
+       x: a numeric vector of data values, or a list of numeric data
+          vectors.  Non-numeric elements of a list will be coerced,
+          with a warning.
+
+       g: a vector or factor object giving the group for the
+          corresponding elements of ‘x’.  Ignored with a warning if ‘x’
+          is a list.
+
+ formula: a formula of the form ‘response ~ group’ where ‘response’
+          gives the data values and ‘group’ a vector or factor of the
+          corresponding groups.
+
+    data: an optional matrix or data frame (or similar: see
+          ‘model.frame’) containing the variables in the formula
+          ‘formula’.  By default the variables are taken from
+          ‘environment(formula)’.
+
+  subset: an optional vector specifying a subset of observations to be
+          used.
+
+na.action: a function which indicates what should happen when the data
+          contain ‘NA’s.  Defaults to ‘getOption("na.action")’.
+
+     ...: further arguments to be passed to or from methods.
+
+_D_e_t_a_i_l_s:
+
+     ‘kruskal.test’ performs a Kruskal-Wallis rank sum test of the null
+     that the location parameters of the distribution of ‘x’ are the
+     same in each group (sample).  The alternative is that they differ
+     in at least one.
+
+     If ‘x’ is a list, its elements are taken as the samples to be
+     compared, and hence have to be numeric data vectors.  In this
+     case, ‘g’ is ignored, and one can simply use ‘kruskal.test(x)’ to
+     perform the test.  If the samples are not yet contained in a list,
+     use ‘kruskal.test(list(x, ...))’.
+
+     Otherwise, ‘x’ must be a numeric data vector, and ‘g’ must be a
+     vector or factor object of the same length as ‘x’ giving the group
+     for the corresponding elements of ‘x’.
+
+_V_a_l_u_e:
+
+     A list with class ‘"htest"’ containing the following components:
+
+statistic: the Kruskal-Wallis rank sum statistic.
+
+parameter: the degrees of freedom of the approximate chi-squared
+          distribution of the test statistic.
+
+ p.value: the p-value of the test.
+
+  method: the character string ‘"Kruskal-Wallis rank sum test"’.
+
+data.name: a character string giving the names of the data.
+
+_R_e_f_e_r_e_n_c_e_s:
+
+     Hollander M, Wolfe DA (1973). _Nonparametric Statistical Methods_.
+     John Wiley & Sons, New York. ISBN 9780471406358.
+     Pages 115-120.
+
+_S_e_e _A_l_s_o:
+
+     The Wilcoxon rank sum test (‘wilcox.test’) as the special case for
+     two samples; ‘lm’ together with ‘anova’ for performing one-way
+     location analysis under normality assumptions; with Student's t
+     test (‘t.test’) as the special case for two samples.
+
+     ‘wilcox_test’ in package ‘coin’ for exact, asymptotic and Monte
+     Carlo _conditional_ p-values, including in the presence of ties.
+
+_E_x_a_m_p_l_e_s:
+
+     ## Hollander & Wolfe (1973), 116.
+     ## Mucociliary efficiency from the rate of removal of dust in normal
+     ##  subjects, subjects with obstructive airway disease, and subjects
+     ##  with asbestosis.
+     x <- c(2.9, 3.0, 2.5, 2.6, 3.2) # normal subjects
+     y <- c(3.8, 2.7, 4.0, 2.4)      # with obstructive airway disease
+     z <- c(2.8, 3.4, 3.7, 2.2, 2.0) # with asbestosis
+     kruskal.test(list(x, y, z))
+     ## Equivalently,
+     x <- c(x, y, z)
+     g <- factor(rep(1:3, c(5, 4, 5)),
+                 labels = c("Normal subjects",
+                            "Subjects with obstructive airway disease",
+                            "Subjects with asbestosis"))
+     kruskal.test(x, g)
+     
+     ## Formula interface.
+     require(graphics)
+     boxplot(Ozone ~ Month, data = airquality)
+     kruskal.test(Ozone ~ Month, data = airquality)
+     

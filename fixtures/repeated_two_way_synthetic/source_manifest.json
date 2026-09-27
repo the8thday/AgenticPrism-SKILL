@@ -1,0 +1,39 @@
+{
+  "synthetic": true,
+  "seed": 20260929,
+  "generator": "scripts/prepare_repeated_two_way_fixtures.py",
+  "arm_day_means": {
+    "vehicle": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "mAb-low": [
+      0,
+      0.5,
+      1,
+      1.2,
+      1.5
+    ],
+    "mAb-high": [
+      0,
+      -1,
+      -2,
+      -2.5,
+      -3
+    ]
+  },
+  "random_intercept_sd": 2,
+  "residual_sd": 1.5,
+  "mice_per_arm": 8,
+  "dropped_observations": [
+    "vehicle-m7-day28",
+    "mAb-low-m3-day21",
+    "mAb-low-m3-day28",
+    "mAb-high-m2-day28",
+    "mAb-high-m6-day14",
+    "mAb-high-m8-day28"
+  ]
+}

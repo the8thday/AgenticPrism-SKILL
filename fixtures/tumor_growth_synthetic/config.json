@@ -1,0 +1,25 @@
+{
+  "analysis_type": "tumor_growth",
+  "input": "tumors.csv",
+  "source": "Synthetic xenograft growth; seed 20261002; no measured biology",
+  "study": {
+    "volume_unit": "mm3",
+    "time_unit": "day",
+    "time_origin": "first dose (day 0, randomization at ~100 mm3)",
+    "removal_rule": "Animal euthanized after the first caliper volume above 2000 mm3",
+    "dropout_rationale": "Removal depends on the last observed volume only, so dropout is plausibly MAR given the observed growth",
+    "rationale": "Ten mice per arm randomized by baseline volume; comparisons vs vehicle and the day-21 readout declared in the protocol"
+  },
+  "analysis": {
+    "arms": [
+      "vehicle",
+      "mAb-low",
+      "mAb-high"
+    ],
+    "control_arm": "vehicle",
+    "baseline_day": 0,
+    "analysis_day": 21,
+    "log_offset": 1.0,
+    "confidence_level": 0.95
+  }
+}

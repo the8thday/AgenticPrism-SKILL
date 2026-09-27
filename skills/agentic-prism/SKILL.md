@@ -1,6 +1,6 @@
 ---
 name: agentic-prism
-description: Route Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, or scoped two-group and one-way multi-group statistics.
+description: Route Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM.
 ---
 
 # AgenticPrism
@@ -8,6 +8,11 @@ description: Route Prism-style analysis by experimental purpose to equilibrium K
 Use this entry point when the user asks for Prism-like analysis without selecting
 a specific module, or asks to combine analyses. For an explicit supported task,
 the specialist can be used directly.
+
+Before routing or interpreting saved results, follow the ordered
+[runtime discovery procedure](references/runtime.md): resolve this Skill’s real
+path → check the collection `.venv` → run doctor; PATH is a fallback only.
+Do not conclude “not installed” from `which` alone.
 
 1. Inspect the user's actual files and intended quantity: equilibrium KD,
    unknown concentration from standards, EC50/IC50, kinetics, or group difference.
@@ -35,12 +40,38 @@ the specialist can be used directly.
 7. For a declared two-group contrast or a one-way comparison of three or more
    independent groups, read [group-comparison](../group-comparison/SKILL.md).
    Identify the independent unit, the design and the contrast family before
-   statistical testing. Repeated measures across ≥3 conditions are not available.
-8. For an unavailable module, explain the missing capability and needed data.
+   statistical testing. For Mann–Whitney, signed-rank, Kruskal–Wallis/Dunn or
+   complete-block Friedman, follow its nonparametric contract. For the same units across ≥3 conditions, read
+   [repeated-measures](../repeated-measures/SKILL.md): one within-unit factor,
+   or treatment arm × scheduled time point (each unit in one arm); RM/split-plot
+   ANOVA or scoped Gaussian random-intercept models. Check covariance and
+   missingness assumptions before routing.
+8. For survival or time to a humane endpoint, read
+   [time-to-event](../time-to-event/SKILL.md). Establish the event definition,
+   time zero and why subjects are censored before any test.
+9. For longitudinal tumor volumes, read [tumor-growth](../tumor-growth/SKILL.md);
+   agree the readout day, log offset and how humane-endpoint removals are
+   handled before analysis.
+10. For ADA screening/confirmatory/titer cut points, read
+   [ada-cut-point](../ada-cut-point/SKILL.md). Confirm drug-naive population,
+   target false-positive rate, exclusions, run design and reagent lot first.
+   Positive-control sensitivity and drug tolerance against an established cut
+   point are in the same Skill.
+11. For bioanalytical method-validation experiments (accuracy and precision,
+   total error, dilution linearity and hook effect, parallelism, selectivity,
+   specificity, stability) from back-calculated concentrations, read
+   [method-validation](../method-validation/SKILL.md). Ask which experiment,
+   the acceptance criteria and their source; never default them.
+12. For an unavailable module, explain the missing capability and needed data.
    Do not relabel another module's output to satisfy the request. Development of
    a new method requires an explicit development task and independent validation.
-9. Return the actual report, results, important limitations and rerun entry point.
+13. Return the actual report, results, important limitations and rerun entry point.
    Scientific outputs come from the fixed versioned implementation, not prose.
+   For repeated-measures, time-to-event, tumor-growth, variance-components, ADA
+   and method-validation runs, read the verified `interpretation_facts.json` and
+   follow its reportability and disclosures
+   ([contract](references/interpretation-facts.md)). Other specialists and
+   earlier runs still use their documented result artifacts.
 
 These skills are sibling directories in one distribution. “Routing” means the
 agent reads and follows specialist instructions; it does not require spawning
@@ -64,3 +95,19 @@ assumptions and ask for the specific missing experimental facts.
 Release misuse scenarios and their evaluation status are in
 [agent evaluation](../../validation/agent-scenarios/README.md). Backend rejection
 tests do not establish that every agent follows this Skill correctly.
+
+For declared repeatability/intermediate precision with nested or crossed lots, runs
+or analysts, use [variance-components](../variance-components/SKILL.md). Establish
+the design and CV reference before fitting. It does not implement full ICH M10
+validation or infer acceptance limits. Read its small-sample coverage limits.
+
+### Interval requests in 0.9.2
+
+Route repeatability/intermediate precision intervals to variance-components;
+ask for design and interval applicability. Do not promise exact unbalanced MLS
+or transfer a total-variance calibration pass to each component upper bound.
+For an ADA confidence-level cut point, the usual lower-bound direction is
+FPR **at least** target to reduce missed positives. Clarify an opposing user
+objective before proposing a method. Lower-bound results are marginal over
+future subjects/runs; nonparametric pairs must have distinct subjects and runs.
+Read the saved facts and disclose excessive false-positive workload when relevant.

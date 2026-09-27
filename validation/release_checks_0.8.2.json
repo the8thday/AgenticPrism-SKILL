@@ -1,0 +1,452 @@
+{
+  "release": "0.8.2",
+  "branch": "dev/0.8.2",
+  "status": "release_checks_passed_with_statistical_calibration_misses_and_partial_agent_explanations",
+  "runtime_commit": "9d63037d7d62a2673f81690db1871e77bdf24ee3",
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q --junitxml=/tmp/ap082-pytest-tailfix.xml",
+    "passed": 306,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "observed_console_seconds": 395.92,
+    "junit_sha256": "feb410eb0ea43f0d6b087f5d5d766b8b25a2eb304c7bc3387e0c56c28550a3ba"
+  },
+  "skill_validation": {
+    "validator": "~/.claude-science/skills/skill-creator/scripts/quick_validate.py",
+    "skills": [
+      "agentic-prism",
+      "group-comparison",
+      "repeated-measures"
+    ],
+    "passed": true
+  },
+  "build": {
+    "command": "uv build",
+    "wheel": "dist/agentic_prism-0.8.2-py3-none-any.whl",
+    "wheel_sha256": "dfaff7f762a9bd5faa585a11b03cbc189b88574a569493f83edb972076179686",
+    "package_files_byte_identical": {
+      "agentic_prism/kinetics_schema.py": "fe43c9736c15ef97f49a2eccdf7181f9114bb44a532aa1b0e0544c9a5b1b93d8",
+      "agentic_prism/nonparametric.py": "b1d6ec1c3438f730ab1a739082af6c18f05395b7ad1e3ed9eff85497578b4167",
+      "agentic_prism/mixed_inference.py": "0dbdf50d91039bf73d9935d30ab0a42a948410c6480cc5d5da8a68c9e78aae6c",
+      "agentic_prism/kinetics_report.py": "7b1d07eb60952bb73b37ffa0728e13a2c6083a600619fb136db06a69281aa382",
+      "agentic_prism/dose_report.py": "7338e84341210afe7be36659aa4392c53df26054b6639d0874634897fb1f7a48",
+      "agentic_prism/fit.py": "b7654bed4d47008e2145e8be68f950f5009f3fb7f11ac2f9b05d7c56ec6a3da0",
+      "agentic_prism/survival.py": "0a18aeee711d6aa82a6bb284769faa91fa4710859f989aa1a02b4460604f5d41",
+      "agentic_prism/dose_schema.py": "6a2ae2a9faeeeb1abcb855be6b9c4f007a0d8a14464c780dd99c545a5f2d11d3",
+      "agentic_prism/elisa.py": "9aa4dee373bada2361ede28a19c71b89f1705bb2ea8b7cd58248e6b8ce339e78",
+      "agentic_prism/r_bridge.py": "faaeef636c4a92be4a2bab896a5e4d9d1ae3b71d262a8814751884258f08455e",
+      "agentic_prism/simple_report.py": "e53c2e954e15e990cfa74431c68f00ff5ec6cc3dfce029a11945128c9e35d528",
+      "agentic_prism/multigroup.py": "6bea5794f398c77d9c3c87b1180c4532898383e018059a428ae384fcbbf4e539",
+      "agentic_prism/survival_report.py": "e0c28a4c407e5d94d9ac2de3d591e1540e271d23adae77f587360107860050a4",
+      "agentic_prism/dose_fit.py": "726dacb56335229dcbaf533f6dc42a2f58172c64e9d1219c3c8a395340d91e22",
+      "agentic_prism/__init__.py": "5c9430aaae09017f34e25397afd2821f0043c0d160cc957c4ae6c86a8f3ac62a",
+      "agentic_prism/repeated_report.py": "47fbe3db2e81241db266a70fff46670d4beb8c56c66dd1049a5cc932b6abb591",
+      "agentic_prism/groups.py": "1ea697f4a36046bc8e74be0d5da1892d1c9de3c0e205f819f0e770e94e8323f1",
+      "agentic_prism/tumor_growth.py": "3f15d419f55bc89c6a2a2ad3d18960098c778f7a60394d639a8d72311e1ca756",
+      "agentic_prism/repeated_two_way.py": "4fe82762624d8dc7be1ee6d51d0bdeecf7f064e9921e1e0c90295dd7d9dc2d7e",
+      "agentic_prism/kinetics_workflow.py": "206d2d60bfebe4f7429edbada5104253a42ec2589a3181bf86ac73e625047b48",
+      "agentic_prism/interpretation.py": "232c0cf9842c2764c076a394da20b2a8d48035de4d5306e60904e16433975f56",
+      "agentic_prism/cli.py": "0bdd959623af6907cd0fc0130803ed6c1a23e235614bd4e39c75d6b396a4d164",
+      "agentic_prism/repeated.py": "b0e0351402b2b2acbc02f405578fefc4a34be9e8952ab555ed2c51b50a8367c0",
+      "agentic_prism/elisa_validation.py": "f12e52bfb92b9eb175f57953e6a37ab7ea5ff7e3e801529eefafd4813ef23a2b",
+      "agentic_prism/kinetics_fit.py": "aec8c190c7712ed8d0c995c99d3ea064cc5c4332dab3e0e6b730a403f73b485b",
+      "agentic_prism/dose_workflow.py": "28de50b76299be19fc24caff90f3fa1ebe5fae08aca58c867317e54d7ef8d46d",
+      "agentic_prism/plate_import.py": "486788fb84d5f22fc3d1ce3ebed239010f07cf1e21981436e7f3eb82d55bca6a",
+      "agentic_prism/workflow.py": "9ba5f7fc5956761c937fe26fea100d1aadd00b28c1d92050fc4bc01abd3bb15e",
+      "agentic_prism/equivalence.py": "8bfe8df3eb62f8c75e348898f9f41da924c5d94f4f86cb7e98172bd6090fa1ca",
+      "agentic_prism/simple_workflow.py": "4606dcd801a444fd85f830a177ee1ea0f3a04963344b90b840e4459ea265b73d",
+      "agentic_prism/mmrm.py": "2dcf5a6a50782ac975e2fc7fb9a0b3117a82eaf608e2cc2a264f7f3171e9a2c5",
+      "agentic_prism/octet_import.py": "bc3a96e851fd4f60476eff05a8a8e1e425714fa1284309d8b7af1f98c63782f5",
+      "agentic_prism/doctor.py": "eeb1c6bbfd216f3c2767b52b7cfa3fae1abb0c240fb41c1792eb89f2caefa0f4",
+      "agentic_prism/report.py": "a30d1ee4571faaf979a88e0250e5b24e1aa4301386cc967af70a8394def2956c",
+      "agentic_prism/calibration.py": "3e5b81d21410e156ab7aff567d8ae1d81c5a53dc1501cf2ce3b1908721a5361a",
+      "agentic_prism/schema.py": "697f22f2c93050e5d1a066df5cb397573fd7c9274356691a3a00a73e387f96e3",
+      "agentic_prism/time_to_event.py": "2aba13cacf206f70f60975648563917a3f089dc19d250588e33bd1eda4a3e267",
+      "agentic_prism/tumor_report.py": "df6bd66fde095ba0eecce565bc55463d97aa21501a5f021dfeb424dc93ffc9f4",
+      "agentic_prism/r_scripts/install.R": "60bb9c053aab97ae92bcecc995cd2890e8069400b04965eddc67460124d482d9",
+      "agentic_prism/r_scripts/packages.csv": "51fe4fdc00b598bfdc88dd59a1a3250f53d29acf541f6e9fb338d46e1ce747b6",
+      "agentic_prism/r_scripts/runner.R": "3576754cff85ee2d7af2fcab9d7a0fb95bc28f0243c5300c12e8d084aad28919"
+    },
+    "python_files": 38,
+    "R_resource_files": 3,
+    "superseded_wheels_preserved": [
+      {
+        "path": "dist/superseded/0.8.2-f1eb7bec579f/agentic_prism-0.8.2-py3-none-any.whl",
+        "sha256": "f1eb7bec579f9ed3a2ec933af29bf55c51793fd08d28cbf759daf3c0fdde2e19"
+      },
+      {
+        "path": "dist/superseded/agentic_prism-0.8.2-py3-none-any.whl",
+        "sha256": "505a3adcff9838e8d047a86605f80f8788a660bc854dd9ece4a9b1654ba28f36"
+      }
+    ]
+  },
+  "clean_environment": {
+    "command": ".venv/bin/python scripts/validate_clean_environment.py",
+    "status": "passed",
+    "wheel_source_facts_exact_matches": 23,
+    "workspace": "/var/folders/nv/qkt8p0hj17g3hxgw4418m2dw0000gn/T/agentic-prism-clean-ruogvp_0"
+  },
+  "install_smoke": {
+    "status": "passed",
+    "fixtures": [
+      "public/config.json",
+      "kinetics_synthetic/config.json",
+      "dose_synthetic/config_ec50.json",
+      "elisa_independent_qc/config.json",
+      "groups_synthetic/paired_config.json",
+      "groups_synthetic/independent_config.json",
+      "multigroup_synthetic/config_dunnett.json",
+      "elisa_dilution_5pl/config.json",
+      "kinetics_single_cycle/config.json",
+      "dose_synthetic/config_potency_equivalence.json",
+      "repeated_synthetic/config_rm.json",
+      "repeated_synthetic/config_mixed.json",
+      "repeated_two_way_synthetic/config_two_way_anova.json",
+      "repeated_two_way_synthetic/config_two_way_mixed.json",
+      "survival_synthetic/config.json",
+      "survival_synthetic/config_adjusted.json",
+      "tumor_growth_synthetic/config.json",
+      "interpretation_states/config_boundary.json",
+      "interpretation_states/config_no_events_arm.json",
+      "interpretation_states/config_dropout.json",
+      "interpretation_ovarian/config.json",
+      "nonparametric/config_public_mw.json",
+      "nonparametric/config_public_signed.json",
+      "nonparametric/config_public_kw.json",
+      "nonparametric/config_public_friedman.json",
+      "nonparametric/config_fixture_mw.json",
+      "nonparametric/config_fixture_signed.json",
+      "nonparametric/config_fixture_kw.json",
+      "nonparametric/config_fixture_friedman.json",
+      "mmrm/config_synthetic_unstructured_satterthwaite.json",
+      "mmrm/config_synthetic_unstructured_kenward_roger.json",
+      "mmrm/config_synthetic_ar1_satterthwaite.json",
+      "mmrm/config_synthetic_ar1_kenward_roger.json"
+    ],
+    "optional_r_available": true,
+    "plate_import": true,
+    "cwd": "temporary directory outside repository",
+    "installed_runtime": true,
+    "render_preserves_results": true,
+    "render_preserves_interpretation_facts": true
+  },
+  "optional_R_install": {
+    "status": "passed",
+    "record": "optional_r_install_0.8.2.json",
+    "scope": "Fresh Python venvs; no R on PATH vs pre-existing pinned R library reused via symlink. Not a clean R compiler/download test."
+  },
+  "record_sha256": {
+    "nonparametric_benchmarks": "576494e841b5fcd6f452216b2e038fa219fed0966971fdd85f18fbaae0e577a0",
+    "nonparametric_calibration": "3e53ac276087743a45d591141b75bd0646dc4c5e5e94193d32523b4da426bd64",
+    "mmrm_benchmarks": "b347c9514f7a77a3f50dd26a0f080332b63ee8a15d1b42b8b827c483c29226a6",
+    "mmrm_calibration": "dbec326c02a95c071cedc6cb75e05bfe55148e1e801717f9e9698759ddf17c6c",
+    "bootstrap_999_calibration": "e458aea3e3d59aa6b3e435b3a7e4b4d4af7c822b0b91b6a6ca4eb44da2b1eb9d",
+    "legacy_fixture_checks": "751a920b2b88f33ec78c0b703394e387bda4792c423106aa512585ba0c4c99dd",
+    "optional_r_install": "f743b72c0ef502f3a53a2f5d4a20ab465663cd5594e662fa9e94546b8feef888",
+    "clean_environment": "9b209fc8de9bfd5e5840de7bc025ed723576cfd0e532e3186364feedda9f0819"
+  },
+  "logs": {
+    "pytest": {
+      "path": "/tmp/ap082-pytest-tailfix.log",
+      "sha256": "47f272e602f26a551f017c35fa2d99788a44671a571c15af3a6d500ee0a68b9c"
+    },
+    "build": {
+      "path": "/tmp/ap082-build-tailfix.log",
+      "sha256": "9e41cd667c2e8bf064de830c8ff636912c7de7fc1def07c23be8fa8dd670aed9"
+    },
+    "clean_environment": {
+      "path": "/tmp/ap082-clean-tailfix.log",
+      "sha256": "3f871c461cf3c322da4f5d12bba122b3869a4bf299c54105e4dcef9db0956549"
+    },
+    "install_smoke": {
+      "path": "/tmp/ap082-install-smoke-final.log",
+      "sha256": "1d4b40cb518f0e9a8dfb5e3c85a6707b240c13e2d41c0384f97556191b08271a"
+    },
+    "nonparametric_benchmark": {
+      "path": "/tmp/ap082-nonparam-bench-tailfix.log",
+      "sha256": "b4090c70e417e1a8c7d917fe73eaf5d61c5395036cebea41c7e43e8767e46891"
+    },
+    "nonparametric_calibration": {
+      "path": "/tmp/ap082-nonparam-cal-tailfix.log",
+      "sha256": "a8d703051440c46a75c2f5cdd9956acdc85db3158cba07dffec2533ca1879076"
+    },
+    "mmrm_benchmark": {
+      "path": "/tmp/ap082-mmrm-bench-final.log",
+      "sha256": "3bce1e21f53a254c558f3e1cd5547b6a958f9a1c3986c54bbaae6990a8cd6d3f"
+    },
+    "mmrm_calibration": {
+      "path": "/tmp/ap082-mmrm-cal-final.log",
+      "sha256": "8a38f051f05cdb95f3f13ac4bcab7f914135f49a6f029cff3a01992239a0e135"
+    },
+    "bootstrap_calibration": {
+      "path": "/tmp/ap082-bootstrap999-release.log",
+      "sha256": "b69c65b8f5d950f66b4d8567f99c185bbfd1054f335fae8708d6bdaa939c3e95"
+    },
+    "legacy_fixtures": {
+      "path": "/tmp/ap082-legacy-final.log",
+      "sha256": "f7d032613fa904ad4c8573fed1a39a0883a883b825f72405ecc6bcfb4b74b9cf"
+    },
+    "skill_validation": {
+      "path": "/tmp/ap082-skill-final.log",
+      "sha256": "a36f795cd837890ce3e32b555d937a70b5bad7b4f393b380458f7363bb1fd68d"
+    }
+  },
+  "preservation": {
+    "baseline_commit": "536e99f0f12867739fe730e0bed81ca6c186ed90",
+    "historical_validation_files_unchanged": 212,
+    "tracked_run_files_unchanged": 687,
+    "numerical_sources_byte_identical_sha256": {
+      "fit.py": "b7654bed4d47008e2145e8be68f950f5009f3fb7f11ac2f9b05d7c56ec6a3da0",
+      "kinetics_fit.py": "aec8c190c7712ed8d0c995c99d3ea064cc5c4332dab3e0e6b730a403f73b485b",
+      "dose_fit.py": "726dacb56335229dcbaf533f6dc42a2f58172c64e9d1219c3c8a395340d91e22",
+      "elisa.py": "9aa4dee373bada2361ede28a19c71b89f1705bb2ea8b7cd58248e6b8ce339e78",
+      "calibration.py": "3e5b81d21410e156ab7aff567d8ae1d81c5a53dc1501cf2ce3b1908721a5361a",
+      "groups.py": "1ea697f4a36046bc8e74be0d5da1892d1c9de3c0e205f819f0e770e94e8323f1",
+      "multigroup.py": "6bea5794f398c77d9c3c87b1180c4532898383e018059a428ae384fcbbf4e539",
+      "repeated.py": "b0e0351402b2b2acbc02f405578fefc4a34be9e8952ab555ed2c51b50a8367c0",
+      "repeated_two_way.py": "4fe82762624d8dc7be1ee6d51d0bdeecf7f064e9921e1e0c90295dd7d9dc2d7e",
+      "mixed_inference.py": "0dbdf50d91039bf73d9935d30ab0a42a948410c6480cc5d5da8a68c9e78aae6c",
+      "survival.py": "0a18aeee711d6aa82a6bb284769faa91fa4710859f989aa1a02b4460604f5d41",
+      "time_to_event.py": "2aba13cacf206f70f60975648563917a3f089dc19d250588e33bd1eda4a3e267",
+      "tumor_growth.py": "3f15d419f55bc89c6a2a2ad3d18960098c778f7a60394d639a8d72311e1ca756"
+    }
+  },
+  "agent_sessions": [
+    {
+      "attempt": "boundary-explanation",
+      "scenario": "F1-withheld-mixed-inference",
+      "seconds": 54.7,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "81d6963dee930aa2e2e8187a12382e2347759bd4f54f4f12c1d5866935672700",
+      "session_sha256": "2a9f20185c67f79105a2b0dd39354ff66cc403a0b8c514e942a6d5a6a8daeda1"
+    },
+    {
+      "attempt": "disclosure-check",
+      "scenario": "F1-withheld-mixed-inference",
+      "seconds": 54.1,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "f510c783df786d09a0bc12da951fdaddd7cf9dad208a4ec86593fa076b083cce",
+      "session_sha256": "d673182be1eb17791b35f292a2299a11abe0194fd443e901504799997a58670b"
+    },
+    {
+      "attempt": "disclosure-check",
+      "scenario": "M1-covariance-and-missingness",
+      "seconds": 44.6,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "017fe830b7bb54669e8c06a9d55c23ae60ee1e1c5a2902962fa9a6cb149aff99",
+      "session_sha256": "dfa348fa0723989a9cf26bb36d73d8a9fd76df1c6a2f317c06eaeed2a534b3bf"
+    },
+    {
+      "attempt": "final-evidence",
+      "scenario": "M1-covariance-and-missingness",
+      "seconds": 3.5,
+      "exit_code": 1,
+      "is_error_from_raw_transcript": true,
+      "api_error_status": 429,
+      "transcript_sha256": "38f2052d4c6ad9420e2ffdda928a7b4d4225cb45c5635b9588e635a0364d3a1e",
+      "session_sha256": "a9461be2897ec4abadd9b9ccd73eba096624bb8b32aa0133a7bd16a36d2cc113"
+    },
+    {
+      "attempt": "final-evidence",
+      "scenario": "N1-tied-hl-interpretation",
+      "seconds": 7.0,
+      "exit_code": 1,
+      "is_error_from_raw_transcript": true,
+      "api_error_status": 429,
+      "transcript_sha256": "3bcd4110d263c8e2dfb8849b3054e380978bf213be174fc5dee6b4bb01c9b248",
+      "session_sha256": "4c850e3fc0f73c50697cffc46044a0dbeddca0602b6f9f5c1320e5f40e9daafe"
+    },
+    {
+      "attempt": "interpretation-precision",
+      "scenario": "M1-covariance-and-missingness",
+      "seconds": 70.1,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "e8239ae61fa863d252b79eca4ef846399c1dd5a35d51a5435fe98efb73702bb9",
+      "session_sha256": "83d32f96d40603a582b762f0af63d445a8cdc2d96f71b31bc742b749fb88b901"
+    },
+    {
+      "attempt": "interpretation-precision",
+      "scenario": "N1-tied-hl-interpretation",
+      "seconds": 85.5,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "f2f2d89cbab6ba53dd0abaf452056b3e8cd4f49c506773ba7b50d5db6af3235e",
+      "session_sha256": "0e64e30cf8c4b38425159b3f539bb204d996148692f030dd2e5141e405fa4a59"
+    },
+    {
+      "attempt": "quota-retry",
+      "scenario": "M1-covariance-and-missingness",
+      "seconds": 60.0,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "797f753ed06b4500d44b88d78953d68b3689a80ca2331fbded282cb6cf5cd1d1",
+      "session_sha256": "a088cf04cab8f450fc9bb53798a5f499dbc1b3598f49d00e5a8848de07957dc8"
+    },
+    {
+      "attempt": "quota-retry",
+      "scenario": "N1-tied-hl-interpretation",
+      "seconds": 56.2,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "ac3afab44365f3e974cf41b8d8c8fed4c3a33e34153974609bb2feea30af4fe1",
+      "session_sha256": "340a93eccaa5c275b7de7b463997d39859a91f28569954050195fa1b27e4fbb5"
+    },
+    {
+      "attempt": "rank-contract",
+      "scenario": "N1-tied-hl-interpretation",
+      "seconds": 85.0,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "f8b9ed660e54be6fdff4caaacea619718427732f35b2e7ed81f592a6add88cd6",
+      "session_sha256": "af8995cc847614b5497db1e536129259e3c4698d1fec02c3de6b8f4b11f500bf"
+    },
+    {
+      "attempt": "rank-contract",
+      "scenario": "N2-incomplete-friedman",
+      "seconds": 67.3,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "35b81556f956a8c6b2945874bddb131440afef0bb013b88216743f414a5c8766",
+      "session_sha256": "d72684a3d2aa7e798b1dba1de80f4ea061df9edfca64e7a361f4724be0469928"
+    },
+    {
+      "attempt": "release-final",
+      "scenario": "F1-withheld-mixed-inference",
+      "seconds": 49.7,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "f881363354ea4b50687ccf40540de53745fa0428593c7702c668ad6e57ffa1c9",
+      "session_sha256": "9c6bc3d049de0fbf732acc778ade57cbc6db5173e18bfe3fe62d1ce11ee47b19"
+    },
+    {
+      "attempt": "release-final",
+      "scenario": "M1-covariance-and-missingness",
+      "seconds": 51.4,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "5a760096c43c7e4418a118740d727a6d00045d4ba35abcf03ba032e84442c412",
+      "session_sha256": "4c066bceb2d852f558aa843abfd50d55ca15643631306c52203a4350589c2fed"
+    },
+    {
+      "attempt": "release-final",
+      "scenario": "N1-tied-hl-interpretation",
+      "seconds": 64.1,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "459c970760763ca80cbdfd48ebf6dffe24cb29c29fe8e9b59eb48fbfbcd19310",
+      "session_sha256": "998f863a7d27374876ad53de3422e2faa43db26bf6a0e0b831d30deba49e8765"
+    },
+    {
+      "attempt": "release-review",
+      "scenario": "F1-withheld-mixed-inference",
+      "seconds": 66.5,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "7ce923ae5b81419f74f94e7eeead581c05d5aa030a30808fc265248e98bf2245",
+      "session_sha256": "73d3c5e5e0c6b924eb6254dbd3aef021ce1d5965047996d56a2412ccfe7c6fa6"
+    },
+    {
+      "attempt": "release-review",
+      "scenario": "M1-covariance-and-missingness",
+      "seconds": 75.2,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "729ecc339de3daca93dcd5915b94e80340ba676cea498f1c935838bf8441b0de",
+      "session_sha256": "9a14204ef5bcdf9d351881f06ecd1c8e89c7afeda1412400616ecb41850a412b"
+    },
+    {
+      "attempt": "release-review",
+      "scenario": "N1-tied-hl-interpretation",
+      "seconds": 122.7,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "c58cbaefebc5fefac0ad10fc786cc07c4ab3cd2aa0bd09191db98278df4de71a",
+      "session_sha256": "b6d4de1350474a4933f2232916b2baf8d3e02241bec858aa878cc90fe631acd8"
+    },
+    {
+      "attempt": "release-review",
+      "scenario": "N2-incomplete-friedman",
+      "seconds": 69.0,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "15d91ca924d79a00f3dec5dc5cb27e6bdd5356ecf811cf5f05346f4f5eaad2e0",
+      "session_sha256": "a20b42cd6b2f987935b02d4549f3af045101eee7bdc376069f5c715dc6996acb"
+    },
+    {
+      "attempt": "runtime-location",
+      "scenario": "F1-withheld-mixed-inference",
+      "seconds": 55.9,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "08731e6d633fdee2760a8f9aca421296c132d0a18bbfcabfaba48687b4c8012e",
+      "session_sha256": "9dfe40e2c62f4b82ff4b7b2de1390e6fd0bf2064f2ae783961edcffb4973aff1"
+    },
+    {
+      "attempt": "scientific-review",
+      "scenario": "M1-covariance-and-missingness",
+      "seconds": 103.7,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "c092957841743a402cb5f3fa41b03cc888b3e630148ccead16d5c4248c3a6be6",
+      "session_sha256": "d4a669a79594371a613ee794747843c15f427483c127043e3f72b7c9c9be164e"
+    },
+    {
+      "attempt": "scientific-review",
+      "scenario": "N1-tied-hl-interpretation",
+      "seconds": 122.2,
+      "exit_code": 0,
+      "is_error_from_raw_transcript": false,
+      "api_error_status": null,
+      "transcript_sha256": "2ca18c6883399ef8280f9e7933e47763cd2a3b66fe8c5efbf63228c3d275d9ca",
+      "session_sha256": "8ccdcea7ebd2eccd21fe5db0716417667f8fe1a8a157d13f772e6dc964a629cd"
+    }
+  ],
+  "bootstrap_checkpoints": [
+    {
+      "path": "/tmp/ap082-bootstrap999/draws.jsonl",
+      "records": 1343,
+      "sha256": "0050e2e03a3c4ad4f68b945051cd40da6ce467c1a402ffde6c34807cd876350c"
+    },
+    {
+      "path": "/tmp/ap082-bootstrap999-final/draws.jsonl",
+      "records": 1610,
+      "sha256": "1b10836b2a71b5f91c0771c4f247e06b9ea115d1a0d702747fa2db99e641a4cf"
+    },
+    {
+      "path": "/tmp/ap082-bootstrap999-complete/draws.jsonl",
+      "records": 2095,
+      "sha256": "668e131a2e043b1506e11d0e81ca2389ebe6febf5fc7e08e25bb32835f8245c1"
+    },
+    {
+      "path": "/tmp/ap082-bootstrap999-release/draws.jsonl",
+      "records": 3000,
+      "sha256": "497a8281f173fd4e56690ab0b92a0bf4a926dc22f39c6b32eaf06b180fa1c7da"
+    }
+  ],
+  "bootstrap_scheduling": "Six, twelve, six, then ten workers; interrupted only for resource management. Completed (scenario,index) rows preserved; fixed seed, original draws and bounds unchanged. Final checkpoint contains 3000 unique rows.",
+  "scope": "Same macOS host only. No Linux/Windows execution, Prism/SAS equivalence, independent human agent re-score, push or publication.",
+  "bootstrap_checkpoint_prefixes_preserved_exactly": true
+}

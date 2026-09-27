@@ -1,0 +1,32 @@
+{
+  "VCA_version": "1.5.2",
+  "archive_url": "https://cran.r-project.org/src/contrib/VCA_1.5.2.tar.gz",
+  "archive_sha256": "4ca927ae668d1902d79db47f71f4e43208b7f14179a9e84bd8aba370beaabfc6",
+  "vignette_url": "https://cran.r-project.org/web/packages/VCA/vignettes/VCA_package_vignette.html",
+  "vignette_sha256": "7b50b8f9ea4f0b6150ff0b4acf55751bab65f39f9428afcf4d09c981a9248f70",
+  "attribution": "VCA authors Andre Schuetzenmeister and Florian Dufey; package GPL >=3. EP05-A2 examples distributed by VCA. Penicillin from lme4; no separate third-party data license asserted.",
+  "published_example": {
+    "dataset": "dataEP05A2_3",
+    "method": "balanced ANOVA, equal to interior REML point estimates",
+    "values": {
+      "total": 35.546313,
+      "day": 12.231099,
+      "day:run": 7.031193,
+      "residual": 16.284021
+    },
+    "rounding_tolerance": 5.1e-07
+  },
+  "synthetic_seed": 20260928,
+  "generator_sha256": "be3929474fa167f62cecea564a83b6cf8b2e58946c6ba15a3de9bb06067d6d3e",
+  "files": {
+    "unbalanced.csv": "fe173cca729f1ddda2fe9eecbfdbe3af7e2e9523cbcba7e8bb2a2f1a19e574e2",
+    "ep05_2.csv": "b8122ffab33afe5a0c91b81598d239e1b37924b5b163a41f3c8a4ba696645006",
+    "ep05_3.csv": "d4aaefd56fa3dba78c8b155066e119311a56d9ade5ed0c1c717f6479c7a02e8a",
+    "ep05_1.csv": "359426ab95e36c2612be8ba842c6e0c0237d0294ede60a4ef037d3395745095b",
+    "penicillin.csv": "013304182d80586d1a03da59159dbffabb14c8fb12c14ede408ce54229ec5f76",
+    "boundary.csv": "a60b758f01c6cf9ecfecb3118dbd0f89e215ff74c6783fe4c5739d3c317d6c78",
+    "mixed_fixed.csv": "219bb0d303d40799007e1eff4d572d84763ba086e40973fbed9654c4f3507fc1",
+    "nested.csv": "d8ffbf735d94c28bc0638b321b04183d8d31ede749f600e61093953b7c2481ed"
+  },
+  "export_script_sha256": "61e7291aa7d066a2367e781a3b8213bfafa98faf90fe5f4cd2f9aa9eea4fb4d3"
+}

@@ -1,0 +1,132 @@
+_F_r_i_e_d_m_a_n _R_a_n_k _S_u_m _T_e_s_t
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Performs a Friedman rank sum test with unreplicated blocked data.
+
+_U_s_a_g_e:
+
+     friedman.test(y, ...)
+     
+     ## Default S3 method:
+     friedman.test(y, groups, blocks, ...)
+     
+     ## S3 method for class 'formula'
+     friedman.test(formula, data, subset, na.action, ...)
+     
+_A_r_g_u_m_e_n_t_s:
+
+       y: either a numeric vector of data values, or a data matrix.
+
+  groups: a vector giving the group for the corresponding elements of
+          ‘y’ if this is a vector; ignored if ‘y’ is a matrix.  If not
+          a factor object, it is coerced to one.
+
+  blocks: a vector giving the block for the corresponding elements of
+          ‘y’ if this is a vector; ignored if ‘y’ is a matrix.  If not
+          a factor object, it is coerced to one.
+
+ formula: a formula of the form ‘a ~ b | c’, where ‘a’, ‘b’ and ‘c’
+          give the data values and corresponding groups and blocks,
+          respectively.
+
+    data: an optional matrix or data frame (or similar: see
+          ‘model.frame’) containing the variables in the formula
+          ‘formula’.  By default the variables are taken from
+          ‘environment(formula)’.
+
+  subset: an optional vector specifying a subset of observations to be
+          used.
+
+na.action: a function which indicates what should happen when the data
+          contain ‘NA’s.  Defaults to ‘getOption("na.action")’.
+
+     ...: further arguments to be passed to or from methods.
+
+_D_e_t_a_i_l_s:
+
+     ‘friedman.test’ can be used for analyzing unreplicated complete
+     block designs (i.e., there is exactly one observation in ‘y’ for
+     each combination of levels of ‘groups’ and ‘blocks’) where the
+     normality assumption may be violated.
+
+     The null hypothesis is that apart from an effect of ‘blocks’, the
+     location parameter of ‘y’ is the same in each of the ‘groups’.
+
+     If ‘y’ is a matrix, ‘groups’ and ‘blocks’ are obtained from the
+     column and row indices, respectively.  ‘NA’s are not allowed in
+     ‘groups’ or ‘blocks’; if ‘y’ contains ‘NA’s, corresponding blocks
+     are removed.
+
+_V_a_l_u_e:
+
+     A list with class ‘"htest"’ containing the following components:
+
+statistic: the value of Friedman's chi-squared statistic.
+
+parameter: the degrees of freedom of the approximate chi-squared
+          distribution of the test statistic.
+
+ p.value: the p-value of the test.
+
+  method: the character string ‘"Friedman rank sum test"’.
+
+data.name: a character string giving the names of the data.
+
+_R_e_f_e_r_e_n_c_e_s:
+
+     Hollander M, Wolfe DA (1973). _Nonparametric Statistical Methods_.
+     John Wiley & Sons, New York. ISBN 9780471406358.
+     Pages 139-146.
+
+_S_e_e _A_l_s_o:
+
+     ‘quade.test’.
+
+_E_x_a_m_p_l_e_s:
+
+     ## Hollander & Wolfe (1973), p. 140ff.
+     ## Comparison of three methods ("round out", "narrow angle", and
+     ##  "wide angle") for rounding first base.  For each of 18 players
+     ##  and the three method, the average time of two runs from a point on
+     ##  the first base line 35ft from home plate to a point 15ft short of
+     ##  second base is recorded.
+     RoundingTimes <-
+     matrix(c(5.40, 5.50, 5.55,
+              5.85, 5.70, 5.75,
+              5.20, 5.60, 5.50,
+              5.55, 5.50, 5.40,
+              5.90, 5.85, 5.70,
+              5.45, 5.55, 5.60,
+              5.40, 5.40, 5.35,
+              5.45, 5.50, 5.35,
+              5.25, 5.15, 5.00,
+              5.85, 5.80, 5.70,
+              5.25, 5.20, 5.10,
+              5.65, 5.55, 5.45,
+              5.60, 5.35, 5.45,
+              5.05, 5.00, 4.95,
+              5.50, 5.50, 5.40,
+              5.45, 5.55, 5.50,
+              5.55, 5.55, 5.35,
+              5.45, 5.50, 5.55,
+              5.50, 5.45, 5.25,
+              5.65, 5.60, 5.40,
+              5.70, 5.65, 5.55,
+              6.30, 6.30, 6.25),
+            nrow = 22,
+            byrow = TRUE,
+            dimnames = list(1 : 22,
+                            c("Round Out", "Narrow Angle", "Wide Angle")))
+     friedman.test(RoundingTimes)
+     ## => strong evidence against the null that the methods are equivalent
+     ##    with respect to speed
+     
+     wb <- aggregate(warpbreaks$breaks,
+                     by = list(w = warpbreaks$wool,
+                               t = warpbreaks$tension),
+                     FUN = mean)
+     wb
+     friedman.test(wb$x, wb$w, wb$t)
+     friedman.test(x ~ w | t, data = wb)
+     

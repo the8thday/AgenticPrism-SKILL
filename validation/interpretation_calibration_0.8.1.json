@@ -1,0 +1,49 @@
+{
+  "seed": 20260927,
+  "script_sha256": "3a4846eb5f9f17be088d2a68121e35b16ed77658f834641e52e03cd2705a2e77",
+  "results": [
+    {
+      "scenario": "rm_nonspherical_n12",
+      "simulations": 1000,
+      "reportable": 1000,
+      "withheld": 0,
+      "facts_source_and_state_checks_passed": 1000,
+      "omnibus_rejection": 0.037,
+      "family_rejection": 0.042,
+      "simultaneous_coverage": 0.958,
+      "max_rejection": 0.06378404875209022,
+      "min_coverage": 0.9362159512479098,
+      "seconds": 2,
+      "passed": true
+    },
+    {
+      "scenario": "satterthwaite_n12_mcar15_sd2",
+      "simulations": 1000,
+      "reportable": 1000,
+      "withheld": 0,
+      "facts_source_and_state_checks_passed": 1000,
+      "omnibus_rejection": 0.05,
+      "family_rejection": 0.045,
+      "simultaneous_coverage": 0.955,
+      "max_rejection": 0.06378404875209022,
+      "min_coverage": 0.9362159512479098,
+      "seconds": 229,
+      "passed": true
+    },
+    {
+      "scenario": "satterthwaite_n12_mcar15_sd0.3",
+      "simulations": 1000,
+      "reportable": 664,
+      "withheld": 336,
+      "facts_source_and_state_checks_passed": 1000,
+      "omnibus_rejection": 0.060240963855421686,
+      "family_rejection": 0.04819277108433735,
+      "simultaneous_coverage": 0.9518072289156626,
+      "max_rejection": 0.06691580853264936,
+      "min_coverage": 0.9330841914673507,
+      "seconds": 53,
+      "passed": true
+    }
+  ],
+  "scope": "Existing RM ANOVA and RI/Satterthwaite; inference unchanged. No bootstrap B=999, MMRM or KR validation."
+}

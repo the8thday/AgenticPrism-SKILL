@@ -1,0 +1,15 @@
+{
+  "source": "Deterministic synthetic ADA panels, no team measurements",
+  "seed": 20261001,
+  "generator": "scripts/generate_ada_fixtures.py",
+  "generator_sha256": "87696627bb69908b4226f02fda9e22b236001b599aff3d7929d5fe87e5b7488e",
+  "files": {
+    "confirmatory.csv": "146909e0de570e029625a801ade22889a79052c44cda8eca3a816bbbc1d5781a",
+    "dynamic.csv": "1ed484389eca3ed4ef97110072848ea794b3037b17cccaceeaa0fbbbc2e32e6b",
+    "fixed.csv": "e013132d0a1238b1ec1209927b78e8847e910f7647b1250e7964cc7cf711613f",
+    "floating.csv": "d8cb5492f6f8864a9d138f75b591c5e3a944446033d642d5b138f5f4296c7c01",
+    "titer.csv": "dfd00b70a40292dea68fd6a746ea22778288683d15496bfc050ed4c4934a1f1b"
+  },
+  "design": "80 subjects, 6 runs, 2 technical wells per cell; fixed, floating, heteroscedastic, inhibition and titer fixtures",
+  "scope": "Synthetic metadata and negative-control values are not experimental validation evidence"
+}

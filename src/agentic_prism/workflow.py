@@ -31,13 +31,25 @@ def analyze(config_path, output, render=True):
         requested = json.loads(Path(config_path).read_text())
     except (OSError, ValueError):
         requested = None
+    if isinstance(requested, dict) and requested.get("analysis_type") == "variance_components":
+        from .precision_workflow import analyze_precision
+        return analyze_precision(config_path, output, render)
+    if isinstance(requested, dict) and requested.get("analysis_type") == "ada_cut_point":
+        from .ada_workflow import analyze_ada
+        return analyze_ada(config_path, output, render)
+    if isinstance(requested, dict) and requested.get("analysis_type") == "method_validation":
+        from .method_validation_workflow import analyze_method_validation
+        return analyze_method_validation(config_path, output, render)
+    if isinstance(requested, dict) and requested.get("analysis_type") in ("ada_sensitivity", "ada_drug_tolerance"):
+        from .ada_performance import analyze_ada_performance
+        return analyze_ada_performance(config_path, output, render)
     if isinstance(requested, dict) and requested.get("analysis_type") == "binding_kinetics":
         from .kinetics_workflow import analyze_kinetics
         return analyze_kinetics(config_path, output, render)
     if isinstance(requested, dict) and requested.get("analysis_type") == "dose_response_4pl":
         from .dose_workflow import analyze_dose
         return analyze_dose(config_path, output, render)
-    if isinstance(requested, dict) and requested.get("analysis_type") in ("elisa_quantification", "group_comparison", "multi_group_comparison"):
+    if isinstance(requested, dict) and requested.get("analysis_type") in ("elisa_quantification", "group_comparison", "multi_group_comparison", "nonparametric", "mmrm", "repeated_measures", "time_to_event", "tumor_growth"):
         from .simple_workflow import analyze_simple
         return analyze_simple(config_path, output, render)
     config_path, out = Path(config_path).resolve(), Path(output).resolve()

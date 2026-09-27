@@ -1,0 +1,34 @@
+{
+  "generator_sha256": "a1767fcefd91809e3279ada4fccf330c9180744e37c840d16345b9ea8433777a",
+  "R_script_sha256": "fe37cc9a6b5a1b017e432717fe4179b59d95ee61ff0923c7178838c5070e3668",
+  "source_urls": [
+    "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/wilcox.test.html",
+    "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/kruskal.test.html",
+    "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/friedman.test.html"
+  ],
+  "attribution": "Hollander and Wolfe (1973), as reproduced in official R stats help. Friedman text says 18 players but the published matrix has 22 rows; all 22 retained.",
+  "scope": "Published datasets and tests; two-sided/CI extensions explicitly labelled. Dunn is a supplemental oracle comparison, not a claim of a published Dunn result.",
+  "help_sha256": {
+    "friedman.test.txt": "cc223d166025c58bf3361a047294698ada6f0b7869aaee0d776a2cc3ce6b27fe",
+    "wilcox.test.txt": "466661b7d021048526d71db6299095ca1a329a383c8c4a2b2d38ab35507e49f6",
+    "kruskal.test.txt": "9206e1c4e379f6032eceb03ec69a779d991065b91a5829be81970b13f441dc2e"
+  },
+  "files_sha256": {
+    "config_fixture_friedman.json": "334c953b4ca4f09b52ec6bc10dabc4c6a4ef1b3fee05f6a83c4b076646fa2b0e",
+    "config_fixture_kw.json": "5885b5774043fee2e11aa128a71aae2e81a33e06e8683af137b16a717ab434f6",
+    "config_fixture_mw.json": "4abf4166a1e631f3b044a86c12b6b577ac98055a50a913a4a08aa0adedc3e842",
+    "config_fixture_signed.json": "673f741408b1e1aa0aee1281eea0775d302167930a68e1946b25302efc74c45e",
+    "config_public_friedman.json": "beeee18a887c58a9a0df0e244b56e825f22176c4952d606b1a1e3021f60382cb",
+    "config_public_kw.json": "48a4ccc2bfe5f7ab8db1d596ecac72f1f2e770fdd4683cf7ef399594d1ef1638",
+    "config_public_mw.json": "dba723ceaac259a3a2dbc8295ea99cf433f6dc46882c55cddfe37d7a720299ae",
+    "config_public_signed.json": "cf68cc3fd0bfdb4bf29a60806a2c9b52e9b6ae1c8abc02cd671126a90cb5271e",
+    "fixture_friedman.csv": "6851d0f18c82a514bb0ce3c86c011086627aa41ca48ca930451f62f0f7045a78",
+    "fixture_kw.csv": "25f4974a63037c667ec4c889d74d044615ed55366383d0bcc58b90b6dc615f2b",
+    "fixture_mw.csv": "f1d261a7a857d566425539279ea580dbd3fe29b8474f32425c9a12eec1335d6d",
+    "fixture_signed.csv": "a5b6c34589a3291f8f27960206e413b31bab15d114bde7f9e51fcfa98867a661",
+    "public_friedman.csv": "519cc27bd7fe455bd164265d022fa95a8cf96a94297c463695a79f4a5ab7a0cf",
+    "public_kw.csv": "6d217731ef2314b1a8b6224fdec4d945546dff02c8bb6d8067568b92d4e009c6",
+    "public_mw.csv": "225c501f73c45043b8a72601b6b4d728e27edf54f936ef3adacb53d5926b3a7d",
+    "public_signed.csv": "2a1b9de022f9430017fa6d18a348e416b37a0726cce71ffeb07c24dfad1b4cba"
+  }
+}

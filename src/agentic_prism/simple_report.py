@@ -24,7 +24,8 @@ def render_simple(run, style=None):
     manifest = verify_run(run)
     cfg = json.loads((run / "config.resolved.json").read_text())
     result = json.loads((run / "results.json").read_text())
-    d = pd.read_csv(run / "normalized_data.csv", keep_default_na=False)
+    d = pd.read_csv(run / "normalized_data.csv", keep_default_na=False,
+                    dtype={"independent_unit_id": str, "group": str, "observation_id": str})
     style = style or cfg["report"]["plot_style"]
     if style not in THEMES:
         raise ValueError("Unsupported plot style")
@@ -139,6 +140,65 @@ def render_simple(run, style=None):
                                       ("calibration_model", "模型"), ("bottom", "Bottom"), ("top", "Top"), ("half_response_input_unit", "半响应浓度"),
                                       ("asymmetry", "不对称参数 g"),
                                       ("rmse", "RMSE"), ("diagnostics", "诊断")])
+    elif kind == "mmrm":
+        title = "Marginal repeated-measures model"
+        q = cfg["comparison"]
+        details = (f"REML {q['covariance']}; {q['inference']}. Arm by categorical visit cell means. "
+                   "Primary test: arm by visit interaction. Contrasts: arm minus control at each visit, Holm p and Bonferroni family intervals. "
+                   "AR(1) refers to ordered visit lag. Missing observations require MAR conditional on the model. "
+                   "See saved covariance, diagnostics and interpretation facts.")
+        rows = _table(result["fits"], [(k,k) for k in ("status","n_units","n_total","f_statistic","df_numerator","df_denominator","p_value","diagnostics")])
+        rows += _table(result["contrasts"], [(k,k) for k in ("arm","control_arm","condition","estimate","standard_error","df","ci_low","ci_high","p_adjusted")])
+        key = "mmrm-observed-001"
+        figure_keys.append(key)
+        used = d[d.exclude.astype(str).str.lower() != "true"]
+        for theme, token in THEMES.items():
+            with plt.rc_context({"font.family": [font], "font.size": 9}):
+                fig, ax = plt.subplots(figsize=(6, 4), layout="constrained")
+                for arm in q["arms"]:
+                    summaries = used[used.arm == arm].groupby("group").value.agg(["mean", "std"]).reindex(q["groups"])
+                    ax.errorbar(range(len(q["groups"])), summaries["mean"], yerr=summaries["std"], marker="o", capsize=3, label=arm)
+                ax.set_xticks(range(len(q["groups"])), q["groups"])
+                ax.set_ylabel(f"{q['outcome']} ({q['unit']})")
+                ax.set_title("Observed means ± SD; available observations")
+                ax.legend(frameon=False)
+                for ext in ("svg", "pdf", "png"):
+                    fig.savefig(figures / f"{key}__{theme}.{ext}", dpi=300)
+                plt.close(fig)
+    elif kind == "nonparametric":
+        title = "Nonparametric group comparison"
+        q, fit = cfg["comparison"], result["fits"][0]
+        details = (f"{q['design']}; unit-level data. Two-sided tests. Shift is B minus A. "
+                   "HL concerns a common location shift or symmetric paired differences, not a general difference in medians. "
+                   "Dunn tests compare pooled mean ranks with the declared multiplicity adjustment; no shift intervals are supplied for Dunn. "
+                   "See interpretation facts for unavailable intervals, actual confidence level and approximation warnings.")
+        rows = _table(result["fits"], [(k, k) for k in ("design", "n_units", "statistic", "df", "p_value", "hodges_lehmann", "estimate", "ci_low", "ci_high", "confidence_level", "achieved_confidence_level", "confidence_level_basis", "inference", "status", "diagnostics")])
+        rows += _table(result["group_summaries"], [(k, k) for k in ("group", "n", "median")])
+        rows += _table(result["contrasts"], [(k, k) for k in ("group_a", "group_b", "mean_rank_difference_b_minus_a", "statistic", "p_adjusted", "adjustment")])
+        key = "ranks-001"
+        figure_keys.append(key)
+        used = d[d.exclude.astype(str).str.lower() != "true"]
+        for theme, token in THEMES.items():
+            with plt.rc_context({"font.family": [font], "font.size": 9}):
+                fig, ax = plt.subplots(figsize=(6, 4), layout="constrained")
+                for i, g in enumerate(q["groups"]):
+                    v = used[used.group == g].value.astype(float)
+                    ax.scatter(i + np.linspace(-.1, .1, len(v)), v, color=token["color"])
+                    ax.hlines(np.median(v), i-.2, i+.2, color="black")
+                ax.set_xticks(range(len(q["groups"])), q["groups"])
+                ax.set_ylabel(f"{q['outcome']} ({q['unit']}); bars = medians")
+                for ext in ("svg", "pdf", "png"):
+                    fig.savefig(figures / f"{key}__{theme}.{ext}", dpi=300)
+                plt.close(fig)
+    elif kind == "repeated_measures":
+        from .repeated_report import repeated_sections
+        title, details, rows, figure_keys = repeated_sections(result, cfg, d, figures, font, cjk)
+    elif kind == "time_to_event":
+        from .survival_report import survival_sections
+        title, details, rows, figure_keys = survival_sections(result, cfg, d, figures, font, cjk)
+    elif kind == "tumor_growth":
+        from .tumor_report import tumor_sections
+        title, details, rows, figure_keys = tumor_sections(result, cfg, d, figures, font, cjk)
     elif kind == "multi_group_comparison":
         key = "multigroup-001"
         figure_keys.append(key)
@@ -214,13 +274,19 @@ def render_simple(run, style=None):
                              for ext in ("svg", "pdf", "png"))
             blocks.append(f'<div class="figure" data-theme="{theme}" {"" if theme == style else "hidden"}>'
                           f'<img alt="{html.escape(key)}" src="{data_uri(figures / f"{key}__{theme}.svg")}"><p>{links}</p></div>')
+    facts_section = ""
+    facts_path = run / "interpretation_facts.json"
+    if "interpretation_facts.json" in manifest["scientific_artifacts_sha256"]:
+        facts_section = ('<section><h2>解读依据</h2><p>可报告范围、区间方法、诊断、限制与结果来源已单独保存。'
+                         '解读时须保留受限或不可报告的状态。</p>'
+                         f'<a download="interpretation_facts.json" href="{data_uri(facts_path)}">下载解读依据 JSON</a></section>')
     page = f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><style>body{{font:16px/1.6 system-ui,sans-serif;max-width:1050px;margin:auto;padding:22px;color:#203040;background:#f6f8fa}}
 section{{background:white;padding:20px;margin:18px 0;border-radius:10px;overflow:auto}}table{{border-collapse:collapse;font-size:13px}}td,th{{padding:6px 9px;border-bottom:1px solid #ddd;white-space:nowrap;text-align:left}}
 img{{max-width:100%}}button{{margin-right:8px;padding:6px 12px}}.figure[hidden]{{display:none}}</style>
 <h1>{html.escape(title)}</h1><p>{html.escape(details)}</p><p>来源：{html.escape(cfg['source'])} · 版本 {html.escape(manifest['package_version'])} · 不宣称 Prism 数值等价</p>
 <section><button onclick="selectTheme('prism_like')">Prism-like</button><button onclick="selectTheme('standard')">Standard</button>{''.join(blocks)}</section>
-<section>{rows}</section><section><h2>配置与验证</h2><p>结果哈希可用 agentic-prism verify 核验。图形重绘不改变计算结果。</p>
+<section>{rows}</section>{facts_section}<section><h2>配置与验证</h2><p>结果哈希可用 agentic-prism verify 核验。图形重绘不改变计算结果。</p>
 <pre>{html.escape(json.dumps(cfg, ensure_ascii=False, indent=2))}</pre></section>
 <script>function selectTheme(s){{document.querySelectorAll('.figure').forEach(e=>e.hidden=e.dataset.theme!==s)}}</script></html>'''
     (run / "report.html").write_text(page)

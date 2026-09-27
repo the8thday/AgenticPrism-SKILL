@@ -28,7 +28,7 @@ def doctor(collection=None):
     report = {"package_version": __version__, "package_location": str(package), "python": platform.python_version(),
               "python_executable": sys.executable, "platform": platform.platform(), "dependencies": {},
               "notes": [], "problems": [], "status": "ok"}
-    for name in ("numpy", "scipy", "pandas", "matplotlib"):
+    for name in ("numpy", "scipy", "pandas", "matplotlib", "statsmodels"):
         report["dependencies"][name] = importlib.metadata.version(name)
     if sys.version_info[:2] < (3, 12):
         report["problems"].append("Python 3.12+ is required by the pinned numerical dependencies")
@@ -62,6 +62,8 @@ def doctor(collection=None):
                                       "run install.py in the collection root")
         if source_root is not None and source_root != root:
             report["notes"].append("this runtime is installed from a different source tree than the collection")
+    from .r_bridge import availability
+    report["optional_r"] = availability()
     if report["problems"]:
         report["status"] = "error"
     elif report.get("dependency_pin_mismatches"):

@@ -1,0 +1,329 @@
+{
+  "release": "0.9.0",
+  "branch": "dev/0.9.0",
+  "baseline_commit": "de8e579ac78093e3f8786347d684654c3d97b6f4",
+  "created_utc": "2026-09-27T11:27:15.374635+00:00",
+  "status": "release_checks_passed_with_disclosed_scientific_misses_and_partial_scope",
+  "scope": {
+    "ada_cut_points": "partial roadmap scope; implemented balanced-panel core",
+    "shared_variance_components": "balanced crossed additive ANOVA implemented",
+    "dynamic_deployment": "not started",
+    "lower_cut_point_bounds": "not started",
+    "analyst_day_plate_REML": "not started",
+    "sensitivity_and_drug_tolerance": "not started",
+    "method_validation": "not started",
+    "older_module_facts": "not started"
+  },
+  "pytest": {
+    "passed": 349,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_tests": 43,
+    "seconds_console": 181.29,
+    "warnings": 4
+  },
+  "skills": {
+    "ada-cut-point": "passed",
+    "agentic-prism": "passed",
+    "validator": "~/.codex/skills/.system/skill-creator/scripts/quick_validate.py"
+  },
+  "benchmarks": {
+    "record": "ada_benchmarks_0.9.0.json",
+    "sha256": "110fa7338e64fc152dd9041ce898092158bfc915358e57091476ac8c49c34e87",
+    "oracle_rows": 9,
+    "status": "passed",
+    "additional_lecture_printed_precision": "miss retained; primary author example matches"
+  },
+  "calibration": {
+    "record": "ada_calibration_0.9.0.json",
+    "sha256": "f7c0f953d8a502522dade881fd07a2ecfc0c7e0c4ecd7f306ae6545e96a43a97",
+    "cut_point_rows": 9,
+    "variance_rows": 3,
+    "simulations_per_row": 1000,
+    "misses": [
+      "floating_screening_log",
+      "fixed_screening_biological_iqr_exclude",
+      "fixed_unanticipated_future_shift"
+    ],
+    "numerics_and_frozen_script_hashes_match_final_source": true,
+    "bounds_seeds_scenarios_changed": false
+  },
+  "legacy": {
+    "record": "legacy_fixture_checks_0.9.0.json",
+    "sha256": "7f381cedeb96550f25773394525640e7e3b79fa15f1cbd54a2880360bd812921",
+    "configurations": 34,
+    "byte_identical_artifacts": 428
+  },
+  "preservation": {
+    "historical_validation_files_unchanged": 294,
+    "tracked_run_files_unchanged": 687,
+    "legacy_python_files_unchanged": 35,
+    "modified_legacy_python_files": [
+      "src/agentic_prism/__init__.py",
+      "src/agentic_prism/cli.py",
+      "src/agentic_prism/workflow.py"
+    ],
+    "baseline": "de8e579ac78093e3f8786347d684654c3d97b6f4",
+    "old_validation_index_entries_byte_identical": true,
+    "preexisting_untracked_runs_untouched": [
+      "runs/repeated-anova-0.8.0/",
+      "runs/repeated-mixed-0.8.0/"
+    ]
+  },
+  "build": {
+    "wheel": "dist/agentic_prism-0.9.0-py3-none-any.whl",
+    "wheel_sha256": "9ba0bed5f7a14a910bf204d6ff3b6c9d3c0e16912081d79cadd4ccd10d73bd90",
+    "sdist_sha256": "a192dd91ddabba5b314eed6d6f4c342745444ed69573339c98d84cc6a6b1de61",
+    "python_files_equal": 42,
+    "R_resources_equal": 3,
+    "superseded_same_version_wheels": 0
+  },
+  "clean_environment": {
+    "record": "clean_environment_0.9.0.json",
+    "sha256": "9aa04d4497a8f32bd30d0dc7dcc2481ab9e4cceec53ecb87b7317ea2f54f5cbf",
+    "facts_exact_configurations": 31,
+    "new_ADA_configurations": 8
+  },
+  "install_smoke": {
+    "status": "passed",
+    "fixtures": [
+      "public/config.json",
+      "kinetics_synthetic/config.json",
+      "dose_synthetic/config_ec50.json",
+      "elisa_independent_qc/config.json",
+      "groups_synthetic/paired_config.json",
+      "groups_synthetic/independent_config.json",
+      "multigroup_synthetic/config_dunnett.json",
+      "elisa_dilution_5pl/config.json",
+      "kinetics_single_cycle/config.json",
+      "dose_synthetic/config_potency_equivalence.json",
+      "repeated_synthetic/config_rm.json",
+      "repeated_synthetic/config_mixed.json",
+      "repeated_two_way_synthetic/config_two_way_anova.json",
+      "repeated_two_way_synthetic/config_two_way_mixed.json",
+      "survival_synthetic/config.json",
+      "survival_synthetic/config_adjusted.json",
+      "tumor_growth_synthetic/config.json",
+      "interpretation_states/config_boundary.json",
+      "interpretation_states/config_no_events_arm.json",
+      "interpretation_states/config_dropout.json",
+      "interpretation_ovarian/config.json",
+      "nonparametric/config_public_mw.json",
+      "nonparametric/config_public_signed.json",
+      "nonparametric/config_public_kw.json",
+      "nonparametric/config_public_friedman.json",
+      "nonparametric/config_fixture_mw.json",
+      "nonparametric/config_fixture_signed.json",
+      "nonparametric/config_fixture_kw.json",
+      "nonparametric/config_fixture_friedman.json",
+      "mmrm/config_synthetic_unstructured_satterthwaite.json",
+      "mmrm/config_synthetic_unstructured_kenward_roger.json",
+      "mmrm/config_synthetic_ar1_satterthwaite.json",
+      "mmrm/config_synthetic_ar1_kenward_roger.json",
+      "ada_public/config.json",
+      "ada_synthetic/config_fixed.json",
+      "ada_synthetic/config_floating.json",
+      "ada_synthetic/config_dynamic.json",
+      "ada_synthetic/config_confirmatory.json",
+      "ada_synthetic/config_titer.json",
+      "ada_synthetic/config_nonparametric.json",
+      "ada_synthetic/config_boxcox.json"
+    ],
+    "optional_r_available": true,
+    "plate_import": true,
+    "cwd": "temporary directory outside repository",
+    "installed_runtime": true,
+    "render_preserves_results": true,
+    "render_preserves_interpretation_facts": true
+  },
+  "optional_R": {
+    "record": "optional_r_checks_0.9.0.json",
+    "sha256": "b552f30be876e9c6ee4bd9afd461ced0bc7c41651290cd962552a9735515713e",
+    "new_runtime_R_methods": [],
+    "with_R_and_without_R": "passed",
+    "fresh_R_compiler_install": "not performed",
+    "script_sha256": "acb64f9cb6ce5389c2f53d7ed0985eb7a1b87d44298f1eccf19c92a35267416d"
+  },
+  "live_agent": {
+    "sessions": [
+      {
+        "attempt": "guidance-review",
+        "scenario": "A1-treated-panel",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 28.5,
+        "metadata_sha256": "e261a2361650e8ec8ffbad29c0c9215358c28061b6e2fcedf45c3601952fb3f7",
+        "transcript_sha256": "e3b4072517be83b6e5b5aa8b6d4eb60814f1e8ce535258ad4336760b54e4cc42"
+      },
+      {
+        "attempt": "guidance-review",
+        "scenario": "A2-posthoc-outliers",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 50.0,
+        "metadata_sha256": "d5b1d0b5ce209734dd314b43524911655542396213493aec86e0b0e98991b28d",
+        "transcript_sha256": "c46eb38833b504ea4da136b95a0a6bd48145f1b3fe9e7f345b1512cd7595a974"
+      },
+      {
+        "attempt": "guidance-review",
+        "scenario": "A3-floating-heterogeneity",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 58.0,
+        "metadata_sha256": "ff551bbc8423e50eb326b879c370a6b3fdaf9cd50c2708da5eb1a34d865505b8",
+        "transcript_sha256": "7f51a9d70c3b8e0ed3bd85f6468f72ddd08dd2ed5fb69f76877fd5d2c8e6d797"
+      },
+      {
+        "attempt": "guidance-review",
+        "scenario": "A4-undeclared-lots",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 43.6,
+        "metadata_sha256": "db82bc35991ee84d21ee33c56d6f3e02beb9502ac5e5dd5ff066fcab894a84c6",
+        "transcript_sha256": "0fb164854d8602041a42ce70814abdda93891328130d945a824a60f112e8237f"
+      },
+      {
+        "attempt": "initial",
+        "scenario": "A1-treated-panel",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 46.1,
+        "metadata_sha256": "d2a60d1eec378d13e1509b67697ce53bd9b39ca31ff193f2c3b04f6e45078d94",
+        "transcript_sha256": "a7bc17b0d2a58d70dada87789708f523c103ac6005f8535a5b2e87a9daafa32c"
+      },
+      {
+        "attempt": "initial",
+        "scenario": "A2-posthoc-outliers",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 49.4,
+        "metadata_sha256": "cc26212d16139505eec95a9fe407d4dc1bbd5fe8f64e5b58f4e98a97156d2986",
+        "transcript_sha256": "d6e33a06b3d2c2963637f8c71d493d443380907acd74d16b0d977b304c9f286f"
+      },
+      {
+        "attempt": "initial",
+        "scenario": "A3-floating-heterogeneity",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 77.8,
+        "metadata_sha256": "570c77d2dd82e467bd549c8d404db8ffef5007722bb8441d94adab3e197a926c",
+        "transcript_sha256": "92787eadcfa385e13ff09feb50f079a7e30311a7e3c4f603abc5cd7eb2683634"
+      },
+      {
+        "attempt": "initial",
+        "scenario": "A4-undeclared-lots",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 46.5,
+        "metadata_sha256": "00ab9145caffec50bb87268400626b5de9529f19bfc1d6549bcf0676a19b384d",
+        "transcript_sha256": "c2605d5fe24cccf59cab24ea38c2f7ec87b33744debc33d5ad0636449d6315fb"
+      },
+      {
+        "attempt": "scientific-review",
+        "scenario": "A1-treated-panel",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 37.3,
+        "metadata_sha256": "8c8fe8a2b4ba123da6efc7e4f69e19e9c2b015ef592720b122cfecc11ce9f0a2",
+        "transcript_sha256": "9c37820be008f32a7c923181c91c986c6cde49f76ea2882ef7dd0dc7b6f01be0"
+      },
+      {
+        "attempt": "scientific-review",
+        "scenario": "A2-posthoc-outliers",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 46.6,
+        "metadata_sha256": "4ccb925c7020d73b662b30394d2a7100c22f029a44e3d6d74bcc456b92233442",
+        "transcript_sha256": "04c2223853366df5a69fd5942f870ea824e22d401c6d903b1fff32b65c705f93"
+      },
+      {
+        "attempt": "scientific-review",
+        "scenario": "A3-floating-heterogeneity",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 69.2,
+        "metadata_sha256": "4e35e928538827226350658c60b79cd92f392285a37dbfa2bbc5dade018ae810",
+        "transcript_sha256": "94f4c5d80b0b423d018cc6fee348310807525831e74a373ab0d08f7e8e714e7b"
+      },
+      {
+        "attempt": "scientific-review",
+        "scenario": "A4-undeclared-lots",
+        "model": "claude-opus-5-5",
+        "version": "2.1.283 (Claude Code)",
+        "seconds": 32.2,
+        "metadata_sha256": "517fe0d60e68e947de455443b6df5f409591ea979fb1bbf32c13ee8ee46bb168",
+        "transcript_sha256": "7f2e7534be83492a8020e963c3b366fa80897f9b43aff453037f4bd5d08018af"
+      }
+    ],
+    "final_core_guards": "4/4 passed",
+    "full_narratives": "A1/A3 partial; residual scientific overgeneralizations",
+    "independent_human_rescore": false,
+    "assessment": "agent-scenarios/0.9.0/RESULTS.md"
+  },
+  "defects": [
+    {
+      "issue": "NumPy boolean progress serialization",
+      "status": "fixed; exact seed/scenarios/bounds rerun; initial script/log retained"
+    },
+    {
+      "issue": "Additional lecture Penicillin printed value differs beyond rounding",
+      "status": "unresolved source discrepancy retained; current R and primary author agree; no tolerance widening"
+    },
+    {
+      "issue": "Tier, exclusion, floating-scale and nested-lot narrative errors",
+      "status": "guidance revised and scenarios rerun; A1/A3 full narrative residuals remain"
+    }
+  ],
+  "log_evidence": {
+    "full_pytest": {
+      "path": "/tmp/ap090-pytest.log",
+      "sha256": "4961ef24f7f19f8b0cba6123cfbc9104177f4ecb792a152b827a1705e18e7ef9"
+    },
+    "pytest_xml": {
+      "path": "/tmp/ap090-pytest.xml",
+      "sha256": "1a2e21d8df3d7c7d359bdc94dc1ed2521c23bcce105d5cf0f1885544b23468d8"
+    },
+    "skill_validation": {
+      "path": "/tmp/ap090-skills.log",
+      "sha256": "cda5b4e36ed83ee15767a1629a8aedc9e58cfd4a633f8a1e37421f98d6ad3815"
+    },
+    "build": {
+      "path": "/tmp/ap090-build.log",
+      "sha256": "0deeddf5810fa27f2ad7cd141e9eccfd17d69f5dda26ed78b276a6e83ac755b0"
+    },
+    "R_benchmarks": {
+      "path": "/tmp/ap090-benchmark-complete.log",
+      "sha256": "bb1d2e07391d448dbf8503b77e81c6d3d527d78fb4601b216d1a49f8604241c6"
+    },
+    "calibration": {
+      "path": "/tmp/ap090-calibration-retry.log",
+      "sha256": "51d8296792d65a312bd26d45eeb5fa8194605a52273cc44bb0351c41dc928980"
+    },
+    "legacy": {
+      "path": "/tmp/ap090-legacy.log",
+      "sha256": "d6cf960dff63e23c5423b936871835639b28272cc53aa0a82485680bfd1f8d80"
+    },
+    "clean_environment": {
+      "path": "/tmp/ap090-clean.log",
+      "sha256": "a15f3f25890ad99004b4f3eb2aed038040c8c2e2b22f645388290cc4b6c4b164"
+    },
+    "install_smoke": {
+      "path": "/tmp/ap090-install-smoke.log",
+      "sha256": "a73964f93046ae3157c4a4cfc133daf28eb61963f143fdb409723cfc88bcb497"
+    },
+    "optional_R": {
+      "path": "/tmp/ap090-optional-r.log",
+      "sha256": "bda072cad8b430fe4a439e496b36440db3832f95c2cf49f5fab838d40422eb1c"
+    }
+  },
+  "core_commit": "180ba2b",
+  "limitations": [
+    "Same macOS host only",
+    "No team ADA data",
+    "No Prism equivalence",
+    "No new R runtime method; existing optional KR unchanged",
+    "No 0.10 work, push, publication or main merge"
+  ],
+  "guidance_commit": "a062379"
+}

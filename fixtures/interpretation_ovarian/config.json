@@ -1,0 +1,29 @@
+{
+  "analysis_type": "time_to_event",
+  "input": "data.csv",
+  "source": "R survival::survdiff published ovarian example; see provenance.json",
+  "study": {
+    "endpoint": "Death in the ovarian dataset (fustat=1)",
+    "time_origin": "Dataset follow-up origin",
+    "time_unit": "day",
+    "censoring_rationale": "fustat=0 as supplied in R survival::ovarian; numerical reproduction only",
+    "rationale": "Published numerical worked example; not an antibody efficacy experiment"
+  },
+  "comparison": {
+    "arms": [
+      "rx1",
+      "rx2"
+    ],
+    "control_arm": "rx1",
+    "post_hoc": "arm_vs_control",
+    "logrank_inference": "asymptotic",
+    "permutation_draws": 9999,
+    "seed": 20260930,
+    "covariates": [],
+    "landmarks": [
+      365
+    ],
+    "conf_type": "log-log",
+    "confidence_level": 0.95
+  }
+}

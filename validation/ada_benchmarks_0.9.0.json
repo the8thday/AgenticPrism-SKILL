@@ -1,0 +1,928 @@
+{
+  "status": "passed",
+  "script_sha256": "69bfac249d041d22a1fb543e53d41a206be0d12d0a372303bebc73478e7fb7c5",
+  "r_script_sha256": "b736643240c2e4af42a028a15e53faaf5702f9184e209c3c57b62637910a00cc",
+  "tolerances": {
+    "absolute": 1e-08,
+    "relative": 1e-07,
+    "lme4_absolute": 1e-06,
+    "lme4_relative": 0.0002
+  },
+  "R": "R version 4.6.0 (2026-04-24)",
+  "packages": {
+    "lme4": "2.0.6",
+    "car": "3.1.5",
+    "jsonlite": "2.0.0"
+  },
+  "rows": {
+    "ada_public/config.json": {
+      "differences": {
+        "mean_squares": {
+          "max_absolute_difference": 2.3314683517128287e-15,
+          "max_relative_difference": 7.665371842544738e-15
+        },
+        "raw_variances": {
+          "max_absolute_difference": 2.220446049250313e-16,
+          "max_relative_difference": 7.602292661347612e-15
+        },
+        "variance_intervals": {
+          "max_absolute_difference": 3.885780586188048e-16,
+          "max_relative_difference": 7.905333209982325e-15
+        },
+        "run_mean_f": {
+          "max_absolute_difference": 9.947598300641403e-14,
+          "max_relative_difference": 2.458284983746272e-15
+        },
+        "run_mean_p": {
+          "max_absolute_difference": 1.0808660487612839e-47,
+          "max_relative_difference": 1.58247390446675e-13
+        },
+        "levene_f": {
+          "max_absolute_difference": 3.774758283725532e-15,
+          "max_relative_difference": 7.236973688498081e-15
+        },
+        "levene_p": {
+          "max_absolute_difference": 2.9976021664879227e-15,
+          "max_relative_difference": 3.9440862154740845e-15
+        },
+        "shapiro_w": {
+          "max_absolute_difference": 2.886579864025407e-15,
+          "max_relative_difference": 2.9284031344654496e-15
+        },
+        "shapiro_p": {
+          "max_absolute_difference": 2.820789120946271e-17,
+          "max_relative_difference": 2.1368676405558675e-12
+        },
+        "parametric": {
+          "max_absolute_difference": 8.881784197001252e-16,
+          "max_relative_difference": 2.8449940018604683e-16
+        },
+        "nonparametric": {
+          "max_absolute_difference": 4.440892098500626e-16,
+          "max_relative_difference": 1.3627859516639958e-16
+        },
+        "lme4_positive_components": {
+          "max_absolute_difference": 3.4604783205605116e-09,
+          "max_relative_difference": 3.139911528123512e-08
+        }
+      },
+      "oracle": {
+        "mean_squares": [
+          1.2563226120633069,
+          0.3041559365421249,
+          0.007516406964991533
+        ],
+        "raw_variances": [
+          0.2081343675163859,
+          0.002966395295771334,
+          0.007516406964991533
+        ],
+        "variance_intervals": [
+          [
+            0.15116741636119532,
+            0.3016020675565254
+          ],
+          [
+            0.0008914632608094118,
+            0.02962149395977588
+          ],
+          [
+            0.006487943431288016,
+            0.008799149949336412
+          ]
+        ],
+        "lme4_variances": [
+          0.20813437097686444,
+          0.002966395202629172,
+          0.00751640694250482
+        ],
+        "lme4_singular": false,
+        "factor_b_f": 40.465602509119535,
+        "factor_b_p": 6.830229842718993e-35,
+        "levene_f": 0.5215934790152489,
+        "levene_p": 0.7600245031985455,
+        "shapiro_w": 0.9857180625345571,
+        "shapiro_p": 1.3200579518404302e-05,
+        "parametric": 3.1218990940554034,
+        "nonparametric": 3.2586864379385374
+      },
+      "reportable": false,
+      "selected_type": "dynamic"
+    },
+    "ada_synthetic/config_boxcox.json": {
+      "differences": {
+        "mean_squares": {
+          "max_absolute_difference": 6.800116025829084e-16,
+          "max_relative_difference": 1.539744319399491e-14
+        },
+        "raw_variances": {
+          "max_absolute_difference": 5.551115123125783e-17,
+          "max_relative_difference": 3.097416247353801e-14
+        },
+        "variance_intervals": {
+          "max_absolute_difference": 9.020562075079397e-17,
+          "max_relative_difference": 1.6448686474240058e-14
+        },
+        "run_mean_f": {
+          "max_absolute_difference": 3.68594044175552e-14,
+          "max_relative_difference": 1.734443995574051e-14
+        },
+        "run_mean_p": {
+          "max_absolute_difference": 4.253541963095131e-15,
+          "max_relative_difference": 6.898878369752245e-14
+        },
+        "levene_f": {
+          "max_absolute_difference": 1.5543122344752192e-15,
+          "max_relative_difference": 1.7673410185216808e-15
+        },
+        "levene_p": {
+          "max_absolute_difference": 1.4432899320127035e-15,
+          "max_relative_difference": 2.9180009065554076e-15
+        },
+        "shapiro_w": {
+          "max_absolute_difference": 5.551115123125783e-16,
+          "max_relative_difference": 5.563238165197194e-16
+        },
+        "shapiro_p": {
+          "max_absolute_difference": 1.694200335577989e-13,
+          "max_relative_difference": 2.123929304615619e-13
+        },
+        "parametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "nonparametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "lme4_positive_components": {
+          "max_absolute_difference": 1.7822143483225972e-09,
+          "max_relative_difference": 3.427081903905425e-08
+        }
+      },
+      "oracle": {
+        "mean_squares": [
+          0.3328046904627339,
+          0.04416392994702632,
+          0.020781633433309157
+        ],
+        "raw_variances": [
+          0.05200384283823747,
+          0.0002922787064214646,
+          0.020781633433309157
+        ],
+        "variance_intervals": [
+          [
+            0.03491558951682902,
+            0.08119779209529228
+          ],
+          [
+            0,
+            0.005167674054459153
+          ],
+          [
+            0.017636979946831197,
+            0.024809048823888562
+          ]
+        ],
+        "lme4_variances": [
+          0.05200384462045176,
+          0.00029227870601513967,
+          0.020781633302371802
+        ],
+        "lme4_singular": false,
+        "factor_b_f": 2.12514238059072,
+        "factor_b_p": 0.06165555812296319,
+        "levene_f": 0.8794636791576009,
+        "levene_p": 0.4946159984975652,
+        "shapiro_w": 0.9978208658857621,
+        "shapiro_p": 0.7976726588291974,
+        "parametric": 5.428492671986683,
+        "nonparametric": 5.443857917484535
+      },
+      "reportable": true,
+      "selected_type": "fixed"
+    },
+    "ada_synthetic/config_confirmatory.json": {
+      "differences": {
+        "mean_squares": {
+          "max_absolute_difference": 1.1934897514720433e-14,
+          "max_relative_difference": 4.664988902184743e-14
+        },
+        "raw_variances": {
+          "max_absolute_difference": 1.3322676295501878e-15,
+          "max_relative_difference": 2.6103321808934435e-13
+        },
+        "variance_intervals": {
+          "max_absolute_difference": 2.886579864025407e-15,
+          "max_relative_difference": 5.072003815114418e-14
+        },
+        "run_mean_f": {
+          "max_absolute_difference": 6.017408793468348e-14,
+          "max_relative_difference": 4.8998202083309816e-14
+        },
+        "run_mean_p": {
+          "max_absolute_difference": 2.8477220581635265e-14,
+          "max_relative_difference": 9.651044260124278e-14
+        },
+        "levene_f": {
+          "max_absolute_difference": 1.3322676295501878e-15,
+          "max_relative_difference": 2.765032564290056e-15
+        },
+        "levene_p": {
+          "max_absolute_difference": 1.1102230246251565e-15,
+          "max_relative_difference": 1.405540111116734e-15
+        },
+        "shapiro_w": {
+          "max_absolute_difference": 6.661338147750939e-16,
+          "max_relative_difference": 6.72527232571758e-16
+        },
+        "shapiro_p": {
+          "max_absolute_difference": 1.7034984534092246e-15,
+          "max_relative_difference": 4.930288975665346e-13
+        },
+        "parametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "nonparametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "lme4_positive_components": {
+          "max_absolute_difference": 2.690295755058969e-07,
+          "max_relative_difference": 2.696215795588248e-07
+        }
+      },
+      "oracle": {
+        "mean_squares": [
+          13.58851714648928,
+          0.2558397836515965,
+          0.208323712923047
+        ],
+        "raw_variances": [
+          2.2300322389277056,
+          0.0005939508841068687,
+          0.208323712923047
+        ],
+        "variance_intervals": [
+          [
+            1.5529916569231743,
+            3.4058844607094287
+          ],
+          [
+            0,
+            0.029003241347032534
+          ],
+          [
+            0.17680040209852452,
+            0.2486961952084939
+          ]
+        ],
+        "lme4_variances": [
+          2.230031969898129,
+          0.0005939507239647812,
+          0.20832371793738638
+        ],
+        "lme4_singular": false,
+        "factor_b_f": 1.2280876721225755,
+        "factor_b_p": 0.2950688009928219,
+        "levene_f": 0.48182710278215407,
+        "levene_p": 0.7898906732324122,
+        "shapiro_w": 0.9904934440019395,
+        "shapiro_p": 0.0034551695890793826,
+        "parametric": 13.820988953873018,
+        "nonparametric": 13.602290325594135
+      },
+      "reportable": true,
+      "selected_type": "fixed"
+    },
+    "ada_synthetic/config_dynamic.json": {
+      "differences": {
+        "mean_squares": {
+          "max_absolute_difference": 9.645062526431047e-16,
+          "max_relative_difference": 2.6658880125095315e-14
+        },
+        "raw_variances": {
+          "max_absolute_difference": 5.551115123125783e-17,
+          "max_relative_difference": 2.5096530272104198e-14
+        },
+        "variance_intervals": {
+          "max_absolute_difference": 1.201296007113939e-16,
+          "max_relative_difference": 3.339187933717361e-14
+        },
+        "run_mean_f": {
+          "max_absolute_difference": 1.2878587085651816e-14,
+          "max_relative_difference": 2.7395479517354654e-14
+        },
+        "run_mean_p": {
+          "max_absolute_difference": 9.2148511043888e-15,
+          "max_relative_difference": 1.1539633604035522e-14
+        },
+        "levene_f": {
+          "max_absolute_difference": 3.907985046680551e-14,
+          "max_relative_difference": 2.2207569899108658e-15
+        },
+        "levene_p": {
+          "max_absolute_difference": 4.2894311721392517e-29,
+          "max_relative_difference": 8.120227874431883e-14
+        },
+        "shapiro_w": {
+          "max_absolute_difference": 2.220446049250313e-16,
+          "max_relative_difference": 2.242991398628169e-16
+        },
+        "shapiro_p": {
+          "max_absolute_difference": 2.892651396191326e-16,
+          "max_relative_difference": 1.2619454586398465e-13
+        },
+        "parametric": {
+          "max_absolute_difference": 8.881784197001252e-16,
+          "max_relative_difference": 1.9835949394592453e-16
+        },
+        "nonparametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "lme4_note": "Negative ANOVA components; constrained REML is a different estimator, retained without equivalence claim."
+      },
+      "oracle": {
+        "mean_squares": [
+          0.18415125982708724,
+          0.036179548732625404,
+          0.07696155483981876
+        ],
+        "raw_variances": [
+          0.017864950831211413,
+          -0.0005097750763399169,
+          0.07696155483981876
+        ],
+        "variance_intervals": [
+          [
+            0.006295082855734042,
+            0.035669827572573844
+          ],
+          [
+            0,
+            0.003597569322121359
+          ],
+          [
+            0.06531581859254712,
+            0.09187646282525189
+          ]
+        ],
+        "lme4_variances": [
+          0.01794991361267591,
+          0,
+          0.0764517796412874
+        ],
+        "lme4_singular": true,
+        "factor_b_f": 0.4700989839397923,
+        "factor_b_p": 0.7985393142089257,
+        "levene_f": 17.597535725137604,
+        "levene_p": 5.282402462676399e-16,
+        "shapiro_w": 0.9899485350716704,
+        "shapiro_p": 0.002292215861142756,
+        "parametric": 4.477619911362824,
+        "nonparametric": 4.491932401054071
+      },
+      "reportable": false,
+      "selected_type": "dynamic"
+    },
+    "ada_synthetic/config_fixed.json": {
+      "differences": {
+        "mean_squares": {
+          "max_absolute_difference": 6.140921104957897e-16,
+          "max_relative_difference": 3.139081469579006e-14
+        },
+        "raw_variances": {
+          "max_absolute_difference": 1.0408340855860843e-17,
+          "max_relative_difference": 6.056458008936465e-14
+        },
+        "variance_intervals": {
+          "max_absolute_difference": 7.502679033599691e-17,
+          "max_relative_difference": 3.2783157818955475e-14
+        },
+        "run_mean_f": {
+          "max_absolute_difference": 6.88338275267597e-14,
+          "max_relative_difference": 3.255234416582874e-14
+        },
+        "run_mean_p": {
+          "max_absolute_difference": 8.090750291955828e-15,
+          "max_relative_difference": 1.2866105885344847e-13
+        },
+        "levene_f": {
+          "max_absolute_difference": 1.7763568394002505e-15,
+          "max_relative_difference": 2.068207418731747e-15
+        },
+        "levene_p": {
+          "max_absolute_difference": 1.3322676295501878e-15,
+          "max_relative_difference": 2.61919337876892e-15
+        },
+        "shapiro_w": {
+          "max_absolute_difference": 7.771561172376096e-16,
+          "max_relative_difference": 7.786063445173881e-16
+        },
+        "shapiro_p": {
+          "max_absolute_difference": 1.9095836023552692e-13,
+          "max_relative_difference": 2.1532210323891335e-13
+        },
+        "parametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "nonparametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "lme4_positive_components": {
+          "max_absolute_difference": 3.5274278706309836e-09,
+          "max_relative_difference": 8.07224498097835e-07
+        }
+      },
+      "oracle": {
+        "mean_squares": [
+          0.14808559764436152,
+          0.01956279620159549,
+          0.00925148139630528
+        ],
+        "raw_variances": [
+          0.02313901937467604,
+          0.00012889143506612764,
+          0.00925148139630528
+        ],
+        "variance_intervals": [
+          [
+            0.015535244711220175,
+            0.03612934302848033
+          ],
+          [
+            0,
+            0.0022885772856395133
+          ],
+          [
+            0.007851557597180467,
+            0.011044389479334915
+          ]
+        ],
+        "lme4_variances": [
+          0.023139015847248166,
+          0.00012889133102187984,
+          0.00925148170487578
+        ],
+        "lme4_singular": false,
+        "factor_b_f": 2.1145582381442387,
+        "factor_b_p": 0.06288421970140637,
+        "levene_f": 0.8588871809044843,
+        "levene_p": 0.5086556954326082,
+        "shapiro_w": 0.9981374062901099,
+        "shapiro_p": 0.8868497816206388,
+        "parametric": 4.338883053752961,
+        "nonparametric": 4.346262803412955
+      },
+      "reportable": true,
+      "selected_type": "fixed"
+    },
+    "ada_synthetic/config_floating.json": {
+      "differences": {
+        "mean_squares": {
+          "max_absolute_difference": 4.85722573273506e-17,
+          "max_relative_difference": 6.690438121277508e-15
+        },
+        "raw_variances": {
+          "max_absolute_difference": 6.938893903907228e-18,
+          "max_relative_difference": 1.571936668704426e-14
+        },
+        "variance_intervals": {
+          "max_absolute_difference": 2.7755575615628914e-17,
+          "max_relative_difference": 7.403473117116623e-15
+        },
+        "run_mean_f": {
+          "max_absolute_difference": 4.6629367034256575e-15,
+          "max_relative_difference": 6.634274417808217e-15
+        },
+        "run_mean_p": {
+          "max_absolute_difference": 4.3298697960381105e-15,
+          "max_relative_difference": 6.96598095663685e-15
+        },
+        "levene_f": {
+          "max_absolute_difference": 1.0269562977782698e-15,
+          "max_relative_difference": 9.867966492910335e-15
+        },
+        "levene_p": {
+          "max_absolute_difference": 2.220446049250313e-16,
+          "max_relative_difference": 2.239917873075769e-16
+        },
+        "shapiro_w": {
+          "max_absolute_difference": 4.440892098500626e-16,
+          "max_relative_difference": 4.466579941179791e-16
+        },
+        "shapiro_p": {
+          "max_absolute_difference": 2.250977182427505e-14,
+          "max_relative_difference": 3.338309150287669e-13
+        },
+        "parametric": {
+          "max_absolute_difference": 5.551115123125783e-17,
+          "max_relative_difference": 1.6864939736852785e-16
+        },
+        "nonparametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "lme4_note": "Negative ANOVA components; constrained REML is a different estimator, retained without equivalence claim."
+      },
+      "oracle": {
+        "mean_squares": [
+          0.18313505929900467,
+          0.007259951657407446,
+          0.01032922268060774
+        ],
+        "raw_variances": [
+          0.028800972769732824,
+          -3.8365887790003665e-05,
+          0.01032922268060774
+        ],
+        "variance_intervals": [
+          [
+            0.019433422743245273,
+            0.04483785278133908
+          ],
+          [
+            0,
+            0.0007761588950580444
+          ],
+          [
+            0.008766216277890718,
+            0.012330993644863328
+          ]
+        ],
+        "lme4_variances": [
+          0.028807365996201744,
+          1.674343349244392e-21,
+          0.010290856864481387
+        ],
+        "lme4_singular": true,
+        "factor_b_f": 0.7028555663764907,
+        "factor_b_p": 0.6215735907105545,
+        "levene_f": 0.10406969850536978,
+        "levene_p": 0.9913069027844678,
+        "shapiro_w": 0.9942488787803091,
+        "shapiro_p": 0.06742866166944225,
+        "parametric": 0.3291511982693685,
+        "nonparametric": 0.3353279838174698
+      },
+      "reportable": true,
+      "selected_type": "floating"
+    },
+    "ada_synthetic/config_nonparametric.json": {
+      "differences": {
+        "mean_squares": {
+          "max_absolute_difference": 6.140921104957897e-16,
+          "max_relative_difference": 3.139081469579006e-14
+        },
+        "raw_variances": {
+          "max_absolute_difference": 1.0408340855860843e-17,
+          "max_relative_difference": 6.056458008936465e-14
+        },
+        "variance_intervals": {
+          "max_absolute_difference": 7.502679033599691e-17,
+          "max_relative_difference": 3.2783157818955475e-14
+        },
+        "run_mean_f": {
+          "max_absolute_difference": 6.88338275267597e-14,
+          "max_relative_difference": 3.255234416582874e-14
+        },
+        "run_mean_p": {
+          "max_absolute_difference": 8.090750291955828e-15,
+          "max_relative_difference": 1.2866105885344847e-13
+        },
+        "levene_f": {
+          "max_absolute_difference": 1.7763568394002505e-15,
+          "max_relative_difference": 2.068207418731747e-15
+        },
+        "levene_p": {
+          "max_absolute_difference": 1.3322676295501878e-15,
+          "max_relative_difference": 2.61919337876892e-15
+        },
+        "shapiro_w": {
+          "max_absolute_difference": 7.771561172376096e-16,
+          "max_relative_difference": 7.786063445173881e-16
+        },
+        "shapiro_p": {
+          "max_absolute_difference": 1.9095836023552692e-13,
+          "max_relative_difference": 2.1532210323891335e-13
+        },
+        "parametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "nonparametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "lme4_positive_components": {
+          "max_absolute_difference": 3.5274278706309836e-09,
+          "max_relative_difference": 8.07224498097835e-07
+        }
+      },
+      "oracle": {
+        "mean_squares": [
+          0.14808559764436152,
+          0.01956279620159549,
+          0.00925148139630528
+        ],
+        "raw_variances": [
+          0.02313901937467604,
+          0.00012889143506612764,
+          0.00925148139630528
+        ],
+        "variance_intervals": [
+          [
+            0.015535244711220175,
+            0.03612934302848033
+          ],
+          [
+            0,
+            0.0022885772856395133
+          ],
+          [
+            0.007851557597180467,
+            0.011044389479334915
+          ]
+        ],
+        "lme4_variances": [
+          0.023139015847248166,
+          0.00012889133102187984,
+          0.00925148170487578
+        ],
+        "lme4_singular": false,
+        "factor_b_f": 2.1145582381442387,
+        "factor_b_p": 0.06288421970140637,
+        "levene_f": 0.8588871809044843,
+        "levene_p": 0.5086556954326082,
+        "shapiro_w": 0.9981374062901099,
+        "shapiro_p": 0.8868497816206388,
+        "parametric": 4.338883053752961,
+        "nonparametric": 4.346262803412955
+      },
+      "reportable": true,
+      "selected_type": "fixed"
+    },
+    "ada_synthetic/config_titer.json": {
+      "differences": {
+        "mean_squares": {
+          "max_absolute_difference": 1.1102230246251565e-16,
+          "max_relative_difference": 2.678472341870466e-15
+        },
+        "raw_variances": {
+          "max_absolute_difference": 2.42861286636753e-17,
+          "max_relative_difference": 2.7109657782418775e-15
+        },
+        "variance_intervals": {
+          "max_absolute_difference": 4.85722573273506e-17,
+          "max_relative_difference": 2.9433325729494992e-15
+        },
+        "run_mean_f": {
+          "max_absolute_difference": 8.881784197001252e-16,
+          "max_relative_difference": 2.940156009205884e-16
+        },
+        "run_mean_p": {
+          "max_absolute_difference": 2.7755575615628914e-17,
+          "max_relative_difference": 2.54790023811583e-15
+        },
+        "levene_f": {
+          "max_absolute_difference": 2.831068712794149e-15,
+          "max_relative_difference": 9.470014237650279e-15
+        },
+        "levene_p": {
+          "max_absolute_difference": 1.5543122344752192e-15,
+          "max_relative_difference": 1.701673500669313e-15
+        },
+        "shapiro_w": {
+          "max_absolute_difference": 1.3322676295501878e-15,
+          "max_relative_difference": 1.3445869218733981e-15
+        },
+        "shapiro_p": {
+          "max_absolute_difference": 4.56926163572291e-15,
+          "max_relative_difference": 1.0169879539346176e-12
+        },
+        "parametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "nonparametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "lme4_positive_components": {
+          "max_absolute_difference": 2.4980028531795817e-09,
+          "max_relative_difference": 8.705942921157972e-08
+        }
+      },
+      "oracle": {
+        "mean_squares": [
+          0.19967707182466793,
+          0.031087394685859936,
+          0.010290926717972503
+        ],
+        "raw_variances": [
+          0.031564357517782575,
+          0.0002599558495985929,
+          0.010290926717972503
+        ],
+        "variance_intervals": [
+          [
+            0.021382038780629917,
+            0.04902530228328794
+          ],
+          [
+            0,
+            0.0036835870416064833
+          ],
+          [
+            0.008733715217412976,
+            0.012285276044761088
+          ]
+        ],
+        "lme4_variances": [
+          0.031564355019779736,
+          0.00025995587223020205,
+          0.010290926862776549
+        ],
+        "lme4_singular": false,
+        "factor_b_f": 3.020854733283409,
+        "factor_b_p": 0.010893509565411453,
+        "levene_f": 0.29895084017282325,
+        "levene_p": 0.9134021502149896,
+        "shapiro_w": 0.9908378609647297,
+        "shapiro_p": 0.004492935848497443,
+        "parametric": 4.654729586260436,
+        "nonparametric": 4.52907975507636
+      },
+      "reportable": false,
+      "selected_type": "dynamic"
+    },
+    "variance_penicillin/data.csv": {
+      "differences": {
+        "mean_squares": {
+          "max_absolute_difference": 2.1316282072803006e-13,
+          "max_relative_difference": 6.241014095297045e-15
+        },
+        "raw_variances": {
+          "max_absolute_difference": 8.43769498715119e-15,
+          "max_relative_difference": 6.241014095297045e-15
+        },
+        "variance_intervals": {
+          "max_absolute_difference": 7.815970093361102e-14,
+          "max_relative_difference": 6.272108024090502e-15
+        },
+        "run_mean_f": {
+          "max_absolute_difference": 1.1368683772161603e-12,
+          "max_relative_difference": 3.826687049744124e-15
+        },
+        "run_mean_p": {
+          "max_absolute_difference": 9.385086296981541e-77,
+          "max_relative_difference": 1.7540422765759164e-13
+        },
+        "levene_f": {
+          "max_absolute_difference": 5.967448757360216e-16,
+          "max_relative_difference": 5.318813022864573e-15
+        },
+        "levene_p": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "shapiro_w": {
+          "max_absolute_difference": 8.881784197001252e-16,
+          "max_relative_difference": 9.209460882983326e-16
+        },
+        "shapiro_p": {
+          "max_absolute_difference": 1.6512399086954233e-16,
+          "max_relative_difference": 1.920688020739221e-13
+        },
+        "parametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "nonparametric": {
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "lme4_positive_components": {
+          "max_absolute_difference": 2.1114205761563198e-07,
+          "max_relative_difference": 5.6592526738173924e-08
+        }
+      },
+      "oracle": {
+        "mean_squares": [
+          4.603864734299508,
+          89.84444444444433,
+          0.3024154589371962
+        ],
+        "raw_variances": [
+          0.7169082125603853,
+          3.730917874396131,
+          0.3024154589371962
+        ],
+        "variance_intervals": [
+          [
+            0.3462293694923089,
+            1.7386874371218506
+          ],
+          [
+            1.1878014181088326,
+            36.528285576797686
+          ],
+          [
+            0.2251959296413061,
+            0.4248229221923759
+          ]
+        ],
+        "lme4_variances": [
+          0.7169082522777603,
+          3.7309176632540817,
+          0.302415456579408
+        ],
+        "lme4_singular": false,
+        "factor_b_f": 297.0894568690111,
+        "factor_b_p": 5.3505473740930934e-64,
+        "levene_f": 0.11219512195121883,
+        "levene_p": 0.989511406530557,
+        "shapiro_w": 0.9644195583057925,
+        "shapiro_p": 0.0008597127127704506,
+        "parametric": 26.312975060178708,
+        "nonparametric": 26
+      },
+      "reportable": true,
+      "selected_type": "variance_primitive_only"
+    }
+  },
+  "published_worked_example": {
+    "D1_Op1": {
+      "n_wells": 273,
+      "observed": 24.18815012477713,
+      "printed": 24.18815,
+      "absolute_difference_from_printed": 1.2477713084990683e-07
+    },
+    "D1_Op2": {
+      "n_wells": 273,
+      "observed": 26.089276768225567,
+      "printed": 26.08928,
+      "absolute_difference_from_printed": 3.2317744320664588e-06
+    },
+    "D2_Op1": {
+      "n_wells": 252,
+      "observed": 26.621532668782656,
+      "printed": 26.62153,
+      "absolute_difference_from_printed": 2.668782656201074e-06
+    },
+    "D2_Op2": {
+      "n_wells": 261,
+      "observed": 25.5062665226121,
+      "printed": 25.50627,
+      "absolute_difference_from_printed": 3.477387899408768e-06
+    },
+    "D3_Op1": {
+      "n_wells": 246,
+      "observed": 24.613209102455876,
+      "printed": 24.61321,
+      "absolute_difference_from_printed": 8.975441225800296e-07
+    },
+    "D3_Op2": {
+      "n_wells": 267,
+      "observed": 28.249174103217655,
+      "printed": 28.24917,
+      "absolute_difference_from_printed": 4.103217655426761e-06
+    },
+    "all": {
+      "n_wells": 1572,
+      "observed": 26.57030683232379,
+      "printed": 26.57031,
+      "absolute_difference_from_printed": 3.167676208448711e-06
+    }
+  },
+  "published_variance_example": {
+    "observed_variances": [
+      0.716908212560386,
+      3.7309178743961393,
+      0.30241545893719807
+    ],
+    "printed_variances": [
+      0.7169,
+      3.7309,
+      0.3024
+    ],
+    "difference": {
+      "max_absolute_difference": 1.7874396139205828e-05,
+      "max_relative_difference": 5.112082406767568e-05
+    },
+    "source": "https://pages.cs.wisc.edu/~st850-1/text/1SimpleH.pdf",
+    "additional_lecture_discrepancy": {
+      "printed_sample_variance": 3.7311,
+      "observed": 3.7309178743961393,
+      "absolute_difference": 0.00018212560386077215,
+      "printed_precision_check": "miss; not an implementation change or tolerance relaxation"
+    },
+    "scope": "Plate/sample/residual variance point estimates at printed precision; conservative intervals are supplemental."
+  },
+  "scope": "R stats/car diagnostics, percentile and conservative MS interval arithmetic; lme4 REML agreement only for positive balanced ANOVA components. Public data simulated. No Prism equivalence."
+}

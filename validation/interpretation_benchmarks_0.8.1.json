@@ -1,0 +1,130 @@
+{
+  "passed": true,
+  "script_sha256": "dbab524ac3cfdbe03b6a59ce9b8603dacc7eac5450019dbbe485af7d10409705",
+  "baseline_commit": "d0f56d0beb542d3b40706be61f4b4c0243fe0938",
+  "unchanged_numerical_source_sha256": {
+    "repeated.py": "b0e0351402b2b2acbc02f405578fefc4a34be9e8952ab555ed2c51b50a8367c0",
+    "repeated_two_way.py": "4fe82762624d8dc7be1ee6d51d0bdeecf7f064e9921e1e0c90295dd7d9dc2d7e",
+    "mixed_inference.py": "0dbdf50d91039bf73d9935d30ab0a42a948410c6480cc5d5da8a68c9e78aae6c",
+    "survival.py": "0a18aeee711d6aa82a6bb284769faa91fa4710859f989aa1a02b4460604f5d41",
+    "time_to_event.py": "2aba13cacf206f70f60975648563917a3f089dc19d250588e33bd1eda4a3e267",
+    "tumor_growth.py": "3f15d419f55bc89c6a2a2ad3d18960098c778f7a60394d639a8d72311e1ca756"
+  },
+  "r_agreement": {
+    "published_ovarian_survdiff": {
+      "max_absolute_difference": 3.774758283725532e-15,
+      "max_relative_difference": 9.172633979413608e-15,
+      "observed_chisq": 1.0627398612914138,
+      "observed_p": 0.30259111698909225,
+      "independent_cox_score_absolute_difference": 3.774758283725532e-15,
+      "provenance": {
+        "source": "R survival::survdiff, first two-sample worked example, ovarian dataset",
+        "url": "https://www.stat.ethz.ch/R-manual/R-devel/library/survival/html/survdiff.html",
+        "dataset_url": "https://www.stat.ethz.ch/R-manual/R-devel/library/survival/html/ovarian.html",
+        "r_version": "R version 4.6.0 (2026-04-24) survival 3.8.6",
+        "survdiff_help_text_sha256": "5c9aec07144977105fb6a0f4eb7cb43d66c6e10243000e5977df250e35d91b1b",
+        "r_script_sha256": "2f5ec8ad4eb9b229d868cdcf15b09e2baae5b34a57957b6444aa89a2d8a6543a",
+        "script_sha256": "b98968b46052870390a8fb8e3801bffe0af3ab2da550cb9bb61f0e213acd0cf7",
+        "input_sha256": "822a871afee2bd3ba8f59913e1bea19bb8a115e7ad42d9f15f2821ca73d930ff",
+        "reference_sha256": "7f4808f0e0bc5e040f501a364126363bdd56591b53ed01fc12ee95dd6f6498e4",
+        "scope": "Reproduces the log-rank example and Cox-score identity. KM and Efron HR are supplementary, not claims of published worked results.",
+        "package_license": "LGPL (>= 2)",
+        "license_note": "Third-party R survival data; package license read from installed metadata. No ownership or separate data-license claim."
+      }
+    },
+    "survival_fixture": {
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 2.657067022562994e-15,
+      "input_sha256": "9a31376b0ea1acb6530b9c8e191aa6bd04a2cc83f59d6675a536b05a2104374d",
+      "r_version": "R version 4.6.0 (2026-04-24) survival 3.8.6",
+      "r_script_sha256": "46ffb601079a692d46de697ea69e7f8c419a00b45d4ba9079d42d50773a66f33"
+    }
+  },
+  "regressions": {
+    "repeated_synthetic/config_rm.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 23,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "5559469688de14135ef9dfcd4335d7cebf04e5f9c6d7a93eb6a830b56516a2d5",
+      "results_sha256": "a821304b4a88841c2ddf0d72f7a0035afdc12318887838fa15095d2d4805d16d"
+    },
+    "repeated_synthetic/config_mixed.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 21,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "83e3a80b89e366a731626635e689a71d052879a62ba8137df80a4d7db4db7666",
+      "results_sha256": "00f95fb5483db8ce41fb477cbced3a873ffdcbdb7f5f3c1ec11cb85109d872d8"
+    },
+    "repeated_synthetic/config_mixed_wald.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 21,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "21ed152369e73e3f2dcb130d66661071ce77fc10100c791db06f0e352e65cb59",
+      "results_sha256": "36aeaec874e26dc696f0675400ec76780a472ca448dba6798ac02fc71ea9b9ad"
+    },
+    "repeated_two_way_synthetic/config_two_way_anova.json": {
+      "legacy_scientific_artifacts_byte_identical": 15,
+      "source_value_checks": 75,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "eafd9a434fd7829782732487b0be625b66ab6e17ab145610e9059863df05df12",
+      "results_sha256": "28f607e7b504dc754cb8b333e59807f28149d10bb05128ad462fa051ace7887b"
+    },
+    "repeated_two_way_synthetic/config_two_way_mixed.json": {
+      "legacy_scientific_artifacts_byte_identical": 15,
+      "source_value_checks": 72,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "37f43b7be88f45fa15f2b2d4137e257f24fbc0c172fd00550b3b6cf34f4c2ece",
+      "results_sha256": "e54944b7177c34f2db4da47445e8c1f6ea747aa68a3ebf0d7ecc0027855ba8a0"
+    },
+    "survival_synthetic/config.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 57,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "78810e2dc973b0e18bc39f90fa18498ea57ddd4745795042930ef2fae39d7baf",
+      "results_sha256": "355d1d34293a47c3b94ac3e95b00d8a53176d5e70b75cd8bcb04ed6d0948d61e"
+    },
+    "survival_synthetic/config_adjusted.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 64,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "c6d66de96a832c60c2dd35fb8f7ba4f85329387c2369120baf87a37a2cc3dba6",
+      "results_sha256": "20909cd17a0c955ab850ce2b03c6870afcce9f0aa6f62066edc042f745376f1b"
+    },
+    "tumor_growth_synthetic/config.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 50,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "155c02570954adcfe6167e0fb76957cdbc6cd78bb19d96a3e926f61f936094bb",
+      "results_sha256": "8b482c1a97a3d7da956877ff8a2de77d4c57a76e5e8e7e42aeb52d3edb2e344c"
+    },
+    "interpretation_states/config_boundary.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 0,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "01d9a0f50ef2ba5699d29c771ebdf9c65fb0f9e1c0ba54f5592ad9854fabcff9",
+      "results_sha256": "32df7b095f1d621018cc1e33a03d8e10d95f3c6bb783279dd6185a3cedc22166"
+    },
+    "interpretation_states/config_no_events_arm.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 25,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "edbc6aaf358ca091346bd3b78951fde907d136a1469de7e3b75bff9ce2b19bcc",
+      "results_sha256": "eb1280a4eab6d9cc76e0bf00145f0aa156cfa9781590f468a298a6db0979ccbb"
+    },
+    "interpretation_states/config_dropout.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 50,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "ea33dad84837514311e973e3bbe27b3dd02706b218c6628e05148f21901d7ffb",
+      "results_sha256": "aa15fa1f6a619ff30b59028f7bd255398f3df992896ce6cecacd3a272b473e15"
+    },
+    "interpretation_ovarian/config.json": {
+      "legacy_scientific_artifacts_byte_identical": 14,
+      "source_value_checks": 29,
+      "max_relative_difference": 0.0,
+      "facts_sha256": "07ef38b5c8b16bbd723d864c3a9f576b0146fa0ac681e829a0b04dfa74068319",
+      "results_sha256": "b28af1898816096ac90522629a4784fd9036fcac24ff82df44274319fbb16394"
+    }
+  },
+  "scope": "Facts extraction and unchanged inference. R benchmarks of the underlying repeated/tumor methods are recorded separately; no new statistical method."
+}

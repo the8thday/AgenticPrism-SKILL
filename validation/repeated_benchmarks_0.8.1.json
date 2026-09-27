@@ -1,0 +1,229 @@
+{
+  "statsmodels": "0.15.0",
+  "records": [
+    {
+      "input": "complete.csv",
+      "input_sha256": "4ba53a8dd735c29456b0d1ae5bdbc8d427c11b729559e8651668c34456ee3910",
+      "max_absolute_fixed_effect_difference": 4.973799150320701e-14,
+      "max_relative_gls_se_difference": 3.1567369829232916e-09,
+      "python_variances": [
+        12.404236494562173,
+        1.603493164976263
+      ],
+      "r_variances": [
+        12.404237,
+        1.603493
+      ],
+      "reml_log_likelihood_difference": 3.126388037344441e-13,
+      "max_absolute_conditional_fitted_difference": 1.2566836460337072e-09,
+      "r_version": "R version 4.6.0 (2026-04-24) nlme 3.1.169",
+      "note": "Fixed means, plug-in GLS SE, variance components and conditional fits only. No R p-value or bootstrap equivalence claim."
+    },
+    {
+      "input": "incomplete.csv",
+      "input_sha256": "d711b0d7efdfdbe472f2f3b6b9d05a1ff5d58e94aa212083a15e5db44068ec6a",
+      "max_absolute_fixed_effect_difference": 4.347171511653869e-10,
+      "max_relative_gls_se_difference": 2.707482571473463e-09,
+      "python_variances": [
+        12.859841935656933,
+        1.791623939718628
+      ],
+      "r_variances": [
+        12.859842,
+        1.791624
+      ],
+      "reml_log_likelihood_difference": 4.689582056016661e-13,
+      "max_absolute_conditional_fitted_difference": 6.419785592015614e-09,
+      "r_version": "R version 4.6.0 (2026-04-24) nlme 3.1.169",
+      "note": "Fixed means, plug-in GLS SE, variance components and conditional fits only. No R p-value or bootstrap equivalence claim."
+    }
+  ],
+  "satterthwaite_fixtures": {
+    "complete.csv": {
+      "r_version": "R version 4.6.0 (2026-04-24) lmerTest 3.2.1 lme4 2.0.6 pbkrtest 0.5.5",
+      "max_relative_contrast_df_difference": 1.1454131199073458e-08,
+      "max_relative_contrast_t_difference": 5.670207414709694e-09,
+      "joint_f": [
+        22.93319636264712,
+        22.9331961025752
+      ],
+      "joint_ddf": [
+        45.00000051658335,
+        45.0000000027368
+      ],
+      "joint_p": [
+        3.6850472497569025e-09,
+        3.6850481044562602e-09
+      ],
+      "kenward_roger_ddf_reference_only": 45.0000000000003
+    },
+    "incomplete.csv": {
+      "r_version": "R version 4.6.0 (2026-04-24) lmerTest 3.2.1 lme4 2.0.6 pbkrtest 0.5.5",
+      "max_relative_contrast_df_difference": 2.2242605535183202e-08,
+      "max_relative_contrast_t_difference": 1.0884222190199466e-08,
+      "joint_f": [
+        18.491299651491413,
+        18.4912992489187
+      ],
+      "joint_ddf": [
+        35.22617238469455,
+        35.2261716020726
+      ],
+      "joint_p": [
+        2.241218155244472e-07,
+        2.24121895099471e-07
+      ],
+      "kenward_roger_ddf_reference_only": 35.2041953929714
+    }
+  },
+  "public_orthodont": {
+    "r_version": "R version 4.6.0 (2026-04-24) nlme 3.1.169",
+    "rm_anova": {
+      "f_relative_difference": 7.771561172376096e-16,
+      "gg_epsilon_relative_difference": 2.220446049250313e-16,
+      "f": 38.03960820149637,
+      "gg_epsilon": 0.8767346423322843
+    },
+    "random_intercept_complete": {
+      "max_relative_beta_difference": 1.9984014443252818e-15,
+      "max_relative_se_difference": 1.3694801292984948e-08,
+      "tau_relative_difference": 1.842642105565062e-08,
+      "sigma_relative_difference": 1.575532435627025e-07,
+      "reml_log_likelihood_difference": 2.842170943040401e-14,
+      "wald_relative_difference": 1.9548595409091263e-08
+    },
+    "satterthwaite_complete": {
+      "r_version": "R version 4.6.0 (2026-04-24) lmerTest 3.2.1 lme4 2.0.6 pbkrtest 0.5.5",
+      "max_relative_contrast_df_difference": 1.8426258074910606e-08,
+      "max_relative_contrast_t_difference": 9.818437396447166e-09,
+      "joint_f": [
+        38.039607457173766,
+        38.0396082041528
+      ],
+      "joint_ddf": [
+        77.99999856918652,
+        78.0000000060074
+      ],
+      "joint_p": [
+        2.986408869491657e-15,
+        2.9864068786692103e-15
+      ],
+      "kenward_roger_ddf_reference_only": 78.0000000000003
+    },
+    "random_intercept_incomplete": {
+      "max_relative_beta_difference": 8.82818262937235e-11,
+      "max_relative_se_difference": 5.156846616394262e-09,
+      "tau_relative_difference": 7.066822482748591e-08,
+      "sigma_relative_difference": 3.472231158152539e-08,
+      "reml_log_likelihood_difference": 5.400124791776761e-13,
+      "wald_relative_difference": 2.2543067190738952e-08
+    },
+    "satterthwaite_incomplete": {
+      "r_version": "R version 4.6.0 (2026-04-24) lmerTest 3.2.1 lme4 2.0.6 pbkrtest 0.5.5",
+      "max_relative_contrast_df_difference": 2.2568563351477167e-08,
+      "max_relative_contrast_t_difference": 1.2280492067695548e-08,
+      "joint_f": [
+        30.26621391779106,
+        30.2662146570543
+      ],
+      "joint_ddf": [
+        63.76373971871682,
+        63.763741135284
+      ],
+      "joint_p": [
+        2.74663493261354e-12,
+        2.74663312685604e-12
+      ],
+      "kenward_roger_ddf_reference_only": 64.2858486974446
+    }
+  },
+  "two_way_public": {
+    "bodyweight": {
+      "split_plot_max_relative_difference": 6.80566714095221e-14,
+      "mixed_type3_max_relative_difference_F_ddf": 5.739275388272347e-08,
+      "mixed_type3_p": [
+        [
+          2.7634873356952742e-08,
+          2.76348953823107e-08
+        ],
+        [
+          1.0734592314984799e-46,
+          1.0734597157342001e-46
+        ],
+        [
+          2.8825212329158337e-11,
+          2.8825208758764396e-11
+        ]
+      ],
+      "contrast_max_abs_estimate_difference": 4.274625098332763e-11,
+      "contrast_max_relative_df_difference": 5.8637694699825715e-08,
+      "contrast_max_relative_t_difference": 1.551815431710679e-08
+    },
+    "chickweight": {
+      "mixed_type3_max_relative_difference_F_ddf": 9.096762332294617e-07,
+      "mixed_type3_p": [
+        [
+          0.0006150894300818856,
+          0.0006150933366764
+        ],
+        [
+          9.610169858876528e-206,
+          9.610372351152141e-206
+        ],
+        [
+          4.280997789560998e-13,
+          4.28100656833585e-13
+        ]
+      ],
+      "contrast_max_abs_estimate_difference": 2.821828104515589e-08,
+      "contrast_max_relative_df_difference": 1.4294302763673272e-07,
+      "contrast_max_relative_t_difference": 3.827019479096805e-08
+    },
+    "orthodont": {
+      "split_plot_max_relative_difference": 1.3777867735598193e-13,
+      "mixed_type3_max_relative_difference_F_ddf": 2.448934033338901e-08,
+      "mixed_type3_p": [
+        [
+          0.005375055913443864,
+          0.0053750563471395
+        ],
+        [
+          2.3968059364341625e-14,
+          2.39680606819529e-14
+        ],
+        [
+          0.07805826500356094,
+          0.0780582652308247
+        ]
+      ],
+      "contrast_max_abs_estimate_difference": 2.9753977059954195e-14,
+      "contrast_max_relative_df_difference": 2.9347283714287187e-08,
+      "contrast_max_relative_t_difference": 6.341273728338592e-09
+    },
+    "r_version": "R version 4.6.0 (2026-04-24) afex 1.5.1 lmerTest 3.2.1 emmeans 2.0.4"
+  },
+  "two_way_fixture": {
+    "fixture": {
+      "mixed_type3_max_relative_difference_F_ddf": 4.6209411896924735e-07,
+      "mixed_type3_p": [
+        [
+          0.0001291459541665344,
+          0.0001291459590991
+        ],
+        [
+          0.3497516456061452,
+          0.349751886008321
+        ],
+        [
+          1.4884184583112138e-10,
+          1.48841774701671e-10
+        ]
+      ],
+      "contrast_max_abs_estimate_difference": 1.4998988717707107e-09,
+      "contrast_max_relative_df_difference": 1.4462152586602883e-08,
+      "contrast_max_relative_t_difference": 1.4899527167600013e-09
+    },
+    "r_version": "R version 4.6.0 (2026-04-24) afex 1.5.1 lmerTest 3.2.1 emmeans 2.0.4"
+  },
+  "passed": true
+}

@@ -1,0 +1,95 @@
+{
+  "seed": 20261001,
+  "alpha": 0.05,
+  "results": [
+    {
+      "check": "logrank_type_I",
+      "n_per_arm": 6,
+      "simulations": 1000,
+      "permutation_draws": 999,
+      "permutation_rejection": 0.049,
+      "asymptotic_rejection": 0.066,
+      "max_rejection": 0.06378404875209022,
+      "passed": true,
+      "seconds": 130
+    },
+    {
+      "check": "logrank_type_I",
+      "n_per_arm": 8,
+      "simulations": 1000,
+      "permutation_draws": 999,
+      "permutation_rejection": 0.043,
+      "asymptotic_rejection": 0.056,
+      "max_rejection": 0.06378404875209022,
+      "passed": true,
+      "seconds": 159
+    },
+    {
+      "check": "logrank_type_I",
+      "n_per_arm": 10,
+      "simulations": 1000,
+      "permutation_draws": 999,
+      "permutation_rejection": 0.045,
+      "asymptotic_rejection": 0.051,
+      "max_rejection": 0.06378404875209022,
+      "passed": true,
+      "seconds": 184
+    },
+    {
+      "check": "km_coverage_at_true_median",
+      "n": 10,
+      "simulations": 1000,
+      "loglog_coverage": 0.9638916750250752,
+      "log_coverage": 0.9187562688064193,
+      "evaluable": {
+        "log": 997,
+        "log-log": 997
+      },
+      "min_coverage": 0.9361952285370081,
+      "passed": true
+    },
+    {
+      "check": "km_coverage_at_true_median",
+      "n": 20,
+      "simulations": 1000,
+      "loglog_coverage": 0.963,
+      "log_coverage": 0.933,
+      "evaluable": {
+        "log": 1000,
+        "log-log": 1000
+      },
+      "min_coverage": 0.9362159512479098,
+      "passed": true
+    },
+    {
+      "check": "cox_hr_wald_coverage",
+      "n_per_arm": 10,
+      "true_hr": 0.5,
+      "simulations": 1000,
+      "evaluable": 996,
+      "coverage": 0.9688755020080321,
+      "min_coverage": 0.9361883001694637,
+      "passed": "reported_without_bound"
+    },
+    {
+      "check": "cox_hr_wald_coverage",
+      "n_per_arm": 20,
+      "true_hr": 0.5,
+      "simulations": 1000,
+      "evaluable": 1000,
+      "coverage": 0.951,
+      "min_coverage": 0.9362159512479098,
+      "passed": true
+    },
+    {
+      "check": "cox_zph_type_I_under_ph",
+      "n_per_arm": 20,
+      "simulations": 1000,
+      "evaluable": 1000,
+      "rejection": 0.062,
+      "max_rejection": 0.06378404875209022,
+      "passed": true
+    }
+  ],
+  "scope": "Exponential hazards with independent uniform censoring; small-sample animal-study sizes. No informative censoring, delayed separation, crossing hazards or clustered subjects."
+}

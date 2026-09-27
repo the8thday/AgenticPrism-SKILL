@@ -1,11 +1,16 @@
 ---
 name: group-comparison
-description: Compare one outcome between independent experimental units - two groups (Welch or paired t test) or three or more independent groups (classic or Welch one-way ANOVA with a predeclared Dunnett, Tukey, Games-Howell or Holm family). Reports differences, simultaneous intervals, adjusted p values and design checks. Use for unit-level antibody-project measurements such as candidates vs isotype control; not repeated-measures, mixed-effects, covariate or nonparametric designs.
+description: Compare one outcome between independent experimental units - two groups (Welch or paired t test) or three or more independent groups (classic or Welch one-way ANOVA with a predeclared Dunnett, Tukey, Games-Howell or Holm family). Reports differences, simultaneous intervals, adjusted p values and design checks. Use for unit-level antibody-project measurements such as candidates vs isotype control; also supports scoped Mann-Whitney, signed-rank, Kruskal-Wallis/Dunn and complete-block Friedman designs; not general mixed-effects or covariate models.
 ---
 
 # Group comparison
 
 Read the [input and design contract](references/input-and-model.md). Establish the true independent unit (animal, donor, independent experiment, etc.), outcome and units before choosing a design. Technical wells or cells are not independent units. Preserve any upstream aggregation and exclusion decisions in the source record; the runtime requires one value per unit per condition.
+
+For rank-based inference, read the [nonparametric contract](references/nonparametric.md):
+MW/signed-rank with HL, KW with Dunn, or complete-block Friedman. Establish the
+shift/symmetry assumptions and pairing before running. Results include verified
+interpretation facts.
 
 ## Choose the design before looking at results
 
@@ -15,7 +20,7 @@ Read the [input and design contract](references/input-and-model.md). Establish t
   - all pairwise differences → `one_way_anova` + `tukey_all_pairs` (Tukey-Kramer), or `welch_anova` + `games_howell_all_pairs`;
   - omnibus only → `post_hoc: none`.
   Do not pick the family, the control or the design after seeing which gives smaller p values. Never run several unadjusted t tests as a substitute for a family.
-- The same unit measured under three or more conditions (repeated measures), covariates, nested/clustered units, or rank-based tests are **not implemented**: explain the gap and request a suitable method; do not force such data into these designs.
+- The same unit measured under three or more conditions routes to [repeated-measures](../repeated-measures/SKILL.md), which supports one-factor RM ANOVA and scoped random-intercept mixed models. Covariates and nested/crossed effects remain outside these modules; do not force such data into independent-group designs.
 
 ## Run and inspect
 
@@ -27,4 +32,4 @@ Create the canonical CSV and JSON config ([two-group example](../../fixtures/gro
 - Multi-group: omnibus F, its degrees of freedom and p value; then each contrast in the declared family as **later group minus earlier group** (group minus control for vs-control families) with its simultaneous interval and family-adjusted p value. Contrasts are reported regardless of the omnibus result, because the family was predeclared. Name the family and adjustment method.
 - Surface diagnostics: `unequal_group_sd_consider_welch_design` (classic ANOVA with SD ratio above `sd_ratio_warning`, default 3) and `small_group_welch_procedures_may_be_liberal` (Welch design with a group of fewer than 6 units, where simulation showed error slightly above nominal). Do not switch design after the fact to remove a diagnostic; state it.
 
-At least three units per group (or three complete pairs) are required; zero-variance designs are withheld. None of these tests establish normality, biological importance or equivalence. Error-rate evidence is in [validation](../../validation/README.md) and [the 0.7.0 record](../../validation/RELEASE_0.7.0.md).
+At least three units per group (or three complete pairs) are required; zero-variance t/ANOVA designs are withheld; rank-test handling is described in the separate contract. None of these tests establish normality, biological importance or equivalence. Error-rate evidence is in [validation](../../validation/README.md) and [the 0.7.0 record](../../validation/RELEASE_0.7.0.md).
