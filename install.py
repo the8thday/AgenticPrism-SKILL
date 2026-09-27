@@ -34,10 +34,43 @@ def say(message):
     print(f"[agentic-prism] {message}", flush=True)
 
 
+ENV = dict(os.environ)
+
+
 def run(args, dry):
     say("$ " + " ".join(str(a) for a in args))
     if not dry:
-        subprocess.run([str(a) for a in args], check=True, cwd=ROOT)
+        subprocess.run([str(a) for a in args], check=True, cwd=ROOT, env=ENV)
+
+
+def writable(path):
+    """True if files can be created in path (sandboxed agents often block home caches)."""
+    try:
+        path.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(dir=path):
+            return True
+    except OSError:
+        return False
+
+
+def local_caches(tool, env):
+    """Point caches that cannot be written to folders inside the clone; return the env used."""
+    env = dict(env)
+    probes = {"uv": (("UV_CACHE_DIR", ["cache", "dir"], ".cache/uv"), ("UV_PYTHON_INSTALL_DIR", ["python", "dir"], ".python")),
+              "pip": (("PIP_CACHE_DIR", ["-m", "pip", "cache", "dir"], ".cache/pip"),)}[tool]
+    for variable, args, local in probes:
+        if variable in env:
+            continue
+        found = subprocess.run([str(tool_command(tool)), *args], capture_output=True, text=True, env=env)
+        default = Path(found.stdout.strip()) if found.returncode == 0 and found.stdout.strip() else None
+        if default is None or not writable(default):
+            env[variable] = str(ROOT / local)
+            say(f"{variable}: default location not writable here; using {env[variable]}")
+    return env
+
+
+def tool_command(tool):
+    return shutil.which("uv") if tool == "uv" else PY
 
 
 def version():
@@ -54,7 +87,10 @@ def create_environment(args):
         say(f"removing existing {VENV}")
         if not args.dry_run:
             shutil.rmtree(VENV)
+    global ENV
     if uv:
+        if not args.dry_run:
+            ENV = local_caches("uv", ENV)
         if not VENV.exists():
             run([uv, "venv", VENV, "--python", args.python or VALIDATED_PYTHON], args.dry_run)
         run([uv, "pip", "install", "--python", PY, "-c", lock, "-e", ROOT], args.dry_run)
@@ -70,6 +106,8 @@ def create_environment(args):
         say(f"note: releases are validated on Python {VALIDATED_PYTHON}; using {sys.version.split()[0]}")
     if not VENV.exists():
         run([sys.executable, "-m", "venv", VENV], args.dry_run)
+    if not args.dry_run:
+        ENV = local_caches("pip", ENV)
     run([PY, "-m", "pip", "install", "--upgrade", "pip"], args.dry_run)
     run([PY, "-m", "pip", "install", "-c", lock, "-e", ROOT], args.dry_run)
     if args.dev:
@@ -87,7 +125,9 @@ def self_check(dry):
         raise SystemExit("doctor reported a problem; see above")
     with tempfile.TemporaryDirectory(prefix="agentic-prism-selfcheck-") as tmp:
         out = Path(tmp) / "run"
-        env = {**os.environ, "MPLBACKEND": "Agg"}
+        env = {**ENV, "MPLBACKEND": "Agg"}
+        if not writable(Path.home() / ".matplotlib") and "MPLCONFIGDIR" not in env:
+            env["MPLCONFIGDIR"] = str(ROOT / ".cache/matplotlib")
         subprocess.run([str(EXE), "analyze", "--config", str(ROOT / "fixtures/groups_synthetic/paired_config.json"),
                         "--output", str(out)], check=True, capture_output=True, env=env)
         subprocess.run([str(EXE), "verify", "--run", str(out)], check=True, capture_output=True)

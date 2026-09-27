@@ -10,9 +10,11 @@ Six Agent Skills (`skills/`) plus one versioned Python runtime (`src/`,
 `install.py`). They are **one unit**: every Skill finds its runtime at
 `<root>/.venv`, where `<root>` is the cloned repository. Therefore:
 
-- Do **not** install individual Skill folders with a skill registry or hub
-  command (for example `hermes skills install <url>`), and do not copy Skill
-  folders elsewhere. A Skill separated from `<root>` cannot find its runtime.
+- Do **not** install individual Skill folders with a skill registry, hub or
+  built-in installer (for example Codex's `skill-installer` /
+  `install-skill-from-github.py`, or `hermes skills install <url>`), and do not
+  copy Skill folders elsewhere. A Skill separated from `<root>` cannot find its
+  runtime. Clone the whole repository instead (step 2).
 - Do **not** `pip install` into the user's global or project Python. The
   runtime lives only in `<root>/.venv`.
 
@@ -47,7 +49,9 @@ python3 install.py        # Windows: py install.py
   tell the user and stop; do not try other package managers.
 - It needs network access. In a sandboxed agent (for example Codex's default
   sandbox), request permission for network access and for writing to `<root>`.
-  Do not bypass the sandbox on your own.
+  Do not bypass the sandbox on your own. If the usual package caches in the home
+  folder cannot be written, `install.py` automatically uses `<root>/.cache` and
+  `<root>/.python` instead; you do not need to set cache variables yourself.
 - Success ends with `self-check passed: analyze, render and verify work`. On
   failure, show the user the error text verbatim.
 
