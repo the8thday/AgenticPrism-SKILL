@@ -1,0 +1,33 @@
+{
+  "seed": 20261017,
+  "datasets": 100000,
+  "script_sha256": "62730148a89601959f707dd2a69edfea8c9e61bf0fcd500f9c16993a745c1a2d",
+  "rows": [
+    {
+      "n": 10,
+      "interval": "pp_chisq",
+      "coverage": 0.94911,
+      "mcse": 0.0006949835098763134
+    },
+    {
+      "n": 10,
+      "interval": "ppk_normal_approx",
+      "coverage": 0.95414,
+      "mcse": 0.0006614896854826991
+    },
+    {
+      "n": 25,
+      "interval": "pp_chisq",
+      "coverage": 0.95028,
+      "mcse": 0.0006873712359416852
+    },
+    {
+      "n": 25,
+      "interval": "ppk_normal_approx",
+      "coverage": 0.95142,
+      "mcse": 0.0006798528046570078
+    }
+  ],
+  "matches_production_formula": true,
+  "note": "Supplementary check after the registered 0.10.1 calibration (seed 20261017, 100,000 datasets).\n\nNot a replacement for the prespecified rows: it measures the n = 10 Pp and Ppk interval\ncoverage with a small Monte Carlo error, to tell a Monte Carlo miss from a method limitation.\nUses the production capability() function (vectorized copy of its formulas is not used).\n"
+}

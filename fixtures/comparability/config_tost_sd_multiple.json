@@ -1,0 +1,23 @@
+{
+  "analysis_type": "comparability",
+  "input": "tost_sd_multiple.csv",
+  "source": "Synthetic fixture; not team data",
+  "attribute": {
+    "name": "Main peak purity (SEC)",
+    "unit": "% area",
+    "tier": 1,
+    "tier_source": "Synthetic risk assessment RA-01 (fixture)",
+    "rationale": "Synthetic fixture: attribute declared tier 1 by a risk assessment outside this tool."
+  },
+  "design": {
+    "lot_is_unit": true,
+    "independent_lots": true,
+    "lot_selection": "Synthetic: all available lots, chosen before analysis"
+  },
+  "method": "equivalence_tost",
+  "equivalence": {
+    "margin_type": "reference_sd_multiple",
+    "margin": 1.5,
+    "margin_source": "Synthetic protocol CP-01: 1.5 x reference SD (fixture)"
+  }
+}

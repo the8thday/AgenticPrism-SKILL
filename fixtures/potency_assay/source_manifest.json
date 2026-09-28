@@ -1,0 +1,18 @@
+{
+  "kind": "synthetic",
+  "seed": 20261011,
+  "data_sha256": {
+    "combine.csv": "953e549186fe0e489a6c4852eceed2344e997fd8468132ef39e27be5b179aa06",
+    "failed.csv": "4f01aa1d72eb0722650eb801b038437c28bc690eff2af7e7166c760df61228a9",
+    "outlier.csv": "34ff86f40d64a23089303f33d1ab7ddb06499ca28380abaf56879c031550af0c",
+    "unbalanced.csv": "522bd37b636ef832e0d55626150d2ef600fd8071c3a6058731a3fdeba47c9f5c",
+    "validate.csv": "cd9671a48d4933c3335ceb65b012dc3005ccfb9765836ba218220b6782060e94"
+  },
+  "published_worked_example_gate": "not_met",
+  "reason": "No retrievable published replicated within-run RP combination example matching this model was obtained. Single-RP-per-run examples cannot identify separate run and residual components.",
+  "searched_sources": [
+    "https://doi.org/10.1017/S0022172400020490",
+    "https://www.quantics.co.uk/blog/combine-relative-potencies-bioassay/"
+  ],
+  "scope": "Synthetic data are not presented as a published worked example."
+}

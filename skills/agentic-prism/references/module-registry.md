@@ -1,4 +1,4 @@
-# Module registry — development 0.9.3
+# Module registry — development 0.10.1
 
 | Purpose | Skill | Capability state |
 |---|---|---|
@@ -95,3 +95,15 @@ one-sided component upper bounds. See [0.9.2 evidence](../../../validation/RELEA
 for approximation boundaries, the nested-crossed lot upper-bound miss and the
 conservative six-pair nonparametric titer result. No full method validation,
 sensitivity/drug tolerance or dynamic deployment. New methods run in Python.
+
+## CMC (0.10.0–0.10.1)
+
+| Purpose | Skill | Capability state |
+|---|---|---|
+| Quantitative long-term stability and shelf life | [stability](../../stability/SKILL.md) | Implemented, scoped linear fixed-batch Q1E regression, ordered ANCOVA alpha .25, one/two-sided 95% mean bounds; sourced specification/direction/storage; restricted declared extrapolation. Four selection-related calibration misses. Published regression/ANCOVA reproduced, printed shelf-life gate not met |
+| Replicated RP combination and nominal-level validation | [potency-assay](../../potency-assay/SKILL.md) | Implemented, Python random-run REML and MLS/MOVER; sourced criteria, per-run suitability, retained outlier flags, bias/precision/linearity/tested range. Requires at least two independent determinations per run per level. Published-example gate not met |
+| Comparability / biosimilarity | [comparability](../../comparability/SKILL.md) | 0.10.1: one attribute, lot as unit; Welch or pooled TOST against an absolute or reference-SD-multiple margin, quality range with declared k and optional required fraction, or descriptive; tier recorded, never inferred. Not a totality-of-evidence judgement |
+| Tolerance intervals, Cp/Cpk/Pp/Ppk | [specifications](../../specifications/SKILL.md) | 0.10.1: normal exact (Odeh) or Howe two-sided and exact one-sided tolerance intervals; order-statistic intervals with minimum n; Pp/Ppk overall and Cp/Cpk within subgroups with chi-square / normal-approximation intervals. n = 10 capability rows missed by Monte Carlo error (disclosed) |
+| Oldest six modules' interpretation facts; Arrhenius | None | Not started |
+
+Evidence and limitations: [0.10.0 release](../../../validation/RELEASE_0.10.0.md), [0.10.1 release](../../../validation/RELEASE_0.10.1.md).

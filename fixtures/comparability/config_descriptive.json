@@ -1,0 +1,18 @@
+{
+  "analysis_type": "comparability",
+  "input": "descriptive.csv",
+  "source": "Synthetic fixture; not team data",
+  "attribute": {
+    "name": "Main peak purity (SEC)",
+    "unit": "% area",
+    "tier": 3,
+    "tier_source": "Synthetic risk assessment RA-01 (fixture)",
+    "rationale": "Synthetic fixture: attribute declared tier 1 by a risk assessment outside this tool."
+  },
+  "design": {
+    "lot_is_unit": true,
+    "independent_lots": true,
+    "lot_selection": "Synthetic: all available lots, chosen before analysis"
+  },
+  "method": "descriptive"
+}

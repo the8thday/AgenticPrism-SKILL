@@ -36,7 +36,7 @@ def main():
                 print(json.dumps({"output": str(out), "status": result["status"],
                                   "interpretation": "Precision estimates do not establish SOP acceptance"}))
                 return 0
-            if result.get("analysis_type") in ("method_validation", "ada_sensitivity", "ada_drug_tolerance"):
+            if result.get("analysis_type") in ("method_validation", "ada_sensitivity", "ada_drug_tolerance", "stability", "potency_assay", "comparability", "specification"):
                 facts = json.loads((out / "interpretation_facts.json").read_text())
                 print(json.dumps({"output": str(out), "analysis_type": result["analysis_type"], "primary": facts["primary"],
                                   "must_mention": facts["must_mention"],
@@ -60,7 +60,10 @@ def main():
             return 3 if failed else 0
         if args.command == "render":
             cfg = json.loads((Path(args.run)/"config.resolved.json").read_text())
-            if cfg["analysis_type"] == "variance_components":
+            if cfg["analysis_type"] in ("stability", "potency_assay", "comparability", "specification"):
+                from .cmc_workflow import render_cmc
+                print(render_cmc(Path(args.run), args.style))
+            elif cfg["analysis_type"] == "variance_components":
                 from .precision_workflow import render_precision
                 print(render_precision(Path(args.run), args.style))
             elif cfg["analysis_type"] == "ada_cut_point":

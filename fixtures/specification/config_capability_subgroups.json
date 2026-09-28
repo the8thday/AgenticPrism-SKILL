@@ -1,0 +1,20 @@
+{
+  "analysis_type": "specification",
+  "input": "capability_subgroups.csv",
+  "source": "Synthetic fixture; not team data",
+  "attribute": {
+    "name": "Protein concentration",
+    "unit": "mg/mL",
+    "rationale": "Synthetic fixture: one release value per lot."
+  },
+  "design": {
+    "independent_units": true,
+    "unit_description": "25 lots with three independent preparations each; the lot is the subgroup for within-lot Cp/Cpk (Pp/Ppk use all 75 values)"
+  },
+  "capability": {
+    "lsl": 47.5,
+    "usl": 52.5,
+    "limits_source": "Synthetic specification SP-01 (fixture)",
+    "subgroup_column": "lot"
+  }
+}

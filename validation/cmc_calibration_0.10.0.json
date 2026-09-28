@@ -1,0 +1,365 @@
+{
+  "seed": 20261012,
+  "datasets_per_row": 1000,
+  "script_sha256": "ca2e0fc6a86773322019ad50bb13a3dc285b259a890aae2cc698142cd92e2414",
+  "prespecification_commit": "6d3db159e64bbb2f668d412260ab3f6f6d2cfe7b",
+  "criteria_fixed_before_running": true,
+  "scope": "Gaussian fixed-batch stability and replicated homoscedastic log-RP random-run models. No future-batch tolerance claim.",
+  "rows": [
+    {
+      "module": "stability",
+      "scenario": "pooled",
+      "metric": "mean_lower_bound_coverage_at_month12",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.922,
+      "mcse": 0.008480330182251158,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": false,
+      "details": {
+        "selected_models": {
+          "separate_batches": 249,
+          "common_slope": 180,
+          "pooled": 571
+        }
+      }
+    },
+    {
+      "module": "stability",
+      "scenario": "pooled",
+      "metric": "shelf_life_not_exceeding_true",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.964,
+      "mcse": 0.005891010100144119,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": {
+        "true_shelf_life": 18.18181818181818
+      }
+    },
+    {
+      "module": "stability",
+      "scenario": "pooled",
+      "metric": "slope_poolability_size",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.249,
+      "mcse": 0.013674757767507255,
+      "criterion": "size",
+      "bound": [
+        0.2226138721247417,
+        0.2773861278752583
+      ],
+      "passed": true,
+      "details": null
+    },
+    {
+      "module": "stability",
+      "scenario": "pooled",
+      "metric": "intercept_poolability_size_unconditional",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.237,
+      "mcse": 0.013447341744746431,
+      "criterion": "size",
+      "bound": [
+        0.2226138721247417,
+        0.2773861278752583
+      ],
+      "passed": true,
+      "details": null
+    },
+    {
+      "module": "stability",
+      "scenario": "unpoolable",
+      "metric": "mean_lower_bound_coverage_at_month12",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.945,
+      "mcse": 0.007209368904418752,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": {
+        "selected_models": {
+          "separate_batches": 1000
+        }
+      }
+    },
+    {
+      "module": "stability",
+      "scenario": "unpoolable",
+      "metric": "shelf_life_not_exceeding_true",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.944,
+      "mcse": 0.007270763371201131,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": {
+        "true_shelf_life": 11.764705882352942
+      }
+    },
+    {
+      "module": "stability",
+      "scenario": "common_slope",
+      "metric": "mean_lower_bound_coverage_at_month12",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.938,
+      "mcse": 0.00762600813007697,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": {
+        "selected_models": {
+          "separate_batches": 251,
+          "common_slope": 749
+        }
+      }
+    },
+    {
+      "module": "stability",
+      "scenario": "common_slope",
+      "metric": "shelf_life_not_exceeding_true",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.935,
+      "mcse": 0.0077958322198467015,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": false,
+      "details": {
+        "true_shelf_life": 14.545454545454545
+      }
+    },
+    {
+      "module": "stability",
+      "scenario": "near_poolability",
+      "metric": "mean_lower_bound_coverage_at_month12",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.921,
+      "mcse": 0.008529888627643386,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": false,
+      "details": {
+        "selected_models": {
+          "separate_batches": 918,
+          "common_slope": 80,
+          "pooled": 2
+        }
+      }
+    },
+    {
+      "module": "stability",
+      "scenario": "near_poolability",
+      "metric": "shelf_life_not_exceeding_true",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.907,
+      "mcse": 0.009184280047995052,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": false,
+      "details": {
+        "true_shelf_life": 15.384615384615383
+      }
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "balanced_ratio_0",
+      "metric": "combined_log_RP_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.984,
+      "mcse": 0.00396787096564392,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": {
+        "boundary_fits": 556
+      }
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "balanced_ratio_0",
+      "metric": "intermediate_precision_MLS_MOVER_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.952,
+      "mcse": 0.006759881655768837,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": null
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "balanced_ratio_05",
+      "metric": "combined_log_RP_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.963,
+      "mcse": 0.005969170796685251,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": {
+        "boundary_fits": 167
+      }
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "balanced_ratio_05",
+      "metric": "intermediate_precision_MLS_MOVER_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.957,
+      "mcse": 0.006414904519944161,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": null
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "balanced_ratio_2",
+      "metric": "combined_log_RP_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.954,
+      "mcse": 0.006624499981130654,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": {
+        "boundary_fits": 26
+      }
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "balanced_ratio_2",
+      "metric": "intermediate_precision_MLS_MOVER_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.955,
+      "mcse": 0.00655553201502365,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": null
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "unbalanced",
+      "metric": "combined_log_RP_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.956,
+      "mcse": 0.006485676526007139,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": {
+        "boundary_fits": 174
+      }
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "unbalanced",
+      "metric": "intermediate_precision_MLS_MOVER_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.95,
+      "mcse": 0.006892024376045114,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": null
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "small_three_runs",
+      "metric": "combined_log_RP_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.994,
+      "mcse": 0.002442130217658347,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": {
+        "boundary_fits": 304
+      }
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "small_three_runs",
+      "metric": "intermediate_precision_MLS_MOVER_coverage",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.958,
+      "mcse": 0.006343185319695463,
+      "criterion": "coverage",
+      "bound": 0.9362159512479097,
+      "passed": true,
+      "details": null
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "intercept_upper_margin",
+      "metric": "TOST_type_I_at_margin",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.057,
+      "mcse": 0.007331507348424334,
+      "criterion": "type1",
+      "bound": 0.06378404875209022,
+      "passed": true,
+      "details": null
+    },
+    {
+      "module": "potency_assay",
+      "scenario": "slope_upper_margin",
+      "metric": "TOST_type_I_at_margin",
+      "datasets": 1000,
+      "evaluable": 1000,
+      "errors": 0,
+      "estimate": 0.02,
+      "mcse": 0.004427188724235731,
+      "criterion": "type1",
+      "bound": 0.06378404875209022,
+      "passed": true,
+      "details": null
+    }
+  ],
+  "passes": 18,
+  "misses": 4
+}

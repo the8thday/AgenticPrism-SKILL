@@ -1,0 +1,20 @@
+{
+  "analysis_type": "specification",
+  "input": "nonparametric_small.csv",
+  "source": "Synthetic fixture; not team data",
+  "attribute": {
+    "name": "Protein concentration",
+    "unit": "mg/mL",
+    "rationale": "Synthetic fixture: one release value per lot."
+  },
+  "design": {
+    "independent_units": true,
+    "unit_description": "one release result per manufactured lot"
+  },
+  "tolerance": {
+    "method": "nonparametric",
+    "sides": "two_sided",
+    "content": 0.95,
+    "confidence": 0.95
+  }
+}

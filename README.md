@@ -4,13 +4,18 @@
 
 Agent Skills for the statistical analyses of antibody and biologics research
 and development, from binding characterization to in vivo efficacy,
-bioanalytical validation and immunogenicity. An AI agent reads a Skill, checks
+bioanalytical validation, immunogenicity and CMC quality (stability,
+potency, comparability, specifications). An AI agent reads a Skill, checks
 that the analysis fits the experiment, writes an explicit JSON config and runs
 one versioned Python package. Every run saves its inputs, configuration,
-hashes, results, diagnostics, an `interpretation_facts.json` for the agent's
-narrative (in most modules) and an offline HTML report.
+hashes, results, diagnostics and an offline HTML report. Every module added
+since 0.8 also writes `interpretation_facts.json`: the saved results the agent
+must base its narrative on (primary estimates, what is reportable or withheld
+and why, required disclosures, limitations). The six oldest modules
+(equilibrium, kinetics, dose response, ELISA, two-group and multi-group
+comparisons) do not have it yet; agents read their result files directly.
 
-Local development version **0.9.3**.
+Local development version **0.10.1**.
 
 > **AI agents:** to install this collection for a user, follow
 > [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md).
@@ -29,6 +34,10 @@ Local development version **0.9.3**.
 | Bioanalysis and immunogenicity | Method validation (ICH M10-style, ligand-binding assays) | [method-validation](skills/method-validation/SKILL.md) | Accuracy/precision with total error, dilution linearity and hook effect, parallelism with trend check, selectivity, specificity, stability; accuracy profile |
 | | ADA cut points, sensitivity, drug tolerance | [ada-cut-point](skills/ada-cut-point/SKILL.md) | Screening/confirmatory/titer cut points, fixed or floating, confidence lower bounds; positive-control sensitivity with a run-to-run prediction limit; drug tolerance |
 | | Repeatability and intermediate precision | [variance-components](skills/variance-components/SKILL.md) | REML for nested/crossed factors, unbalanced data, MLS/MOVER intervals |
+| CMC and quality | Long-term stability and shelf life | [stability](skills/stability/SKILL.md) | Q1E linear regression, slope-first poolability, mean confidence bounds and declaration-gated extrapolation |
+| | Relative potency across runs and validation | [potency-assay](skills/potency-assay/SKILL.md) | Log-RP random-run REML, MLS/MOVER intermediate precision, bias, linearity equivalence and tested range; failing runs retained |
+| | Lot comparability and biosimilarity (one attribute) | [comparability](skills/comparability/SKILL.md) | TOST equivalence of lot means against a declared margin, quality range with declared k, or descriptive; tier recorded, never inferred |
+| | Tolerance intervals and process capability | [specifications](skills/specifications/SKILL.md) | Exact normal and nonparametric tolerance intervals (minimum n when too few lots); Pp/Ppk and within-subgroup Cp/Cpk with intervals |
 | Any stage | Comparing groups | [group-comparison](skills/group-comparison/SKILL.md) | Welch or paired t, one-way ANOVA with Dunnett/Tukey/Games-Howell/Holm families, Mann–Whitney and signed-rank with Hodges–Lehmann, Kruskal–Wallis with Dunn, Friedman |
 
 The [router Skill](skills/agentic-prism/SKILL.md) picks the specialist from the
@@ -55,6 +64,9 @@ Details, scope and every number: [validation/README.md](validation/README.md).
 | ADA cut points | R base/car/lme4; rADA vignette | 2.1e-12 relative | Lower bounds pass; point titer cut point misses |
 | Precision components | R VCA and lme4; CLSI EP05 example | 9.3e-7 absolute | MLS total passes; one component upper bound misses (92.8%) |
 | Method validation, ADA sensitivity | R VCA `anovaVCA`, `lm`, `binom.test`, `t.test`, `approx` | 3.4e-12 relative | 17/18 pass; sensitivity limit with 3-fold dilutions misses |
+| CMC stability | R `lm`/`anova`/`emmeans`; Koleva regression example | 3.49e-13 relative | 6/10 rows pass; four coverage misses disclosed; printed shelf life not reproduced |
+| Potency across runs | R lme4; independent MLS/MOVER calculation | 6.90e-7 relative | 12/12 rows pass; matching published worked example unavailable |
+| Comparability, specifications | R `tolerance` (EXACT factors), `t.test`; NIST/SEMATECH printed tolerance and capability values | 3.3e-9 relative | 13/15 pass; the two n = 10 capability rows miss by Monte Carlo error (100,000-dataset check: 94.9%, 95.4%) |
 
 Live-agent misuse scenarios (for example asking for a verdict without
 acceptance criteria, omitting a hook effect, or quoting positive-control
@@ -95,7 +107,7 @@ This creates symlinks and never overwrites existing entries. Do not copy Skill
 folders: a copied Skill cannot find its runtime. Each Skill locates the runtime
 from its real location and checks it with `agentic-prism doctor --collection
 <clone>` ([runtime instructions](skills/agentic-prism/references/runtime.md)).
-The twelve Skills and the package are one version and must stay together.
+The sixteen Skills and the package are one version and must stay together.
 
 Platform evidence: install and results were checked on macOS (uv with Python
 3.13, and pip with Python 3.14; identical results). Linux and Windows are
@@ -123,6 +135,9 @@ reports them. Without R, only that method refuses; everything else runs.
 .venv/bin/agentic-prism import-plate --manifest fixtures/plate_import_example/plate_manifest.json --output runs/my-plate-import
 .venv/bin/agentic-prism analyze --config fixtures/method_validation/config_accuracy_precision.json --output runs/my-ap-run
 .venv/bin/agentic-prism analyze --config fixtures/ada_performance/config_sensitivity.json --output runs/my-ada-sensitivity
+.venv/bin/agentic-prism analyze --config fixtures/stability/config_pooled.json --output runs/my-shelf-life
+.venv/bin/agentic-prism analyze --config fixtures/comparability/config_tost_absolute.json --output runs/my-comparability
+.venv/bin/agentic-prism analyze --config fixtures/specification/config_normal_exact.json --output runs/my-tolerance-interval
 ```
 
 Each analysis needs a new output directory; earlier results are never
@@ -141,7 +156,10 @@ according to the input contract:
 - Group statistics: `fixtures/groups_synthetic/*_config.json`, `fixtures/multigroup_synthetic/*.json`, [input contract](skills/group-comparison/references/input-and-model.md)
 - Plate-reader grids: `fixtures/plate_import_example/plate_manifest.json`, [grid format](skills/elisa-quantification/references/input-and-model.md#plate-reader-grids-070)
 - Method validation: `fixtures/method_validation/config_*.json`, [input contract](skills/method-validation/references/contract.md)
+- Repeated measures, time to event, tumor growth: `fixtures/repeated_synthetic/`, `fixtures/survival_synthetic/`, `fixtures/tumor_growth_synthetic/`, input contracts for [repeated measures](skills/repeated-measures/references/input-and-model.md), [time to event](skills/time-to-event/references/input-and-model.md) and [tumor growth](skills/tumor-growth/references/input-and-model.md)
 - ADA cut points, sensitivity, drug tolerance: `fixtures/ada_synthetic/`, `fixtures/ada_performance/`, [input contract](skills/ada-cut-point/references/contract.md)
+- Precision components: `fixtures/variance_reml/`, [input contract](skills/variance-components/references/contract.md)
+- CMC: `fixtures/stability/`, `fixtures/potency_assay/`, `fixtures/comparability/`, `fixtures/specification/`, input contracts for [stability](skills/stability/references/input-contract.md), [potency](skills/potency-assay/references/input-contract.md), [comparability](skills/comparability/references/input-contract.md) and [specifications](skills/specifications/references/input-contract.md)
 
 Do not copy the `true` applicability flags from simulated data as if they had
 been verified for a real experiment.
@@ -229,3 +247,10 @@ upper or lower bounds that imply statistical guarantees.
   ADA cut points need complete balanced negative panels from one reagent lot;
   dynamic cut points are not implemented. Positive-control sensitivity is not
   the sensitivity for patients' antibodies.
+- **CMC:** stability uses ICH Q1E linear regression with the α = 0.25
+  poolability pre-tests, whose model selection lowers coverage in some designs
+  (disclosed); extrapolation needs declared supporting data. Potency
+  combination needs replicated determinations per run. Comparability covers one
+  attribute at a time and never gives an overall biosimilarity verdict;
+  tolerance intervals describe data and do not set specifications. Tier,
+  margins, k and specification limits are always user declarations.

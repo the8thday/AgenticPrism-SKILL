@@ -1,4 +1,27 @@
-# Validation — AgenticPrism development 0.9.3
+# Validation — AgenticPrism development 0.10.1
+
+## 0.10.1 — comparability, tolerance intervals and process capability
+
+[Release evidence](RELEASE_0.10.1.md): new comparability (TOST, quality range) and specifications
+(exact/Howe/one-sided normal and order-statistic tolerance intervals, Pp/Ppk, Cp/Cpk) Skills. 115 fields
+agree with R `tolerance` and `t.test` (max relative 3.3e-9); six NIST/SEMATECH printed values reproduced.
+Calibration (script committed before running): 13 of 15 rows pass; the n = 10 Pp and Ppk rows miss (93.6%
+vs 93.62%), which a post-hoc 100,000-dataset check attributes to Monte Carlo error (94.9%, 95.4%). Five
+live-agent scenarios pass.
+
+
+## 0.10.0 — CMC stability and replicated potency across runs
+
+[Release evidence](RELEASE_0.10.0.md): new stability and potency-assay Skills,
+Python Q1E regression/ANCOVA and log-RP random-run REML/MLS/MOVER. All 318
+benchmark fields pass (308 R and 10 printed regression/ANCOVA/SE fields).
+Calibration: 18/22 rows pass, four stability coverage misses disclosed in Skills
+and saved facts. Printed stability shelf life and a matching published potency
+example are unmet gates. Five live-agent scenarios are pending reviewer run
+because Claude CLI authentication was unavailable. Legacy: 76 configurations,
+680 byte-identical artifacts against dev/0.9.3. Comparability, specifications,
+Arrhenius and oldest-module facts are not started. See
+[release checks](release_checks_0.10.0.json) for tests and clean installation.
 
 ## 0.9.3 — method validation, ADA sensitivity/drug tolerance, two-way bootstrap bound
 

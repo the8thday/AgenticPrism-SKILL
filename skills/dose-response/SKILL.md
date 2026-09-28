@@ -22,3 +22,12 @@ Use this specialist for a measured response across a concentration series when a
 Current scope: per-curve symmetric 4PL; unweighted or relative weighting; optional fixed plateaus; per-sample summaries on log C50 across declared independent experiments; pairwise parallel-line relative potency with F-test or equivalence parallelism and optional RP acceptance limits. No 5PL for EC50/IC50 (5PL is only in ELISA calibration), biphasic model, weighting by supplied SDs, automatic plate normalization, mixed-model cross-plate potency, or Prism numerical equivalence is validated. See [validation](../../validation/README.md).
 
 The [AgenticPrism router](../agentic-prism/SKILL.md) selects this specialist by experimental purpose. Use it directly when the task is clearly EC50/IC50 dose response or relative potency.
+
+## Across-run potency (0.10.0)
+
+For a random-run combination of independently fitted RP determinations or
+validation across nominal RP levels, use [potency-assay](../potency-assay/SKILL.md).
+It imports verified dose-response comparisons using equivalence parallelism,
+retains per-run suitability, and withholds combination when a supplied run fails.
+At least two independent determinations per run are needed to separate run and
+residual variance; shared reference fits cannot count as independent.

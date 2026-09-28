@@ -1,0 +1,25 @@
+{
+  "analysis_type": "stability",
+  "input": "upper.csv",
+  "source": "Synthetic fixture, seed 20261010; no biological claims.",
+  "assay": {
+    "attribute": "Assay",
+    "unit": "percent label claim",
+    "direction": "increasing",
+    "direction_source": "Synthetic protocol S010",
+    "storage_condition": "25 C / 60% RH",
+    "storage_source": "Synthetic protocol S010",
+    "storage_class": "room",
+    "linear_model_appropriate": true,
+    "independent_errors": true,
+    "common_variance": true,
+    "rationale": "Designed independent homoscedastic linear Gaussian fixture."
+  },
+  "specification": {
+    "upper": 2.5,
+    "source": "Synthetic S010"
+  },
+  "extrapolation": {
+    "requested": false
+  }
+}

@@ -4,6 +4,32 @@ Release notes for AgenticPrism, newest first. What was actually checked for each
 [validation/README.md](validation/README.md) and the linked release records. Entries up to 0.9.2 were
 moved here unchanged from the README when it was restructured in 0.9.3.
 
+## 0.10.1 — comparability, tolerance intervals and process capability
+
+- New [comparability](skills/comparability/SKILL.md) Skill: one quality attribute, lot as the unit; TOST
+  equivalence of lot means against an absolute or reference-SD-multiple margin, quality range with a
+  declared k, or descriptive. Tier, method, margin and k are user declarations with a source.
+- New [specifications](skills/specifications/SKILL.md) Skill: exact (Odeh) and Howe two-sided and exact
+  one-sided normal tolerance intervals, order-statistic intervals with the minimum n when too few lots,
+  Pp/Ppk and within-subgroup Cp/Cpk with confidence intervals.
+- Evidence: 115 fields agree with R `tolerance` and `t.test` (max relative 3.3e-9); six NIST/SEMATECH
+  printed values reproduced; 13 of 15 calibration rows pass, the two n = 10 capability rows miss by
+  Monte Carlo error. See [validation/RELEASE_0.10.1.md](validation/RELEASE_0.10.1.md).
+
+## 0.10.0 — scoped CMC stability and potency across runs
+
+- New `stability` Skill: Q1E ordered batch poolability, linear mean bounds,
+  minimum supported shelf life and sourced, restricted extrapolation.
+- New `potency-assay` Skill: replicated log-RP random-run REML, MLS/MOVER
+  intermediate precision, relative bias, linearity equivalence and tested range.
+  Existing dose-response/equivalence outputs are reused; failing runs retained.
+- 318 benchmark fields pass (308 R, 10 printed-example fields); maximum R
+  relative difference 6.90e-7. Calibration: 18/22 pass, four stability coverage
+  misses disclosed in Skills and interpretation facts. No matching published
+  potency example; printed stability shelf life not reproduced.
+- Comparability, tolerance/capability, Arrhenius and oldest-module facts are
+  not started. See [release evidence](validation/RELEASE_0.10.0.md).
+
 ## 0.9.3 — method validation, ADA sensitivity and drug tolerance
 
 - New [method-validation](skills/method-validation/SKILL.md) Skill for ICH M10-style ligand-binding

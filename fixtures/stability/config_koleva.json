@@ -1,0 +1,25 @@
+{
+  "analysis_type": "stability",
+  "input": "koleva.csv",
+  "source": "Koleva, Paneva & Tzotchev (2016), Science, Engineering & Education 1(1):106-112, Table 1.",
+  "assay": {
+    "attribute": "Assay",
+    "unit": "percent label claim",
+    "direction": "decreasing",
+    "direction_source": "Koleva 2016 degradation example",
+    "storage_condition": "Published one-year storage example; exact study condition unspecified",
+    "storage_source": "Koleva 2016 case study; room-class evaluation for reproduction only",
+    "storage_class": "room",
+    "linear_model_appropriate": true,
+    "independent_errors": true,
+    "common_variance": true,
+    "rationale": "Published independent linear fixed-batch example, pooled error variance as Table 3; no regulatory proposal."
+  },
+  "specification": {
+    "lower": 95,
+    "source": "Koleva 2016 p108, acceptance limit"
+  },
+  "extrapolation": {
+    "requested": false
+  }
+}

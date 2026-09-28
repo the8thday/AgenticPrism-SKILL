@@ -1,0 +1,39 @@
+{
+  "sources": [
+    {
+      "path": "sources/koleva_2016.pdf",
+      "url": "https://jsee.uctm.edu/index.php/see/article/download/22/22",
+      "sha256": "63a713b35a39c31bc921fe0e84817f3d9c7fdd558138d7be05ca14d395c8ee2d"
+    },
+    {
+      "path": "sources/Q1E_Guideline.pdf",
+      "url": "https://database.ich.org/sites/default/files/Q1E_Guideline.pdf",
+      "sha256": "d3d383950299fcbfc32e1e0a2371fa16ae939ee67531bfb1bdb2a4b5822658da"
+    }
+  ],
+  "data_sha256": "75f8e3dbd36b3089c05531968191881c14ba963c1cc940e52e87e9bdd8d3486e",
+  "extraction": "Table 1 manually transcribed; 15 measured values, 0/3/6/9/12 months, 3 batches. No digitization or interpolation.",
+  "published_targets": {
+    "intercepts": [
+      99.4,
+      99.2,
+      98.2
+    ],
+    "slopes": [
+      -0.4,
+      -0.633,
+      -0.3
+    ],
+    "slope_F": 4.0862,
+    "slope_p": 0.05462,
+    "error_ss": 5.8,
+    "error_df": 9,
+    "table3_first_se": 0.621825,
+    "printed_shelf_lives": [
+      5.74302,
+      3.16423,
+      3.39299
+    ]
+  },
+  "caveat": "Printed shelf lives use a different interval construction; compare separately, never treat them as Q1E one-sided mean-bound targets."
+}

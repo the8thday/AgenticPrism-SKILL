@@ -1,0 +1,194 @@
+{
+  "criterion": "0.10.1 calibration. Frozen before execution: seed 20261016, 1000 datasets per row.\n\nTruth is exact where the generating model allows (tolerance-interval content is\ncomputed from the true distribution, never from a simulated future sample).\nCriteria (2 binomial SE, fixed before running):\nA  Normal two-sided tolerance interval, P(content >= p) >= conf - 2 SE:\n   exact factor n=10 p=.90 conf=.95; n=30 p=.99 conf=.95; n=5 p=.95 conf=.90;\n   Howe (NIST form) n=10 p=.90 conf=.95.\nB  Normal one-sided upper interval (exact noncentral t), n=10 p=.95 conf=.95: same criterion.\nC  Nonparametric two-sided interval on lognormal data, n=120 p=.90 conf=.95, and on\n   exponential data, n=60 p=.90 conf=.95: same criterion (exact for continuous data).\nD  Ppk 95% interval (normal approximation) coverage >= .95 - 2 SE: n=10, 25, 50 with\n   true Ppk 1.0, and n=25 with true Ppk 1.33 (NIST recommends n >= 25).\nE  Pp 95% chi-square interval coverage, n=10: >= .95 - 2 SE.\nF  TOST (Welch, alpha .05, fixed absolute margin) type I error at the margin <= .05 + 2 SE:\n   10 reference / 6 test lots with equal SD; same with test SD twice the reference SD.\nG  Descriptive only: TOST type I error when the margin is 1.5 x the estimated reference SD\n   and the true difference equals 1.5 x the true reference SD (10 / 6 lots).\nH  Descriptive only: quality range (k = 3 and 2, 10 reference / 6 test lots): probability\n   that all test lots fall inside, and mean fraction inside, with identical products and with\n   a test mean shifted by one SD.\nAll rows call the production functions. No seed, scenario or criterion is changed after running.\n",
+  "seed": 20261016,
+  "script_sha256": "25e958b6a6a9978ab9ef82176b2fe2808e430a05654ea4c6e73971a95e082963",
+  "code_sha256": {
+    "specifications.py": "fa809103bbca16214557932494caa38ae97d4e879804266e9a2c3e742d22fc31",
+    "comparability.py": "a03d17f34b6ead8633e61dda867c7f98635060879203566b366d6285fca47b24"
+  },
+  "rows": [
+    {
+      "row": "A",
+      "scenario": "exact_n10_p90_c95",
+      "k": 2.856310848578928,
+      "estimate": 0.949,
+      "mcse": 0.006956938982052382,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": true,
+      "mean_content": 0.9763266218968287
+    },
+    {
+      "row": "A",
+      "scenario": "exact_n30_p99_c95",
+      "k": 3.354575844793339,
+      "estimate": 0.939,
+      "mcse": 0.007568289106528638,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": true,
+      "mean_content": 0.9973604427602324
+    },
+    {
+      "row": "A",
+      "scenario": "exact_n5_p95_c90",
+      "k": 4.14246444033578,
+      "estimate": 0.917,
+      "mcse": 0.008724161850859943,
+      "bound": 0.8810263340389898,
+      "criterion": "min",
+      "passed": true,
+      "mean_content": 0.9838382240568144
+    },
+    {
+      "row": "A",
+      "scenario": "howe_n10_p90_c95",
+      "k": 2.838191270236677,
+      "estimate": 0.953,
+      "mcse": 0.00669260786241059,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": true,
+      "mean_content": 0.9769003888502918
+    },
+    {
+      "row": "B",
+      "scenario": "upper_exact_n10_p95_c95",
+      "k": 2.9109634130781665,
+      "estimate": 0.944,
+      "mcse": 0.007270763371201131,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": true,
+      "mean_content": 0.9892624983012721
+    },
+    {
+      "row": "C",
+      "scenario": "lognormal_n120_p90_c95",
+      "rank": 3,
+      "estimate": 0.983,
+      "mcse": 0.004087909000944127,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": true
+    },
+    {
+      "row": "C",
+      "scenario": "exponential_n60_p90_c95",
+      "rank": 1,
+      "estimate": 0.985,
+      "mcse": 0.0038438262187565153,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": true
+    },
+    {
+      "row": "D",
+      "scenario": "ppk_n10_true1.0",
+      "estimate": 0.936,
+      "mcse": 0.007739767438366605,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": false
+    },
+    {
+      "row": "E",
+      "scenario": "pp_chisq_n10",
+      "estimate": 0.936,
+      "mcse": 0.007739767438366605,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": false
+    },
+    {
+      "row": "D",
+      "scenario": "ppk_n25_true1.0",
+      "estimate": 0.943,
+      "mcse": 0.007331507348424336,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": true
+    },
+    {
+      "row": "D",
+      "scenario": "ppk_n50_true1.0",
+      "estimate": 0.954,
+      "mcse": 0.006624499981130654,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": true
+    },
+    {
+      "row": "D",
+      "scenario": "ppk_n25_true1.33",
+      "estimate": 0.948,
+      "mcse": 0.007021111023192843,
+      "bound": 0.9362159512479097,
+      "criterion": "min",
+      "passed": true
+    },
+    {
+      "row": "F",
+      "scenario": "tost_equal_sd",
+      "estimate": 0.045,
+      "mcse": 0.0065555320150236475,
+      "bound": 0.06378404875209022,
+      "criterion": "max",
+      "passed": true
+    },
+    {
+      "row": "F",
+      "scenario": "tost_test_sd_x2",
+      "estimate": 0.031,
+      "mcse": 0.0054807846153630225,
+      "bound": 0.06378404875209022,
+      "criterion": "max",
+      "passed": true
+    },
+    {
+      "row": "G",
+      "scenario": "tost_estimated_margin_1.5sd",
+      "estimate": 0.058,
+      "mcse": 0.007391616873188166,
+      "bound": null,
+      "criterion": "none",
+      "passed": null
+    },
+    {
+      "row": "H",
+      "scenario": "quality_range_k3_shift0",
+      "probability_all_inside": 0.88,
+      "mean_fraction_inside": 0.9766666666666668,
+      "mcse_all_inside": 0.010276186062932104,
+      "criterion": "none",
+      "passed": null
+    },
+    {
+      "row": "H",
+      "scenario": "quality_range_k3_shift1",
+      "probability_all_inside": 0.722,
+      "mean_fraction_inside": 0.9345,
+      "mcse_all_inside": 0.01416742743055351,
+      "criterion": "none",
+      "passed": null
+    },
+    {
+      "row": "H",
+      "scenario": "quality_range_k2_shift0",
+      "probability_all_inside": 0.607,
+      "mean_fraction_inside": 0.9111666666666668,
+      "mcse_all_inside": 0.015445096309184997,
+      "criterion": "none",
+      "passed": null
+    },
+    {
+      "row": "H",
+      "scenario": "quality_range_k2_shift1",
+      "probability_all_inside": 0.345,
+      "mean_fraction_inside": 0.7833333333333332,
+      "mcse_all_inside": 0.015032464867745409,
+      "criterion": "none",
+      "passed": null
+    }
+  ]
+}

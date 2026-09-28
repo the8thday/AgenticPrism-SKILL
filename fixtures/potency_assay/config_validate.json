@@ -1,0 +1,34 @@
+{
+  "analysis_type": "potency_assay",
+  "mode": "validate",
+  "input": "validate.csv",
+  "source": "Synthetic RP study, seed 20261011.",
+  "assay": {
+    "independent_runs": true,
+    "independent_determinations": true,
+    "common_log_variance": true,
+    "same_material_per_level": true,
+    "rationale": "Independent RP determinations with a common run intercept and common log residual variance; no shared reference curve."
+  },
+  "suitability": {
+    "source": "Synthetic SOP P010; reference quality and equivalence already evaluated per determination"
+  },
+  "statistics": {
+    "confidence_level": 0.9
+  },
+  "criteria": {
+    "source": "Synthetic prespecified SOP P010",
+    "max_abs_log_bias": 0.2,
+    "max_gcv_percent": 20.0,
+    "linearity_equivalence": true,
+    "slope_limits": [
+      0.8,
+      1.2
+    ],
+    "intercept_limits": [
+      -0.2,
+      0.2
+    ],
+    "margins_prespecified": true
+  }
+}

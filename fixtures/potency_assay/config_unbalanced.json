@@ -1,0 +1,16 @@
+{
+  "analysis_type": "potency_assay",
+  "mode": "combine",
+  "input": "unbalanced.csv",
+  "source": "Synthetic RP study, seed 20261011.",
+  "assay": {
+    "independent_runs": true,
+    "independent_determinations": true,
+    "common_log_variance": true,
+    "same_material_per_level": true,
+    "rationale": "Independent RP determinations with a common run intercept and common log residual variance; no shared reference curve."
+  },
+  "suitability": {
+    "source": "Synthetic SOP P010; reference quality and equivalence already evaluated per determination"
+  }
+}

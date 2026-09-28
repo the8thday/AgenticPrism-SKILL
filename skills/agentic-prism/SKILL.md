@@ -1,6 +1,6 @@
 ---
 name: agentic-prism
-description: Route Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM.
+description: Route Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM.
 ---
 
 # AgenticPrism
@@ -111,3 +111,19 @@ FPR **at least** target to reduce missed positives. Clarify an opposing user
 objective before proposing a method. Lower-bound results are marginal over
 future subjects/runs; nonparametric pairs must have distinct subjects and runs.
 Read the saved facts and disclose excessive false-positive workload when relevant.
+
+## CMC (0.10.0–0.10.1)
+
+For long-term quantitative batch stability and shelf life, use
+[stability](../stability/SKILL.md); require sourced specifications, direction and
+storage, test slopes before intercepts, and never invent extrapolation support.
+For replicated RP combination/nominal-level validation, use
+[potency-assay](../potency-assay/SKILL.md); retain failing runs and require sourced,
+prespecified criteria. Both write interpretation facts with calibration evidence.
+From 0.10.1, lot comparability/biosimilarity for one attribute (TOST against a
+declared margin, quality range with declared k, or descriptive) uses
+[comparability](../comparability/SKILL.md); tolerance intervals and Cp/Cpk/Pp/Ppk
+use [specifications](../specifications/SKILL.md). Never assign a quality tier,
+choose margins or k from observed differences, treat replicate measurements as
+lots, or present a tolerance interval as a specification. Ask for the declared
+tier, method, margins/k and limits with their sources.

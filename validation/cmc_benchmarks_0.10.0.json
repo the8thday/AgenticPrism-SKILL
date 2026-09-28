@@ -1,0 +1,2586 @@
+{
+  "R": {
+    "R": "R version 4.6.0 (2026-04-24)",
+    "lme4": "2.0.6",
+    "emmeans": "2.0.4"
+  },
+  "script_sha256": "5b7a5fee83b45dd95dff8a850d7f4c32c4469b533e73744951385f1a6186d8c9",
+  "oracle_sha256": "6b6a9d9729773b7ba0e2839fec07ca9f0cf2fe513626549198d326a5d571294b",
+  "tolerances": {
+    "regression_relative": 1e-08,
+    "REML_MLS_relative": 2e-05,
+    "small_reference_absolute": 1e-08,
+    "published": "half final printed decimal"
+  },
+  "rows": [
+    {
+      "field": "pooled.slope_f",
+      "python": 1.088749859053869,
+      "reference": 1.0887498590535847,
+      "absolute_difference": 2.8421709430404007e-13,
+      "relative_difference": 2.610490297111045e-13,
+      "passed": true
+    },
+    {
+      "field": "pooled.slope_p",
+      "python": 0.352693079030039,
+      "reference": 0.3526930790301309,
+      "absolute_difference": 9.192646643896296e-14,
+      "relative_difference": 2.6064153765577463e-13,
+      "passed": true
+    },
+    {
+      "field": "pooled.intercept_f",
+      "python": 0.011832906362295276,
+      "reference": 0.011832906362293798,
+      "absolute_difference": 1.4779844015322396e-15,
+      "relative_difference": 1.2490459708545633e-13,
+      "passed": true
+    },
+    {
+      "field": "pooled.intercept_p",
+      "python": 0.9882421458871675,
+      "reference": 0.9882421458871689,
+      "absolute_difference": 1.3322676295501878e-15,
+      "relative_difference": 1.3481186115111281e-15,
+      "passed": true
+    },
+    {
+      "field": "pooled.sse",
+      "python": 2.965556756451986,
+      "reference": 2.9655567564518672,
+      "absolute_difference": 1.1857181902996672e-13,
+      "relative_difference": 3.998298760325588e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.df",
+      "python": 28.0,
+      "reference": 28.0,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "pooled.1.intercept",
+      "python": 100.01664662203888,
+      "reference": 100.01664662203883,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.262546844498169e-16,
+      "passed": true
+    },
+    {
+      "field": "pooled.1.slope",
+      "python": -0.3029569175592479,
+      "reference": -0.3029569175592428,
+      "absolute_difference": 5.10702591327572e-15,
+      "relative_difference": 1.6857267873003918e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.1.crossing_lower95",
+      "python": 15.724606917089325,
+      "reference": 15.724606917089504,
+      "absolute_difference": 1.794120407794253e-13,
+      "relative_difference": 1.1409635975347675e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.2.intercept",
+      "python": 100.01664662203888,
+      "reference": 100.01664662203883,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.262546844498169e-16,
+      "passed": true
+    },
+    {
+      "field": "pooled.2.slope",
+      "python": -0.3029569175592479,
+      "reference": -0.3029569175592428,
+      "absolute_difference": 5.10702591327572e-15,
+      "relative_difference": 1.6857267873003918e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.2.crossing_lower95",
+      "python": 15.724606917089325,
+      "reference": 15.724606917089504,
+      "absolute_difference": 1.794120407794253e-13,
+      "relative_difference": 1.1409635975347675e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.3.intercept",
+      "python": 100.01664662203888,
+      "reference": 100.01664662203883,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.262546844498169e-16,
+      "passed": true
+    },
+    {
+      "field": "pooled.3.slope",
+      "python": -0.3029569175592479,
+      "reference": -0.3029569175592428,
+      "absolute_difference": 5.10702591327572e-15,
+      "relative_difference": 1.6857267873003918e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.3.crossing_lower95",
+      "python": 15.724606917089325,
+      "reference": 15.724606917089504,
+      "absolute_difference": 1.794120407794253e-13,
+      "relative_difference": 1.1409635975347675e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.predict_0_0",
+      "python": 100.01664662203888,
+      "reference": 100.01664662203883,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.262546844498169e-16,
+      "passed": true
+    },
+    {
+      "field": "pooled.se_0_0",
+      "python": 0.10291391611529346,
+      "reference": 0.1029139161152914,
+      "absolute_difference": 2.067790383364354e-15,
+      "relative_difference": 2.0092427354993177e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_0_0",
+      "python": 100.01664662203888,
+      "reference": 100.01664662203883,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.262546844498169e-16,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_se_0_0",
+      "python": 0.10291391611529346,
+      "reference": 0.10291391611529138,
+      "absolute_difference": 2.0816681711721685e-15,
+      "relative_difference": 2.0227275860731388e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.predict_0_1",
+      "python": 100.01664662203888,
+      "reference": 100.01664662203883,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.262546844498169e-16,
+      "passed": true
+    },
+    {
+      "field": "pooled.se_0_1",
+      "python": 0.10291391611529346,
+      "reference": 0.1029139161152914,
+      "absolute_difference": 2.067790383364354e-15,
+      "relative_difference": 2.0092427354993177e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_0_1",
+      "python": 100.01664662203888,
+      "reference": 100.01664662203883,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.262546844498169e-16,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_se_0_1",
+      "python": 0.10291391611529346,
+      "reference": 0.10291391611529138,
+      "absolute_difference": 2.0816681711721685e-15,
+      "relative_difference": 2.0227275860731388e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.predict_0_2",
+      "python": 100.01664662203888,
+      "reference": 100.01664662203883,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.262546844498169e-16,
+      "passed": true
+    },
+    {
+      "field": "pooled.se_0_2",
+      "python": 0.10291391611529346,
+      "reference": 0.1029139161152914,
+      "absolute_difference": 2.067790383364354e-15,
+      "relative_difference": 2.0092427354993177e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_0_2",
+      "python": 100.01664662203888,
+      "reference": 100.01664662203883,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.262546844498169e-16,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_se_0_2",
+      "python": 0.10291391611529346,
+      "reference": 0.10291391611529138,
+      "absolute_difference": 2.0816681711721685e-15,
+      "relative_difference": 2.0227275860731388e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.predict_1_0",
+      "python": 96.3811636113279,
+      "reference": 96.3811636113279,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "pooled.se_1_0",
+      "python": 0.10291391611529348,
+      "reference": 0.1029139161152914,
+      "absolute_difference": 2.0816681711721685e-15,
+      "relative_difference": 2.0227275860731388e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_1_0",
+      "python": 96.3811636113279,
+      "reference": 96.3811636113279,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_se_1_0",
+      "python": 0.10291391611529348,
+      "reference": 0.1029139161152914,
+      "absolute_difference": 2.0816681711721685e-15,
+      "relative_difference": 2.0227275860731388e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.predict_1_1",
+      "python": 96.3811636113279,
+      "reference": 96.3811636113279,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "pooled.se_1_1",
+      "python": 0.10291391611529348,
+      "reference": 0.1029139161152914,
+      "absolute_difference": 2.0816681711721685e-15,
+      "relative_difference": 2.0227275860731388e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_1_1",
+      "python": 96.3811636113279,
+      "reference": 96.3811636113279,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_se_1_1",
+      "python": 0.10291391611529348,
+      "reference": 0.1029139161152914,
+      "absolute_difference": 2.0816681711721685e-15,
+      "relative_difference": 2.0227275860731388e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.predict_1_2",
+      "python": 96.3811636113279,
+      "reference": 96.3811636113279,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "pooled.se_1_2",
+      "python": 0.10291391611529348,
+      "reference": 0.1029139161152914,
+      "absolute_difference": 2.0816681711721685e-15,
+      "relative_difference": 2.0227275860731388e-14,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_1_2",
+      "python": 96.3811636113279,
+      "reference": 96.3811636113279,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "pooled.emmeans_se_1_2",
+      "python": 0.10291391611529348,
+      "reference": 0.1029139161152914,
+      "absolute_difference": 2.0816681711721685e-15,
+      "relative_difference": 2.0227275860731388e-14,
+      "passed": true
+    },
+    {
+      "field": "common_slope.slope_f",
+      "python": 0.16012679006093627,
+      "reference": 0.1601267900609812,
+      "absolute_difference": 4.493627692170321e-14,
+      "relative_difference": 2.806293494335963e-13,
+      "passed": true
+    },
+    {
+      "field": "common_slope.slope_p",
+      "python": 0.8529384918519152,
+      "reference": 0.8529384918518774,
+      "absolute_difference": 3.774758283725532e-14,
+      "relative_difference": 4.42559260695326e-14,
+      "passed": true
+    },
+    {
+      "field": "common_slope.intercept_f",
+      "python": 1052.3599904267714,
+      "reference": 1052.359990426789,
+      "absolute_difference": 1.750777300912887e-11,
+      "relative_difference": 1.663667677258285e-14,
+      "passed": true
+    },
+    {
+      "field": "common_slope.intercept_p",
+      "python": 1.3298743301328053e-25,
+      "reference": 1.3298743301325218e-25,
+      "absolute_difference": 2.8354209438779787e-38,
+      "relative_difference": null,
+      "passed": true
+    },
+    {
+      "field": "common_slope.sse",
+      "python": 1.0917211584352642,
+      "reference": 1.0917211584352484,
+      "absolute_difference": 1.5765166949677223e-14,
+      "relative_difference": 1.4440653483599473e-14,
+      "passed": true
+    },
+    {
+      "field": "common_slope.df",
+      "python": 26.0,
+      "reference": 26.0,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "common_slope.1.intercept",
+      "python": 97.82957206314728,
+      "reference": 97.82957206314725,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 2.9052267970730055e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.1.slope",
+      "python": -0.2758756786555381,
+      "reference": -0.2758756786555381,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "common_slope.1.crossing_lower95",
+      "python": 9.80553420709179,
+      "reference": 9.805534207091776,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.449268791997494e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.2.intercept",
+      "python": 100.04098372220186,
+      "reference": 100.04098372220187,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.4205032963953373e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.2.slope",
+      "python": -0.2758756786555381,
+      "reference": -0.2758756786555381,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "common_slope.2.crossing_lower95",
+      "python": 17.527379125673136,
+      "reference": 17.527379125673225,
+      "absolute_difference": 8.881784197001252e-14,
+      "relative_difference": 5.06737723496359e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.3.intercept",
+      "python": 102.03182336613082,
+      "reference": 102.0318233661308,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 2.7855730195485775e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.3.slope",
+      "python": -0.2758756786555381,
+      "reference": -0.2758756786555381,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "common_slope.3.crossing_lower95",
+      "python": 24.40849805471906,
+      "reference": 24.40849805471911,
+      "absolute_difference": 4.973799150320701e-14,
+      "relative_difference": 2.0377325713243026e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.predict_0_0",
+      "python": 97.82957206314728,
+      "reference": 97.82957206314725,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 2.9052267970730055e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.se_0_0",
+      "python": 0.08365531993885508,
+      "reference": 0.08365531993885447,
+      "absolute_difference": 6.106226635438361e-16,
+      "relative_difference": 7.299268761271294e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_0_0",
+      "python": 97.82957206314728,
+      "reference": 97.82957206314725,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 2.9052267970730055e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_se_0_0",
+      "python": 0.08365531993885508,
+      "reference": 0.08365531993885447,
+      "absolute_difference": 6.106226635438361e-16,
+      "relative_difference": 7.299268761271294e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.predict_0_1",
+      "python": 100.04098372220186,
+      "reference": 100.04098372220187,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.4205032963953373e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.se_0_1",
+      "python": 0.0836553199388551,
+      "reference": 0.08365531993885447,
+      "absolute_difference": 6.245004513516506e-16,
+      "relative_difference": 7.46516123311837e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_0_1",
+      "python": 100.04098372220186,
+      "reference": 100.04098372220187,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.4205032963953373e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_se_0_1",
+      "python": 0.0836553199388551,
+      "reference": 0.08365531993885449,
+      "absolute_difference": 6.106226635438361e-16,
+      "relative_difference": 7.299268761271294e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.predict_0_2",
+      "python": 102.03182336613082,
+      "reference": 102.0318233661308,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 2.7855730195485775e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.se_0_2",
+      "python": 0.0836553199388551,
+      "reference": 0.08365531993885449,
+      "absolute_difference": 6.106226635438361e-16,
+      "relative_difference": 7.299268761271294e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_0_2",
+      "python": 102.03182336613082,
+      "reference": 102.0318233661308,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 2.7855730195485775e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_se_0_2",
+      "python": 0.0836553199388551,
+      "reference": 0.08365531993885449,
+      "absolute_difference": 6.106226635438361e-16,
+      "relative_difference": 7.299268761271294e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.predict_1_0",
+      "python": 94.51906391928082,
+      "reference": 94.51906391928081,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.5034908436395497e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.se_1_0",
+      "python": 0.08365531993885511,
+      "reference": 0.08365531993885447,
+      "absolute_difference": 6.38378239159465e-16,
+      "relative_difference": 7.631053704965445e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_1_0",
+      "python": 94.51906391928082,
+      "reference": 94.51906391928081,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.5034908436395497e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_se_1_0",
+      "python": 0.08365531993885511,
+      "reference": 0.0836553199388545,
+      "absolute_difference": 6.106226635438361e-16,
+      "relative_difference": 7.299268761271292e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.predict_1_1",
+      "python": 96.7304755783354,
+      "reference": 96.73047557833543,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 2.938237330114975e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.se_1_1",
+      "python": 0.0836553199388551,
+      "reference": 0.08365531993885447,
+      "absolute_difference": 6.245004513516506e-16,
+      "relative_difference": 7.46516123311837e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_1_1",
+      "python": 96.7304755783354,
+      "reference": 96.73047557833543,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 2.938237330114975e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_se_1_1",
+      "python": 0.0836553199388551,
+      "reference": 0.0836553199388545,
+      "absolute_difference": 5.967448757360216e-16,
+      "relative_difference": 7.133376289424217e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.predict_1_2",
+      "python": 98.72131522226437,
+      "reference": 98.72131522226435,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.4394920370749952e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.se_1_2",
+      "python": 0.0836553199388551,
+      "reference": 0.08365531993885449,
+      "absolute_difference": 6.106226635438361e-16,
+      "relative_difference": 7.299268761271294e-15,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_1_2",
+      "python": 98.72131522226437,
+      "reference": 98.72131522226435,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.4394920370749952e-16,
+      "passed": true
+    },
+    {
+      "field": "common_slope.emmeans_se_1_2",
+      "python": 0.0836553199388551,
+      "reference": 0.08365531993885451,
+      "absolute_difference": 5.828670879282072e-16,
+      "relative_difference": 6.967483817577141e-15,
+      "passed": true
+    },
+    {
+      "field": "separate.slope_f",
+      "python": 300.3554288160967,
+      "reference": 300.3554288160826,
+      "absolute_difference": 1.4097167877480388e-11,
+      "relative_difference": 4.6934952809235024e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.slope_p",
+      "python": 1.0336803264469257e-17,
+      "reference": 1.0336803264474885e-17,
+      "absolute_difference": 5.628337669477258e-30,
+      "relative_difference": null,
+      "passed": true
+    },
+    {
+      "field": "separate.sse",
+      "python": 1.817954153445735,
+      "reference": 1.8179541534458055,
+      "absolute_difference": 7.038813976123492e-14,
+      "relative_difference": 3.8718325007162096e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.df",
+      "python": 24.0,
+      "reference": 24.0,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "separate.1.intercept",
+      "python": 99.8535576836012,
+      "reference": 99.85355768360121,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.4231695940399958e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.1.slope",
+      "python": -0.08025966790381744,
+      "reference": -0.08025966790383166,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.7706097080079703e-13,
+      "passed": true
+    },
+    {
+      "field": "separate.1.crossing_lower95",
+      "python": 43.827691717893885,
+      "reference": 43.827691717889856,
+      "absolute_difference": 4.028777311759768e-12,
+      "relative_difference": 9.192310052950558e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.2.intercept",
+      "python": 99.92125363946597,
+      "reference": 99.92125363946596,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.422205406517151e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.2.slope",
+      "python": -0.38874881647784476,
+      "reference": -0.3887488164778432,
+      "absolute_difference": 1.5543122344752192e-15,
+      "relative_difference": 3.998243000602954e-15,
+      "passed": true
+    },
+    {
+      "field": "separate.2.crossing_lower95",
+      "python": 11.996068090622305,
+      "reference": 11.996068090622337,
+      "absolute_difference": 3.197442310920451e-14,
+      "relative_difference": 2.6654086045243282e-15,
+      "passed": true
+    },
+    {
+      "field": "separate.3.intercept",
+      "python": 99.9310764335496,
+      "reference": 99.93107643354956,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.2661968295673343e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.3.slope",
+      "python": -0.7893150208422668,
+      "reference": -0.7893150208422668,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "separate.3.crossing_lower95",
+      "python": 6.058618229580766,
+      "reference": 6.058618229580732,
+      "absolute_difference": 3.375077994860476e-14,
+      "relative_difference": 5.5707058391332865e-15,
+      "passed": true
+    },
+    {
+      "field": "separate.predict_0_0",
+      "python": 99.8535576836012,
+      "reference": 99.85355768360121,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.4231695940399958e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.se_0_0",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206018,
+      "absolute_difference": 2.942091015256665e-15,
+      "relative_difference": 1.951684593845118e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_0_0",
+      "python": 99.8535576836012,
+      "reference": 99.85355768360121,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.4231695940399958e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_se_0_0",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206015,
+      "absolute_difference": 2.914335439641036e-15,
+      "relative_difference": 1.9332724750352588e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.predict_0_1",
+      "python": 99.92125363946597,
+      "reference": 99.92125363946596,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.422205406517151e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.se_0_1",
+      "python": 0.15074623351205724,
+      "reference": 0.1507462335120602,
+      "absolute_difference": 2.9698465908722937e-15,
+      "relative_difference": 1.9700967126549773e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_0_1",
+      "python": 99.92125363946597,
+      "reference": 99.92125363946596,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.422205406517151e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_se_0_1",
+      "python": 0.15074623351205724,
+      "reference": 0.1507462335120602,
+      "absolute_difference": 2.9698465908722937e-15,
+      "relative_difference": 1.9700967126549773e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.predict_0_2",
+      "python": 99.9310764335496,
+      "reference": 99.93107643354956,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.2661968295673343e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.se_0_2",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206018,
+      "absolute_difference": 2.942091015256665e-15,
+      "relative_difference": 1.951684593845118e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_0_2",
+      "python": 99.9310764335496,
+      "reference": 99.93107643354956,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.2661968295673343e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_se_0_2",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206018,
+      "absolute_difference": 2.942091015256665e-15,
+      "relative_difference": 1.951684593845118e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.predict_1_0",
+      "python": 98.89044166875539,
+      "reference": 98.89044166875529,
+      "absolute_difference": 9.947598300641403e-14,
+      "relative_difference": 1.0059211115632397e-15,
+      "passed": true
+    },
+    {
+      "field": "separate.se_1_0",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206012,
+      "absolute_difference": 2.886579864025407e-15,
+      "relative_difference": 1.9148603562253995e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_1_0",
+      "python": 98.89044166875539,
+      "reference": 98.89044166875529,
+      "absolute_difference": 9.947598300641403e-14,
+      "relative_difference": 1.0059211115632397e-15,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_se_1_0",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206018,
+      "absolute_difference": 2.942091015256665e-15,
+      "relative_difference": 1.951684593845118e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.predict_1_1",
+      "python": 95.25626784173184,
+      "reference": 95.25626784173186,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.491855080740022e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.se_1_1",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206012,
+      "absolute_difference": 2.886579864025407e-15,
+      "relative_difference": 1.9148603562253995e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_1_1",
+      "python": 95.25626784173184,
+      "reference": 95.25626784173186,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 1.491855080740022e-16,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_se_1_1",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206012,
+      "absolute_difference": 2.886579864025407e-15,
+      "relative_difference": 1.9148603562253995e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.predict_1_2",
+      "python": 90.4592961834424,
+      "reference": 90.4592961834424,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "separate.se_1_2",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206015,
+      "absolute_difference": 2.914335439641036e-15,
+      "relative_difference": 1.9332724750352588e-14,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_1_2",
+      "python": 90.4592961834424,
+      "reference": 90.4592961834424,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "separate.emmeans_se_1_2",
+      "python": 0.15074623351205724,
+      "reference": 0.15074623351206018,
+      "absolute_difference": 2.942091015256665e-15,
+      "relative_difference": 1.951684593845118e-14,
+      "passed": true
+    },
+    {
+      "field": "upper.slope_f",
+      "python": 0.5859844106757214,
+      "reference": 0.5859844106757184,
+      "absolute_difference": 2.9976021664879227e-15,
+      "relative_difference": 5.115498146155947e-15,
+      "passed": true
+    },
+    {
+      "field": "upper.slope_p",
+      "python": 0.5643242054373335,
+      "reference": 0.5643242054373352,
+      "absolute_difference": 1.6653345369377348e-15,
+      "relative_difference": 2.951024465886853e-15,
+      "passed": true
+    },
+    {
+      "field": "upper.intercept_f",
+      "python": 0.06567562748535194,
+      "reference": 0.06567562748535195,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 2.1130803525112426e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.intercept_p",
+      "python": 0.9365894106882893,
+      "reference": 0.9365894106882893,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "upper.sse",
+      "python": 1.859110844395481,
+      "reference": 1.8591108443954805,
+      "absolute_difference": 4.440892098500626e-16,
+      "relative_difference": 2.3887183014871033e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.df",
+      "python": 28.0,
+      "reference": 28.0,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "upper.1.intercept",
+      "python": 1.003564582521093,
+      "reference": 1.0035645825210937,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 6.637677598203727e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.1.slope",
+      "python": 0.056298663189645805,
+      "reference": 0.056298663189645826,
+      "absolute_difference": 2.0816681711721685e-17,
+      "relative_difference": 3.697544583181184e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.1.crossing_lower95",
+      "python": 0.0,
+      "reference": 0.0,
+      "absolute_difference": 0.0,
+      "relative_difference": null,
+      "passed": true
+    },
+    {
+      "field": "upper.2.intercept",
+      "python": 1.003564582521093,
+      "reference": 1.0035645825210937,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 6.637677598203727e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.2.slope",
+      "python": 0.056298663189645805,
+      "reference": 0.056298663189645826,
+      "absolute_difference": 2.0816681711721685e-17,
+      "relative_difference": 3.697544583181184e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.2.crossing_lower95",
+      "python": 0.0,
+      "reference": 0.0,
+      "absolute_difference": 0.0,
+      "relative_difference": null,
+      "passed": true
+    },
+    {
+      "field": "upper.3.intercept",
+      "python": 1.003564582521093,
+      "reference": 1.0035645825210937,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 6.637677598203727e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.3.slope",
+      "python": 0.056298663189645805,
+      "reference": 0.056298663189645826,
+      "absolute_difference": 2.0816681711721685e-17,
+      "relative_difference": 3.697544583181184e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.3.crossing_lower95",
+      "python": 0.0,
+      "reference": 0.0,
+      "absolute_difference": 0.0,
+      "relative_difference": null,
+      "passed": true
+    },
+    {
+      "field": "upper.predict_0_0",
+      "python": 1.003564582521093,
+      "reference": 1.0035645825210937,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 6.637677598203727e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.se_0_0",
+      "python": 0.08148424134227866,
+      "reference": 0.08148424134227865,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 1.703125362549565e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_0_0",
+      "python": 1.003564582521093,
+      "reference": 1.0035645825210937,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 6.637677598203727e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_se_0_0",
+      "python": 0.08148424134227866,
+      "reference": 0.08148424134227863,
+      "absolute_difference": 2.7755575615628914e-17,
+      "relative_difference": 3.4062507250991305e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.predict_0_1",
+      "python": 1.003564582521093,
+      "reference": 1.0035645825210937,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 6.637677598203727e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.se_0_1",
+      "python": 0.08148424134227866,
+      "reference": 0.08148424134227865,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 1.703125362549565e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_0_1",
+      "python": 1.003564582521093,
+      "reference": 1.0035645825210937,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 6.637677598203727e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_se_0_1",
+      "python": 0.08148424134227866,
+      "reference": 0.08148424134227863,
+      "absolute_difference": 2.7755575615628914e-17,
+      "relative_difference": 3.4062507250991305e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.predict_0_2",
+      "python": 1.003564582521093,
+      "reference": 1.0035645825210937,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 6.637677598203727e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.se_0_2",
+      "python": 0.08148424134227866,
+      "reference": 0.08148424134227865,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 1.703125362549565e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_0_2",
+      "python": 1.003564582521093,
+      "reference": 1.0035645825210937,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 6.637677598203727e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_se_0_2",
+      "python": 0.08148424134227866,
+      "reference": 0.08148424134227863,
+      "absolute_difference": 2.7755575615628914e-17,
+      "relative_difference": 3.4062507250991305e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.predict_1_0",
+      "python": 1.6791485407968427,
+      "reference": 1.6791485407968432,
+      "absolute_difference": 4.440892098500626e-16,
+      "relative_difference": 2.644728557720803e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.se_1_0",
+      "python": 0.08148424134227868,
+      "reference": 0.08148424134227865,
+      "absolute_difference": 2.7755575615628914e-17,
+      "relative_difference": 3.40625072509913e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_1_0",
+      "python": 1.6791485407968427,
+      "reference": 1.6791485407968432,
+      "absolute_difference": 4.440892098500626e-16,
+      "relative_difference": 2.644728557720803e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_se_1_0",
+      "python": 0.08148424134227868,
+      "reference": 0.08148424134227866,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 1.7031253625495645e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.predict_1_1",
+      "python": 1.6791485407968427,
+      "reference": 1.6791485407968432,
+      "absolute_difference": 4.440892098500626e-16,
+      "relative_difference": 2.644728557720803e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.se_1_1",
+      "python": 0.08148424134227868,
+      "reference": 0.08148424134227865,
+      "absolute_difference": 2.7755575615628914e-17,
+      "relative_difference": 3.40625072509913e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_1_1",
+      "python": 1.6791485407968427,
+      "reference": 1.6791485407968432,
+      "absolute_difference": 4.440892098500626e-16,
+      "relative_difference": 2.644728557720803e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_se_1_1",
+      "python": 0.08148424134227868,
+      "reference": 0.08148424134227866,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 1.7031253625495645e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.predict_1_2",
+      "python": 1.6791485407968427,
+      "reference": 1.6791485407968432,
+      "absolute_difference": 4.440892098500626e-16,
+      "relative_difference": 2.644728557720803e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.se_1_2",
+      "python": 0.08148424134227868,
+      "reference": 0.08148424134227865,
+      "absolute_difference": 2.7755575615628914e-17,
+      "relative_difference": 3.40625072509913e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_1_2",
+      "python": 1.6791485407968427,
+      "reference": 1.6791485407968432,
+      "absolute_difference": 4.440892098500626e-16,
+      "relative_difference": 2.644728557720803e-16,
+      "passed": true
+    },
+    {
+      "field": "upper.emmeans_se_1_2",
+      "python": 0.08148424134227868,
+      "reference": 0.08148424134227866,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 1.7031253625495645e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.slope_f",
+      "python": 0.3451458546980543,
+      "reference": 0.3451458546979338,
+      "absolute_difference": 1.2051470932306074e-13,
+      "relative_difference": 3.491703802397781e-13,
+      "passed": true
+    },
+    {
+      "field": "two_sided.slope_p",
+      "python": 0.7115742898967412,
+      "reference": 0.7115742898968245,
+      "absolute_difference": 8.326672684688674e-14,
+      "relative_difference": 1.1701761576990098e-13,
+      "passed": true
+    },
+    {
+      "field": "two_sided.intercept_f",
+      "python": 1.7062229627234355,
+      "reference": 1.7062229627235206,
+      "absolute_difference": 8.504308368628699e-14,
+      "relative_difference": 4.984289014053524e-14,
+      "passed": true
+    },
+    {
+      "field": "two_sided.intercept_p",
+      "python": 0.201255927834491,
+      "reference": 0.20125592783447593,
+      "absolute_difference": 1.50712775592865e-14,
+      "relative_difference": 7.488612992150948e-14,
+      "passed": true
+    },
+    {
+      "field": "two_sided.sse",
+      "python": 0.9326739987779612,
+      "reference": 0.9326739987779442,
+      "absolute_difference": 1.6986412276764895e-14,
+      "relative_difference": 1.821259335954653e-14,
+      "passed": true
+    },
+    {
+      "field": "two_sided.df",
+      "python": 26.0,
+      "reference": 26.0,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "two_sided.1.intercept",
+      "python": 99.90632215132443,
+      "reference": 99.90632215132439,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.2672538861987185e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.1.slope",
+      "python": -0.28516399964283323,
+      "reference": -0.285163999642819,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 4.983397179518365e-14,
+      "passed": true
+    },
+    {
+      "field": "two_sided.1.crossing_lower95",
+      "python": 16.5773985145821,
+      "reference": 16.577398514582438,
+      "absolute_difference": 3.375077994860476e-13,
+      "relative_difference": 2.0359515347909157e-14,
+      "passed": true
+    },
+    {
+      "field": "two_sided.2.intercept",
+      "python": 99.81070669830281,
+      "reference": 99.81070669830281,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "two_sided.2.slope",
+      "python": -0.28516399964283323,
+      "reference": -0.285163999642819,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 4.983397179518365e-14,
+      "passed": true
+    },
+    {
+      "field": "two_sided.2.crossing_lower95",
+      "python": 16.25494300561047,
+      "reference": 16.254943005610986,
+      "absolute_difference": 5.151434834260726e-13,
+      "relative_difference": 3.1691497364724813e-14,
+      "passed": true
+    },
+    {
+      "field": "two_sided.3.intercept",
+      "python": 99.96577575169138,
+      "reference": 99.96577575169133,
+      "absolute_difference": 5.684341886080802e-14,
+      "relative_difference": 5.686287975397048e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.3.slope",
+      "python": -0.28516399964283323,
+      "reference": -0.285163999642819,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 4.983397179518365e-14,
+      "passed": true
+    },
+    {
+      "field": "two_sided.3.crossing_lower95",
+      "python": 16.777838454124463,
+      "reference": 16.777838454124748,
+      "absolute_difference": 2.8421709430404007e-13,
+      "relative_difference": 1.6940030450356774e-14,
+      "passed": true
+    },
+    {
+      "field": "two_sided.predict_0_0",
+      "python": 99.90632215132443,
+      "reference": 99.90632215132439,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.2672538861987185e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.se_0_0",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899152,
+      "absolute_difference": 7.216449660063518e-16,
+      "relative_difference": 9.332993230588831e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_0_0",
+      "python": 99.90632215132443,
+      "reference": 99.90632215132439,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.2672538861987185e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_se_0_0",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899151,
+      "absolute_difference": 7.355227538141662e-16,
+      "relative_difference": 9.512473869638618e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.predict_0_1",
+      "python": 99.81070669830281,
+      "reference": 99.81070669830281,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "two_sided.se_0_1",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899154,
+      "absolute_difference": 7.077671781985373e-16,
+      "relative_difference": 9.153512591539045e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_0_1",
+      "python": 99.81070669830281,
+      "reference": 99.81070669830281,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_se_0_1",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899152,
+      "absolute_difference": 7.216449660063518e-16,
+      "relative_difference": 9.332993230588831e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.predict_0_2",
+      "python": 99.96577575169138,
+      "reference": 99.96577575169133,
+      "absolute_difference": 5.684341886080802e-14,
+      "relative_difference": 5.686287975397048e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.se_0_2",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899154,
+      "absolute_difference": 7.077671781985373e-16,
+      "relative_difference": 9.153512591539045e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_0_2",
+      "python": 99.96577575169138,
+      "reference": 99.96577575169133,
+      "absolute_difference": 5.684341886080802e-14,
+      "relative_difference": 5.686287975397048e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_se_0_2",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899152,
+      "absolute_difference": 7.216449660063518e-16,
+      "relative_difference": 9.332993230588831e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.predict_1_0",
+      "python": 96.48435415561043,
+      "reference": 96.48435415561049,
+      "absolute_difference": 5.684341886080802e-14,
+      "relative_difference": 5.891464927995542e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.se_1_0",
+      "python": 0.07732192107899226,
+      "reference": 0.07732192107899152,
+      "absolute_difference": 7.355227538141662e-16,
+      "relative_difference": 9.512473869638616e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_1_0",
+      "python": 96.48435415561043,
+      "reference": 96.48435415561049,
+      "absolute_difference": 5.684341886080802e-14,
+      "relative_difference": 5.891464927995542e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_se_1_0",
+      "python": 0.07732192107899226,
+      "reference": 0.07732192107899152,
+      "absolute_difference": 7.355227538141662e-16,
+      "relative_difference": 9.512473869638616e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.predict_1_1",
+      "python": 96.38873870258881,
+      "reference": 96.38873870258891,
+      "absolute_difference": 9.947598300641403e-14,
+      "relative_difference": 1.0320290974379374e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.se_1_1",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899154,
+      "absolute_difference": 7.077671781985373e-16,
+      "relative_difference": 9.153512591539045e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_1_1",
+      "python": 96.38873870258881,
+      "reference": 96.38873870258891,
+      "absolute_difference": 9.947598300641403e-14,
+      "relative_difference": 1.0320290974379374e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_se_1_1",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899154,
+      "absolute_difference": 7.077671781985373e-16,
+      "relative_difference": 9.153512591539045e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.predict_1_2",
+      "python": 96.54380775597738,
+      "reference": 96.54380775597743,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.4158776348829535e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.se_1_2",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899154,
+      "absolute_difference": 7.077671781985373e-16,
+      "relative_difference": 9.153512591539045e-15,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_1_2",
+      "python": 96.54380775597738,
+      "reference": 96.54380775597743,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.4158776348829535e-16,
+      "passed": true
+    },
+    {
+      "field": "two_sided.emmeans_se_1_2",
+      "python": 0.07732192107899225,
+      "reference": 0.07732192107899155,
+      "absolute_difference": 6.938893903907228e-16,
+      "relative_difference": 8.974031952489257e-15,
+      "passed": true
+    },
+    {
+      "field": "koleva.slope_f",
+      "python": 4.086206896551723,
+      "reference": 4.086206896551725,
+      "absolute_difference": 1.7763568394002505e-15,
+      "relative_difference": 4.347202391781203e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.slope_p",
+      "python": 0.05461981698385787,
+      "reference": 0.054619816983857865,
+      "absolute_difference": 6.938893903907228e-18,
+      "relative_difference": 1.2703986001926595e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.sse",
+      "python": 5.800000000000001,
+      "reference": 5.799999999999999,
+      "absolute_difference": 1.7763568394002505e-15,
+      "relative_difference": 3.0626842058625015e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.df",
+      "python": 9.0,
+      "reference": 9.0,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "koleva.1.intercept",
+      "python": 99.3999999999999,
+      "reference": 99.4,
+      "absolute_difference": 9.947598300641403e-14,
+      "relative_difference": 1.0007644165635212e-15,
+      "passed": true
+    },
+    {
+      "field": "koleva.1.slope",
+      "python": -0.3999999999999915,
+      "reference": -0.4000000000000057,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 3.5527136788004504e-14,
+      "passed": true
+    },
+    {
+      "field": "koleva.1.crossing_lower95",
+      "python": 8.98771233319832,
+      "reference": 8.987712333198496,
+      "absolute_difference": 1.758593271006248e-13,
+      "relative_difference": 1.9566639494128197e-14,
+      "passed": true
+    },
+    {
+      "field": "koleva.2.intercept",
+      "python": 99.2,
+      "reference": 99.2,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "koleva.2.slope",
+      "python": -0.6333333333333308,
+      "reference": -0.63333333333334,
+      "absolute_difference": 9.2148511043888e-15,
+      "relative_difference": 1.4549764901666374e-14,
+      "passed": true
+    },
+    {
+      "field": "koleva.2.crossing_lower95",
+      "python": 5.587563148252768,
+      "reference": 5.587563148252752,
+      "absolute_difference": 1.5987211554602254e-14,
+      "relative_difference": 2.8612135792329262e-15,
+      "passed": true
+    },
+    {
+      "field": "koleva.3.intercept",
+      "python": 98.19999999999993,
+      "reference": 98.2,
+      "absolute_difference": 7.105427357601002e-14,
+      "relative_difference": 7.235669406925663e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.3.slope",
+      "python": -0.29999999999999716,
+      "reference": -0.30000000000001137,
+      "absolute_difference": 1.4210854715202004e-14,
+      "relative_difference": 4.7369515717338216e-14,
+      "passed": true
+    },
+    {
+      "field": "koleva.3.crossing_lower95",
+      "python": 8.196431521932404,
+      "reference": 8.196431521932501,
+      "absolute_difference": 9.769962616701378e-14,
+      "relative_difference": 1.1919775807994404e-14,
+      "passed": true
+    },
+    {
+      "field": "koleva.predict_0_0",
+      "python": 99.3999999999999,
+      "reference": 99.4,
+      "absolute_difference": 9.947598300641403e-14,
+      "relative_difference": 1.0007644165635212e-15,
+      "passed": true
+    },
+    {
+      "field": "koleva.se_0_0",
+      "python": 0.621825270205921,
+      "reference": 0.6218252702059207,
+      "absolute_difference": 3.3306690738754696e-16,
+      "relative_difference": 5.356278095247723e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_0_0",
+      "python": 99.3999999999999,
+      "reference": 99.4,
+      "absolute_difference": 9.947598300641403e-14,
+      "relative_difference": 1.0007644165635212e-15,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_se_0_0",
+      "python": 0.621825270205921,
+      "reference": 0.6218252702059208,
+      "absolute_difference": 2.220446049250313e-16,
+      "relative_difference": 3.570852063498481e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.predict_0_1",
+      "python": 99.2,
+      "reference": 99.2,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "koleva.se_0_1",
+      "python": 0.621825270205921,
+      "reference": 0.6218252702059208,
+      "absolute_difference": 2.220446049250313e-16,
+      "relative_difference": 3.570852063498481e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_0_1",
+      "python": 99.2,
+      "reference": 99.2,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_se_0_1",
+      "python": 0.621825270205921,
+      "reference": 0.6218252702059208,
+      "absolute_difference": 2.220446049250313e-16,
+      "relative_difference": 3.570852063498481e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.predict_0_2",
+      "python": 98.19999999999993,
+      "reference": 98.2,
+      "absolute_difference": 7.105427357601002e-14,
+      "relative_difference": 7.235669406925663e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.se_0_2",
+      "python": 0.621825270205921,
+      "reference": 0.621825270205921,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_0_2",
+      "python": 98.19999999999993,
+      "reference": 98.2,
+      "absolute_difference": 7.105427357601002e-14,
+      "relative_difference": 7.235669406925663e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_se_0_2",
+      "python": 0.621825270205921,
+      "reference": 0.6218252702059209,
+      "absolute_difference": 1.1102230246251565e-16,
+      "relative_difference": 1.7854260317492404e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.predict_1_0",
+      "python": 94.60000000000001,
+      "reference": 94.60000000000001,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "koleva.se_1_0",
+      "python": 0.6218252702059209,
+      "reference": 0.621825270205921,
+      "absolute_difference": 1.1102230246251565e-16,
+      "relative_difference": 1.78542603174924e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_1_0",
+      "python": 94.60000000000001,
+      "reference": 94.60000000000001,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_se_1_0",
+      "python": 0.6218252702059209,
+      "reference": 0.621825270205921,
+      "absolute_difference": 1.1102230246251565e-16,
+      "relative_difference": 1.78542603174924e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.predict_1_1",
+      "python": 91.60000000000004,
+      "reference": 91.60000000000001,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 3.102806706375983e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.se_1_1",
+      "python": 0.6218252702059209,
+      "reference": 0.6218252702059208,
+      "absolute_difference": 1.1102230246251565e-16,
+      "relative_difference": 1.7854260317492406e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_1_1",
+      "python": 91.60000000000004,
+      "reference": 91.60000000000001,
+      "absolute_difference": 2.842170943040401e-14,
+      "relative_difference": 3.102806706375983e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_se_1_1",
+      "python": 0.6218252702059209,
+      "reference": 0.6218252702059209,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "koleva.predict_1_2",
+      "python": 94.59999999999997,
+      "reference": 94.60000000000001,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.506613546047147e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.se_1_2",
+      "python": 0.6218252702059209,
+      "reference": 0.621825270205921,
+      "absolute_difference": 1.1102230246251565e-16,
+      "relative_difference": 1.78542603174924e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_1_2",
+      "python": 94.59999999999997,
+      "reference": 94.60000000000001,
+      "absolute_difference": 4.263256414560601e-14,
+      "relative_difference": 4.506613546047147e-16,
+      "passed": true
+    },
+    {
+      "field": "koleva.emmeans_se_1_2",
+      "python": 0.6218252702059209,
+      "reference": 0.6218252702059208,
+      "absolute_difference": 1.1102230246251565e-16,
+      "relative_difference": 1.7854260317492406e-16,
+      "passed": true
+    },
+    {
+      "field": "combine.1.beta.0",
+      "python": 0.05810858708694342,
+      "reference": 0.0581085870869433,
+      "absolute_difference": 1.1796119636642288e-16,
+      "relative_difference": 2.0300131577786744e-15,
+      "passed": true
+    },
+    {
+      "field": "combine.1.covariance.0",
+      "python": 0.0006159508471407164,
+      "reference": 0.0006159508387819843,
+      "absolute_difference": 8.358732109248201e-12,
+      "relative_difference": 1.3570453326725273e-08,
+      "passed": true
+    },
+    {
+      "field": "combine.1.variances.0",
+      "python": 0.004389388727273319,
+      "reference": 0.004389388657208026,
+      "absolute_difference": 7.00652929772061e-11,
+      "relative_difference": 1.596242630785235e-08,
+      "passed": true
+    },
+    {
+      "field": "combine.1.variances.1",
+      "python": 0.0016146541495572267,
+      "reference": 0.0016146541591435474,
+      "absolute_difference": 9.586320669566217e-12,
+      "relative_difference": 5.937073654615326e-09,
+      "passed": true
+    },
+    {
+      "field": "combine.1.intervals.0",
+      "python": -0.0005775019010147847,
+      "reference": -0.0005775015028164909,
+      "absolute_difference": 3.9819829378284766e-10,
+      "relative_difference": 6.895190607138223e-07,
+      "passed": true
+    },
+    {
+      "field": "combine.1.intervals.1",
+      "python": 0.11679467607490163,
+      "reference": 0.1167946756767031,
+      "absolute_difference": 3.981985297052404e-10,
+      "relative_difference": 3.4093894040811025e-09,
+      "passed": true
+    },
+    {
+      "field": "combine.1.mls.0",
+      "python": 0.003189425738672411,
+      "reference": 0.003189425738672411,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "combine.1.mls.1",
+      "python": 0.02155291222295136,
+      "reference": 0.021552912222951356,
+      "absolute_difference": 3.469446951953614e-18,
+      "relative_difference": 1.6097346456313477e-16,
+      "passed": true
+    },
+    {
+      "field": "unbalanced.1.beta.0",
+      "python": 0.08459051645337326,
+      "reference": 0.08459051645707379,
+      "absolute_difference": 3.700525996741533e-12,
+      "relative_difference": 4.3746345946704296e-11,
+      "passed": true
+    },
+    {
+      "field": "unbalanced.1.covariance.0",
+      "python": 0.00018015249338101719,
+      "reference": 0.00018015249443010842,
+      "absolute_difference": 1.0490912338064623e-12,
+      "relative_difference": 5.823351139961404e-09,
+      "passed": true
+    },
+    {
+      "field": "unbalanced.1.variances.0",
+      "python": 0.0007688805271269941,
+      "reference": 0.000768880537651136,
+      "absolute_difference": 1.0524141887818805e-11,
+      "relative_difference": 1.3687616440349961e-08,
+      "passed": true
+    },
+    {
+      "field": "unbalanced.1.variances.1",
+      "python": 0.001644615352573482,
+      "reference": 0.001644615347075288,
+      "absolute_difference": 5.498193914044158e-12,
+      "relative_difference": 3.3431488547288005e-09,
+      "passed": true
+    },
+    {
+      "field": "unbalanced.1.intervals.0",
+      "python": 0.052852317512548874,
+      "reference": 0.052852317423838065,
+      "absolute_difference": 8.871080953154475e-11,
+      "relative_difference": 1.6784658432315661e-09,
+      "passed": true
+    },
+    {
+      "field": "unbalanced.1.intervals.1",
+      "python": 0.11632871539419765,
+      "reference": 0.11632871549030951,
+      "absolute_difference": 9.611186846392172e-11,
+      "relative_difference": 8.262093160645971e-10,
+      "passed": true
+    },
+    {
+      "field": "unbalanced.1.mls.0",
+      "python": 0.0014687656836199867,
+      "reference": 0.0014687656835923543,
+      "absolute_difference": 2.763241024883456e-14,
+      "relative_difference": 1.8813355021510527e-11,
+      "passed": true
+    },
+    {
+      "field": "unbalanced.1.mls.1",
+      "python": 0.007254214150850156,
+      "reference": 0.007254214151700797,
+      "absolute_difference": 8.506407384034631e-13,
+      "relative_difference": 1.1726159727501633e-10,
+      "passed": true
+    },
+    {
+      "field": "validate.0.5.beta.0",
+      "python": -0.6483119289826443,
+      "reference": -0.648311928982645,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 1.0274896774156472e-15,
+      "passed": true
+    },
+    {
+      "field": "validate.0.5.covariance.0",
+      "python": 0.0008554402720381939,
+      "reference": 0.0008554402647639879,
+      "absolute_difference": 7.274205977153558e-12,
+      "relative_difference": 8.503464562964521e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.0.5.variances.0",
+      "python": 0.006087397835225052,
+      "reference": 0.006087397774218423,
+      "absolute_difference": 6.10066285683386e-11,
+      "relative_difference": 1.0021791056059484e-08,
+      "passed": true
+    },
+    {
+      "field": "validate.0.5.variances.1",
+      "python": 0.002268373023241497,
+      "reference": 0.0022683730316804445,
+      "absolute_difference": 8.438947457500845e-12,
+      "relative_difference": 3.7202644096192357e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.0.5.intervals.0",
+      "python": -0.7037243945703703,
+      "reference": -0.703724394334772,
+      "absolute_difference": 2.355983186319577e-10,
+      "relative_difference": 3.3478776709832246e-10,
+      "passed": true
+    },
+    {
+      "field": "validate.0.5.intervals.1",
+      "python": -0.5928994633949184,
+      "reference": -0.592899463630518,
+      "absolute_difference": 2.3559965089958723e-10,
+      "relative_difference": 3.9736863558103634e-10,
+      "passed": true
+    },
+    {
+      "field": "validate.0.5.mls.0",
+      "python": 0.0048670627442222135,
+      "reference": 0.004867062744222217,
+      "absolute_difference": 3.469446951953614e-18,
+      "relative_difference": 7.128420434012816e-16,
+      "passed": true
+    },
+    {
+      "field": "validate.0.5.mls.1",
+      "python": 0.023691314517563636,
+      "reference": 0.02369131451756366,
+      "absolute_difference": 2.42861286636753e-17,
+      "relative_difference": 1.0251068443530506e-15,
+      "passed": true
+    },
+    {
+      "field": "validate.0.75.beta.0",
+      "python": -0.23641119510913738,
+      "reference": -0.2364111951091373,
+      "absolute_difference": 8.326672684688674e-17,
+      "relative_difference": 3.5221143740019307e-16,
+      "passed": true
+    },
+    {
+      "field": "validate.0.75.covariance.0",
+      "python": 0.0009419835257866746,
+      "reference": 0.0009419835300030518,
+      "absolute_difference": 4.216377247345804e-12,
+      "relative_difference": 4.4760625988143805e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.0.75.variances.0",
+      "python": 0.0068061284366330976,
+      "reference": 0.006806128471793354,
+      "absolute_difference": 3.516025665062372e-11,
+      "relative_difference": 5.165970168846858e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.0.75.variances.1",
+      "python": 0.0021892193089808948,
+      "reference": 0.002189219304693186,
+      "absolute_difference": 4.287708642997101e-12,
+      "relative_difference": 1.9585560175744996e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.0.75.intervals.0",
+      "python": -0.29455912825031233,
+      "reference": -0.2945591283804491,
+      "absolute_difference": 1.3013679023288205e-10,
+      "relative_difference": 4.418019259779955e-10,
+      "passed": true
+    },
+    {
+      "field": "validate.0.75.intervals.1",
+      "python": -0.17826326196796247,
+      "reference": -0.17826326183782548,
+      "absolute_difference": 1.3013698452191136e-10,
+      "relative_difference": 7.300269454303104e-10,
+      "passed": true
+    },
+    {
+      "field": "validate.0.75.mls.0",
+      "python": 0.005166544243714903,
+      "reference": 0.005166544243714903,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "validate.0.75.mls.1",
+      "python": 0.02586294259080947,
+      "reference": 0.025862942590809453,
+      "absolute_difference": 1.734723475976807e-17,
+      "relative_difference": 6.707370864262179e-16,
+      "passed": true
+    },
+    {
+      "field": "validate.1.beta.0",
+      "python": 0.04252820485004956,
+      "reference": 0.04252820485004951,
+      "absolute_difference": 4.85722573273506e-17,
+      "relative_difference": 1.1421186833211477e-15,
+      "passed": true
+    },
+    {
+      "field": "validate.1.covariance.0",
+      "python": 0.0008758747335547741,
+      "reference": 0.0008758747382481095,
+      "absolute_difference": 4.6933353470973715e-12,
+      "relative_difference": 5.358454973236011e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.1.variances.0",
+      "python": 0.006250673338033251,
+      "reference": 0.006250673377353009,
+      "absolute_difference": 3.931975838672441e-11,
+      "relative_difference": 6.290483602804289e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.1.variances.1",
+      "python": 0.0022689735912148194,
+      "reference": 0.002268973585895609,
+      "absolute_difference": 5.319210349963299e-12,
+      "relative_difference": 2.344324492373366e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.1.intervals.0",
+      "python": -0.01354219173050105,
+      "reference": -0.013542191880726459,
+      "absolute_difference": 1.5022540850173627e-10,
+      "relative_difference": 1.1093138380024013e-08,
+      "passed": true
+    },
+    {
+      "field": "validate.1.intervals.1",
+      "python": 0.09859860143060017,
+      "reference": 0.09859860158082548,
+      "absolute_difference": 1.502253044183277e-10,
+      "relative_difference": 1.5236048180174403e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.1.mls.0",
+      "python": 0.004949949166136062,
+      "reference": 0.004949949166136062,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "validate.1.mls.1",
+      "python": 0.024217970830342016,
+      "reference": 0.024217970830342002,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 5.730367711248282e-16,
+      "passed": true
+    },
+    {
+      "field": "validate.1.5.beta.0",
+      "python": 0.44315367103520265,
+      "reference": 0.4431536710352035,
+      "absolute_difference": 8.326672684688674e-16,
+      "relative_difference": 1.878958300229722e-15,
+      "passed": true
+    },
+    {
+      "field": "validate.1.5.covariance.0",
+      "python": 0.0012273710501003207,
+      "reference": 0.0012273710562228507,
+      "absolute_difference": 6.12253000034646e-12,
+      "relative_difference": 4.988328484124533e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.1.5.variances.0",
+      "python": 0.009168028755882027,
+      "reference": 0.009168028806282829,
+      "absolute_difference": 5.0400801587802135e-11,
+      "relative_difference": 5.497452358926117e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.1.5.variances.1",
+      "python": 0.0019528189347616334,
+      "reference": 0.0019528189304998298,
+      "absolute_difference": 4.2618035836494705e-12,
+      "relative_difference": 2.1823854311769958e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.1.5.intervals.0",
+      "python": 0.3767792774398988,
+      "reference": 0.376779277274351,
+      "absolute_difference": 1.6554779769251127e-10,
+      "relative_difference": 4.3937606890192105e-10,
+      "passed": true
+    },
+    {
+      "field": "validate.1.5.intervals.1",
+      "python": 0.5095280646305065,
+      "reference": 0.509528064796056,
+      "absolute_difference": 1.655494630270482e-10,
+      "relative_difference": 3.249074476266801e-10,
+      "passed": true
+    },
+    {
+      "field": "validate.1.5.mls.0",
+      "python": 0.00616166351037382,
+      "reference": 0.006161663510373826,
+      "absolute_difference": 6.071532165918825e-18,
+      "relative_difference": 9.853722384704625e-16,
+      "passed": true
+    },
+    {
+      "field": "validate.1.5.mls.1",
+      "python": 0.0330541208177316,
+      "reference": 0.03305412081773161,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 4.1985045932215e-16,
+      "passed": true
+    },
+    {
+      "field": "validate.2.beta.0",
+      "python": 0.7497533810769524,
+      "reference": 0.7497533810769532,
+      "absolute_difference": 7.771561172376096e-16,
+      "relative_difference": 1.0365489997808277e-15,
+      "passed": true
+    },
+    {
+      "field": "validate.2.covariance.0",
+      "python": 0.0006111306581845457,
+      "reference": 0.000611130662435782,
+      "absolute_difference": 4.251236298755123e-12,
+      "relative_difference": 6.956345933962765e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.2.variances.0",
+      "python": 0.004140278160396332,
+      "reference": 0.0041402781966850075,
+      "absolute_difference": 3.62886751897884e-11,
+      "relative_difference": 8.764791510590669e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.2.variances.1",
+      "python": 0.002246301315240098,
+      "reference": 0.002246301308403704,
+      "absolute_difference": 6.836393864201318e-12,
+      "relative_difference": 3.043400205762906e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.2.intervals.0",
+      "python": 0.7029173954283479,
+      "reference": 0.7029173952654449,
+      "absolute_difference": 1.6290291338094676e-10,
+      "relative_difference": 2.3175257075467482e-10,
+      "passed": true
+    },
+    {
+      "field": "validate.2.intervals.1",
+      "python": 0.796589366725557,
+      "reference": 0.7965893668884615,
+      "absolute_difference": 1.6290446769318123e-10,
+      "relative_difference": 2.0450243809994406e-10,
+      "passed": true
+    },
+    {
+      "field": "validate.2.mls.0",
+      "python": 0.0038613700340696245,
+      "reference": 0.0038613700340696237,
+      "absolute_difference": 8.673617379884035e-19,
+      "relative_difference": 2.246253869314521e-16,
+      "passed": true
+    },
+    {
+      "field": "validate.2.mls.1",
+      "python": 0.01739228319259921,
+      "reference": 0.017392283192599195,
+      "absolute_difference": 1.3877787807814457e-17,
+      "relative_difference": 7.979278887155981e-16,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.beta.0",
+      "python": 0.04652320611110239,
+      "reference": 0.04652320611109971,
+      "absolute_difference": 2.67841304690819e-15,
+      "relative_difference": 5.757154914285158e-14,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.beta.1",
+      "python": 1.0026579944793366,
+      "reference": 1.0026579944793363,
+      "absolute_difference": 2.220446049250313e-16,
+      "relative_difference": 2.2145597616297409e-16,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.covariance.0",
+      "python": 0.0007764657800378474,
+      "reference": 0.0007764657577107439,
+      "absolute_difference": 2.232710349069078e-11,
+      "relative_difference": 2.8754781867674165e-08,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.covariance.1",
+      "python": -2.0960533777651015e-06,
+      "reference": -2.096053381566563e-06,
+      "absolute_difference": 3.801461420904198e-15,
+      "relative_difference": null,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.covariance.2",
+      "python": -2.096053377765232e-06,
+      "reference": -2.096053381566563e-06,
+      "absolute_difference": 3.8013309778303205e-15,
+      "relative_difference": null,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.covariance.3",
+      "python": 8.89794258606203e-05,
+      "reference": 8.897942602198355e-05,
+      "absolute_difference": 1.6136324589889617e-13,
+      "relative_difference": null,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.variances.0",
+      "python": 0.006039736988858075,
+      "reference": 0.006039736809929307,
+      "absolute_difference": 1.7892876763569987e-10,
+      "relative_difference": 2.9625259057901593e-08,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.variances.1",
+      "python": 0.0025739136629570844,
+      "reference": 0.00257391366762485,
+      "absolute_difference": 4.667765739901908e-12,
+      "relative_difference": 1.813489628115312e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.intervals.0",
+      "python": -0.006269483557667967,
+      "reference": -0.006269482798649535,
+      "absolute_difference": 7.59018431439884e-10,
+      "relative_difference": 1.210655576889658e-07,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.intervals.1",
+      "python": 0.09931589577987274,
+      "reference": 0.09931589502084895,
+      "absolute_difference": 7.590237882659778e-10,
+      "relative_difference": 7.642520747626946e-09,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.intervals.2",
+      "python": 0.9847866416851822,
+      "reference": 0.9847866416689771,
+      "absolute_difference": 1.620503731203371e-11,
+      "relative_difference": 1.6455378887522335e-11,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.intervals.3",
+      "python": 1.020529347273491,
+      "reference": 1.0205293472896955,
+      "absolute_difference": 1.6204371178218935e-11,
+      "relative_difference": 1.587839803064383e-11,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.mls.0",
+      "python": 0.005460869770862056,
+      "reference": 0.0054608697708620445,
+      "absolute_difference": 1.1275702593849246e-17,
+      "relative_difference": 2.0648180723909264e-15,
+      "passed": true
+    },
+    {
+      "field": "validate.linearity.mls.1",
+      "python": 0.022478100371199378,
+      "reference": 0.022478100371199232,
+      "absolute_difference": 1.457167719820518e-16,
+      "relative_difference": 6.482610611026364e-15,
+      "passed": true
+    },
+    {
+      "field": "outlier.1.beta.0",
+      "python": 0.1752936328919772,
+      "reference": 0.1752936328919964,
+      "absolute_difference": 1.9206858326015208e-14,
+      "relative_difference": 1.0956962902268745e-13,
+      "passed": true
+    },
+    {
+      "field": "outlier.1.covariance.0",
+      "python": 0.04115332901742482,
+      "reference": 0.04115332522173159,
+      "absolute_difference": 3.795693231944952e-09,
+      "relative_difference": 9.223296565937236e-08,
+      "passed": true
+    },
+    {
+      "field": "outlier.1.variances.0",
+      "python": 0.3286723983764533,
+      "reference": 0.328672367988461,
+      "absolute_difference": 3.038799228916034e-08,
+      "relative_difference": 9.245679055754148e-08,
+      "passed": true
+    },
+    {
+      "field": "outlier.1.variances.1",
+      "python": 0.0016627012888432186,
+      "reference": 0.0016627013559366002,
+      "absolute_difference": 6.709338163171652e-11,
+      "relative_difference": 4.035203399104874e-08,
+      "passed": true
+    },
+    {
+      "field": "outlier.1.intervals.0",
+      "python": -0.3044007417936761,
+      "reference": -0.304400719671841,
+      "absolute_difference": 2.212183508598642e-08,
+      "relative_difference": 7.267339942505671e-08,
+      "passed": true
+    },
+    {
+      "field": "outlier.1.intervals.1",
+      "python": 0.6549880075776304,
+      "reference": 0.6549879854558338,
+      "absolute_difference": 2.2121796616758616e-08,
+      "relative_difference": 3.377435480952085e-08,
+      "passed": true
+    },
+    {
+      "field": "outlier.1.mls.0",
+      "python": 0.1450296455131419,
+      "reference": 0.14502964551314182,
+      "absolute_difference": 8.326672684688674e-17,
+      "relative_difference": 5.7413590547142e-16,
+      "passed": true
+    },
+    {
+      "field": "outlier.1.mls.1",
+      "python": 1.3648756691351283,
+      "reference": 1.364875669135125,
+      "absolute_difference": 3.3306690738754696e-15,
+      "relative_difference": 2.4402728755403784e-15,
+      "passed": true
+    },
+    {
+      "field": "published.intercept0",
+      "python": 99.3999999999999,
+      "reference": 99.4,
+      "absolute_difference": 9.947598300641403e-14,
+      "relative_difference": 1.0007644165635212e-15,
+      "passed": true
+    },
+    {
+      "field": "published.slope0",
+      "python": -0.3999999999999915,
+      "reference": -0.4,
+      "absolute_difference": 8.548717289613705e-15,
+      "relative_difference": 2.1371793224034263e-14,
+      "passed": true
+    },
+    {
+      "field": "published.intercept1",
+      "python": 99.2,
+      "reference": 99.2,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "field": "published.slope1",
+      "python": -0.6333333333333308,
+      "reference": -0.633,
+      "absolute_difference": 0.0003333333333307431,
+      "relative_difference": 0.000526592943650463,
+      "passed": true
+    },
+    {
+      "field": "published.intercept2",
+      "python": 98.19999999999993,
+      "reference": 98.2,
+      "absolute_difference": 7.105427357601002e-14,
+      "relative_difference": 7.235669406925663e-16,
+      "passed": true
+    },
+    {
+      "field": "published.slope2",
+      "python": -0.29999999999999716,
+      "reference": -0.3,
+      "absolute_difference": 2.831068712794149e-15,
+      "relative_difference": 9.43689570931383e-15,
+      "passed": true
+    },
+    {
+      "field": "published.slope_F",
+      "python": 4.086206896551723,
+      "reference": 4.0862,
+      "absolute_difference": 6.896551723478694e-06,
+      "relative_difference": 1.6877665614699952e-06,
+      "passed": true
+    },
+    {
+      "field": "published.slope_p",
+      "python": 0.05461981698385787,
+      "reference": 0.05462,
+      "absolute_difference": 1.830161421301213e-07,
+      "relative_difference": 3.3507166263295732e-06,
+      "passed": true
+    },
+    {
+      "field": "published.error_ss",
+      "python": 5.800000000000001,
+      "reference": 5.8,
+      "absolute_difference": 8.881784197001252e-16,
+      "relative_difference": 1.5313421029312505e-16,
+      "passed": true
+    },
+    {
+      "field": "published.first_se",
+      "python": 0.621825270205921,
+      "reference": 0.621825,
+      "absolute_difference": 2.702059210824004e-07,
+      "relative_difference": 4.34536921292004e-07,
+      "passed": true
+    }
+  ],
+  "fields": 318,
+  "passed": true,
+  "max_relative_difference": 6.895190607138223e-07,
+  "max_absolute_difference": 3.038799228916034e-08,
+  "published_examples": {
+    "matched_regression_ANCOVA_SE_fields": 10,
+    "passed": true,
+    "source_manifest": "fixtures/stability/source_manifest.json",
+    "source_hashes": [
+      {
+        "path": "sources/koleva_2016.pdf",
+        "url": "https://jsee.uctm.edu/index.php/see/article/download/22/22",
+        "sha256": "63a713b35a39c31bc921fe0e84817f3d9c7fdd558138d7be05ca14d395c8ee2d"
+      },
+      {
+        "path": "sources/Q1E_Guideline.pdf",
+        "url": "https://database.ich.org/sites/default/files/Q1E_Guideline.pdf",
+        "sha256": "d3d383950299fcbfc32e1e0a2371fa16ae939ee67531bfb1bdb2a4b5822658da"
+      }
+    ],
+    "Q1E_mean_bound_shelf_life": 5.587563148252768,
+    "printed_shelf_life": 3.16423,
+    "shelf_life_reproduction": "not_met: printed interval construction differs; no claim to reproduce printed shelf life",
+    "potency_assay": "not_met: no published example matching replicated random-run RP model obtained"
+  }
+}

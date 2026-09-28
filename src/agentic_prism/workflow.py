@@ -31,6 +31,9 @@ def analyze(config_path, output, render=True):
         requested = json.loads(Path(config_path).read_text())
     except (OSError, ValueError):
         requested = None
+    if isinstance(requested, dict) and requested.get("analysis_type") in ("stability", "potency_assay", "comparability", "specification"):
+        from .cmc_workflow import analyze_cmc
+        return analyze_cmc(config_path, output, render)
     if isinstance(requested, dict) and requested.get("analysis_type") == "variance_components":
         from .precision_workflow import analyze_precision
         return analyze_precision(config_path, output, render)

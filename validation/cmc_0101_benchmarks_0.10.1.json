@@ -1,0 +1,1091 @@
+{
+  "script_sha256": "df870bdced0238f4b277ed0db7f073383cb840f60a903bd95d152261c1290cc0",
+  "oracle_sha256": "103f40b3b924ef6a0121b48ee29bbc7dddbaf30a15883fb55e1c0811a57ea133",
+  "R": "R version 4.6.0 (2026-04-24) ; tolerance 3.0.0",
+  "fields": 115,
+  "max_relative_difference": 3.3043660811385866e-09,
+  "passed": true,
+  "published_examples": [
+    {
+      "source": "NIST/SEMATECH e-Handbook 7.2.6.3 (two-sided, Howe form), N=43, p=.90, conf=.99",
+      "printed": 2.217,
+      "python": 2.2173158966536297,
+      "decimals": 3,
+      "passed": true
+    },
+    {
+      "source": "NIST/SEMATECH e-Handbook 7.2.6.3 (one-sided, noncentral t), N=43, p=.90, conf=.99",
+      "printed": 1.874,
+      "python": 1.8739536058511994,
+      "decimals": 4,
+      "passed": true
+    },
+    {
+      "source": "NIST/SEMATECH e-Handbook 7.2.6.4 (smallest/largest observation), p=.90, conf=.95",
+      "printed": 46,
+      "python": 46,
+      "decimals": 0,
+      "passed": true
+    },
+    {
+      "source": "NIST/SEMATECH e-Handbook 7.2.6.4 (smallest/largest observation), p=.99, conf=.95",
+      "printed": 473,
+      "python": 473,
+      "decimals": 0,
+      "passed": true
+    },
+    {
+      "source": "NIST/SEMATECH e-Handbook 6.1.6 capability example (USL 20, LSL 8, mean 16, s 2): Cp",
+      "printed": 1.0,
+      "python": 1.0,
+      "decimals": 4,
+      "passed": true
+    },
+    {
+      "source": "NIST/SEMATECH e-Handbook 6.1.6 capability example: Cpk",
+      "printed": 0.6667,
+      "python": 0.6666666666666666,
+      "decimals": 4,
+      "passed": true
+    }
+  ],
+  "published_passed": true,
+  "rows": [
+    {
+      "field": "k2_exact.n5.P0.9.c0.9",
+      "python": 3.4992630218657976,
+      "R": 3.4992630217389,
+      "absolute_difference": 1.268976035362357e-10,
+      "relative_difference": 3.626409411007237e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n10.P0.9.c0.9",
+      "python": 2.5459416821512963,
+      "R": 2.54594168038021,
+      "absolute_difference": 1.77108638865775e-09,
+      "relative_difference": 6.956508086207444e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n30.P0.9.c0.9",
+      "python": 2.0288711543767386,
+      "R": 2.02887115468847,
+      "absolute_difference": 3.117315294787204e-10,
+      "relative_difference": 1.536477704650428e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n43.P0.9.c0.9",
+      "python": 1.94637265630919,
+      "R": 1.946372656309,
+      "absolute_difference": 1.900701818158268e-13,
+      "relative_difference": 9.765354090838186e-14,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n100.P0.9.c0.9",
+      "python": 1.8231856239134567,
+      "R": 1.82318562401119,
+      "absolute_difference": 9.773337694696238e-11,
+      "relative_difference": 5.3605829082800255e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n5.P0.95.c0.9",
+      "python": 4.14246444033578,
+      "R": 4.14246444033846,
+      "absolute_difference": 2.680522470654978e-12,
+      "relative_difference": 6.470840025933851e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n10.P0.95.c0.9",
+      "python": 3.025706000795894,
+      "R": 3.02570600021656,
+      "absolute_difference": 5.793339141746401e-10,
+      "relative_difference": 1.9147065647923994e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n30.P0.95.c0.9",
+      "python": 2.41658681720349,
+      "R": 2.41658681728358,
+      "absolute_difference": 8.009015672882924e-11,
+      "relative_difference": 3.314184955244291e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n43.P0.95.c0.9",
+      "python": 2.3187857945952577,
+      "R": 2.31878579459511,
+      "absolute_difference": 1.4788170688007085e-13,
+      "relative_difference": 6.37754928569816e-14,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n100.P0.95.c0.9",
+      "python": 2.172381090319771,
+      "R": 2.17238109031647,
+      "absolute_difference": 3.3009150968155154e-12,
+      "relative_difference": 1.5194917280073737e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n5.P0.99.c0.9",
+      "python": 5.386764745172451,
+      "R": 5.38676474541374,
+      "absolute_difference": 2.412887667446739e-10,
+      "relative_difference": 4.479289112265498e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n10.P0.99.c0.9",
+      "python": 3.957961910563815,
+      "R": 3.95796190957624,
+      "absolute_difference": 9.87574910737976e-10,
+      "relative_difference": 2.495160219578038e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n30.P0.99.c0.9",
+      "python": 3.173308609367929,
+      "R": 3.17330860931936,
+      "absolute_difference": 4.856914870288165e-11,
+      "relative_difference": 1.5305523251108945e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n43.P0.99.c0.9",
+      "python": 3.0460917908958836,
+      "R": 3.04609179180594,
+      "absolute_difference": 9.100564746233886e-10,
+      "relative_difference": 2.987619995797442e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n100.P0.99.c0.9",
+      "python": 2.854753505138284,
+      "R": 2.85475350513816,
+      "absolute_difference": 1.2434497875801753e-13,
+      "relative_difference": 4.355716825785968e-14,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n5.P0.9.c0.95",
+      "python": 4.290604070686454,
+      "R": 4.29060407068659,
+      "absolute_difference": 1.3589129821411916e-13,
+      "relative_difference": 3.16718336102202e-14,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n10.P0.9.c0.95",
+      "python": 2.856310848578928,
+      "R": 2.85631084699454,
+      "absolute_difference": 1.5843881762123146e-09,
+      "relative_difference": 5.546973915249579e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n30.P0.9.c0.95",
+      "python": 2.145111091944787,
+      "R": 2.14511108878346,
+      "absolute_difference": 3.1613267559293945e-09,
+      "relative_difference": 1.4737356831819152e-09,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n43.P0.9.c0.95",
+      "python": 2.035898643612353,
+      "R": 2.03589864363572,
+      "absolute_difference": 2.3366641954680745e-11,
+      "relative_difference": 1.147731102809345e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n100.P0.9.c0.95",
+      "python": 1.8748075437924703,
+      "R": 1.87480754376836,
+      "absolute_difference": 2.4110269336574675e-11,
+      "relative_difference": 1.286013031935698e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n5.P0.95.c0.95",
+      "python": 5.0768745320594,
+      "R": 5.07687453197802,
+      "absolute_difference": 8.138023588344367e-11,
+      "relative_difference": 1.6029593674385493e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n10.P0.95.c0.95",
+      "python": 3.393429478712607,
+      "R": 3.39342947705889,
+      "absolute_difference": 1.6537171632080572e-09,
+      "relative_difference": 4.873291678486113e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n30.P0.95.c0.95",
+      "python": 2.5548928132776743,
+      "R": 2.5548928134154,
+      "absolute_difference": 1.3772583074000977e-10,
+      "relative_difference": 5.390669620926165e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n43.P0.95.c0.95",
+      "python": 2.4253765273706818,
+      "R": 2.42537652737079,
+      "absolute_difference": 1.0835776720341528e-13,
+      "relative_difference": 4.467667843758661e-14,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n100.P0.95.c0.95",
+      "python": 2.233882023044248,
+      "R": 2.23388202304624,
+      "absolute_difference": 1.991740106177531e-12,
+      "relative_difference": 8.916048769045952e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n5.P0.99.c0.95",
+      "python": 6.597976739396556,
+      "R": 6.59797673950287,
+      "absolute_difference": 1.0631406865968529e-10,
+      "relative_difference": 1.6113131776165616e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n10.P0.99.c0.95",
+      "python": 4.436908728948542,
+      "R": 4.43690872629893,
+      "absolute_difference": 2.649612085292574e-09,
+      "relative_difference": 5.971752516763538e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n30.P0.99.c0.95",
+      "python": 3.354575844793339,
+      "R": 3.35457584495868,
+      "absolute_difference": 1.6534107416532606e-10,
+      "relative_difference": 4.928822057006216e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n43.P0.99.c0.95",
+      "python": 3.1859509964822257,
+      "R": 3.1859509964823,
+      "absolute_difference": 7.416289804496046e-14,
+      "relative_difference": 2.3278103814793714e-14,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n100.P0.99.c0.95",
+      "python": 2.9355492411475956,
+      "R": 2.93554924134192,
+      "absolute_difference": 1.943245564461904e-10,
+      "relative_difference": 6.619700112996889e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n5.P0.9.c0.99",
+      "python": 6.654929690632953,
+      "R": 6.65492969063342,
+      "absolute_difference": 4.671818487622659e-13,
+      "relative_difference": 7.020086920224085e-14,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n10.P0.9.c0.99",
+      "python": 3.61662109438306,
+      "R": 3.61662108243242,
+      "absolute_difference": 1.1950640033120408e-08,
+      "relative_difference": 3.3043660811385866e-09,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n30.P0.9.c0.99",
+      "python": 2.393966454517513,
+      "R": 2.39396645483498,
+      "absolute_difference": 3.1746694162393396e-10,
+      "relative_difference": 1.3261127405639334e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n43.P0.9.c0.99",
+      "python": 2.222825173791124,
+      "R": 2.22282517471448,
+      "absolute_difference": 9.233560582799782e-10,
+      "relative_difference": 4.1539751699032407e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n100.P0.9.c0.99",
+      "python": 1.9783327706621756,
+      "R": 1.97833277071914,
+      "absolute_difference": 5.696443317049216e-11,
+      "relative_difference": 2.879416143411764e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n5.P0.95.c0.99",
+      "python": 7.869730768887899,
+      "R": 7.86973076892755,
+      "absolute_difference": 3.965094919067269e-11,
+      "relative_difference": 5.038412412687421e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n10.P0.95.c0.99",
+      "python": 4.29417223539053,
+      "R": 4.29417222288431,
+      "absolute_difference": 1.2506220059549378e-08,
+      "relative_difference": 2.9123703965345852e-09,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n30.P0.95.c0.99",
+      "python": 2.85092982047235,
+      "R": 2.85092982088746,
+      "absolute_difference": 4.151101684612968e-10,
+      "relative_difference": 1.456051865675452e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n43.P0.95.c0.99",
+      "python": 2.6479067628694026,
+      "R": 2.64790676282521,
+      "absolute_difference": 4.419264953980928e-11,
+      "relative_difference": 1.6689654696397807e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n100.P0.95.c0.99",
+      "python": 2.3572163335987417,
+      "R": 2.35721633580163,
+      "absolute_difference": 2.202888094160471e-09,
+      "relative_difference": 9.345294535349995e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n5.P0.99.c0.99",
+      "python": 10.220090305042579,
+      "R": 10.2200903050433,
+      "absolute_difference": 7.212008767965017e-13,
+      "relative_difference": 7.05669769317607e-14,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n10.P0.99.c0.99",
+      "python": 5.610168286814593,
+      "R": 5.61016827112152,
+      "absolute_difference": 1.5693073507350164e-08,
+      "relative_difference": 2.7972554028603117e-09,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n30.P0.99.c0.99",
+      "python": 3.742463497240455,
+      "R": 3.74246349781937,
+      "absolute_difference": 5.789151380497515e-10,
+      "relative_difference": 1.5468825237362216e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n43.P0.99.c0.99",
+      "python": 3.4778808206153196,
+      "R": 3.47788082061541,
+      "absolute_difference": 9.059419880941277e-14,
+      "relative_difference": 2.6048678342399943e-14,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k2_exact.n100.P0.99.c0.99",
+      "python": 3.0975702049007876,
+      "R": 3.09757020287023,
+      "absolute_difference": 2.030557499921315e-09,
+      "relative_difference": 6.555323582464043e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n5.P0.9.c0.9",
+      "python": 2.7423482029512907,
+      "R": 2.74234820295573,
+      "absolute_difference": 4.439115741661226e-12,
+      "relative_difference": 1.6187279707502875e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n10.P0.9.c0.9",
+      "python": 2.0656683200017674,
+      "R": 2.06566832000289,
+      "absolute_difference": 1.1226575225009583e-12,
+      "relative_difference": 5.434839231592551e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n30.P0.9.c0.9",
+      "python": 1.6570649131303772,
+      "R": 1.65706491313098,
+      "absolute_difference": 6.0285110237146e-13,
+      "relative_difference": 3.6380657003495953e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n43.P0.9.c0.9",
+      "python": 1.5847999083561553,
+      "R": 1.58479990835662,
+      "absolute_difference": 4.647393581080905e-13,
+      "relative_difference": 2.9324797134169976e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n100.P0.9.c0.9",
+      "python": 1.470061565185352,
+      "R": 1.4700615651859,
+      "absolute_difference": 5.480060849549773e-13,
+      "relative_difference": 3.7277764274156637e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n5.P0.95.c0.9",
+      "python": 3.3998339583849253,
+      "R": 3.39983395839046,
+      "absolute_difference": 5.53468382236133e-12,
+      "relative_difference": 1.627927684145359e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n10.P0.95.c0.9",
+      "python": 2.5683732058891002,
+      "R": 2.56837320589169,
+      "absolute_difference": 2.589928271845565e-12,
+      "relative_difference": 1.0083924975951427e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n30.P0.95.c0.9",
+      "python": 2.0798169707048193,
+      "R": 2.07981697070583,
+      "absolute_difference": 1.0107470416187425e-12,
+      "relative_difference": 4.859788413380068e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n43.P0.95.c0.9",
+      "python": 1.994927428202999,
+      "R": 1.99492742820383,
+      "absolute_difference": 8.311129562343922e-13,
+      "relative_difference": 4.166131281190014e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n100.P0.95.c0.9",
+      "python": 1.8612516488966446,
+      "R": 1.86125164889725,
+      "absolute_difference": 6.052935930256353e-13,
+      "relative_difference": 3.252078209758784e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n5.P0.99.c0.9",
+      "python": 4.6659821960835535,
+      "R": 4.66598219608905,
+      "absolute_difference": 5.496936239524075e-12,
+      "relative_difference": 1.1780877012628802e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n10.P0.99.c0.9",
+      "python": 3.5316587507606014,
+      "R": 3.53165875076347,
+      "absolute_difference": 2.8683722064215544e-12,
+      "relative_difference": 8.121883819611601e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n30.P0.99.c0.9",
+      "python": 2.883724685463042,
+      "R": 2.88372468546434,
+      "absolute_difference": 1.298072760391733e-12,
+      "relative_difference": 4.501375484749912e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n43.P0.99.c0.9",
+      "python": 2.773272428628409,
+      "R": 2.77327242862961,
+      "absolute_difference": 1.2008172234345693e-12,
+      "relative_difference": 4.3299648856637694e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n100.P0.99.c0.9",
+      "python": 2.6009028131171794,
+      "R": 2.60090281311819,
+      "absolute_difference": 1.0107470416187425e-12,
+      "relative_difference": 3.8861392148942714e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n5.P0.9.c0.95",
+      "python": 3.4066332628008067,
+      "R": 3.40663326280368,
+      "absolute_difference": 2.873257187729905e-12,
+      "relative_difference": 8.434301452705234e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n10.P0.9.c0.95",
+      "python": 2.3546401318290595,
+      "R": 2.35464013183444,
+      "absolute_difference": 5.380584866543359e-12,
+      "relative_difference": 2.2850985990591616e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n30.P0.9.c0.95",
+      "python": 1.7773287978334928,
+      "R": 1.77732879783457,
+      "absolute_difference": 1.0771383784913269e-12,
+      "relative_difference": 6.06043394898947e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n43.P0.9.c0.95",
+      "python": 1.6795532140250038,
+      "R": 1.67955321402597,
+      "absolute_difference": 9.661160760288112e-13,
+      "relative_difference": 5.752220697509098e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n100.P0.9.c0.95",
+      "python": 1.5267487478503061,
+      "R": 1.52674874785104,
+      "absolute_difference": 7.338574192772285e-13,
+      "relative_difference": 4.806667896798096e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n5.P0.95.c0.95",
+      "python": 4.202680741256176,
+      "R": 4.20268074126019,
+      "absolute_difference": 4.013678278624866e-12,
+      "relative_difference": 9.550281179391584e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n10.P0.95.c0.95",
+      "python": 2.9109634130781665,
+      "R": 2.91096341308103,
+      "absolute_difference": 2.8634872251132037e-12,
+      "relative_difference": 9.83690558337325e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n30.P0.95.c0.95",
+      "python": 2.2198375320350547,
+      "R": 2.2198375320369,
+      "absolute_difference": 1.84519066692701e-12,
+      "relative_difference": 8.312277994659737e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n43.P0.95.c0.95",
+      "python": 2.104809996621276,
+      "R": 2.10480999662282,
+      "absolute_difference": 1.5440981826486677e-12,
+      "relative_difference": 7.336045463135305e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n100.P0.95.c0.95",
+      "python": 1.9265388505123149,
+      "R": 1.92653885051321,
+      "absolute_difference": 8.950618024528012e-13,
+      "relative_difference": 4.645957709154768e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n5.P0.99.c0.95",
+      "python": 5.741084517227307,
+      "R": 5.74108451724529,
+      "absolute_difference": 1.7982948463668436e-11,
+      "relative_difference": 3.1323260282357043e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n10.P0.99.c0.95",
+      "python": 3.9811178452730593,
+      "R": 3.98111784528185,
+      "absolute_difference": 8.79074590898199e-12,
+      "relative_difference": 2.2081099456526218e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n30.P0.99.c0.95",
+      "python": 3.0639011262381683,
+      "R": 3.0639011262404,
+      "absolute_difference": 2.2315482794965646e-12,
+      "relative_difference": 7.283356046919227e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n43.P0.99.c0.95",
+      "python": 2.9140746613544573,
+      "R": 2.91407466135677,
+      "absolute_difference": 2.312816604899126e-12,
+      "relative_difference": 7.936710186492947e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n100.P0.99.c0.95",
+      "python": 2.6839578556912778,
+      "R": 2.6839578556928,
+      "absolute_difference": 1.5223378113660146e-12,
+      "relative_difference": 5.671988508079831e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n5.P0.9.c0.99",
+      "python": 5.36171967536456,
+      "R": 5.3617196754,
+      "absolute_difference": 3.54400953028744e-11,
+      "relative_difference": 6.6098374119550485e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n10.P0.9.c0.99",
+      "python": 3.047907458137645,
+      "R": 3.04790745815359,
+      "absolute_difference": 1.5945023079666498e-11,
+      "relative_difference": 5.231465619801308e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n30.P0.9.c0.99",
+      "python": 2.029834190121624,
+      "R": 2.0298341901277,
+      "absolute_difference": 6.076028569168557e-12,
+      "relative_difference": 2.993362018789478e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n43.P0.9.c0.99",
+      "python": 1.8739536058511994,
+      "R": 1.87395360585798,
+      "absolute_difference": 6.780576100595681e-12,
+      "relative_difference": 3.618326558031958e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n100.P0.9.c0.99",
+      "python": 1.6389796119068567,
+      "R": 1.63897961191062,
+      "absolute_difference": 3.763211964269431e-12,
+      "relative_difference": 2.2960700285237308e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n5.P0.95.c0.99",
+      "python": 6.5783367526241925,
+      "R": 6.57833675266953,
+      "absolute_difference": 4.533795561201259e-11,
+      "relative_difference": 6.892008925145731e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n10.P0.95.c0.99",
+      "python": 3.7383149641621056,
+      "R": 3.73831496419319,
+      "absolute_difference": 3.108446833266498e-11,
+      "relative_difference": 8.315101491019949e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n30.P0.95.c0.99",
+      "python": 2.5154861548976495,
+      "R": 2.51548615490707,
+      "absolute_difference": 9.420464408549378e-12,
+      "relative_difference": 3.744987580302305e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n43.P0.95.c0.99",
+      "python": 2.3313990249489787,
+      "R": 2.33139902495805,
+      "absolute_difference": 9.071410289607229e-12,
+      "relative_difference": 3.890972841841372e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n100.P0.95.c0.99",
+      "python": 2.0562864919682005,
+      "R": 2.05628649197232,
+      "absolute_difference": 4.119371510569181e-12,
+      "relative_difference": 2.0033062156713484e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n5.P0.99.c0.99",
+      "python": 8.939024938893024,
+      "R": 8.93902493906819,
+      "absolute_difference": 1.751665479332587e-10,
+      "relative_difference": 1.959571084399706e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n10.P0.99.c0.99",
+      "python": 5.073725348045277,
+      "R": 5.07372534807415,
+      "absolute_difference": 2.887379224603137e-11,
+      "relative_difference": 5.6908465210855545e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n30.P0.99.c0.99",
+      "python": 3.4465059612172313,
+      "R": 3.44650596122784,
+      "absolute_difference": 1.0608847134108146e-11,
+      "relative_difference": 3.078145592508616e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n43.P0.99.c0.99",
+      "python": 3.205916132527978,
+      "R": 3.2059161325399,
+      "absolute_difference": 1.1922018927634781e-11,
+      "relative_difference": 3.7187557112386196e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "k1.n100.P0.99.c0.99",
+      "python": 2.84964811759792,
+      "R": 2.84964811760395,
+      "absolute_difference": 6.02984329134415e-12,
+      "relative_difference": 2.1159957449111936e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "np_rank.n60.P0.95",
+      "python": 0,
+      "R": 0,
+      "absolute_difference": 0,
+      "relative_difference": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "field": "np_rank.n60.P0.9",
+      "python": 1,
+      "R": 1,
+      "absolute_difference": 0,
+      "relative_difference": 0.0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "field": "np_rank.n93.P0.95",
+      "python": 1,
+      "R": 1,
+      "absolute_difference": 0,
+      "relative_difference": 0.0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "field": "np_rank.n93.P0.9",
+      "python": 2,
+      "R": 2,
+      "absolute_difference": 0,
+      "relative_difference": 0.0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "field": "np_rank.n120.P0.95",
+      "python": 1,
+      "R": 1,
+      "absolute_difference": 0,
+      "relative_difference": 0.0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "field": "np_rank.n120.P0.9",
+      "python": 3,
+      "R": 3,
+      "absolute_difference": 0,
+      "relative_difference": 0.0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "field": "np_rank.n300.P0.95",
+      "python": 4,
+      "R": 4,
+      "absolute_difference": 0,
+      "relative_difference": 0.0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "field": "np_rank.n300.P0.9",
+      "python": 11,
+      "R": 11,
+      "absolute_difference": 0,
+      "relative_difference": 0.0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "field": "tost_absolute.lo",
+      "python": -2.2896685535640193,
+      "R": -2.28966855356402,
+      "absolute_difference": 8.881784197001252e-16,
+      "relative_difference": 3.8790698257073797e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "tost_absolute.hi",
+      "python": 0.6468952202306817,
+      "R": 0.646895220230681,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 1.0297398928648019e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "tost_absolute.margin",
+      "python": 2.5,
+      "R": 2.5,
+      "absolute_difference": 0.0,
+      "relative_difference": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "field": "tost_absolute.tost_p",
+      "python": 0.03203607710227906,
+      "R": 0.032036077102279,
+      "absolute_difference": 6.245004513516506e-17,
+      "relative_difference": 1.9493661766322335e-15,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "field": "tost_sd_multiple.lo",
+      "python": -2.2896685535640193,
+      "R": -2.28966855356402,
+      "absolute_difference": 8.881784197001252e-16,
+      "relative_difference": 3.8790698257073797e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "tost_sd_multiple.hi",
+      "python": 0.6468952202306817,
+      "R": 0.646895220230681,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 1.0297398928648019e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "tost_sd_multiple.margin",
+      "python": 2.7261328838782766,
+      "R": 2.72613288387828,
+      "absolute_difference": 3.552713678800501e-15,
+      "relative_difference": 1.3032063476474052e-15,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "field": "tost_sd_multiple.tost_p",
+      "python": 0.019516473519362615,
+      "R": 0.0195164735193625,
+      "absolute_difference": 1.1449174941446927e-16,
+      "relative_difference": 5.866415841001234e-15,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "field": "capability.pp",
+      "python": 1.1023882887196963,
+      "R": 1.1023882887197,
+      "absolute_difference": 3.774758283725532e-15,
+      "relative_difference": 3.42416399226219e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "capability.pp_lo",
+      "python": 0.8200370759352417,
+      "R": 0.820037075935241,
+      "absolute_difference": 6.661338147750939e-16,
+      "relative_difference": 8.1232158194235e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "capability.pp_hi",
+      "python": 1.3842022757080357,
+      "R": 1.38420227570804,
+      "absolute_difference": 4.440892098500626e-15,
+      "relative_difference": 3.208268167475049e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "capability.ppk",
+      "python": 1.0473056205600064,
+      "R": 1.04730562056,
+      "absolute_difference": 6.439293542825908e-15,
+      "relative_difference": 6.1484378737343e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "capability.ppk_lo",
+      "python": 0.7525613487994992,
+      "R": 0.752561348799497,
+      "absolute_difference": 2.220446049250313e-15,
+      "relative_difference": 2.950518323579093e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "capability.ppk_hi",
+      "python": 1.3420498923205137,
+      "R": 1.34204989232051,
+      "absolute_difference": 3.774758283725532e-15,
+      "relative_difference": 2.812681037661482e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "field": "ti_normal_exact.lower",
+      "python": 47.33924373918475,
+      "R": 47.3392437390598,
+      "absolute_difference": 1.2494894008341362e-10,
+      "relative_difference": 2.6394367593227464e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "ti_normal_exact.upper",
+      "python": 52.410922927481934,
+      "R": 52.4109229276069,
+      "absolute_difference": 1.2496315093812882e-10,
+      "relative_difference": 2.384295943628686e-12,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "field": "ti_upper",
+      "python": 1.7438089861886845,
+      "R": 1.7438089861892,
+      "absolute_difference": 5.155875726359227e-13,
+      "relative_difference": 2.956674594060054e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    }
+  ],
+  "note": "The NIST 6.1.6 capability example checks point estimates only (the page prints no interval example). The Howe factor follows NIST 7.2.6.3 without the second-order correction used by R tolerance method \"HE\"; it is therefore checked against NIST, not against that R method."
+}
