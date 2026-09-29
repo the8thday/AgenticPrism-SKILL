@@ -1,0 +1,42 @@
+{
+  "release": "0.12.1",
+  "status": "passed",
+  "states": [
+    {
+      "fixture": "fixtures/epitope_0121/config_complete.json",
+      "status": "passed",
+      "scientific_files_byte_identical": 5,
+      "refit_disabled_during_extraction": true
+    },
+    {
+      "fixture": "fixtures/epitope_0121/config_asymmetric.json",
+      "status": "passed",
+      "scientific_files_byte_identical": 5,
+      "refit_disabled_during_extraction": true
+    },
+    {
+      "fixture": "fixtures/epitope_0121/config_missing.json",
+      "status": "passed",
+      "scientific_files_byte_identical": 5,
+      "refit_disabled_during_extraction": true
+    },
+    {
+      "fixture": "fixtures/epitope_0121/config_failed_control.json",
+      "status": "passed",
+      "scientific_files_byte_identical": 5,
+      "refit_disabled_during_extraction": true
+    },
+    {
+      "fixture": "fixtures/epitope_0121/config_premix.json",
+      "status": "passed",
+      "scientific_files_byte_identical": 5,
+      "refit_disabled_during_extraction": true
+    },
+    {
+      "fixture": "fixtures/epitope_0121/config_tandem.json",
+      "status": "passed",
+      "scientific_files_byte_identical": 5,
+      "refit_disabled_during_extraction": true
+    }
+  ]
+}

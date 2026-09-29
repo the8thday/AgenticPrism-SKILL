@@ -1,0 +1,26 @@
+{
+  "source": "https://git.bioconductor.org/packages/cellHTS2",
+  "branch": "RELEASE_3_19",
+  "commit": "e73938774eea1c409e1205ad781d9aa97551430d",
+  "package": "cellHTS2 2.68.0",
+  "package_license": "Artistic-2.0",
+  "scope": "Package-distributed example only; original full-screen rights not inferred. Dataset Description License field blank. One positive and one negative control do not meet HTS workflow applicability. Numerical medpolish/B-score check only.",
+  "files": [
+    {
+      "path": "fixtures/pharmacology_0130/public/kcviab/DESCRIPTION",
+      "sha256": "b86b9e02be7f722691dfbc8effa5c168d8d5e3f055d38e7a086615d2388f5e5a"
+    },
+    {
+      "path": "fixtures/pharmacology_0130/public/kcviab/FT01-G01.txt",
+      "sha256": "1117705d015be25fce432544e42e57676eba34671da79b32c3210540642fc53b"
+    },
+    {
+      "path": "fixtures/pharmacology_0130/public/kcviab/Plateconf.txt",
+      "sha256": "ba05407949385770fa4b9a1ea3c1d1bcb15ea5c7a10de26569ac0524f0215f6c"
+    },
+    {
+      "path": "fixtures/pharmacology_0130/public/kcviab/Description.txt",
+      "sha256": "a936e0cf86905635342b6de3a5613badc9646ecbc72a4d71883aad0264f80d9f"
+    }
+  ]
+}

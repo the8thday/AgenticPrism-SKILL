@@ -1,0 +1,35 @@
+{
+  "release": "0.12.1",
+  "oracle": "pvclust2.2.0 boot.hclust r=1 and base R",
+  "checks": [
+    {
+      "dataset": "synthetic_blocking",
+      "branches": 4,
+      "bootstrap_replicates": 1000,
+      "max_absolute_BP_difference": 0.0,
+      "max_relative_BP_difference": 0.0,
+      "max_relative_height_difference": 1.9668766619673883e-15,
+      "passed": true
+    },
+    {
+      "dataset": "public_lung_algorithm_only",
+      "branches": 10,
+      "bootstrap_replicates": 1000,
+      "max_absolute_BP_difference": 0.0,
+      "max_relative_BP_difference": 0.0,
+      "max_relative_height_difference": 3.0953604582952737e-15,
+      "passed": true
+    },
+    {
+      "dataset": "directed_normalization",
+      "max_absolute_difference": 4.884981308350689e-15,
+      "max_relative_difference": 1.2499261256589365e-14,
+      "passed": true
+    }
+  ],
+  "limits": [
+    "BP feature-resampling stability only; no multiscale AU implementation claim.",
+    "Public lung dataset checks the clustering algorithm, not the epitope worked-example gate.",
+    "Abdiche numeric response/control matrix unavailable; published epitope gate UNMET."
+  ]
+}

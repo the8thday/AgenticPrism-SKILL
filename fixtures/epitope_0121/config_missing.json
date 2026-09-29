@@ -1,0 +1,25 @@
+{
+  "analysis_type": "epitope_binning",
+  "input": "missing.csv",
+  "source": "Synthetic seed121; not measured biology",
+  "format": "sandwich",
+  "assay_rationale": "Prespecified synthetic direct second-antibody signal with matched controls",
+  "valency": "monovalent",
+  "readout": "second_antibody_binding_response",
+  "controls_share_response_scale": true,
+  "independent_experiments": [
+    "E0",
+    "E1",
+    "E2",
+    "E3"
+  ],
+  "independence_source": "Independent simulation experiments, not wells",
+  "background_handling": "already_corrected",
+  "background_source": "Generated background0",
+  "thresholds_predeclared": true,
+  "threshold_source": "Prespecified0.2/0.8",
+  "control_span_source": "Prespecified minimum1 against generated span100",
+  "clustering": {
+    "cut_source": "Prespecified Euclidean cut0.5"
+  }
+}

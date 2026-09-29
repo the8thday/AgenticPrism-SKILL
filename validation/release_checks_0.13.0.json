@@ -1,0 +1,1279 @@
+{
+  "version": "0.13.0",
+  "status": "completed_with_disclosed_scientific_limits",
+  "base": "dev/0.12.1",
+  "base_commit": "4c022db5e2107d06b9dcfe463367bcc8c69ae9d5",
+  "build": {
+    "version": "0.13.0",
+    "archive_commit": "20f0a4cb30231d104f924a8f0d9b81aa622335c7",
+    "build_source": "clean git archive",
+    "python_source_files_exact": 83,
+    "artifacts": [
+      {
+        "path": "dist/agentic_prism-0.13.0-py3-none-any.whl",
+        "sha256": "f2c9b5f7d8d4818ef5faae1dc921d399587663e4ed028d85bf95de282aa4a7bd"
+      },
+      {
+        "path": "dist/agentic_prism-0.13.0.tar.gz",
+        "sha256": "d46778008360cde3bf51cd84b89db863338a2fccaa0cdc48fe7f197c65909e19"
+      }
+    ],
+    "superseded_moved": []
+  },
+  "pytest": {
+    "passed": 652,
+    "warnings": 8,
+    "seconds": 208.87
+  },
+  "benchmark": {
+    "release": "0.13.0",
+    "oracles": [
+      "synergyfinder3.20.0",
+      "base R medpolish/pt/p.adjust"
+    ],
+    "checks": [
+      {
+        "dataset": "combination",
+        "model": "Bliss",
+        "evaluated_cells": 36,
+        "total_cells": 36,
+        "max_absolute_difference": 2.886579864025407e-14,
+        "max_relative_difference": 7.62020062026184e-14,
+        "absolute_tolerance": 1e-08,
+        "passed": true,
+        "workflow_reportable": true,
+        "applicability_diagnostics": [],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "combination",
+        "model": "Loewe",
+        "evaluated_cells": 36,
+        "total_cells": 36,
+        "max_absolute_difference": 0.4662029092853617,
+        "max_relative_difference": 1.297754884306058,
+        "absolute_tolerance": 1.1,
+        "passed": true,
+        "workflow_reportable": true,
+        "applicability_diagnostics": [],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "combination",
+        "model": "HSA",
+        "evaluated_cells": 36,
+        "total_cells": 36,
+        "max_absolute_difference": 4.973799150320701e-14,
+        "max_relative_difference": 3.2575246029893236e-14,
+        "absolute_tolerance": 1e-08,
+        "passed": true,
+        "workflow_reportable": true,
+        "applicability_diagnostics": [],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "combination",
+        "model": "ZIP",
+        "evaluated_cells": 36,
+        "total_cells": 36,
+        "max_absolute_difference": 0.0007814266294303707,
+        "max_relative_difference": 0.008399856324178022,
+        "absolute_tolerance": 0.05,
+        "passed": true,
+        "workflow_reportable": true,
+        "applicability_diagnostics": [],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "public_oneil",
+        "model": "Bliss",
+        "evaluated_cells": 25,
+        "total_cells": 25,
+        "max_absolute_difference": 4.973799150320701e-14,
+        "max_relative_difference": 2.900378584250093e-15,
+        "absolute_tolerance": 1e-08,
+        "passed": true,
+        "workflow_reportable": true,
+        "applicability_diagnostics": [
+          "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+          "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+          "Loewe equal-effect inverse unavailable in common response range.",
+          "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+        ],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "public_oneil",
+        "model": "Loewe",
+        "evaluated_cells": 21,
+        "total_cells": 25,
+        "max_absolute_difference": 0.6637438478236248,
+        "max_relative_difference": 0.025333636409275797,
+        "absolute_tolerance": 1.1,
+        "passed": false,
+        "workflow_reportable": false,
+        "applicability_diagnostics": [
+          "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+          "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+          "Loewe equal-effect inverse unavailable in common response range.",
+          "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+        ],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "public_oneil",
+        "model": "HSA",
+        "evaluated_cells": 25,
+        "total_cells": 25,
+        "max_absolute_difference": 7.105427357601002e-15,
+        "max_relative_difference": 2.1793950779797287e-16,
+        "absolute_tolerance": 1e-08,
+        "passed": true,
+        "workflow_reportable": true,
+        "applicability_diagnostics": [
+          "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+          "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+          "Loewe equal-effect inverse unavailable in common response range.",
+          "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+        ],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "public_oneil",
+        "model": "ZIP",
+        "evaluated_cells": 25,
+        "total_cells": 25,
+        "max_absolute_difference": 0.2991390070253459,
+        "max_relative_difference": 0.023823519060451315,
+        "absolute_tolerance": 0.05,
+        "passed": false,
+        "workflow_reportable": false,
+        "applicability_diagnostics": [
+          "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+          "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+          "Loewe equal-effect inverse unavailable in common response range.",
+          "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+        ],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "public_oneil2",
+        "model": "Bliss",
+        "evaluated_cells": 25,
+        "total_cells": 25,
+        "max_absolute_difference": 4.263256414560601e-14,
+        "max_relative_difference": 1.933276755723866e-15,
+        "absolute_tolerance": 1e-08,
+        "passed": true,
+        "workflow_reportable": true,
+        "applicability_diagnostics": [
+          "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+          "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+          "Loewe equal-effect inverse unavailable in common response range.",
+          "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+        ],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "public_oneil2",
+        "model": "Loewe",
+        "evaluated_cells": 17,
+        "total_cells": 25,
+        "max_absolute_difference": 0.45217231863952634,
+        "max_relative_difference": 0.00765031979800309,
+        "absolute_tolerance": 1.1,
+        "passed": false,
+        "workflow_reportable": false,
+        "applicability_diagnostics": [
+          "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+          "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+          "Loewe equal-effect inverse unavailable in common response range.",
+          "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+        ],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "public_oneil2",
+        "model": "HSA",
+        "evaluated_cells": 25,
+        "total_cells": 25,
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "max_relative_difference": 1.5600581864634502e-16,
+        "absolute_tolerance": 1e-08,
+        "passed": true,
+        "workflow_reportable": true,
+        "applicability_diagnostics": [
+          "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+          "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+          "Loewe equal-effect inverse unavailable in common response range.",
+          "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+        ],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "public_oneil2",
+        "model": "ZIP",
+        "evaluated_cells": 25,
+        "total_cells": 25,
+        "max_absolute_difference": 76.32971889013686,
+        "max_relative_difference": 0.7824330463610334,
+        "absolute_tolerance": 0.05,
+        "passed": false,
+        "workflow_reportable": false,
+        "applicability_diagnostics": [
+          "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+          "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+          "Loewe equal-effect inverse unavailable in common response range.",
+          "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+        ],
+        "scope": "Numerical score objective only; withheld workflow results are not promoted"
+      },
+      {
+        "dataset": "synthetic_hts",
+        "metric": "residual",
+        "max_absolute_difference": 5.329070518200751e-15,
+        "max_relative_difference": 4.77145653358812e-15,
+        "passed": true
+      },
+      {
+        "dataset": "synthetic_hts",
+        "metric": "b_score",
+        "max_absolute_difference": 4.618527782440651e-14,
+        "max_relative_difference": 4.311041007542772e-15,
+        "passed": true
+      },
+      {
+        "dataset": "synthetic_hts",
+        "metric": "p_value",
+        "max_absolute_difference": 5.551115123125783e-16,
+        "max_relative_difference": 2.022388487405961e-15,
+        "passed": true
+      },
+      {
+        "dataset": "synthetic_hts",
+        "metric": "adjusted_p",
+        "max_absolute_difference": 4.440892098500626e-16,
+        "max_relative_difference": 5.447800735683963e-15,
+        "passed": true
+      },
+      {
+        "dataset": "synthetic_hts",
+        "metric": "zprime",
+        "max_absolute_difference": 4.440892098500626e-16,
+        "max_relative_difference": 5.353162171144426e-16,
+        "passed": true
+      },
+      {
+        "dataset": "synthetic_hts",
+        "metric": "ssmd",
+        "max_absolute_difference": 3.197442310920451e-14,
+        "max_relative_difference": 1.2859707051954312e-15,
+        "passed": true
+      },
+      {
+        "dataset": "public_KcViab_FT01_G01",
+        "metric": "residual",
+        "max_absolute_difference": 0.0,
+        "max_relative_difference": 0.0,
+        "passed": true,
+        "scope": "Numeric median-polish only; insufficient controls for the HTS workflow"
+      },
+      {
+        "dataset": "public_KcViab_FT01_G01",
+        "metric": "b_score",
+        "max_absolute_difference": 4.796163466380676e-14,
+        "max_relative_difference": 1.3709337187113654e-14,
+        "passed": true,
+        "scope": "Numeric median-polish only; insufficient controls for the HTS workflow"
+      }
+    ],
+    "limits": [
+      "synergyfinder Loewe searches100 response levels;1.1 percentage-point tolerance reflects its grid, with exact maximum relative differences retained.",
+      "ZIP allows .05 percentage-point local 4PL numerical tolerance, not algorithmic equivalence beyond checked datasets.",
+      "Public ONEIL repetitions lack independent-experiment IDs; no public uncertainty benchmark.",
+      "Public KcViab supports numerical median-polish only; complete published HTS QC/hit worked example UNMET. cellHTS2 package unavailable for Bioconductor3.23; archived package data used."
+    ]
+  },
+  "calibration": {
+    "registration": "4134ce5",
+    "seed": 130260930,
+    "draws": 4000,
+    "criteria": 19,
+    "passed": 13,
+    "missed": 6,
+    "unavailable_or_descriptive": 1,
+    "misses": [
+      {
+        "scenario": "combination_fixed_plateaus",
+        "metric": "HSA_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.915,
+        "mcse": 0.008819013550278736,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "combination_fixed_plateaus",
+        "metric": "HSA_coverage",
+        "population": "reportable",
+        "n": 1000,
+        "rate": 0.915,
+        "mcse": 0.008819013550278736,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "combination_free_plateaus",
+        "metric": "HSA_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.928,
+        "mcse": 0.00817410545564467,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "combination_free_plateaus",
+        "metric": "HSA_coverage",
+        "population": "reportable",
+        "n": 1000,
+        "rate": 0.928,
+        "mcse": 0.00817410545564467,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "hts_null_hits",
+        "metric": "false_hit",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.1,
+        "mcse": 0.009486832980505138,
+        "bound": 0.06378404875209022,
+        "passed": false,
+        "descriptive": false
+      },
+      {
+        "scenario": "hts_null_hits",
+        "metric": "false_hit",
+        "population": "reportable",
+        "n": 1000,
+        "rate": 0.1,
+        "mcse": 0.009486832980505138,
+        "bound": 0.06378404875209022,
+        "passed": false,
+        "descriptive": false
+      }
+    ],
+    "rows": [
+      {
+        "scenario": {
+          "name": "combination_fixed_plateaus",
+          "kind": "combination",
+          "fixed": true,
+          "stress": false
+        },
+        "evaluable": 1000,
+        "metrics": [
+          {
+            "metric": "Bliss_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.949,
+            "mcse": 0.006956938982052382,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "Bliss_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.949,
+            "mcse": 0.006956938982052382,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "Loewe_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.942,
+            "mcse": 0.007391616873188169,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "Loewe_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.942,
+            "mcse": 0.007391616873188169,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "HSA_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.915,
+            "mcse": 0.008819013550278736,
+            "bound": 0.9362159512479097,
+            "passed": false
+          },
+          {
+            "metric": "HSA_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.915,
+            "mcse": 0.008819013550278736,
+            "bound": 0.9362159512479097,
+            "passed": false
+          },
+          {
+            "metric": "ZIP_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.951,
+            "mcse": 0.006826346021115546,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "ZIP_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.951,
+            "mcse": 0.006826346021115546,
+            "bound": 0.9362159512479097,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "name": "combination_free_plateaus",
+          "kind": "combination",
+          "fixed": false,
+          "stress": false
+        },
+        "evaluable": 1000,
+        "metrics": [
+          {
+            "metric": "Bliss_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.956,
+            "mcse": 0.006485676526007139,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "Bliss_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.956,
+            "mcse": 0.006485676526007139,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "Loewe_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.953,
+            "mcse": 0.00669260786241059,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "Loewe_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.953,
+            "mcse": 0.00669260786241059,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "HSA_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.928,
+            "mcse": 0.00817410545564467,
+            "bound": 0.9362159512479097,
+            "passed": false
+          },
+          {
+            "metric": "HSA_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.928,
+            "mcse": 0.00817410545564467,
+            "bound": 0.9362159512479097,
+            "passed": false
+          },
+          {
+            "metric": "ZIP_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.953,
+            "mcse": 0.00669260786241059,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "ZIP_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.953,
+            "mcse": 0.00669260786241059,
+            "bound": 0.9362159512479097,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "name": "hts_null_hits",
+          "kind": "hts",
+          "positive": 20.0,
+          "stress": false
+        },
+        "evaluable": 1000,
+        "metrics": [
+          {
+            "metric": "false_hit",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.1,
+            "mcse": 0.009486832980505138,
+            "bound": 0.06378404875209022,
+            "passed": false,
+            "descriptive": false
+          },
+          {
+            "metric": "false_hit",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.1,
+            "mcse": 0.009486832980505138,
+            "bound": 0.06378404875209022,
+            "passed": false,
+            "descriptive": false
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "name": "hts_failed_controls",
+          "kind": "hts",
+          "positive": 4.0,
+          "stress": true
+        },
+        "evaluable": 1000,
+        "metrics": [
+          {
+            "metric": "withheld",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 1.0,
+            "mcse": 0.0,
+            "bound": 0.9362159512479097,
+            "passed": true,
+            "descriptive": false
+          },
+          {
+            "metric": "withheld",
+            "population": "reportable",
+            "n": 0,
+            "rate": null,
+            "mcse": null,
+            "bound": null,
+            "passed": null,
+            "descriptive": true
+          }
+        ]
+      }
+    ]
+  },
+  "legacy": {
+    "configurations": 147,
+    "byte_identical_count": 1128
+  },
+  "install_smoke": {
+    "status": "passed",
+    "fixtures": 154
+  },
+  "install_exact": {
+    "status": "passed",
+    "package_version": "0.13.0",
+    "installed_source_isolation": true,
+    "fixtures": [
+      {
+        "fixture": "fixtures/dose_public/config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "curve_grid.csv",
+          "diagnostics.json",
+          "fit_results.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json",
+          "sample_summary.csv",
+          "source_provenance.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/dose_synthetic/config_ec50.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "curve_grid.csv",
+          "diagnostics.json",
+          "fit_results.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json",
+          "sample_summary.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/dose_synthetic/config_ic50.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "curve_grid.csv",
+          "diagnostics.json",
+          "fit_results.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json",
+          "sample_summary.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/dose_synthetic/config_potency.json",
+        "byte_identical_artifacts": [
+          "comparison_grid.csv",
+          "comparisons.csv",
+          "config.resolved.json",
+          "curve_grid.csv",
+          "diagnostics.json",
+          "fit_results.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "potency_summary.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json",
+          "sample_summary.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/dose_synthetic/config_potency_equivalence.json",
+        "byte_identical_artifacts": [
+          "comparison_grid.csv",
+          "comparisons.csv",
+          "config.resolved.json",
+          "curve_grid.csv",
+          "diagnostics.json",
+          "fit_results.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "parallelism_equivalence.csv",
+          "potency_summary.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json",
+          "sample_summary.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/elisa_synthetic/config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "cross_plate_qc.csv",
+          "diagnostics.json",
+          "dilution_linearity.csv",
+          "independent_qc.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json",
+          "sample_summary.csv",
+          "standards_qc.csv",
+          "unknown_wells.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_asymmetric.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_complete.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_failed_control.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_missing.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_premix.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_tandem.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/independent_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/paired_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/bivalent_analyte_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/heterogeneous_ligand_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/mass_transport_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/off_rate_screening_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/one_to_one_drift_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_synthetic/config.json",
+        "byte_identical_artifacts": [
+          "bootstrap.csv",
+          "config.resolved.json",
+          "curve_parameters.csv",
+          "diagnostics.json",
+          "fit_results.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json",
+          "window_sensitivity.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/multigroup_synthetic/config_dunnett.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "contrasts.csv",
+          "diagnostics.json",
+          "group_summary.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "omnibus.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/multigroup_synthetic/config_games_howell.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "contrasts.csv",
+          "diagnostics.json",
+          "group_summary.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "omnibus.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pharmacology_0130/config_combination.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pharmacology_0130/config_disagreement.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pharmacology_0130/config_hts.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pharmacology_0130/config_hts_failed.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pharmacology_0130/config_public_oneil.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pharmacology_0130/config_public_oneil2.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pharmacology_0130/config_unreplicated.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_bland_altman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_chi_square.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_clopper_pearson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_deming.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_dunnett.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_holm.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_sidak.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_tukey.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_fisher.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_fisher_rc.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_linear.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_mcnemar.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_mcnemar_exact.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_passing_bablok.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_pearson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_bland_altman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_deming.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_linear.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_passing_bablok.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_pearson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_spearman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_spearman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_toothgrowth.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_trend.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_warpbreaks.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_wilson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      }
+    ],
+    "configurations": 55,
+    "artifact_count": 370
+  },
+  "clean_environment_status": "passed",
+  "live_agent_gate": "PENDING",
+  "facts_gate": "PASS: saved-result extraction, state tests and legacy bytes",
+  "skills_validated": [
+    "agentic-prism",
+    "drug-combination",
+    "import-plate",
+    "dose-response",
+    "elisa-quantification"
+  ],
+  "published_gate": "PARTIAL: public combination point checks and KcViab median-polish; no public independent matrix uncertainty or full HTS QC/hit worked result",
+  "deviations": [
+    "cellHTS2 unavailable for current Bioconductor; allowed base R medpolish oracle used, archived licensed package example retained.",
+    "Public Loewe/ZIP numerical failures retained without widening tolerance or substituting synthetic published evidence.",
+    "Requested validated FDR control is unmet after the frozen calibration failure; indicators remain experimental and no thresholds were retuned."
+  ],
+  "fdr_control_gate": "UNMET: global-null false-hit probability0.100 exceeds registered0.063784 bound; nominal BH screens only"
+}

@@ -1,0 +1,47 @@
+{
+  "public_sources": {
+    "toothgrowth.csv": {
+      "url": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/ToothGrowth.html",
+      "source": "Crampton 1947; Bliss 1952, distributed with R datasets",
+      "licence": "R distribution GPL-2/GPL-3"
+    },
+    "warpbreaks.csv": {
+      "url": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/warpbreaks.html",
+      "source": "Tippett 1950 p106, distributed with R datasets",
+      "licence": "R distribution GPL-2/GPL-3"
+    },
+    "creatinine.csv": {
+      "url": "https://search.r-project.org/CRAN/refmans/mcr/html/mcreg.html",
+      "licence": "GPL >=3 (mcr distribution)",
+      "source": "mcr creatinine, 110 paired serum/plasma measurements"
+    }
+  },
+  "sha256": {
+    "subjects.csv": "53bef458bf74148db86bb0d928315ac16be2c71fe647b9dba32e77361b3a9be9",
+    "pairs.csv": "235d4c34050b153fa16eccdb4260da5326da2266ca51f7e738f47cf52dafe5d3",
+    "toothgrowth.csv": "2e684226133cf8fa80113f96010114e8d412642c916b272c6d75d9e66a2c1a3a",
+    "two_groups.csv": "7553ce74822112f59bc50dfd1382b08d491ea68127ed26309e0709c01a5085a6",
+    "warpbreaks.csv": "12efc576303002acecff3860a030f0deef58bb9bdff4c8905c0ca5594cbdee0d",
+    "creatinine.csv": "294f8f46c36a717d866dca8ff75ea276df32b3c0bf460f66d0083be96fc6a7fd",
+    "creatinine_original.csv": "35f18c194288b985027ddb14e08b085a1ce25b490a8fa1a48ac44d1fc46caa4a"
+  },
+  "creatinine_preprocessing": {
+    "original_rows": 110,
+    "complete_pairs": 108,
+    "excluded_missing_pairs": [
+      {
+        "observation_id": "36",
+        "independent_unit_id": "36",
+        "x": "0.82",
+        "y": "NA"
+      },
+      {
+        "observation_id": "57",
+        "independent_unit_id": "57",
+        "x": "0.83",
+        "y": "NA"
+      }
+    ],
+    "rule": "Complete pairs required; original data preserved; same rule as mcr example na.rm=TRUE"
+  }
+}

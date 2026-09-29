@@ -86,6 +86,8 @@ def analyze_dose(config_path, output, render=True):
              ("status", "reportable", "range_status", "ci_status", "diagnostics")} for fit in fits})
         (out / "rerun.txt").write_text("agentic-prism analyze --config config.resolved.json --output ../dose-rerun-new\n"
                                         "Run from this directory in the pinned environment; choose a fresh output directory.\n")
+        from .legacy_facts import write_facts
+        write_facts(out, all_states=True)
         dump(out / "manifest.json", {"schema_version": 1, "analysis_type": "dose_response_4pl",
              "package_version": __version__, "created_utc": datetime.now(timezone.utc).isoformat(),
              "input_original_path": str(inp), "input_sha256": sha(inp), "source": cfg["source"],

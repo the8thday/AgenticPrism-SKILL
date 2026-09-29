@@ -1,6 +1,6 @@
 ---
 name: binding-kinetics
-description: Analyze BLI or SPR time-response sensorgrams with explicit phases - independent regenerated cycles or single-cycle (sequential injection) series - using a global 1:1 kon/koff model and kinetic KD, with explicit reference-channel or double referencing. Supports canonical CSV and a verified Octet Results.txt export layout.
+description: Analyze BLI/SPR sensorgrams with explicit phases and reference processing. Default global 1:1 rates and kinetic KD support regenerated or single-cycle designs. Opt-in drift, heterogeneous ligand, bivalent analyte, mass transport and apparent koff screening require predeclared mechanisms and reliability gates. Supports canonical CSV and verified Octet, T200 XY and Carterra XY layouts.
 ---
 
 # Binding kinetics
@@ -13,7 +13,7 @@ Use this specialist for time-resolved association and dissociation data, not end
 4. Run `agentic-prism analyze --config ... --output NEW_DIRECTORY`, then `agentic-prism verify --run ...`. Inspect `results.json`, `diagnostics.json`, `preprocessing_log.json`, source snapshots, residuals, and the offline HTML report. `render` changes appearance without refitting.
 5. Report kon (M⁻¹ s⁻¹), koff (s⁻¹), and kinetic KD = koff/kon (M) only for reportable fits. State the global sharing, selected time windows, reference/baseline handling, interval method, fit diagnostics, and whether the model is biologically plausible. A fit is not proof of 1:1 binding. When reliability blockers are present, the implementation marks the fit limited and withholds reporting intervals. `audit_intervals` and raw point estimates remain for audit only; do not quote them as scientifically reportable results, and do not suggest an approximate value for a report. For a limited fit, the reportable statement is that no reliable kinetic estimate was obtained, with the reasons. Inspect `window_sensitivity.csv` and residuals. Prefer appropriately designed independent experiments for experimental reproducibility.
 
-Current model: independent association/dissociation cycles or single-cycle series (each row carries its own injection's start, end and concentration), at least two distinct positive concentrations, one shared kon/koff per declared fit group, configurable shared or per-curve Rmax and fixed-zero or fitted offsets, unweighted least squares, and segment-wise block bootstrap. For single-cycle data the analytic 1:1 state is carried across injections and the window-sensitivity check shortens only the final dissociation. No mass-transport, avidity, heterogeneous-ligand or drift model, no native `.frd` or Biacore export parser: Biacore/other SPR data must be mapped to the canonical CSV by hand, keeping the original export, and that mapping has no instrument-specific validation. Do not infer phase boundaries from trace appearance. The public Octet validation is a scoped comparison with published TitrationAnalysis results, not a native Octet or Prism equivalence claim. See [validation](../../validation/README.md).
+Default model: independent association/dissociation cycles or single-cycle series (each row carries its own injection's start, end and concentration), at least two distinct positive concentrations, one shared kon/koff per declared fit group, configurable shared or per-curve Rmax and fixed-zero or fitted offsets, unweighted least squares, and segment-wise block bootstrap. For single-cycle data the analytic 1:1 state is carried across injections and the window-sensitivity check shortens only the final dissociation. Opt-in complex models and two verified T200/Carterra XY layouts are described below. Native `.frd` and other export layouts remain unsupported. Manual canonical CSV mapping must preserve original bytes and explicit metadata. Do not infer phase boundaries from trace appearance. The public Octet validation is a scoped comparison with published TitrationAnalysis results, not a native Octet or Prism equivalence claim. See [validation](../../validation/README.md).
 
 The router is [agentic-prism](../agentic-prism/SKILL.md). Use this specialist directly when the task is clearly kinetic; it shares the versioned Python implementation with the router and equilibrium skill.
 
@@ -32,3 +32,42 @@ under strongly correlated noise every interval was withheld by the reliability g
 Short intermediate dissociations can make the default block length infeasible;
 choose `block_length` from the sampling design before fitting, not after seeing
 intervals. See [0.7.0 evidence](../../validation/RELEASE_0.7.0.md).
+
+## 0.11.0 opt-in steady-state affinity
+
+`steady_state.enabled=true` requests a second endpoint analysis in the same run.
+Declare `windows` as a list of curve_id/start_s/end_s, seconds relative to each
+association start. Every curve needs a window inside association, with at least
+three included points. Declare response_scales_comparable=true and rationale;
+Rmax/sensor loading must permit pooling response versus concentration, and the
+kinetic fit must use `fit.rmax=shared`; per-curve Rmax is refused because plateau
+responses from sensors with different Rmax are not on one scale.
+
+A reportable 1:1 fit supplies fraction of equilibrium at association end and
+window start; either below 95% excludes the curve with its reason. If the kinetic
+fit is not reportable, an explicitly declared flatness_max_fraction (≤0.05) can
+be used only with fixed-zero kinetic offset. Flatness is a proxy, not proof of
+95% equilibrium. No plateau means no steady-state KD. Four distinct eligible
+concentrations are required for the existing hyperbola with fitted baseline.
+
+Read `steady_state.json`: preserve every rejected curve and the SS fit's own
+reportability gate. KD_ss/KD_kin is compared against the declared ratio_band
+(default 0.5–2, an engineering diagnostic); never average the two KD values.
+Windows, preprocessing and offset conditioning limit inference. Defaults do not
+request this analysis and preserve earlier scientific output bytes. New
+published steady-state worked-example evidence is UNMET.
+
+## 0.12.0 opt-in surface mechanisms
+
+Default `one_to_one` remains unchanged. Advanced models require explicit
+`advanced.predeclared`, mechanistic rationale, valid reference processing,
+bound-analyte readout, common response scale and analyte valency. See
+[advanced models](references/advanced-models.md) for parameter units and gates.
+Use `import-surface --manifest ... --output NEW_DIR` only for the verified
+Duke T200 paired-column text or Carterra XY workbook layouts. The import template
+leaves assay flags unset. Declare every column pair, molarity and injection time.
+Never infer injection times from sensorgram shape. Other instrument layouts are
+unsupported until a real licensed sample is supplied.
+
+All kinetics runs now save source-linked `interpretation_facts.json`. Read it
+before writing a narrative. Withheld audit estimates are not reported constants.

@@ -1,0 +1,394 @@
+{
+  "version": "0.11.1",
+  "status": "completed_with_disclosed_scientific_limits",
+  "base": "dev/0.11.0",
+  "base_commit": "1a12574",
+  "wheel_source_commit": "1d7cec89b6dfac7d7d92a111c33b6338ec3d633e",
+  "sdist_source_commit": "06d2fe243337b3b7156eee538b640ecee4748132",
+  "pytest": {
+    "passed": 585,
+    "warnings": 8,
+    "seconds": 223.42
+  },
+  "skills_validated": [
+    "agentic-prism",
+    "group-comparison",
+    "correlation-regression"
+  ],
+  "benchmark": {
+    "checks": 66,
+    "passed": 66,
+    "max_relative_difference_deterministic": 5.50926343233404e-05,
+    "monte_carlo_p_relative_difference": 0.11426724738138663
+  },
+  "calibration": {
+    "preregister_commit": "efe03df",
+    "serialization_fix_commit": "c675a26",
+    "simulations": 32000,
+    "criteria": 88,
+    "passed": 62,
+    "missed": 26,
+    "misses": [
+      {
+        "scenario": "anova_2_heteroscedastic",
+        "stress": true,
+        "metric": "C(a, Sum)",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 216,
+        "rate": 0.216,
+        "mcse": 0.013013224043256921,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_2_heteroscedastic",
+        "stress": true,
+        "metric": "C(a, Sum)",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 216,
+        "rate": 0.216,
+        "mcse": 0.013013224043256921,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_2_heteroscedastic",
+        "stress": true,
+        "metric": "C(a, Sum):C(b, Sum)",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 284,
+        "rate": 0.284,
+        "mcse": 0.014259873772232347,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_2_heteroscedastic",
+        "stress": true,
+        "metric": "C(a, Sum):C(b, Sum)",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 284,
+        "rate": 0.284,
+        "mcse": 0.014259873772232347,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_2_heteroscedastic",
+        "stress": true,
+        "metric": "C(b, Sum)",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 188,
+        "rate": 0.188,
+        "mcse": 0.012355403676124872,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_2_heteroscedastic",
+        "stress": true,
+        "metric": "C(b, Sum)",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 188,
+        "rate": 0.188,
+        "mcse": 0.012355403676124872,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_3_equal",
+        "stress": false,
+        "metric": "C(a, Sum):C(b, Sum)",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 73,
+        "rate": 0.073,
+        "mcse": 0.008226238508577295,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_3_equal",
+        "stress": false,
+        "metric": "C(a, Sum):C(b, Sum)",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 73,
+        "rate": 0.073,
+        "mcse": 0.008226238508577295,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_3_heteroscedastic",
+        "stress": true,
+        "metric": "C(a, Sum)",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 219,
+        "rate": 0.219,
+        "mcse": 0.013078187947877183,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_3_heteroscedastic",
+        "stress": true,
+        "metric": "C(a, Sum)",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 219,
+        "rate": 0.219,
+        "mcse": 0.013078187947877183,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_3_heteroscedastic",
+        "stress": true,
+        "metric": "C(a, Sum):C(b, Sum)",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 265,
+        "rate": 0.265,
+        "mcse": 0.013956181426163821,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_3_heteroscedastic",
+        "stress": true,
+        "metric": "C(a, Sum):C(b, Sum)",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 265,
+        "rate": 0.265,
+        "mcse": 0.013956181426163821,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_3_heteroscedastic",
+        "stress": true,
+        "metric": "C(b, Sum)",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 259,
+        "rate": 0.259,
+        "mcse": 0.013853483316480371,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "anova_3_heteroscedastic",
+        "stress": true,
+        "metric": "C(b, Sum)",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 259,
+        "rate": 0.259,
+        "mcse": 0.013853483316480371,
+        "bound": 0.06378404875209022,
+        "passed": false
+      },
+      {
+        "scenario": "wilson_n20_p0.05",
+        "stress": false,
+        "metric": "coverage",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 902,
+        "rate": 0.902,
+        "mcse": 0.009401914698613255,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "wilson_n20_p0.05",
+        "stress": false,
+        "metric": "coverage",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 902,
+        "rate": 0.902,
+        "mcse": 0.009401914698613255,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "wilson_n100_p0.5",
+        "stress": false,
+        "metric": "coverage",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 934,
+        "rate": 0.934,
+        "mcse": 0.007851369307324675,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "wilson_n100_p0.5",
+        "stress": false,
+        "metric": "coverage",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 934,
+        "rate": 0.934,
+        "mcse": 0.007851369307324675,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "loa_n30_skew",
+        "stress": true,
+        "metric": "limit_0_coverage",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 15,
+        "rate": 0.015,
+        "mcse": 0.003843826218756514,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "loa_n30_skew",
+        "stress": true,
+        "metric": "limit_0_coverage",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 15,
+        "rate": 0.015,
+        "mcse": 0.003843826218756514,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "loa_n30_skew",
+        "stress": true,
+        "metric": "limit_1_coverage",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 430,
+        "rate": 0.43,
+        "mcse": 0.015655669899432602,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "loa_n30_skew",
+        "stress": true,
+        "metric": "limit_1_coverage",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 430,
+        "rate": 0.43,
+        "mcse": 0.015655669899432602,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "loa_n100_skew",
+        "stress": true,
+        "metric": "limit_0_coverage",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 0,
+        "rate": 0.0,
+        "mcse": 0.0,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "loa_n100_skew",
+        "stress": true,
+        "metric": "limit_0_coverage",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 0,
+        "rate": 0.0,
+        "mcse": 0.0,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "loa_n100_skew",
+        "stress": true,
+        "metric": "limit_1_coverage",
+        "population": "all_evaluable",
+        "n": 1000,
+        "count": 178,
+        "rate": 0.178,
+        "mcse": 0.012096115078817662,
+        "bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "loa_n100_skew",
+        "stress": true,
+        "metric": "limit_1_coverage",
+        "population": "reportable_only",
+        "n": 1000,
+        "count": 178,
+        "rate": 0.178,
+        "mcse": 0.012096115078817662,
+        "bound": 0.9362159512479097,
+        "passed": false
+      }
+    ],
+    "failed_execution_draws": 0
+  },
+  "legacy": {
+    "configurations": 110,
+    "byte_identical_count": 922,
+    "baseline_commit": "1a12574032e59380c87b12c3b639df1d9bb12c27"
+  },
+  "install_smoke": {
+    "status": "passed",
+    "configurations": 136,
+    "runtime": "separate wheel-only venv outside repository",
+    "stdout_final_line_saved": true
+  },
+  "install_exact": {
+    "configurations": 30,
+    "artifact_count": 170,
+    "status": "passed"
+  },
+  "artifacts": {
+    "agentic_prism-0.11.1-py3-none-any.whl": "7039a755f4320669ab840e0d39c1989ed6e3e4aef5398475f3c2ffd1d304a9a3",
+    "agentic_prism-0.11.1.tar.gz": "5bf86b34cc8c20d01f31325006a47a11e86b91bb76b0686734a8759be4594d60"
+  },
+  "runtime_source_files_match_wheel": 71,
+  "live_agent_gate": "PENDING",
+  "reviewer_command": ".venv/bin/python scripts/run_agent_scenarios.py /tmp/agentic-review-0111 --release 0.11.1 --attempt reviewer-1",
+  "published_gate": {
+    "factorial": "public worked datasets reproduced",
+    "method_comparison": "mcr documented creatinine example reproduced",
+    "contingency": "UNMET",
+    "matched_PEF_LoA": "UNMET",
+    "matched_correlation_regression_public_example": "UNMET"
+  },
+  "local_only": true,
+  "historical_records_preserved": true,
+  "platform": "macOS arm64 only",
+  "deviations": [
+    "Serialization-only rerun with unchanged seeds/scenarios/bounds; first stdout preserved.",
+    "Dunnett integration tolerance includes 1e-7 absolute; initial relative-only miss disclosed.",
+    "Spearman exact n<=9 only; larger/tied uses R exact=FALSE.",
+    "Manifest records current version/code/time while prior scientific bytes stay identical.",
+    "Wheel source commit precedes README skill-count correction; later clean-archive sdist contains the corrected README, with runtime bytes unchanged.",
+    "Clean environment started before broader legacy-group install exact list; separate wheel-only exact check covers those 30 configs."
+  ],
+  "clean_environment": {
+    "status": "passed",
+    "new_configurations_exact": 26,
+    "legacy_facts_exact_count": 99,
+    "record": "validation/clean_environment_0.11.1.json"
+  }
+}

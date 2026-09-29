@@ -1,8 +1,12 @@
 # Interpretation facts, schema 1
 
-Implemented in 0.8.1 for repeated-measures, time-to-event and tumor-growth runs.
-Read this artifact after `verify`, before drafting the scientific interpretation.
-Earlier runs and the other specialists do not contain it.
+Introduced in 0.8.1 for repeated-measures, time-to-event and tumor-growth runs.
+As of 0.13.0, all current analysis workflows save facts, including dose response
+and ELISA; the oldest six retrofits are complete. Earlier saved runs
+are not rewritten. Read facts after `verify`, before drafting interpretation.
+The detailed fields below describe the original structured extractor; newer
+specialists use their own source-linked primary/saved-results views and state
+inventories. Respect each file's must_mention, failing items and reportability.
 
 ## Contract
 

@@ -17,6 +17,7 @@ from .workflow import dump, sha
 
 SHAPES = {(8, 12): 96, (16, 24): 384}
 TARGETS = {
+    "hts_qc": {"key": "role", "columns": ["plate_id", "well_id", "compound_id", "independent_unit_id", "row", "column", "role", "value"], "optional": [], "template": {"analysis_type": "hts_qc", "input": "data.csv", "plate_shape": None, "readout": None, "response_unit": None, "direction": None, "independent_wells": False, "randomized_layout": False, "majority_inactive": False}},
     "elisa_quantification": {
         "key": "role",
         "columns": ["plate_id", "well_id", "role", "sample_id", "concentration", "concentration_unit",
@@ -33,7 +34,7 @@ TARGETS = {
                      "assay": {"endpoint": None, "direction": None, "tested_agent": "", "response_definition": "",
                                "relative_half_response_supported": None, "rationale": ""}}},
 }
-AUTOMATIC = {"plate_id", "well_id", "response", "observation_id"}
+AUTOMATIC = {"plate_id", "well_id", "response", "observation_id", "row", "column", "value"}
 
 
 def read_grid(path):
@@ -125,6 +126,8 @@ def import_plates(manifest_path, output):
             if not np.isfinite(value):
                 raise ValueError(f"Plate {pid} well {well}: nonfinite readout")
             record = {"plate_id": pid, "well_id": well, "response": text}
+            if raw["target"] == "hts_qc":
+                record.update(row=string.ascii_uppercase.index(well[0])+1, column=int(well[1:]), value=text)
             if "observation_id" in spec["columns"]:
                 record["observation_id"] = f"{pid}-{well}"
             for column in spec["columns"] + spec["optional"]:

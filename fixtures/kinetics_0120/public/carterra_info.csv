@@ -1,0 +1,5 @@
+Incl.,Block/Chip/Tray,Position/Channel/Sensor,Analyte,Ligand,Baseline,Association,Dissociation,Asso. Skip,Disso. Skip,All Concentrations,Incl. Conc.,Bulkshift,Regen.,Bsl Start,Base Corr,Global Rmax,Sec. Rebinding,Model
+Y,1;2;3;4,A1,CH31,CH505,120,300,600,0,0,"1.95E-09, 3.91E-09, 7.81E-09, 1.56E-08, 3.13E-08, 6.25E-08, 1.25E-07, 2.50E-07, 5.00E-07,1.00E-6","6.25E-08, 1.25E-07, 2.50E-07, 5.00E-07,1.00E-6",N,Y,0,Y,N,N,bivalentAnalyte
+Y,1;2;3;4,A2,CH31,CH505,120,300,600,0,0,"1.95E-09, 3.91E-09, 7.81E-09, 1.56E-08, 3.13E-08, 6.25E-08, 1.25E-07, 2.50E-07, 5.00E-07,1.00E-6","6.25E-08, 1.25E-07, 2.50E-07, 5.00E-07,1.00E-6",N,Y,0,Y,N,N,bivalentAnalyte
+Y,1;2;3;4,A3,CH31,CH505,120,300,600,0,0,"1.95E-09, 3.91E-09, 7.81E-09, 1.56E-08, 3.13E-08, 6.25E-08, 1.25E-07, 2.50E-07, 5.00E-07,1.00E-6","6.25E-08, 1.25E-07, 2.50E-07, 5.00E-07,1.00E-6",N,Y,0,Y,N,N,bivalentAnalyte
+Y,1;2,A4,CH31,CH505,120,300,600,0,0,"1.95E-09, 3.91E-09, 7.81E-09, 1.56E-08, 3.13E-08, 6.25E-08, 1.25E-07, 2.50E-07, 5.00E-07,1.00E-6","6.25E-08, 1.25E-07, 2.50E-07, 5.00E-07,1.00E-6",N,Y,0,Y,N,N,bivalentAnalyte

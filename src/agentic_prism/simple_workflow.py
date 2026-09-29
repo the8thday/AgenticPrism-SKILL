@@ -146,6 +146,12 @@ def analyze_simple(config_path, output, render=True):
         from .interpretation import SUPPORTED, write_facts
         if kind in SUPPORTED:
             write_facts(out)
+        elif kind == "elisa_quantification":
+            from .legacy_facts import write_facts as legacy_facts
+            legacy_facts(out, all_states=True)
+        elif kind in ("group_comparison", "multi_group_comparison"):
+            from .legacy_facts import write_facts as legacy_facts
+            legacy_facts(out)
         (out / "rerun.txt").write_text("agentic-prism analyze --config config.resolved.json --output ../rerun-new\n"
                                        "Run from this directory; choose a new output directory.\n")
         dump(out / "manifest.json", {"schema_version": 1, "analysis_type": kind,

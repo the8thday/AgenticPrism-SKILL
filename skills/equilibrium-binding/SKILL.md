@@ -50,5 +50,13 @@ config and record new rendering provenance separately.
 ## Unsupported requests
 
 Do not fit kon/koff from endpoint data, report functional EC50 as KD, or add
-unvalidated multi-site/depletion models. Use [the parent registry](../agentic-prism/references/module-registry.md)
+unvalidated multi-site models. Use [the parent registry](../agentic-prism/references/module-registry.md)
 for scope. Model or statistical changes belong in a separately validated release.
+
+## 0.11.0 opt-in models
+
+Read [affinity-depth contract](references/affinity-depth.md) for
+`one_site_depletion`, `solution_equilibrium_titration` or `competition_exact`.
+Use [cell-binding](../cell-binding/SKILL.md) for cell-surface apparent KD.
+All equilibrium runs now save `interpretation_facts.json`; lead with reportable
+facts, required disclosures and withheld items. Old hyperbola science is unchanged.

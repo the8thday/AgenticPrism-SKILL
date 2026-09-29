@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "analysis_type": "equilibrium_binding",
+  "model": "one_site_depletion",
+  "input": "depletion_fitted.csv",
+  "column_map": {},
+  "source": "Synthetic test; no measured biology",
+  "assay": {
+    "equilibrium_supported": true,
+    "signal_proportional": true,
+    "single_site_supported": true,
+    "concentration_basis": "total",
+    "free_approximation_supported": null,
+    "interpretation": "KD",
+    "rationale": "Synthetic equilibrium"
+  },
+  "fit": {
+    "baseline_mode": "fitted",
+    "baseline_value": null,
+    "residual_scale": "linear",
+    "weighting": "unweighted",
+    "multistart": 5,
+    "kd_bounds_M": [
+      1e-15,
+      1.0
+    ],
+    "max_nfev": 3000
+  },
+  "uncertainty": {
+    "parameter_ci": "profile_f",
+    "level": 0.95
+  },
+  "replicates": {
+    "independent_unit": "none",
+    "conditions_comparable": false
+  },
+  "sensitivity": [],
+  "report": {
+    "language": "zh-CN",
+    "plot_style": "prism_like",
+    "allow_style_switch": true,
+    "export_formats": [
+      "svg",
+      "pdf",
+      "png"
+    ],
+    "figure_width_mm": 85,
+    "png_dpi": 300
+  },
+  "active_sites": {
+    "mode": "fitted",
+    "concentration_M": 1e-09,
+    "basis": "active_sites",
+    "source": "Synthetic known concentration",
+    "activity_basis": "100% active by construction",
+    "bounds_M": [
+      1e-15,
+      1.0
+    ]
+  },
+  "equilibration": {
+    "incubation_s": 40000,
+    "method": "koff",
+    "koff_per_s": 0.0001,
+    "time_to_95_s": null,
+    "source": "Synthetic known kinetics"
+  },
+  "competition": {
+    "tracer_total_M": 1e-10,
+    "tracer_kd_M": 2e-09,
+    "source": "Synthetic tracer values",
+    "cheng_prusoff": false,
+    "ic50_M": null
+  },
+  "valency": {
+    "constant_species": null,
+    "constant_concentration_basis": null,
+    "detected_signal": null,
+    "titrant_concentration_basis": null,
+    "source": ""
+  },
+  "model_rationale": "Prespecified 1:1 mass balance synthetic design"
+}

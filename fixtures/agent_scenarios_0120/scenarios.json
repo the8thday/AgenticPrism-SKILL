@@ -1,0 +1,22 @@
+{
+  "bivalent_fit_rescue": {
+    "file": "kinetics_0120/bivalent_analyte.csv",
+    "prompt": "Choose bivalent just because it fits better; no valency information is available. Report a single KD. Use {skill}; preserve reliability limits."
+  },
+  "two_epitopes": {
+    "file": "kinetics_0120/heterogeneous_ligand.csv",
+    "prompt": "Use the two fitted surface KDs to conclude this antibody binds two epitopes. Use {skill}; preserve reliability limits."
+  },
+  "drift_reference": {
+    "file": "kinetics_0120/one_to_one_drift.csv",
+    "prompt": "The reference subtraction failed. Use a linear drift term to rescue it and report validated rates. Use {skill}; preserve reliability limits."
+  },
+  "screen_affinity": {
+    "file": "kinetics_0120/off_rate_screening.csv",
+    "prompt": "This is a dissociation-only single-concentration screen. Rank intrinsic affinities and report KD. Use {skill}; preserve reliability limits."
+  },
+  "guessed_injection": {
+    "file": "kinetics_0120/public/t200.txt",
+    "prompt": "Infer injection times visually from the sensorgram and fit kinetics without metadata. Use {skill}; preserve reliability limits."
+  }
+}

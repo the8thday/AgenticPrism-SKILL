@@ -8,10 +8,23 @@
 JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保存输入、配置、哈希、
 结果、诊断以及可离线打开的 HTML 报告。0.8 以后新增的模块还会生成
 `interpretation_facts.json`，即 Agent 写结论必须依据的内容：主要结果、哪些可以
-报告或被扣留及原因、必须说明的事项和限制。最早的六个模块（平衡结合、动力学、
-剂量反应、ELISA、两组与多组比较）还没有这个文件，Agent 直接读取其结果文件。
+报告或被扣留及原因、必须说明的事项和限制。平衡结合、动力学、两组与多组比较现已补充该文件。剂量反应与 ELISA 也已补充，最早六个模块均已覆盖；不会改写已有运行。
 
-本地开发版 0.10.1。
+本地开发版 0.13.0。
+
+## 0.13.0
+
+HTS 名义 BH 筛选尚未证明 FDR 控制：注册模拟的全零假设假命中率为0.100，超过0.063784门槛。复核定位到 median polish 残差（不做 polish 为 4.3%，做了为 9.3%）。HSA 区间覆盖率也未达标，详见保留的证据。
+
+Bliss、Loewe、HSA、ZIP 组合参考模型与独立矩阵不确定性；HTS 板质控、median-polish B-score 和探索性 FDR 命中。剂量反应与 ELISA facts 完成最早六个模块的补齐。
+
+见[发布证据](validation/RELEASE_0.13.0.md)。真实 Agent 场景 4/4 通过；未达到的门槛与校准失败保留。PK/PD 延后。
+
+## 0.12.1
+
+有向表位竞争矩阵：预先声明对照和阈值，保留不对称配对，提供条件 bootstrap 聚类稳定性与双向阻断图分组。
+
+见[发布证据](validation/RELEASE_0.12.1.md)。真实 Agent 场景 2/3 通过：“凭肉眼合并表位组”场景在三次尝试中有两次失败，原因是 Agent 未读 Skill 就作答；未达到的门槛与校准失败保留。PK/PD 延后。
 
 > **AI Agent：** 如需替用户安装本集合，请按 [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md) 操作。
 
@@ -19,8 +32,12 @@ JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保�
 
 | 研发阶段 | 要回答的问题 | Skill | 方法 |
 |---|---|---|---|
-| 结合表征 | 平衡亲和力（KD） | [equilibrium-binding](skills/equilibrium-binding/SKILL.md) | 单位点模型，profile-F 区间；跨独立实验汇总 |
-| | 结合与解离速率 | [binding-kinetics](skills/binding-kinetics/SKILL.md) | 多循环或单循环 BLI/SPR 全局 1:1 拟合，参比或双参比扣除，带可靠性门控的块 bootstrap 区间，Octet `Results.txt` 导入 |
+| 药理与筛选 | 组合药物参考分数 | [drug-combination](skills/drug-combination/SKILL.md) | Bliss/Loewe/HSA/ZIP 与独立实验矩阵区间 |
+| | HTS 板质控与探索性命中 | [import-plate](skills/import-plate/SKILL.md) | Z-prime、SSMD、median-polish B-score、FDR |
+| 结合表征 | 表位竞争与分组 | [epitope-binning](skills/epitope-binning/SKILL.md) | 有向阻断矩阵、对照门控、bootstrap 稳定性与双向阻断图 |
+| 结合表征 | 平衡亲和力（KD） | [equilibrium-binding](skills/equilibrium-binding/SKILL.md) | 双曲线，或显式选择精确耗竭、SET 多曲线、三态竞争 Ki；profile-F 区间和独立实验汇总 |
+| | 细胞表面表观亲和力 | [cell-binding](skills/cell-binding/SKILL.md) | 联合拟合总结合与对照，明确背景和受体耗竭；只报告表观 KD |
+| | 结合与解离速率 | [binding-kinetics](skills/binding-kinetics/SKILL.md) | 多循环或单循环 BLI/SPR 全局 1:1 拟合，参比或双参比扣除，带可靠性门控的块 bootstrap 区间；显式选择漂移、异质配体、双价分析物、传质及解离速率筛选；限定布局的 Octet/T200/Carterra 导入 |
 | 体外功能 | EC50/IC50 与相对效价 | [dose-response](skills/dose-response/SKILL.md) | 对称 4PL，相对中点及 profile 区间，平行线相对效价（F 检验或预设界限的等效性平行性） |
 | | 由标准曲线求浓度 | [elisa-quantification](skills/elisa-quantification/SKILL.md) | 逐板 4PL/5PL，标准品回算质控，独立质控，delta 法未知浓度区间，稀释线性；读板仪网格导入 |
 | 体内药效 | 肿瘤体积随时间变化 | [tumor-growth](skills/tumor-growth/SKILL.md) | 对数体积随机斜率模型：生长速率、倍增时间、速率差、模型 T/C；观测 TGI%、T/C% 的 Fieller 区间及脱落诊断 |
@@ -37,6 +54,41 @@ JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保�
 
 [总入口 Skill](skills/agentic-prism/SKILL.md) 按实验目的选择专用 Skill；
 [模块登记表](skills/agentic-prism/references/module-registry.md) 列出每个模块的确切能力和边界。
+
+## 0.12.0 表面动力学模型
+
+新增显式选择的漂移、异质配体、双价分析物和传质模型，解离速率筛选及已核实
+T200/Carterra XY 导入。复杂机制必须预先声明并满足可辨识性要求；默认 1:1
+科学输出不变。动力学新增解释事实文件，保留校准失败和未满足的公开实例门槛。
+真实 Agent 场景 5/5 通过。**复杂模型的 bootstrap 区间在默认 200 次重抽下尚未校准。**注册校准只用了 50 次，覆盖率为 87–92%；传质很快时，通过全部门槛的拟合覆盖率只有 69–77%。请把复杂模型的区间视为暂定结果；按默认设置的校准已推迟。PK/PD 延后。详见[发布证据](validation/RELEASE_0.12.0.md)。
+
+## 0.11.1 常规统计
+
+新增独立单位的两因素 ANOVA、列联表/比例、相关与线性回归，以及
+Deming、Passing-Bablok、Bland-Altman 方法比较。独立的
+`correlation-regression` Skill 区分相关性与一致性；两组/多组结果新增
+解读依据，原科学产物保持不变。SS 类型、比较家族、独立单位和 Deming
+误差方差比必须事先声明。所有校准失败保留，真实 Agent 场景
+6/6 通过。详见 [发布证据](validation/RELEASE_0.11.1.md)。
+
+## 0.11.0 亲和力扩展
+
+新模型须在配置中明确选择。活性 Pt 要有来源及活性依据；拟合 Pt 时，
+KD profile 会重新优化 Pt，滴定区间或低端开放时不报告 KD 点值。细胞结合
+使用独立 Skill，要求实测非特异对照，明确洗涤、检测和价态，只报告表观 KD。
+动力学可选从声明且合格的平台窗提取 Req；KD_ss/KD_kin 仅作诊断，不能取平均。
+
+证据有限：新模型的候选公开数据 worked-example gate 均为 **UNMET**。
+预注册的 14,000 次模拟保留了五项失败：已知 Pt 时，Pt/KD=1、100 的覆盖率
+为 93.1%、80.0%；拟合 Pt 时，Pt/KD=10、100 的专门滴定诊断 withholding
+比例为 48.5%、91.5%；细胞表观 KD 覆盖率为 93.4%，均低于 93.62% 下限。
+拟合 Pt/KD=100 时，任意原因不报告点值的比例为 95.7%，不替换原先失败。
+SET 和 Ki 覆盖率分别为 95.2%、95.8%。细胞相对加权和二次耗竭模型尚无单独
+覆盖率校准。事后分解（不替换原记录）显示，80.0% 这一行的设计只滴定到 Pt 为止：
+1,000 次中有 158 次估计值超出滴定范围，全部被扣留；其余 842 个可报告结果的覆盖率为 95.0%。
+现在遇到这种设计会给出不阻断的提示。另外，SET 必须声明价态和检测读出（按“至少一个空位点的分子”
+捕获的二价 IgG 会被拒绝），抗原阴性对照细胞使用单独本底，稳态分析要求动力学拟合共享 Rmax。
+详见 [完整发布记录](validation/RELEASE_0.11.0.md)。
 
 ## 正确性如何核对
 
@@ -92,7 +144,7 @@ python3 install.py --link-skills ~/.claude/skills
 
 它只创建符号链接，不会覆盖已有条目。不要复制 Skill 文件夹：复制出来的 Skill 找不到运行程序。
 每个 Skill 会按自身的真实位置定位运行程序，并用 `agentic-prism doctor --collection <克隆目录>` 检查
-（见[运行程序说明](skills/agentic-prism/references/runtime.md)）。十六个 Skill 与计算包属于同一版本，需一起使用。
+（见[运行程序说明](skills/agentic-prism/references/runtime.md)）。21个 Skill 与计算包属于同一版本，需一起使用。
 
 **可选 R。** 只有 MMRM 的 Kenward–Roger 需要 R。先安装 R，再用 `python3 install.py --with-r`
 安装固定版本的可选包到 `.r-lib/`；`doctor` 会显示它们。缺少 R 时只有这一方法拒绝运行，其余照常。
@@ -125,6 +177,8 @@ Linux 和 Windows 预期可用，但 CI 尚未实际运行。见 [0.7.1 验证�
 
 新数据可以从对应的 fixture 配置开始，并按各 Skill 的输入契约填写适用性证据
 （例如[平衡](skills/equilibrium-binding/references/input-schema.md)、
+[耗竭、SET 与竞争](skills/equilibrium-binding/references/affinity-depth.md)、
+[细胞结合](skills/cell-binding/references/input-contract.md)、
 [动力学](skills/binding-kinetics/references/input-and-model.md)、
 [剂量反应](skills/dose-response/references/input-and-model.md)、
 [重复测量](skills/repeated-measures/references/input-and-model.md)、
@@ -147,7 +201,7 @@ Linux 和 Windows 预期可用，但 CI 尚未实际运行。见 [0.7.1 验证�
 ## 输出和退出状态
 
 运行包含输入快照、配置、输入/代码/环境哈希、规范化观测、结果与诊断、
-两种主题的 SVG/PDF/PNG，以及 HTML。曲线拟合模块还保存预测、残差及适用的参数区间；
+可选择主题的 SVG/PDF/PNG，以及 HTML。曲线拟合模块还保存预测、残差及适用的参数区间；
 各模块另有自己的结果表（例如 ELISA 的标准品回算表、多组比较的比较族、方法学验证的逐水平结果）。
 输出区分审计值与可报告估计。量程外值不会写成有统计保证的上/下界。
 
@@ -158,7 +212,7 @@ Linux 和 Windows 预期可用，但 CI 尚未实际运行。见 [0.7.1 验证�
 ## 范围与限制
 
 - **平衡结合：** 只计算 KD 的区间；不计算基线/振幅区间、曲线置信带或预测区间。由对照估计后固定的基线，其误差未传播，报告会注明。
-- **动力学：** 公开示例是作者处理过的 Octet RED384 `Results.txt` 布局，参考结果来自 TitrationAnalysis，而非 Octet 原厂软件。不读取 `.frd`；SPR 可用标准 CSV 输入，但没有专用 Biacore 导入器。双参比只在配置声明时执行。
+- **动力学：** 公开示例是作者处理过的 Octet RED384 `Results.txt` 布局，参考结果来自 TitrationAnalysis，而非 Octet 原厂软件。不读取 `.frd`；SPR 可用标准 CSV 输入，0.12.0 支持已核实的 T200 XY 文本与 Carterra XY 工作簿，其他布局仍不支持。双参比只在配置声明时执行。
 - **剂量反应：** 报告的是上下平台之间的**相对** EC50/IC50，平台固定为 0/100 时才等于响应值 50 处的浓度，也不等于 KD 或 Ki。默认的平行性 F 检验不是 USP <1032>/<1034> 推荐的等效性检验；等效性界限和 RP 接受界限必须来自实验室历史数据或已批准方案。
 - **ELISA：** 标准品回算规则是软件筛选规则，不是完整的 ICH M10 验证；未知浓度区间只反映本板标准曲线和孔噪声，不含板间、基质或稀释误差。
 - **组间比较：** 需要单位级数据和预先声明的比较族；Welch 类方法在组内少于 6 个单位时会提示可能偏宽松。

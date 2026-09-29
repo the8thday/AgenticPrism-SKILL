@@ -1,0 +1,23 @@
+{
+  "analysis_type": "hts_qc",
+  "plate_shape": [
+    8,
+    12
+  ],
+  "input": "hts_failed.csv",
+  "source": "Synthetic seed130; not measured biology",
+  "readout": "Generated assay signal",
+  "response_unit": "AU",
+  "direction": "increasing",
+  "independent_wells": true,
+  "independence_source": "Independent simulated well errors",
+  "randomized_layout": true,
+  "layout_source": "Seeded randomized controls and samples",
+  "majority_inactive": true,
+  "majority_inactive_source": "Most generated sample wells null",
+  "mad_scale_source": "Predeclared normal-consistent MAD1.4826",
+  "criteria": {
+    "predeclared": true,
+    "source": "Predeclared Zprime0.5,SSMD3,FDR0.05"
+  }
+}

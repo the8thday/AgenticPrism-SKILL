@@ -1,0 +1,27 @@
+{
+  "analysis_type": "drug_combination",
+  "input": "public_oneil2_mean.csv",
+  "source": "synergyfinder3.20.0 packaged ONEIL block2; explicit mean of repeated rows without independence identifiers; see public provenance",
+  "agent_a": "Paclitaxel",
+  "agent_b": "L-778123 free base",
+  "dose_unit_a": "uM",
+  "dose_unit_b": "uM",
+  "condition_id": "NCIH2122",
+  "readout_description": "Packaged ONEIL inhibition response; detector and biological endpoint are not established by this numeric example",
+  "normalization_source": "Packaged percent-inhibition response; no further scaling or clipping",
+  "same_response_scale": true,
+  "independent_experiments": [
+    "public_mean"
+  ],
+  "independence_supported": false,
+  "independence_source": "Original package example lacks independent-experiment IDs; no uncertainty claim",
+  "loewe": {
+    "compatible_maximal_effects": false,
+    "source": "Not established for this public example; Loewe is not selected in the workflow"
+  },
+  "models": [
+    "Bliss",
+    "HSA",
+    "ZIP"
+  ]
+}

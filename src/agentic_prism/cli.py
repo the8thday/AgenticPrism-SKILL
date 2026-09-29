@@ -22,6 +22,9 @@ def main():
     imp = sub.add_parser("import-octet", help="Import verified Octet Results.txt layout with explicit metadata")
     imp.add_argument("--manifest", required=True)
     imp.add_argument("--output", required=True)
+    surface = sub.add_parser("import-surface", help="Import verified T200 or Carterra XY export with declared metadata")
+    surface.add_argument("--manifest", required=True)
+    surface.add_argument("--output", required=True)
     plate = sub.add_parser("import-plate", help="Convert plate-reader grid CSVs and plate-map layers to a long table")
     plate.add_argument("--manifest", required=True)
     plate.add_argument("--output", required=True)
@@ -42,6 +45,9 @@ def main():
                                   "must_mention": facts["must_mention"],
                                   "interpretation": "Meeting declared criteria is part of a validation, not regulatory acceptance"}, ensure_ascii=False))
                 return 0
+            if result.get("analysis_type") in ("epitope_binning", "drug_combination", "hts_qc"):
+                print(json.dumps({"output": str(out), "analysis_type": result["analysis_type"], "primary": result["primary"]}, ensure_ascii=False))
+                return
             failed = sum(f["status"] == "failed" for f in result["fits"])
             counts = ({"n_fit_groups": len(result["fits"]),
                        "n_sensorgrams": sum(f["n_curves"] for f in result["fits"])}
@@ -60,7 +66,13 @@ def main():
             return 3 if failed else 0
         if args.command == "render":
             cfg = json.loads((Path(args.run)/"config.resolved.json").read_text())
-            if cfg["analysis_type"] in ("stability", "potency_assay", "comparability", "specification"):
+            from .extension_workflow import TYPES, render_extension
+            if cfg["analysis_type"] in TYPES:
+                print(render_extension(Path(args.run), args.style))
+            elif cfg["analysis_type"] == "cell_binding" or (cfg["analysis_type"] == "equilibrium_binding" and cfg["model"] != "one_site_with_baseline"):
+                from .affinity_workflow import render_affinity
+                print(render_affinity(Path(args.run), args.style))
+            elif cfg["analysis_type"] in ("stability", "potency_assay", "comparability", "specification"):
                 from .cmc_workflow import render_cmc
                 print(render_cmc(Path(args.run), args.style))
             elif cfg["analysis_type"] == "variance_components":
@@ -76,8 +88,12 @@ def main():
                 from .ada_performance import render_ada_performance
                 print(render_ada_performance(Path(args.run), args.style))
             elif cfg["analysis_type"] == "binding_kinetics":
-                from .kinetics_report import render_kinetics
-                print(render_kinetics(Path(args.run), args.style))
+                if cfg.get("model", "one_to_one") != "one_to_one":
+                    from .advanced_kinetics_workflow import render_advanced
+                    print(render_advanced(Path(args.run), args.style))
+                else:
+                    from .kinetics_report import render_kinetics
+                    print(render_kinetics(Path(args.run), args.style))
             elif cfg["analysis_type"] == "dose_response_4pl":
                 from .dose_report import render_dose
                 print(render_dose(Path(args.run), args.style))
@@ -92,6 +108,9 @@ def main():
             report = doctor(args.collection)
             print(json.dumps(report, ensure_ascii=False, indent=2))
             return 1 if report["status"] == "error" else 0
+        elif args.command == "import-surface":
+            from .surface_import import import_surface
+            print(import_surface(args.manifest, args.output))
         elif args.command == "import-plate":
             from .plate_import import import_plates
             print(import_plates(args.manifest, args.output))

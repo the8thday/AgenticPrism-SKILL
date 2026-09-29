@@ -1,0 +1,277 @@
+{
+  "script_sha256": "e359a9c010014b5d48f6df848f92374d5b3baa05b642d5daff6e3df70e2f9e4b",
+  "bindcurve_version": "0.2.0",
+  "R_version": "Rscript (R) version 4.6.0 (2026-04-24)",
+  "R_fitter": "base nls(port); minpack.lm not installed in .r-lib",
+  "tolerances": {
+    "parameter_relative": 0.0002,
+    "primitive_absolute": 1e-10
+  },
+  "four_state": "NOT_IMPLEMENTED; no four-state benchmark claim",
+  "direct_total_scope": "Ns=0 only; cell linear nonspecific slope benchmarked with R, not BindCurve tracer immobilization model",
+  "rows": [
+    {
+      "check": "DirectSpecificKdModel",
+      "kd_over_pt": 0.0001,
+      "max_absolute_difference": 7.993605777301127e-15,
+      "passed": true
+    },
+    {
+      "check": "DirectTotalKdModel",
+      "kd_over_pt": 0.0001,
+      "max_absolute_difference": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "check": "DirectSpecificKdModel",
+      "kd_over_pt": 0.001,
+      "max_absolute_difference": 7.66053886991358e-15,
+      "passed": true
+    },
+    {
+      "check": "DirectTotalKdModel",
+      "kd_over_pt": 0.001,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "DirectSpecificKdModel",
+      "kd_over_pt": 0.01,
+      "max_absolute_difference": 9.2148511043888e-15,
+      "passed": true
+    },
+    {
+      "check": "DirectTotalKdModel",
+      "kd_over_pt": 0.01,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "DirectSpecificKdModel",
+      "kd_over_pt": 0.1,
+      "max_absolute_difference": 1.099120794378905e-14,
+      "passed": true
+    },
+    {
+      "check": "DirectTotalKdModel",
+      "kd_over_pt": 0.1,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "DirectSpecificKdModel",
+      "kd_over_pt": 1.0,
+      "max_absolute_difference": 9.769962616701378e-15,
+      "passed": true
+    },
+    {
+      "check": "DirectTotalKdModel",
+      "kd_over_pt": 1.0,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "DirectSpecificKdModel",
+      "kd_over_pt": 10.0,
+      "max_absolute_difference": 9.547918011776346e-15,
+      "passed": true
+    },
+    {
+      "check": "DirectTotalKdModel",
+      "kd_over_pt": 10.0,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "check": "DirectSpecificKdModel",
+      "kd_over_pt": 100.0,
+      "max_absolute_difference": 1.3600232051658168e-14,
+      "passed": true
+    },
+    {
+      "check": "DirectTotalKdModel",
+      "kd_over_pt": 100.0,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "DirectSpecificKdModel",
+      "kd_over_pt": 1000.0,
+      "max_absolute_difference": 5.946632075648495e-15,
+      "passed": true
+    },
+    {
+      "check": "DirectTotalKdModel",
+      "kd_over_pt": 1000.0,
+      "max_absolute_difference": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "check": "DirectSpecificKdModel",
+      "kd_over_pt": 10000.0,
+      "max_absolute_difference": 6.85649453879833e-15,
+      "passed": true
+    },
+    {
+      "check": "DirectTotalKdModel",
+      "kd_over_pt": 10000.0,
+      "max_absolute_difference": 1.734723475976807e-18,
+      "passed": true
+    },
+    {
+      "check": "CompetitiveThreeStateSpecificKdModel",
+      "ki": 0.01,
+      "max_absolute_difference": 2.7755575615628914e-16,
+      "passed": true
+    },
+    {
+      "check": "CompetitiveThreeStateTotalKdModel",
+      "ki": 0.01,
+      "max_absolute_difference": 2.7755575615628914e-16,
+      "passed": true
+    },
+    {
+      "check": "CompetitiveThreeStateSpecificKdModel",
+      "ki": 1,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "CompetitiveThreeStateTotalKdModel",
+      "ki": 1,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "check": "CompetitiveThreeStateSpecificKdModel",
+      "ki": 100,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "CompetitiveThreeStateTotalKdModel",
+      "ki": 100,
+      "max_absolute_difference": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "check": "cheng_prusoff_applicable",
+      "max_relative_difference": 0.0,
+      "passed": true
+    },
+    {
+      "check": "R_nls_port_depletion_declared",
+      "fixture": "fixtures/affinity_0110/config_depletion_declared.json",
+      "max_relative_difference": 4.099705130933273e-08,
+      "relative_differences": {
+        "affinity": 4.099705130933273e-08,
+        "baseline_1": 1.275826599922425e-08,
+        "amplitude_1": 1.2042659092159624e-08
+      },
+      "passed": true
+    },
+    {
+      "check": "BindCurve_refit_depletion_declared",
+      "max_relative_difference": 7.754123032555071e-08,
+      "passed": true
+    },
+    {
+      "check": "R_nls_port_depletion_fitted",
+      "fixture": "fixtures/affinity_0110/config_depletion_fitted.json",
+      "max_relative_difference": 1.5985750115854458e-06,
+      "relative_differences": {
+        "affinity": 7.593584849807655e-07,
+        "baseline_1": 1.3804271836725945e-07,
+        "amplitude_1": 3.418979832581215e-08,
+        "Pt": 1.5985750115854458e-06
+      },
+      "passed": true
+    },
+    {
+      "check": "R_nls_port_set",
+      "fixture": "fixtures/affinity_0110/config_set.json",
+      "max_relative_difference": 4.715346124672948e-08,
+      "relative_differences": {
+        "affinity": 4.6967163935818235e-08,
+        "baseline_1": 4.715346124672948e-08,
+        "amplitude_1": 2.300056811677109e-09,
+        "baseline_2": 2.9696824777047937e-08,
+        "amplitude_2": 1.2006943328479736e-08
+      },
+      "passed": true
+    },
+    {
+      "check": "R_nls_port_cell_unweighted",
+      "fixture": "fixtures/affinity_0110/config_cell_unweighted.json",
+      "max_relative_difference": 8.979118859553381e-07,
+      "relative_differences": {
+        "affinity": 4.114753293649187e-07,
+        "baseline_1": 1.2610190824879908e-07,
+        "amplitude_1": 5.882566833648184e-08,
+        "nonspecific_slope": 8.979118859553381e-07
+      },
+      "passed": true
+    },
+    {
+      "check": "R_nls_port_cell_relative",
+      "fixture": "fixtures/affinity_0110/config_cell_relative.json",
+      "max_relative_difference": 3.0451397736719343e-08,
+      "relative_differences": {
+        "affinity": 1.3604512183462703e-08,
+        "baseline_1": 1.4586032381913583e-09,
+        "amplitude_1": 8.153813180200586e-10,
+        "nonspecific_slope": 3.0451397736719343e-08
+      },
+      "passed": true
+    },
+    {
+      "check": "R_nls_port_cell_quadratic",
+      "fixture": "fixtures/affinity_0110/config_cell_quadratic.json",
+      "max_relative_difference": 1.2052629028147521e-06,
+      "relative_differences": {
+        "affinity": 1.2052629028147521e-06,
+        "baseline_1": 1.9555464736420447e-07,
+        "amplitude_1": 1.4154703897872878e-07,
+        "nonspecific_slope": 1.0619154766633443e-06
+      },
+      "passed": true
+    },
+    {
+      "check": "R_nls_port_cell_antigen_negative",
+      "fixture": "fixtures/affinity_0110/config_cell_antigen_negative.json",
+      "max_relative_difference": 6.569849808624184e-08,
+      "relative_differences": {
+        "affinity": 6.569849808624184e-08,
+        "baseline_1": 3.5396286235389596e-08,
+        "amplitude_1": 6.074807989975284e-09,
+        "nonspecific_slope": 6.170869149002556e-08,
+        "control_baseline_offset": 4.7043813289349146e-09
+      },
+      "passed": true
+    },
+    {
+      "check": "R_nls_port_competition",
+      "fixture": "fixtures/affinity_0110/config_competition.json",
+      "max_relative_difference": 8.227122139103926e-08,
+      "relative_differences": {
+        "affinity": 8.227122139103926e-08,
+        "baseline_1": 2.8603324819798104e-08,
+        "amplitude_1": 2.1832780139341423e-08
+      },
+      "passed": true
+    },
+    {
+      "check": "BindCurve_refit_competition",
+      "max_relative_difference": 1.190863452293911e-08,
+      "passed": true
+    },
+    {
+      "check": "R_nls_port_steady_state",
+      "eligible_curves": 8,
+      "max_relative_difference": 4.097587380513801e-09,
+      "passed": true,
+      "scope": "same declared plateau means; hyperbola KD refit, kinetic rates not rebenchmarked"
+    }
+  ],
+  "status": "passed"
+}

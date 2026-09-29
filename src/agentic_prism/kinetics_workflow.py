@@ -12,6 +12,10 @@ from .kinetics_fit import fit_kinetic_group
 
 
 def analyze_kinetics(config_path,output,render=True):
+    raw=json.loads(Path(config_path).read_text())
+    if raw.get("model", "one_to_one")!="one_to_one":
+        from .advanced_kinetics_workflow import analyze_advanced
+        return analyze_advanced(config_path,output,render)
     src=Path(config_path).resolve();out=Path(output).resolve()
     if out.exists(): raise FileExistsError("Choose a new kinetic run directory")
     out.mkdir(parents=True)
@@ -46,6 +50,11 @@ def analyze_kinetics(config_path,output,render=True):
         pd.DataFrame(boot,columns=["fit_group_id","iteration","kon_M_inv_s_inv","koff_s_inv","kd_M","accepted"]).to_csv(out/"bootstrap.csv",index=False)
         dump(out/"diagnostics.json",{f["fit_group_id"]:{k:f[k] for k in ("status","reportable","ci_status","diagnostics")} for f in fits})
         (out/"rerun.txt").write_text('agentic-prism analyze --config config.resolved.json --output ../kinetic-rerun-new\nRun from this run directory in the pinned environment.\n')
+        if cfg.get("steady_state", {}).get("enabled"):
+            from .steady_state import compute
+            dump(out/"steady_state.json", compute(d, fits, cfg))
+        from .legacy_facts import write_facts
+        write_facts(out)
         dump(out/"manifest.json",{"schema_version":1,"analysis_type":"binding_kinetics","package_version":__version__,
               "created_utc":datetime.now(timezone.utc).isoformat(),"source":cfg["source"],"input_original_path":str(inp),"input_sha256":sha(inp),
               "python":platform.python_version(),"platform":platform.platform(),"random_seed":cfg["uncertainty"]["seed"],

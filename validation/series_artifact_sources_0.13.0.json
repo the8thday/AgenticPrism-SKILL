@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "scope": "All tracked runtime files, including packaged R resources, match the per-release branch state at the checked commits; later evidence-only commits do not change runtime files.",
+  "releases": [
+    {
+      "version": "0.11.1",
+      "source_ref": "dev/0.11.1",
+      "checked_commit": "2e4e991e4347d75f037ca99a37cd549fff84be97",
+      "wheel": "dist/agentic_prism-0.11.1-py3-none-any.whl",
+      "wheel_sha256": "7039a755f4320669ab840e0d39c1989ed6e3e4aef5398475f3c2ffd1d304a9a3",
+      "python_files_exact": 71,
+      "all_runtime_files_exact": 74,
+      "status": "passed"
+    },
+    {
+      "version": "0.12.0",
+      "source_ref": "dev/0.12.0",
+      "checked_commit": "50da81d8ea53b03c71b22827fd126d25bbe45bb0",
+      "wheel": "dist/agentic_prism-0.12.0-py3-none-any.whl",
+      "wheel_sha256": "dc748b1031b6b87e4e9a9148caf86551d96eb5aa91b7ff9d718b24526ff9253e",
+      "python_files_exact": 76,
+      "all_runtime_files_exact": 79,
+      "status": "passed"
+    },
+    {
+      "version": "0.12.1",
+      "source_ref": "dev/0.12.1",
+      "checked_commit": "4c022db5e2107d06b9dcfe463367bcc8c69ae9d5",
+      "wheel": "dist/agentic_prism-0.12.1-py3-none-any.whl",
+      "wheel_sha256": "84521098a967b29ff11723068c584b72631b28c3efb89989ecff7cd5c5fe5d1e",
+      "python_files_exact": 79,
+      "all_runtime_files_exact": 82,
+      "status": "passed"
+    },
+    {
+      "version": "0.13.0",
+      "source_ref": "dev/0.13.0",
+      "checked_commit": "20f0a4cb30231d104f924a8f0d9b81aa622335c7",
+      "wheel": "dist/agentic_prism-0.13.0-py3-none-any.whl",
+      "wheel_sha256": "f2c9b5f7d8d4818ef5faae1dc921d399587663e4ed028d85bf95de282aa4a7bd",
+      "python_files_exact": 83,
+      "all_runtime_files_exact": 86,
+      "status": "passed"
+    }
+  ]
+}

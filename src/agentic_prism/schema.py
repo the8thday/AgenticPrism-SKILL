@@ -29,6 +29,9 @@ DEFAULTS = {
 
 
 def resolve_config(raw):
+    if isinstance(raw, dict) and raw.get("model") in ("one_site_depletion", "solution_equilibrium_titration", "competition_exact"):
+        from .affinity_schema import resolve_config as resolve_affinity
+        return resolve_affinity(raw)
     def merge(base, given, path=""):
         if not isinstance(given, dict):
             raise ValueError(f"{path or 'config'} must be an object")
@@ -48,7 +51,7 @@ def resolve_config(raw):
     if a["concentration_basis"] not in ("free", "total") or (not isinstance(a["rationale"], str) or not a["rationale"].strip()):
         raise ValueError("Specify free/total concentration and an assay rationale")
     if a["concentration_basis"] == "total" and a["free_approximation_supported"] is not True:
-        raise ValueError("Total concentration requires a justified free-concentration approximation; depletion model unavailable")
+        raise ValueError("Total concentration requires a justified free-concentration approximation; otherwise use model=one_site_depletion")
     if a["interpretation"] not in ("KD", "apparent_KD"):
         raise ValueError("interpretation must be KD or a justified apparent_KD")
     f = c["fit"]

@@ -1,0 +1,7 @@
+Wells: 384
+Plates: 57
+Plate	Well	Content
+*	*	sample
+*	A0[1-2]	other
+*	B01	neg
+*	B02	pos

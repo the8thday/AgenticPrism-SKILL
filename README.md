@@ -11,11 +11,24 @@ one versioned Python package. Every run saves its inputs, configuration,
 hashes, results, diagnostics and an offline HTML report. Every module added
 since 0.8 also writes `interpretation_facts.json`: the saved results the agent
 must base its narrative on (primary estimates, what is reportable or withheld
-and why, required disclosures, limitations). The six oldest modules
-(equilibrium, kinetics, dose response, ELISA, two-group and multi-group
-comparisons) do not have it yet; agents read their result files directly.
+and why, required disclosures, limitations). Equilibrium binding, binding kinetics, two-group and multi-group comparisons
+now also write facts. Dose response and ELISA now also write facts, completing the oldest six modules. Earlier saved runs are not rewritten.
 
-Local development version **0.10.1**.
+Local development version **0.13.0**.
+
+## 0.13.0
+
+HTS nominal BH screening has not demonstrated FDR control: the registered global-null false-hit rate was 0.100 (bound 0.063784); review traced it to median-polish residuals (4.3% without polishing, 9.3% with). HSA interval coverage also missed; see the retained evidence.
+
+Named Bliss, Loewe, HSA and ZIP combination references with independent-matrix uncertainty; declared HTS plate QC, median-polish B scores and exploratory FDR hits. Dose-response and ELISA facts complete the oldest-six retrofit.
+
+See [release evidence](validation/RELEASE_0.13.0.md) for retained misses and unmet gates. Live-agent review: 4/4 scenarios passed. PK/PD remains deferred.
+
+## 0.12.1
+
+Directed epitope binning with declared controls and thresholds, asymmetric-pair diagnostics, conditional bootstrap clustering stability and reciprocal-block communities.
+
+See [release evidence](validation/RELEASE_0.12.1.md) for retained misses and unmet gates. Live-agent review: 2/3 passed; the by-eye bin-merge scenario failed in 2 of 3 attempts, when the agent answered without reading the Skill. PK/PD remains deferred.
 
 > **AI agents:** to install this collection for a user, follow
 > [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md).
@@ -24,8 +37,12 @@ Local development version **0.10.1**.
 
 | Stage | Question | Skill | Methods |
 |---|---|---|---|
-| Binding characterization | Equilibrium affinity (KD) | [equilibrium-binding](skills/equilibrium-binding/SKILL.md) | Single-site model with profile-F interval; summary over independent experiments |
-| | Association and dissociation rates | [binding-kinetics](skills/binding-kinetics/SKILL.md) | Global 1:1 fit of independent-cycle or single-cycle BLI/SPR data, reference or double referencing, block-bootstrap intervals with reliability gates, Octet `Results.txt` import |
+| Pharmacology and screening | Combination reference scores | [drug-combination](skills/drug-combination/SKILL.md) | Bliss/Loewe/HSA/ZIP with independent-matrix intervals |
+| | HTS quality and exploratory hits | [import-plate](skills/import-plate/SKILL.md) | Z-prime, SSMD, median-polish B scores and FDR |
+| Binding characterization | Epitope competition and bins | [epitope-binning](skills/epitope-binning/SKILL.md) | Directed controlled blocking, conditional bootstrap stability and reciprocal-block graphs |
+| Binding characterization | Equilibrium affinity (KD) | [equilibrium-binding](skills/equilibrium-binding/SKILL.md) | Hyperbola or opt-in exact depletion, SET n-curves, three-state competition Ki; profile-F and independent-experiment summaries |
+| | Cell-surface apparent affinity | [cell-binding](skills/cell-binding/SKILL.md) | Joint total/control fit, declared background, hyperbolic or quadratic receptor depletion; apparent KD only |
+| | Association and dissociation rates | [binding-kinetics](skills/binding-kinetics/SKILL.md) | Global 1:1 fit of independent-cycle or single-cycle BLI/SPR data, reference or double referencing, block-bootstrap intervals with reliability gates; opt-in drift, heterogeneous ligand, bivalent analyte, mass transport and off-rate screening; scoped Octet/T200/Carterra imports |
 | In vitro function | EC50/IC50 and relative potency | [dose-response](skills/dose-response/SKILL.md) | Symmetric 4PL, relative midpoint with profile interval, parallel-line relative potency with F-test or equivalence-margin parallelism |
 | | Concentration from a standard curve | [elisa-quantification](skills/elisa-quantification/SKILL.md) | Per-plate 4PL/5PL, back-calculation QC, independent QC gates, delta-method unknown intervals, dilution linearity; plate-grid import |
 | In vivo efficacy | Tumor volumes over time | [tumor-growth](skills/tumor-growth/SKILL.md) | Log-volume random-slope model: growth rates, doubling times, rate differences, model T/C; observed TGI% and T/C% with Fieller limits and dropout diagnostics |
@@ -43,6 +60,52 @@ Local development version **0.10.1**.
 The [router Skill](skills/agentic-prism/SKILL.md) picks the specialist from the
 experiment; the [module registry](skills/agentic-prism/references/module-registry.md)
 lists exact capabilities and boundaries.
+
+## 0.12.0 surface kinetic depth
+
+Opt-in drift, heterogeneous ligand, bivalent analyte and mass transport;
+dissociation-only koff ranking; verified T200/Carterra XY imports. Complex
+mechanisms require predeclaration and identifiability. Default 1:1 stays unchanged.
+Kinetics now saves interpretation facts. Calibration misses and unmet public
+worked-example gates are retained; live-agent review 5/5 passed.
+**Advanced-model bootstrap intervals are not calibrated at the default 200 replicates.** The registered calibration used 50 replicates and covered 87–92%; with fast mass transport, fits that passed every gate covered only 69–77%. Treat advanced-model intervals as provisional; a default-setting calibration is deferred.
+See [release evidence](validation/RELEASE_0.12.0.md). PK/PD remains deferred.
+
+## 0.11.1 routine statistics
+
+Adds independent two-way ANOVA, contingency tables/proportions, correlation and
+linear regression, and Deming/Passing-Bablok/Bland-Altman method comparison.
+The new `correlation-regression` Skill distinguishes association from agreement.
+Two/multi-group runs now save interpretation facts without changing prior
+scientific artifacts. SS type, contrast family, independent units and Deming
+error ratio must be declared. Numerical agreement is scoped; calibration misses
+are retained; live-agent review 6/6 passed.
+See [release evidence](validation/RELEASE_0.11.1.md).
+
+## 0.11.0 affinity depth
+
+New models are opt-in. Active Pt needs a source and activity basis; fitted Pt is
+profiled, with points withheld in the fitted titration regime or lower-open
+profile. Cell binding has its own Skill and always reports apparent KD, with
+measured nonspecific controls and explicit wash/detection/valency gates.
+Kinetics can additionally extract Req from declared eligible plateau windows;
+KD_ss/KD_kin is diagnostic and is never averaged.
+
+Evidence is limited: all named new published worked-example gates are **unmet**.
+The registered 14,000 simulations retained five failed criteria: known-Pt
+coverage 93.1% (Pt/KD=1) and 80.0% (100), fitted-Pt titration diagnostic
+withholding 48.5% (10) and 91.5% (100), and cell apparent-KD coverage 93.4%,
+against 93.62%. At fitted Pt/KD=100, any point withholding was 95.7%; that does
+not replace the preregistered diagnostic-specific miss. SET and Ki coverage were
+95.2% and 95.8%. Relative-weighted and quadratic cell fits were not separately
+coverage-calibrated. A post-hoc breakdown (not a replacement) shows the 80.0%
+row's design titrated only up to Pt: 158 of 1,000 estimates fell above the
+titrated range and were all withheld, and the 842 reportable fits covered 95.0%.
+Runs now carry a non-blocking warning for that design. SET also requires a
+declared valency and readout (bivalent IgG captured as molecules with any free
+site is refused), antigen-negative control cells get their own baseline, and
+steady state requires a shared kinetic Rmax.
+See [the complete release record](validation/RELEASE_0.11.0.md).
 
 ## How correctness is checked
 
@@ -107,7 +170,7 @@ This creates symlinks and never overwrites existing entries. Do not copy Skill
 folders: a copied Skill cannot find its runtime. Each Skill locates the runtime
 from its real location and checks it with `agentic-prism doctor --collection
 <clone>` ([runtime instructions](skills/agentic-prism/references/runtime.md)).
-The sixteen Skills and the package are one version and must stay together.
+The 21 Skills and the package are one version and must stay together.
 
 Platform evidence: install and results were checked on macOS (uv with Python
 3.13, and pip with Python 3.14; identical results). Linux and Windows are
@@ -150,6 +213,8 @@ Start new data from a fixture config, and fill in the applicability evidence
 according to the input contract:
 
 - Equilibrium: `fixtures/synthetic/config.json`, [input contract](skills/equilibrium-binding/references/input-schema.md)
+- Affinity depth: `fixtures/affinity_0110/`, [depletion, SET and competition contract](skills/equilibrium-binding/references/affinity-depth.md)
+- Cell binding: `fixtures/affinity_0110/config_cell_*.json`, [input contract](skills/cell-binding/references/input-contract.md)
 - Kinetics: `fixtures/kinetics_synthetic/config.json`, [input contract](skills/binding-kinetics/references/input-and-model.md)
 - 4PL: `fixtures/dose_synthetic/config_*.json`, [input contract](skills/dose-response/references/input-and-model.md)
 - ELISA: `fixtures/elisa_synthetic/config.json`, [input contract](skills/elisa-quantification/references/input-and-model.md)
@@ -174,7 +239,7 @@ repository.
 
 A run contains an input snapshot, the resolved configuration, input/code/
 environment hashes, normalized observations, results, diagnostics,
-SVG/PDF/PNG figures in two themes, and the HTML report. The curve-fitting modules
+SVG/PDF/PNG figures with selectable themes, and the HTML report. The curve-fitting modules
 also save predictions, residuals and parameter intervals where supported.
 The equilibrium and dose-response modules add per-sample
 summaries; kinetics saves per-sensor parameters and joint bootstrap samples;
@@ -199,7 +264,7 @@ upper or lower bounds that imply statistical guarantees.
   `Results.txt` layout. Reference results come from TitrationAnalysis, not the
   Octet vendor software. The 300 s and 600 s runs are two fit windows of one
   experiment. `.frd` files are not read. SPR data can use the canonical CSV,
-  but there is no dedicated Biacore importer. Single-cycle curves declare each
+  with scoped T200 XY text and Carterra XY workbook imports in 0.12.0. Other layouts remain unsupported. Single-cycle curves declare each
   row's own injection start, end and concentration; double referencing
   `(sample − reference) − (blank − blank reference)` runs only when configured.
 - **Dose response:** the 4PL fits raw per-well responses and reports the

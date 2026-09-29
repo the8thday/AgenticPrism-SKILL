@@ -31,3 +31,8 @@ It imports verified dose-response comparisons using equivalence parallelism,
 retains per-run suitability, and withholds combination when a supplied run fails.
 At least two independent determinations per run are needed to separate run and
 residual variance; shared reference fits cannot count as independent.
+
+
+0.13.0 adds saved-result `interpretation_facts.json`. Read all states and required
+disclosures before interpretation; incomplete summaries, independence, QC and
+interval limits remain visible. Facts and rendering never refit the analysis.

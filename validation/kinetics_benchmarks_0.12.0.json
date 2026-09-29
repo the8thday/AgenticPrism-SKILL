@@ -1,0 +1,105 @@
+{
+  "release": "0.12.0",
+  "checks": [
+    {
+      "model": "bivalent_analyte",
+      "max_absolute_difference": 1.3270984922542084e-05,
+      "max_relative_difference": 5.604716907002508e-07,
+      "passed": true,
+      "oracle": "deSolve 1.42 or analytic closed form"
+    },
+    {
+      "model": "heterogeneous_ligand",
+      "max_absolute_difference": 5.684341886080802e-14,
+      "max_relative_difference": 4.657385194789698e-15,
+      "passed": true,
+      "oracle": "deSolve 1.42 or analytic closed form"
+    },
+    {
+      "model": "mass_transport",
+      "max_absolute_difference": 8.91686535453573e-06,
+      "max_relative_difference": 2.1146161534995322e-07,
+      "passed": true,
+      "oracle": "deSolve 1.42 or analytic closed form"
+    },
+    {
+      "model": "one_to_one_drift",
+      "max_absolute_difference": 7.105427357601002e-14,
+      "max_relative_difference": 4.6388925841962054e-15,
+      "passed": true,
+      "oracle": "deSolve 1.42 or analytic closed form"
+    }
+  ],
+  "imports": [
+    {
+      "fixture": "fixtures/kinetics_0120/public/t200_import.json",
+      "rows": 8403,
+      "manifest": {
+        "layout": "duke_t200_xy_text",
+        "file": "t200.txt",
+        "source": "CC-BY4.0 DukeCHSI original; source_manifest.json",
+        "time_source": "Pinned author metadata; times explicitly declared, no trace inference",
+        "curves": [
+          {
+            "pair_index": 0,
+            "curve_id": "public-0",
+            "sample_id": "CH31",
+            "experiment_id": "public-E1",
+            "fit_group_id": "public",
+            "concentration_M": 2.771e-08,
+            "association_start_s": 0,
+            "dissociation_start_s": 180,
+            "response_unit": "RU"
+          }
+        ],
+        "source_copy": "original/t200.txt",
+        "source_sha256": "0361356ba6cb7be1a7f38ab9c5c5976407af0b78791bb9fad0a780dbc4751aa0",
+        "data_sha256": "bbaacd962eb91e5af6390ba9e85f52b81ef7765a1aa995df12daac27a49a8909",
+        "selected_column_labels": {
+          "public-0": [
+            "Cycle: 15  AE.A244  1.562_X",
+            "Cycle: 15  AE.A244  1.562_Y"
+          ]
+        },
+        "automatic_phase_detection": false
+      }
+    },
+    {
+      "fixture": "fixtures/kinetics_0120/public/carterra_regen_import.json",
+      "rows": 996,
+      "manifest": {
+        "layout": "duke_carterra_xy_workbook",
+        "file": "carterra_regen.xlsx",
+        "source": "CC-BY4.0 DukeCHSI original; source_manifest.json",
+        "time_source": "Pinned author metadata; times explicitly declared, no trace inference",
+        "curves": [
+          {
+            "pair_index": 0,
+            "curve_id": "public-0",
+            "sample_id": "CH31",
+            "experiment_id": "public-E1",
+            "fit_group_id": "public",
+            "concentration_M": 1.95e-09,
+            "association_start_s": 120,
+            "dissociation_start_s": 420,
+            "response_unit": "RU"
+          }
+        ],
+        "source_copy": "original/carterra_regen.xlsx",
+        "source_sha256": "727ed8ad05854e4636edc8ccf7d720ecce83aa806c37dbcfb3fae7cf1aa2a50f",
+        "data_sha256": "50dc5810071271ca04d1b3808308fb598e988c04c56a09050e23c0b9525d7bf8",
+        "selected_column_labels": {
+          "public-0": [
+            "[Ligand 3 (3) - CH31 Conc. 10(7)] [NotFitted] Ru values",
+            null
+          ]
+        },
+        "automatic_phase_detection": false
+      }
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Forward solution checks do not establish fit parameter or interval equivalence. Public export parsing is checked independently of source software fit settings."
+  ]
+}

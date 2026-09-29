@@ -1,0 +1,28 @@
+{
+  "analysis_type": "binding_kinetics",
+  "model": "mass_transport",
+  "input": "mass_transport.csv",
+  "source": "Synthetic seed120; declared mechanism; not measured biology.",
+  "assay": {
+    "independent_cycles": true,
+    "concentration_known": true,
+    "rationale": "Independent regenerated cycles, common response scale."
+  },
+  "fit": {
+    "rmax": "shared"
+  },
+  "uncertainty": {
+    "replicates": 50,
+    "block_length": 2
+  },
+  "advanced": {
+    "predeclared": true,
+    "mechanistic_rationale": "Prespecified synthetic mechanism",
+    "reference_valid": true,
+    "response_is_bound_analyte": true,
+    "response_scales_comparable": true,
+    "valency": "monovalent",
+    "surface_conversion_nM_per_response": 0.1,
+    "surface_conversion_source": "Declared simulation compartment scale"
+  }
+}

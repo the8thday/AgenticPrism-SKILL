@@ -1,0 +1,19 @@
+{
+  "package": "synergyfinder 3.20.0",
+  "source": "https://bioconductor.org/packages/release/bioc/html/synergyfinder.html",
+  "package_license": "MPL-2.0",
+  "dataset": "ONEIL_screening_data",
+  "original_publication": "PMID26983881",
+  "selection": "Both original blocks separately; arithmetic mean of four repeated rows per concentration pair. No pooling of drug pairs, conditions or assumed independent experiments.",
+  "independence": "No independent experiment IDs; descriptive scores only, no biological replication inferred.",
+  "files": [
+    {
+      "path": "fixtures/pharmacology_0130/public/ONEIL_original.csv",
+      "sha256": "3a3590e886b8cee59a3c4c1ca3012bddbbc193cc794a7db22c1848031fb7757e"
+    },
+    {
+      "path": "fixtures/pharmacology_0130/public/synergyfinder-description.txt",
+      "sha256": "4ca99a686c6060bb4faa1f63c1887f0876ddc964b253086f82474cc8a7bc60bf"
+    }
+  ]
+}

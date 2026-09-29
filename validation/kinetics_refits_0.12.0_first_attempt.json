@@ -1,0 +1,75 @@
+{
+  "release": "0.12.0",
+  "oracle": "R nlminb with independent analytic/deSolve objective",
+  "checks": [
+    {
+      "model": "one_to_one_drift",
+      "fixture": "fixtures/kinetics_0120/one_to_one_drift_config.json",
+      "max_relative_difference": 3.318158038657505e-07,
+      "parameter_relative_differences": {
+        "ka": 1.244140324094158e-07,
+        "kd": 8.417820451799974e-09,
+        "rmax": 1.840582941563725e-08,
+        "drift_0": 2.341513016728792e-07,
+        "drift_1": 3.318158038657505e-07,
+        "drift_2": 3.9680212912074235e-08,
+        "drift_3": 1.432155901541474e-07
+      },
+      "python_sse": 20.83564723740982,
+      "r_sse": 20.8356472371411,
+      "r_convergence": 1,
+      "passed": false
+    },
+    {
+      "model": "heterogeneous_ligand",
+      "fixture": "fixtures/kinetics_0120/heterogeneous_ligand_config.json",
+      "max_relative_difference": 6.905815688824509e-06,
+      "parameter_relative_differences": {
+        "ka": 6.357008471609599e-07,
+        "kd": 8.596757953493236e-07,
+        "rmax": 8.421147535407493e-07,
+        "ka2": 6.905815688824509e-06,
+        "kd2": 1.7249570551778197e-06,
+        "fraction": 1.454649477844441e-07
+      },
+      "python_sse": 22.60829027201895,
+      "r_sse": 22.6082902701881,
+      "r_convergence": 1,
+      "passed": false
+    },
+    {
+      "model": "bivalent_analyte",
+      "fixture": "fixtures/kinetics_0120/bivalent_analyte_config.json",
+      "max_relative_difference": 0.0008914710588054367,
+      "parameter_relative_differences": {
+        "ka": 0.0008914710588054367,
+        "kd": 5.6424375931587204e-05,
+        "rmax": 9.489219897218069e-05,
+        "ka2": 0.000431430102124383,
+        "kd2": 0.0002576827854767957
+      },
+      "python_sse": 21.46952688641493,
+      "r_sse": 21.4776412782618,
+      "r_convergence": 1,
+      "passed": false
+    },
+    {
+      "model": "mass_transport",
+      "fixture": "fixtures/kinetics_0120/mass_transport_config.json",
+      "max_relative_difference": 0.013726672632741577,
+      "parameter_relative_differences": {
+        "ka": 0.013726672632741577,
+        "kd": 0.012909619045783242,
+        "rmax": 0.00027992708318423735,
+        "km": 0.0041470758381804695
+      },
+      "python_sse": 20.4555358743906,
+      "r_sse": 20.989845176195,
+      "r_convergence": 1,
+      "passed": false
+    }
+  ],
+  "limitations": [
+    "Local refits start at deterministic perturbation of Python solution; not an independent global-search benchmark. Public-data model refits and published parameter reproduction remain unmet."
+  ]
+}

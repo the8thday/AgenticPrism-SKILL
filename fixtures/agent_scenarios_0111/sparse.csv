@@ -1,0 +1,9 @@
+observation_id,independent_unit_id,group,outcome
+0,0,a,1
+1,1,a,0
+2,2,a,0
+3,3,a,0
+4,4,b,0
+5,5,b,0
+6,6,b,0
+7,7,b,0

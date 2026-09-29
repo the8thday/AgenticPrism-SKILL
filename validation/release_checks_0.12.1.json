@@ -1,0 +1,756 @@
+{
+  "version": "0.12.1",
+  "status": "completed_with_disclosed_scientific_limits",
+  "base": "dev/0.12.0",
+  "base_commit": "50da81d8ea53b03c71b22827fd126d25bbe45bb0",
+  "build": {
+    "version": "0.12.1",
+    "archive_commit": "abd39718d7db302fce5f62c0fca22e87d8f90dcf",
+    "build_source": "clean git archive",
+    "python_source_files_exact": 79,
+    "artifacts": [
+      {
+        "path": "dist/agentic_prism-0.12.1-py3-none-any.whl",
+        "sha256": "84521098a967b29ff11723068c584b72631b28c3efb89989ecff7cd5c5fe5d1e"
+      },
+      {
+        "path": "dist/agentic_prism-0.12.1.tar.gz",
+        "sha256": "5d7f2a37df42634d7f255ead46c7583d88d4d0fa3da1f1591d339984be9ccfe7"
+      }
+    ],
+    "superseded_moved": []
+  },
+  "pytest": {
+    "passed": 612,
+    "warnings": 8,
+    "seconds": 207.02
+  },
+  "benchmark": {
+    "release": "0.12.1",
+    "oracle": "pvclust2.2.0 boot.hclust r=1 and base R",
+    "checks": [
+      {
+        "dataset": "synthetic_blocking",
+        "branches": 4,
+        "bootstrap_replicates": 1000,
+        "max_absolute_BP_difference": 0.0,
+        "max_relative_BP_difference": 0.0,
+        "max_relative_height_difference": 1.9668766619673883e-15,
+        "passed": true
+      },
+      {
+        "dataset": "public_lung_algorithm_only",
+        "branches": 10,
+        "bootstrap_replicates": 1000,
+        "max_absolute_BP_difference": 0.0,
+        "max_relative_BP_difference": 0.0,
+        "max_relative_height_difference": 3.0953604582952737e-15,
+        "passed": true
+      },
+      {
+        "dataset": "directed_normalization",
+        "max_absolute_difference": 4.884981308350689e-15,
+        "max_relative_difference": 1.2499261256589365e-14,
+        "passed": true
+      }
+    ],
+    "limits": [
+      "BP feature-resampling stability only; no multiscale AU implementation claim.",
+      "Public lung dataset checks the clustering algorithm, not the epitope worked-example gate.",
+      "Abdiche numeric response/control matrix unavailable; published epitope gate UNMET."
+    ]
+  },
+  "calibration": {
+    "registration": "680482b",
+    "seed": 121260930,
+    "draws": 4000,
+    "criteria": 10,
+    "passed": 10,
+    "missed": 0,
+    "unavailable_or_descriptive": 2,
+    "misses": [],
+    "rows": [
+      {
+        "scenario": {
+          "name": "independent_n4",
+          "n": 4,
+          "stress": false,
+          "missing": false
+        },
+        "metrics": [
+          {
+            "metric": "blocking_interval_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.943,
+            "mcse": 0.007331507348424336,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "blocking_interval_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.943,
+            "mcse": 0.007331507348424336,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "correct_communities",
+            "population": "all",
+            "n": 1000,
+            "rate": 1.0,
+            "mcse": 0.0,
+            "bound": 0.9362159512479097,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "name": "independent_n8",
+          "n": 8,
+          "stress": false,
+          "missing": false
+        },
+        "metrics": [
+          {
+            "metric": "blocking_interval_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.951,
+            "mcse": 0.006826346021115546,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "blocking_interval_coverage",
+            "population": "reportable",
+            "n": 1000,
+            "rate": 0.951,
+            "mcse": 0.006826346021115546,
+            "bound": 0.9362159512479097,
+            "passed": true
+          },
+          {
+            "metric": "correct_communities",
+            "population": "all",
+            "n": 1000,
+            "rate": 0.999,
+            "mcse": 0.0009994998749374613,
+            "bound": 0.9362159512479097,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "name": "independent_n16",
+          "n": 16,
+          "stress": false,
+          "missing": false
+        },
+        "metrics": [
+          {
+            "metric": "blocking_interval_coverage",
+            "population": "evaluable",
+            "n": 998,
+            "rate": 0.9559118236472945,
+            "mcse": 0.0064983741652956985,
+            "bound": 0.9362021464885639,
+            "passed": true
+          },
+          {
+            "metric": "blocking_interval_coverage",
+            "population": "reportable",
+            "n": 998,
+            "rate": 0.9559118236472945,
+            "mcse": 0.0064983741652956985,
+            "bound": 0.9362021464885639,
+            "passed": true
+          },
+          {
+            "metric": "correct_communities",
+            "population": "all",
+            "n": 1000,
+            "rate": 0.996,
+            "mcse": 0.0019959959919799443,
+            "bound": 0.9362159512479097,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "scenario": {
+          "name": "missing_self_control",
+          "n": 8,
+          "stress": true,
+          "missing": true
+        },
+        "metrics": [
+          {
+            "metric": "blocking_interval_coverage",
+            "population": "evaluable",
+            "n": 0,
+            "rate": null,
+            "mcse": null,
+            "bound": null,
+            "passed": null
+          },
+          {
+            "metric": "blocking_interval_coverage",
+            "population": "reportable",
+            "n": 0,
+            "rate": null,
+            "mcse": null,
+            "bound": null,
+            "passed": null
+          },
+          {
+            "metric": "withheld",
+            "population": "all",
+            "n": 1000,
+            "rate": 1.0,
+            "mcse": 0.0,
+            "bound": 0.9362159512479097,
+            "passed": true
+          }
+        ]
+      }
+    ]
+  },
+  "legacy": {
+    "configurations": 141,
+    "byte_identical_count": 1098
+  },
+  "install_smoke": {
+    "status": "passed",
+    "fixtures": 147
+  },
+  "install_exact": {
+    "status": "passed",
+    "package_version": "0.12.1",
+    "installed_source_isolation": true,
+    "fixtures": [
+      {
+        "fixture": "fixtures/epitope_0121/config_asymmetric.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_complete.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_failed_control.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_missing.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_premix.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_tandem.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/independent_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/paired_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/bivalent_analyte_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/heterogeneous_ligand_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/mass_transport_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/off_rate_screening_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/one_to_one_drift_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_synthetic/config.json",
+        "byte_identical_artifacts": [
+          "bootstrap.csv",
+          "config.resolved.json",
+          "curve_parameters.csv",
+          "diagnostics.json",
+          "fit_results.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json",
+          "window_sensitivity.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/multigroup_synthetic/config_dunnett.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "contrasts.csv",
+          "diagnostics.json",
+          "group_summary.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "omnibus.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/multigroup_synthetic/config_games_howell.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "contrasts.csv",
+          "diagnostics.json",
+          "group_summary.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "omnibus.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_bland_altman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_chi_square.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_clopper_pearson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_deming.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_dunnett.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_holm.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_sidak.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_tukey.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_fisher.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_fisher_rc.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_linear.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_mcnemar.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_mcnemar_exact.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_passing_bablok.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_pearson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_bland_altman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_deming.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_linear.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_passing_bablok.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_pearson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_spearman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_spearman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_toothgrowth.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_trend.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_warpbreaks.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_wilson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      }
+    ],
+    "configurations": 42,
+    "artifact_count": 253
+  },
+  "clean_environment_status": "passed",
+  "live_agent_gate": "PENDING",
+  "facts_gate": "PASS: saved-result extraction, state tests and legacy bytes",
+  "skills_validated": [
+    "agentic-prism",
+    "epitope-binning"
+  ],
+  "published_gate": "UNMET: no measured epitope response/control matrix",
+  "deviations": [
+    "Epitope supports verified canonical tables; no unverified vendor binning parser. BP feature stability only, not multiscale AU."
+  ],
+  "facts_state_checks": {
+    "release": "0.12.1",
+    "status": "passed",
+    "states": [
+      {
+        "fixture": "fixtures/epitope_0121/config_complete.json",
+        "status": "passed",
+        "scientific_files_byte_identical": 5,
+        "refit_disabled_during_extraction": true
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_asymmetric.json",
+        "status": "passed",
+        "scientific_files_byte_identical": 5,
+        "refit_disabled_during_extraction": true
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_missing.json",
+        "status": "passed",
+        "scientific_files_byte_identical": 5,
+        "refit_disabled_during_extraction": true
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_failed_control.json",
+        "status": "passed",
+        "scientific_files_byte_identical": 5,
+        "refit_disabled_during_extraction": true
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_premix.json",
+        "status": "passed",
+        "scientific_files_byte_identical": 5,
+        "refit_disabled_during_extraction": true
+      },
+      {
+        "fixture": "fixtures/epitope_0121/config_tandem.json",
+        "status": "passed",
+        "scientific_files_byte_identical": 5,
+        "refit_disabled_during_extraction": true
+      }
+    ]
+  }
+}

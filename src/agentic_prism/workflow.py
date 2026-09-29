@@ -31,6 +31,14 @@ def analyze(config_path, output, render=True):
         requested = json.loads(Path(config_path).read_text())
     except (OSError, ValueError):
         requested = None
+    from .extension_workflow import TYPES, analyze_extension
+    if isinstance(requested, dict) and requested.get("analysis_type") in TYPES:
+        return analyze_extension(config_path, output, render)
+    if isinstance(requested, dict) and (requested.get("analysis_type") == "cell_binding" or
+            (requested.get("analysis_type", "equilibrium_binding") == "equilibrium_binding" and
+             requested.get("model") in ("one_site_depletion", "solution_equilibrium_titration", "competition_exact"))):
+        from .affinity_workflow import analyze_affinity
+        return analyze_affinity(config_path, output, render)
     if isinstance(requested, dict) and requested.get("analysis_type") in ("stability", "potency_assay", "comparability", "specification"):
         from .cmc_workflow import analyze_cmc
         return analyze_cmc(config_path, output, render)
@@ -107,6 +115,8 @@ def analyze(config_path, output, render=True):
         pd.DataFrame(sens, columns=["curve_id", "scenario", "status", "kd_M", "ratio_to_primary"]).to_csv(out / "sensitivity.csv", index=False)
         dump(out / "diagnostics.json", {f["curve_id"]: {k:f[k] for k in ("status", "range_status", "identifiability", "ci_status", "diagnostics")} for f in fits})
         (out / "rerun.txt").write_text('agentic-prism analyze --config config.resolved.json --output ../rerun-new\n\nRun from this run directory in the pinned environment. Choose a fresh output directory.\n')
+        from .affinity_workflow import write_facts
+        write_facts(out)
         dump(out / "manifest.json", {"schema_version": 1, "package_version": __version__, "created_utc": datetime.now(timezone.utc).isoformat(),
              "input_original_path": str(inp), "input_sha256": sha(out / "input.csv"), "source": cfg["source"],
              "python": platform.python_version(), "platform": platform.platform(),

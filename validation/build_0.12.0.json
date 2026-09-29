@@ -1,0 +1,17 @@
+{
+  "version": "0.12.0",
+  "archive_commit": "c7a733fb681aeadaef2d3de00f38f19b7b475f2a",
+  "build_source": "clean git archive",
+  "python_source_files_exact": 76,
+  "artifacts": [
+    {
+      "path": "dist/agentic_prism-0.12.0-py3-none-any.whl",
+      "sha256": "dc748b1031b6b87e4e9a9148caf86551d96eb5aa91b7ff9d718b24526ff9253e"
+    },
+    {
+      "path": "dist/agentic_prism-0.12.0.tar.gz",
+      "sha256": "433081c9414180afdf4d0d54b80d2c81f8de6bf1d17cbb81ad02ebe09079f55d"
+    }
+  ],
+  "superseded_moved": []
+}

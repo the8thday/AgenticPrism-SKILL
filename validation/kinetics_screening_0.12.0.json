@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "source": "synthetic",
+      "curve": "c0",
+      "python_koff": 0.009643632318577174,
+      "r_koff": 0.009643632,
+      "relative_difference": 3.303497842481961e-08,
+      "passed": true
+    },
+    {
+      "source": "synthetic",
+      "curve": "c1",
+      "python_koff": 0.00992885230929413,
+      "r_koff": 0.009928852,
+      "relative_difference": 3.1151046489357185e-08,
+      "passed": true
+    },
+    {
+      "source": "synthetic",
+      "curve": "c2",
+      "python_koff": 0.010011366262665213,
+      "r_koff": 0.01001137,
+      "relative_difference": 3.733090263502627e-07,
+      "passed": true
+    },
+    {
+      "source": "synthetic",
+      "curve": "c3",
+      "python_koff": 0.010006887748438744,
+      "r_koff": 0.01000689,
+      "relative_difference": 2.2500109975709227e-07,
+      "passed": true
+    },
+    {
+      "source": "public_t200",
+      "curve": "0",
+      "python_koff": 0.001512889716908104,
+      "r_koff": 0.00151289,
+      "relative_difference": 1.8711994663337594e-07,
+      "passed": true
+    },
+    {
+      "source": "public_t200",
+      "curve": "1",
+      "python_koff": 0.0002106031927316903,
+      "r_koff": 0.0002106032,
+      "relative_difference": 3.4511867370813083e-08,
+      "passed": true
+    },
+    {
+      "source": "public_t200",
+      "curve": "2",
+      "python_koff": 0.0002690145084613442,
+      "r_koff": 0.0002690145,
+      "relative_difference": 3.145311572888688e-08,
+      "passed": true
+    }
+  ],
+  "scope": "Fixed-zero offset dissociation exponential; apparent rate only, no KD.",
+  "max_relative_difference": 3.733090263502627e-07
+}

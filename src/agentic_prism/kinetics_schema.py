@@ -4,10 +4,13 @@ import json
 import numpy as np
 import pandas as pd
 from .schema import UNITS
+from .steady_state import DEFAULTS as STEADY_STATE_DEFAULTS
 
 DEFAULTS = {
     "schema_version": 1, "analysis_type": "binding_kinetics", "model": "one_to_one",
     "input": None, "source": "User-supplied sensorgrams", "column_map": {}, "provenance": None,
+    "steady_state": STEADY_STATE_DEFAULTS,
+    "advanced": __import__("agentic_prism.advanced_kinetics",fromlist=["DEFAULTS"]).DEFAULTS,
     # injection_design single_cycle: sequential increasing injections without regeneration on one surface.
     "assay": {"one_to_one_supported": None, "independent_cycles": None,
               "concentration_known": None, "rationale": "", "injection_design": "multi_cycle"},
@@ -32,14 +35,16 @@ def resolve_kinetic_config(raw):
             out[k] = merge(base[k],v,path+k+".") if isinstance(base[k],dict) and k != "column_map" else v
         return out
     c = merge(DEFAULTS,raw)
-    if c["schema_version"] != 1 or c["analysis_type"] != "binding_kinetics" or c["model"] != "one_to_one":
+    from .advanced_kinetics import MODELS, validate as validate_advanced
+    advanced=c["model"] in MODELS
+    if c["schema_version"] != 1 or c["analysis_type"] != "binding_kinetics" or (c["model"] != "one_to_one" and not advanced):
         raise ValueError("Unsupported kinetics schema or model")
     a = c["assay"]
     if a["injection_design"] not in ("multi_cycle", "single_cycle"):
         raise ValueError("assay.injection_design must be multi_cycle or single_cycle")
     # Multi-cycle requires regenerated independent cycles; single-cycle must declare that it has none.
     cycles_ok = a["independent_cycles"] is True if a["injection_design"] == "multi_cycle" else a["independent_cycles"] is False
-    if any(a[k] is not True for k in ("one_to_one_supported", "concentration_known")) or not cycles_ok or (not isinstance(a["rationale"], str) or not a["rationale"].strip()):
+    if any(a[k] is not True for k in (("concentration_known",) if advanced else ("one_to_one_supported", "concentration_known"))) or not cycles_ok or (not isinstance(a["rationale"], str) or not a["rationale"].strip()):
         raise ValueError("Document 1:1 applicability, cycle design (independent_cycles true for multi_cycle, "
                          "false for single_cycle), known concentration and rationale")
     pre = c["preprocessing"]
@@ -72,6 +77,15 @@ def resolve_kinetic_config(raw):
         raise ValueError("Unsupported kinetic report option")
     if not isinstance(c["input"],str) or not c["input"] or not isinstance(c["column_map"],dict):
         raise ValueError("input path and column_map object required")
+    from .steady_state import validate
+    validate(c["steady_state"], c)
+    if not c["steady_state"]["enabled"]:
+        c.pop("steady_state")  # Preserve legacy resolved config bytes when opt-in is absent.
+    if advanced:
+        validate_advanced(c)
+    else:
+        if raw.get("advanced") is not None: raise ValueError("advanced settings require an opt-in advanced model")
+        c.pop("advanced")
     json.dumps(c, allow_nan=False)
     return c
 

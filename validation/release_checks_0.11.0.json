@@ -1,0 +1,189 @@
+{
+  "version": "0.11.0",
+  "status": "release_checks_passed_with_scientific_evidence_limits",
+  "branch": "dev/0.11.0",
+  "base_commit": "cd2dd8633f31ec13c63df4f07526cc5adcf52566",
+  "wheel_source_commit": "cb36786d848212a364d1ebbd4aa7e06cce62abb2",
+  "source_method": "clean git archive copy; build outside repository; current 67 Python source files match wheel bytes",
+  "pytest": {
+    "passed": 558,
+    "failed": 0,
+    "warnings": 8,
+    "seconds": 197.8,
+    "scope": "full suite after review fixes"
+  },
+  "skill_validation": {
+    "status": "passed",
+    "validator": "skill-creator/scripts/quick_validate.py",
+    "skills": [
+      "agentic-prism",
+      "binding-kinetics",
+      "cell-binding",
+      "comparability",
+      "equilibrium-binding",
+      "specifications"
+    ],
+    "note": "Last two Skills only clarify historical introduction version; no numerical changes."
+  },
+  "benchmark": {
+    "record": "validation/affinity_benchmarks_0.11.0.json",
+    "checks": 36,
+    "passed": 36,
+    "max_relative_difference": 1.5985750115854458e-06,
+    "max_primitive_absolute_difference": 1.3600232051658168e-14,
+    "note": "35 original rows unchanged; one separate-control-baseline R nls row added in review"
+  },
+  "calibration": {
+    "record": "validation/affinity_calibration_0.11.0.json",
+    "prespecified_commit": "24a82c3",
+    "draws": 14000,
+    "criteria": 15,
+    "passed": 10,
+    "missed": 5,
+    "misses": [
+      {
+        "scenario": "depletion_declared_ratio_1",
+        "metric": "profile_coverage",
+        "evaluable": 1000,
+        "successes": 931,
+        "rate": 0.931,
+        "mcse": 0.008014923580421711,
+        "null_mcse": 0.006892024376045111,
+        "lower_bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "depletion_declared_ratio_100",
+        "metric": "profile_coverage",
+        "evaluable": 1000,
+        "successes": 800,
+        "rate": 0.8,
+        "mcse": 0.012649110640673518,
+        "null_mcse": 0.006892024376045111,
+        "lower_bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "depletion_fitted_ratio_10",
+        "metric": "titration_withholding",
+        "evaluable": 1000,
+        "successes": 485,
+        "rate": 0.485,
+        "mcse": 0.01580427157448264,
+        "null_mcse": 0.006892024376045111,
+        "lower_bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "depletion_fitted_ratio_100",
+        "metric": "titration_withholding",
+        "evaluable": 1000,
+        "successes": 915,
+        "rate": 0.915,
+        "mcse": 0.008819013550278736,
+        "null_mcse": 0.006892024376045111,
+        "lower_bound": 0.9362159512479097,
+        "passed": false
+      },
+      {
+        "scenario": "cell_fitted_nonspecific",
+        "metric": "profile_coverage",
+        "evaluable": 1000,
+        "successes": 934,
+        "rate": 0.934,
+        "mcse": 0.007851369307324675,
+        "null_mcse": 0.006892024376045111,
+        "lower_bound": 0.9362159512479097,
+        "passed": false
+      }
+    ],
+    "post_hoc_supplement": {
+      "record": "validation/affinity_calibration_supplement_0.11.0.json",
+      "script": "scripts/supplement_affinity_0110_calibration.py",
+      "status": "descriptive only; registered misses unchanged",
+      "code_recheck": "56 draws (four per scenario) recomputed with the review-fixed code; estimates, intervals, coverage and withholding identical"
+    }
+  },
+  "published_worked_examples": {
+    "status": "UNMET",
+    "source_audit": "validation/RELEASE_0.11.0.md"
+  },
+  "live_agents": {
+    "status": "passed",
+    "scenarios": 6,
+    "passed": 6,
+    "harness": "Codex independent fresh-context child agents",
+    "failed_original_harness_attempts": 6,
+    "original_failure": "Claude CLI not logged in",
+    "record": "validation/agent-scenarios/0.11.0/RESULTS.md",
+    "limits": "Manual review, one session per scenario, copied Skills with shared editable runtime; not wheel behavioral testing.",
+    "claude_rerun": {
+      "record": "validation/agent-scenarios/0.11.0/claude-run",
+      "model": "claude-opus-5-5",
+      "passed": 6,
+      "scenarios": 6,
+      "scorer": "reviewing assistant; not blinded; did not implement the Skill"
+    }
+  },
+  "facts": {
+    "status": "passed",
+    "scope": "saved-result extraction for equilibrium and cell binding; state tests; misses retained"
+  },
+  "legacy": {
+    "record": "validation/legacy_fixture_checks_0.11.0.json",
+    "configurations": 100,
+    "byte_identical_artifacts": 800,
+    "added_equilibrium_facts": true,
+    "manifest_exception": "Current version/code hashes/time are recorded honestly; whole manifest and embedded HTML are not byte-identical across releases."
+  },
+  "clean_environment": {
+    "record": "validation/clean_environment_0.11.0.json",
+    "status": "passed",
+    "facts_exact_matches": 99,
+    "new_configurations": 10
+  },
+  "install_smoke": {
+    "record": "validation/install_smoke_0.11.0.json",
+    "status": "passed",
+    "configurations": 110,
+    "optional_R": true
+  },
+  "new_scientific_artifact_install_match": {
+    "record": "validation/affinity_install_exact_0.11.0.json",
+    "configurations": 10,
+    "byte_identical_artifacts": 121,
+    "note": "Includes steady_state.json; corresponding all-artifact check also added to the clean-environment harness."
+  },
+  "wheel": {
+    "path": "dist/agentic_prism-0.11.0-py3-none-any.whl",
+    "sha256": "db088cfae6aeb36a23952a257e62e2d1d0ff06beb50d3ab95e9905ebaa22f783",
+    "superseded": "dist/superseded/pre-review-fix-agentic_prism-0.11.0-py3-none-any.whl"
+  },
+  "sdist": {
+    "path": "dist/agentic_prism-0.11.0.tar.gz",
+    "sha256": "3037f248c720ba44bdcd6dda74c4e9d9067d76eae4bbf7ec41ef8e0680ba71e8",
+    "superseded": "dist/superseded/pre-review-fix-agentic_prism-0.11.0.tar.gz"
+  },
+  "render_review": {
+    "cell_total_and_control_plot": "visually inspected",
+    "HTML": "static content and immutable-artifact checks",
+    "interactive_browser_QA": "not performed"
+  },
+  "preserved": {
+    "runs": true,
+    "build": true,
+    "historical_validation_records": true,
+    "no_push_merge_publish_sync": true
+  },
+  "platform_scope": "macOS arm64; no cross-platform claim",
+  "review_fixes": {
+    "commit": "cb36786d848212a364d1ebbd4aa7e06cce62abb2",
+    "items": [
+      "SET valency/readout declaration; bivalent any-free-site capture refused",
+      "cell nonspecific.baseline shared/separate; antigen-negative requires separate",
+      "steady state requires fit.rmax=shared",
+      "non-blocking titrant_max_below_twice_constant_species design warning in results and facts",
+      "legacy refusal message, benchmark --output, readable affinity report table"
+    ]
+  }
+}

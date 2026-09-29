@@ -1,0 +1,19 @@
+{
+  "layout": "duke_carterra_xy_workbook",
+  "file": "carterra_regen.xlsx",
+  "source": "CC-BY4.0 DukeCHSI original; source_manifest.json",
+  "time_source": "Pinned author metadata; times explicitly declared, no trace inference",
+  "curves": [
+    {
+      "pair_index": 0,
+      "curve_id": "public-0",
+      "sample_id": "CH31",
+      "experiment_id": "public-E1",
+      "fit_group_id": "public",
+      "concentration_M": 1.95e-09,
+      "association_start_s": 120,
+      "dissociation_start_s": 420,
+      "response_unit": "RU"
+    }
+  ]
+}

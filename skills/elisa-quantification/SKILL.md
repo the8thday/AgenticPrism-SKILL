@@ -39,3 +39,8 @@ Three or more plates allow descriptive CV of plate means; this is not total
 intermediate precision. Matrix effects, hook effect, stability, selectivity and
 independent real-assay validation still need experimental evidence; the dilution
 linearity check covers only the dilutions supplied on one plate.
+
+
+0.13.0 adds saved-result `interpretation_facts.json`. Read all states and required
+disclosures before interpretation; incomplete summaries, independence, QC and
+interval limits remain visible. Facts and rendering never refit the analysis.

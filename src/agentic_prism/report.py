@@ -168,6 +168,8 @@ def render_report(run, style=None):
         records.append(f'<tr><td><a href="#{key}">{html.escape(cid)}</a></td><td>{html.escape(fit["sample_id"])}</td><td>{report_value}</td><td>{html.escape(ci)}</td><td>{STATUS[fit["range_status"]]}</td></tr>')
     # Snapshot all data downloads inside the HTML for portable single-file use.
     download_names = ["input.csv", "normalized_data.csv", "fit_results.csv", "sample_summary.csv", "predictions.csv", "residuals.csv", "sensitivity.csv", "results.json", "config.resolved.json", "manifest.json", "diagnostics.json", "preprocessing_log.json", "rerun.txt"]
+    if (run / "interpretation_facts.json").exists():
+        download_names.append("interpretation_facts.json")
     downloads = " ".join(f'<a download="{name}" href="{data_uri(run/name)}">{name}</a>' for name in download_names)
     summary_rows = "".join(f'<tr><td>{html.escape(s["sample_id"])}</td><td>{s["n_experiments"]}</td><td>{format_num(s["geometric_mean_kd_M"], 1e9)}</td><td>{format_num(s["ci_low_M"], 1e9)} – {format_num(s["ci_high_M"], 1e9)}</td><td>{SUMMARY_STATUS.get(s["status"], s["status"])}</td></tr>' for s in results["summaries"])
     controls = '<label>图形风格 <select id="style"><option value="prism_like">Prism-like</option><option value="standard">标准</option></select></label>' if r["allow_style_switch"] else f'<span>图形风格：{style}</span>'

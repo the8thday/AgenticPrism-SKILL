@@ -1,8 +1,53 @@
 # Changelog
 
+## 0.13.0
+
+- Named Bliss, Loewe, HSA and ZIP combination references with independent-matrix uncertainty; declared HTS plate QC, median-polish B scores and exploratory FDR hits. Dose-response and ELISA facts complete the oldest-six retrofit.
+- Preserve prior scientific artifacts; report calibration misses. Reviewer live-agent run: 4/4 passed.
+
+
+## 0.12.1
+
+- Directed epitope binning with declared controls and thresholds, asymmetric-pair diagnostics, conditional bootstrap clustering stability and reciprocal-block communities.
+- Preserve prior scientific artifacts; report calibration misses. Reviewer live-agent run: 2/3 passed (by-eye bin merge failed in 2 of 3 attempts).
+
+
+## 0.12.0
+
+- Opt-in surface kinetic mechanisms, solve_ivp primitive and reliability gates.
+- Verified T200/Carterra XY import layouts with explicit times/concentrations.
+- Dissociation-only apparent koff screening; reportable scalar KD iso-affinity plot.
+- Saved-result interpretation facts for all kinetics runs. Default outputs preserved.
+- Calibration and independent numerical evidence recorded with misses; reviewer live-agent run 5/5 passed.
+- Advanced-model bootstrap intervals are not calibrated at the default 200 replicates (registered run used 50: 87–92% coverage; fast transport reportable fits 69–77%). A default-setting calibration is deferred.
+
+## 0.11.1
+
+- Add independent factorial, categorical, correlation/regression and method-comparison analyses with explicit design gates.
+- Add saved-result interpretation facts to two/multi-group runs.
+- Preserve legacy science; record all calibration failures. Reviewer live-agent run 6/6 passed.
+
+
 Release notes for AgenticPrism, newest first. What was actually checked for each release is in
 [validation/README.md](validation/README.md) and the linked release records. Entries up to 0.9.2 were
 moved here unchanged from the README when it was restructured in 0.9.3.
+
+## 0.11.0 — equilibrium affinity depth
+
+- Exact cancellation-free depletion, fitted-Pt profiles, shared-KD SET n-curves,
+  three-state competition Ki, and optional eligible-window SPR/BLI steady state.
+- Separate cell-binding Skill and analysis_type: apparent KD with joint controls,
+  explicit background, receptor depletion and assay/independence gates.
+- Saved-result facts for all equilibrium runs; legacy scientific bytes preserved.
+- 14,000 preregistered simulations retain five failed criteria. Named published
+  worked-example gates remain unmet; no four-state, native KinExA or Prism claim.
+- Review fixes before release: SET requires declared valency and readout (bivalent
+  IgG detected as molecules with any free site is refused); cell controls declare
+  a shared or separate baseline (antigen-negative cells must be separate);
+  steady state requires shared kinetic Rmax; a non-blocking design warning when
+  the titrant never reaches twice Pt. Registered calibration results unchanged;
+  a post-hoc supplement explains the known-Pt Pt/KD=100 miss.
+  Details and observed checks: [release record](validation/RELEASE_0.11.0.md).
 
 ## 0.10.1 — comparability, tolerance intervals and process capability
 

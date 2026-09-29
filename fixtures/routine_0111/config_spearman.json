@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "analysis_type": "correlation_regression",
+  "input": "pairs.csv",
+  "source": "Synthetic fixture seed 111; no published-data claim",
+  "assay": {
+    "independent_units": true,
+    "unit_definition": "one subject with one outcome or one paired measurement",
+    "rationale": "Predeclared fixture design",
+    "predeclared": true,
+    "same_scale": true,
+    "linear_relation_supported": true
+  },
+  "method": "spearman",
+  "confidence_level": 0.95,
+  "factorial": {
+    "ss_type": null,
+    "ss_reason": null,
+    "interaction_alpha": 0.05,
+    "factor": null,
+    "scope": null,
+    "adjustment": null,
+    "control": null
+  },
+  "categorical": {
+    "correction": false,
+    "seed": 20260930,
+    "resamples": 9999,
+    "scores": null,
+    "null_proportion": 0.5
+  },
+  "regression": {
+    "weighting": "unweighted",
+    "weight_basis": null
+  },
+  "comparison": {
+    "error_variance_ratio": null,
+    "ratio_source": null,
+    "acceptance_limits": null,
+    "acceptance_source": null
+  },
+  "report": {
+    "plot_style": "prism_like"
+  }
+}

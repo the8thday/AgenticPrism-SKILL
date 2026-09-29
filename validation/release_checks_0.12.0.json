@@ -1,0 +1,1918 @@
+{
+  "version": "0.12.0",
+  "status": "completed_with_disclosed_scientific_limits",
+  "base": "dev/0.11.1",
+  "base_commit": "2e4e991e4347d75f037ca99a37cd549fff84be97",
+  "build": {
+    "version": "0.12.0",
+    "archive_commit": "c7a733fb681aeadaef2d3de00f38f19b7b475f2a",
+    "build_source": "clean git archive",
+    "python_source_files_exact": 76,
+    "artifacts": [
+      {
+        "path": "dist/agentic_prism-0.12.0-py3-none-any.whl",
+        "sha256": "dc748b1031b6b87e4e9a9148caf86551d96eb5aa91b7ff9d718b24526ff9253e"
+      },
+      {
+        "path": "dist/agentic_prism-0.12.0.tar.gz",
+        "sha256": "433081c9414180afdf4d0d54b80d2c81f8de6bf1d17cbb81ad02ebe09079f55d"
+      }
+    ],
+    "superseded_moved": []
+  },
+  "pytest": {
+    "passed": 602,
+    "warnings": 8,
+    "seconds": 207.48
+  },
+  "skills_validated": [
+    "agentic-prism",
+    "binding-kinetics"
+  ],
+  "benchmark": {
+    "kinetics_benchmarks": {
+      "release": "0.12.0",
+      "checks": [
+        {
+          "model": "bivalent_analyte",
+          "max_absolute_difference": 1.3270984922542084e-05,
+          "max_relative_difference": 5.604716907002508e-07,
+          "passed": true,
+          "oracle": "deSolve 1.42 or analytic closed form"
+        },
+        {
+          "model": "heterogeneous_ligand",
+          "max_absolute_difference": 5.684341886080802e-14,
+          "max_relative_difference": 4.657385194789698e-15,
+          "passed": true,
+          "oracle": "deSolve 1.42 or analytic closed form"
+        },
+        {
+          "model": "mass_transport",
+          "max_absolute_difference": 8.91686535453573e-06,
+          "max_relative_difference": 2.1146161534995322e-07,
+          "passed": true,
+          "oracle": "deSolve 1.42 or analytic closed form"
+        },
+        {
+          "model": "one_to_one_drift",
+          "max_absolute_difference": 7.105427357601002e-14,
+          "max_relative_difference": 4.6388925841962054e-15,
+          "passed": true,
+          "oracle": "deSolve 1.42 or analytic closed form"
+        }
+      ],
+      "imports": [
+        {
+          "fixture": "fixtures/kinetics_0120/public/t200_import.json",
+          "rows": 8403,
+          "manifest": {
+            "layout": "duke_t200_xy_text",
+            "file": "t200.txt",
+            "source": "CC-BY4.0 DukeCHSI original; source_manifest.json",
+            "time_source": "Pinned author metadata; times explicitly declared, no trace inference",
+            "curves": [
+              {
+                "pair_index": 0,
+                "curve_id": "public-0",
+                "sample_id": "CH31",
+                "experiment_id": "public-E1",
+                "fit_group_id": "public",
+                "concentration_M": 2.771e-08,
+                "association_start_s": 0,
+                "dissociation_start_s": 180,
+                "response_unit": "RU"
+              }
+            ],
+            "source_copy": "original/t200.txt",
+            "source_sha256": "0361356ba6cb7be1a7f38ab9c5c5976407af0b78791bb9fad0a780dbc4751aa0",
+            "data_sha256": "bbaacd962eb91e5af6390ba9e85f52b81ef7765a1aa995df12daac27a49a8909",
+            "selected_column_labels": {
+              "public-0": [
+                "Cycle: 15  AE.A244  1.562_X",
+                "Cycle: 15  AE.A244  1.562_Y"
+              ]
+            },
+            "automatic_phase_detection": false
+          }
+        },
+        {
+          "fixture": "fixtures/kinetics_0120/public/carterra_regen_import.json",
+          "rows": 996,
+          "manifest": {
+            "layout": "duke_carterra_xy_workbook",
+            "file": "carterra_regen.xlsx",
+            "source": "CC-BY4.0 DukeCHSI original; source_manifest.json",
+            "time_source": "Pinned author metadata; times explicitly declared, no trace inference",
+            "curves": [
+              {
+                "pair_index": 0,
+                "curve_id": "public-0",
+                "sample_id": "CH31",
+                "experiment_id": "public-E1",
+                "fit_group_id": "public",
+                "concentration_M": 1.95e-09,
+                "association_start_s": 120,
+                "dissociation_start_s": 420,
+                "response_unit": "RU"
+              }
+            ],
+            "source_copy": "original/carterra_regen.xlsx",
+            "source_sha256": "727ed8ad05854e4636edc8ccf7d720ecce83aa806c37dbcfb3fae7cf1aa2a50f",
+            "data_sha256": "50dc5810071271ca04d1b3808308fb598e988c04c56a09050e23c0b9525d7bf8",
+            "selected_column_labels": {
+              "public-0": [
+                "[Ligand 3 (3) - CH31 Conc. 10(7)] [NotFitted] Ru values",
+                null
+              ]
+            },
+            "automatic_phase_detection": false
+          }
+        }
+      ],
+      "passed": true,
+      "limitations": [
+        "Forward solution checks do not establish fit parameter or interval equivalence. Public export parsing is checked independently of source software fit settings."
+      ]
+    },
+    "kinetics_refits": {
+      "release": "0.12.0",
+      "oracle": "R nlminb with independent analytic/deSolve objective",
+      "checks": [
+        {
+          "model": "one_to_one_drift",
+          "fixture": "fixtures/kinetics_0120/one_to_one_drift_config.json",
+          "max_relative_difference": 2.4721063115601845e-06,
+          "parameter_relative_differences": {
+            "ka": 3.847897588204756e-07,
+            "kd": 1.941453838960187e-07,
+            "rmax": 5.49419585659921e-08,
+            "drift_0": 1.3079130636812015e-06,
+            "drift_1": 8.834773603183063e-07,
+            "drift_2": 2.4721063115601845e-06,
+            "drift_3": 9.872456772801712e-07
+          },
+          "python_sse": 20.83564723740982,
+          "r_sse": 20.8356472438409,
+          "r_convergence": 0,
+          "passed": true
+        },
+        {
+          "model": "heterogeneous_ligand",
+          "fixture": "fixtures/kinetics_0120/heterogeneous_ligand_config.json",
+          "max_relative_difference": 5.240962485490079e-05,
+          "parameter_relative_differences": {
+            "ka": 6.70160440896438e-06,
+            "kd": 5.244771868484423e-06,
+            "rmax": 7.634615049767322e-06,
+            "ka2": 5.240962485490079e-05,
+            "kd2": 2.428002618386324e-05,
+            "fraction": 7.205514326827841e-07
+          },
+          "python_sse": 22.60829027201895,
+          "r_sse": 22.6082903370524,
+          "r_convergence": 0,
+          "passed": true
+        },
+        {
+          "model": "bivalent_analyte",
+          "fixture": "fixtures/kinetics_0120/bivalent_analyte_config.json",
+          "max_relative_difference": 2.997120261843749e-05,
+          "parameter_relative_differences": {
+            "ka": 5.066849404491139e-07,
+            "kd": 8.319898430437834e-08,
+            "rmax": 3.64457513324433e-07,
+            "ka2": 2.997120261843749e-05,
+            "kd2": 2.118442538413598e-05
+          },
+          "python_sse": 21.46952688641493,
+          "r_sse": 21.4695156413216,
+          "r_convergence": 1,
+          "passed": false
+        },
+        {
+          "model": "mass_transport",
+          "fixture": "fixtures/kinetics_0120/mass_transport_config.json",
+          "max_relative_difference": 2.922361293449408e-06,
+          "parameter_relative_differences": {
+            "ka": 2.735268817879444e-06,
+            "kd": 2.922361293449408e-06,
+            "rmax": 5.328979900625411e-08,
+            "km": 1.1930060049457697e-06
+          },
+          "python_sse": 20.4555358743906,
+          "r_sse": 20.4555429069859,
+          "r_convergence": 0,
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "Local refits start at deterministic perturbation of Python solution; not an independent global-search benchmark. Public-data model refits and published parameter reproduction remain unmet."
+      ]
+    },
+    "kinetics_public_refits": {
+      "release": "0.12.0",
+      "oracle": "R nlminb with independent analytic/deSolve objective",
+      "checks": [
+        {
+          "model": "one_to_one_drift",
+          "fixture": "fixtures/kinetics_0120/public/t200.txt",
+          "max_relative_difference": 7.486555759199569e-06,
+          "parameter_relative_differences": {
+            "ka": 3.5153152886620327e-07,
+            "kd": 6.333219904244408e-06,
+            "rmax": 1.228641445303703e-14,
+            "drift_0": 7.486555759199569e-06,
+            "drift_1": 5.617579061800058e-06,
+            "drift_2": 5.393643213870997e-06
+          },
+          "python_sse": 5.931855872582984,
+          "r_sse": 5.93185587255547,
+          "r_convergence": 0,
+          "passed": true
+        },
+        {
+          "model": "heterogeneous_ligand",
+          "fixture": "fixtures/kinetics_0120/public/t200.txt",
+          "max_relative_difference": 0.023270403030830365,
+          "parameter_relative_differences": {
+            "ka": 0.00037669543571382057,
+            "kd": 0.023270403030830365,
+            "rmax": 2.9176760881102635e-07,
+            "ka2": 0.002422197841875834,
+            "kd2": 3.841025596989283e-05,
+            "fraction": 0.00036816710574014974
+          },
+          "python_sse": 37.357130575541404,
+          "r_sse": 37.3571300709766,
+          "r_convergence": 0,
+          "passed": false
+        },
+        {
+          "model": "bivalent_analyte",
+          "fixture": "fixtures/kinetics_0120/public/t200.txt",
+          "max_relative_difference": 0.023059655435956762,
+          "parameter_relative_differences": {
+            "ka": 9.140752907483007e-08,
+            "kd": 1.7997761678446974e-06,
+            "rmax": 1.5445044316540697e-08,
+            "ka2": 0.023059655435956762,
+            "kd2": 4.978695586802199e-06
+          },
+          "python_sse": 37.93358954540896,
+          "r_sse": 37.9336010215114,
+          "r_convergence": 0,
+          "passed": false
+        },
+        {
+          "model": "mass_transport",
+          "fixture": "fixtures/kinetics_0120/public/t200.txt",
+          "max_relative_difference": 7.191773681180302e-07,
+          "parameter_relative_differences": {
+            "ka": 2.645397427613169e-08,
+            "kd": 7.191773681180302e-07,
+            "rmax": 8.557913433384992e-13,
+            "km": 1.063504839750061e-12
+          },
+          "python_sse": 37.94307089416176,
+          "r_sse": 37.9430724968168,
+          "r_convergence": 0,
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "Local refits start at deterministic perturbation of Python solution; not an independent global-search benchmark. Public-data model refits and published parameter reproduction remain unmet."
+      ]
+    },
+    "kinetics_screening": {
+      "checks": [
+        {
+          "source": "synthetic",
+          "curve": "c0",
+          "python_koff": 0.009643632318577174,
+          "r_koff": 0.009643632,
+          "relative_difference": 3.303497842481961e-08,
+          "passed": true
+        },
+        {
+          "source": "synthetic",
+          "curve": "c1",
+          "python_koff": 0.00992885230929413,
+          "r_koff": 0.009928852,
+          "relative_difference": 3.1151046489357185e-08,
+          "passed": true
+        },
+        {
+          "source": "synthetic",
+          "curve": "c2",
+          "python_koff": 0.010011366262665213,
+          "r_koff": 0.01001137,
+          "relative_difference": 3.733090263502627e-07,
+          "passed": true
+        },
+        {
+          "source": "synthetic",
+          "curve": "c3",
+          "python_koff": 0.010006887748438744,
+          "r_koff": 0.01000689,
+          "relative_difference": 2.2500109975709227e-07,
+          "passed": true
+        },
+        {
+          "source": "public_t200",
+          "curve": "0",
+          "python_koff": 0.001512889716908104,
+          "r_koff": 0.00151289,
+          "relative_difference": 1.8711994663337594e-07,
+          "passed": true
+        },
+        {
+          "source": "public_t200",
+          "curve": "1",
+          "python_koff": 0.0002106031927316903,
+          "r_koff": 0.0002106032,
+          "relative_difference": 3.4511867370813083e-08,
+          "passed": true
+        },
+        {
+          "source": "public_t200",
+          "curve": "2",
+          "python_koff": 0.0002690145084613442,
+          "r_koff": 0.0002690145,
+          "relative_difference": 3.145311572888688e-08,
+          "passed": true
+        }
+      ],
+      "scope": "Fixed-zero offset dissociation exponential; apparent rate only, no KD.",
+      "max_relative_difference": 3.733090263502627e-07
+    }
+  },
+  "calibration": {
+    "original_registration": "ab0c931",
+    "supplement_registration": "a3dc3f8",
+    "selection_only_optimization": "747c02f",
+    "original_draws": 9000,
+    "supplement_draws": 3000,
+    "criteria": 48,
+    "passed": 4,
+    "missed": 44,
+    "misses": [
+      {
+        "scenario": "one_to_one_drift",
+        "metric": "ka_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.899,
+        "mcse": 0.009528850927577784,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "one_to_one_drift",
+        "metric": "kd_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.877,
+        "mcse": 0.010386096475577337,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "one_to_one_drift",
+        "metric": "ka_coverage",
+        "population": "reportable",
+        "n": 879,
+        "rate": 0.9021615472127418,
+        "mcse": 0.010020802591474793,
+        "bound": 0.9352977987609278,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "one_to_one_drift",
+        "metric": "kd_coverage",
+        "population": "reportable",
+        "n": 879,
+        "rate": 0.8828213879408419,
+        "mcse": 0.010848411748674016,
+        "bound": 0.9352977987609278,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "heterogeneous_ligand",
+        "metric": "ka_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.902,
+        "mcse": 0.009401914698613255,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "heterogeneous_ligand",
+        "metric": "ka2_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.906,
+        "mcse": 0.009228434320078352,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "heterogeneous_ligand",
+        "metric": "kd_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.903,
+        "mcse": 0.009359006357514668,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "heterogeneous_ligand",
+        "metric": "kd2_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.92,
+        "mcse": 0.008579044235810886,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "bivalent_analyte",
+        "metric": "ka_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.889,
+        "mcse": 0.00993373041711924,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "bivalent_analyte",
+        "metric": "ka2_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.881,
+        "mcse": 0.010239091756596383,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "bivalent_analyte",
+        "metric": "kd_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.896,
+        "mcse": 0.009653186002558947,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "bivalent_analyte",
+        "metric": "kd2_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.885,
+        "mcse": 0.010088359628799917,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "bivalent_analyte",
+        "metric": "ka_coverage",
+        "population": "reportable",
+        "n": 883,
+        "rate": 0.8867497168742922,
+        "mcse": 0.01066448347608142,
+        "bound": 0.9353311371286372,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "bivalent_analyte",
+        "metric": "ka2_coverage",
+        "population": "reportable",
+        "n": 883,
+        "rate": 0.8776896942242356,
+        "mcse": 0.011026093568659225,
+        "bound": 0.9353311371286372,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "bivalent_analyte",
+        "metric": "kd_coverage",
+        "population": "reportable",
+        "n": 883,
+        "rate": 0.8946772366930917,
+        "mcse": 0.010330324514318373,
+        "bound": 0.9353311371286372,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "bivalent_analyte",
+        "metric": "kd2_coverage",
+        "population": "reportable",
+        "n": 883,
+        "rate": 0.8867497168742922,
+        "mcse": 0.01066448347608142,
+        "bound": 0.9353311371286372,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "mass_transport",
+        "metric": "ka_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.888,
+        "mcse": 0.00997276290703835,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "mass_transport",
+        "metric": "kd_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.882,
+        "mcse": 0.01020176455325254,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "mass_transport",
+        "metric": "km_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.873,
+        "mcse": 0.010529529904036551,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "mass_transport",
+        "metric": "ka_coverage",
+        "population": "reportable",
+        "n": 890,
+        "rate": 0.8876404494382022,
+        "mcse": 0.010585918246560551,
+        "bound": 0.9353889375448801,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "mass_transport",
+        "metric": "kd_coverage",
+        "population": "reportable",
+        "n": 890,
+        "rate": 0.8820224719101124,
+        "mcse": 0.01081295680106377,
+        "bound": 0.9353889375448801,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "mass_transport",
+        "metric": "km_coverage",
+        "population": "reportable",
+        "n": 890,
+        "rate": 0.8741573033707866,
+        "mcse": 0.011117670535162855,
+        "bound": 0.9353889375448801,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "off_rate_screening",
+        "metric": "kd_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.87,
+        "mcse": 0.010634848376916336,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "off_rate_screening",
+        "metric": "kd_coverage",
+        "population": "reportable",
+        "n": 979,
+        "rate": 0.8723186925434117,
+        "mcse": 0.010666204453750062,
+        "bound": 0.9360688985599123,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_slow",
+        "metric": "ka_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.879,
+        "mcse": 0.010313049985334114,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_slow",
+        "metric": "kd_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.881,
+        "mcse": 0.010239091756596383,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_slow",
+        "metric": "km_coverage",
+        "population": "evaluable",
+        "n": 1000,
+        "rate": 0.882,
+        "mcse": 0.01020176455325254,
+        "bound": 0.9362159512479097,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_slow",
+        "metric": "ka_coverage",
+        "population": "reportable",
+        "n": 886,
+        "rate": 0.8769751693002258,
+        "mcse": 0.011035021293865117,
+        "bound": 0.9353559926046202,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_slow",
+        "metric": "kd_coverage",
+        "population": "reportable",
+        "n": 886,
+        "rate": 0.8860045146726863,
+        "mcse": 0.010676894033331446,
+        "bound": 0.9353559926046202,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_slow",
+        "metric": "km_coverage",
+        "population": "reportable",
+        "n": 886,
+        "rate": 0.8747178329571106,
+        "mcse": 0.011121458812665437,
+        "bound": 0.9353559926046202,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_fast",
+        "metric": "ka_coverage",
+        "population": "evaluable",
+        "n": 705,
+        "rate": 0.8879432624113475,
+        "mcse": 0.011880016306651201,
+        "bound": 0.9335834368365576,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_fast",
+        "metric": "kd_coverage",
+        "population": "evaluable",
+        "n": 705,
+        "rate": 0.8808510638297873,
+        "mcse": 0.012201178130518851,
+        "bound": 0.9335834368365576,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_fast",
+        "metric": "km_coverage",
+        "population": "evaluable",
+        "n": 705,
+        "rate": 0.8794326241134752,
+        "mcse": 0.012263703220419515,
+        "bound": 0.9335834368365576,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_fast",
+        "metric": "ka_coverage",
+        "population": "reportable",
+        "n": 222,
+        "rate": 0.7657657657657657,
+        "mcse": 0.028424751121822515,
+        "bound": 0.9207449857997666,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_fast",
+        "metric": "kd_coverage",
+        "population": "reportable",
+        "n": 222,
+        "rate": 0.7252252252252253,
+        "mcse": 0.029960454260067205,
+        "bound": 0.9207449857997666,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "transport_fast",
+        "metric": "km_coverage",
+        "population": "reportable",
+        "n": 222,
+        "rate": 0.6936936936936937,
+        "mcse": 0.03093750988885408,
+        "bound": 0.9207449857997666,
+        "passed": false,
+        "stress": false
+      },
+      {
+        "scenario": "bivalent_short_association_stress",
+        "metric": "ka_coverage",
+        "population": "evaluable",
+        "n": 955,
+        "rate": 0.8774869109947644,
+        "mcse": 0.01060986560689965,
+        "bound": 0.9358949342581768,
+        "passed": false,
+        "stress": true
+      },
+      {
+        "scenario": "bivalent_short_association_stress",
+        "metric": "ka2_coverage",
+        "population": "evaluable",
+        "n": 955,
+        "rate": 0.9109947643979057,
+        "mcse": 0.009214335725732083,
+        "bound": 0.9358949342581768,
+        "passed": false,
+        "stress": true
+      },
+      {
+        "scenario": "bivalent_short_association_stress",
+        "metric": "kd_coverage",
+        "population": "evaluable",
+        "n": 955,
+        "rate": 0.8785340314136125,
+        "mcse": 0.010570728479543332,
+        "bound": 0.9358949342581768,
+        "passed": false,
+        "stress": true
+      },
+      {
+        "scenario": "bivalent_short_association_stress",
+        "metric": "kd2_coverage",
+        "population": "evaluable",
+        "n": 955,
+        "rate": 0.8942408376963351,
+        "mcse": 0.009951408745151642,
+        "bound": 0.9358949342581768,
+        "passed": false,
+        "stress": true
+      },
+      {
+        "scenario": "bivalent_short_association_stress",
+        "metric": "ka_coverage",
+        "population": "reportable",
+        "n": 554,
+        "rate": 0.8483754512635379,
+        "mcse": 0.01523785809806728,
+        "bound": 0.9314808129549738,
+        "passed": false,
+        "stress": true
+      },
+      {
+        "scenario": "bivalent_short_association_stress",
+        "metric": "ka2_coverage",
+        "population": "reportable",
+        "n": 554,
+        "rate": 0.8808664259927798,
+        "mcse": 0.013763130622549835,
+        "bound": 0.9314808129549738,
+        "passed": false,
+        "stress": true
+      },
+      {
+        "scenario": "bivalent_short_association_stress",
+        "metric": "kd_coverage",
+        "population": "reportable",
+        "n": 554,
+        "rate": 0.8772563176895307,
+        "mcse": 0.013941449947857672,
+        "bound": 0.9314808129549738,
+        "passed": false,
+        "stress": true
+      },
+      {
+        "scenario": "bivalent_short_association_stress",
+        "metric": "kd2_coverage",
+        "population": "reportable",
+        "n": 554,
+        "rate": 0.8898916967509025,
+        "mcse": 0.01329914527292778,
+        "bound": 0.9314808129549738,
+        "passed": false,
+        "stress": true
+      }
+    ],
+    "rows": [
+      {
+        "name": "one_to_one_drift",
+        "model": "one_to_one_drift",
+        "truth": "one_to_one_drift",
+        "km": 0.02,
+        "stress": false,
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 879,
+        "metrics": [
+          {
+            "metric": "ka_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.899,
+            "mcse": 0.009528850927577784,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.877,
+            "mcse": 0.010386096475577337,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "ka_coverage",
+            "population": "reportable",
+            "n": 879,
+            "rate": 0.9021615472127418,
+            "mcse": 0.010020802591474793,
+            "bound": 0.9352977987609278,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "reportable",
+            "n": 879,
+            "rate": 0.8828213879408419,
+            "mcse": 0.010848411748674016,
+            "bound": 0.9352977987609278,
+            "passed": false,
+            "stress": false
+          }
+        ]
+      },
+      {
+        "name": "heterogeneous_ligand",
+        "model": "heterogeneous_ligand",
+        "truth": "heterogeneous_ligand",
+        "km": 0.02,
+        "stress": false,
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 0,
+        "metrics": [
+          {
+            "metric": "ka_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.902,
+            "mcse": 0.009401914698613255,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "ka2_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.906,
+            "mcse": 0.009228434320078352,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.903,
+            "mcse": 0.009359006357514668,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd2_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.92,
+            "mcse": 0.008579044235810886,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          }
+        ]
+      },
+      {
+        "name": "bivalent_analyte",
+        "model": "bivalent_analyte",
+        "truth": "bivalent_analyte",
+        "km": 0.02,
+        "stress": false,
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 883,
+        "metrics": [
+          {
+            "metric": "ka_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.889,
+            "mcse": 0.00993373041711924,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "ka2_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.881,
+            "mcse": 0.010239091756596383,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.896,
+            "mcse": 0.009653186002558947,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd2_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.885,
+            "mcse": 0.010088359628799917,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "ka_coverage",
+            "population": "reportable",
+            "n": 883,
+            "rate": 0.8867497168742922,
+            "mcse": 0.01066448347608142,
+            "bound": 0.9353311371286372,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "ka2_coverage",
+            "population": "reportable",
+            "n": 883,
+            "rate": 0.8776896942242356,
+            "mcse": 0.011026093568659225,
+            "bound": 0.9353311371286372,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "reportable",
+            "n": 883,
+            "rate": 0.8946772366930917,
+            "mcse": 0.010330324514318373,
+            "bound": 0.9353311371286372,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd2_coverage",
+            "population": "reportable",
+            "n": 883,
+            "rate": 0.8867497168742922,
+            "mcse": 0.01066448347608142,
+            "bound": 0.9353311371286372,
+            "passed": false,
+            "stress": false
+          }
+        ]
+      },
+      {
+        "name": "mass_transport",
+        "model": "mass_transport",
+        "truth": "mass_transport",
+        "km": 0.02,
+        "stress": false,
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 890,
+        "metrics": [
+          {
+            "metric": "ka_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.888,
+            "mcse": 0.00997276290703835,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.882,
+            "mcse": 0.01020176455325254,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "km_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.873,
+            "mcse": 0.010529529904036551,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "ka_coverage",
+            "population": "reportable",
+            "n": 890,
+            "rate": 0.8876404494382022,
+            "mcse": 0.010585918246560551,
+            "bound": 0.9353889375448801,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "reportable",
+            "n": 890,
+            "rate": 0.8820224719101124,
+            "mcse": 0.01081295680106377,
+            "bound": 0.9353889375448801,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "km_coverage",
+            "population": "reportable",
+            "n": 890,
+            "rate": 0.8741573033707866,
+            "mcse": 0.011117670535162855,
+            "bound": 0.9353889375448801,
+            "passed": false,
+            "stress": false
+          }
+        ]
+      },
+      {
+        "name": "off_rate_screening",
+        "model": "off_rate_screening",
+        "truth": "off_rate_screening",
+        "km": 0.02,
+        "stress": false,
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 979,
+        "metrics": [
+          {
+            "metric": "kd_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.87,
+            "mcse": 0.010634848376916336,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "reportable",
+            "n": 979,
+            "rate": 0.8723186925434117,
+            "mcse": 0.010666204453750062,
+            "bound": 0.9360688985599123,
+            "passed": false,
+            "stress": false
+          }
+        ]
+      },
+      {
+        "name": "true_one_site_fitted_heterogeneous",
+        "model": "heterogeneous_ligand",
+        "truth": "one_to_one",
+        "km": 0.02,
+        "stress": false,
+        "simulations": 1000,
+        "evaluable": 987,
+        "reportable": 0,
+        "metrics": [
+          {
+            "metric": "false_complex_selection",
+            "population": "evaluable",
+            "n": 987,
+            "rate": 0.0,
+            "mcse": 0.0,
+            "bound": 0.0638745282056027,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "name": "transport_slow",
+        "model": "mass_transport",
+        "truth": "mass_transport",
+        "km": 0.002,
+        "stress": false,
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 886,
+        "metrics": [
+          {
+            "metric": "ka_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.879,
+            "mcse": 0.010313049985334114,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.881,
+            "mcse": 0.010239091756596383,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "km_coverage",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.882,
+            "mcse": 0.01020176455325254,
+            "bound": 0.9362159512479097,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "ka_coverage",
+            "population": "reportable",
+            "n": 886,
+            "rate": 0.8769751693002258,
+            "mcse": 0.011035021293865117,
+            "bound": 0.9353559926046202,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "reportable",
+            "n": 886,
+            "rate": 0.8860045146726863,
+            "mcse": 0.010676894033331446,
+            "bound": 0.9353559926046202,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "km_coverage",
+            "population": "reportable",
+            "n": 886,
+            "rate": 0.8747178329571106,
+            "mcse": 0.011121458812665437,
+            "bound": 0.9353559926046202,
+            "passed": false,
+            "stress": false
+          }
+        ]
+      },
+      {
+        "name": "transport_fast",
+        "model": "mass_transport",
+        "truth": "mass_transport",
+        "km": 2.0,
+        "stress": false,
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 222,
+        "metrics": [
+          {
+            "metric": "ka_coverage",
+            "population": "evaluable",
+            "n": 705,
+            "rate": 0.8879432624113475,
+            "mcse": 0.011880016306651201,
+            "bound": 0.9335834368365576,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "evaluable",
+            "n": 705,
+            "rate": 0.8808510638297873,
+            "mcse": 0.012201178130518851,
+            "bound": 0.9335834368365576,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "km_coverage",
+            "population": "evaluable",
+            "n": 705,
+            "rate": 0.8794326241134752,
+            "mcse": 0.012263703220419515,
+            "bound": 0.9335834368365576,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "ka_coverage",
+            "population": "reportable",
+            "n": 222,
+            "rate": 0.7657657657657657,
+            "mcse": 0.028424751121822515,
+            "bound": 0.9207449857997666,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "reportable",
+            "n": 222,
+            "rate": 0.7252252252252253,
+            "mcse": 0.029960454260067205,
+            "bound": 0.9207449857997666,
+            "passed": false,
+            "stress": false
+          },
+          {
+            "metric": "km_coverage",
+            "population": "reportable",
+            "n": 222,
+            "rate": 0.6936936936936937,
+            "mcse": 0.03093750988885408,
+            "bound": 0.9207449857997666,
+            "passed": false,
+            "stress": false
+          }
+        ]
+      },
+      {
+        "name": "bivalent_short_association_stress",
+        "model": "bivalent_analyte",
+        "truth": "bivalent_analyte",
+        "km": 0.02,
+        "stress": true,
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 554,
+        "metrics": [
+          {
+            "metric": "ka_coverage",
+            "population": "evaluable",
+            "n": 955,
+            "rate": 0.8774869109947644,
+            "mcse": 0.01060986560689965,
+            "bound": 0.9358949342581768,
+            "passed": false,
+            "stress": true
+          },
+          {
+            "metric": "ka2_coverage",
+            "population": "evaluable",
+            "n": 955,
+            "rate": 0.9109947643979057,
+            "mcse": 0.009214335725732083,
+            "bound": 0.9358949342581768,
+            "passed": false,
+            "stress": true
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "evaluable",
+            "n": 955,
+            "rate": 0.8785340314136125,
+            "mcse": 0.010570728479543332,
+            "bound": 0.9358949342581768,
+            "passed": false,
+            "stress": true
+          },
+          {
+            "metric": "kd2_coverage",
+            "population": "evaluable",
+            "n": 955,
+            "rate": 0.8942408376963351,
+            "mcse": 0.009951408745151642,
+            "bound": 0.9358949342581768,
+            "passed": false,
+            "stress": true
+          },
+          {
+            "metric": "ka_coverage",
+            "population": "reportable",
+            "n": 554,
+            "rate": 0.8483754512635379,
+            "mcse": 0.01523785809806728,
+            "bound": 0.9314808129549738,
+            "passed": false,
+            "stress": true
+          },
+          {
+            "metric": "ka2_coverage",
+            "population": "reportable",
+            "n": 554,
+            "rate": 0.8808664259927798,
+            "mcse": 0.013763130622549835,
+            "bound": 0.9314808129549738,
+            "passed": false,
+            "stress": true
+          },
+          {
+            "metric": "kd_coverage",
+            "population": "reportable",
+            "n": 554,
+            "rate": 0.8772563176895307,
+            "mcse": 0.013941449947857672,
+            "bound": 0.9314808129549738,
+            "passed": false,
+            "stress": true
+          },
+          {
+            "metric": "kd2_coverage",
+            "population": "reportable",
+            "n": 554,
+            "rate": 0.8898916967509025,
+            "mcse": 0.01329914527292778,
+            "bound": 0.9314808129549738,
+            "passed": false,
+            "stress": true
+          }
+        ]
+      },
+      {
+        "model": "one_to_one_drift",
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 1,
+        "metrics": [
+          {
+            "metric": "false_complex_selection",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.001,
+            "mcse": 0.0009994998749374609,
+            "bound": 0.06378404875209022,
+            "passed": true
+          },
+          {
+            "metric": "selected_fraction",
+            "population": "reportable",
+            "n": 1,
+            "rate": 1.0,
+            "mcse": 0.0,
+            "bound": null,
+            "passed": null,
+            "descriptive": true
+          }
+        ]
+      },
+      {
+        "model": "bivalent_analyte",
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 1,
+        "metrics": [
+          {
+            "metric": "false_complex_selection",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.001,
+            "mcse": 0.0009994998749374609,
+            "bound": 0.06378404875209022,
+            "passed": true
+          },
+          {
+            "metric": "selected_fraction",
+            "population": "reportable",
+            "n": 1,
+            "rate": 1.0,
+            "mcse": 0.0,
+            "bound": null,
+            "passed": null,
+            "descriptive": true
+          }
+        ]
+      },
+      {
+        "model": "mass_transport",
+        "simulations": 1000,
+        "evaluable": 1000,
+        "reportable": 0,
+        "metrics": [
+          {
+            "metric": "false_complex_selection",
+            "population": "evaluable",
+            "n": 1000,
+            "rate": 0.0,
+            "mcse": 0.0,
+            "bound": 0.06378404875209022,
+            "passed": true
+          },
+          {
+            "metric": "selected_fraction",
+            "population": "reportable",
+            "n": 0,
+            "rate": null,
+            "mcse": null,
+            "bound": null,
+            "passed": null,
+            "descriptive": true
+          }
+        ]
+      }
+    ]
+  },
+  "legacy": {
+    "configurations": 136,
+    "byte_identical_count": 1055
+  },
+  "install_smoke": {
+    "status": "passed",
+    "fixtures": 141
+  },
+  "install_exact": {
+    "status": "passed",
+    "package_version": "0.12.0",
+    "installed_source_isolation": true,
+    "fixtures": [
+      {
+        "fixture": "fixtures/groups_synthetic/independent_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/paired_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/bivalent_analyte_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/heterogeneous_ligand_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/mass_transport_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/off_rate_screening_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_0120/one_to_one_drift_config.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/kinetics_synthetic/config.json",
+        "byte_identical_artifacts": [
+          "bootstrap.csv",
+          "config.resolved.json",
+          "curve_parameters.csv",
+          "diagnostics.json",
+          "fit_results.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json",
+          "window_sensitivity.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/multigroup_synthetic/config_dunnett.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "contrasts.csv",
+          "diagnostics.json",
+          "group_summary.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "omnibus.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/multigroup_synthetic/config_games_howell.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "contrasts.csv",
+          "diagnostics.json",
+          "group_summary.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "omnibus.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_bland_altman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_chi_square.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_clopper_pearson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_deming.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_dunnett.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_holm.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_sidak.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_factorial_tukey.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_fisher.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_fisher_rc.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_linear.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_mcnemar.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_mcnemar_exact.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_passing_bablok.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_pearson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_bland_altman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_deming.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_linear.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_passing_bablok.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_pearson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_public_spearman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_spearman.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_toothgrowth.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_trend.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_warpbreaks.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/routine_0111/config_wilson.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      }
+    ],
+    "configurations": 36,
+    "artifact_count": 223
+  },
+  "clean_environment_status": "passed",
+  "live_agent_gate": "PENDING",
+  "published_gate": "UNMET: source/export availability does not reproduce a matched complex-model published fit",
+  "cross_implementation_gate": "PARTIAL: retained three final refit failures",
+  "facts_gate": "PASS: extraction/state coverage and legacy byte checks",
+  "deviations": [
+    "Heterogeneous adequate-design row undersampled fast association; all1000 withheld; scope unmet.",
+    "50 bootstrap resamples per registered draw; default200 not calibrated.",
+    "Original calibration retains each outcome but not every raw trace or fitted interval endpoint; fixed seeds reproduce inputs.",
+    "Supplement omitted from original registration, then separately preregistered; execution-only tested bootstrap shortcut preserves selection and all original1104 records.",
+    "0.11.1 validation index title corrected in0.12.0; historical record left unchanged."
+  ]
+}

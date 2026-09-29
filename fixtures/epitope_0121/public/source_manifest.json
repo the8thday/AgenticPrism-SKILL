@@ -1,0 +1,29 @@
+{
+  "source": "https://CRAN.R-project.org/package=pvclust",
+  "package": "pvclust 2.2.0",
+  "license": "GPL (>=2)",
+  "selection": "First 12 original samples, first 40 complete genes in original order; all gene selection states retained. No outcome-based selection.",
+  "scope": "Public clustering algorithm benchmark only, not epitope worked data.",
+  "files": [
+    {
+      "path": "fixtures/epitope_0121/public/LICENSE.GPL-2",
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "fixtures/epitope_0121/public/lung_selection.csv",
+      "sha256": "d277dcb2fc4fec6e2b12aaf7c7e90b7104940bfe16615ca0ade8922e196a48ab"
+    },
+    {
+      "path": "fixtures/epitope_0121/public/pvclust-data.txt",
+      "sha256": "cd68d3081a58c6ba8873d096daefb8eddf2a1394961c1ff7f7839970091e7f39"
+    },
+    {
+      "path": "fixtures/epitope_0121/public/pvclust_lung_first12_original.csv",
+      "sha256": "160af739b65ac4bc1c5fa6e8b5b5c32ec4fc8509bbf4eecdb625f3172a953c58"
+    },
+    {
+      "path": "fixtures/epitope_0121/public/pvclust_lung_subset.csv",
+      "sha256": "29b5ff7255d1ac8c372ea3380afc3a8208814e97523ff7dd892603621cb06f9b"
+    }
+  ]
+}

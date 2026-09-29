@@ -1,0 +1,269 @@
+{
+  "release": "0.13.0",
+  "oracles": [
+    "synergyfinder3.20.0",
+    "base R medpolish/pt/p.adjust"
+  ],
+  "checks": [
+    {
+      "dataset": "combination",
+      "model": "Bliss",
+      "evaluated_cells": 36,
+      "total_cells": 36,
+      "max_absolute_difference": 2.886579864025407e-14,
+      "max_relative_difference": 7.62020062026184e-14,
+      "absolute_tolerance": 1e-08,
+      "passed": true,
+      "workflow_reportable": true,
+      "applicability_diagnostics": [],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "combination",
+      "model": "Loewe",
+      "evaluated_cells": 36,
+      "total_cells": 36,
+      "max_absolute_difference": 0.4662029092853617,
+      "max_relative_difference": 1.297754884306058,
+      "absolute_tolerance": 1.1,
+      "passed": true,
+      "workflow_reportable": true,
+      "applicability_diagnostics": [],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "combination",
+      "model": "HSA",
+      "evaluated_cells": 36,
+      "total_cells": 36,
+      "max_absolute_difference": 4.973799150320701e-14,
+      "max_relative_difference": 3.2575246029893236e-14,
+      "absolute_tolerance": 1e-08,
+      "passed": true,
+      "workflow_reportable": true,
+      "applicability_diagnostics": [],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "combination",
+      "model": "ZIP",
+      "evaluated_cells": 36,
+      "total_cells": 36,
+      "max_absolute_difference": 0.0007814266294303707,
+      "max_relative_difference": 0.008399856324178022,
+      "absolute_tolerance": 0.05,
+      "passed": true,
+      "workflow_reportable": true,
+      "applicability_diagnostics": [],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "public_oneil",
+      "model": "Bliss",
+      "evaluated_cells": 25,
+      "total_cells": 25,
+      "max_absolute_difference": 4.973799150320701e-14,
+      "max_relative_difference": 2.900378584250093e-15,
+      "absolute_tolerance": 1e-08,
+      "passed": true,
+      "workflow_reportable": true,
+      "applicability_diagnostics": [
+        "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+        "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+        "Loewe equal-effect inverse unavailable in common response range.",
+        "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+      ],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "public_oneil",
+      "model": "Loewe",
+      "evaluated_cells": 21,
+      "total_cells": 25,
+      "max_absolute_difference": 0.6637438478236248,
+      "max_relative_difference": 0.025333636409275797,
+      "absolute_tolerance": 1.1,
+      "passed": false,
+      "workflow_reportable": false,
+      "applicability_diagnostics": [
+        "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+        "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+        "Loewe equal-effect inverse unavailable in common response range.",
+        "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+      ],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "public_oneil",
+      "model": "HSA",
+      "evaluated_cells": 25,
+      "total_cells": 25,
+      "max_absolute_difference": 7.105427357601002e-15,
+      "max_relative_difference": 2.1793950779797287e-16,
+      "absolute_tolerance": 1e-08,
+      "passed": true,
+      "workflow_reportable": true,
+      "applicability_diagnostics": [
+        "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+        "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+        "Loewe equal-effect inverse unavailable in common response range.",
+        "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+      ],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "public_oneil",
+      "model": "ZIP",
+      "evaluated_cells": 25,
+      "total_cells": 25,
+      "max_absolute_difference": 0.2991390070253459,
+      "max_relative_difference": 0.023823519060451315,
+      "absolute_tolerance": 0.05,
+      "passed": false,
+      "workflow_reportable": false,
+      "applicability_diagnostics": [
+        "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+        "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+        "Loewe equal-effect inverse unavailable in common response range.",
+        "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+      ],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "public_oneil2",
+      "model": "Bliss",
+      "evaluated_cells": 25,
+      "total_cells": 25,
+      "max_absolute_difference": 4.263256414560601e-14,
+      "max_relative_difference": 1.933276755723866e-15,
+      "absolute_tolerance": 1e-08,
+      "passed": true,
+      "workflow_reportable": true,
+      "applicability_diagnostics": [
+        "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+        "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+        "Loewe equal-effect inverse unavailable in common response range.",
+        "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+      ],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "public_oneil2",
+      "model": "Loewe",
+      "evaluated_cells": 17,
+      "total_cells": 25,
+      "max_absolute_difference": 0.45217231863952634,
+      "max_relative_difference": 0.00765031979800309,
+      "absolute_tolerance": 1.1,
+      "passed": false,
+      "workflow_reportable": false,
+      "applicability_diagnostics": [
+        "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+        "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+        "Loewe equal-effect inverse unavailable in common response range.",
+        "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+      ],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "public_oneil2",
+      "model": "HSA",
+      "evaluated_cells": 25,
+      "total_cells": 25,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "max_relative_difference": 1.5600581864634502e-16,
+      "absolute_tolerance": 1e-08,
+      "passed": true,
+      "workflow_reportable": true,
+      "applicability_diagnostics": [
+        "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+        "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+        "Loewe equal-effect inverse unavailable in common response range.",
+        "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+      ],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "public_oneil2",
+      "model": "ZIP",
+      "evaluated_cells": 25,
+      "total_cells": 25,
+      "max_absolute_difference": 76.32971889013686,
+      "max_relative_difference": 0.7824330463610334,
+      "absolute_tolerance": 0.05,
+      "passed": false,
+      "workflow_reportable": false,
+      "applicability_diagnostics": [
+        "Single-agent 4PL unsupported; Loewe and ZIP withheld.",
+        "Fitted single-agent plateaus violate declared Loewe compatibility tolerance.",
+        "Loewe equal-effect inverse unavailable in common response range.",
+        "Conditional 4PL unsupported in some ZIP slices; complete-matrix ZIP summary withheld."
+      ],
+      "scope": "Numerical score objective only; withheld workflow results are not promoted"
+    },
+    {
+      "dataset": "synthetic_hts",
+      "metric": "residual",
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 4.77145653358812e-15,
+      "passed": true
+    },
+    {
+      "dataset": "synthetic_hts",
+      "metric": "b_score",
+      "max_absolute_difference": 4.618527782440651e-14,
+      "max_relative_difference": 4.311041007542772e-15,
+      "passed": true
+    },
+    {
+      "dataset": "synthetic_hts",
+      "metric": "p_value",
+      "max_absolute_difference": 5.551115123125783e-16,
+      "max_relative_difference": 2.022388487405961e-15,
+      "passed": true
+    },
+    {
+      "dataset": "synthetic_hts",
+      "metric": "adjusted_p",
+      "max_absolute_difference": 4.440892098500626e-16,
+      "max_relative_difference": 5.447800735683963e-15,
+      "passed": true
+    },
+    {
+      "dataset": "synthetic_hts",
+      "metric": "zprime",
+      "max_absolute_difference": 4.440892098500626e-16,
+      "max_relative_difference": 5.353162171144426e-16,
+      "passed": true
+    },
+    {
+      "dataset": "synthetic_hts",
+      "metric": "ssmd",
+      "max_absolute_difference": 3.197442310920451e-14,
+      "max_relative_difference": 1.2859707051954312e-15,
+      "passed": true
+    },
+    {
+      "dataset": "public_KcViab_FT01_G01",
+      "metric": "residual",
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0,
+      "passed": true,
+      "scope": "Numeric median-polish only; insufficient controls for the HTS workflow"
+    },
+    {
+      "dataset": "public_KcViab_FT01_G01",
+      "metric": "b_score",
+      "max_absolute_difference": 4.796163466380676e-14,
+      "max_relative_difference": 1.3709337187113654e-14,
+      "passed": true,
+      "scope": "Numeric median-polish only; insufficient controls for the HTS workflow"
+    }
+  ],
+  "limits": [
+    "synergyfinder Loewe searches100 response levels;1.1 percentage-point tolerance reflects its grid, with exact maximum relative differences retained.",
+    "ZIP allows .05 percentage-point local 4PL numerical tolerance, not algorithmic equivalence beyond checked datasets.",
+    "Public ONEIL repetitions lack independent-experiment IDs; no public uncertainty benchmark.",
+    "Public KcViab supports numerical median-polish only; complete published HTS QC/hit worked example UNMET. cellHTS2 package unavailable for Bioconductor3.23; archived package data used."
+  ]
+}

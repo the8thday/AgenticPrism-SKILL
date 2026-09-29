@@ -6,7 +6,7 @@ description: Compare one quality attribute between reference and test lots for p
 # Comparability and biosimilarity
 
 Follow [runtime discovery](../agentic-prism/references/runtime.md), then read the
-[input contract](references/input-contract.md). AgenticPrism 0.10.1;
+[input contract](references/input-contract.md). Introduced in AgenticPrism 0.10.1;
 `analysis_type=comparability`, one attribute per run, a new output directory.
 
 ## Gate before analysis

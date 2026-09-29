@@ -1,0 +1,34 @@
+[Lab description]
+Experimenter name:
+Laboratory:
+Contact information:
+
+[Screen description]
+Screen: KcViab
+Title: Genome-wide RNAi screen of cell viability in Drosophila Kc167 cells
+Version: 0.9
+Date: 04 Jan 2006
+Screentype: RNA interference
+Organism: Drosophila melanogaster
+Celltype: Kc167
+Library: HFA
+Assay: Cell viability by ATP-luminescence
+Assaytype: homogenous
+Assaydescription:  Cells were treated with 21306 dsRNAs for 120 hours in 384-well plates.
+
+[Publication description]
+Publicationtitle: Genome-wide RNAi analysis of growth and viability in Drosophila cells
+Reference: Science 303:832-5 (2004).
+PMIDs: 14764878
+URL: http://www.dkfz.de/signaling/viability
+License: 
+Abstract:
+
+[Files]
+plateList: Platelist.txt
+annotation: GeneIDs_Dm_HFA_1.1.txt
+plateConf: Plateconf.txt
+screenLog: Screenlog.txt
+
+
+

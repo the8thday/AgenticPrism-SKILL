@@ -1,0 +1,22 @@
+{
+  "analysis_type": "drug_combination",
+  "input": "unreplicated.csv",
+  "source": "Synthetic seed130; not measured biology",
+  "agent_a": "A",
+  "agent_b": "B",
+  "dose_unit_a": "nM",
+  "dose_unit_b": "nM",
+  "condition_id": "synthetic",
+  "readout_description": "Simulated fractional inhibition; no measured biological assay",
+  "normalization_source": "Generated percent inhibition0/100 response scale",
+  "same_response_scale": true,
+  "independent_experiments": [
+    "E0"
+  ],
+  "independence_supported": true,
+  "independence_source": "Independent simulated matrices",
+  "loewe": {
+    "compatible_maximal_effects": true,
+    "source": "Both generating single agents have common0/100 plateaus"
+  }
+}

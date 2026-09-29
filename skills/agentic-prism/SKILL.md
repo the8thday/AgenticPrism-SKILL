@@ -22,7 +22,11 @@ Do not conclude “not installed” from `which` alone.
 2. Read [the module registry](references/module-registry.md). Load only the
    relevant **implemented** specialist instructions. A registry entry is not
    evidence that an analysis exists or is validated.
-3. For equilibrium binding, read
+3. For cell-surface titrations, use [cell-binding](../cell-binding/SKILL.md):
+   apparent KD only, measured nonspecific controls, declared receptor depletion,
+   wash/detection/valency gates and independent experiments. Do not route a cell
+   EC50 through equilibrium binding to call it intrinsic KD.
+   For solution equilibrium binding, read
    [equilibrium-binding](../equilibrium-binding/SKILL.md) and follow its assay
    applicability and configuration contract. Ask only for material information
    that cannot be established from inputs. Do not infer independent experiments
@@ -127,3 +131,24 @@ use [specifications](../specifications/SKILL.md). Never assign a quality tier,
 choose margins or k from observed differences, treat replicate measurements as
 lots, or present a tolerance interval as a specification. Ask for the declared
 tier, method, margins/k and limits with their sources.
+
+0.11.1: route independent two-way factorial or categorical subject tables to
+`group-comparison`; correlation, regression and paired method agreement to
+[correlation-regression](../correlation-regression/SKILL.md). Confirm the
+independent unit and measurement scale before choosing a method.
+
+0.12.0: route predeclared complex surface mechanisms, apparent koff screening and
+verified T200/Carterra XY imports to `binding-kinetics`. Confirm valency, bound-mass
+readout, common response scale and reference validity before selecting a mechanism.
+A better fit does not justify a bivalent model, two surface KDs do not identify two
+epitopes, and koff alone is not affinity. Read the saved kinetics facts.
+
+
+## 0.12.1 routing
+
+Route ordered competition matrices to [epitope-binning](../epitope-binning/SKILL.md). Preserve both directions, prespecified thresholds and controls; do not merge bins by eye.
+
+
+## 0.13.0 routing
+
+Route combination matrices to [drug-combination](../drug-combination/SKILL.md), and HTS plate QC/grid import to [import-plate](../import-plate/SKILL.md). Preserve model disagreement and require plate correction before hit calling. No synergy claim from an unreplicated matrix.

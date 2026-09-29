@@ -1,0 +1,181 @@
+{
+  "status": "passed",
+  "package_version": "0.11.0",
+  "script_sha256": "5d2c097d4a8105399ef26171de00a542feb8e0b8f8137bf743d2874b29ed9c5d",
+  "installed_source_isolation": true,
+  "fixtures": [
+    {
+      "fixture": "fixtures/affinity_0110/config_cell_antigen_negative.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "fixtures/affinity_0110/config_cell_quadratic.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "fixtures/affinity_0110/config_cell_relative.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "fixtures/affinity_0110/config_cell_unweighted.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "fixtures/affinity_0110/config_competition.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "fixtures/affinity_0110/config_depletion_declared.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "fixtures/affinity_0110/config_depletion_fitted.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "fixtures/affinity_0110/config_set.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "fixtures/affinity_0110/config_steady_state.json",
+      "byte_identical_artifacts": [
+        "bootstrap.csv",
+        "config.resolved.json",
+        "curve_parameters.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "steady_state.json",
+        "window_sensitivity.csv"
+      ]
+    },
+    {
+      "fixture": "fixtures/affinity_0110/config_titration.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    }
+  ],
+  "configurations": 10,
+  "artifact_count": 121
+}

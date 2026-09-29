@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "analysis_type": "cell_binding",
+  "model": "cell_binding_apparent",
+  "input": "cell_quadratic.csv",
+  "column_map": {},
+  "source": "Synthetic test; no measured biology",
+  "assay": {
+    "equilibrium_supported": true,
+    "signal_proportional": true,
+    "single_site_supported": true,
+    "concentration_basis": "total",
+    "free_approximation_supported": true,
+    "interpretation": "apparent_KD",
+    "rationale": "Synthetic equilibrium"
+  },
+  "fit": {
+    "baseline_mode": "fitted",
+    "baseline_value": null,
+    "residual_scale": "linear",
+    "weighting": "unweighted",
+    "multistart": 5,
+    "kd_bounds_M": [
+      1e-15,
+      1.0
+    ],
+    "max_nfev": 3000
+  },
+  "uncertainty": {
+    "parameter_ci": "profile_f",
+    "level": 0.95
+  },
+  "replicates": {
+    "independent_unit": "none",
+    "conditions_comparable": false
+  },
+  "sensitivity": [],
+  "report": {
+    "language": "zh-CN",
+    "plot_style": "prism_like",
+    "allow_style_switch": true,
+    "export_formats": [
+      "svg",
+      "pdf",
+      "png"
+    ],
+    "figure_width_mm": 85,
+    "png_dpi": 300
+  },
+  "model_rationale": "Prespecified 1:1 mass balance synthetic design",
+  "receptors": {
+    "depletion": "quadratic",
+    "cells_per_mL": 1000000.0,
+    "receptors_per_cell": 602214.076,
+    "source": "Synthetic accessible receptors",
+    "density_id": "D1"
+  },
+  "nonspecific": {
+    "control": "isotype",
+    "baseline": "shared",
+    "source": "Matched synthetic control"
+  },
+  "background": {
+    "mode": "joint_baseline",
+    "value": null,
+    "source": "Synthetic common background"
+  },
+  "cell_assay": {
+    "cell_line": "CHO",
+    "equilibrium_incubation_supported": true,
+    "incubation_s": 3600,
+    "temperature_C": 4,
+    "internalization_controlled": true,
+    "wash_protocol": "No wash, direct read",
+    "wash_dissociation_supported": true,
+    "detection": "direct_label",
+    "valency": "bivalent_IgG",
+    "rationale": "Synthetic equilibrium with no internalization"
+  }
+}

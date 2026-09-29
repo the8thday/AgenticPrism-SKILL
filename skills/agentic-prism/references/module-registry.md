@@ -1,10 +1,13 @@
-# Module registry — development 0.10.1
+# Module registry — development 0.13.0
 
 | Purpose | Skill | Capability state |
 |---|---|---|
+| Two-agent combination reference scores | [drug-combination](../../drug-combination/SKILL.md) | Experimental code, gates incomplete; 0.13.0: Bliss/Loewe/HSA/ZIP, existing 4PL fitter, declared scales and independent-matrix uncertainty; unsupported fits and unreplicated claims withheld; see observed evidence limits |
+| HTS plate QC and exploratory hits | [import-plate](../../import-plate/SKILL.md) | Experimental code, gates incomplete; 0.13.0: explicit grid maps, Z-prime, SSMD, median-polish B scores and nominal predictive-t/BH screens; global-null false-hit calibration0.100 exceeds0.063784, so validated FDR control is UNMET; failed QC withholds hits; no confirmed biological activity claim |
+| Directed epitope competition and bins | [epitope-binning](../../epitope-binning/SKILL.md) | Experimental code, gates incomplete; 0.12.1: explicit controls/thresholds, directed asymmetry, average linkage with conditional BP stability, reciprocal-block components; no structural epitope or AU claim; published controlled-response example UNMET |
 | Single-site equilibrium binding, KD and diagnostics | [equilibrium-binding](../../equilibrium-binding/SKILL.md) | Implemented; see release validation record |
 | Re-render an existing equilibrium run | Same specialist, render command | Implemented; no refitting |
-| BLI/SPR 1:1 kon/koff and kinetic KD | [binding-kinetics](../../binding-kinetics/SKILL.md) | Implemented for independent cycles and (0.7.0) single-cycle series in canonical CSV, explicit reference-channel or double referencing, and the scoped Octet Results.txt layout; reliability gates with audit-only intervals for blocked fits. No Biacore/native parser, mass-transport or heterogeneous models |
+| BLI/SPR 1:1 kon/koff and kinetic KD | [binding-kinetics](../../binding-kinetics/SKILL.md) | Implemented for independent cycles and (0.7.0) single-cycle series in canonical CSV, explicit reference-channel or double referencing, and the scoped Octet Results.txt layout; reliability gates with audit-only intervals for blocked fits. 0.12.0 experimental code (evidence gates incomplete) adds opt-in drift, heterogeneous ligand, bivalent analyte, transport and off-rate screening, scoped T200/Carterra XY imports and saved-result facts. Native binary formats remain unsupported |
 | ELISA 4PL/5PL calibration and unknown concentration interpolation | [elisa-quantification](../../elisa-quantification/SKILL.md) | Implemented for per-plate standards with back-calculation QC, independent-control gates, descriptive cross-plate QC, range-checked inverse and dilution, (0.7.0) predeclared 5PL, calibration-conditional delta-method unknown intervals and within-plate dilution linearity. No mixed-model intermediate precision or matrix model |
 | Relative EC50/IC50 from symmetric 4PL curves; replicate summaries; reference-vs-test relative potency | [dose-response](../../dose-response/SKILL.md) | Implemented for long-form CSV with explicit endpoint/direction/units; optional fixed plateaus and relative weighting; parallel-line RP with F-test or (0.7.0) predeclared-margin equivalence parallelism and optional RP acceptance limits |
 | Two-group independent or paired comparisons | [group-comparison](../../group-comparison/SKILL.md) | Implemented: Welch or paired two-sided t test on independent-unit data |
@@ -104,6 +107,62 @@ sensitivity/drug tolerance or dynamic deployment. New methods run in Python.
 | Replicated RP combination and nominal-level validation | [potency-assay](../../potency-assay/SKILL.md) | Implemented, Python random-run REML and MLS/MOVER; sourced criteria, per-run suitability, retained outlier flags, bias/precision/linearity/tested range. Requires at least two independent determinations per run per level. Published-example gate not met |
 | Comparability / biosimilarity | [comparability](../../comparability/SKILL.md) | 0.10.1: one attribute, lot as unit; Welch or pooled TOST against an absolute or reference-SD-multiple margin, quality range with declared k and optional required fraction, or descriptive; tier recorded, never inferred. Not a totality-of-evidence judgement |
 | Tolerance intervals, Cp/Cpk/Pp/Ppk | [specifications](../../specifications/SKILL.md) | 0.10.1: normal exact (Odeh) or Howe two-sided and exact one-sided tolerance intervals; order-statistic intervals with minimum n; Pp/Ppk overall and Cp/Cpk within subgroups with chi-square / normal-approximation intervals. n = 10 capability rows missed by Monte Carlo error (disclosed) |
-| Oldest six modules' interpretation facts; Arrhenius | None | Not started |
+| Remaining old-module facts; Arrhenius | None | All six oldest modules write facts as of 0.13.0. Arrhenius not started |
 
 Evidence and limitations: [0.10.0 release](../../../validation/RELEASE_0.10.0.md), [0.10.1 release](../../../validation/RELEASE_0.10.1.md).
+
+## 0.11.0 affinity additions (implemented with evidence limitations)
+
+- `cell_binding`: separate [cell-binding](../../cell-binding/SKILL.md) specialist,
+  apparent KD with joint nonspecific controls (declared shared or separate control
+  baseline; antigen-negative cells separate) and receptor-depletion declaration.
+  Published worked-example gate UNMET. See [release evidence](../../../validation/RELEASE_0.11.0.md).
+
+- `equilibrium_binding` opts into `one_site_depletion`,
+  `solution_equilibrium_titration`, or `competition_exact`; shared mass balance,
+  profile-F, active-site/equilibration gates, SET valency/readout gate (bivalent
+  any-free-site capture refused), non-blocking titration-span design warnings,
+  and source-linked facts.
+- `binding_kinetics` opts into `steady_state.enabled=true`: declared eligible
+  plateau windows with shared kinetic Rmax, existing hyperbola, KD_ss/KD_kin diagnostic. Default kinetics
+  scientific artifacts are unchanged.
+- All new published worked-example gates UNMET; five registered calibration
+  criteria failed. Known-Pt coverage 93.1% at Pt/KD=1 and 80.0% at 100; fitted-Pt
+  titration diagnostic withholding 48.5% at 10 and 91.5% at 100; unweighted cell
+  coverage 93.4% (bound 93.62%). Keep all failures and distinguish any point
+  withholding (95.7% at fitted ratio 100) from the registered diagnostic metric.
+  Relative weighting/quadratic cell coverage and standalone steady-state coverage
+  are uncalibrated. Four-state competition is unavailable.
+
+## 0.11.1 routine statistics
+
+| Purpose | Skill | State |
+|---|---|---|
+| Independent crossed two-factor designs | group-comparison | Experimental code; gates incomplete: SS II/III, interaction-first EMMs, Tukey/Dunnett/Sidak/Holm; shared residual variance, no repeated units |
+| Independent-subject categorical outcomes | group-comparison | Fisher 2x2 conditional OR, seeded RxC Monte Carlo, chi-square, Newcombe RD/Katz RR, trend, McNemar, Wilson/Clopper-Pearson |
+| Association, linear prediction and method agreement | [correlation-regression](../../correlation-regression/SKILL.md) | Pearson/Spearman, OLS/WLS, declared-ratio Deming jackknife, Passing-Bablok with CUSUM, exact normal LoA quantile intervals |
+
+Facts available for all new types and retrofitted two/multi-group runs.
+Calibration misses retained; reviewer live-agent run 6/6 passed; published evidence
+is scoped to the public dataset actually reproduced. See
+[release record](../../../validation/RELEASE_0.11.1.md).
+
+## 0.12.0 surface kinetic mechanisms
+
+Code is available for local evaluation; the five-gate validation definition of
+done is not met. Numerical/public example limits and coverage misses prevent a fully validated
+capability claim; advanced-model intervals are uncalibrated at the default 200
+bootstrap replicates (deferred). Reviewer live-agent run 5/5 passed.
+
+Opt-in drift, heterogeneous-ligand, bivalent-analyte and mass-transport models
+use `advanced_kinetics.py` and the shared `binding_ode.py`. Default 1:1 scientific
+outputs remain unchanged. Advanced fits require predeclared mechanisms,
+readout/valency/response-scale declarations, profile support, residual and
+window checks, and segment-wise bootstrap. Calibration misses remain visible;
+do not claim uniform 95% coverage. Bivalent binding has no single KD; surface
+heterogeneity does not establish two epitopes. Off-rate screening reports only
+apparent koff. `surface_import.py` supports the pinned T200 XY text and Carterra
+XY workbook layouts with explicit metadata and source hashes. Other layouts
+remain unsupported. Kinetics now saves extraction-only interpretation facts.
+See [0.12.0 evidence](../../../validation/RELEASE_0.12.0.md). Reviewer live-agent run 5/5 passed;
+PK/PD remains deferred.

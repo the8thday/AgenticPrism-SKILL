@@ -1,0 +1,65 @@
+{
+  "sources": [
+    {
+      "file": "t200.txt",
+      "repository": "https://github.com/DukeCHSI/TitrationAnalysis",
+      "commit": "cb8112503658d24c4c6576503243fa506bf99e27",
+      "original_path": "Example Files - T200/Example T200 Chip 1 Channel 2.txt",
+      "sha256": "0361356ba6cb7be1a7f38ab9c5c5976407af0b78791bb9fad0a780dbc4751aa0",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "file": "t200_info.xlsx",
+      "repository": "https://github.com/DukeCHSI/TitrationAnalysis",
+      "commit": "cb8112503658d24c4c6576503243fa506bf99e27",
+      "original_path": "Example Files - T200/Example T200 Data Info Sheet.xlsx",
+      "sha256": "469af4090726a5d230bbe119ba769b5d17b3b9a5f9bc8edc1913d060c4a571ba",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "file": "t200_reference.csv",
+      "repository": "https://github.com/DukeCHSI/TitrationAnalysis",
+      "commit": "cb8112503658d24c4c6576503243fa506bf99e27",
+      "original_path": "Example Files - T200/Titration Analysis_T200_Report_Example.csv",
+      "sha256": "cb144fadd6e8be97f6ebdaf5786bc7221ae54291859a5308a0d12f11340b0e5d",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "file": "TitrationAnalysis-LICENSE",
+      "repository": "https://github.com/DukeCHSI/TitrationAnalysis",
+      "commit": "cb8112503658d24c4c6576503243fa506bf99e27",
+      "original_path": "LICENSE",
+      "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "file": "carterra_regen.xlsx",
+      "repository": "https://github.com/DukeCHSI/Bivalent-Analyte-Modeling",
+      "commit": "68fefdc9c1ace6e2030017404ac1e2e9c31e0953",
+      "original_path": "data/Bivalent Binding - CH505 CH31 Regen - downselected rawdata.xlsx",
+      "sha256": "727ed8ad05854e4636edc8ccf7d720ecce83aa806c37dbcfb3fae7cf1aa2a50f",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "file": "carterra_info.csv",
+      "repository": "https://github.com/DukeCHSI/Bivalent-Analyte-Modeling",
+      "commit": "68fefdc9c1ace6e2030017404ac1e2e9c31e0953",
+      "original_path": "data/Bivalent Binding - CH505 CH31 Regen - info sheet.csv",
+      "sha256": "73b5af99d984ec6aadd6a2e6c51701075a7aaf581a6a277cedaae8799e947ffd",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "file": "BivalentModel-LICENSE",
+      "repository": "https://github.com/DukeCHSI/Bivalent-Analyte-Modeling",
+      "commit": "68fefdc9c1ace6e2030017404ac1e2e9c31e0953",
+      "original_path": "LICENSE",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "licence": "CC-BY-4.0"
+    }
+  ],
+  "attribution": [
+    "Li et al., TitrationAnalysis (2023), Gates Open Research 7:107",
+    "Nguyen et al., Parameter estimation and identifiability analysis for a bivalent analyte model, doi:10.1101/2022.12.05.519088"
+  ],
+  "preprocessing": "Original bytes copied. Future canonical subsets must record explicit injection times, concentration mapping and stride."
+}

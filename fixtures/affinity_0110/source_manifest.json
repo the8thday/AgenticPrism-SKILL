@@ -1,0 +1,17 @@
+{
+  "source": "Synthetic 1:1 mass action; no measured biology or published worked example",
+  "seed": 20260929,
+  "kinetics_seed": 20260930,
+  "generator": "scripts/prepare_affinity_0110_fixtures.py",
+  "files": {
+    "cell.csv": "3eb2a04c3a81633665b41791e98919f3135bc8301166e423315932721dce2a3a",
+    "cell_antigen_negative.csv": "6d83e0dde79e1c7d7df55d34784ef0f562449fe14753b2b39ada8b361da9a5fe",
+    "cell_quadratic.csv": "18922290fdc5dca6966d5a3e855ad7b350f60a6968c63c862a7f0335433fa068",
+    "competition.csv": "1667dc019f26a4f1225237dfcb9a50621a35fd921663f5a4e7b270110653ff83",
+    "depletion_declared.csv": "0777132252da0e6bb0960dc94fc23fd39f12893a22a53acf096cc6d95b204142",
+    "depletion_fitted.csv": "0777132252da0e6bb0960dc94fc23fd39f12893a22a53acf096cc6d95b204142",
+    "set.csv": "04c6ab8cf471d545c36e09ad7f1ef71c013f5a2f7e2def6d9f3013d29367a61c",
+    "steady_state.csv": "caf04119cc41536c6eea1f89865ff31358df093c44d46f194edfaec024b998c4",
+    "titration.csv": "4146991368b9d6348cfa0c4caaf9419e6c2ef6992f01431c31549dd9cbf75f41"
+  }
+}

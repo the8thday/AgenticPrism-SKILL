@@ -33,3 +33,14 @@ Create the canonical CSV and JSON config ([two-group example](../../fixtures/gro
 - Surface diagnostics: `unequal_group_sd_consider_welch_design` (classic ANOVA with SD ratio above `sd_ratio_warning`, default 3) and `small_group_welch_procedures_may_be_liberal` (Welch design with a group of fewer than 6 units, where simulation showed error slightly above nominal). Do not switch design after the fact to remove a diagnostic; state it.
 
 At least three units per group (or three complete pairs) are required; zero-variance t/ANOVA designs are withheld; rank-test handling is described in the separate contract. None of these tests establish normality, biological importance or equivalence. Error-rate evidence is in [validation](../../validation/README.md) and [the 0.7.0 record](../../validation/RELEASE_0.7.0.md).
+
+## 0.11.1 independent factorial and categorical designs
+
+Use [routine contract](references/routine-0111.md) for `factorial_anova` or
+`contingency`. Require one row per independent subject. Refuse repeated units
+in two-way independent ANOVA and route to repeated-measures. Declare SS II/III
+and its reason; lead with interaction, and withhold marginal contrasts when it
+is material. Contrast families and thresholds must be declared before analysis.
+For categorical outcomes, technical wells cannot supply independent subject
+counts. Disclose expected counts below five and exact versus Monte Carlo
+methods. All results, including older two/multi-group runs, have saved facts.

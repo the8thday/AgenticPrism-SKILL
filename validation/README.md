@@ -1,4 +1,49 @@
-# Validation — AgenticPrism development 0.10.1
+# Validation — AgenticPrism development 0.13.0
+
+## 0.13.0
+
+[Release evidence](RELEASE_0.13.0.md): Named Bliss, Loewe, HSA and ZIP combination references with independent-matrix uncertainty; declared HTS plate QC, median-polish B scores and exploratory FDR hits. Dose-response and ELISA facts complete the oldest-six retrofit.
+All observed misses and unmet gates retained; live-agent review PENDING.
+
+[Four-release review, all calibration misses and pending commands](RELEASE_SERIES_0.11.1-0.13.0.md).
+
+## 0.12.1
+
+[Release evidence](RELEASE_0.12.1.md): Directed epitope binning with declared controls and thresholds, asymmetric-pair diagnostics, conditional bootstrap clustering stability and reciprocal-block communities.
+All observed misses and unmet gates retained; live-agent review PENDING.
+
+## 0.12.0 — Surface kinetic mechanisms
+
+[Release evidence](RELEASE_0.12.0.md): declared complex surface models, deSolve
+checks, retained calibration misses, scoped real-export imports and kinetics facts.
+Public worked-example fit reproduction remains limited; live-agent review PENDING.
+
+## 0.11.1 — Routine statistics
+
+[Release evidence](RELEASE_0.11.1.md): independent factorial and categorical
+methods, correlation/regression and method comparison; numerical R comparisons,
+registered calibration with retained misses, facts and exact legacy checks.
+Live-agent gate PENDING.
+
+
+## 0.11.0 — equilibrium affinity depth and separate cell-binding specialist
+
+[Release evidence](RELEASE_0.11.0.md): opt-in mass-balance affinity models,
+three-state Ki, cell apparent KD and plateau steady state. BindCurve and R
+comparisons cover the new implementations. 14,000 simulations preserve five
+failed criteria; published worked-example gates remain UNMET. Unchanged
+scientific artifacts: 100 configurations, 800 byte-identical files against
+`dev/0.10.1`; equilibrium adds saved-result facts. Full suite 554 passed; six changed Skills valid; six live-agent scenarios passed
+(after preserving Claude authentication failures). Clean install has 98 exact
+facts matches; isolated smoke passes 109 configurations. All 109 new scientific
+artifacts across nine configs match source. See release_checks_0.11.0.json.
+Review fixes (SET valency/readout gate, declared cell control baseline, shared
+Rmax for steady state, non-blocking titration-span warning) left every registered
+calibration result unchanged (56 draws recomputed); a post-hoc supplement shows
+the known-Pt Pt/KD=100 row titrated only up to Pt (reportable fits 95.0%).
+Benchmarks 36/36; independent Claude rerun of the six scenarios 6/6; after the
+fixes 558 tests pass, clean install has 99 exact facts matches, isolated smoke
+110 configurations and 121 new artifacts across ten configs match source.
 
 ## 0.10.1 — comparability, tolerance intervals and process capability
 
