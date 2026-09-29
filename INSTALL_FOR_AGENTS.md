@@ -23,7 +23,7 @@ Seven Agent Skills (`skills/`) plus one versioned Python runtime (`src/`,
 Tell the user what will happen and get agreement on:
 
 - **Location** for the clone. Propose `~/AgenticPrism` unless they prefer another.
-- **Downloads**: the git clone (about 10 MB) and Python packages (about
+- **Downloads**: the git clone (about 20 MB) and Python packages (about
   220–300 MB in `<root>/.venv`). Internet access is required.
 - **Skill discovery** (optional): whether to link the Skills into your agent's
   Skills folder (step 4), so future sessions find them automatically.

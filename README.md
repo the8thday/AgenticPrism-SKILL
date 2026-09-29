@@ -8,13 +8,30 @@ bioanalytical validation, immunogenicity and CMC quality (stability,
 potency, comparability, specifications). An AI agent reads a Skill, checks
 that the analysis fits the experiment, writes an explicit JSON config and runs
 one versioned Python package. Every run saves its inputs, configuration,
-hashes, results, diagnostics and an offline HTML report. Every module added
-since 0.8 also writes `interpretation_facts.json`: the saved results the agent
-must base its narrative on (primary estimates, what is reportable or withheld
-and why, required disclosures, limitations). Equilibrium binding, binding kinetics, two-group and multi-group comparisons
-now also write facts. Dose response and ELISA now also write facts, completing the oldest six modules. Earlier saved runs are not rewritten.
+hashes, results, diagnostics and an offline HTML report. Every module also
+writes `interpretation_facts.json`: the saved results the agent must base its
+narrative on (primary estimates, what is reportable or withheld and why,
+required disclosures, limitations). Earlier saved runs are not rewritten.
 
-Local development version **0.13.0**.
+## Status: public beta 0.13.0
+
+AgenticPrism is for research analysis. It has **not** been validated as a
+computerized system for GLP/GMP work or regulatory submissions (for example
+21 CFR Part 11), and it is not a substitute for a statistician's review of
+decisions that depend on the result. Installation and results have been checked
+on macOS only. No numerical comparison with GraphPad Prism has been made, so no
+Prism equivalence is claimed. All validation so far uses simulated and public
+data; feedback from real project data is welcome through GitHub issues.
+
+| Maturity | Modules |
+|---|---|
+| Validated against reference implementations and calibrated | Equilibrium KD, 1:1 kinetics, 4PL dose response and relative potency, ELISA, two-group and multi-group comparisons, rank tests, repeated measures and MMRM, time-to-event, tumor growth, ADA cut points, variance components, method validation, stability, potency assay, comparability, specifications, routine statistics (0.11.1) |
+| Usable with stated limits | Affinity depth and cell binding (no published worked example), advanced surface kinetics (bootstrap intervals not calibrated at default settings), epitope binning (no published worked example), drug combination (Loewe/ZIP not identical to synergyfinder) |
+| Exploratory | HTS hit calling (false-hit rate above nominal under the global null) |
+
+Each module's exact limits are in the
+[module registry](skills/agentic-prism/references/module-registry.md) and the
+linked release records; every calibration miss is kept in `validation/`.
 
 ## 0.13.0
 
