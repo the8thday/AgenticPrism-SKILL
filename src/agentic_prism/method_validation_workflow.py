@@ -84,17 +84,20 @@ def _figure(run, r, style):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     from .report import font_setup
+    from . import plot_style as pstyle
     font, cjk = font_setup()
     e = r['experiment']
-    with plt.rc_context({'font.family': [font]+([cjk] if cjk else [])}):
-        fig, ax = plt.subplots(figsize=(8, 4), layout='constrained')
+    token = pstyle.THEMES[style]
+    with plt.rc_context(pstyle.rc(token, font, cjk)):
+        fig, ax = plt.subplots(figsize=(6.4, 3.8), layout='constrained')
         if e == 'accuracy_precision':
             rows = r['levels']; x = [v['nominal'] for v in rows]
-            ax.plot(x, [v['bias_percent'] for v in rows], 'o-', color='black', label='Mean bias %')
+            ax.plot(x, [v['bias_percent'] for v in rows], 'o-', color='black', mfc='black', label='Mean bias %')
             if 'tolerance_interval' in rows[0]:
-                ax.fill_between(x, [v['tolerance_interval']['lower_percent'] for v in rows], [v['tolerance_interval']['upper_percent'] for v in rows], alpha=.2, label='Beta-expectation interval')
+                ax.fill_between(x, [v['tolerance_interval']['lower_percent'] for v in rows], [v['tolerance_interval']['upper_percent'] for v in rows], color=pstyle.color(token, 1), alpha=.18, lw=0, label='Beta-expectation interval')
+            ax.axhline(0, color=pstyle.MUTED, lw=.8)
             for v in rows:
-                ax.hlines([-v['limits']['accuracy'], v['limits']['accuracy']], v['nominal']*.9, v['nominal']*1.1, colors='grey', linestyles='--')
+                ax.hlines([-v['limits']['accuracy'], v['limits']['accuracy']], v['nominal']*.9, v['nominal']*1.1, colors=pstyle.EXCLUDED, linestyles=(0, (4, 2)))
             ax.set_xscale('log'); ax.set(xlabel='Nominal concentration', ylabel='Relative error (%)', title='Accuracy profile')
             ax.legend()
         elif e in ('dilution_linearity', 'parallelism'):
@@ -106,20 +109,17 @@ def _figure(run, r, style):
                 ax.set_xscale('log')
             else:
                 rows = [v for v in r[key] if v.get('cv_percent') is not None]
-                ax.bar([v['sample_id'] for v in rows], [v['cv_percent'] for v in rows], color='grey')
-                ax.axhline(r['criteria']['parallelism_cv_percent'], color='black', linestyle='--')
+                ax.bar([v['sample_id'] for v in rows], [v['cv_percent'] for v in rows], color='#bfc5cc', edgecolor='black', linewidth=.8, width=.6)
+                ax.axhline(r['criteria']['parallelism_cv_percent'], color=pstyle.EXCLUDED, linestyle=(0, (4, 2)))
                 ax.set(xlabel='Sample', ylabel='CV of corrected concentrations (%)', title='Parallelism')
         else:
             rows = r['groups'] if 'groups' in r else r['conditions']
             labels = [str(v.get('role', v.get('condition')))+('' if 'level' not in v else ' / '+str(v['level'])) for v in rows]
             vals = [v.get('pass_fraction', v.get('accuracy_percent', 0)) or 0 for v in rows]
-            ax.bar(labels, vals, color='grey')
+            ax.bar(labels, vals, color='#bfc5cc', edgecolor='black', linewidth=.8, width=.6)
             ax.set(ylabel='Pass fraction' if 'groups' in r else 'Accuracy (%)', title=r['experiment'].replace('_', ' ').title())
-        ax.spines[['top', 'right']].set_visible(style == 'standard')
         (run/'figures').mkdir(exist_ok=True)
-        for ext in ('svg', 'png', 'pdf'):
-            fig.savefig(run/'figures'/f'method_validation.{ext}', dpi=160)
-        plt.close(fig)
+        pstyle.save(fig, run/'figures'/'method_validation', token, 300, ('svg', 'png', 'pdf'))
 
 
 def render_method_validation(run, style=None):
@@ -133,14 +133,20 @@ def render_method_validation(run, style=None):
     _figure(run, r, style)
     esc = html.escape
     facts = json.loads((run/'interpretation_facts.json').read_text())
-    body = '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>方法学验证</title><style>body{font:16px sans-serif;max-width:1100px;margin:30px auto}pre{white-space:pre-wrap}svg{width:100%;height:auto}</style>'
-    body += f'<h1>方法学验证：{esc(r["experiment"])}</h1>'
-    body += f'<p>按声明的接受标准（来源：{esc(str(r["criteria"]["source"]))}）判定：<b>{"符合" if facts["primary"]["meets_declared_criteria"] else "不符合"}</b>。这只是验证的一部分，不等于完整的方法学验证或监管认可。</p>'
+    from . import report_shell as shell
+    meets = facts["primary"]["meets_declared_criteria"]
+    body = (f'<section id="verdict" class="card"><div class="head"><h2>按声明标准判定</h2>'
+            f'<span class="badge{"" if meets else " bad"}">{"符合" if meets else "不符合"}</span></div>'
+            f'<p>按声明的接受标准（来源：{esc(str(r["criteria"]["source"]))}）判定：<b>{"符合" if meets else "不符合"}</b>。这只是验证的一部分，不等于完整的方法学验证或监管认可。</p>')
     if facts['must_mention']:
-        body += '<h2>必须说明的事项</h2><ul>'+''.join(f'<li>{esc(m)}</li>' for m in facts['must_mention'])+'</ul>'
-    body += (run/'figures/method_validation.svg').read_text()
-    body += '<h2>结果</h2><pre>'+esc(json.dumps(r, ensure_ascii=False, indent=2))+'</pre>'
-    body += ''.join(f'<p><a href="{n}" download="{n}">{n}</a></p>' for n in ('interpretation_facts.json', 'results.json', 'config.resolved.json', 'input.csv'))+'</html>'
+        body += '<h2>必须说明的事项</h2><ul class="must">'+''.join(f'<li>{esc(m)}</li>' for m in facts['must_mention'])+'</ul>'
+    body += shell.single_figure(run/'figures', 'method_validation', '方法学验证 ' + r['experiment']) + '</section>'
+    body += shell.section('details', '结果', shell.json_block(r, '完整 results.json', open_=True))
+    body += shell.section('files', '可追溯文件', shell.downloads([(n, n) for n in ('interpretation_facts.json', 'results.json', 'config.resolved.json', 'input.csv')]))
+    body = shell.page('方法学验证', eyebrow='AgenticPrism / method validation', heading=f'方法学验证：{r["experiment"]}',
+                      lede='接受标准均由用户声明并注明来源；本报告不代表监管认可。',
+                      nav=[('verdict', '判定'), ('details', '结果'), ('files', '可追溯文件')], body=body,
+                      footer=f'AgenticPrism · 图形风格 {esc(style)} · 数值分析与图形渲染分离')
     (run/'report.html').write_text(body)
     dump(run/'render_manifest.json', {'style': style, 'scientific_artifacts_changed': False, 'report_sha256': sha(run/'report.html')})
     return run/'report.html'

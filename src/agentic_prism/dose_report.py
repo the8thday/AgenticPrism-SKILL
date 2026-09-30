@@ -8,10 +8,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from .dose_schema import DOSE_UNITS
-from .report import THEMES, data_uri, font_setup, format_num
+from . import plot_style as pstyle
+from .report import THEMES, font_setup, format_num
+from .report_shell import CSS, data_uri, style_select, switch_script, theme_figures
 from .workflow import dump, sha, verify_run
-
-SECOND_COLOR = "#b5651d"  # test curve in comparison overlays; reference uses the theme color
 DIAG = {
     "insufficient_distinct_doses_or_residual_df": "有效浓度或残差自由度不足；4PL 未拟合。",
     "flat_response": "响应基本平坦，无法估计半效浓度。",
@@ -45,27 +45,12 @@ SUMMARY_STATUS = {"independent_units_unconfirmed": "独立实验关系未确认�
                   "summarized_log_t": "已按独立实验汇总（几何均值，log t 区间）"}
 
 
-def _style(font, cjk, token):
-    return {"font.family": [font] + ([cjk] if cjk else []), "font.size": 9, "axes.labelsize": 10,
-            "axes.titlesize": 12, "axes.linewidth": token["axes_width"], "xtick.direction": "out",
-            "ytick.direction": "out", "pdf.fonttype": 42, "svg.fonttype": "path"}
-
-
 def _save(fig, folder, key, theme, dpi):
-    for ext in ("svg", "pdf", "png"):
-        fig.savefig(folder / f"{key}__{theme}.{ext}", dpi=dpi, facecolor="white")
-    plt.close(fig)
+    pstyle.save(fig, folder / f"{key}__{theme}", THEMES[theme], dpi)
 
 
 def _figure_block(folder, key, style, alt):
-    blocks = []
-    for theme in THEMES:
-        exports = " ".join(f'<a download="{key}__{theme}.{ext}" href="{data_uri(folder / f"{key}__{theme}.{ext}")}">{ext.upper()}</a>'
-                           for ext in ("svg", "pdf", "png"))
-        blocks.append(f'<div class="theme-figure" data-theme="{theme}" {"hidden" if theme != style else ""}>'
-                      f'<img alt="{html.escape(alt)}" src="{data_uri(folder / f"{key}__{theme}.svg")}">'
-                      f'<div class="downloads">{exports}</div></div>')
-    return "".join(blocks)
+    return theme_figures(folder, key, style, alt, THEMES)
 
 
 def _fmt_range(low, high, factor=1., unit=""):
@@ -124,7 +109,7 @@ def render_dose(run, style=None):
         included = ~obs.exclude.to_numpy(bool)
         y_obs = obs.response.to_numpy(float)
         for theme, token in THEMES.items():
-            with plt.rc_context(_style(font, cjk, token)):
+            with plt.rc_context(pstyle.rc(token, font, cjk)):
                 fig = plt.figure(figsize=(width, width * .78), layout="constrained")
                 if has_zero:
                     # Zero dose has no log coordinate: it gets its own linear panel.
@@ -140,45 +125,45 @@ def render_dose(run, style=None):
                 for main, resid_ax, mask in panels:
                     x_plot = np.zeros(mask.sum()) if main is z_ax else dose[mask]
                     keep = included[mask]
-                    main.scatter(x_plot[keep], y_obs[mask][keep], s=20, color=token["color"], alpha=.75,
-                                 label="Included observations")
+                    main.plot(x_plot[keep], y_obs[mask][keep], alpha=.85, label="Included observations",
+                              **pstyle.point_style(token, 0, 4.5))
                     if (~keep).any():
                         main.scatter(x_plot[~keep], y_obs[mask][~keep], s=25, facecolors="none",
                                      edgecolors="#999999", label="Excluded")
                     rows = residuals[(residuals.concentration_canonical == 0) == (main is z_ax)]
                     rx = np.zeros(len(rows)) if main is z_ax else rows.concentration_canonical.to_numpy(float) / factor
-                    resid_ax.scatter(rx, rows.residual, s=13, color=token["color"], alpha=.7)
-                    resid_ax.axhline(0, color="#777777", lw=.8)
+                    resid_ax.axhline(0, color=pstyle.MUTED, lw=.8, ls=(0, (3, 2)))
+                    resid_ax.plot(rx, rows.residual, **pstyle.residual_style(token))
                     main.set_ylim(*y_limits)
                     resid_ax.set_ylim(-r_max, r_max)
-                    for a in (main, resid_ax):
-                        a.spines[["top", "right"]].set_visible(False)
-                        a.grid(True, alpha=.18) if token["grid"] else a.grid(False)
                 if len(gg):
                     ax.plot(gg.concentration_canonical / factor, gg.predicted_response, color=token["color"],
                             lw=token["line_width"] + .2, label="4PL fit")
                 for a in (ax, res):
                     a.set_xscale("log")
                     a.set_xlim(*x_limits)
-                res.set_xlabel(f"Concentration ({unit}; log scale)")
+                res.set_xlabel(f"Concentration ({unit})")
                 ax.set_title(curve_id[:55], loc="left")
                 ax.legend(frameon=False, fontsize=7, loc="best")
                 if has_zero:
                     at_zero = predicted[(predicted.concentration_canonical == 0)]
                     if len(at_zero):
-                        z_ax.plot([0.], [at_zero.predicted_response.iloc[0]], "_", color=token["color"], ms=16, mew=1.7)
+                        z_ax.plot([0.], [at_zero.predicted_response.iloc[0]], "_", color=token["color"], ms=14, mew=token["line_width"])
                     for a in (z_ax, z_res):
                         a.set_xlim(-.8, .8)
                         a.set_xticks([0], ["0"])
                     z_res.set_xlabel("Zero dose")
-                    ax.tick_params(labelleft=False)
-                    res.tick_params(labelleft=False)
+                    # The log panels share the zero panel's y scale; one visible y axis reads as a broken x axis.
+                    for a in (ax, res):
+                        a.spines["left"].set_visible(False)
+                        a.tick_params(axis="y", left=False, labelleft=False)
+                    z_ax.tick_params(axis="x", labelbottom=False)
                     z_ax.set_ylabel(f"Response ({response_unit})")
                     z_res.set_ylabel("Residual")
                 else:
                     ax.set_ylabel(f"Response ({response_unit})")
                     res.set_ylabel("Residual")
-                plt.setp(ax.get_xticklabels(), visible=False)
+                ax.tick_params(axis="x", labelbottom=False)
                 _save(fig, folder, key, theme, dpi)
                 figure_meta.append({"curve_id": curve_id, "theme": theme, "x_unit": unit, "zero_dose_panel": has_zero,
                                     "x_limits": x_limits, "y_limits": y_limits, "residual_limits": [-r_max, r_max],
@@ -221,23 +206,21 @@ def render_dose(run, style=None):
         factor = DOSE_UNITS[unit]
         cg = comparison_grid[comparison_grid.comparison_id == c["comparison_id"]] if len(comparison_grid) else comparison_grid
         for theme, token in THEMES.items():
-            with plt.rc_context(_style(font, cjk, token)):
+            with plt.rc_context(pstyle.rc(token, font, cjk)):
                 fig, ax = plt.subplots(figsize=(width, width * .55), layout="constrained")
-                for curve_id, color, label in ((c["reference_curve"], token["color"], "Reference"),
-                                               (c["test_curve"], SECOND_COLOR, "Test")):
+                for index, (curve_id, label) in enumerate(((c["reference_curve"], "Reference"), (c["test_curve"], "Test"))):
+                    color = pstyle.color(token, index)
                     o = d[(d.curve_id == curve_id) & (d.concentration_canonical > 0) & ~d.exclude]
-                    ax.scatter(o.concentration_canonical / factor, o.response, s=16, color=color, alpha=.7,
-                               label=f"{label}: {curve_id[:30]}")
+                    ax.plot(o.concentration_canonical / factor, o.response, alpha=.85, label=f"{label}: {curve_id[:30]}",
+                            **pstyle.point_style(token, index, 4.2))
                     q = cg[cg.curve_id == curve_id] if len(cg) else cg
                     if len(q):
                         ax.plot(q.concentration_canonical / factor, q.predicted_response, color=color, lw=token["line_width"])
                 ax.set_xscale("log")
-                ax.set_xlabel(f"Concentration ({unit}; log scale)")
+                ax.set_xlabel(f"Concentration ({unit})")
                 ax.set_ylabel(f"Response ({d[d.curve_id == c['reference_curve']].response_unit.iloc[0]})")
                 ax.set_title(c["comparison_id"][:55], loc="left")
-                ax.spines[["top", "right"]].set_visible(False)
-                ax.grid(True, alpha=.18) if token["grid"] else ax.grid(False)
-                ax.legend(frameon=False, fontsize=7, loc="best")
+                ax.legend(fontsize=7.5, loc="best")
                 _save(fig, folder, key, theme, dpi)
                 figure_meta.append({"comparison_id": c["comparison_id"], "theme": theme, "x_unit": unit})
         pm, par, shared = c.get("parallel_model") or {}, c.get("parallelism_f_test") or {}, c.get("shared_c50_f_test") or {}
@@ -290,11 +273,9 @@ def render_dose(run, style=None):
     fit_cfg = cfg["fit"]
     weighting = ("相对加权：最小化 Σ((Y−Ŷ)/Ŷ)²，Ŷ 为曲线值（Prism 的 1/Y² 相对加权），适用于噪声与信号成比例的读数"
                  if fit_cfg.get("weighting") == "relative" else "原始响应尺度的未加权最小二乘")
-    doc = '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>AgenticPrism · 4PL 剂量反应</title><style>
-*{box-sizing:border-box}body{margin:0;background:#f3f6f6;color:#19383e;font:15px/1.7 Arial,"PingFang SC",sans-serif}header{background:#143e45;color:white;padding:40px max(5vw,20px)}header h1{font-size:32px;margin:10px 0}header p{max-width:950px;color:#d3e4e5}.eyebrow{letter-spacing:.15em;font-size:12px}main{max-width:1120px;margin:auto;padding:24px 18px}.panel,.dose-curve{background:white;border:1px solid #dbe5e4;border-radius:10px;padding:25px;margin:22px 0}.head{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap}h2{font-size:23px;margin:6px 0}p,h2,footer{overflow-wrap:anywhere}.badge{font-size:12px;background:#e5f3ee;padding:5px 9px;border-radius:4px}.limited,.failed,.estimated_with_diagnostics{background:#fff0dd;color:#805321}.notice{padding:10px 14px;border-left:3px solid #c59c58;background:#fff9f0;font-size:13px}.caption,footer{font-size:12px;color:#62767a}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid #e3ebea;white-space:nowrap}th{background:#f4f8f7}img{width:100%;height:auto;display:block}a{color:#147b80;text-decoration:none}.downloads{display:flex;flex-wrap:wrap;gap:14px;font-size:13px}select{padding:8px;border:1px solid #bdcece;border-radius:4px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}details{margin:16px 0}[hidden]{display:none!important}@media(max-width:700px){main{padding:14px 10px}.panel,.dose-curve{padding:16px}header h1{font-size:26px}}@media print{select,.downloads{display:none}body{background:white}.dose-curve{break-inside:avoid}}
-</style></head><body><header><div class="eyebrow">AGENTICPRISM / DOSE RESPONSE</div><h1>4PL · 剂量反应</h1><p>EC50 / IC50 是拟合 Bottom 与 Top 之间的相对半效浓度；标签取决于实验目的，而非仅由曲线上下方向决定。</p></header><main><div class="panel"><label>图形风格 <select id="style"><option value="prism_like">Prism-like</option><option value="standard">标准</option></select></label><p>@@ASSAY@@</p></div>@@SUMMARY@@@@COMPARISONS@@@@CARDS@@
+    doc = '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>AgenticPrism · 4PL 剂量反应</title><style>@@CSS@@</style></head><body><header><div class="eyebrow">AGENTICPRISM / DOSE RESPONSE</div><h1>4PL · 剂量反应</h1><p>EC50 / IC50 是拟合 Bottom 与 Top 之间的相对半效浓度；标签取决于实验目的，而非仅由曲线上下方向决定。</p></header><main><div class="panel">@@CONTROLS@@<p class="caption">@@ASSAY@@</p></div>@@SUMMARY@@@@COMPARISONS@@@@CARDS@@
 <section class="panel"><h2>方法、来源与限制</h2><p>@@SOURCE@@</p><p>@@RATIONALE@@</p><p>模型：Y = Bottom + (Top−Bottom) / [1 + 10^(−signed Hill × (log10 C−log10 C50))]。Top 始终是较高的平台。各曲线独立拟合，保留逐孔观测；目标函数：@@WEIGHTING@@。平台约束：@@CONSTRAINT@@；固定的平台不计入参数个数。没有自动归一化、参考扣除或异常值删除。</p><p>区间：@@CI@@。若未覆盖平台、转换区点数不足、半效浓度超出实测浓度范围或参数区间未闭合，需结合诊断判断；曲线形状不能证明分子机制。相对 IC50 不等于固定响应值 50 的绝对 IC50（除非平台被固定为 0 与 100），也不等于 KD 或 Ki。</p><p>本模块未完成 Prism 数值等价、真实团队抗体实验或 5PL、双相模型验收。若单位为 source_unit，来源未提供物理浓度单位，结果仅作数值示例。</p><details><summary>完整配置</summary><pre>@@CONFIG@@</pre></details></section>
-<section class="panel"><h2>下载与复现</h2><p>图形和数据已内嵌，可单文件离线查看。</p><div class="downloads">@@DOWNLOADS@@</div><p class="caption">输入 SHA-256：@@HASH@@</p></section><footer>AgenticPrism @@VERSION@@ · 数值分析与渲染分离</footer></main><script>const s=document.getElementById('style');function change(){document.querySelectorAll('[data-theme]').forEach(e=>e.hidden=e.dataset.theme!==s.value);}s.value=@@STYLE@@;s.addEventListener('change',change);change();</script></body></html>'''
+<section class="panel"><h2>下载与复现</h2><p>图形和数据已内嵌，可单文件离线查看。</p><div class="downloads">@@DOWNLOADS@@</div><p class="caption">输入 SHA-256：@@HASH@@</p></section><footer>AgenticPrism @@VERSION@@ · 数值分析与渲染分离</footer></main>@@SCRIPT@@</body></html>'''
     replacements = {"ASSAY": html.escape(cfg["assay"]["response_definition"]), "SUMMARY": summary_html,
                     "COMPARISONS": comparison_html, "CARDS": "".join(cards),
                     "SOURCE": html.escape(cfg["source"]), "RATIONALE": html.escape(cfg["assay"]["rationale"]),
@@ -303,7 +284,8 @@ def render_dose(run, style=None):
                     "CI": html.escape(f"{cfg['uncertainty']['method']}，水平 {cfg['uncertainty']['level']:.0%}；在每个候选 log10(C50) 上重新优化 Hill 斜率与平台，使用估计噪声尺度的 profile-F 阈值"),
                     "CONFIG": html.escape(json.dumps(cfg, ensure_ascii=False, indent=2)),
                     "DOWNLOADS": downloads, "HASH": manifest["input_sha256"],
-                    "VERSION": manifest["package_version"], "STYLE": json.dumps(style)}
+                    "VERSION": manifest["package_version"], "CONTROLS": style_select(THEMES, style),
+                    "SCRIPT": switch_script(style), "CSS": CSS}
     for key, value in replacements.items():
         doc = doc.replace("@@" + key + "@@", value)
     (run / "report.html").write_text(doc)

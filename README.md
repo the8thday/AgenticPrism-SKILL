@@ -220,6 +220,13 @@ reports them. Without R, only that method refuses; everything else runs.
 .venv/bin/agentic-prism analyze --config fixtures/specification/config_normal_exact.json --output runs/my-tolerance-interval
 ```
 
+`render` redraws figures from saved results only; it never refits. `--style prism_like`
+(publication style: detached axes, bold labels, Okabe–Ito colour-blind-safe palette,
+filled symbols, raw points always shown) and `--style standard` differ in appearance
+only, with identical axis ranges. For two-group, multi-group and rank-test runs,
+`--annotate-significance` adds brackets and stars transcribed from the saved adjusted
+p values; it is off by default and performs no new test.
+
 Each analysis needs a new output directory; earlier results are never
 overwritten. `render` only restyles figures: it verifies the result hashes and
 never refits. Curve-fitting reports embed figures and downloads in one HTML file. ADA and

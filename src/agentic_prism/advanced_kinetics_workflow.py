@@ -51,76 +51,73 @@ def render_advanced(run, style=None):
     result = json.loads((run / 'results.json').read_text())
     cfg = json.loads((run / 'config.resolved.json').read_text())
     style = style or cfg['report']['plot_style']
-    report = render_extension(run, style)
+    if style not in ('prism_like', 'standard'):
+        raise ValueError('Unsupported style')
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
-    from .report import data_uri
+    from .report import font_setup
+    from . import plot_style as pstyle
+    from . import report_shell as shell
+    token = pstyle.THEMES[style]
+    prism = style == 'prism_like'
     width = cfg['report']['figure_width_mm'] / 25.4
     folder = run / 'figures'
     folder.mkdir(exist_ok=True)
     extra = []
 
-    def save_figure(fig, name):
-        for extension in ('svg', 'pdf', 'png'):
-            fig.savefig(folder / f'{name}.{extension}', dpi=cfg['report']['png_dpi'])
-        plt.close(fig)
-        extra.append((folder / f'{name}.svg').read_text())
-        extra.append('<p>' + ' | '.join(
-            f'<a download="{name}.{extension}" href="{data_uri(folder / f"{name}.{extension}")}">{extension.upper()}</a>'
-            for extension in ('svg', 'pdf', 'png')) + '</p>')
+    def save_figure(fig, name, alt):
+        pstyle.save(fig, folder / name, token, cfg['report']['png_dpi'])
+        extra.append(shell.single_figure(folder, name, alt))
 
-    fig, (ax, residual_axis) = plt.subplots(
-        2, 1, figsize=(width, width * .75), sharex=True, layout='constrained',
-        gridspec_kw={'height_ratios': [3, 1]})
-    color_index = 0
-    for fit in result['fits']:
-        if not fit.get('predictions'):
-            continue
-        data = pd.DataFrame(fit['predictions'])
-        for curve, group in data.groupby('curve_id', sort=False):
-            color = plt.get_cmap('tab10')(color_index % 10)
-            color_index += 1
-            ax.plot(group.time_s, group.observed, '.', ms=2, alpha=.5, color=color)
-            ax.plot(group.time_s, group.predicted, label=curve, color=color)
+    with plt.rc_context(pstyle.rc(token, *font_setup())):
+        fig, (ax, residual_axis) = plt.subplots(
+            2, 1, figsize=(width, width * .75), sharex=True, layout='constrained',
+            gridspec_kw={'height_ratios': [3, 1]})
+        curves = [(curve, group) for fit in result['fits'] if fit.get('predictions')
+                  for curve, group in pd.DataFrame(fit['predictions']).groupby('curve_id', sort=False)]
+        for color_index, (curve, group) in enumerate(curves):
+            color = (plt.get_cmap('viridis')(.08 + .78 * color_index / max(len(curves) - 1, 1)) if prism
+                     else plt.get_cmap('tab10')(color_index % 10))
+            ax.plot(group.time_s, group.observed, '.', ms=2.5 if prism else 2, alpha=.6 if prism else .5, color=color,
+                    label=curve if prism else None)
+            ax.plot(group.time_s, group.predicted, label=None if prism else curve, color='black' if prism else color, lw=1. if prism else 1.5)
             residual_axis.plot(group.time_s, group.residual, '.', ms=2, color=color)
-    ax.set(ylabel='Response (declared units)', title='Observed and fitted traces; consult reliability flags')
-    xlabel = ('Time since first fitted dissociation point (s)'
-              if result['model'] == 'off_rate_screening' else 'Time since association (s)')
-    residual_axis.set(xlabel=xlabel, ylabel='Residual')
-    residual_axis.axhline(0, color='grey', lw=.7)
-    if style == 'prism_like':
-        ax.spines[['top', 'right']].set_visible(False)
-        residual_axis.spines[['top', 'right']].set_visible(False)
-    if 0 < color_index <= 12:
-        ax.legend(fontsize=7, ncol=2)
-    save_figure(fig, 'kinetics')
+        ax.set(ylabel='Response (declared units)', title='Observed and fitted traces; consult reliability flags')
+        xlabel = ('Time since first fitted dissociation point (s)'
+                  if result['model'] == 'off_rate_screening' else 'Time since association (s)')
+        residual_axis.set(xlabel=xlabel, ylabel='Residual')
+        residual_axis.axhline(0, color='black' if prism else 'grey', lw=.7)
+        if 0 < len(curves) <= 12:
+            if prism:
+                ax.plot([], [], color='black', lw=1., label='Model fit')
+            ax.legend(fontsize=7, ncol=2, markerscale=3)
+        save_figure(fig, 'kinetics', 'Observed and fitted traces')
 
-    points = []
-    for fit in result['fits']:
-        p = fit.get('parameters')
-        if not p:
-            continue
-        if 'kd_M' in p:
-            points.append((p['ka_M_inv_s_inv'], p['kd'], fit['fit_group_id']))
-        elif 'surface_KDs_M' in p:
-            points.extend([
-                (p['ka_M_inv_s_inv'], p['kd'], fit['fit_group_id'] + ' surface site1'),
-                (p['ka2_M_inv_s_inv'], p['kd2'], fit['fit_group_id'] + ' surface site2')])
-    if points:
-        fig, ax = plt.subplots(figsize=(width, width * .7), layout='constrained')
-        xx = np.logspace(2, 8, 100)
-        for kd in (1e-12, 1e-10, 1e-8, 1e-6):
-            ax.loglog(xx, kd * xx, '--', color='grey', alpha=.5)
-            ax.text(xx[-1], kd * xx[-1], f'{kd:g} M', fontsize=8)
-        for ka, kd, label in points:
-            ax.loglog(ka, kd, 'o', label=label)
-        if len(points) <= 12:
-            ax.legend(fontsize=7)
-        ax.set(xlabel='ka (M^-1 s^-1)', ylabel='kd (s^-1)', title='Reportable kinetic KD only')
-        save_figure(fig, 'iso_affinity')
-    report.write_text(report.read_text().replace(
-        '<h2>详细结果、诊断与证据</h2>', ''.join(extra) + '<h2>详细结果、诊断与证据</h2>'))
+        points = []
+        for fit in result['fits']:
+            p = fit.get('parameters')
+            if not p:
+                continue
+            if 'kd_M' in p:
+                points.append((p['ka_M_inv_s_inv'], p['kd'], fit['fit_group_id']))
+            elif 'surface_KDs_M' in p:
+                points.extend([
+                    (p['ka_M_inv_s_inv'], p['kd'], fit['fit_group_id'] + ' surface site1'),
+                    (p['ka2_M_inv_s_inv'], p['kd2'], fit['fit_group_id'] + ' surface site2')])
+        if points:
+            fig, ax = plt.subplots(figsize=(width, width * .8), layout='constrained')
+            xx = np.logspace(2, 8, 100)
+            for kd in (1e-12, 1e-10, 1e-8, 1e-6):
+                ax.loglog(xx, kd * xx, '--', color=pstyle.MUTED, lw=.8, alpha=.7)
+                ax.text(xx[-1], kd * xx[-1], f'{kd:g} M', fontsize=7.5, color='#555555')
+            for i, (ka, kd, label) in enumerate(points):
+                ax.loglog(ka, kd, label=label, **pstyle.point_style(token, i, 6))
+            if len(points) <= 12:
+                ax.legend(fontsize=7)
+            ax.set(xlabel='ka (M$^{-1}$ s$^{-1}$)', ylabel='kd (s$^{-1}$)', title='Reportable kinetic KD only')
+            save_figure(fig, 'iso_affinity', 'Iso-affinity plot')
+    report = render_extension(run, style, ''.join(extra))
     dump(run / 'render_manifest.json', {
         'style': style, 'scientific_artifacts_changed': False, 'report_sha256': sha(report)})
     return report

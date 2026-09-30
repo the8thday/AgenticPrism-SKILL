@@ -1,8 +1,8 @@
 """Render saved tumor-growth artifacts; never refit."""
 import numpy as np
 import matplotlib.pyplot as plt
+from . import plot_style as pstyle
 from .report import THEMES
-from .survival_report import COLORS
 
 
 def tumor_sections(result, cfg, d, figures, font, cjk):
@@ -12,31 +12,30 @@ def tumor_sections(result, cfg, d, figures, font, cjk):
     used = d[d.exclude.astype(str).str.lower() != "true"]
     beta = (result.get("fitted_coefficients") or {}).get("beta")
     for theme, token in THEMES.items():
-        with plt.rc_context({"font.family": [font] + ([cjk] if cjk else []), "font.size": 9}):
-            fig, ax = plt.subplots(figsize=(7.4, 4.9), layout="constrained")
+        with plt.rc_context(pstyle.rc(token, font, cjk)):
+            fig, ax = plt.subplots(figsize=(6.4, 4.4), layout="constrained")
             for i, arm in enumerate(arms):
-                color = COLORS[i % len(COLORS)]
+                color = pstyle.color(token, i)
                 sub = used[used.arm == arm]
                 for _, animal in sub.groupby("animal_id"):
                     ax.plot(animal.day.astype(float), animal.volume.astype(float), color=color, alpha=.18, lw=.7)
                 summ = [r for r in result["arm_day_summaries"] if r["arm"] == arm]
+                marks = pstyle.point_style(token, i, 4.5)
+                marks.pop("linestyle")
                 ax.errorbar([r["day"] for r in summ], [r["mean"] for r in summ], yerr=[r["sem"] or 0 for r in summ],
-                            fmt="o", color=color, ms=4, capsize=3, lw=1.2, label=f"{arm} (mean ± SEM)")
+                            fmt="none", ecolor=color, capsize=3, lw=1.1)
+                ax.plot([r["day"] for r in summ], [r["mean"] for r in summ], linestyle="none", label=f"{arm} (mean ± SEM)", **marks)
                 if beta:
                     grid = np.linspace(a["baseline_day"], max(r["day"] for r in summ), 100)
                     k = len(arms)
                     ax.plot(grid, np.exp(beta[i] + beta[k + i] * grid) - a["log_offset"], color=color, lw=1.8, ls="--")
             ax.set_yscale("log")
-            ax.axvline(a["analysis_day"], color="#888", ls=":", lw=.9)
+            ax.axvline(a["analysis_day"], color=pstyle.MUTED, ls=":", lw=.9)
             ax.set_xlabel(f"Time since {s['time_origin']} ({s['time_unit']})")
             ax.set_ylabel(f"Tumor volume ({s['volume_unit']}; log scale)")
             ax.set_title("Dashed: model-estimated geometric mean growth; dotted line: analysis day", fontsize=9)
-            ax.legend(frameon=False, fontsize=8)
-            if token["grid"]:
-                ax.grid(True, which="both", alpha=.15)
-            for ext in ("svg", "pdf", "png"):
-                fig.savefig(figures / f"tumor-001__{theme}.{ext}", dpi=220)
-            plt.close(fig)
+            ax.legend(fontsize=8)
+            pstyle.save(fig, figures / f"tumor-001__{theme}", token, 300)
     details = (f"移除规则：{s['removal_rule']}。生长模型：log(V + {a['log_offset']}) = 各组截距 + 各组斜率 × 时间 + 动物随机截距与随机斜率"
                "（非结构化协方差）+ 残差，REML 拟合；Satterthwaite 小样本 t/F（与 R lmerTest 同法）。"
                "生长速率为对数体积每单位时间的斜率，倍增时间 = ln2/斜率。模型 T/C 为分析日模型估计的几何均值之比。"

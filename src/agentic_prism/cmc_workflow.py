@@ -110,7 +110,11 @@ def render_cmc(run, style=None):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     import pandas as pd
-    fig,ax=plt.subplots(figsize=(8,4.5),layout='constrained')
+    from .report import font_setup
+    from . import plot_style as pstyle
+    from . import report_shell as shell
+    token=pstyle.THEMES[style]; theme=plt.rc_context(pstyle.rc(token,*font_setup())); theme.__enter__()
+    fig,ax=plt.subplots(figsize=(6.6,4.0),layout='constrained')
     if r['analysis_type']=='stability':
         d=pd.read_csv(run/'input.csv',dtype={'batch':str}); cap=r['decision_tree']['allowed_horizon_months']; x=np.linspace(0,cap,150)
         for line in r['batch_estimates']:
@@ -125,7 +129,8 @@ def render_cmc(run, style=None):
         ax.set(xlabel='Time (months)',ylabel=cfg['assay']['attribute']+' ('+cfg['assay']['unit']+')',title='Batch mean and confidence bounds'); ax.legend()
     elif r['analysis_type']=='comparability':
         lots=pd.DataFrame(r['lots']); ref=lots[lots['product']=='reference']; tst=lots[lots['product']=='test']
-        ax.scatter(np.zeros(len(ref)),ref.lot_mean,color='grey',label='Reference lots'); ax.scatter(np.ones(len(tst)),tst.lot_mean,color='black',label='Test lots')
+        ax.plot(np.zeros(len(ref)),ref.lot_mean,label='Reference lots',marker='o',ms=5.5,linestyle='none',mfc='#9aa0a6',mec='#5f6368',mew=.6); ax.plot(np.ones(len(tst)),tst.lot_mean,label='Test lots',**pstyle.point_style(token,1,5.5))
+        ax.set_xlim(-.6,1.6)
         det=r['detail'] or {}
         if 'range' in det:
             for v in det['range']: ax.axhline(v,ls='--',color='grey')
@@ -136,7 +141,7 @@ def render_cmc(run, style=None):
             ax2.set_yticks([]); ax2.set_title('Difference and margin',fontsize=8)
     elif r['analysis_type']=='specification':
         d=pd.read_csv(run/'input.csv'); d=d[d.exclude.astype(str).str.lower()!='true']
-        ax.hist(d.value,bins=min(30,max(5,len(d)//3)),color='lightgrey',edgecolor='grey')
+        ax.hist(d.value,bins=min(30,max(5,len(d)//3)),color='#cfd4da',edgecolor='black',linewidth=.6)
         ti=r['tolerance_interval']
         if ti and ti.get('limits'):
             for v in ti['limits']:
@@ -152,16 +157,20 @@ def render_cmc(run, style=None):
         ax.set(xlabel='Nominal relative potency',ylabel='Combined RP with interval',title='Random-run log RP model')
     else:
         ax.text(.5,.5,'Combined RP withheld\nInspect per-run diagnostics',ha='center',va='center',transform=ax.transAxes); ax.set_axis_off()
-    ax.spines[['top','right']].set_visible(style=='standard'); (run/'figures').mkdir(exist_ok=True)
-    for ext in ('svg','pdf','png'): fig.savefig(run/'figures'/f'cmc.{ext}',dpi=160)
-    plt.close(fig)
+    (run/'figures').mkdir(exist_ok=True)
+    try: pstyle.save(fig,run/'figures'/'cmc',token,300)
+    finally: theme.__exit__(None,None,None)
     esc=html.escape
-    body='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>CMC 分析</title><style>body{font:16px sans-serif;max-width:1000px;margin:30px auto;padding:16px}pre{white-space:pre-wrap;overflow-wrap:anywhere}svg{width:100%;height:auto}</style>'
-    body+='<h1>'+{'stability':'稳定性与有效期','potency_assay':'跨运行相对效价','comparability':'可比性 / 生物类似性','specification':'容忍区间与过程能力'}[r['analysis_type']]+'</h1>'
-    body+='<h2>主要结果</h2><pre>'+esc(json.dumps(r['primary'],indent=2,ensure_ascii=False))+'</pre>'
-    body+='<h2>必须说明的事项</h2><ul>'+''.join('<li>'+esc(v)+'</li>' for v in r['must_mention'])+'</ul>'
-    body+=(run/'figures/cmc.svg').read_text()+'<h2>详细结果与证据</h2><pre>'+esc(json.dumps(r,indent=2,ensure_ascii=False))+'</pre>'
-    body+=''.join(f'<p><a href="{n}" download="{n}">{n}</a></p>' for n in ('results.json','interpretation_facts.json','config.resolved.json','input.csv'))+'</html>'
+    title={'stability':'稳定性与有效期','potency_assay':'跨运行相对效价','comparability':'可比性 / 生物类似性','specification':'容忍区间与过程能力'}[r['analysis_type']]
+    body=shell.section('primary','主要结果',shell.value_html(r['primary']))
+    body+=shell.section('must','必须说明的事项','<ul class="must">'+''.join('<li>'+esc(v)+'</li>' for v in r['must_mention'])+'</ul>')
+    body+=shell.section('figure','图形',shell.single_figure(run/'figures','cmc',title))
+    body+=shell.section('details','详细结果与证据',shell.json_block(r,'完整 results.json'))
+    body+=shell.section('files','可追溯文件',shell.downloads([(n,n) for n in ('results.json','interpretation_facts.json','config.resolved.json','input.csv')]))
+    body=shell.page(title,eyebrow='AgenticPrism / CMC · '+r['analysis_type'].replace('_',' '),heading=title,
+                    lede='限度、界限、方向与层级均来自用户声明；统计结论不等于监管结论。',
+                    nav=[('primary','主要结果'),('must','必须说明'),('figure','图形'),('details','详细结果'),('files','可追溯文件')],body=body,
+                    footer=f'AgenticPrism · 图形风格 {esc(style)} · 数值分析与图形渲染分离')
     (run/'report.html').write_text(body)
     dump(run/'render_manifest.json',{'style':style,'scientific_artifacts_changed':False,'report_sha256':sha(run/'report.html')})
     return run/'report.html'

@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Reports only; no scientific artifact or numerical method changes. A shared figure style (`plot_style.py`) upgrades `prism_like` to a publication style: detached axes, bold labels, Okabe–Ito palette, filled symbols and open residual markers. Every renderer now honours the selected style, and axis ranges stay identical across styles.
+- A shared HTML shell (`report_shell.py`) gives all report pages one layout, tables with display rounding to 4 significant figures (downloads keep full precision), and figures shown at a fixed multiple of their physical size. Figures in extension, ADA, CMC and method-validation reports are now embedded, so every page works as a single file.
+- `render --annotate-significance` (group plots, off by default) transcribes saved adjusted p values as brackets and stars; `render_manifest.json` records whether it was used.
+- Committed `runs/` are not re-rendered.
+
 ## 0.13.0
 
 - Named Bliss, Loewe, HSA and ZIP combination references with independent-matrix uncertainty; declared HTS plate QC, median-polish B scores and exploratory FDR hits. Dose-response and ELISA facts complete the oldest-six retrofit.

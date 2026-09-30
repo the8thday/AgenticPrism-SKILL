@@ -2,10 +2,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import probplot
+from . import plot_style as pstyle
 from .report import THEMES
-
-
-ARM_COLORS = ("#1f6f78", "#b5651d", "#6a4c93", "#2a9d8f", "#c1121f", "#606c38", "#3a86ff", "#8d99ae")
 
 
 def two_way_sections(result, cfg, d, figures, font, cjk):
@@ -16,16 +14,18 @@ def two_way_sections(result, cfg, d, figures, font, cjk):
     pos = {g: i for i, g in enumerate(q["groups"])}
     estimates = {(r["arm"], r["group"]): r for r in result["fixed_effects"]}
     for theme, token in THEMES.items():
-        with plt.rc_context({"font.family": [font] + ([cjk] if cjk else []), "font.size": 9}):
-            fig, ax = plt.subplots(figsize=(max(6.5, .9 * len(q["groups"]) + 3), 4.8), layout="constrained")
+        with plt.rc_context(pstyle.rc(token, font, cjk)):
+            fig, ax = plt.subplots(figsize=(max(5.6, .8 * len(q["groups"]) + 2.6), 4.2), layout="constrained")
             for i, arm in enumerate(q["arms"]):
-                color = ARM_COLORS[i % len(ARM_COLORS)]
+                color = pstyle.color(token, i)
                 sub = used[used.arm == arm]
                 for _, unit in sub.groupby("independent_unit_id"):
                     unit = unit.sort_values("group", key=lambda s: s.map(pos))
                     ax.plot(unit.group.map(pos), unit.value.astype(float), color=color, alpha=.18, lw=.7)
                 means = [sub.value[sub.group == g].astype(float).mean() for g in q["groups"]]
-                ax.plot(range(len(q["groups"])), means, "-o", color=color, lw=2, ms=4, label=f"{arm} (observed mean)")
+                marks = pstyle.point_style(token, i, 5)
+                marks.pop("linestyle")
+                ax.plot(range(len(q["groups"])), means, "-", color=color, lw=token["line_width"], label=f"{arm} (observed mean)", **marks)
                 if estimates:
                     est = np.array([estimates[(arm, g)]["estimated_mean"] for g in q["groups"]])
                     se = np.array([estimates[(arm, g)]["standard_error"] for g in q["groups"]])
@@ -33,15 +33,11 @@ def two_way_sections(result, cfg, d, figures, font, cjk):
                                 capsize=3, lw=1, alpha=.9)
             ax.set_xticks(range(len(q["groups"])), q["groups"], rotation=30 if len(q["groups"]) > 6 else 0)
             ax.set_xlabel("Within-unit condition (declared order)")
-            ax.set_ylabel(f"{q['outcome']} ({q['unit']})")
+            ax.set_ylabel(f"{pstyle.display_label(q['outcome'])} ({q['unit']})")
             ax.set_title(f"{fit['n_units']} units in {len(q['arms'])} arms; {fit['n_missing_cells']} missing cells"
                          + ("; squares: model-estimated mean ± SE" if estimates else ""))
-            ax.legend(frameon=False, fontsize=8)
-            if token["grid"]:
-                ax.grid(True, alpha=.2)
-            for ext in ("svg", "pdf", "png"):
-                fig.savefig(figures / f"repeated-001__{theme}.{ext}", dpi=220)
-            plt.close(fig)
+            ax.legend(fontsize=8)
+            pstyle.save(fig, figures / f"repeated-001__{theme}", token, 300)
     if q["design"] == "two_way_rm_anova":
         title = "两因素混合设计 ANOVA（组间 × 组内，完整数据）"
         details = ("组间因素（arm）用各单位跨条件均值的单因素 ANOVA 检验；条件及其交互作用在单位内正交对比上按 III 型（各组等权）"
@@ -82,41 +78,35 @@ def repeated_sections(result, cfg, d, figures, font, cjk):
     if result["residuals"]:
         keys.append("residuals-001")
     for theme, token in THEMES.items():
-        with plt.rc_context({"font.family":[font]+([cjk] if cjk else []),"font.size":9}):
-            fig, ax = plt.subplots(figsize=(max(6,1.1*len(q["groups"])),4.7),layout="constrained")
+        with plt.rc_context(pstyle.rc(token,font,cjk)):
+            fig, ax = plt.subplots(figsize=(max(5.2,.9*len(q["groups"])+1.8),4.1),layout="constrained")
             positions = np.arange(len(q["groups"]))
             for _, row in matrix.iterrows():
-                ax.plot(positions,row.to_numpy(float),'-o',color=token["color"],alpha=.35,lw=.8,ms=3)
-            ax.plot(positions,matrix.mean().to_numpy(),'-D',color="#202020",lw=1.8,ms=5,label="Observed mean")
+                ax.plot(positions,row.to_numpy(float),'-o',color=pstyle.MUTED if token["bold_labels"] else token["color"],alpha=.45,lw=.8,ms=3)
+            ax.plot(positions,matrix.mean().to_numpy(),'-D',color="black",lw=1.8,ms=5,label="Observed mean")
             if result["fixed_effects"]:
                 est=np.array([r["estimated_mean"] for r in result["fixed_effects"]])
                 se=np.array([r["standard_error"] for r in result["fixed_effects"]])
-                ax.errorbar(positions+.08,est,yerr=se,fmt='s',color="#b5651d",ms=5,capsize=4,lw=1.2,
+                ax.errorbar(positions+.08,est,yerr=se,fmt='s',color=pstyle.color(token,2),ms=5,capsize=4,lw=1.2,
                             label="Model-estimated mean ± SE")
             ax.set_xticks(positions,q["groups"],rotation=20 if len(positions)>4 else 0)
-            ax.set_ylabel(f"{q['outcome']} ({q['unit']})")
+            ax.set_ylabel(f"{pstyle.display_label(q['outcome'])} ({q['unit']})")
             ax.set_xlabel("Within-unit condition (declared order)")
             ax.set_title(f"{fit['n_units']} independent units; {fit['n_missing_cells']} missing cells")
-            ax.legend(frameon=False)
-            if token["grid"]:
-                ax.grid(True,alpha=.2)
-            for ext in ("svg","pdf","png"):
-                fig.savefig(figures/f"repeated-001__{theme}.{ext}",dpi=220)
-            plt.close(fig)
+            ax.legend()
+            pstyle.save(fig,figures/f"repeated-001__{theme}",token,300)
             if result["residuals"]:
                 r=result["residuals"]
                 residual=np.array([x["conditional_residual"] for x in r])
                 fitted=np.array([x["conditional_fitted"] for x in r])
-                fig, axes=plt.subplots(1,2,figsize=(9,3.8),layout="constrained")
-                axes[0].scatter(fitted,residual,s=15,color=token["color"])
-                axes[0].axhline(0,color="#888",lw=.8)
+                fig, axes=plt.subplots(1,2,figsize=(7.4,3.4),layout="constrained")
+                axes[0].plot(fitted,residual,**pstyle.residual_style(token))
+                axes[0].axhline(0,color=pstyle.MUTED,lw=.8,ls=(0,(3,2)))
                 axes[0].set(xlabel="Conditional fitted value",ylabel="Conditional residual")
                 (theoretical,ordered),_=probplot(residual,dist="norm")
-                axes[1].scatter(theoretical,ordered,s=15,color=token["color"])
+                axes[1].plot(theoretical,ordered,**pstyle.residual_style(token))
                 axes[1].set(xlabel="Normal theoretical quantile",ylabel="Ordered conditional residual")
-                for ext in ("svg","pdf","png"):
-                    fig.savefig(figures/f"residuals-001__{theme}.{ext}",dpi=220)
-                plt.close(fig)
+                pstyle.save(fig,figures/f"residuals-001__{theme}",token,300)
     if q["design"]=="one_way_rm_anova":
         title="单因素重复测量 ANOVA"
         details=("同一独立单位在各条件各有一个观测。总体检验始终使用 Greenhouse–Geisser 校正自由度；"

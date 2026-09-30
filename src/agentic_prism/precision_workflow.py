@@ -44,7 +44,11 @@ def render_precision(run,style=None):
     run=Path(run);verify_run(run)
     if style is not None and style not in ('standard','prism_like'):raise ValueError('Unsupported style')
     r=json.loads((run/'results.json').read_text());esc=html.escape
-    body='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>精密度与方差组件</title><style>body{font:16px sans-serif;max-width:1000px;margin:30px auto}pre{white-space:pre-wrap}</style><h1>精密度与方差组件</h1><p>方差组件描述所声明设计的变异；未声明接受限，不作方法验证通过判定。区间是近似的，零边界和校准偏差需一并解释。</p>'
-    body+='<pre>'+esc(json.dumps(r,ensure_ascii=False,indent=2))+'</pre><p><a href="interpretation_facts.json" download="interpretation_facts.json">interpretation_facts.json</a></p></html>'
+    from . import report_shell as shell
+    body=shell.section('details','结果',shell.json_block(r,'完整 results.json',open_=True))
+    body+=shell.section('files','可追溯文件',shell.downloads([('interpretation_facts.json','interpretation_facts.json')]))
+    body=shell.page('精密度与方差组件',eyebrow='AgenticPrism / variance components',heading='精密度与方差组件',
+                    lede='方差组件描述所声明设计的变异；未声明接受限，不作方法验证通过判定。区间是近似的，零边界和校准偏差需一并解释。',
+                    nav=[('details','结果'),('files','可追溯文件')],body=body,footer='AgenticPrism · 数值分析与报告渲染分离')
     (run/'report.html').write_text(body);dump(run/'render_manifest.json',{'scientific_artifacts_changed':False,'report_sha256':sha(run/'report.html')})
     return run/'report.html'

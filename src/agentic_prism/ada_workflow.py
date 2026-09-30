@@ -6,6 +6,7 @@ import importlib.metadata
 import json
 import platform
 import shutil
+import numpy as np
 import pandas as pd
 from . import __version__
 from .workflow import dump, sha, implementation_hash, verify_run
@@ -90,29 +91,39 @@ def render_ada(run, style=None):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     from .report import font_setup
+    from . import plot_style as pstyle
+    from . import report_shell as shell
     font, cjk = font_setup()
-    with plt.rc_context({'font.family':[font]+([cjk] if cjk else [])}):
-        fig, ax = plt.subplots(figsize=(8,4), layout='constrained')
+    token = pstyle.THEMES[style]
+    with plt.rc_context(pstyle.rc(token, font, cjk)):
+        fig, ax = plt.subplots(figsize=(6.4, 3.6), layout='constrained')
         runs = sorted(d.run_id.unique())
-        for i, r in enumerate(runs):
-            rows = d[(d.run_id == r)&(d.used.astype(str).str.lower() == 'true')]
-            ax.scatter([i]*len(rows), rows.normalized_value, alpha=.3, s=10)
+        values = [d[(d.run_id == r)&(d.used.astype(str).str.lower() == 'true')].normalized_value.astype(float).to_numpy() for r in runs]
+        finite = np.concatenate(values) if values else np.array([])
+        span = float(finite.max() - finite.min()) if len(finite) else 1.
+        for i, v in enumerate(values):
+            ax.plot(i + pstyle.swarm_offsets(v, span, .6), v, marker='o', ms=3, linestyle='none', alpha=.55,
+                    mfc=pstyle.color(token, i), mec=pstyle.color(token, i), mew=0)
         if fit['reportable']:
-            ax.axhline(fit['cut_point'], color='black', linestyle='--', label='Cut point'); ax.legend()
+            ax.axhline(fit['cut_point'], color=pstyle.EXCLUDED, linestyle=(0, (4, 2)), lw=1.2, label='Cut point'); ax.legend()
         ax.set_xticks(range(len(runs)), runs)
         ax.set(xlabel='Run', ylabel=f"Analysis response ({fit['scale']})", title=f"ADA {fit['tier']}: {fit['status']}")
-        ax.spines[['top','right']].set_visible(style == 'standard')
         (run/'figures').mkdir(exist_ok=True)
-        for ext in ('svg','png','pdf'):
-            fig.savefig(run/'figures'/f'ada.{ext}', dpi=160)
-        plt.close(fig)
+        pstyle.save(fig, run/'figures'/'ada', token, 300, ('svg', 'png', 'pdf'))
     esc = html.escape
-    svg = (run/'figures/ada.svg').read_text()
-    body = '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>ADA 切点分析</title><style>body{font:16px sans-serif;max-width:1100px;margin:30px auto}pre{white-space:pre-wrap}svg{width:100%;height:auto}</style><h1>ADA 切点分析</h1>'
-    body += '<p>可报告切点：'+esc(str(fit['cut_point']))+'；状态：'+esc(fit['status'])+'</p>'
-    body += '<p>切点用于分析判定，不代表 ADA 发生率、浓度或临床风险。审计切点不能覆盖暂停报告的判定。</p>'+svg
-    body += '<h2>结果、诊断和适用范围</h2><pre>'+esc(json.dumps(result,ensure_ascii=False,indent=2))+'</pre>'
-    body += '<h2>可追溯文件</h2>'+''.join(f'<p><a href="{n}" download="{n}">{n}</a></p>' for n in ('interpretation_facts.json','results.json','analysis_cells.csv','per_run_audit.csv','config.resolved.json','preprocessing_log.json'))+'</html>'
+    status_class = '' if fit['reportable'] else ' warn'
+    summary = (f'<div class="head"><h2>可报告切点</h2><span class="badge{status_class}">{esc(fit["status"])}</span></div>'
+               f'<p class="metric"><strong>{esc(str(fit["cut_point"]))}</strong></p>'
+               '<p>切点用于分析判定，不代表 ADA 发生率、浓度或临床风险。审计切点不能覆盖暂停报告的判定。</p>'
+               + shell.single_figure(run/'figures', 'ada', 'ADA 各运行归一化响应与切点'))
+    files = ('interpretation_facts.json','results.json','analysis_cells.csv','per_run_audit.csv','config.resolved.json','preprocessing_log.json')
+    body = (f'<section id="result" class="card">{summary}</section>'
+            + shell.section('details', '结果、诊断和适用范围', shell.json_block(result, '完整 results.json', open_=True))
+            + shell.section('files', '可追溯文件', shell.downloads([(n, n) for n in files])))
+    body = shell.page('ADA 切点分析', eyebrow='AgenticPrism / ADA cut point', heading='ADA 切点分析',
+                      lede='筛选 / 确证切点来自声明的阴性样本设计；诊断、限制与证据一并呈现。',
+                      nav=[('result', '切点'), ('details', '结果与诊断'), ('files', '可追溯文件')], body=body,
+                      footer=f'AgenticPrism · 图形风格 {esc(style)} · 数值分析与图形渲染分离')
     (run/'report.html').write_text(body)
     dump(run/'render_manifest.json', {'style':style,'scientific_artifacts_changed':False,'report_sha256':sha(run/'report.html')})
     return run/'report.html'

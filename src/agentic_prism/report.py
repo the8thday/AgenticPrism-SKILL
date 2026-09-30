@@ -1,7 +1,6 @@
 """Self-contained HTML and physical-size figures from immutable saved results."""
 from pathlib import Path
 from datetime import datetime, timezone
-import base64
 import html
 import json
 import hashlib
@@ -12,11 +11,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
 from .workflow import verify_run, dump, sha
-
-THEMES = {
-    "prism_like": {"color": "#167c80", "marker": "o", "grid": False, "axes_width": 1., "line_width": 1.5},
-    "standard": {"color": "#355db2", "marker": "o", "grid": True, "axes_width": .8, "line_width": 1.5},
-}
+from . import plot_style as pstyle
+from .plot_style import THEMES  # noqa: F401  (re-exported for the other renderers)
+from .report_shell import CSS, data_uri, style_select, switch_script, theme_figures  # noqa: F401
 STATUS = {"estimated": "可报告的模型估计", "limited": "无法可靠报告精确 KD", "failed": "拟合失败",
           "within_range": "量程内", "below_range": "低于量程", "above_range": "高于量程", "unknown": "未确定"}
 CI_STATUS = {"not_computed": "未计算", "noise_scale_not_estimable": "无法估计噪声尺度",
@@ -40,11 +37,6 @@ def font_setup():
     latin = next((n for n in ("Arial", "DejaVu Sans") if n in names), "DejaVu Sans")
     cjk = next((n for n in ("PingFang SC", "Heiti TC", "Arial Unicode MS", "Noto Sans CJK SC", "WenQuanYi Zen Hei") if n in names), None)
     return latin, cjk
-
-
-def data_uri(path):
-    mime = {".svg": "image/svg+xml", ".png": "image/png", ".pdf": "application/pdf", ".csv": "text/csv", ".json": "application/json", ".txt": "text/plain"}.get(Path(path).suffix, "application/octet-stream")
-    return "data:" + mime + ";base64," + base64.b64encode(Path(path).read_bytes()).decode()
 
 
 def format_num(value, factor=1):
@@ -78,10 +70,7 @@ def render_report(run, style=None):
         pp, rr = pred[pred.curve_id == cid], resid[resid.curve_id == cid]
         key = f"curve-{index + 1:03d}"
         for theme, token in THEMES.items():
-            with plt.rc_context({"font.family": [latin] + ([cjk] if cjk else []), "font.size": 9,
-                                 "axes.labelsize": 11, "axes.titlesize": 12, "axes.linewidth": token["axes_width"],
-                                 "xtick.direction": "out", "ytick.direction": "out", "pdf.fonttype": 42,
-                                 "svg.fonttype": "path", "axes.unicode_minus": False}):
+            with plt.rc_context(pstyle.rc(token, latin, cjk)):
                 fig = plt.figure(figsize=(width, height), layout="constrained")
                 gs = fig.add_gridspec(2, 2, width_ratios=[1, 5], height_ratios=[2, 1])
                 ax0, ax = fig.add_subplot(gs[0, 0]), fig.add_subplot(gs[0, 1])
@@ -93,7 +82,7 @@ def render_report(run, style=None):
                 for axis, iszero in ((ax0, True), (ax, False)):
                     subset = good[good.concentration_M.eq(0) if iszero else good.concentration_M.gt(0)]
                     x = np.zeros(len(subset)) if iszero else subset.concentration_M * 1e9
-                    axis.plot(x, subset.response, token["marker"], color=token["color"], ms=4.5, alpha=.75, label="Observed")
+                    axis.plot(x, subset.response, alpha=.85, label="Observed", **pstyle.point_style(token, 0, 4.5))
                     if len(subset):
                         agg = subset.groupby("concentration_M").response.agg(["mean", "std", "count"])
                         agg = agg[agg["count"] > 1]
@@ -102,14 +91,13 @@ def render_report(run, style=None):
                             axis.errorbar(xx, agg["mean"], yerr=agg["std"], fmt="none", color="black", capsize=3, lw=1)
                     excluded = g[g.exclude & (g.concentration_M.eq(0) if iszero else g.concentration_M.gt(0))]
                     if len(excluded):
-                        axis.scatter(np.zeros(len(excluded)) if iszero else excluded.concentration_M * 1e9, excluded.response, marker="x", color="#b74d46", s=24)
+                        axis.scatter(np.zeros(len(excluded)) if iszero else excluded.concentration_M * 1e9, excluded.response, marker="x", color=pstyle.EXCLUDED, s=24)
                     q = pp[pp.concentration_M.eq(0) if iszero else pp.concentration_M.gt(0)]
                     if len(q):
                         axis.plot(np.zeros(len(q)) if iszero else q.concentration_M * 1e9, q.predicted_response,
-                                  "_" if iszero else "-", color=token["color"], lw=token["line_width"], ms=8)
+                                  "_" if iszero else "-", color=token["color"], lw=token["line_width"], ms=10, mew=token["line_width"])
                     axis.set_ylim(low - pad, high + pad)
                 ax0.set_ylabel(f"Response ({fit['response_unit']})")
-                ax.tick_params(labelleft=False)
                 for axis in (ax0, res0):
                     axis.set_xlim(-.8, .8)
                     axis.set_xticks([0], ["0"])
@@ -118,51 +106,47 @@ def render_report(run, style=None):
                     pos = g.loc[g.concentration_M > 0, "concentration_M"] * 1e9
                     if len(pos):
                         axis.set_xlim(pos.min() / 1.3, pos.max() * 1.3)
+                    # The log panel shares the zero panel's y scale; one visible y axis reads as a broken x axis.
+                    axis.spines["left"].set_visible(False)
+                    axis.tick_params(axis="y", left=False, labelleft=False)
+                ax.tick_params(axis="x", labelbottom=False)
+                ax0.tick_params(axis="x", labelbottom=False)
                 rk = "residual_log10" if fit["residual_scale"] == "log" else "residual_linear"
                 for axis, iszero in ((res0, True), (res, False)):
                     q = rr[rr.concentration_M.eq(0) if iszero else rr.concentration_M.gt(0)]
-                    axis.axhline(0, color="#888888", lw=.8)
+                    axis.axhline(0, color=pstyle.MUTED, lw=.8, ls=(0, (3, 2)))
                     if len(q):
                         used = q.used_in_objective.astype(str).str.lower().eq("true")
-                        for mask, marker in ((used, "o"), (~used, "x")):
-                            qq = q[mask]
-                            axis.plot(np.zeros(len(qq)) if iszero else qq.concentration_M * 1e9, qq[rk], marker, color=token["color"] if marker == "o" else "#999999", ms=4)
+                        qq = q[used]
+                        axis.plot(np.zeros(len(qq)) if iszero else qq.concentration_M * 1e9, qq[rk], **pstyle.residual_style(token))
+                        qq = q[~used]
+                        axis.plot(np.zeros(len(qq)) if iszero else qq.concentration_M * 1e9, qq[rk], "x", color="#999999", ms=4)
                 if len(rr) and rr[rk].notna().any():
                     m = max(float(rr[rk].abs().max()) * 1.2, 1e-8)
                     res0.set_ylim(-m, m)
                     res.set_ylim(-m, m)
-                res.tick_params(labelleft=False)
                 res0.set_ylabel("Residual\n(log10)" if rk == "residual_log10" else "Residual")
                 res.set_xlabel("Concentration (nM)")
                 res0.set_xlabel("Control")
-                for axis in (ax0, ax, res0, res):
-                    axis.spines[["top", "right"]].set_visible(False)
-                    axis.grid(token["grid"], alpha=.18) if token["grid"] else axis.grid(False)
                 title = cid if len(cid) < 30 else cid[:27] + "…"
-                fig.suptitle(title, fontsize=12)
-                for ext in r["export_formats"]:
-                    path = figures / f"{key}__{theme}.{ext}"
-                    fig.savefig(path, dpi=r["png_dpi"], facecolor="white")
+                fig.suptitle(title, fontsize=10.5, fontweight="bold" if token["bold_labels"] else "normal", x=.02, ha="left")
                 figures_meta.append({"curve_id": cid, "theme": theme, "width_mm": r["figure_width_mm"],
                                      "height_mm": r["figure_width_mm"] * 1.2,
                                      "response_ylim": list(ax.get_ylim()), "concentration_xlim_nM": list(ax.get_xlim()),
                                      "n_observations": len(g), "prediction_rows": len(pp), "prediction_sha256": hashlib.sha256(pp.to_csv(index=False).encode()).hexdigest()})
-                plt.close(fig)
+                pstyle.save(fig, figures / f"{key}__{theme}", token, r["png_dpi"], r["export_formats"])
         report_value = format_num(fit["kd_M"], 1e9) if fit["reportable"] else "不报告精确值"
         # Open or out-of-range numerical endpoints remain audit data, not assay limits.
         ci = f"{format_num(fit['ci_low_M'], 1e9)} – {format_num(fit['ci_high_M'], 1e9)}" if fit["reportable"] and fit["ci_status"] == "two_sided" else CI_STATUS.get(fit["ci_status"], fit["ci_status"])
         labels = [DIAG.get(x, "KD 区间：" + CI_STATUS.get(x.removeprefix("interval_"), x)) if x.startswith("interval_") else DIAG.get(x, x) for x in fit["diagnostics"]]
         if fit["status"] == "failed":
             labels.insert(0, "这条曲线没有生成拟合线。")
-        imgs = []
-        for theme in THEMES:
-            links = " ".join(f'<a download="{key}__{theme}.{ext}" href="{data_uri(figures / f"{key}__{theme}.{ext}")}">{ext.upper()}</a>' for ext in r["export_formats"])
-            imgs.append(f'<div class="theme-figure" data-theme="{theme}" {"hidden" if theme != style else ""}><img alt="{html.escape(cid)} 结合曲线与残差 {theme}" src="{data_uri(figures / f"{key}__{theme}.svg")}"><div class="downloads">{links}</div></div>')
+        imgs = theme_figures(figures, key, style, f"{cid} 结合曲线与残差", THEMES, r["export_formats"])
         card = f'''<article id="{key}" class="curve"><div class="curve-head"><h3>{html.escape(cid)}</h3><span class="badge {fit['status']}">{STATUS[fit['status']]}</span></div>
 <p class="metric">{html.escape(fit['interpretation'])} <strong>{report_value}</strong> {'nM' if fit['reportable'] else ''}</p>
 <p>{cfg['uncertainty']['level']:.0%} KD 区间：{html.escape(ci)} · {STATUS[fit['range_status']]}</p>
 <p class="muted">基线 {format_num(fit['baseline'])} · 振幅 {format_num(fit['amplitude'])} {html.escape(fit['response_unit'])}；此版本不计算这两个参数的区间。纳入 {fit['n_included']}/{fit['n_total']} 点。</p>
-{''.join(imgs)}<p class="caption">观测点与模型线；同曲线同浓度若有多个纳入读数，显示其均值 ± SD，拟合仍使用各读数。零浓度独立展示。残差 = 观测 − 预测（log 模式为 log10 之差）；灰叉表示未参与目标函数的残差。红叉为明确排除的观测。不显示曲线置信带。</p>
+{imgs}<p class="caption">观测点与模型线；同曲线同浓度若有多个纳入读数，显示其均值 ± SD，拟合仍使用各读数。零浓度独立展示。残差 = 观测 − 预测（log 模式为 log10 之差）；灰叉表示未参与目标函数的残差。红叉为明确排除的观测。不显示曲线置信带。</p>
 {''.join('<p class="notice">'+html.escape(s)+'</p>' for s in labels)}</article>'''
         cards.append(card)
         records.append(f'<tr><td><a href="#{key}">{html.escape(cid)}</a></td><td>{html.escape(fit["sample_id"])}</td><td>{report_value}</td><td>{html.escape(ci)}</td><td>{STATUS[fit["range_status"]]}</td></tr>')
@@ -172,26 +156,24 @@ def render_report(run, style=None):
         download_names.append("interpretation_facts.json")
     downloads = " ".join(f'<a download="{name}" href="{data_uri(run/name)}">{name}</a>' for name in download_names)
     summary_rows = "".join(f'<tr><td>{html.escape(s["sample_id"])}</td><td>{s["n_experiments"]}</td><td>{format_num(s["geometric_mean_kd_M"], 1e9)}</td><td>{format_num(s["ci_low_M"], 1e9)} – {format_num(s["ci_high_M"], 1e9)}</td><td>{SUMMARY_STATUS.get(s["status"], s["status"])}</td></tr>' for s in results["summaries"])
-    controls = '<label>图形风格 <select id="style"><option value="prism_like">Prism-like</option><option value="standard">标准</option></select></label>' if r["allow_style_switch"] else f'<span>图形风格：{style}</span>'
+    controls = style_select(THEMES, style) if r["allow_style_switch"] else f'<div class="toolbar"><span>图形风格：{html.escape(style)}</span></div>'
     template = '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="data:,"><title>AgenticPrism · 平衡 KD 分析</title>
-<style>
-:root{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;color:#17333a;background:#f3f6f6;line-height:1.65}*{box-sizing:border-box}p,footer,h3{overflow-wrap:anywhere}body{margin:0}header{background:#123c42;color:white;padding:42px max(5vw,20px)}header h1{margin:10px 0;font-size:32px;font-weight:600}header p{max-width:900px;color:#c8dedf}.eyebrow{letter-spacing:.17em;font-size:12px}main{max-width:1200px;margin:auto;padding:28px 22px}nav{display:flex;flex-wrap:wrap;gap:18px;align-items:center}a{color:#14787c;text-decoration:none}header a{color:#b7e6df}section{margin:30px 0}h2{font-size:23px}h3{margin:0;font-size:19px}.panel,.curve{background:white;border:1px solid #dce7e6;border-radius:10px;padding:24px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.curve{scroll-margin-top:20px;min-width:0}.curve-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.badge{font-size:12px;border-radius:4px;padding:4px 8px;background:#e6f3ef;color:#24624e}.limited,.failed{background:#fff1df;color:#885b27}.metric{margin:18px 0 4px}.metric strong{font-size:27px;font-weight:600}.muted,.caption{color:#617277;font-size:12px}.notice{border-left:3px solid #cf9e54;background:#fff9ef;padding:8px 12px;font-size:13px}.theme-figure img{display:block;width:100%;height:auto}.downloads{display:flex;flex-wrap:wrap;gap:12px;font-size:13px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:11px;text-align:left;border-bottom:1px solid #e6ebeb;white-space:nowrap}th{font-weight:600;background:#f4f8f7}select{padding:8px;border:1px solid #bbcece;border-radius:5px;background:white}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}details{margin:16px 0}footer{color:#627a7c;font-size:12px;padding:24px 0}[hidden]{display:none!important}@media(max-width:760px){.grid{grid-template-columns:1fr}main{padding:16px 12px}.panel,.curve{padding:16px}header h1{font-size:27px}}@media print{nav,select,.downloads{display:none}.grid{display:block}.curve{break-inside:avoid;margin-bottom:18px}body{background:white}}
-</style></head><body><header><div class="eyebrow">AGENTICPRISM / EQUILIBRIUM BINDING</div><h1>平衡结合 · KD 分析</h1><p>@@COUNT@@ 条曲线 · @@REPORTABLE@@ 条可报告模型估计。原始观测、模型结果与限制共同呈现。</p><nav><a href="#overview">结果概览</a><a href="#curves">曲线与诊断</a><a href="#methods">方法与来源</a><a href="#downloads">下载与复现</a></nav></header><main>
-<div class="panel"><nav>@@CONTROLS@@<span>切换风格仅改变图形外观；数据、轴范围与拟合结果保持不变。</span></nav></div>
-<section id="overview"><h2>结果概览</h2><div class="panel table-wrap"><table><thead><tr><th>曲线</th><th>样本</th><th>KD / nM</th><th>区间 / nM</th><th>量程</th></tr></thead><tbody>@@ROWS@@</tbody></table></div>
+<style>@@CSS@@</style></head><body><header><div class="eyebrow">AGENTICPRISM / EQUILIBRIUM BINDING</div><h1>平衡结合 · KD 分析</h1><p>@@COUNT@@ 条曲线 · @@REPORTABLE@@ 条可报告模型估计。原始观测、模型结果与限制共同呈现。</p><nav><a href="#overview">结果概览</a><a href="#curves">曲线与诊断</a><a href="#methods">方法与来源</a><a href="#downloads">下载与复现</a></nav></header><main>
+<div class="panel">@@CONTROLS@@</div>
+<section id="overview" class="card"><h2>结果概览</h2><div class="table-wrap"><table><thead><tr><th>曲线</th><th>样本</th><th>KD / nM</th><th>区间 / nM</th><th>量程</th></tr></thead><tbody>@@ROWS@@</tbody></table></div>
 <p class="caption">不可可靠报告的数值仅保留在下载的审计结果中。超出量程不自动构成统计上界或下界。</p>
 <details><summary>独立实验汇总</summary><p>仅在独立实验关系、条件可比性得到确认且全部曲线可报告时汇总：技术重复曲线先在实验内平均 log10(KD)，随后等权汇总各实验。实验间区间为 log 尺度 Student t 区间，不是单曲线参数区间。</p><div class="table-wrap"><table><tr><th>样本</th><th>已标识实验数</th><th>几何均值 / nM</th><th>实验间区间 / nM</th><th>状态</th></tr>@@SUMMARY@@</table></div></details></section>
 <section id="curves"><h2>曲线与诊断</h2><div class="grid">@@CARDS@@</div></section>
 <section id="methods" class="panel"><h2>方法与证据边界</h2><p><b>模型：</b>response = baseline + amplitude × C / (KD + C)。正振幅的单点结合模型；浓度内部单位 M。@@METHOD@@</p><p>@@ASSAY@@</p><p><b>来源：</b>@@SOURCE@@</p><p>固定基线模式的区间以所给基线为条件。profile-F 是指定误差模型下的近似区间，未完成与 Prism 参考项目的数值基准。参数收敛或区间闭合均不证明实验机制正确。</p><p>本报告只分析平衡结合；其他实验类型应选用各自的模块。Prism-like 是本项目的视觉预设。</p><details><summary>完整配置</summary><pre>@@CONFIG@@</pre></details><details><summary>敏感性分析（不替代主分析）</summary><pre>@@SENS@@</pre></details></section>
 <section id="downloads" class="panel"><h2>下载与复现</h2><p>所有下载内容已内嵌；单个 HTML 文件可离线查看和下载。图形下载位于各曲线下，并随当前风格切换。</p><div class="downloads">@@DOWNLOADS@@</div><p class="caption">输入 SHA-256：@@HASH@@</p></section><footer>AgenticPrism @@VERSION@@ · @@FONT@@ · 数值分析与图形渲染分离</footer></main>
-<script>const initial=@@STYLE@@;const select=document.getElementById('style');function setStyle(s){document.querySelectorAll('[data-theme]').forEach(e=>e.hidden=e.dataset.theme!==s);}if(select){select.value=initial;select.addEventListener('change',()=>setStyle(select.value));}setStyle(initial);</script></body></html>'''
+@@SCRIPT@@</body></html>'''
     replacements = {"COUNT": str(len(results["fits"])), "REPORTABLE": str(sum(f["reportable"] for f in results["fits"])),
                     "CONTROLS": controls, "ROWS": "".join(records), "CARDS": "".join(cards), "SUMMARY": summary_rows,
                     "METHOD": html.escape(f"残差尺度 {cfg['fit']['residual_scale']}；权重 {cfg['fit']['weighting']}；基线 {cfg['fit']['baseline_mode']}；KD 区间方法 {cfg['uncertainty']['parameter_ci']}。"),
                     "ASSAY": html.escape(cfg["assay"]["rationale"]), "SOURCE": html.escape(cfg["source"]),
                     "CONFIG": html.escape(json.dumps(cfg, ensure_ascii=False, indent=2)), "SENS": html.escape((run / "sensitivity.csv").read_text()),
                     "DOWNLOADS": downloads, "HASH": manifest["input_sha256"], "VERSION": manifest["package_version"],
-                    "FONT": html.escape(f"图形字体 {latin}; CJK {cjk or 'unavailable (plots use Latin labels)'}"), "STYLE": json.dumps(style)}
+                    "FONT": html.escape(f"图形字体 {latin}; CJK {cjk or 'unavailable (plots use Latin labels)'}"), "SCRIPT": switch_script(style), "CSS": CSS}
     for key, value in replacements.items():
         template = template.replace("@@" + key + "@@", value)
     (run / "report.html").write_text(template)

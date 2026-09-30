@@ -186,6 +186,11 @@ Linux 和 Windows 预期可用，但 CI 尚未实际运行。见 [0.7.1 验证�
 .venv/bin/agentic-prism import-plate --manifest fixtures/plate_import_example/plate_manifest.json --output runs/my-plate-import
 ```
 
+`render` 只根据已保存的结果重绘图形，从不重新拟合。`--style prism_like`（出版风格：坐标轴分离、
+粗体轴标题、Okabe–Ito 色盲友好配色、实心符号，并始终显示原始数据点）与 `--style standard`
+只有外观差异，坐标范围完全相同。两组、多组与秩检验结果可加 `--annotate-significance`，
+按已保存的校正后 p 值画出括号和星号；默认关闭，不做任何新检验。
+
 每次分析使用一个新输出目录，不覆盖旧结果。只改图用 `render`；它会验证结果哈希，
 不重新拟合。曲线拟合报告内嵌图形与下载；ADA、方差组件和方法学验证报告可离线阅读结果，
 下载链接指向同目录文件，请复制整个运行目录以保留下载。

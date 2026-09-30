@@ -17,6 +17,8 @@ def main():
     r = sub.add_parser("render", help="Render saved results, without fitting")
     r.add_argument("--run", required=True)
     r.add_argument("--style", choices=["standard", "prism_like"])
+    r.add_argument("--annotate-significance", action="store_true",
+                   help="Group plots only: draw brackets and stars from saved adjusted p values (no new tests)")
     v = sub.add_parser("verify", help="Verify analysis artifact hashes")
     v.add_argument("--run", required=True)
     imp = sub.add_parser("import-octet", help="Import verified Octet Results.txt layout with explicit metadata")
@@ -99,7 +101,7 @@ def main():
                 print(render_dose(Path(args.run), args.style))
             elif cfg["analysis_type"] in ("elisa_quantification", "group_comparison", "multi_group_comparison", "nonparametric", "mmrm", "repeated_measures", "time_to_event", "tumor_growth"):
                 from .simple_report import render_simple
-                print(render_simple(Path(args.run), args.style))
+                print(render_simple(Path(args.run), args.style, args.annotate_significance))
             else:
                 from .report import render_report
                 print(render_report(Path(args.run), args.style))

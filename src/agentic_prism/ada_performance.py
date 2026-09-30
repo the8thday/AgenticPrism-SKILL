@@ -268,36 +268,44 @@ def render_ada_performance(run, style=None):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     from .report import font_setup
+    from . import plot_style as pstyle
+    from . import report_shell as shell
     font, cjk = font_setup()
-    with plt.rc_context({'font.family': [font]+([cjk] if cjk else [])}):
-        fig, ax = plt.subplots(figsize=(8, 4), layout='constrained')
+    token = pstyle.THEMES[style]
+    with plt.rc_context(pstyle.rc(token, font, cjk)):
+        fig, ax = plt.subplots(figsize=(6.4, 3.8), layout='constrained')
         if cfg['analysis_type'] == 'ada_sensitivity':
-            for run_id, g in d.groupby('run_id'):
+            for i, (run_id, g) in enumerate(d.groupby('run_id')):
                 m = g.groupby('pc_concentration').decision.mean()
-                ax.plot(m.index, m.values, 'o-', alpha=.6, label=str(run_id))
+                marks = pstyle.point_style(token, i, 4.5); marks.pop('linestyle')
+                ax.plot(m.index, m.values, '-', color=pstyle.color(token, i), lw=1.2, alpha=.85, label=str(run_id), **marks)
             ax.set(xlabel=f"PC concentration ({cfg['assay']['pc_unit']})", title='ADA sensitivity')
         else:
-            for (pc, run_id), g in d.groupby(['pc_concentration', 'run_id']):
+            for i, ((pc, run_id), g) in enumerate(d.groupby(['pc_concentration', 'run_id'])):
                 m = g[g.drug_concentration > 0].groupby('drug_concentration').decision.mean()
-                ax.plot(m.index, m.values, 'o-', alpha=.6, label=f'PC {pc} / {run_id}')
+                marks = pstyle.point_style(token, i, 4.5); marks.pop('linestyle')
+                ax.plot(m.index, m.values, '-', color=pstyle.color(token, i), lw=1.2, alpha=.85, label=f'PC {pc} / {run_id}', **marks)
             ax.set(xlabel=f"Drug concentration ({cfg['assay']['drug_unit']})", title='ADA drug tolerance')
-        ax.axhline(cfg['cut_point']['value'], color='black', linestyle='--', label='Cut point')
+        ax.axhline(cfg['cut_point']['value'], color=pstyle.EXCLUDED, linestyle=(0, (4, 2)), lw=1.2, label='Cut point')
         ax.set_xscale('log'); ax.set_ylabel(f"Decision value ({cfg['cut_point']['deployment']})")
         ax.legend(fontsize=7, ncol=2)
-        ax.spines[['top', 'right']].set_visible(style == 'standard')
         (run/'figures').mkdir(exist_ok=True)
-        for ext in ('svg', 'png', 'pdf'):
-            fig.savefig(run/'figures'/f'ada_performance.{ext}', dpi=160)
-        plt.close(fig)
+        pstyle.save(fig, run/'figures'/'ada_performance', token, 300, ('svg', 'png', 'pdf'))
     esc = html.escape
     title = 'ADA 灵敏度' if cfg['analysis_type'] == 'ada_sensitivity' else 'ADA 药物耐受'
-    body = f'<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>{title}</title><style>body{{font:16px sans-serif;max-width:1100px;margin:30px auto}}pre{{white-space:pre-wrap}}svg{{width:100%;height:auto}}</style><h1>{title}</h1>'
-    body += f'<p>切点 {esc(str(cfg["cut_point"]["value"]))}（{esc(cfg["cut_point"]["deployment"])}），来源：{esc(cfg["cut_point"]["source"])}。阳性对照结果不代表患者体内抗体的灵敏度。</p>'
+    intro = (f'<p>切点 {esc(str(cfg["cut_point"]["value"]))}（{esc(cfg["cut_point"]["deployment"])}），来源：{esc(cfg["cut_point"]["source"])}。'
+             '阳性对照结果不代表患者体内抗体的灵敏度。</p>')
     if r['withholding_reasons']:
-        body += '<h2>暂不报告的原因</h2><ul>'+''.join(f'<li>{esc(x)}</li>' for x in r['withholding_reasons'])+'</ul>'
-    body += (run/'figures/ada_performance.svg').read_text()
-    body += '<h2>结果</h2><pre>'+esc(json.dumps(r, ensure_ascii=False, indent=2))+'</pre>'
-    body += ''.join(f'<p><a href="{n}" download="{n}">{n}</a></p>' for n in ('interpretation_facts.json', 'results.json', 'config.resolved.json', 'input.csv'))+'</html>'
+        intro += '<h2>暂不报告的原因</h2><ul>'+''.join(f'<li>{esc(x)}</li>' for x in r['withholding_reasons'])+'</ul>'
+    files = ('interpretation_facts.json', 'results.json', 'config.resolved.json', 'input.csv')
+    body = (f'<section id="result" class="card"><h2>{title}</h2>{intro}'
+            + shell.single_figure(run/'figures', 'ada_performance', title) + '</section>'
+            + shell.section('details', '结果', shell.json_block(r, '完整 results.json', open_=True))
+            + shell.section('files', '可追溯文件', shell.downloads([(n, n) for n in files])))
+    body = shell.page(title, eyebrow='AgenticPrism / ' + cfg['analysis_type'].replace('_', ' '), heading=title,
+                      lede='阳性对照稀释系列按声明切点判定；图中每条线为一次运行（或 PC 水平 × 运行）。',
+                      nav=[('result', '结果'), ('details', '详细结果'), ('files', '可追溯文件')], body=body,
+                      footer=f'AgenticPrism · 图形风格 {esc(style)} · 数值分析与图形渲染分离')
     (run/'report.html').write_text(body)
     dump(run/'render_manifest.json', {'style': style, 'scientific_artifacts_changed': False, 'report_sha256': sha(run/'report.html')})
     return run/'report.html'

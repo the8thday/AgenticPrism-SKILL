@@ -64,22 +64,27 @@ def analyze_extension(config_path,output,render=True):
  return out
 
 
-def render_extension(run,style=None):
+def render_extension(run,style=None,extra_figures=''):
+ from . import report_shell as shell
  run=Path(run);verify_run(run);r=json.loads((run/'results.json').read_text());cfg=json.loads((run/'config.resolved.json').read_text());style=style or cfg['report']['plot_style']
  if style not in ('prism_like','standard'):raise ValueError('Unsupported style')
- def show(v):
-  if isinstance(v,dict):return '<table>'+''.join('<tr><th>'+html.escape(str(k))+'</th><td>'+show(x)+'</td></tr>' for k,x in v.items())+'</table>'
-  if isinstance(v,list):return '<ol>'+''.join('<li>'+show(x)+'</li>' for x in v)+'</ol>'
-  return html.escape(str(v))
- body='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>分析结果</title><style>body{font:16px sans-serif;max-width:1100px;margin:32px auto;padding:16px}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:6px;text-align:left;vertical-align:top}li{margin:6px}h1{color:#24445c}</style>'
- body+='<h1>'+html.escape(r['analysis_type'])+'</h1><h2>主要结果</h2>'+show(r['primary'])+'<h2>必须说明</h2>'+show(r['must_mention'])+'<h2>详细结果、诊断与证据</h2>'+show({k:v for k,v in r.items() if k not in ('primary','must_mention')})
+ show=shell.value_html
+ names=[]
  if r['analysis_type']=='epitope_binning':
   from .epitope_plots import render
-  for name in render(run,r,style):
-   body+=f'<img src="figures/{name}.svg" style="max-width:100%">'+''.join(f'<a href="figures/{name}.{ext}" download>{ext}</a> ' for ext in ('svg','pdf','png'))
+  names=render(run,r,style)
  if r['analysis_type'] in ('drug_combination','hts_qc'):
   from .pharmacology_plots import render
-  for name in render(run,r,style):
-   body+=f'<img src="figures/{name}.svg" style="max-width:100%">'+''.join(f'<a href="figures/{name}.{ext}" download>{ext}</a> ' for ext in ('svg','pdf','png'))
- body+=''.join(f'<p><a href="{n}" download="{n}">{n}</a></p>' for n in ('results.json','interpretation_facts.json','input.csv','config.resolved.json'))+'</html>'
- (run/'report.html').write_text(body);dump(run/'render_manifest.json',{'style':style,'scientific_artifacts_changed':False,'report_sha256':sha(run/'report.html')});return run/'report.html'
+  names=render(run,r,style)
+ figures=''.join(shell.single_figure(run/'figures',name,name.replace('_',' ')) for name in names)+extra_figures
+ title=r['analysis_type'].replace('_',' ')
+ body=shell.section('primary','主要结果',show(r['primary']))
+ body+=shell.section('must','必须说明','<ul class="must">'+''.join('<li>'+html.escape(str(m))+'</li>' for m in r['must_mention'])+'</ul>')
+ if figures:body+=shell.section('figures','图形',figures)
+ body+=shell.section('details','详细结果、诊断与证据','<details><summary>展开全部字段</summary>'+show({k:v for k,v in r.items() if k not in ('primary','must_mention')})+'</details>')
+ body+=shell.section('files','可追溯文件',shell.downloads([(n,n) for n in ('results.json','interpretation_facts.json','input.csv','config.resolved.json')]))
+ nav=[('primary','主要结果'),('must','必须说明')]+([('figures','图形')] if figures else [])+[('details','详细结果'),('files','可追溯文件')]
+ page=shell.page('分析结果 · '+title,eyebrow='AgenticPrism / '+title,heading=title[:1].upper()+title[1:],
+                 lede='保存结果的只读呈现；声明的读数、响应尺度、独立性与设计范围限制同样适用。',nav=nav,body=body,
+                 footer=f'AgenticPrism · 图形风格 {html.escape(style)} · 数值分析与图形渲染分离')
+ (run/'report.html').write_text(page);dump(run/'render_manifest.json',{'style':style,'scientific_artifacts_changed':False,'report_sha256':sha(run/'report.html')});return run/'report.html'

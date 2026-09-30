@@ -1,9 +1,8 @@
 """Render saved time-to-event artifacts (Kaplan-Meier with number-at-risk table); never refit."""
 import numpy as np
 import matplotlib.pyplot as plt
+from . import plot_style as pstyle
 from .report import THEMES
-
-COLORS = ("#1f6f78", "#b5651d", "#6a4c93", "#2a9d8f", "#c1121f", "#606c38", "#3a86ff", "#8d99ae")
 
 
 def _step(curve, key):
@@ -19,15 +18,15 @@ def survival_sections(result, cfg, d, figures, font, cjk):
     horizon = max(c["time"] for c in result["km_curves"])
     ticks = np.linspace(0, horizon, 6)
     for theme, token in THEMES.items():
-        with plt.rc_context({"font.family": [font] + ([cjk] if cjk else []), "font.size": 9}):
-            fig = plt.figure(figsize=(7.4, 5.4), layout="constrained")
+        with plt.rc_context(pstyle.rc(token, font, cjk)):
+            fig = plt.figure(figsize=(6.2, 4.9), layout="constrained")
             grid = fig.add_gridspec(2, 1, height_ratios=[4, 1.1 + .18 * len(arms)])
             ax, table_ax = fig.add_subplot(grid[0]), fig.add_subplot(grid[1])
             for i, arm in enumerate(arms):
                 curve = [c for c in result["km_curves"] if c["arm"] == arm]
-                color = COLORS[i % len(COLORS)]
+                color = pstyle.color(token, i)
                 t, s = _step(curve, "survival")
-                ax.step(t, s, where="post", color=color, lw=1.8, label=arm)
+                ax.step(t, s, where="post", color=color, lw=token["line_width"], label=arm)
                 if cfg["report"]["show_confidence_bands"]:
                     _, lo = _step(curve, "lower")
                     _, hi = _step(curve, "upper")
@@ -39,24 +38,20 @@ def survival_sections(result, cfg, d, figures, font, cjk):
             ax.set_xticks(ticks)
             ax.set_ylabel("Survival probability")
             ax.set_xlabel(f"Time since {study['time_origin']} ({study['time_unit']})")
-            ax.legend(frameon=False, loc="lower left")
-            if token["grid"]:
-                ax.grid(True, alpha=.2)
+            ax.legend(loc="lower left")
             table_ax.axis("off")
             table_ax.set_xlim(ax.get_xlim())
             table_ax.set_ylim(-.5, len(arms) + .3)
-            table_ax.text(0, len(arms), "Number at risk", fontsize=8, va="center")
+            table_ax.text(0, len(arms), "Number at risk", fontsize=8, va="center", fontweight="bold" if token["bold_labels"] else "normal")
             for i, arm in enumerate(arms):
                 sub = d[(d.arm == arm) & (d.exclude.astype(str).str.lower() != "true")]
                 times = sub.time.astype(float).to_numpy()
                 table_ax.text(-.02, len(arms) - 1 - i, arm, transform=table_ax.get_yaxis_transform(), ha="right", va="center",
-                              fontsize=8, color=COLORS[i % len(COLORS)])
+                              fontsize=8, color=pstyle.color(token, i))
                 for tick in ticks:
                     table_ax.text(tick, len(arms) - 1 - i, str(int((times >= tick).sum())), ha="center", va="center",
-                                  fontsize=8, color=COLORS[i % len(COLORS)])
-            for ext in ("svg", "pdf", "png"):
-                fig.savefig(figures / f"survival-001__{theme}.{ext}", dpi=220)
-            plt.close(fig)
+                                  fontsize=8, color=pstyle.color(token, i))
+            pstyle.save(fig, figures / f"survival-001__{theme}", token, 300)
     details = (f"终点：{study['endpoint']}；时间零点：{study['time_origin']}；删失：{study['censoring_rationale']}。"
                f"Kaplan–Meier 估计，{q['confidence_level']:.0%} 逐点置信限按 {q['conf_type']} 变换（Greenwood 方差）；"
                "中位生存时间及其区间取曲线（及其置信限）首次降至 0.5 的时间，未达到时标为 not reached。"

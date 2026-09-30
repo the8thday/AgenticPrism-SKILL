@@ -105,25 +105,26 @@ def render_affinity(run,style=None):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
+    from .report import font_setup
+    from . import plot_style as pstyle
+    from . import report_shell as shell
+    token=pstyle.THEMES[style]
     (run/'figures').mkdir(exist_ok=True); pictures=[]
     for i,f in enumerate(r['fits']):
-        fig,ax=plt.subplots(figsize=(7,4),layout='constrained')
-        for cid,series in dict.fromkeys((p['curve_id'],p.get('series','binding')) for p in f['predictions']):
-            ps=[p for p in f['predictions'] if p['curve_id']==cid and p.get('series','binding')==series]; xx=np.array([p['concentration_M'] for p in ps]); order=np.argsort(xx)
-            ax.scatter(xx,[p['response'] for p in ps],label=cid+' / '+series,s=14)
-            # Draw saved predictions only, never refit during rendering.
-            ax.plot(xx[order],np.array([p['predicted_response'] for p in ps])[order],alpha=.6)
-        ax.set_xscale('symlog',linthresh=max(f.get('min_positive_M',1e-15),1e-30))
-        ax.set(xlabel='Total ligand (M)',ylabel=f['response_unit'],title=f['curve_id']+' — '+f['interpretation']+' ('+f['status']+')')
-        ax.spines[['top','right']].set_visible(style=='standard')
-        if f['predictions']: ax.legend(fontsize=7)
-        paths=[]
-        for ext in ('svg','pdf','png'):
-            p=run/'figures'/f'affinity-{i+1:03d}__{style}.{ext}'; fig.savefig(p,dpi=cfg['report']['png_dpi']); paths.append(p)
-        plt.close(fig); pictures.append(paths[0].read_text())
+        with plt.rc_context(pstyle.rc(token,*font_setup())):
+            fig,ax=plt.subplots(figsize=(6.2,3.9),layout='constrained')
+            for j,(cid,series) in enumerate(dict.fromkeys((p['curve_id'],p.get('series','binding')) for p in f['predictions'])):
+                ps=[p for p in f['predictions'] if p['curve_id']==cid and p.get('series','binding')==series]; xx=np.array([p['concentration_M'] for p in ps]); order=np.argsort(xx)
+                ax.plot(xx,[p['response'] for p in ps],label=cid+' / '+series,**pstyle.point_style(token,j,4.5))
+                # Draw saved predictions only, never refit during rendering.
+                ax.plot(xx[order],np.array([p['predicted_response'] for p in ps])[order],color=pstyle.color(token,j),lw=token['line_width'],alpha=.9)
+            ax.set_xscale('symlog',linthresh=max(f.get('min_positive_M',1e-15),1e-30))
+            ax.set(xlabel='Total ligand (M)',ylabel=f['response_unit'],title=f['curve_id']+' — '+f['interpretation']+' ('+f['status']+')')
+            if f['predictions']: ax.legend(fontsize=7)
+            pstyle.save(fig,run/'figures'/f'affinity-{i+1:03d}__{style}',token,cfg['report']['png_dpi'])
+        pictures.append(shell.single_figure(run/'figures',f'affinity-{i+1:03d}__{style}',f['curve_id']))
     label='细胞结合：表观 KD' if cfg['analysis_type']=='cell_binding' else '平衡结合亲和力'
-    page='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>'+label+'</title><style>body{font:16px system-ui;max-width:1100px;margin:40px auto}pre{white-space:pre-wrap}svg{max-width:100%;height:auto}table{border-collapse:collapse;font-size:14px;display:block;overflow-x:auto}td,th{border:1px solid #ccc;padding:4px 6px;text-align:left;vertical-align:top}</style><h1>'+label+'</h1>'
-    page+='<h2>必须披露</h2><ul>'+''.join('<li>'+html.escape(v)+'</li>' for v in facts['must_mention'])+'</ul>'
+    page='<section id="must" class="card"><h2>必须披露</h2><ul class="must">'+''.join('<li>'+html.escape(v)+'</li>' for v in facts['must_mention'])+'</ul></section>'
     def molar(v): return '—' if v is None else f'{v:.3g} M'
     head=['曲线','状态','解释','点估计（仅可报告时）','95% 区间','可引用上界','区间状态','Pt/KD','诊断','设计提示']
     body=''
@@ -134,12 +135,17 @@ def render_affinity(run,style=None):
         cells=[v['curve_id'],v['status'],v['interpretation'],molar(value),ci,molar(v['supported_upper_bound_M']),v['ci_status'],ratio,
                ', '.join(v['diagnostics']) or '—',', '.join(w['code'] for w in v.get('design_warnings',[])) or '—']
         body+='<tr>'+''.join('<td>'+html.escape(str(c))+'</td>' for c in cells)+'</tr>'
-    page+=('<h2>可报告结果与未通过项目</h2><p>未达到可报告状态的曲线不显示点估计和区间；优化器最优值仅在 results.json 中作审计用途。</p>'
-           '<table><tr>'+''.join('<th>'+h+'</th>' for h in head)+'</tr>'+body+'</table>'
-           '<details><summary>interpretation_facts.json 原文</summary><pre>'+html.escape(json.dumps(facts['primary'],ensure_ascii=False,indent=2))+'</pre></details>'+''.join(pictures))
-    page+='<h2>独立实验汇总</h2><pre>'+html.escape(json.dumps(r['summaries'],ensure_ascii=False,indent=2))+'</pre><h2>配置与证据</h2><pre>'+html.escape(json.dumps({'config':cfg,'evidence':r['validation_evidence']},ensure_ascii=False,indent=2))+'</pre></html>'
-    from .report import data_uri
-    page=page.replace('</html>', '<h2>下载与复现</h2>'+ ' '.join(f'<a download="{p.name}" href="{data_uri(p)}">{p.name}</a>' for p in sorted(run.iterdir()) if p.name in verify_run(run)['scientific_artifacts_sha256'])+'</html>')
+    page+=('<section id="results" class="card"><h2>可报告结果与未通过项目</h2><p>未达到可报告状态的曲线不显示点估计和区间；优化器最优值仅在 results.json 中作审计用途。</p>'
+           '<div class="table-wrap"><table><tr>'+''.join('<th>'+h+'</th>' for h in head)+'</tr>'+body+'</table></div>'
+           +shell.json_block(facts['primary'],'interpretation_facts.json 原文')+'</section>'
+           +shell.section('figures','图形',''.join(pictures)))
+    page+=shell.section('summary','独立实验汇总',shell.json_block(r['summaries']))
+    page+=shell.section('config','配置与证据',shell.json_block({'config':cfg,'evidence':r['validation_evidence']},'完整配置与验证证据'))
+    page+=shell.section('downloads','下载与复现',shell.downloads([(p.name,shell.data_uri(p)) for p in sorted(run.iterdir()) if p.name in verify_run(run)['scientific_artifacts_sha256']]))
+    page=shell.page(label,eyebrow='AgenticPrism / '+cfg['analysis_type'].replace('_',' '),heading=label,
+                    lede='结合模型、可报告状态与限制共同呈现；未通过项目只保留审计值。',
+                    nav=[('must','必须披露'),('results','结果'),('figures','图形'),('summary','汇总'),('config','配置'),('downloads','下载')],body=page,
+                    footer=f'AgenticPrism · 图形风格 {html.escape(style)} · 数值分析与图形渲染分离')
     (run/'report.html').write_text(page)
     dump(run/'render_manifest.json',{'style':style,'scientific_results_unchanged':True,'report_sha256':sha(run/'report.html')})
     return run/'report.html'
