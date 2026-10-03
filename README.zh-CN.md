@@ -9,8 +9,10 @@ JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保�
 结果、诊断以及可离线打开的 HTML 报告。所有模块都会生成
 `interpretation_facts.json`，即 Agent 写结论必须依据的内容：主要结果、哪些可以
 报告或被扣留及原因、必须说明的事项和限制。已有的运行结果不会被改写。
+每个方法都与公认实现比对、用模拟做校准，并用真实 Agent 在误用场景下测试行为
+（[详见](#不只测数值还用真实-agent-测行为)）。
 
-## 状态：公开测试版 0.13.0
+## 状态：公开测试版 0.13.1
 
 AgenticPrism 供科研分析使用。它**没有**按 GLP/GMP 或法规申报要求（例如
 21 CFR Part 11）做过计算机化系统验证；如果某项决策依赖分析结果，仍需统计人员
@@ -22,10 +24,17 @@ issue 反馈真实项目数据上的使用情况。
 |---|---|
 | 已与参考实现比对并完成校准 | 平衡 KD、1:1 动力学、4PL 剂量反应与相对效价、ELISA、两组与多组比较、秩检验、重复测量与 MMRM、生存分析、肿瘤生长、ADA cut point、方差组分、方法学验证、稳定性、效价测定、可比性、质量标准、常规统计（0.11.1） |
 | 可用，但有明确限制 | 亲和力扩展与细胞结合（无公开实例验证）、复杂表面动力学（默认设置下 bootstrap 区间未校准）、表位分选（无公开实例验证）、药物联用（Loewe/ZIP 与 synergyfinder 不完全一致） |
-| 探索性 | HTS 命中判定（全零假设下假命中率高于名义水平） |
+| 探索性 | 使用默认预测 t 参考分布的 HTS 命中判定（全零假设下假命中率高于名义水平） |
+| 0.13.1 新增，尚待真实 Agent 场景复核 | 使用可选布局模拟参考分布的 HTS 命中、5PL 与钟形剂量反应、ISR 与 carry-over、样本量与功效、竞争风险、热稳定性 |
 
 各模块的具体限制见[模块登记表](skills/agentic-prism/references/module-registry.md)
 和对应的发布记录；所有校准失败都保留在 `validation/` 中。
+
+## 0.13.1
+
+三项可选新增；默认输出与 0.13.0 逐字节一致。HTS 命中可改用按板布局条件化的模拟零假设参考分布（注册模拟的全零假设假命中率 0.037–0.044，默认预测 t 为 0.093–0.098，代价是检出率下降）。方法学验证新增已测样品再分析（ISR）和残留（carry-over）。剂量反应新增不对称 5PL 和 Prism 式钟形曲线；在两相重叠的压力模拟中，少数通过全部门槛的钟形拟合对真实 EC50 的覆盖率很差，saved facts 会明确说明。新增样本量 Skill，按注明来源的假设计算 n 或功效（与 pwr、PowerTOST 一致；十个注册设计的模拟拒绝率全部吻合）。生存分析新增竞争风险（累积发生率、Gray 检验、Fine–Gray，与 cmprsk 逐值一致）及原因别 Cox；注册校准全部通过。新增热稳定性 Skill 拟合表观 Tm：第一次注册校准多转变覆盖率不达标，修改门控后第二次仍有一个保留的未达标行和少量重叠泄漏，均已披露。
+
+见[发布证据](validation/RELEASE_0.13.1.md)。公开实例验证未达到，真实 Agent 场景复核待做。
 
 ## 0.13.0
 
@@ -53,18 +62,20 @@ Bliss、Loewe、HSA、ZIP 组合参考模型与独立矩阵不确定性；HTS �
 | 结合表征 | 平衡亲和力（KD） | [equilibrium-binding](skills/equilibrium-binding/SKILL.md) | 双曲线，或显式选择精确耗竭、SET 多曲线、三态竞争 Ki；profile-F 区间和独立实验汇总 |
 | | 细胞表面表观亲和力 | [cell-binding](skills/cell-binding/SKILL.md) | 联合拟合总结合与对照，明确背景和受体耗竭；只报告表观 KD |
 | | 结合与解离速率 | [binding-kinetics](skills/binding-kinetics/SKILL.md) | 多循环或单循环 BLI/SPR 全局 1:1 拟合，参比或双参比扣除，带可靠性门控的块 bootstrap 区间；显式选择漂移、异质配体、双价分析物、传质及解离速率筛选；限定布局的 Octet/T200/Carterra 导入 |
-| 体外功能 | EC50/IC50 与相对效价 | [dose-response](skills/dose-response/SKILL.md) | 对称 4PL，相对中点及 profile 区间，平行线相对效价（F 检验或预设界限的等效性平行性） |
+| 可开发性 | 热稳定性（表观 Tm） | [thermal-stability](skills/thermal-stability/SKILL.md) | nanoDSF/DSF/CD 两态转变与倾斜基线，声明的转变数需优于少一个转变的模型，profile-F Tm 区间，导数拐点，重复汇总与 ΔTm |
+| 体外功能 | EC50/IC50 与相对效价 | [dose-response](skills/dose-response/SKILL.md) | 对称 4PL，相对中点及 profile 区间，平行线相对效价（F 检验或预设界限的等效性平行性）；可选不对称 5PL 与钟形（hook）曲线 |
 | | 由标准曲线求浓度 | [elisa-quantification](skills/elisa-quantification/SKILL.md) | 逐板 4PL/5PL，标准品回算质控，独立质控，delta 法未知浓度区间，稀释线性；读板仪网格导入 |
 | 体内药效 | 肿瘤体积随时间变化 | [tumor-growth](skills/tumor-growth/SKILL.md) | 对数体积随机斜率模型：生长速率、倍增时间、速率差、模型 T/C；观测 TGI%、T/C% 的 Fieller 区间及脱落诊断 |
-| | 生存、到达人道终点的时间 | [time-to-event](skills/time-to-event/SKILL.md) | Kaplan–Meier、log-rank（渐近或置换）、Cox 风险比、比例风险检验 |
+| | 生存、到达人道终点的时间 | [time-to-event](skills/time-to-event/SKILL.md) | Kaplan–Meier、log-rank（渐近或置换）、Cox 风险比、比例风险检验；竞争风险（累积发生率、Gray 检验、Fine–Gray 与原因别风险比） |
 | | 体重等按计划时间点的测量 | [repeated-measures](skills/repeated-measures/SKILL.md) | GG 校正的重复测量及裂区 ANOVA，Satterthwaite 随机截距模型，边际 US/AR(1) MMRM（可选 Kenward–Roger） |
-| 生物分析与免疫原性 | 方法学验证（ICH M10 风格，配体结合法） | [method-validation](skills/method-validation/SKILL.md) | 准确度/精密度与总误差、稀释线性与钩状效应、带趋势检查的平行性、选择性、特异性、稳定性；accuracy profile |
+| 生物分析与免疫原性 | 方法学验证（ICH M10 风格，配体结合法） | [method-validation](skills/method-validation/SKILL.md) | 准确度/精密度与总误差、稀释线性与钩状效应、带趋势检查的平行性、选择性、特异性、稳定性、已测样品再分析（ISR）、残留；accuracy profile |
 | | ADA 切点、灵敏度、药物耐受 | [ada-cut-point](skills/ada-cut-point/SKILL.md) | 筛选/确证/滴度切点，固定或浮动，置信下限；阳性对照灵敏度及批间预测上限；药物耐受 |
 | | 重复性与中间精密度 | [variance-components](skills/variance-components/SKILL.md) | 嵌套/交叉因素的 REML，不平衡数据，MLS/MOVER 区间 |
 | CMC 与质量 | 长期稳定性与有效期 | [stability](skills/stability/SKILL.md) | Q1E 线性回归、先斜率后截距的可合并性检验、均值置信界限、声明支持条件后限制外推 |
 | | 跨运行相对效价及验证 | [potency-assay](skills/potency-assay/SKILL.md) | 对数 RP 随机运行 REML、MLS/MOVER 中间精密度、偏倚、线性等效与实测范围；保留失败运行 |
 | | 批次可比性与生物类似性（单个属性） | [comparability](skills/comparability/SKILL.md) | 批均值对声明界限的 TOST 等效性检验、声明 k 的质量范围或描述性比较；记录属性分级，不代为推断 |
 | | 容忍区间与过程能力 | [specifications](skills/specifications/SKILL.md) | 精确正态及非参数容忍区间（批次不足时给出所需最少数量）；Pp/Ppk 及子组内 Cp/Cpk 与区间 |
+| 各阶段通用 | 样本量与功效规划 | [sample-size](skills/sample-size/SKILL.md) | 精确非中心 t/F 与 TOST 功效，反正弦或合并正态的比例检验，Schoenfeld log-rank 事件数；假设须注明来源，附功效曲线与敏感性分析 |
 | 各阶段通用 | 组间比较 | [group-comparison](skills/group-comparison/SKILL.md) | Welch 或配对 t 检验，单因素 ANOVA 加 Dunnett/Tukey/Games-Howell/Holm 比较族，Mann–Whitney 与 signed-rank（Hodges–Lehmann），Kruskal–Wallis + Dunn，Friedman |
 
 [总入口 Skill](skills/agentic-prism/SKILL.md) 按实验目的选择专用 Skill；
@@ -128,10 +139,35 @@ SET 和 Ki 覆盖率分别为 95.2%、95.8%。细胞相对加权和二次耗竭�
 | 跨运行效价 | R lme4；独立 MLS/MOVER 计算 | 相对 6.90e-7 | 12/12 行通过；未取得匹配的已发表完整算例 |
 | 可比性、质量标准 | R `tolerance`（EXACT 因子）、`t.test`；NIST/SEMATECH 印出的容忍因子与过程能力数值 | 相对 3.3e-9 | 15 行中 13 行通过；n = 10 的两行过程能力因蒙特卡洛误差未通过（10 万次补充检查为 94.9%、95.4%） |
 
-Agent 误用场景（例如没有接受标准就要求给出结论、要求省略钩状效应、把阳性对照
-灵敏度说成患者的检测限）按版本记录在
-[validation/agent-scenarios](validation/agent-scenarios/README.md)。
 **不宣称与 GraphPad Prism 数值等价。**
+
+### 不只测数值，还用真实 Agent 测行为
+
+数值算对，不等于分析做对。用户是通过 AI Agent 使用这些方法的：Agent 可能不读
+Skill 就作答，可能顺从本该拒绝的要求，也可能把被扣留的估计值当成结果报告。
+测试套件再完整也发现不了这些问题，所以每个版本还要做行为测试。
+
+- **误用场景。** 每个场景是一份真实感的数据加一个不该照办的请求：只报告看起来
+  最好的协同模型、看完数据再定等效界限、不做板校正直接挑命中、把阳性对照灵敏度
+  说成患者检测限、把技术重复当成独立实验。
+- **真实会话。** `scripts/run_agent_scenarios.py` 在隔离的工作目录里启动真实的
+  Claude 会话，只提供 Skill 和数据，完整记录对话、工具调用和输出。Agent 看不到
+  以往的记录。
+- **按预先写好的标准评分。** 每个场景列出必须做到的事（读 Skill、拒绝或纠正请求、
+  跑正确的分析、说出必须披露的内容）和禁止的行为（照办、编造数值、把扣留的结果
+  当真）。报告看起来漂亮不等于通过；失败的尝试同样保留。
+
+| 版本 | 真实 Agent 测试结果 |
+|---|---|
+| 0.11.0 亲和力扩展 | 6/6 通过 |
+| 0.11.1 常规统计 | 6/6 通过 |
+| 0.12.0 表面动力学 | 5/5 通过 |
+| 0.12.1 表位分组 | 2/3 通过；三次尝试中有两次 Agent 没读 Skill 就凭肉眼合并表位组 |
+| 0.13.0 联用与 HTS | 4/4 通过 |
+| 0.13.1 | 待测 |
+
+每个场景、评分标准和评分后的回答都在
+[validation/agent-scenarios](validation/agent-scenarios/README.md)，失败的也在。
 
 ## 安装
 

@@ -1,0 +1,96 @@
+{
+  "release": "0.13.1",
+  "oracle": "pwr 1.3.0; stats 4.6.0; PowerTOST 1.5.7",
+  "tolerance_absolute": 1e-06,
+  "cases": 306,
+  "nonfinite_rows": 0,
+  "by_design": [
+    {
+      "design": "arcsine",
+      "size": 72,
+      "count": 72,
+      "max": 9.992007221626409e-16
+    },
+    {
+      "design": "normal_approximation",
+      "size": 36,
+      "count": 36,
+      "max": 9.992007221626409e-16
+    },
+    {
+      "design": "one_way_anova",
+      "size": 18,
+      "count": 18,
+      "max": 9.48275000189902e-10
+    },
+    {
+      "design": "paired_t",
+      "size": 36,
+      "count": 36,
+      "max": 5.729861030090433e-13
+    },
+    {
+      "design": "tost_two_means",
+      "size": 72,
+      "count": 72,
+      "max": 1.0999812172229895e-12
+    },
+    {
+      "design": "two_sample_t",
+      "size": 72,
+      "count": 72,
+      "max": 7.7099437945094e-13
+    }
+  ],
+  "max_abs_difference": 9.48275000189902e-10,
+  "solve_n_two_sample": [
+    {
+      "effect": 0.3,
+      "target": 0.8,
+      "python_n": 176,
+      "pwr_continuous_n": 175.3847,
+      "agrees": true
+    },
+    {
+      "effect": 0.3,
+      "target": 0.9,
+      "python_n": 235,
+      "pwr_continuous_n": 234.4627,
+      "agrees": true
+    },
+    {
+      "effect": 0.8,
+      "target": 0.8,
+      "python_n": 26,
+      "pwr_continuous_n": 25.52458,
+      "agrees": true
+    },
+    {
+      "effect": 0.8,
+      "target": 0.9,
+      "python_n": 34,
+      "pwr_continuous_n": 33.82555,
+      "agrees": true
+    },
+    {
+      "effect": 1.5,
+      "target": 0.8,
+      "python_n": 9,
+      "pwr_continuous_n": 8.060321,
+      "agrees": true
+    },
+    {
+      "effect": 1.5,
+      "target": 0.9,
+      "python_n": 11,
+      "pwr_continuous_n": 10.40147,
+      "agrees": true
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "The initial run (sample_size_benchmarks_0.13.1_initial.json) reported passed while three Python powers were NaN (SciPy nct.cdf lower tail at large ncp) and pandas skipped them; the lower tail now uses symmetry and NaN rows fail.",
+    "Power functions and the integer n search only; log-rank Schoenfeld has no package oracle here (calibrated by simulation).",
+    "Proportion methods are approximations; agreement with pwr/power.prop.test is not evidence about chi-square test power."
+  ]
+}

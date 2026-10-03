@@ -1,4 +1,5 @@
 """Declared HTS plate quality, median-polish B scores and exploratory FDR hits."""
+import zlib
 import numpy as np
 import pandas as pd
 from scipy.stats import t as student_t
@@ -11,6 +12,7 @@ DEFAULTS={'schema_version':1,'analysis_type':'hts_qc','input':None,'source':None
  'correction':'median_polish','mad_scale':1.4826,'mad_scale_source':None,
  'median_polish':{'epsilon':.01,'max_iterations':10},
  'criteria':{'predeclared':False,'source':None,'zprime_min':.5,'ssmd_abs_min':3.,'fdr':.05},
+ 'hit_reference':{'method':'predictive_t','simulations':999,'seed':None,'source':None},
  'report':{'plot_style':'prism_like'}}
 
 def resolve_config(raw):
@@ -29,6 +31,15 @@ def resolve_config(raw):
  for k in ('zprime_min','ssmd_abs_min','fdr'):number(a[k],k)
  if not 0<a['fdr']<1 or not 0<=a['zprime_min']<1 or a['ssmd_abs_min']<=0:raise ValueError('Invalid QC criteria')
  if c['report']['plot_style'] not in ('prism_like','standard'):raise ValueError('Invalid style')
+ h=c['hit_reference']
+ if h['method']=='predictive_t':
+  if h!=DEFAULTS['hit_reference']:raise ValueError('Simulation settings apply only to hit_reference.method=layout_simulation')
+  c.pop('hit_reference')  # Preserve legacy resolved config bytes when opt-in is absent.
+ elif h['method']=='layout_simulation':
+  text(h['source'],'hit_reference source')
+  if type(h['simulations']) is not int or not 199<=h['simulations']<=9999:raise ValueError('hit_reference.simulations must be an integer in [199, 9999]')
+  if type(h['seed']) is not int or h['seed']<0:raise ValueError('Declare a non-negative integer hit_reference.seed')
+ else:raise ValueError('hit_reference.method must be predictive_t or layout_simulation')
  return c
 
 
@@ -72,8 +83,32 @@ def quality(positive,negative):
  return {'zprime':float(1-3*(sp+sn)/abs(difference)) if difference else None,'ssmd':float(difference/den) if den else None,'positive_mean':float(p.mean()),'negative_mean':float(n.mean()),'positive_sd':sp,'negative_sd':sn}
 
 
+def _statistic(x,negative,sign,cfg):
+ z=median_polish(x,cfg['median_polish']['epsilon'],cfg['median_polish']['max_iterations'])['residuals'];n=z[negative]
+ return sign*(z-n.mean())/(n.std(ddof=1)*np.sqrt(1+1/n.size))
+
+
+def layout_reference(x,roles,sign,cfg,plate_id):
+ """Layout-conditional parametric null for the predictive statistic of each sample well.
+
+ Null plates keep the observed additive plate pattern, the positive-control offset and
+ the control/sample layout; every non-positive well gets independent Gaussian noise with
+ the negative-control residual SD. Each simulated plate is median-polished and scored
+ exactly like the observed plate. Statistics are standardized per well by their null
+ mean and SD, then referred to the pooled standardized null across wells and plates."""
+ h=cfg['hit_reference'];B=h['simulations'];rng=np.random.default_rng(np.random.SeedSequence([h['seed'],zlib.crc32(str(plate_id).encode())]))
+ m=median_polish(x,cfg['median_polish']['epsilon'],cfg['median_polish']['max_iterations']);z=m['residuals'];negative=roles=='negative';positive=roles=='positive';sample=roles=='sample'
+ noise=float(z[negative].std(ddof=1));offset=float(np.median(z[positive]));fit=m['overall']+m['row'][:,None]+m['column'][None,:]+offset*positive
+ null=np.empty((B,int(sample.sum())))
+ for b in range(B):null[b]=_statistic(fit+rng.normal(0.,noise,x.shape),negative,sign,cfg)[sample]
+ mean=null.mean(axis=0);sd=null.std(axis=0,ddof=1);pool=np.sort(((null-mean)/sd).ravel());observed=(_statistic(x,negative,sign,cfg)[sample]-mean)/sd
+ p=(1+pool.size-np.searchsorted(pool,observed,side='left'))/(1+pool.size)
+ return [float(v) for v in p],{'method':'layout_simulation','simulations':B,'seed':h['seed'],'plate_stream':'SeedSequence([seed, crc32(plate_id)])','noise_sd':noise,'positive_offset':offset,'minimum_attainable_p':float(1/(1+pool.size)),'source':h['source']}
+
+
 def compute(d,cfg):
  plates=[];audit_tests=[];notes=['Z-prime and SSMD describe control separation; they do not validate a biological hit.','B scores use median-polish residuals divided by the declared scaled MAD.','BH-adjusted predictive t tests are exploratory well-level screens; confirm hits in independent experiments.','Plate correction can induce dependence; reported FDR is conditional on assumptions and recorded calibration.'];fail=[]
+ if 'hit_reference' in cfg:notes.append('Hit p-values use a layout-conditional simulated null (Gaussian additive plate model, declared seed and simulation count); they are Monte Carlo p-values, not a validated biological activity claim.')
  for pid,g in d.groupby('plate_id',sort=False):
   g=g.copy();rs=sorted(g.row.unique());cs=sorted(g.column.unique());x=g.pivot(index='row',columns='column',values='value').loc[rs,cs].to_numpy();m=median_polish(x,cfg['median_polish']['epsilon'],cfg['median_polish']['max_iterations']);z=m['residuals'];median=float(np.median(z));mad=float(cfg['mad_scale']*np.median(abs(z-median)));q=quality(g[g.role=='positive'].value,g[g.role=='negative'].value);reasons=[]
   if not m['converged']:reasons.append('median_polish_did_not_converge')
@@ -83,13 +118,17 @@ def compute(d,cfg):
   sign=1 if cfg['direction']=='increasing' else -1
   if sign*(q['positive_mean']-q['negative_mean'])<=0:reasons.append('control_direction_conflicts_with_declared_hit_direction')
   residual={(r,c):float(z[i,j]) for i,r in enumerate(rs) for j,c in enumerate(cs)};g['residual']=[residual[r,c] for r,c in zip(g.row,g.column)];g['b_score']=(g.residual-median)/mad if mad>0 else np.nan
-  neg=g[g.role=='negative'].residual;sd=float(neg.std(ddof=1));samples=g[g.role=='sample'];pv=[]
+  neg=g[g.role=='negative'].residual;sd=float(neg.std(ddof=1));samples=g[g.role=='sample'];pv=[];reference=None
   if sd<=0:reasons.append('zero_negative_control_variance')
-  for v in samples.residual:pv.append(float(student_t.sf(sign*(v-neg.mean())/(sd*np.sqrt(1+1/len(neg))),len(neg)-1)) if sd>0 else 1.)
+  if 'hit_reference' in cfg and sd>0:
+   roles=g.pivot(index='row',columns='column',values='role').loc[rs,cs].to_numpy();order={rc:k for k,rc in enumerate([(r,c) for i,r in enumerate(rs) for j,c in enumerate(cs) if roles[i,j]=='sample'])}
+   simulated,reference=layout_reference(x,roles,sign,cfg,pid);pv=[simulated[order[r,c]] for r,c in zip(samples.row,samples.column)]
+  else:
+   for v in samples.residual:pv.append(float(student_t.sf(sign*(v-neg.mean())/(sd*np.sqrt(1+1/len(neg))),len(neg)-1)) if sd>0 else 1.)
   adjusted=multipletests(pv,method='fdr_bh')[1] if pv else [];wells=[]
   for (_,w),p,adj in zip(samples.iterrows(),pv,adjusted):wells.append({'well_id':w.well_id,'compound_id':w.compound_id,'value':float(w.value),'residual':float(w.residual),'b_score':float(w.b_score) if mad>0 else None,'p_value':p if not reasons else None,'adjusted_p':float(adj) if not reasons else None,'hit':bool(adj<=cfg['criteria']['fdr']) if not reasons else None,'reportable':not reasons})
   audit_tests.append({'plate_id':str(pid),'tests':[{'well_id':str(w.well_id),'p_value':float(p),'adjusted_p':float(adj)} for (_,w),p,adj in zip(samples.iterrows(),pv,adjusted)]})
   edge=g.row.isin([rs[0],rs[-1]])|g.column.isin([cs[0],cs[-1]]);edge_diff=float(g.loc[edge,'value'].median()-g.loc[~edge,'value'].median()) if (~edge).any() else None
-  row={'plate_id':str(pid),'status':'limited' if reasons else 'estimated','reportable':not reasons,'quality':q,'correction':{'overall':m['overall'],'row_effects':dict(zip(map(str,rs),map(float,m['row']))),'column_effects':dict(zip(map(str,cs),map(float,m['column']))),'iterations':m['iterations'],'converged':m['converged'],'residual_MAD':mad,'raw_edge_minus_interior_median':edge_diff},'wells':wells,'diagnostics':reasons};plates.append(row)
+  row={'plate_id':str(pid),'status':'limited' if reasons else 'estimated','reportable':not reasons,'quality':q,'correction':{'overall':m['overall'],'row_effects':dict(zip(map(str,rs),map(float,m['row']))),'column_effects':dict(zip(map(str,cs),map(float,m['column']))),'iterations':m['iterations'],'converged':m['converged'],'residual_MAD':mad,'raw_edge_minus_interior_median':edge_diff},**({'hit_reference':reference} if reference else {}),'wells':wells,'diagnostics':reasons};plates.append(row)
   if reasons:fail.append({'plate_id':str(pid),'reasons':reasons})
  return {'analysis_type':'hts_qc','primary':{'status':'limited' if fail else 'estimated','plates':plates,'assay_context':{k:cfg[k] for k in ('plate_shape','readout','response_unit','direction','criteria','independence_source','majority_inactive_source','layout_source')}},'audit_tests':audit_tests,'must_mention':notes,'failing_items':fail,'limitations':['Z-prime is a control-only metric; SSMD is the sample plug-in effect size.','Median polish assumes most wells inactive and no systematic biological row/column layout.','One-sided predictive t p-values use negative controls and normal equal-variance assumptions.','A well-level hit is not a validated compound effect; no automatic pooling across plates.']}

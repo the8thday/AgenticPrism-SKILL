@@ -1,4 +1,4 @@
-"""Versioned, auditable 4PL analysis independent of rendering."""
+"""Versioned, auditable dose-response analysis (4PL, opt-in 5PL / bell-shaped) independent of rendering."""
 from datetime import datetime, timezone
 from pathlib import Path
 import importlib.metadata
@@ -38,23 +38,34 @@ def analyze_dose(config_path, output, render=True):
              "automatic_outlier_removal": False,
              "excluded_observations": d.loc[d.exclude, ["observation_id", "exclusion_reason"]].to_dict("records")})
         fits, grids, observations, groups = [], [], [], {}
+        from .dose_models import fit_dose_5pl, fit_dose_bell, second_phase_fits
+        fitter = {"relative_four_parameter_logistic": fit_dose_curve, "relative_five_parameter_logistic": fit_dose_5pl,
+                  "bell_shaped": fit_dose_bell}[cfg["model"]]
         for curve_id, group in d.groupby("curve_id", sort=False):
-            fit, grid, rows = fit_dose_curve(group, cfg)
+            fit, grid, rows = fitter(group, cfg)
             fits.append(fit)
             grids.extend(grid)
             observations.extend(rows)
             groups[curve_id] = group
         by_curve = {fit["curve_id"]: fit for fit in fits}
         summaries = summarize_dose(fits, cfg)
+        if cfg["model"] == "bell_shaped":
+            # Each phase's EC50 is summarized under the same withholding rules, labelled by phase.
+            summaries = [{**row, "phase": "first"} for row in summaries] + \
+                        [{**row, "phase": "second"} for row in summarize_dose(second_phase_fits(fits), cfg)]
         comparisons, comparison_grid = [], []
         for item in cfg["comparisons"]:
             comparison, grid = compare_curves(item, groups, by_curve, cfg)
             comparisons.append(comparison)
             comparison_grid.extend(grid)
         potency = summarize_potency(comparisons, cfg)
-        dump(out / "results.json", {"schema_version": 1, "analysis_type": "dose_response_4pl", "fits": fits,
-                                    "summaries": summaries, "comparisons": comparisons,
-                                    "potency_summaries": potency})
+        results = {"schema_version": 1, "analysis_type": "dose_response_4pl", "fits": fits,
+                   "summaries": summaries, "comparisons": comparisons, "potency_summaries": potency}
+        if cfg["model"] != "relative_four_parameter_logistic":
+            from .evidence_0131 import EVIDENCE
+            results["model"] = cfg["model"]
+            results["validation_evidence"] = EVIDENCE["dose_5pl" if cfg["model"] == "relative_five_parameter_logistic" else "dose_bell"]
+        dump(out / "results.json", results)
         pd.DataFrame(summaries).to_csv(out / "sample_summary.csv", index=False)
         if comparisons:
             pd.DataFrame([{k: v for k, v in c.items() if k not in ("rp_ci", "diagnostics", "parallel_model",
@@ -76,7 +87,12 @@ def analyze_dose(config_path, output, render=True):
             pd.DataFrame(potency).to_csv(out / "potency_summary.csv", index=False)
             pd.DataFrame(comparison_grid, columns=["comparison_id", "curve_id", "concentration_canonical",
                                                    "predicted_response"]).to_csv(out / "comparison_grid.csv", index=False)
-        pd.DataFrame([{k: v for k, v in fit.items() if k not in ("diagnostics", "ci_canonical")} |
+        pd.DataFrame([{k: v for k, v in fit.items() if k not in ("diagnostics", "ci_canonical", "second_phase", "peak", "model_comparison")} |
+                      ({"ec50_2_canonical": fit["second_phase"]["half_response_canonical"],
+                        "ec50_2_ci_low_canonical": fit["second_phase"]["ci_canonical"][0],
+                        "ec50_2_ci_high_canonical": fit["second_phase"]["ci_canonical"][1],
+                        "peak_concentration_canonical": fit["peak"]["concentration_canonical"], "peak_response": fit["peak"]["response"]}
+                       if fit.get("second_phase") else {}) |
                       {"diagnostics": ";".join(fit["diagnostics"]), "ci_low_canonical": fit["ci_canonical"][0],
                        "ci_high_canonical": fit["ci_canonical"][1]} for fit in fits]).to_csv(out / "fit_results.csv", index=False)
         pd.DataFrame(grids, columns=["curve_id", "concentration_canonical", "predicted_response"]).to_csv(out / "curve_grid.csv", index=False)

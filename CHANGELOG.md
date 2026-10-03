@@ -1,6 +1,17 @@
 # Changelog
 
-## Unreleased
+## 0.13.1
+
+- HTS: opt-in `hit_reference=layout_simulation`, a layout-conditional simulated null for well-level hit p-values. Registered global-null false-hit rate 0.037–0.044 (default predictive t: 0.093–0.098) at a power cost; default unchanged.
+- Method validation: `incurred_sample_reanalysis` (declared limit, pass fraction and unquantified-pair policy; exact pass-fraction and mean-shift supplements; M10 extent diagnostic) and `carry_over` (raw blank-after-ULOQ response as a percent of LLOQ response).
+- Dose response: opt-in `relative_five_parameter_logistic` and `bell_shaped` models with a required `model_rationale`, profile-F intervals on EC50 (both phases for bell), a middle-plateau-reached gate and phase-labelled summaries. No relative potency for these models.
+- ELISA 5PL: steep (h = 4) multistart starts added to `calibration.fit_5pl` after a targeted scan found missed optima on steep standards. Fixture outputs move within 5.0e-7 relative; the interval calibration rerun is identical to 0.7.0. The registered drc check met 31/41 (all misses lie beyond the declared Hill/asymmetry bounds and were withheld). `validate_elisa_interval_coverage.py` gained `--output`.
+- New `sample-size` specialist (`analysis_type=sample_size`): sourced-assumption power and n for two-sample/paired t, one-way ANOVA, two proportions, Schoenfeld log-rank and TOST of two means, with a saved power curve and sensitivity grid; extension workflow accepts design-only configs.
+- Time-to-event: `analysis_type=competing_risks` with Aalen–Johansen cumulative incidence, Gray's test and Fine–Gray regression ported from cmprsk, plus cause-specific Cox hazard ratios.
+- New `thermal-stability` specialist (`analysis_type=thermal_unfolding`): apparent Tm from nanoDSF/DSF/CD with declared transitions, a k vs k−1 structure test, profile-F intervals, derivative inflections and delta-Tm; two registered calibrations with retained misses.
+- Evidence: drc LL.5 and base-R nls benchmarks (failed initial run retained), three prespecified calibrations, `evidence_0131.py`; the poor coverage of overlapping bell fits that pass every gate is disclosed in facts. 4PL, default HTS and earlier method-validation outputs are byte-identical to 0.13.0. Live-agent review pending.
+
+Report changes made after 0.13.0 and first released here:
 
 - Reports only; no scientific artifact or numerical method changes. A shared figure style (`plot_style.py`) upgrades `prism_like` to a publication style: detached axes, bold labels, Okabe–Ito palette, filled symbols and open residual markers. Every renderer now honours the selected style, and axis ranges stay identical across styles.
 - A shared HTML shell (`report_shell.py`) gives all report pages one layout, tables with display rounding to 4 significant figures (downloads keep full precision), and figures shown at a fixed multiple of their physical size. Figures in extension, ADA, CMC and method-validation reports are now embedded, so every page works as a single file.

@@ -1,6 +1,6 @@
 ---
 name: method-validation
-description: Summarize bioanalytical method-validation experiments for ligand binding assays (ICH M10-style) from back-calculated concentrations - accuracy and precision per QC level with total error, dilution linearity and hook effect, parallelism, selectivity, specificity and stability - against acceptance criteria the user declares with their source. Adds labelled statistical supplements (bias and precision intervals, beta-expectation accuracy profile, parallelism trend, exact pass-rate intervals). Not a calibration-curve fit and not a regulatory verdict.
+description: Summarize bioanalytical method-validation experiments for ligand binding assays (ICH M10-style) from back-calculated concentrations - accuracy and precision per QC level with total error, dilution linearity and hook effect, parallelism, selectivity, specificity, stability and incurred sample reanalysis (ISR), plus carry-over from raw responses - against acceptance criteria the user declares with their source. Adds labelled statistical supplements (bias and precision intervals, beta-expectation accuracy profile, parallelism trend, exact pass-rate intervals). Not a calibration-curve fit and not a regulatory verdict.
 ---
 
 # Bioanalytical method validation
@@ -12,8 +12,8 @@ Read the [runtime procedure](../agentic-prism/references/runtime.md), then the
 
 1. **Establish which experiment the data are.** One run of the tool analyzes one
    experiment: `accuracy_precision`, `dilution_linearity`, `parallelism`,
-   `selectivity`, `specificity` or `stability`. Do not merge experiments to get
-   one "pass".
+   `selectivity`, `specificity`, `stability`, `incurred_sample_reanalysis` or
+   `carry_over` (0.13.1). Do not merge experiments to get one "pass".
 2. **Inputs are back-calculated concentrations** from each run's own calibration
    curve. Raw signals need calibration first (elisa-quantification or the lab's
    system). Calibration-curve acceptance and run acceptance are upstream and
@@ -88,3 +88,37 @@ between-run CV 89.5–92.0%; all rows met their prespecified criteria, including
 [the 0.9.3 record](../../validation/RELEASE_0.9.3.md); read the rows before
 relying on an interval. No printed worked example of the Mee (1984) interval
 was available; its formula was derived and checked independently.
+
+## Incurred sample reanalysis and carry-over (0.13.1)
+
+**ISR** compares each study sample's original result with its repeat in a
+separate run: percent difference = (repeat − original) / mean × 100. Declare
+`criteria.isr_difference_percent` and `criteria.required_pass_fraction` with
+their source (ICH M10 section 6 states ±30% for LBA in at least two thirds of
+pairs; enter 2/3 as 0.6666666667, not 0.667). Also declare
+`statistics.isr_unquantified_pair`: `count_as_failed` or `not_evaluable` for
+pairs where either result is below LLOQ or above ULOQ. Ask the user; do not
+choose the policy that passes. Optional `statistics.isr_study_samples` adds the
+M10 extent diagnostic (10% of the first 1000 samples plus 5% beyond).
+
+Report evaluable, passing and failing pairs, the declared policy and how many
+pairs it touched, and the exact pass-fraction interval. The mean percent
+difference interval is a supplement: when it excludes zero, report a
+systematic original-versus-repeat shift even if ISR passes, because M10 asks
+for trends to be investigated. Never drop failing pairs or re-assay to pass.
+
+**Carry-over** uses raw responses, not concentrations: declare
+`concentrations_back_calculated: false` and `assay.response_readout` (signal
+and background handling). Each blank must directly follow a ULOQ sample in its
+`sequence_id`/`position` order; it is reported as a percent of the mean LLOQ
+response of the same sequence against the declared
+`criteria.carryover_percent_of_lloq`. There is no inferential interval; one
+LLOQ reference per sequence makes every ratio noisy, which the diagnostics say.
+Carry-over is mostly a chromatographic requirement; for an LBA, say why it is
+being tested (for example a shared pipetting head).
+
+Evidence (0.13.1): ISR supplements were calibrated (1000 datasets per row, seed
+131261004); the t interval covered 0.901–0.914 and Clopper–Pearson 0.915–0.996
+at the 90% level, all rows above their bounds. Published worked examples and
+live-agent misuse scenarios are not yet done; the saved facts say so. See
+[the 0.13.1 record](../../validation/RELEASE_0.13.1.md).

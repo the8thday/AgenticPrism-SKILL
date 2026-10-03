@@ -1,0 +1,155 @@
+{
+  "release": "0.13.1",
+  "oracles": [
+    "R 4.6.0 stats::nls port, Prism bell-shaped equation",
+    "drc 3.0.1 LL.5"
+  ],
+  "tolerances": {
+    "sse_relative": 1e-06,
+    "ec50_relative": 0.001
+  },
+  "checks": [
+    {
+      "dataset": "5pl:S1-E1",
+      "model": "relative_five_parameter_logistic",
+      "oracle": "drc 3.0.1 LL.5",
+      "python_sse": 93.61389900995856,
+      "oracle_sse": 93.6139417206533,
+      "sse_relative_difference": -4.5624288388752085e-07,
+      "python_ec50": 3.9478028520633665e-09,
+      "oracle_ec50": 3.94804021584913e-09,
+      "ec50_relative_difference": 6.0121927028644606e-05,
+      "workflow_status": "estimated",
+      "workflow_diagnostics": [],
+      "passed": true
+    },
+    {
+      "dataset": "5pl:S1-E2",
+      "model": "relative_five_parameter_logistic",
+      "oracle": "drc 3.0.1 LL.5",
+      "python_sse": 107.83588215972631,
+      "oracle_sse": 107.835945093954,
+      "sse_relative_difference": -5.836108510050701e-07,
+      "python_ec50": 5.314228030773824e-09,
+      "oracle_ec50": 5.314628983242e-09,
+      "ec50_relative_difference": 7.544317193919348e-05,
+      "workflow_status": "estimated_with_diagnostics",
+      "workflow_diagnostics": [
+        "asymmetry_not_supported_over_4pl"
+      ],
+      "passed": true
+    },
+    {
+      "dataset": "5pl:S1-E3",
+      "model": "relative_five_parameter_logistic",
+      "oracle": "drc 3.0.1 LL.5",
+      "python_sse": 122.04825096377624,
+      "oracle_sse": 122.04826539338,
+      "sse_relative_difference": -1.1822866731916563e-07,
+      "python_ec50": 5.577728111743762e-09,
+      "oracle_ec50": 5.5785950294244404e-09,
+      "ec50_relative_difference": 0.0001554007193758089,
+      "workflow_status": "estimated_with_diagnostics",
+      "workflow_diagnostics": [
+        "asymmetry_not_supported_over_4pl"
+      ],
+      "passed": true
+    },
+    {
+      "dataset": "bell:S1-E1",
+      "model": "bell_shaped",
+      "oracle": "R 4.6.0 stats::nls port, Prism bell-shaped equation",
+      "python_sse": 106.26713654961121,
+      "oracle_sse": 106.267136549613,
+      "sse_relative_difference": -1.6849684222737e-14,
+      "python_ec50": 4.809348545058449e-10,
+      "oracle_ec50": 4.80934849843554e-10,
+      "ec50_relative_difference": 9.694225644452104e-09,
+      "workflow_status": "estimated",
+      "workflow_diagnostics": [],
+      "python_ec50_2": 8.496048853520695e-07,
+      "oracle_ec50_2": 8.49604884747014e-07,
+      "ec50_2_relative_difference": 7.121609968407938e-10,
+      "passed": true
+    },
+    {
+      "dataset": "bell:S1-E2",
+      "model": "bell_shaped",
+      "oracle": "R 4.6.0 stats::nls port, Prism bell-shaped equation",
+      "python_sse": 125.31554514549029,
+      "oracle_sse": 125.315545145491,
+      "sse_relative_difference": -5.670028685867839e-15,
+      "python_ec50": 5.493498911546944e-10,
+      "oracle_ec50": 5.49349887295609e-10,
+      "ec50_relative_difference": 7.024822501477956e-09,
+      "workflow_status": "estimated",
+      "workflow_diagnostics": [],
+      "python_ec50_2": 9.362379492643657e-07,
+      "oracle_ec50_2": 9.36237944505965e-07,
+      "ec50_2_relative_difference": 5.082469334283246e-09,
+      "passed": true
+    },
+    {
+      "dataset": "bell:S1-E3",
+      "model": "bell_shaped",
+      "oracle": "R 4.6.0 stats::nls port, Prism bell-shaped equation",
+      "python_sse": 159.63233447512823,
+      "oracle_sse": 159.632334475128,
+      "sse_relative_difference": 1.4243585185347189e-15,
+      "python_ec50": 5.987913052412724e-10,
+      "oracle_ec50": 5.987913013170901e-10,
+      "ec50_relative_difference": 6.5535059601273815e-09,
+      "workflow_status": "estimated",
+      "workflow_diagnostics": [],
+      "python_ec50_2": 8.170343653003088e-07,
+      "oracle_ec50_2": 8.17034370640082e-07,
+      "ec50_2_relative_difference": 6.535555208131427e-09,
+      "passed": true
+    },
+    {
+      "dataset": "bell_overlap:S1-E1",
+      "model": "bell_shaped",
+      "oracle": "R 4.6.0 stats::nls port, Prism bell-shaped equation",
+      "python_sse": 79.63685515547587,
+      "oracle_sse": 79.638801716382,
+      "sse_relative_difference": -2.4442368094217498e-05,
+      "python_ec50": 7.1558707857398925e-09,
+      "oracle_ec50": 6.82643435804959e-09,
+      "ec50_relative_difference": 0.048258931443739383,
+      "workflow_status": "limited",
+      "workflow_diagnostics": [
+        "middle_plateau_not_reached"
+      ],
+      "python_ec50_2": 7.162150255286675e-09,
+      "oracle_ec50_2": 7.520985407476871e-09,
+      "ec50_2_relative_difference": 0.04771118846121758,
+      "passed": false
+    },
+    {
+      "dataset": "drc::S.alba bentazone (Christensen et al. 2003)",
+      "model": "relative_five_parameter_logistic",
+      "oracle": "drc 3.0.1 LL.5",
+      "python_sse": 3.8095700526921994,
+      "oracle_sse": 3.80751252549789,
+      "sse_relative_difference": 0.0005403861919115397,
+      "python_ec50": 30.84907678901795,
+      "oracle_ec50": 28.4263503779832,
+      "ec50_relative_difference": 0.08522819070404486,
+      "workflow_status": "limited",
+      "workflow_diagnostics": [
+        "numerical_boundary_hit",
+        "few_transition_doses_for_asymmetric_slope",
+        "asymmetry_not_supported_over_4pl",
+        "profile_nuisance_at_boundary"
+      ],
+      "passed": false
+    }
+  ],
+  "passed": false,
+  "limits": [
+    "Point estimates and least-squares objective only; profile-F intervals have no oracle here (see the 0.13.1 calibration).",
+    "A Python SSE below the oracle passes: drc and nls are local optimizers from their own starts.",
+    "drc has no Prism bell-shaped model; the bell oracle is base-R nls (port) on the Prism equation with a fixed multistart grid.",
+    "Published worked example with printed bell-shaped or 5PL EC50 values: UNMET (S.alba is published data, not a printed 5PL result)."
+  ]
+}

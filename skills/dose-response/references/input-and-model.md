@@ -69,3 +69,28 @@ The unrestricted model is the two separate fits. For each curve, `Cov = s²(Jᵀ
 ## Examples
 
 Use [the synthetic EC50](../../../fixtures/dose_synthetic/config_ec50.json), [IC50](../../../fixtures/dose_synthetic/config_ic50.json) and [potency](../../../fixtures/dose_synthetic/config_potency.json) configs for schema examples only. The [public example](../../../fixtures/dose_public/config.json) retains its upstream unit as `source_unit`; its original application uses a fixed-response-50 IC50, so this repository's relative midpoint is a different estimand. Source hashes and license are in [the manifest](../../../fixtures/dose_public/source_manifest.json). For model selection and plateau cautions see the [GraphPad equation guide](https://www.graphpad.com/guides/prism/latest/curve-fitting/reg_choosing_a_dr_equation.htm), the [normalization guide](https://www.graphpad.com/guides/prism/latest/curve-fitting/reg_pros_and_cons_of_normalizing.htm) and [relative weighting](https://www.graphpad.com/guides/prism/latest/curve-fitting/reg_weighting_tab.htm).
+
+## Opt-in 5PL and bell-shaped models (0.13.1)
+
+```json
+{"analysis_type": "dose_response_4pl", "model": "bell_shaped",
+ "model_rationale": "TCE killing shows a high-dose hook in prior runs (report R-17)", ...}
+```
+
+`model` is `relative_four_parameter_logistic` (default), `relative_five_parameter_logistic`
+or `bell_shaped`; `model_rationale` is required for the latter two and refused for
+4PL. `comparisons` must be empty for them. Bell-shaped refuses relative weighting and
+fixed plateaus.
+
+5PL: Y = Bottom + (Top − Bottom)·expit(ln10·s·h·(log10 x − log10 C))^g with
+log10 C = log10 EC50 − logit(0.5^(1/g))/(ln10·s·h). Optimized: log10 EC50, log10 h,
+log10 g ∈ [log10 0.05, log10 20]; plateaus as for 4PL. Results add `asymmetry`,
+`c_parameter_canonical` and `model_comparison` (nested F, AICc).
+
+Bell-shaped: Y = Plateau1 + (Dip − Plateau1)·S1 + (Plateau2 − Dip)·S2, S_k rising
+4PL shapes with log10 EC50_2 = log10 EC50_1 + gap, gap ≥ 0. Optimized: log10 EC50_1,
+log10 h1, gap, log10 h2; plateaus by least squares. Results add `plateau_1`,
+`middle_plateau`, `plateau_2`, `second_phase` (EC50_2, its interval and range
+status) and `peak` (model extremum and the fraction of the middle plateau reached
+from each side; below 0.9 withholds). `fit_results.csv` adds `ec50_2_*` and `peak_*`
+columns; `sample_summary.csv` has one row per sample and `phase`.

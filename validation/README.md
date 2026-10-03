@@ -1,4 +1,26 @@
-# Validation — AgenticPrism development 0.13.0
+# Validation — AgenticPrism development 0.13.1
+
+## 0.13.1
+
+[Release evidence](RELEASE_0.13.1.md): opt-in layout-conditional HTS hit reference
+(registered global-null false-hit 0.041 / 0.044 / 0.037 versus 0.093–0.098 for the default;
+detection 0.671 versus 0.779), ISR and carry-over in method validation (ISR supplements
+covered 0.901–0.996 at 90%), and asymmetric 5PL / bell-shaped dose response (drc LL.5 and
+base-R nls 8/8 after a retained failed initial run; 95% coverage 0.944–0.957; the
+overlapping-phase stress row covered 0.39 / 0.30 among the 3.3% of fits that passed the
+gates). Unchanged scientific artifacts: 154 configurations, 1167 files byte-identical to
+dev/0.13.0. Published worked examples UNMET; live-agent review PENDING; no build or
+clean-install check for this local release. ELISA 5PL start grid widened (changed method):
+registered drc check 31/41 with every miss outside the declared Hill/asymmetry bounds and
+withheld (post-hoc wider Hill bound matched 9/10); ELISA interval calibration rerun
+identical to 0.7.0 in all 12 rows; ELISA 5PL fixture changes at most 5.0e-7 relative.
+New sample-size specialist: 306 power cases agree with pwr/power.prop.test/PowerTOST
+(9.5e-10; initial run hid three NaN powers, retained) and 10/10 simulated-power rows passed.
+Competing risks: cmprsk/survival agreement within 7e-14 on six datasets including mgus2;
+6/6 calibration metrics passed. Thermal unfolding: nls agreement 2.4e-13; registered run 1
+missed multi-transition coverage (0.914–0.928) and leaked overlapped fits; after a k vs k−1
+structure test, neighbour gate and multistart profiles, run 2 passed all rows but the noisy
+third transition (0.932) with a 0.9% overlap leak. Both runs and a post-hoc supplement kept.
 
 ## 0.13.0
 

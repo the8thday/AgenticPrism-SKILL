@@ -152,3 +152,7 @@ Route ordered competition matrices to [epitope-binning](../epitope-binning/SKILL
 ## 0.13.0 routing
 
 Route combination matrices to [drug-combination](../drug-combination/SKILL.md), and HTS plate QC/grid import to [import-plate](../import-plate/SKILL.md). Preserve model disagreement and require plate correction before hit calling. No synergy claim from an unreplicated matrix.
+
+## 0.13.1 routing
+
+Bell-shaped or asymmetric concentration-response curves stay with [dose-response](../dose-response/SKILL.md); the shape must be declared from assay knowledge before fitting, never chosen after a poor 4PL fit. Incurred sample reanalysis and carry-over go to [method-validation](../method-validation/SKILL.md). HTS hit calling may use the declared layout-conditional simulated reference in [import-plate](../import-plate/SKILL.md). Planning a study's n or power goes to [sample-size](../sample-size/SKILL.md); refuse post-hoc "observed power". Time-to-event data where another event precludes the event of interest go to the competing-risks contract in [time-to-event](../time-to-event/SKILL.md). nanoDSF/DSF/CD melting curves go to [thermal-stability](../thermal-stability/SKILL.md).

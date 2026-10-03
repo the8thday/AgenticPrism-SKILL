@@ -64,3 +64,12 @@ HTS `plate_shape` must be declared as `[8,12]` or `[16,24]`. Every declared
 coordinate must be present, including entire rows/columns; a smaller observed
 rectangle does not silently redefine the plate edge. The import manifest records
 source plate sizes; fill this required field in its configuration template.
+
+## Simulated hit reference (0.13.1)
+
+Optional `hit_reference` = `{"method": "predictive_t" | "layout_simulation", "simulations": 199–9999 (default 999),
+"seed": non-negative integer, "source": "why and when declared"}`. Seed and source are required for
+`layout_simulation`; settings with `predictive_t` are refused. The plate's random stream is
+`SeedSequence([seed, crc32(plate_id)])`. Each plate result gains `hit_reference` with the noise SD
+(negative-control residual SD), positive-control offset and the minimum attainable p-value
+1/(1 + simulations × sample wells).

@@ -17,6 +17,7 @@ def safe_copy(value):
 def write_facts(out, all_states=False):
  out=Path(out);r=json.loads((out/'results.json').read_text());cfg=json.loads((out/'config.resolved.json').read_text())
  states=disclosures(r)
+ evidence=[{'kind':'calibration_evidence','value':m,'source':f'results.json#/validation_evidence/must_mention/{i}'} for i,m in enumerate((r.get('validation_evidence') or {}).get('must_mention',[]))] if r['analysis_type']=='dose_response_4pl' else []
  supplemental={}
  if all_states:supplemental['assay_context']={'source':'config.resolved.json#','value':cfg}
  if r['analysis_type']=='binding_kinetics':supplemental['assay_context']={'source':'config.resolved.json#','value':cfg}
@@ -26,7 +27,7 @@ def write_facts(out, all_states=False):
  dump(out/'interpretation_facts.json',{'schema_version':1,'analysis_type':r['analysis_type'],
   'source_sha256':{n:sha(out/n) for n in ('results.json','config.resolved.json')},
   'saved_results':{'source':'results.json#','value':safe_copy(r)},'states':states,
-  'must_mention':states if all_states else [s for s in states if s['kind']=='diagnostic' or s['value'] in (False,'failed','withheld','limited')],
+  'must_mention':(states if all_states else [s for s in states if s['kind']=='diagnostic' or s['value'] in (False,'failed','withheld','limited')])+evidence,
   **supplemental,
   'limitations':['Saved-result extraction only; no refitting, new inference or promotion of audit estimates.',
    'Independent units and declared preprocessing determine the interpretation; significance does not establish equivalence.']})

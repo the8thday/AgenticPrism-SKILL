@@ -1,0 +1,132 @@
+{
+  "release": "0.13.1",
+  "oracles": "cmprsk 2.2.12 (cuminc, crr), survival 3.8.6 (coxph Efron)",
+  "tolerance": 1e-08,
+  "checks": [
+    {
+      "dataset": "synthetic seed 3",
+      "n": 150,
+      "events": {
+        "0": 23,
+        "1": 69,
+        "2": 58
+      },
+      "cinc_max_abs": 4.996003610813204e-16,
+      "gray_max_abs": 8.881784197001252e-15,
+      "crr_coef_max_abs": 6.661338147750939e-16,
+      "crr_var_max_rel": 6.544182012181663e-14,
+      "crr_converged": [
+        true,
+        true
+      ],
+      "cox_coef_max_abs": 1.5543122344752192e-15,
+      "cox_se_max_rel": 9.76993963273904e-16,
+      "passed": true
+    },
+    {
+      "dataset": "synthetic seed 11",
+      "n": 150,
+      "events": {
+        "0": 21,
+        "1": 90,
+        "2": 39
+      },
+      "cinc_max_abs": 4.718447854656915e-16,
+      "gray_max_abs": 1.7763568394002505e-15,
+      "crr_coef_max_abs": 3.3306690738754696e-16,
+      "crr_var_max_rel": 3.7349150727628734e-14,
+      "crr_converged": [
+        true,
+        true
+      ],
+      "cox_coef_max_abs": 9.43689570931383e-16,
+      "cox_se_max_rel": 1.4874251892426958e-15,
+      "passed": true
+    },
+    {
+      "dataset": "synthetic seed 29",
+      "n": 150,
+      "events": {
+        "0": 26,
+        "1": 71,
+        "2": 53
+      },
+      "cinc_max_abs": 4.996003610813204e-16,
+      "gray_max_abs": 6.927791673660977e-14,
+      "crr_coef_max_abs": 3.3306690738754696e-16,
+      "crr_var_max_rel": 1.0615961169454886e-14,
+      "crr_converged": [
+        true,
+        true
+      ],
+      "cox_coef_max_abs": 2.1094237467877974e-15,
+      "cox_se_max_rel": 4.0566995891453903e-16,
+      "passed": true
+    },
+    {
+      "dataset": "synthetic seed 47",
+      "n": 150,
+      "events": {
+        "0": 27,
+        "1": 74,
+        "2": 49
+      },
+      "cinc_max_abs": 4.996003610813204e-16,
+      "gray_max_abs": 1.176836406102666e-14,
+      "crr_coef_max_abs": 3.0531133177191805e-16,
+      "crr_var_max_rel": 2.535631206275637e-14,
+      "crr_converged": [
+        true,
+        true
+      ],
+      "cox_coef_max_abs": 7.7021722333370235e-16,
+      "cox_se_max_rel": 1.6373056986859579e-15,
+      "passed": true
+    },
+    {
+      "dataset": "synthetic seed 83",
+      "n": 150,
+      "events": {
+        "0": 32,
+        "1": 64,
+        "2": 54
+      },
+      "cinc_max_abs": 4.996003610813204e-16,
+      "gray_max_abs": 1.7763568394002505e-15,
+      "crr_coef_max_abs": 3.3306690738754696e-16,
+      "crr_var_max_rel": 2.982141931128105e-14,
+      "crr_converged": [
+        true,
+        true
+      ],
+      "cox_coef_max_abs": 1.7763568394002505e-15,
+      "cox_se_max_rel": 1.732311574806231e-15,
+      "passed": true
+    },
+    {
+      "dataset": "survival::mgus2 (Kyle et al.; progression vs death)",
+      "n": 1384,
+      "events": {
+        "0": 409,
+        "1": 115,
+        "2": 860
+      },
+      "cinc_max_abs": 5.551115123125783e-16,
+      "gray_max_abs": 1.0658141036401503e-14,
+      "crr_coef_max_abs": 2.609024107869118e-15,
+      "crr_var_max_rel": 1.7639589071152593e-14,
+      "crr_converged": [
+        true,
+        true
+      ],
+      "cox_coef_max_abs": 8.396061623727746e-16,
+      "cox_se_max_rel": 3.990918942300504e-15,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "Unstratified Gray test (rho = 0), one censoring group and fixed covariates only.",
+    "CIF confidence intervals (log-log) have no oracle here; see the calibration."
+  ]
+}

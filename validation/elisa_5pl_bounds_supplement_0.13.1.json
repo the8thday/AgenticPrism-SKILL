@@ -1,0 +1,158 @@
+{
+  "post_hoc": true,
+  "supplements": "validation/elisa_5pl_benchmarks_0.13.1.json",
+  "hill_bounds": [
+    0.05,
+    20.0
+  ],
+  "rows": [
+    {
+      "curve_id": "steep-00",
+      "drc_sse": 0.0307209424988433,
+      "sse_default_bounds": 0.030793154613876335,
+      "sse_hill_bounds_20": 0.03071469514014184,
+      "asymmetry": 9.231743408514902,
+      "hill": 19.99999998138199,
+      "relative_to_drc": -0.00020335830196931655,
+      "matches_or_beats_drc": true,
+      "reportable": false,
+      "diagnostics": [
+        "numerical_boundary_hit",
+        "asymmetry_not_supported_over_4pl"
+      ]
+    },
+    {
+      "curve_id": "steep-02",
+      "drc_sse": 0.0478202344440849,
+      "sse_default_bounds": 0.04783255638990021,
+      "sse_hill_bounds_20": 0.047832556389900915,
+      "asymmetry": 19.999999999999993,
+      "hill": 4.326184904792258,
+      "relative_to_drc": 0.0002576722167773182,
+      "matches_or_beats_drc": false,
+      "reportable": false,
+      "diagnostics": [
+        "numerical_boundary_hit",
+        "asymmetry_not_supported_over_4pl"
+      ]
+    },
+    {
+      "curve_id": "steep-08",
+      "drc_sse": 0.0324381032276661,
+      "sse_default_bounds": 0.03244936549922896,
+      "sse_hill_bounds_20": 0.03242453012927095,
+      "asymmetry": 0.23073528793627687,
+      "hill": 19.999999999999993,
+      "relative_to_drc": -0.000418430704776002,
+      "matches_or_beats_drc": true,
+      "reportable": false,
+      "diagnostics": [
+        "numerical_boundary_hit",
+        "asymmetry_not_supported_over_4pl"
+      ]
+    },
+    {
+      "curve_id": "steep-13",
+      "drc_sse": 0.0113715217261809,
+      "sse_default_bounds": 0.01146025085439661,
+      "sse_hill_bounds_20": 0.011352994511328552,
+      "asymmetry": 0.13767828129136947,
+      "hill": -12.381550223838843,
+      "relative_to_drc": -0.0016292643410856086,
+      "matches_or_beats_drc": true,
+      "reportable": true,
+      "diagnostics": []
+    },
+    {
+      "curve_id": "steep-15",
+      "drc_sse": 0.014048037504636,
+      "sse_default_bounds": 0.014077692172924873,
+      "sse_hill_bounds_20": 0.01402160078838181,
+      "asymmetry": 0.13926836149770605,
+      "hill": -19.999999999999993,
+      "relative_to_drc": -0.0018818796750411902,
+      "matches_or_beats_drc": true,
+      "reportable": false,
+      "diagnostics": [
+        "numerical_boundary_hit",
+        "asymmetry_not_supported_over_4pl"
+      ]
+    },
+    {
+      "curve_id": "steep-16",
+      "drc_sse": 0.0356409958358442,
+      "sse_default_bounds": 0.03565733188061211,
+      "sse_hill_bounds_20": 0.035618745963243055,
+      "asymmetry": 0.11686493241173841,
+      "hill": 17.09868207405352,
+      "relative_to_drc": -0.0006242775230979756,
+      "matches_or_beats_drc": true,
+      "reportable": true,
+      "diagnostics": [
+        "asymmetry_not_supported_over_4pl"
+      ]
+    },
+    {
+      "curve_id": "steep-25",
+      "drc_sse": 0.0268066534714339,
+      "sse_default_bounds": 0.026834771467556615,
+      "sse_hill_bounds_20": 0.026191040540599456,
+      "asymmetry": 0.16779065295224055,
+      "hill": -19.999999999999993,
+      "relative_to_drc": -0.02296493038530381,
+      "matches_or_beats_drc": true,
+      "reportable": false,
+      "diagnostics": [
+        "numerical_boundary_hit",
+        "asymmetry_not_supported_over_4pl"
+      ]
+    },
+    {
+      "curve_id": "steep-27",
+      "drc_sse": 0.0160968606154086,
+      "sse_default_bounds": 0.016114539802446037,
+      "sse_hill_bounds_20": 0.01609572350433069,
+      "asymmetry": 0.40293799380362755,
+      "hill": -11.363004647995831,
+      "relative_to_drc": -7.064179190447517e-05,
+      "matches_or_beats_drc": true,
+      "reportable": true,
+      "diagnostics": [
+        "asymmetry_not_supported_over_4pl"
+      ]
+    },
+    {
+      "curve_id": "steep-30",
+      "drc_sse": 0.0208643835580725,
+      "sse_default_bounds": 0.020975462645068478,
+      "sse_hill_bounds_20": 0.020670422281379754,
+      "asymmetry": 0.14448997988803658,
+      "hill": 19.999999999999993,
+      "relative_to_drc": -0.00929628599631949,
+      "matches_or_beats_drc": true,
+      "reportable": false,
+      "diagnostics": [
+        "numerical_boundary_hit",
+        "asymmetry_not_supported_over_4pl"
+      ]
+    },
+    {
+      "curve_id": "steep-38",
+      "drc_sse": 0.0253105482609685,
+      "sse_default_bounds": 0.025330711487549937,
+      "sse_hill_bounds_20": 0.025301334424914442,
+      "asymmetry": 2.3996155552371503,
+      "hill": 19.64688873106499,
+      "relative_to_drc": -0.0003640314685820343,
+      "matches_or_beats_drc": true,
+      "reportable": true,
+      "diagnostics": [
+        "asymmetry_not_supported_over_4pl"
+      ]
+    }
+  ],
+  "summary": {
+    "missed_curves": 10,
+    "matched_with_wider_hill_bounds": 9
+  }
+}

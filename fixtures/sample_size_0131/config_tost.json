@@ -1,0 +1,17 @@
+{
+  "analysis_type": "sample_size",
+  "source": "Synthetic planning example; assumptions illustrative, not from team data",
+  "purpose": "Plan lot counts for a two-process comparability TOST on main peak purity (illustrative)",
+  "design": "tost_two_means",
+  "solve_for": "n",
+  "alpha": 0.05,
+  "target_power": 0.8,
+  "assumptions": {
+    "difference": 0.1,
+    "difference_source": "Assumed true process shift (illustrative declaration)",
+    "sd": 0.3,
+    "sd_source": "Reference-lot SD from historical release data (illustrative declaration)",
+    "margin": [-0.45, 0.45],
+    "margin_source": "1.5 x reference SD, predeclared in the comparability protocol (illustrative)"
+  }
+}

@@ -33,10 +33,15 @@ refuses them). `_edge` limits apply to LLOQ/ULOQ roles.
 | selectivity | accuracy_percent (high), accuracy_percent_edge (LLOQ), required_pass_fraction, blank_pass_fraction | lloq | source_id, role (blank/lloq/high), nominal |
 | specificity | accuracy_percent_edge, required_pass_fraction, blank_pass_fraction | lloq | source_id, role (blank/lloq/uloq), nominal, interferent |
 | stability | accuracy_percent | — | condition, level, nominal |
+| incurred_sample_reanalysis (0.13.1) | isr_difference_percent, required_pass_fraction | — (`statistics.isr_unquantified_pair` required) | sample_id, analysis (original/repeat) |
+| carry_over (0.13.1) | carryover_percent_of_lloq | lloq, response_readout; `concentrations_back_calculated: false` | sequence_id, position, role (uloq/blank/lloq) |
 
 Every file also has `observation_id`, `value`, `status`
-(`quantified`/`below_lloq`/`above_uloq`), `exclude` (`true`/`false`) and
-`exclusion_reason`. `value` is empty unless quantified: never substitute the
+(`quantified`/`below_lloq`/`above_uloq`; `measured` for carry-over responses),
+`exclude` (`true`/`false`) and `exclusion_reason`. ISR needs exactly one
+`original` and one `repeat` row per sample; an excluded row removes its sample
+from ISR and is listed. Carry-over blanks must directly follow a ULOQ row by
+`position` within their sequence. `value` is empty unless quantified: never substitute the
 LLOQ or ULOQ number. `nominal` may be empty only for blank rows.
 
 ## Numerics

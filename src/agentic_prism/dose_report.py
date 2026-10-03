@@ -34,6 +34,16 @@ DIAG = {
     "parallelism_equivalence_not_demonstrated": "未能证明平行性等效：至少一个参数差异的区间超出预设等效界限；不报告相对效价。",
     "individual_fit_not_reportable": "至少一条曲线的单独拟合不可报告；相对效价仅供审计。",
     "curves_from_different_experiments": "两条曲线来自不同实验；相对效价混入了实验间差异。",
+    "insufficient_distinct_doses_for_5pl": "5PL 需要至少 7 个不同正浓度且残差自由度不少于 3；未拟合。",
+    "5pl_parameters_not_locally_identifiable": "5PL 参数局部不可辨识。",
+    "few_transition_doses_for_asymmetric_slope": "转换区浓度点少于 4 个，不对称参数需复核。",
+    "asymmetry_not_supported_over_4pl": "与 4PL 相比，不对称参数未得到数据支持（嵌套 F 检验 p ≥ 0.05）；仅供参考，不改变预先声明的模型。",
+    "profile_nuisance_at_boundary": "区间端点处斜率或不对称参数触及约束，需复核。",
+    "insufficient_distinct_doses_for_bell_shape": "钟形模型需要至少 10 个不同正浓度且残差自由度不少于 3；未拟合。",
+    "bell_parameters_not_locally_identifiable": "钟形模型参数局部不可辨识。",
+    "phases_inconsistent_with_declared_bell_direction": "拟合的两相方向与声明的钟形方向不一致；不报告。",
+    "middle_plateau_not_reached": "拟合曲线未接近中间平台（两相重叠），两个 EC50 依赖外推的平台；不报告精确值。",
+    "few_transition_doses_in_a_phase": "至少一相的转换区浓度点少于 2 个。",
 }
 SUMMARY_STATUS = {"independent_units_unconfirmed": "独立实验关系未确认，未汇总",
                   "comparability_unconfirmed": "实验条件可比性未确认，未汇总",
@@ -84,6 +94,7 @@ def render_dose(run, style=None):
     width = cfg["report"]["figure_width_mm"] / 25.4
     dpi = cfg["report"]["png_dpi"]
     cards, figure_meta = [], []
+    model_label = {"relative_five_parameter_logistic": "5PL", "bell_shaped": "Bell-shaped"}.get(cfg["model"], "4PL")
     for number, fit in enumerate(fits, 1):
         curve_id = fit["curve_id"]
         obs = d[d.curve_id == curve_id]
@@ -138,7 +149,7 @@ def render_dose(run, style=None):
                     resid_ax.set_ylim(-r_max, r_max)
                 if len(gg):
                     ax.plot(gg.concentration_canonical / factor, gg.predicted_response, color=token["color"],
-                            lw=token["line_width"] + .2, label="4PL fit")
+                            lw=token["line_width"] + .2, label=f"{model_label} fit")
                 for a in (ax, res):
                     a.set_xscale("log")
                     a.set_xlim(*x_limits)
@@ -181,10 +192,9 @@ def render_dose(run, style=None):
 <p>{html.escape(fit['sample_id'])} · {html.escape(fit['experiment_id'])} · 有效观测 {fit['n_fit']} / {fit['n_input']} · {fit['n_distinct_positive_doses']} 个正浓度 · {weighting} · {constraint} · {html.escape(fit['ci_status'])}</p>
 <div class="table-wrap"><table><tr><th>参数</th><th>估计</th><th>区间 / 单位</th></tr>
 <tr><td>{fit['endpoint']}（相对平台中点）</td><td>{midpoint}</td><td>{interval}</td></tr>
-<tr><td>Bottom / Top</td><td>{format_num(fit['bottom'])} / {format_num(fit['top'])}</td><td>{html.escape(response_unit)}</td></tr>
-<tr><td>Hill slope</td><td>{format_num(fit['hill_slope_signed'])}</td><td>无量纲</td></tr>
+{_model_rows(fit, factor, unit, response_unit)}
 <tr><td>RMSE（响应尺度）</td><td>{format_num(fit['rmse'])}</td><td>{html.escape(response_unit)}</td></tr></table></div>
-{notices}{_figure_block(folder, key, style, curve_id + " 4PL 曲线及残差")}<p class="caption">点为逐条原始观测，线为 4PL；下图残差为观测减预测。横轴使用输入单位 {html.escape(unit)}。零剂量对照如存在，放在左侧单独的线性小图中（短横线为模型在零剂量的取值），不画到虚构的对数浓度上。风格切换不改变数值或坐标范围。</p></article>''')
+{notices}{_figure_block(folder, key, style, curve_id + f" {model_label} 曲线及残差")}<p class="caption">点为逐条原始观测，线为 {model_label}；下图残差为观测减预测。横轴使用输入单位 {html.escape(unit)}。零剂量对照如存在，放在左侧单独的线性小图中（短横线为模型在零剂量的取值），不画到虚构的对数浓度上。风格切换不改变数值或坐标范围。</p></article>''')
 
     summaries = results.get("summaries", [])
     summary_html = ""
@@ -296,6 +306,27 @@ def render_dose(run, style=None):
          "figure_sha256": {p.name: sha(p) for p in sorted(folder.iterdir())}})
     verify_run(run)
     return run / "report.html"
+
+
+def _model_rows(fit, factor, unit, response_unit):
+    """Parameter rows for the fitted shape; the 4PL rows are unchanged."""
+    ru = html.escape(response_unit)
+    if fit.get("model") == "bell_shaped":
+        second = fit["second_phase"] or {}
+        ci = second.get("ci_canonical") or [None, None]
+        peak = fit["peak"] or {}
+        return (f"<tr><td>{fit['endpoint']}₂（第二相中点）</td><td>{format_num(second.get('half_response_input_unit')) + ' ' + unit if fit['reportable'] else '不报告精确值'}</td>"
+                f"<td>{_fmt_range(ci[0], ci[1], 1. / factor, unit) if fit['reportable'] else '—'}</td></tr>"
+                f"<tr><td>Plateau1 / 中间平台 / Plateau2</td><td>{format_num(fit['plateau_1'])} / {format_num(fit['middle_plateau'])} / {format_num(fit['plateau_2'])}</td><td>{ru}</td></tr>"
+                f"<tr><td>Hill slope（第一相 / 第二相）</td><td>{format_num(fit['hill_slope_signed'])} / {format_num(second.get('hill_slope_signed'))}</td><td>两相按声明的第一相方向计</td></tr>"
+                f"<tr><td>模型极值（浓度 / 响应）</td><td>{format_num(peak.get('concentration_input_unit'))} {unit} / {format_num(peak.get('response'))}</td><td>模型估计，非观测最大值</td></tr>")
+    rows = (f"<tr><td>Bottom / Top</td><td>{format_num(fit['bottom'])} / {format_num(fit['top'])}</td><td>{ru}</td></tr>"
+            f"<tr><td>Hill slope</td><td>{format_num(fit['hill_slope_signed'])}</td><td>无量纲</td></tr>")
+    if fit.get("model") == "relative_five_parameter_logistic":
+        comparison = fit.get("model_comparison") or {}
+        rows += (f"<tr><td>不对称参数 g</td><td>{format_num(fit['asymmetry'])}</td><td>g = 1 即对称 4PL；"
+                 f"与 4PL 的嵌套 F 检验 p = {format_num(comparison.get('p_value'))}（仅供参考）</td></tr>")
+    return rows
 
 
 def _constraint_text(fixed_bottom, fixed_top):

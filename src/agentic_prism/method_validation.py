@@ -11,6 +11,11 @@ component plus within-run variance, total error = |bias%| + between-run CV%.
 Supplements that go beyond the guideline's point-estimate rules are labelled:
 t interval for the mean bias, MLS interval for between-run precision and the
 beta-expectation tolerance interval of Mee (1984) used in accuracy profiles.
+
+Incurred sample reanalysis (0.13.1) compares original and repeat results as the
+percent difference from their mean. Carry-over (0.13.1) uses raw responses of
+blanks placed directly after ULOQ samples, relative to the mean LLOQ response of
+the same sequence. Both use only declared criteria.
 """
 from copy import deepcopy
 import numpy as np
@@ -18,29 +23,37 @@ import pandas as pd
 from scipy import stats
 from .variance_intervals import mls_limits
 
-EXPERIMENTS = ('accuracy_precision', 'dilution_linearity', 'parallelism', 'selectivity', 'specificity', 'stability')
+EXPERIMENTS = ('accuracy_precision', 'dilution_linearity', 'parallelism', 'selectivity', 'specificity', 'stability',
+               'incurred_sample_reanalysis', 'carry_over')
 CRITERIA = ('accuracy_percent', 'accuracy_percent_edge', 'precision_cv_percent', 'precision_cv_percent_edge',
             'total_error_percent', 'total_error_percent_edge', 'required_pass_fraction', 'blank_pass_fraction',
-            'parallelism_cv_percent')
+            'parallelism_cv_percent', 'isr_difference_percent', 'carryover_percent_of_lloq')
 NEEDED = {'accuracy_precision': ('accuracy_percent', 'accuracy_percent_edge', 'precision_cv_percent', 'precision_cv_percent_edge',
                                  'total_error_percent', 'total_error_percent_edge'),
           'dilution_linearity': ('accuracy_percent', 'precision_cv_percent'),
           'parallelism': ('parallelism_cv_percent',),
           'selectivity': ('accuracy_percent', 'accuracy_percent_edge', 'required_pass_fraction', 'blank_pass_fraction'),
           'specificity': ('accuracy_percent_edge', 'required_pass_fraction', 'blank_pass_fraction'),
-          'stability': ('accuracy_percent',)}
+          'stability': ('accuracy_percent',),
+          'incurred_sample_reanalysis': ('isr_difference_percent', 'required_pass_fraction'),
+          'carry_over': ('carryover_percent_of_lloq',)}
 COLUMNS = {'accuracy_precision': ('level', 'role', 'run_id', 'nominal'),
            'dilution_linearity': ('series_id', 'dilution_factor', 'nominal'),
            'parallelism': ('sample_id', 'dilution_factor'),
            'selectivity': ('source_id', 'role', 'nominal'),
            'specificity': ('source_id', 'role', 'nominal', 'interferent'),
-           'stability': ('condition', 'level', 'nominal')}
+           'stability': ('condition', 'level', 'nominal'),
+           'incurred_sample_reanalysis': ('sample_id', 'analysis'),
+           'carry_over': ('sequence_id', 'position', 'role')}
+# Keys added after 0.9.3; removed from the resolved config when unused so older runs stay byte-identical.
+LATER_KEYS = {'assay': ('response_readout',), 'criteria': ('isr_difference_percent', 'carryover_percent_of_lloq'),
+              'statistics': ('isr_unquantified_pair', 'isr_study_samples')}
 DEFAULTS = {'analysis_type': 'method_validation', 'schema_version': 1, 'input': None, 'source': None, 'experiment': None,
     'assay': {'platform': None, 'matrix': None, 'concentration_unit': None, 'lloq': None, 'uloq': None,
-              'concentrations_back_calculated': None, 'independent_runs': None, 'rationale': None},
+              'concentrations_back_calculated': None, 'independent_runs': None, 'rationale': None, 'response_readout': None},
     'criteria': {'source': None, **{k: None for k in CRITERIA}},
     'statistics': {'confidence_level': .90, 'cv_denominator': None, 'tolerance_beta': None, 'profile_limit_percent': None,
-                   'slope_margin': None},
+                   'slope_margin': None, 'isr_unquantified_pair': None, 'isr_study_samples': None},
     'report': {'plot_style': 'prism_like'}}
 
 
@@ -69,8 +82,18 @@ def resolve_config(raw):
     for obj, keys in ((c, ('input', 'source')), (a, ('platform', 'matrix', 'concentration_unit', 'rationale')), (q, ('source',))):
         if any(not isinstance(obj[k], str) or not obj[k].strip() for k in keys):
             raise ValueError('input, source, platform, matrix, concentration_unit, rationale and criteria.source are required strings')
-    if a['concentrations_back_calculated'] is not True or a['independent_runs'] is not True:
-        raise ValueError('Declare literal true: concentrations_back_calculated and independent_runs (with evidence in rationale)')
+    if e == 'carry_over':
+        if a['concentrations_back_calculated'] is not False or a['independent_runs'] is not True:
+            raise ValueError('carry_over uses raw responses: declare concentrations_back_calculated false and independent_runs true')
+        if not isinstance(a['response_readout'], str) or not a['response_readout'].strip():
+            raise ValueError('carry_over requires assay.response_readout describing the raw response and any background handling')
+        if a['lloq'] is None:
+            raise ValueError('carry_over requires assay.lloq')
+    else:
+        if a['concentrations_back_calculated'] is not True or a['independent_runs'] is not True:
+            raise ValueError('Declare literal true: concentrations_back_calculated and independent_runs (with evidence in rationale)')
+        if a['response_readout'] is not None:
+            raise ValueError('assay.response_readout applies only to carry_over')
     for k in ('lloq', 'uloq'):
         if a[k] is not None:
             _positive(a[k], 'assay.' + k)
@@ -102,12 +125,24 @@ def resolve_config(raw):
             _positive(s['profile_limit_percent'], 'profile_limit_percent', 100)
     elif s['cv_denominator'] is not None or s['tolerance_beta'] is not None or s['profile_limit_percent'] is not None:
         raise ValueError('cv_denominator/tolerance settings apply only to accuracy_precision')
+    if e == 'incurred_sample_reanalysis':
+        if s['isr_unquantified_pair'] not in ('count_as_failed', 'not_evaluable'):
+            raise ValueError('Declare statistics.isr_unquantified_pair: count_as_failed or not_evaluable')
+        n = s['isr_study_samples']
+        if n is not None and (type(n) is not int or n < 1):
+            raise ValueError('isr_study_samples must be a positive integer')
+    elif s['isr_unquantified_pair'] is not None or s['isr_study_samples'] is not None:
+        raise ValueError('isr settings apply only to incurred_sample_reanalysis')
     if s['slope_margin'] is not None:
         if e != 'parallelism':
             raise ValueError('slope_margin applies only to parallelism')
         _positive(s['slope_margin'], 'slope_margin', 1)
     if c['report']['plot_style'] not in ('prism_like', 'standard'):
         raise ValueError('Unsupported plot style')
+    for section, keys in LATER_KEYS.items():
+        for k in keys:
+            if c[section][k] is None:
+                c[section].pop(k)
     return c
 
 
@@ -127,9 +162,14 @@ def load_data(path, cfg):
     d['exclude'] = d.exclude == 'true'
     if (d.exclude & (d.exclusion_reason.str.strip() == '')).any():
         raise ValueError('Excluded rows require a documented reason (M10: only obvious, documented errors)')
-    if set(d.status) - {'quantified', 'below_lloq', 'above_uloq'}:
+    if e == 'carry_over':
+        if set(d.status) != {'measured'}:
+            raise ValueError('carry_over rows are raw responses: status must be measured')
+        q = d.status == 'measured'
+    elif set(d.status) - {'quantified', 'below_lloq', 'above_uloq'}:
         raise ValueError('status must be quantified, below_lloq or above_uloq')
-    q = d.status == 'quantified'
+    else:
+        q = d.status == 'quantified'
     if (d.value[q].str.strip() == '').any() or (d.value[~q].str.strip() != '').any():
         raise ValueError('value is required for quantified rows and must be empty otherwise; do not substitute LLOQ/ULOQ numbers')
     d['value'] = pd.to_numeric(d.value.where(q, None), errors='raise')
@@ -158,6 +198,23 @@ def load_data(path, cfg):
             raise ValueError(f'{e} roles must be ' + ', '.join(sorted(roles)))
     if e == 'stability' and (d.groupby(['condition', 'level']).nominal.nunique() != 1).any():
         raise ValueError('Each condition/level needs one nominal concentration')
+    if e == 'incurred_sample_reanalysis':
+        if set(d.analysis) - {'original', 'repeat'}:
+            raise ValueError('analysis must be original or repeat')
+        if (d.groupby('sample_id').analysis.apply(sorted) != pd.Series([['original', 'repeat']]*d.sample_id.nunique(), index=sorted(d.sample_id.unique()))).any():
+            raise ValueError('Each ISR sample needs exactly one original and one repeat result')
+    if e == 'carry_over':
+        if set(d.role) - {'uloq', 'blank', 'lloq'}:
+            raise ValueError('carry_over roles must be uloq, blank or lloq')
+        d['position'] = pd.to_numeric(d.position, errors='raise')
+        if (d.position % 1 != 0).any() or d.duplicated(['sequence_id', 'position']).any():
+            raise ValueError('position must be a unique integer within each sequence')
+        for _, g in d.sort_values('position').groupby('sequence_id'):
+            roles = g.role.tolist()
+            if any(r == 'blank' and (i == 0 or roles[i-1] != 'uloq') for i, r in enumerate(roles)):
+                raise ValueError('Each carry-over blank must directly follow a ULOQ sample in its sequence')
+            if 'blank' not in roles or 'lloq' not in roles:
+                raise ValueError('Each sequence needs at least one post-ULOQ blank and one LLOQ sample')
     return d
 
 
@@ -404,14 +461,77 @@ def stability(d, cfg):
     return {'conditions': rows, 'summary': {'all_conditions_pass': all(r['passes_criteria'] for r in rows)}, 'design_diagnostics': diag}
 
 
+def isr_required_samples(n):
+    """ICH M10 ISR extent: 10% of the first 1000 study samples plus 5% of those beyond."""
+    return int(np.ceil(.1*min(n, 1000) + .05*max(n-1000, 0)))
+
+
+def incurred_sample_reanalysis(d, cfg):
+    q, s = cfg['criteria'], cfg['statistics']; level = s['confidence_level']; limit = q['isr_difference_percent']; per, diag = [], []
+    excluded = sorted(d.loc[d.exclude, 'sample_id'].unique())
+    for sid, g in d[~d.sample_id.isin(excluded)].groupby('sample_id', sort=True):
+        o, r = (g[g.analysis == k].iloc[0] for k in ('original', 'repeat'))
+        row = {'sample_id': sid, 'original_status': o.status, 'repeat_status': r.status}
+        if o.status == 'quantified' and r.status == 'quantified':
+            mean = (o.value+r.value)/2
+            diff = float(100*(r.value-o.value)/mean) if mean > 0 else None
+            row.update(original=float(o.value), repeat=float(r.value), mean=float(mean), percent_difference=diff,
+                       evaluable=diff is not None, passes=bool(diff is not None and abs(diff) <= limit))
+        else:
+            counted = s['isr_unquantified_pair'] == 'count_as_failed'
+            row.update(evaluable=counted, passes=False if counted else None,
+                       note='Not both quantified; ' + ('counted as a failed pair (declared policy).' if counted else 'not evaluable (declared policy).'))
+        per.append(row)
+    used = [r for r in per if r['evaluable']]; k, n = sum(r['passes'] for r in used), len(used)
+    if n == 0:
+        raise ValueError('No evaluable ISR pairs')
+    diffs = np.array([r['percent_difference'] for r in used if r.get('percent_difference') is not None])
+    summary = {'evaluable_pairs': n, 'passing_pairs': int(k), 'pass_fraction': k/n, 'required_fraction': q['required_pass_fraction'],
+               'difference_limit_percent': limit, 'passes_criteria': bool(k/n >= q['required_pass_fraction']-1e-12),
+               'pass_fraction_interval': clopper_pearson(int(k), n, level),
+               'interval_method': 'Clopper-Pearson exact binomial (supplement; the guideline rule uses the observed fraction)',
+               'unquantified_pair_policy': s['isr_unquantified_pair'], 'not_evaluable_pairs': sum(1 for r in per if not r['evaluable']),
+               'excluded_samples': excluded}
+    if len(diffs) >= 2:
+        m, se = float(diffs.mean()), float(diffs.std(ddof=1)/np.sqrt(len(diffs))); t = stats.t.ppf((1+level)/2, len(diffs)-1)
+        summary['mean_percent_difference'] = {'estimate': m, 'interval': [m-t*se, m+t*se], 'confidence_level': level, 'n': len(diffs),
+            'excludes_zero': bool(m-t*se > 0 or m+t*se < 0),
+            'method': 'One-sample t interval on per-pair percent differences (supplement; detects a systematic original-vs-repeat shift)'}
+        if summary['mean_percent_difference']['excludes_zero']:
+            diag.append(f'Systematic shift: mean percent difference {m:.1f}% has a {100*level:g}% interval excluding zero; investigate even if the ISR rule passes.')
+    if s.get('isr_study_samples') is not None and len(per) < isr_required_samples(s['isr_study_samples']):
+        diag.append(f'{len(per)} ISR samples for {s["isr_study_samples"]} study samples; ICH M10 suggests at least {isr_required_samples(s["isr_study_samples"])} (10% of the first 1000 plus 5% beyond).')
+    return {'pairs': per, 'summary': summary, 'design_diagnostics': diag}
+
+
+def carry_over(d, cfg):
+    limit = cfg['criteria']['carryover_percent_of_lloq']; used = d[~d.exclude]; rows, seqs, diag = [], [], []
+    for sid, g in used.sort_values('position').groupby('sequence_id', sort=True):
+        lloq = g[g.role == 'lloq'].value.to_numpy(); blanks = g[g.role == 'blank']
+        if not len(lloq) or not len(blanks):
+            raise ValueError(f'Sequence {sid} lost its LLOQ or blank samples to exclusions')
+        ref = float(lloq.mean())
+        if ref <= 0:
+            raise ValueError(f'Sequence {sid}: mean LLOQ response must be positive')
+        for _, b in blanks.iterrows():
+            pct = float(100*b.value/ref)
+            rows.append({'sequence_id': sid, 'position': int(b.position), 'blank_response': float(b.value), 'percent_of_lloq': pct, 'passes': bool(pct <= limit)})
+        seqs.append({'sequence_id': sid, 'mean_lloq_response': ref, 'n_lloq': len(lloq), 'n_blanks': len(blanks)})
+        if len(lloq) < 2:
+            diag.append(f'{sid}: one LLOQ response is the reference; its noise enters every blank ratio.')
+    return {'blanks': rows, 'sequences': seqs, 'design_diagnostics': diag,
+            'summary': {'all_blanks_pass': all(r['passes'] for r in rows), 'max_percent_of_lloq': max(r['percent_of_lloq'] for r in rows), 'limit_percent': limit}}
+
+
 def compute(d, cfg):
     e = cfg['experiment']
     result = {'accuracy_precision': accuracy_precision, 'dilution_linearity': dilution_linearity, 'parallelism': parallelism,
-              'selectivity': pass_rates, 'specificity': pass_rates, 'stability': stability}[e](d, cfg)
+              'selectivity': pass_rates, 'specificity': pass_rates, 'stability': stability,
+              'incurred_sample_reanalysis': incurred_sample_reanalysis, 'carry_over': carry_over}[e](d, cfg)
     result.update(schema_version=1, analysis_type='method_validation', experiment=e,
                   criteria=cfg['criteria'], excluded=d.loc[d.exclude, ['observation_id', 'exclusion_reason']].to_dict('records'))
     result['limitations'] = [
         'Acceptance criteria are the user-declared values and source; the software does not decide which guideline applies.',
-        'Inputs are back-calculated concentrations; calibration-curve fitting and run acceptance are upstream.',
+        'Inputs are raw responses (carry-over only) or back-calculated concentrations; calibration-curve fitting and run acceptance are upstream.' if e == 'carry_over' else 'Inputs are back-calculated concentrations; calibration-curve fitting and run acceptance are upstream.',
         'Passing these experiments is part of a validation, not a complete validation or regulatory acceptance.']
     return result

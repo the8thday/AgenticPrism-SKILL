@@ -61,3 +61,20 @@ Assumptions: independent subjects, non-informative censoring, common time zero,
 and for Cox proportional hazards. Not supported: competing risks, recurrent
 events, time-varying covariates, stratified or frailty models, interval
 censoring, left truncation.
+
+## Competing risks contract (0.13.1)
+
+```json
+{"analysis_type": "competing_risks", "input": "study.csv", "source": "...",
+ "study": {"endpoint": "Tumor volume reaching 1500 mm3", "time_origin": "Randomization", "time_unit": "day",
+           "censoring_rationale": "Administrative end of study", "competing_events_rationale": "Ulceration euthanasia precludes the tumor endpoint",
+           "rationale": "..."},
+ "causes": {"1": "tumor endpoint", "2": "non-tumor euthanasia"}, "cause_of_interest": "1",
+ "comparison": {"arms": ["vehicle", "mAb"], "control_arm": "vehicle", "covariates": [], "landmarks": [21, 35], "confidence_level": 0.95}}
+```
+
+Columns: `subject_id`, `arm`, `time`, `status` (0 censored or a declared cause code),
+declared numeric covariates, optional `exclude`/`exclusion_reason`. Results: per-arm,
+per-cause step curves (`curves`, as cmprsk `cuminc` corners), landmark CIF with
+log(−log) intervals, Gray tests (unstratified, rho 0), Fine–Gray terms (cmprsk `crr`
+sandwich variance) and cause-specific Cox terms (Efron), all versus `control_arm`.

@@ -26,6 +26,24 @@ well screens. They do not establish validated compound activity. Carry observed
 calibration misses into reports and confirm hits in independent experiments.
 Use `interpretation_facts.json` and [release evidence](../../validation/RELEASE_0.13.0.md).
 
+## Layout-conditional hit reference (0.13.1)
+
+`hit_reference: {"method": "layout_simulation", "simulations": 999, "seed": <int>,
+"source": "..."}` replaces the predictive-t reference for hit p-values. Each
+plate is compared with simulated null plates that keep its fitted additive
+row/column pattern, positive-control offset and exact control layout, scored by
+the same median polish and statistic. Declare the seed and count before
+analysis; never rerun with new seeds to change hits. Registered calibration
+(1000 plates per row): global-null false-hit rate 0.041 plain, 0.044 edge,
+0.037 gradient (bound about 0.064; predictive t 0.093–0.098), mean FDP 0.040
+with four actives. Cost: 0.671 of +5 SD actives detected versus 0.779. The
+reference assumes independent Gaussian wells and additive plate effects; it
+does not correct nonadditive or biological layout effects. Hits remain
+exploratory well screens. The default (`predictive_t`) keeps the 0.13.0
+behavior and limitation below. See [0.13.1 evidence](../../validation/RELEASE_0.13.1.md).
+
+## Default predictive-t reference (0.13.0)
+
 0.13.0 calibration observed a global-null false-hit probability of0.100
 (100/1000; MCSE0.009487), above the registered0.063784 bound. Lead with this
 limitation: nominal BH adjustment has not demonstrated FDR control here.

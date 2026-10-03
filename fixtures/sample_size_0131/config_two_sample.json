@@ -1,0 +1,17 @@
+{
+  "analysis_type": "sample_size",
+  "source": "Synthetic planning example; assumptions illustrative, not from team data",
+  "purpose": "Plan a two-arm in vivo study comparing tumor volume on day 21 (illustrative)",
+  "design": "two_sample_t",
+  "solve_for": "n",
+  "alpha": 0.05,
+  "target_power": 0.8,
+  "assumptions": {
+    "difference": 150.0,
+    "difference_source": "Smallest difference the team would act on (illustrative declaration)",
+    "sd": 180.0,
+    "sd_source": "Pooled SD of vehicle arms in prior studies (illustrative declaration)",
+    "allocation_ratio": 1.0
+  },
+  "sensitivity": {"assumption": "sd", "values": [140.0, 180.0, 220.0, 260.0]}
+}

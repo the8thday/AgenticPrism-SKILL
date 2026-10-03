@@ -47,7 +47,7 @@ def main():
                                   "must_mention": facts["must_mention"],
                                   "interpretation": "Meeting declared criteria is part of a validation, not regulatory acceptance"}, ensure_ascii=False))
                 return 0
-            if result.get("analysis_type") in ("epitope_binning", "drug_combination", "hts_qc"):
+            if result.get("analysis_type") in ("epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks"):
                 print(json.dumps({"output": str(out), "analysis_type": result["analysis_type"], "primary": result["primary"]}, ensure_ascii=False))
                 return
             failed = sum(f["status"] == "failed" for f in result["fits"])

@@ -12,8 +12,11 @@ hashes, results, diagnostics and an offline HTML report. Every module also
 writes `interpretation_facts.json`: the saved results the agent must base its
 narrative on (primary estimates, what is reportable or withheld and why,
 required disclosures, limitations). Earlier saved runs are not rewritten.
+Each method is checked against established implementations, calibrated by
+simulation, and tested with a real agent on misuse scenarios
+([how](#tested-with-a-real-agent-not-only-numerically)).
 
-## Status: public beta 0.13.0
+## Status: public beta 0.13.1
 
 AgenticPrism is for research analysis. It has **not** been validated as a
 computerized system for GLP/GMP work or regulatory submissions (for example
@@ -27,11 +30,18 @@ data; feedback from real project data is welcome through GitHub issues.
 |---|---|
 | Validated against reference implementations and calibrated | Equilibrium KD, 1:1 kinetics, 4PL dose response and relative potency, ELISA, two-group and multi-group comparisons, rank tests, repeated measures and MMRM, time-to-event, tumor growth, ADA cut points, variance components, method validation, stability, potency assay, comparability, specifications, routine statistics (0.11.1) |
 | Usable with stated limits | Affinity depth and cell binding (no published worked example), advanced surface kinetics (bootstrap intervals not calibrated at default settings), epitope binning (no published worked example), drug combination (Loewe/ZIP not identical to synergyfinder) |
-| Exploratory | HTS hit calling (false-hit rate above nominal under the global null) |
+| Exploratory | HTS hit calling with the default predictive-t reference (false-hit rate above nominal under the global null) |
+| New in 0.13.1, live-agent review pending | HTS hits with the opt-in layout-simulation reference, 5PL and bell-shaped dose response, ISR and carry-over, sample size and power, competing risks, thermal stability |
 
 Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
+
+## 0.13.1
+
+Three opt-in additions; default outputs are byte-identical to 0.13.0. HTS hits can use a layout-conditional simulated null (registered global-null false-hit rate 0.037–0.044 instead of 0.093–0.098, with lower power). Method validation adds incurred sample reanalysis and carry-over. Dose response adds asymmetric 5PL and Prism-style bell-shaped curves; in the overlapping-phase stress simulation, the few bell fits that passed every gate covered the true EC50s poorly, which saved facts disclose. A new sample-size Skill plans n or power from sourced assumptions (agreement with pwr and PowerTOST; simulated rejection rates matched in all ten registered designs). Time-to-event adds competing risks equal to cmprsk (cumulative incidence, Gray's test, Fine–Gray) with cause-specific Cox; all registered calibration rows passed. A new thermal-stability Skill fits apparent Tm; its first registered calibration missed multi-transition coverage, the gates were changed, and the second run still has one retained miss and a rare overlap leak, both disclosed.
+
+See [release evidence](validation/RELEASE_0.13.1.md). Published worked examples are unmet and live-agent review is pending.
 
 ## 0.13.0
 
@@ -60,18 +70,20 @@ See [release evidence](validation/RELEASE_0.12.1.md) for retained misses and unm
 | Binding characterization | Equilibrium affinity (KD) | [equilibrium-binding](skills/equilibrium-binding/SKILL.md) | Hyperbola or opt-in exact depletion, SET n-curves, three-state competition Ki; profile-F and independent-experiment summaries |
 | | Cell-surface apparent affinity | [cell-binding](skills/cell-binding/SKILL.md) | Joint total/control fit, declared background, hyperbolic or quadratic receptor depletion; apparent KD only |
 | | Association and dissociation rates | [binding-kinetics](skills/binding-kinetics/SKILL.md) | Global 1:1 fit of independent-cycle or single-cycle BLI/SPR data, reference or double referencing, block-bootstrap intervals with reliability gates; opt-in drift, heterogeneous ligand, bivalent analyte, mass transport and off-rate screening; scoped Octet/T200/Carterra imports |
-| In vitro function | EC50/IC50 and relative potency | [dose-response](skills/dose-response/SKILL.md) | Symmetric 4PL, relative midpoint with profile interval, parallel-line relative potency with F-test or equivalence-margin parallelism |
+| Developability | Thermal stability (apparent Tm) | [thermal-stability](skills/thermal-stability/SKILL.md) | nanoDSF/DSF/CD two-state transitions with sloping baselines, declared transition count tested against one fewer, profile-F Tm, derivative inflections, replicate summaries and delta-Tm |
+| In vitro function | EC50/IC50 and relative potency | [dose-response](skills/dose-response/SKILL.md) | Symmetric 4PL, relative midpoint with profile interval, parallel-line relative potency with F-test or equivalence-margin parallelism; opt-in asymmetric 5PL and bell-shaped (hook) curves |
 | | Concentration from a standard curve | [elisa-quantification](skills/elisa-quantification/SKILL.md) | Per-plate 4PL/5PL, back-calculation QC, independent QC gates, delta-method unknown intervals, dilution linearity; plate-grid import |
 | In vivo efficacy | Tumor volumes over time | [tumor-growth](skills/tumor-growth/SKILL.md) | Log-volume random-slope model: growth rates, doubling times, rate differences, model T/C; observed TGI% and T/C% with Fieller limits and dropout diagnostics |
-| | Survival, time to humane endpoint | [time-to-event](skills/time-to-event/SKILL.md) | Kaplan–Meier, log-rank (asymptotic or permutation), Cox hazard ratios, proportional-hazards test |
+| | Survival, time to humane endpoint | [time-to-event](skills/time-to-event/SKILL.md) | Kaplan–Meier, log-rank (asymptotic or permutation), Cox hazard ratios, proportional-hazards test; competing risks (cumulative incidence, Gray test, Fine–Gray and cause-specific hazard ratios) |
 | | Body weight or other scheduled measurements | [repeated-measures](skills/repeated-measures/SKILL.md) | RM and split-plot ANOVA with GG correction, random-intercept models with Satterthwaite, marginal US/AR(1) MMRM with optional Kenward–Roger |
-| Bioanalysis and immunogenicity | Method validation (ICH M10-style, ligand-binding assays) | [method-validation](skills/method-validation/SKILL.md) | Accuracy/precision with total error, dilution linearity and hook effect, parallelism with trend check, selectivity, specificity, stability; accuracy profile |
+| Bioanalysis and immunogenicity | Method validation (ICH M10-style, ligand-binding assays) | [method-validation](skills/method-validation/SKILL.md) | Accuracy/precision with total error, dilution linearity and hook effect, parallelism with trend check, selectivity, specificity, stability, incurred sample reanalysis, carry-over; accuracy profile |
 | | ADA cut points, sensitivity, drug tolerance | [ada-cut-point](skills/ada-cut-point/SKILL.md) | Screening/confirmatory/titer cut points, fixed or floating, confidence lower bounds; positive-control sensitivity with a run-to-run prediction limit; drug tolerance |
 | | Repeatability and intermediate precision | [variance-components](skills/variance-components/SKILL.md) | REML for nested/crossed factors, unbalanced data, MLS/MOVER intervals |
 | CMC and quality | Long-term stability and shelf life | [stability](skills/stability/SKILL.md) | Q1E linear regression, slope-first poolability, mean confidence bounds and declaration-gated extrapolation |
 | | Relative potency across runs and validation | [potency-assay](skills/potency-assay/SKILL.md) | Log-RP random-run REML, MLS/MOVER intermediate precision, bias, linearity equivalence and tested range; failing runs retained |
 | | Lot comparability and biosimilarity (one attribute) | [comparability](skills/comparability/SKILL.md) | TOST equivalence of lot means against a declared margin, quality range with declared k, or descriptive; tier recorded, never inferred |
 | | Tolerance intervals and process capability | [specifications](skills/specifications/SKILL.md) | Exact normal and nonparametric tolerance intervals (minimum n when too few lots); Pp/Ppk and within-subgroup Cp/Cpk with intervals |
+| Any stage | Planning sample size or power | [sample-size](skills/sample-size/SKILL.md) | Exact noncentral t/F and TOST power, arcsine or pooled-normal proportions, Schoenfeld log-rank events; sourced assumptions, power curve and sensitivity grid |
 | Any stage | Comparing groups | [group-comparison](skills/group-comparison/SKILL.md) | Welch or paired t, one-way ANOVA with Dunnett/Tukey/Games-Howell/Holm families, Mann–Whitney and signed-rank with Hodges–Lehmann, Kruskal–Wallis with Dunn, Friedman |
 
 The [router Skill](skills/agentic-prism/SKILL.md) picks the specialist from the
@@ -148,11 +160,42 @@ Details, scope and every number: [validation/README.md](validation/README.md).
 | Potency across runs | R lme4; independent MLS/MOVER calculation | 6.90e-7 relative | 12/12 rows pass; matching published worked example unavailable |
 | Comparability, specifications | R `tolerance` (EXACT factors), `t.test`; NIST/SEMATECH printed tolerance and capability values | 3.3e-9 relative | 13/15 pass; the two n = 10 capability rows miss by Monte Carlo error (100,000-dataset check: 94.9%, 95.4%) |
 
-Live-agent misuse scenarios (for example asking for a verdict without
-acceptance criteria, omitting a hook effect, or quoting positive-control
-sensitivity as a patient detection limit) are recorded per release in
-[validation/agent-scenarios](validation/agent-scenarios/README.md).
 **No numerical equivalence to GraphPad Prism is claimed.**
+
+### Tested with a real agent, not only numerically
+
+Correct numerics do not guarantee a correct analysis. Users reach these methods
+through an AI agent, and an agent can skip the Skill, go along with a request it
+should refuse, or quote a withheld estimate as a result. A passing test suite
+cannot detect any of that. So each release is also tested behaviorally.
+
+- **Misuse scenarios.** Each scenario pairs a realistic dataset with a request
+  that should not be carried out as asked: report only the synergy model that
+  looks best, pick equivalence margins after seeing the data, call hits without
+  plate correction, quote a positive-control sensitivity as a patient detection
+  limit, treat technical repeats as independent experiments.
+- **Real sessions.** `scripts/run_agent_scenarios.py` starts a real Claude session
+  in an isolated workspace with only the Skills and the data, and records the
+  full conversation, tool calls and outputs. The agent never sees earlier
+  transcripts.
+- **Scored against fixed criteria.** Each scenario lists required actions (read
+  the Skill, refuse or correct the request, run the right analysis, state the
+  required disclosures) and forbidden behavior (complying, inventing values,
+  promoting withheld results). A good-looking report is not an automatic pass;
+  failed attempts are kept.
+
+| Release | Live-agent result |
+|---|---|
+| 0.11.0 affinity depth | 6/6 passed |
+| 0.11.1 routine statistics | 6/6 passed |
+| 0.12.0 surface kinetics | 5/5 passed |
+| 0.12.1 epitope binning | 2/3 passed; the agent merged bins by eye without reading the Skill in 2 of 3 attempts |
+| 0.13.0 combination and HTS | 4/4 passed |
+| 0.13.1 | Pending |
+
+Every scenario, criterion and scored response is in
+[validation/agent-scenarios](validation/agent-scenarios/README.md), including the
+failures.
 
 ## Installation
 

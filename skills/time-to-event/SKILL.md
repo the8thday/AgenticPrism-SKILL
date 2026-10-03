@@ -1,6 +1,6 @@
 ---
 name: time-to-event
-description: Analyze time-to-event outcomes such as survival or time to a humane endpoint in in-vivo efficacy studies (xenograft, syngeneic, infection models) - Kaplan-Meier curves with confidence limits, median survival, survival at landmark times, log-rank tests (asymptotic or exact-by-permutation for small arms) with predeclared pairwise families, Cox proportional-hazards hazard ratios with optional covariates, and a proportional-hazards test. Numerically equal to R survival. Not for recurrent events, competing risks, time-varying covariates, clustered subjects or interval-censored data.
+description: Analyze time-to-event outcomes such as survival or time to a humane endpoint in in-vivo efficacy studies (xenograft, syngeneic, infection models) - Kaplan-Meier curves with confidence limits, median survival, survival at landmark times, log-rank tests (asymptotic or exact-by-permutation for small arms) with predeclared pairwise families, Cox proportional-hazards hazard ratios with optional covariates, and a proportional-hazards test. Numerically equal to R survival. Competing risks (0.13.1) - cumulative incidence, Gray's test, Fine-Gray subdistribution and cause-specific hazard ratios, equal to cmprsk. Not for recurrent events, time-varying covariates, clustered subjects or interval-censored data.
 ---
 
 # Time-to-event analysis
@@ -21,8 +21,12 @@ analysis.
   censoring is unrelated to prognosis. If animals were removed because they
   were doing badly, that is an event, not censoring; ask the user rather than
   choosing. State the reason in `study.censoring_rationale`.
-- **Unit:** one row per animal/subject. Cage or litter clustering, repeated
-  events and competing causes of death are not handled; say so if present.
+- **Unit:** one row per animal/subject. Cage or litter clustering and repeated
+  events are not handled; say so if present.
+- **Competing events:** if another event makes the event of interest
+  impossible (e.g. euthanasia for ulceration before the tumor endpoint), it is
+  a competing event, not censoring. Use `analysis_type=competing_risks` (below);
+  do not treat it as censoring and report 1 − Kaplan–Meier.
 
 ## Choose the analysis
 
@@ -76,3 +80,36 @@ never copy its endpoint or censoring statements.
 - Do not describe animals as "cured", and do not extrapolate beyond follow-up.
 
 Validation against R survival and small-sample simulations: [0.8.0 evidence](../../validation/RELEASE_0.8.0.md).
+
+## Competing risks (0.13.1)
+
+Use `analysis_type: "competing_risks"` when subjects can experience one of
+several mutually exclusive first events. Declare `causes` (codes "1", "2", ...;
+status 0 = censored), the `cause_of_interest`, and
+`study.competing_events_rationale` explaining why the other events preclude the
+event of interest. Ask the user how each removal reason is classified; never
+reclassify an event as censoring to simplify the analysis.
+
+The run reports, per arm and cause, the Aalen–Johansen cumulative incidence
+with log(−log) pointwise intervals at declared landmarks; Gray's test per cause;
+Fine–Gray subdistribution hazard ratios; and cause-specific Cox hazard ratios
+(other causes censored), each versus the control arm, with optional covariates.
+
+- The Fine–Gray ratio describes the cumulative incidence (how many animals reach
+  the event); the cause-specific ratio describes the event rate among animals
+  still event-free. A treatment can lower the tumor endpoint's cumulative
+  incidence partly by increasing competing removals: read the cumulative
+  incidence of every cause, not only the event of interest.
+- Never call the subdistribution hazard ratio a rate ratio, and do not report
+  1 − KM for a cause when competing events occurred.
+- With fewer than about 10 events of interest per regression term, the facts
+  flag imprecision.
+
+Evidence (0.13.1): cumulative incidence, its variance, Gray's statistic and the
+Fine–Gray coefficients and sandwich variance agree with cmprsk 2.2-12, and
+cause-specific Cox with survival 3.8-6, within 7e-14 on five synthetic sets and
+the public `mgus2` data. Calibration (1000 per row): CIF coverage 0.954/0.943,
+Fine–Gray coverage 0.952 (n 200) and 0.957 (n 60), Gray type I error 0.051,
+cause-specific coverage 0.964. Published worked example and live-agent gates are
+pending. See [the 0.13.1 record](../../validation/RELEASE_0.13.1.md) and the
+[contract](references/input-and-model.md).

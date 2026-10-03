@@ -11,7 +11,7 @@ from .workflow import dump, sha, implementation_hash, verify_run
 
 HEADLINE = {'accuracy_precision': 'all_levels_pass', 'dilution_linearity': 'passes_without_hook',
             'parallelism': 'all_samples_pass_cv', 'selectivity': 'all_groups_pass', 'specificity': 'all_groups_pass',
-            'stability': 'all_conditions_pass'}
+            'stability': 'all_conditions_pass', 'incurred_sample_reanalysis': 'passes_criteria', 'carry_over': 'all_blanks_pass'}
 
 
 def write_facts(out):
@@ -19,6 +19,8 @@ def write_facts(out):
     r = json.loads((out/'results.json').read_text())
     e = r['experiment']
     must = list(r['design_diagnostics'])
+    if r.get('validation_evidence_0131'):
+        must += r['validation_evidence_0131']['must_mention']
     if e == 'dilution_linearity' and r['hook_effect_suspected']:
         must.insert(0, 'Hook effect suspected: an above-ULOQ QC did not read above the ULOQ.')
     if e == 'accuracy_precision' and r['summary'].get('accuracy_profile', {}).get('status') == 'estimated':
@@ -33,6 +35,12 @@ def write_facts(out):
         failing = [{'dilution_factor': v['dilution_factor'], 'accuracy_percent': v['accuracy_percent'], 'cv_percent': v['cv_percent']} for v in r['dilutions'] if v['passes_criteria'] is False]
     elif e == 'parallelism':
         failing = [{'sample_id': v['sample_id'], 'cv_percent': v['cv_percent']} for v in r['samples'] if v['passes_criteria'] is False]
+    elif e == 'incurred_sample_reanalysis':
+        failing = [{k: v.get(k) for k in ('sample_id', 'percent_difference', 'original_status', 'repeat_status')} for v in r['pairs'] if v['passes'] is False]
+        if r['summary']['not_evaluable_pairs']:
+            must.append(f"{r['summary']['not_evaluable_pairs']} ISR pair(s) were not both quantified; declared policy: {r['summary']['unquantified_pair_policy']}.")
+    elif e == 'carry_over':
+        failing = [v for v in r['blanks'] if not v['passes']]
     elif e in ('selectivity', 'specificity'):
         failing = [{k: v[k] for k in ('role', 'interferent', 'passing', 'sources', 'required_fraction') if k in v} for v in r['groups'] if not v['passes_criteria']]
     else:
@@ -62,6 +70,9 @@ def analyze_method_validation(config_path, output, render=True):
         result = method_validation.compute(d, cfg)
         from .evidence_093 import METHOD_VALIDATION
         result['validation_evidence'] = METHOD_VALIDATION
+        if cfg['experiment'] in ('incurred_sample_reanalysis', 'carry_over'):
+            from .evidence_0131 import EVIDENCE
+            result['validation_evidence_0131'] = EVIDENCE['method_validation_' + ('isr' if cfg['experiment'] == 'incurred_sample_reanalysis' else 'carry_over')]
         dump(out/'results.json', result)
         write_facts(out)
         (out/'rerun.txt').write_text('agentic-prism analyze --config config.resolved.json --output ../rerun-new\n')
@@ -100,6 +111,18 @@ def _figure(run, r, style):
                 ax.hlines([-v['limits']['accuracy'], v['limits']['accuracy']], v['nominal']*.9, v['nominal']*1.1, colors=pstyle.EXCLUDED, linestyles=(0, (4, 2)))
             ax.set_xscale('log'); ax.set(xlabel='Nominal concentration', ylabel='Relative error (%)', title='Accuracy profile')
             ax.legend()
+        elif e == 'incurred_sample_reanalysis':
+            rows = [v for v in r['pairs'] if v.get('percent_difference') is not None]; lim = r['summary']['difference_limit_percent']
+            ax.scatter([v['mean'] for v in rows], [v['percent_difference'] for v in rows], s=22, c=['black' if v['passes'] else pstyle.EXCLUDED for v in rows], zorder=3)
+            for y in (-lim, lim):
+                ax.axhline(y, color=pstyle.EXCLUDED, linestyle=(0, (4, 2)))
+            ax.axhline(0, color=pstyle.MUTED, lw=.8); ax.set_xscale('log')
+            ax.set(xlabel='Mean of original and repeat', ylabel='Percent difference (%)', title='Incurred sample reanalysis')
+        elif e == 'carry_over':
+            rows = r['blanks']
+            ax.bar([f"{v['sequence_id']}:{v['position']}" for v in rows], [v['percent_of_lloq'] for v in rows], color='#bfc5cc', edgecolor='black', linewidth=.8, width=.6)
+            ax.axhline(r['summary']['limit_percent'], color=pstyle.EXCLUDED, linestyle=(0, (4, 2)))
+            ax.set(xlabel='Blank after ULOQ (sequence:position)', ylabel='Blank response (% of LLOQ)', title='Carry-over')
         elif e in ('dilution_linearity', 'parallelism'):
             key = 'dilutions' if e == 'dilution_linearity' else 'samples'
             if e == 'dilution_linearity':

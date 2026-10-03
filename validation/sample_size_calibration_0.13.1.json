@@ -1,0 +1,199 @@
+{
+  "seed": 131261007,
+  "simulations_per_row": 4000,
+  "rows": [
+    {
+      "scenario": "t_equal",
+      "design": "two_sample_t",
+      "assumptions": {
+        "difference": 0.8,
+        "sd": 1.0,
+        "allocation_ratio": 1.0
+      },
+      "target": 0.8,
+      "n": 26,
+      "computed_power": 0.8074866151465278,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.812,
+      "mcse": 0.006177701838062435,
+      "difference": 0.004513384853472302,
+      "bound_abs": 0.012468038398470351,
+      "passed": true
+    },
+    {
+      "scenario": "t_ratio2",
+      "design": "two_sample_t",
+      "assumptions": {
+        "difference": 0.6,
+        "sd": 1.0,
+        "allocation_ratio": 2.0
+      },
+      "target": 0.9,
+      "n": 45,
+      "computed_power": 0.9036358583952442,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.90825,
+      "mcse": 0.0045643164192461505,
+      "difference": 0.004614141604755817,
+      "bound_abs": 0.009331564382113772,
+      "passed": true
+    },
+    {
+      "scenario": "paired",
+      "design": "paired_t",
+      "assumptions": {
+        "difference": 0.5,
+        "sd_difference": 1.0
+      },
+      "target": 0.8,
+      "n": 34,
+      "computed_power": 0.8077775012792738,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.8125,
+      "mcse": 0.006171380518166093,
+      "difference": 0.004722498720726165,
+      "bound_abs": 0.012460859107874008,
+      "passed": true
+    },
+    {
+      "scenario": "anova4",
+      "design": "one_way_anova",
+      "assumptions": {
+        "group_means": [
+          0.0,
+          0.5,
+          1.0,
+          1.0
+        ],
+        "sd": 1.0
+      },
+      "target": 0.8,
+      "n": 17,
+      "computed_power": 0.803623329143124,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.809,
+      "mcse": 0.006215283581623608,
+      "difference": 0.005376670856876098,
+      "bound_abs": 0.012562359412150498,
+      "passed": true
+    },
+    {
+      "scenario": "prop_arcsine",
+      "design": "two_proportions",
+      "assumptions": {
+        "p1": 0.3,
+        "p2": 0.5,
+        "allocation_ratio": 1.0,
+        "method": "arcsine"
+      },
+      "target": 0.8,
+      "n": 93,
+      "computed_power": 0.8012822372718114,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.798,
+      "mcse": 0.00634814933661772,
+      "difference": -0.003282237271811317,
+      "bound_abs": 0.01261859792150031,
+      "passed": true
+    },
+    {
+      "scenario": "prop_normal",
+      "design": "two_proportions",
+      "assumptions": {
+        "p1": 0.3,
+        "p2": 0.5,
+        "allocation_ratio": 1.0,
+        "method": "normal_approximation"
+      },
+      "target": 0.8,
+      "n": 93,
+      "computed_power": 0.8000055747840035,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.80375,
+      "mcse": 0.006279648427658989,
+      "difference": 0.003744425215996494,
+      "bound_abs": 0.012648978421142147,
+      "passed": true
+    },
+    {
+      "scenario": "logrank_complete",
+      "design": "logrank",
+      "assumptions": {
+        "hazard_ratio": 0.6,
+        "event_probability": 1.0,
+        "allocation_ratio": 1.0
+      },
+      "target": 0.8,
+      "n": 121,
+      "computed_power": 0.8022207565598208,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.7935,
+      "mcse": 0.006400346670298414,
+      "difference": -0.008720756559820853,
+      "bound_abs": 0.012596134895451442,
+      "passed": true
+    },
+    {
+      "scenario": "logrank_censored",
+      "design": "logrank",
+      "assumptions": {
+        "hazard_ratio": 0.6,
+        "event_probability": 0.606060606060606,
+        "allocation_ratio": 1.0
+      },
+      "target": 0.8,
+      "n": 199,
+      "computed_power": 0.8009454441164366,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.79275,
+      "mcse": 0.006408928098754113,
+      "difference": -0.00819544411643669,
+      "bound_abs": 0.012626632158479976,
+      "passed": true
+    },
+    {
+      "scenario": "tost_equal",
+      "design": "tost_two_means",
+      "assumptions": {
+        "difference": 0.1,
+        "sd": 0.3,
+        "margin": [
+          -0.45,
+          0.45
+        ],
+        "allocation_ratio": 1.0
+      },
+      "target": 0.8,
+      "n": 11,
+      "computed_power": 0.8344258693128899,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.839,
+      "mcse": 0.005811174580065549,
+      "difference": 0.004574130687110101,
+      "bound_abs": 0.011754120040833253,
+      "passed": true
+    },
+    {
+      "scenario": "tost_ratio15",
+      "design": "tost_two_means",
+      "assumptions": {
+        "difference": 0.1,
+        "sd": 0.3,
+        "margin": [
+          -0.45,
+          0.45
+        ],
+        "allocation_ratio": 1.5
+      },
+      "target": 0.8,
+      "n": 9,
+      "computed_power": 0.8342533163634098,
+      "simulations": 4000,
+      "empirical_rejection_rate": 0.84,
+      "mcse": 0.005796550698475776,
+      "difference": 0.005746683636590144,
+      "bound_abs": 0.011759027191909298,
+      "passed": true
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""Strict input contract for relative EC50/IC50 four-parameter curves."""
+"""Strict input contract for relative EC50/IC50 curves: symmetric 4PL, or opt-in 5PL / bell-shaped (0.13.1)."""
 from copy import deepcopy
 import json
 import numpy as np
@@ -9,8 +9,11 @@ DOSE_UNITS = {**UNITS, "mg/mL": 1., "ug/mL": 1e-3, "µg/mL": 1e-3,
               "μg/mL": 1e-3, "ng/mL": 1e-6, "source_unit": 1.}
 MASS_UNITS = {"mg/mL", "ug/mL", "µg/mL", "μg/mL", "ng/mL"}
 
+MODELS = ("relative_four_parameter_logistic", "relative_five_parameter_logistic", "bell_shaped")
 DEFAULTS = {
     "schema_version": 1, "analysis_type": "dose_response_4pl", "model": "relative_four_parameter_logistic",
+    # model_rationale is required for the opt-in models and removed from 4PL configs (legacy bytes).
+    "model_rationale": "",
     "input": None, "source": "User-supplied dose-response observations", "column_map": {},
     "provenance": None,
     "dose_scale": "linear",  # "log10" means log10 of values in the supplied concentration_unit.
@@ -47,8 +50,20 @@ def resolve_dose_config(raw):
         return result
 
     c = merge(DEFAULTS, raw)
-    if c["schema_version"] != 1 or c["analysis_type"] != "dose_response_4pl" or c["model"] != "relative_four_parameter_logistic":
-        raise ValueError("Unsupported 4PL schema or model")
+    if c["schema_version"] != 1 or c["analysis_type"] != "dose_response_4pl" or c["model"] not in MODELS:
+        raise ValueError("Unsupported dose-response schema or model; models are " + ", ".join(MODELS))
+    if c["model"] == MODELS[0]:
+        if c["model_rationale"]:
+            raise ValueError("model_rationale applies only to the opt-in 5PL and bell-shaped models")
+        c.pop("model_rationale")
+    else:
+        if not isinstance(c["model_rationale"], str) or not c["model_rationale"].strip():
+            raise ValueError("Declare model_rationale: why this shape was chosen before seeing the fit (assay biology or prior runs)")
+        if c["comparisons"]:
+            raise ValueError("Relative-potency comparisons use the parallel symmetric 4PL only")
+        if c["model"] == "bell_shaped" and (c["fit"]["weighting"] != "unweighted" or c["fit"]["fixed_bottom"] is not None
+                                            or c["fit"]["fixed_top"] is not None):
+            raise ValueError("bell_shaped supports unweighted fits with three free plateaus only")
     a = c["assay"]
     if a["endpoint"] not in ("EC50", "IC50") or a["direction"] not in ("increasing", "decreasing"):
         raise ValueError("Specify the biological endpoint EC50/IC50 and observed response direction independently")

@@ -1,0 +1,209 @@
+{
+  "seed": 20260927,
+  "level": 0.95,
+  "design": "9 standard levels x 3 wells; 3 unknowns x 3 wells at dilution 2; one plate",
+  "note": "Scores only samples the pipeline reported. Simulated independent Gaussian noise under the stated model; no plate-to-plate, matrix, pipetting or dilution error; not evidence for real assays.",
+  "results": [
+    {
+      "scenario": "4pl_unweighted_additive_sd0.012",
+      "model": "4pl",
+      "weighting": "unweighted",
+      "noise": [
+        "add",
+        0.012
+      ],
+      "true_sample_concentration_ng_mL": 3.0,
+      "repetitions": 300,
+      "n_reported": 300,
+      "fraction_reported": 1.0,
+      "coverage": 0.9333333333333333,
+      "acceptance_min_coverage": 0.9248338852157642,
+      "seconds": 10.7,
+      "passed": true
+    },
+    {
+      "scenario": "4pl_unweighted_additive_sd0.012",
+      "model": "4pl",
+      "weighting": "unweighted",
+      "noise": [
+        "add",
+        0.012
+      ],
+      "true_sample_concentration_ng_mL": 16.0,
+      "repetitions": 300,
+      "n_reported": 300,
+      "fraction_reported": 1.0,
+      "coverage": 0.95,
+      "acceptance_min_coverage": 0.9248338852157642,
+      "seconds": 10.7,
+      "passed": true
+    },
+    {
+      "scenario": "4pl_unweighted_additive_sd0.012",
+      "model": "4pl",
+      "weighting": "unweighted",
+      "noise": [
+        "add",
+        0.012
+      ],
+      "true_sample_concentration_ng_mL": 80.0,
+      "repetitions": 300,
+      "n_reported": 300,
+      "fraction_reported": 1.0,
+      "coverage": 0.94,
+      "acceptance_min_coverage": 0.9248338852157642,
+      "seconds": 10.7,
+      "passed": true
+    },
+    {
+      "scenario": "4pl_relative_proportional_cv4",
+      "model": "4pl",
+      "weighting": "relative",
+      "noise": [
+        "prop",
+        0.04
+      ],
+      "true_sample_concentration_ng_mL": 3.0,
+      "repetitions": 300,
+      "n_reported": 287,
+      "fraction_reported": 0.9566666666666667,
+      "coverage": 0.9547038327526133,
+      "acceptance_min_coverage": 0.9242702330767777,
+      "seconds": 116.4,
+      "passed": true
+    },
+    {
+      "scenario": "4pl_relative_proportional_cv4",
+      "model": "4pl",
+      "weighting": "relative",
+      "noise": [
+        "prop",
+        0.04
+      ],
+      "true_sample_concentration_ng_mL": 16.0,
+      "repetitions": 300,
+      "n_reported": 287,
+      "fraction_reported": 0.9566666666666667,
+      "coverage": 0.975609756097561,
+      "acceptance_min_coverage": 0.9242702330767777,
+      "seconds": 116.4,
+      "passed": true
+    },
+    {
+      "scenario": "4pl_relative_proportional_cv4",
+      "model": "4pl",
+      "weighting": "relative",
+      "noise": [
+        "prop",
+        0.04
+      ],
+      "true_sample_concentration_ng_mL": 80.0,
+      "repetitions": 300,
+      "n_reported": 95,
+      "fraction_reported": 0.31666666666666665,
+      "coverage": 0.9473684210526315,
+      "acceptance_min_coverage": 0.9052786404500042,
+      "seconds": 116.4,
+      "passed": true
+    },
+    {
+      "scenario": "5pl_relative_proportional_cv3_asymmetric_truth",
+      "model": "5pl",
+      "weighting": "relative",
+      "noise": [
+        "prop",
+        0.03
+      ],
+      "true_sample_concentration_ng_mL": 3.0,
+      "repetitions": 300,
+      "n_reported": 300,
+      "fraction_reported": 1.0,
+      "coverage": 0.9366666666666666,
+      "acceptance_min_coverage": 0.9248338852157642,
+      "seconds": 858.3,
+      "passed": true
+    },
+    {
+      "scenario": "5pl_relative_proportional_cv3_asymmetric_truth",
+      "model": "5pl",
+      "weighting": "relative",
+      "noise": [
+        "prop",
+        0.03
+      ],
+      "true_sample_concentration_ng_mL": 16.0,
+      "repetitions": 300,
+      "n_reported": 300,
+      "fraction_reported": 1.0,
+      "coverage": 0.9466666666666667,
+      "acceptance_min_coverage": 0.9248338852157642,
+      "seconds": 858.3,
+      "passed": true
+    },
+    {
+      "scenario": "5pl_relative_proportional_cv3_asymmetric_truth",
+      "model": "5pl",
+      "weighting": "relative",
+      "noise": [
+        "prop",
+        0.03
+      ],
+      "true_sample_concentration_ng_mL": 80.0,
+      "repetitions": 300,
+      "n_reported": 127,
+      "fraction_reported": 0.42333333333333334,
+      "coverage": 0.9606299212598425,
+      "acceptance_min_coverage": 0.9113210264856215,
+      "seconds": 858.3,
+      "passed": true
+    },
+    {
+      "scenario": "4pl_relative_on_asymmetric_truth_misspecified",
+      "model": "4pl",
+      "weighting": "relative",
+      "noise": [
+        "prop",
+        0.03
+      ],
+      "true_sample_concentration_ng_mL": 3.0,
+      "repetitions": 300,
+      "n_reported": 297,
+      "fraction_reported": 0.99,
+      "coverage": 0.8888888888888888,
+      "acceptance_min_coverage": "none (misspecified contrast)",
+      "seconds": 116.7
+    },
+    {
+      "scenario": "4pl_relative_on_asymmetric_truth_misspecified",
+      "model": "4pl",
+      "weighting": "relative",
+      "noise": [
+        "prop",
+        0.03
+      ],
+      "true_sample_concentration_ng_mL": 16.0,
+      "repetitions": 300,
+      "n_reported": 297,
+      "fraction_reported": 0.99,
+      "coverage": 0.9932659932659933,
+      "acceptance_min_coverage": "none (misspecified contrast)",
+      "seconds": 116.7
+    },
+    {
+      "scenario": "4pl_relative_on_asymmetric_truth_misspecified",
+      "model": "4pl",
+      "weighting": "relative",
+      "noise": [
+        "prop",
+        0.03
+      ],
+      "true_sample_concentration_ng_mL": 80.0,
+      "repetitions": 300,
+      "n_reported": 180,
+      "fraction_reported": 0.6,
+      "coverage": 0.9833333333333333,
+      "acceptance_min_coverage": "none (misspecified contrast)",
+      "seconds": 116.7
+    }
+  ]
+}

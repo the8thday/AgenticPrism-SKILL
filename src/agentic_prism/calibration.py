@@ -163,8 +163,11 @@ def fit_5pl(std, cfg, dc, factor):
         prediction = b + (t - b) * s
         return prediction, (b, t), _weighted(prediction, y, dc)
 
+    # 0.13.1: h = 4 starts appended (superset of the 0.13.0 grid). Without them, steep standard
+    # curves could stop at the asymmetry bound or a worse interior optimum.
     starts = [(a, h, g) for a in np.linspace(lo, hi, 5) for h in (np.log10(.6), 0., np.log10(1.8))
               for g in (np.log10(.4), 0., np.log10(2.5))]
+    starts += [(a, np.log10(4.), g) for a in np.linspace(lo, hi, 5) for g in (np.log10(.4), 0., np.log10(2.5))]
     best = _best(lambda z: evaluate(z)[2] / scale, starts, lower, upper, f["max_nfev"])
     if best is None:
         result["diagnostics"].append("optimizer_failed")

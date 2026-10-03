@@ -1,0 +1,144 @@
+{
+  "release": "0.13.1",
+  "oracle": "R 4.6.0 stats::nls plinear (Golub-Pereyra)",
+  "tolerances": {
+    "sse_relative": 1e-06,
+    "tm_absolute_c": 0.001
+  },
+  "checks": [
+    {
+      "curve_id": "mAb-ref-R1",
+      "transitions": 3,
+      "python_sse": 0.0005138272632152176,
+      "r_sse": 0.0005138272632152,
+      "sse_relative_difference": 3.439384531862057e-14,
+      "max_tm_difference_c": 4.508400763825193e-08,
+      "python_tm": [
+        69.746236451084,
+        76.60505629540766,
+        84.12969069854057
+      ],
+      "r_tm": [
+        69.746236406,
+        76.6050562939,
+        84.1296907134
+      ],
+      "passed": true
+    },
+    {
+      "curve_id": "mAb-ref-R2",
+      "transitions": 3,
+      "python_sse": 0.0005030571918391198,
+      "r_sse": 0.000503057191839,
+      "sse_relative_difference": 2.3815252421237784e-13,
+      "max_tm_difference_c": 1.426062965492747e-07,
+      "python_tm": [
+        70.44962499476591,
+        76.8855134642063,
+        84.11706189836548
+      ],
+      "r_tm": [
+        70.4496250438,
+        76.8855133216,
+        84.1170618228
+      ],
+      "passed": true
+    },
+    {
+      "curve_id": "mAb-ref-R3",
+      "transitions": 3,
+      "python_sse": 0.000568791270322662,
+      "r_sse": 0.0005687912703227,
+      "sse_relative_difference": -6.690590773773772e-14,
+      "max_tm_difference_c": 7.28870332977749e-08,
+      "python_tm": [
+        69.66017806188704,
+        76.57444082564216,
+        84.19863439679372
+      ],
+      "r_tm": [
+        69.660177989,
+        76.5744407829,
+        84.1986344044
+      ],
+      "passed": true
+    },
+    {
+      "curve_id": "mAb-variant-R1",
+      "transitions": 3,
+      "python_sse": 0.0006328038886529705,
+      "r_sse": 0.0006328038886529,
+      "sse_relative_difference": 1.1136647937100952e-13,
+      "max_tm_difference_c": 8.522894745510712e-08,
+      "python_tm": [
+        67.89874895644608,
+        77.13814386917105,
+        84.39865501662037
+      ],
+      "r_tm": [
+        67.898748912,
+        77.1381439544,
+        84.3986550884
+      ],
+      "passed": true
+    },
+    {
+      "curve_id": "mAb-variant-R2",
+      "transitions": 3,
+      "python_sse": 0.0005292742755239327,
+      "r_sse": 0.0005292742755239,
+      "sse_relative_difference": 6.18637767283358e-14,
+      "max_tm_difference_c": 5.966506932963966e-08,
+      "python_tm": [
+        68.06055030043493,
+        76.86897712474237,
+        83.90594641413512
+      ],
+      "r_tm": [
+        68.0605503601,
+        76.8689770982,
+        83.9059463656
+      ],
+      "passed": true
+    },
+    {
+      "curve_id": "mAb-variant-R3",
+      "transitions": 3,
+      "python_sse": 0.0005209036566614789,
+      "r_sse": 0.0005209036566614,
+      "sse_relative_difference": 1.5131684512426461e-13,
+      "max_tm_difference_c": 4.53994744020747e-08,
+      "python_tm": [
+        68.01069236140053,
+        76.78473183303085,
+        83.64738745733248
+      ],
+      "r_tm": [
+        68.0106924068,
+        76.784731846,
+        83.6473874265
+      ],
+      "passed": true
+    },
+    {
+      "curve_id": "Fab-R1",
+      "transitions": 1,
+      "python_sse": 0.0021396225720898294,
+      "r_sse": 0.0021396225720898,
+      "sse_relative_difference": 1.3782944467071183e-14,
+      "max_tm_difference_c": 1.0098233360622544e-10,
+      "python_tm": [
+        62.03205407170098
+      ],
+      "r_tm": [
+        62.0320540716
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "Same model in both implementations; agreement checks the optimizer and the linear projection, not the two-state model itself.",
+    "Synthetic fixture curves only; published nanoDSF worked example UNMET."
+  ]
+}
