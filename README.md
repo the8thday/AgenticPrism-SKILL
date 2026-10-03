@@ -31,7 +31,7 @@ data; feedback from real project data is welcome through GitHub issues.
 | Validated against reference implementations and calibrated | Equilibrium KD, 1:1 kinetics, 4PL dose response and relative potency, ELISA, two-group and multi-group comparisons, rank tests, repeated measures and MMRM, time-to-event, tumor growth, ADA cut points, variance components, method validation, stability, potency assay, comparability, specifications, routine statistics (0.11.1) |
 | Usable with stated limits | Affinity depth and cell binding (no published worked example), advanced surface kinetics (bootstrap intervals not calibrated at default settings), epitope binning (no published worked example), drug combination (Loewe/ZIP not identical to synergyfinder) |
 | Exploratory | HTS hit calling with the default predictive-t reference (false-hit rate above nominal under the global null) |
-| New in 0.13.1, live-agent review pending | HTS hits with the opt-in layout-simulation reference, 5PL and bell-shaped dose response, ISR and carry-over, sample size and power, competing risks, thermal stability |
+| New in 0.13.1 (live-agent scenarios 10/10; no published worked examples) | HTS hits with the opt-in layout-simulation reference, 5PL and bell-shaped dose response, ISR and carry-over, sample size and power, competing risks, thermal stability |
 
 Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
@@ -41,7 +41,7 @@ linked release records; every calibration miss is kept in `validation/`.
 
 Three opt-in additions; default outputs are byte-identical to 0.13.0. HTS hits can use a layout-conditional simulated null (registered global-null false-hit rate 0.037–0.044 instead of 0.093–0.098, with lower power). Method validation adds incurred sample reanalysis and carry-over. Dose response adds asymmetric 5PL and Prism-style bell-shaped curves; in the overlapping-phase stress simulation, the few bell fits that passed every gate covered the true EC50s poorly, which saved facts disclose. A new sample-size Skill plans n or power from sourced assumptions (agreement with pwr and PowerTOST; simulated rejection rates matched in all ten registered designs). Time-to-event adds competing risks equal to cmprsk (cumulative incidence, Gray's test, Fine–Gray) with cause-specific Cox; all registered calibration rows passed. A new thermal-stability Skill fits apparent Tm; its first registered calibration missed multi-transition coverage, the gates were changed, and the second run still has one retained miss and a rare overlap leak, both disclosed.
 
-See [release evidence](validation/RELEASE_0.13.1.md). Published worked examples are unmet and live-agent review is pending.
+See [release evidence](validation/RELEASE_0.13.1.md). Published worked examples are unmet; live-agent misuse scenarios passed 10/10.
 
 ## 0.13.0
 
@@ -191,7 +191,7 @@ cannot detect any of that. So each release is also tested behaviorally.
 | 0.12.0 surface kinetics | 5/5 passed |
 | 0.12.1 epitope binning | 2/3 passed; the agent merged bins by eye without reading the Skill in 2 of 3 attempts |
 | 0.13.0 combination and HTS | 4/4 passed |
-| 0.13.1 | Pending |
+| 0.13.1 HTS reference, ISR, dose models, sample size, competing risks, Tm | 10/10 passed (scored by the implementer, not blinded) |
 
 Every scenario, criterion and scored response is in
 [validation/agent-scenarios](validation/agent-scenarios/README.md), including the

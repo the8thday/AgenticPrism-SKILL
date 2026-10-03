@@ -1,0 +1,27 @@
+sample_id,experiment_id,curve_id,concentration,concentration_unit,response,response_unit
+TCE-22,run1,TCE-22-r1,0.003,pM,0.71,% specific lysis
+TCE-22,run1,TCE-22-r1,0.009487,pM,-0.54,% specific lysis
+TCE-22,run1,TCE-22-r1,0.03,pM,5.15,% specific lysis
+TCE-22,run1,TCE-22-r1,0.09487,pM,2.90,% specific lysis
+TCE-22,run1,TCE-22-r1,0.3,pM,6.70,% specific lysis
+TCE-22,run1,TCE-22-r1,0.9487,pM,7.09,% specific lysis
+TCE-22,run1,TCE-22-r1,3,pM,28.25,% specific lysis
+TCE-22,run1,TCE-22-r1,9.487,pM,42.44,% specific lysis
+TCE-22,run1,TCE-22-r1,30,pM,44.71,% specific lysis
+TCE-22,run1,TCE-22-r1,94.87,pM,30.42,% specific lysis
+TCE-22,run1,TCE-22-r1,300,pM,20.47,% specific lysis
+TCE-22,run1,TCE-22-r1,948.7,pM,14.34,% specific lysis
+TCE-22,run1,TCE-22-r1,3000,pM,12.23,% specific lysis
+TCE-22,run1,TCE-22-r2,0.003,pM,4.20,% specific lysis
+TCE-22,run1,TCE-22-r2,0.009487,pM,5.94,% specific lysis
+TCE-22,run1,TCE-22-r2,0.03,pM,0.26,% specific lysis
+TCE-22,run1,TCE-22-r2,0.09487,pM,0.17,% specific lysis
+TCE-22,run1,TCE-22-r2,0.3,pM,9.80,% specific lysis
+TCE-22,run1,TCE-22-r2,0.9487,pM,16.58,% specific lysis
+TCE-22,run1,TCE-22-r2,3,pM,33.22,% specific lysis
+TCE-22,run1,TCE-22-r2,9.487,pM,41.07,% specific lysis
+TCE-22,run1,TCE-22-r2,30,pM,36.78,% specific lysis
+TCE-22,run1,TCE-22-r2,94.87,pM,30.23,% specific lysis
+TCE-22,run1,TCE-22-r2,300,pM,17.33,% specific lysis
+TCE-22,run1,TCE-22-r2,948.7,pM,11.10,% specific lysis
+TCE-22,run1,TCE-22-r2,3000,pM,15.17,% specific lysis

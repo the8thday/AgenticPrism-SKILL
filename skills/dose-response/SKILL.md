@@ -69,6 +69,7 @@ per row): 95% profile-F coverage 0.944–0.957 for three 5PL asymmetries and for
 both EC50s of separated bell and U curves. In the overlapping-phase stress row
 96.7% of fits were withheld, but the 33 that passed every gate covered only
 0.39 / 0.30, so treat EC50s from phases less than about two decades apart as
-unsupported even when reported. Published worked example and live-agent gates
-are pending; facts carry these lines. See
+unsupported even when reported. The published worked-example gate is unmet;
+the two bell-shaped live-agent misuse scenarios passed and 5PL was not
+scenario-tested ([live-agent results](../../validation/agent-scenarios/0.13.1/RESULTS.md)); facts carry these lines. See
 [the 0.13.1 record](../../validation/RELEASE_0.13.1.md).

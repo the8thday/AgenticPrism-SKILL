@@ -110,6 +110,6 @@ Fine–Gray coefficients and sandwich variance agree with cmprsk 2.2-12, and
 cause-specific Cox with survival 3.8-6, within 7e-14 on five synthetic sets and
 the public `mgus2` data. Calibration (1000 per row): CIF coverage 0.954/0.943,
 Fine–Gray coverage 0.952 (n 200) and 0.957 (n 60), Gray type I error 0.051,
-cause-specific coverage 0.964. Published worked example and live-agent gates are
-pending. See [the 0.13.1 record](../../validation/RELEASE_0.13.1.md) and the
+cause-specific coverage 0.964. The published worked-example gate is unmet; live-agent
+misuse scenarios passed ([live-agent results](../../validation/agent-scenarios/0.13.1/RESULTS.md)). See [the 0.13.1 record](../../validation/RELEASE_0.13.1.md) and the
 [contract](references/input-and-model.md).

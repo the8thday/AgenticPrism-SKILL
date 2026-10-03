@@ -9,7 +9,8 @@
 - New `sample-size` specialist (`analysis_type=sample_size`): sourced-assumption power and n for two-sample/paired t, one-way ANOVA, two proportions, Schoenfeld log-rank and TOST of two means, with a saved power curve and sensitivity grid; extension workflow accepts design-only configs.
 - Time-to-event: `analysis_type=competing_risks` with Aalen–Johansen cumulative incidence, Gray's test and Fine–Gray regression ported from cmprsk, plus cause-specific Cox hazard ratios.
 - New `thermal-stability` specialist (`analysis_type=thermal_unfolding`): apparent Tm from nanoDSF/DSF/CD with declared transitions, a k vs k−1 structure test, profile-F intervals, derivative inflections and delta-Tm; two registered calibrations with retained misses.
-- Evidence: drc LL.5 and base-R nls benchmarks (failed initial run retained), three prespecified calibrations, `evidence_0131.py`; the poor coverage of overlapping bell fits that pass every gate is disclosed in facts. 4PL, default HTS and earlier method-validation outputs are byte-identical to 0.13.0. Live-agent review pending.
+- Evidence: drc LL.5 and base-R nls benchmarks (failed initial run retained), three prespecified calibrations, `evidence_0131.py`; the poor coverage of overlapping bell fits that pass every gate is disclosed in facts. 4PL, default HTS and earlier method-validation outputs are byte-identical to 0.13.0.
+- Live-agent misuse review: 10/10 scenarios passed (fresh inputs, criteria fixed before the run); README gains a section on this testing.
 
 Report changes made after 0.13.0 and first released here:
 

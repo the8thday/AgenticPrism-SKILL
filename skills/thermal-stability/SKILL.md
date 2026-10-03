@@ -53,5 +53,6 @@ covered 0.943–0.963 except the noisy third transition (0.932, a retained miss)
 0.9% of overlapped second-transition estimates still passed every gate and were
 mostly wrong: treat Tm values of transitions closer than about two widths as
 unsupported. The gates withhold more often (about 72% of noisy three-transition
-curves reportable). Published worked example and live-agent gates are pending.
+curves reportable). The published worked-example gate is unmet; live-agent misuse
+scenarios passed ([live-agent results](../../validation/agent-scenarios/0.13.1/RESULTS.md)).
 See [the 0.13.1 record](../../validation/RELEASE_0.13.1.md).

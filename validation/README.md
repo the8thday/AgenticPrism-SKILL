@@ -9,8 +9,8 @@ covered 0.901–0.996 at 90%), and asymmetric 5PL / bell-shaped dose response (d
 base-R nls 8/8 after a retained failed initial run; 95% coverage 0.944–0.957; the
 overlapping-phase stress row covered 0.39 / 0.30 among the 3.3% of fits that passed the
 gates). Unchanged scientific artifacts: 154 configurations, 1167 files byte-identical to
-dev/0.13.0. Published worked examples UNMET; live-agent review PENDING; no build or
-clean-install check for this local release. ELISA 5PL start grid widened (changed method):
+dev/0.13.0. Published worked examples UNMET; live-agent misuse scenarios 10/10 passed
+([results](agent-scenarios/0.13.1/RESULTS.md), implementer-scored); no build or clean-install check. ELISA 5PL start grid widened (changed method):
 registered drc check 31/41 with every miss outside the declared Hill/asymmetry bounds and
 withheld (post-hoc wider Hill bound matched 9/10); ELISA interval calibration rerun
 identical to 0.7.0 in all 12 rows; ELISA 5PL fixture changes at most 5.0e-7 relative.

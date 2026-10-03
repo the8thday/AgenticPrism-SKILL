@@ -48,6 +48,6 @@ Power functions agree with pwr 1.3.0, `power.prop.test` and PowerTOST 1.5.7
 rejection rates within two binomial SE of the computed power for all ten
 registered rows, including the approximate proportion and Schoenfeld log-rank
 methods against Pearson chi-square and the package log-rank. The first
-benchmark run hid three NaN powers (fixed and retained). Published worked
-example and live-agent gates are pending. See
+benchmark run hid three NaN powers (fixed and retained). The published
+worked-example gate is unmet; live-agent misuse scenarios passed ([live-agent results](../../validation/agent-scenarios/0.13.1/RESULTS.md)). See
 [the 0.13.1 record](../../validation/RELEASE_0.13.1.md).

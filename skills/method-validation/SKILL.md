@@ -119,6 +119,7 @@ being tested (for example a shared pipetting head).
 
 Evidence (0.13.1): ISR supplements were calibrated (1000 datasets per row, seed
 131261004); the t interval covered 0.901–0.914 and Clopper–Pearson 0.915–0.996
-at the 90% level, all rows above their bounds. Published worked examples and
-live-agent misuse scenarios are not yet done; the saved facts say so. See
+at the 90% level, all rows above their bounds. The published worked-example
+gate is unmet; the ISR live-agent misuse scenario passed
+([live-agent results](../../validation/agent-scenarios/0.13.1/RESULTS.md)). The saved facts say so. See
 [the 0.13.1 record](../../validation/RELEASE_0.13.1.md).

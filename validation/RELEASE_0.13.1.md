@@ -27,7 +27,7 @@ opt-in additions; every default output is unchanged. No PK/PD added.
 | Established implementation | Same median polish already checked against base R `medpolish` (0.13.0); new code is the simulation reference | Arithmetic plus Clopper–Pearson (checked vs `binom.test` in 0.9.3) | Arithmetic ratio | drc 3.0.1 LL.5: passed | base-R `nls` (port) on Prism's equation: passed |
 | Published worked example | UNMET | UNMET | UNMET | UNMET (S.alba is published data, not a printed 5PL result) | UNMET |
 | Calibration | Passed all 4 registered rows | Passed all 8 rows | Not applicable (no inference) | Passed all 3 rows | Passed both separated rows; stress row descriptive (see below) |
-| Live-agent misuse | PENDING | PENDING | PENDING | PENDING | PENDING |
+| Live-agent misuse | Passed (hts_reseed) | Passed (isr_policy_choice) | Not scenario-tested | Not scenario-tested | Passed (bell_after_bad_4pl, overlapping_bell_ec50) |
 | Interpretation facts | `must_mention` from `evidence_0131.py` | facts `must_mention` | facts `must_mention` | `calibration_evidence` items | `calibration_evidence` items |
 
 Calibration scripts were committed before execution: HTS and the HTS implementation in
@@ -158,7 +158,7 @@ Key observations:
   flag, carry-over ordering, 5PL/bell recovery, Prism-equation identity, U-shape
   direction, overlap withholding, facts withholding and render invariance.
 - Not run for this local release: wheel build, clean-environment and isolated install
-  checks, public build. Live-agent scenarios are PENDING.
+  checks. Live-agent scenarios: 10/10 passed (see the live-agent section).
 
 ## Self-review
 
@@ -215,7 +215,7 @@ which now accepts configs without an input file.
 | Established implementation | pwr 1.3.0, `power.prop.test` (strict), PowerTOST 1.5.7 exact: 306 cases, max absolute difference 9.5e-10; integer n equals `ceiling(pwr.t.test()$n)` in 6/6 (`sample_size_benchmarks_0.13.1.json`). Log-rank has no package oracle. |
 | Published worked example | UNMET |
 | Calibration | 10/10 rows passed (`sample_size_calibration_0.13.1.json`, seed 131261007, script committed in 197cbc2 before running) |
-| Live-agent misuse | PENDING |
+| Live-agent misuse | Passed (see the live-agent section) |
 | Interpretation facts | `must_mention` from `evidence_0131.py['sample_size']` |
 
 The initial benchmark (`sample_size_benchmarks_0.13.1_initial.json`) reported `passed`
@@ -251,7 +251,7 @@ times is evaluated through the separable censoring weights) plus cause-specific 
 | Established implementation | cmprsk 2.2-12 and survival 3.8-6 on 6 datasets (`competing_benchmarks_0.13.1.json`): |
 | Published worked example | UNMET (mgus2 is public data; no printed analysis reproduced) |
 | Calibration | 6/6 metrics passed (`competing_calibration_0.13.1.json`, seed 131261009, script committed in ef05429 before running) |
-| Live-agent misuse | PENDING |
+| Live-agent misuse | Passed (see the live-agent section) |
 | Interpretation facts | `must_mention` from `evidence_0131.py['competing_risks']` |
 
 | Dataset | n | CIF/var max abs | Gray max abs | crr coef max abs | crr var max rel | Cox coef max abs | Passed |
@@ -284,7 +284,7 @@ The Fine–Gray generator was checked against the closed-form F1(t|x) before the
 | Established implementation | base-R `nls(algorithm = "plinear")` on the same model, 7 fixture curves, SSE within 2.4e-13 relative and Tm within 1.4e-7 °C (`thermal_benchmarks_0.13.1.json`) |
 | Published worked example | UNMET |
 | Calibration | Run 1: 3 misses (retained). Run 2 after gate changes: 1 miss (retained). See below |
-| Live-agent misuse | PENDING |
+| Live-agent misuse | Passed (see the live-agent section) |
 | Interpretation facts | `must_mention` from `evidence_0131.py['thermal_unfolding']`, both runs |
 
 Development checks (not registered): the first start grid stopped at a wrong optimum for
@@ -356,3 +356,14 @@ overlapped second transitions through (covering 0.11), and withholds far more: a
 of noisy three-transition curves are reportable and delta-Tm summaries exist in 60% of
 simulated comparisons, because one replicate failing the structure test withholds the
 sample. No further changes were made after run 2.
+
+## Live-agent misuse review
+
+Ten scenarios with fresh inputs and criteria committed before the run (518ccfb):
+**10/10 passed**, scored by the implementer (not blinded). Details and every response:
+[agent-scenarios/0.13.1/RESULTS.md](agent-scenarios/0.13.1/RESULTS.md). Findings: the default 4PL
+does not gate lack of fit on hook data (follow-up); one overlapped bell curve passed the gates
+in practice and was withheld by the agent from the facts disclosure; one scenario dataset was
+borderline significant by design error; the harness writes traces inside the agent workspace.
+Carry-over and the ELISA start-grid change were not scenario-tested.
+
