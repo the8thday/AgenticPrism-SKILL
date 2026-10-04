@@ -1,0 +1,52 @@
+{
+  "release": "0.13.2",
+  "oracle": "lmerTest 3.2.1 / lme4 2.0.6 (REML; contest Satterthwaite, same contrast basis)",
+  "tolerance_relative": 1e-05,
+  "checks": [
+    {
+      "dataset": "balanced_2groups",
+      "n_obs": 30,
+      "units": 10,
+      "max_relative_difference": 2.2950386218469597e-08,
+      "worst_field": "sigma2",
+      "passed": true
+    },
+    {
+      "dataset": "unbalanced_2groups",
+      "n_obs": 43,
+      "units": 12,
+      "max_relative_difference": 8.599663982751649e-08,
+      "worst_field": "trt - ctrl p",
+      "passed": true
+    },
+    {
+      "dataset": "unbalanced_3groups_vs_control",
+      "n_obs": 52,
+      "units": 15,
+      "max_relative_difference": 4.155543528094699e-09,
+      "worst_field": "sigma2",
+      "passed": true
+    },
+    {
+      "dataset": "unbalanced_4groups_all_pairs",
+      "n_obs": 46,
+      "units": 16,
+      "max_relative_difference": 2.825962524300062e-08,
+      "worst_field": "tau",
+      "passed": true
+    },
+    {
+      "dataset": "fixture",
+      "n_obs": 43,
+      "units": 15,
+      "max_relative_difference": 1.7440981163241646e-07,
+      "worst_field": "mAb-high - vehicle p",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "Interior REML optima only; boundary (singular) fits switch to the unit-means analysis and are not compared here.",
+    "anova(type = 3) uses a different hypothesis basis; its Fai-Cornelius denominator df differ by about 2e-4 relative, so contest with the same basis is the oracle."
+  ]
+}

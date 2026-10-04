@@ -12,7 +12,7 @@ JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保�
 每个方法都与公认实现比对、用模拟做校准，并用真实 Agent 在误用场景下测试行为
 （[详见](#不只测数值还用真实-agent-测行为)）。
 
-## 状态：公开测试版 0.13.1
+## 状态：公开测试版 0.13.2
 
 AgenticPrism 供科研分析使用。它**没有**按 GLP/GMP 或法规申报要求（例如
 21 CFR Part 11）做过计算机化系统验证；如果某项决策依赖分析结果，仍需统计人员
@@ -29,6 +29,10 @@ issue 反馈真实项目数据上的使用情况。
 
 各模块的具体限制见[模块登记表](skills/agentic-prism/references/module-registry.md)
 和对应的发布记录；所有校准失败都保留在 `validation/` 中。
+
+## 0.13.2
+
+新增五个日常分析：嵌套比较（动物或供体内的技术重复）、处理前协变量的 ANCOVA、时间曲线下面积、线性/二次标准曲线，以及 qPCR 相对定量。每项都与 R 参考实现一致（lmerTest、emmeans/car、investr、独立编写的 R 代码），注册校准全部通过（17/17）。描述性对照量化了它们要防止的错误，例如把孔当独立样本的伪重复 ANOVA 在零假设下有 26% 的拒绝率。公开实例验证未达到；真实 Agent 误用场景 10/10 通过，并发现一处缺口（曲线 AUC 尚不支持配对设计）。见[发布证据](validation/RELEASE_0.13.2.md)。
 
 ## 0.13.1
 
@@ -75,6 +79,11 @@ Bliss、Loewe、HSA、ZIP 组合参考模型与独立矩阵不确定性；HTS �
 | | 跨运行相对效价及验证 | [potency-assay](skills/potency-assay/SKILL.md) | 对数 RP 随机运行 REML、MLS/MOVER 中间精密度、偏倚、线性等效与实测范围；保留失败运行 |
 | | 批次可比性与生物类似性（单个属性） | [comparability](skills/comparability/SKILL.md) | 批均值对声明界限的 TOST 等效性检验、声明 k 的质量范围或描述性比较；记录属性分级，不代为推断 |
 | | 容忍区间与过程能力 | [specifications](skills/specifications/SKILL.md) | 精确正态及非参数容忍区间（批次不足时给出所需最少数量）；Pp/Ppk 及子组内 Cp/Cpk 与区间 |
+| 各阶段通用 | 动物或供体内的技术重复 | [group-comparison](skills/group-comparison/SKILL.md) | 嵌套比较：随机截距 REML 与 Satterthwaite，单位均值分析，ICC 与设计效应 |
+| 各阶段通用 | 校正基线的组间比较 | [group-comparison](skills/group-comparison/SKILL.md) | 处理前协变量的 ANCOVA，斜率齐性门槛，校正均值与对比 |
+| 各阶段通用 | 时间曲线下面积 | [curve-auc](skills/curve-auc/SKILL.md) | 按单位在声明区间与基线下做线性梯形积分，退出处理规则，Welch 比较 |
+| 体外检测 | 线性或二次标准曲线 | [standard-curve](skills/standard-curve/SKILL.md) | BCA/Bradford/拷贝数标准品，回收率与失拟接受标准，逆推区间，不外推 |
+| 体外检测 | qPCR 相对表达 | [qpcr](skills/qpcr/SKILL.md) | 效率校正的 ΔΔCq，多内参几何均值，按生物学重复统计，NTC 与内参稳定性检查 |
 | 各阶段通用 | 样本量与功效规划 | [sample-size](skills/sample-size/SKILL.md) | 精确非中心 t/F 与 TOST 功效，反正弦或合并正态的比例检验，Schoenfeld log-rank 事件数；假设须注明来源，附功效曲线与敏感性分析 |
 | 各阶段通用 | 组间比较 | [group-comparison](skills/group-comparison/SKILL.md) | Welch 或配对 t 检验，单因素 ANOVA 加 Dunnett/Tukey/Games-Howell/Holm 比较族，Mann–Whitney 与 signed-rank（Hodges–Lehmann），Kruskal–Wallis + Dunn，Friedman |
 
@@ -165,6 +174,7 @@ Skill 就作答，可能顺从本该拒绝的要求，也可能把被扣留的�
 | 0.12.1 表位分组 | 2/3 通过；三次尝试中有两次 Agent 没读 Skill 就凭肉眼合并表位组 |
 | 0.13.0 联用与 HTS | 4/4 通过 |
 | 0.13.1 HTS 参考分布、ISR、剂量模型、样本量、竞争风险、Tm | 10/10 通过（由实现者评分，非盲评） |
+| 0.13.2 嵌套比较、ANCOVA、曲线 AUC、标准曲线、qPCR | 10/10 通过（由实现者评分，非盲评） |
 
 每个场景、评分标准和评分后的回答都在
 [validation/agent-scenarios](validation/agent-scenarios/README.md)，失败的也在。

@@ -1,0 +1,71 @@
+{
+  "release": "0.13.2",
+  "oracles": {
+    "standard_curve": "R 4.6.0 lm and investr 1.4.2 invest(interval = \"inversion\")",
+    "qpcr_relative": "R 4.6.0 independent base-R delta-delta Cq and t.test(var.equal = FALSE)"
+  },
+  "checks": [
+    {
+      "module": "standard_curve",
+      "dataset": "linear_m3",
+      "max_relative_difference": 5.0794700326280906e-08,
+      "worst_field": "U0 upper",
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "module": "standard_curve",
+      "dataset": "linear_m1",
+      "max_relative_difference": 2.2906810436292937e-08,
+      "worst_field": "U1 lower",
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "module": "standard_curve",
+      "dataset": "quadratic_m2",
+      "max_relative_difference": 1.5349196969935605e-08,
+      "worst_field": "U2 est",
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "module": "standard_curve",
+      "dataset": "fixture_plate_P1",
+      "max_relative_difference": 2.7447958706907723e-08,
+      "worst_field": "P1-lysate1 upper",
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "module": "qpcr_relative",
+      "dataset": "efficiency_100_one_ref",
+      "max_relative_difference": 4.8676383186986757e-14,
+      "worst_field": "p",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "module": "qpcr_relative",
+      "dataset": "declared_efficiencies_two_refs",
+      "max_relative_difference": 1.8980231592280896e-13,
+      "worst_field": "p",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "module": "qpcr_relative",
+      "dataset": "fixture (partial undetermined, NTC)",
+      "max_relative_difference": 5.214370178463246e-14,
+      "worst_field": "IL6 p",
+      "tolerance": 1e-10,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "The R pcr package could not be installed (not on CRAN); the qPCR oracle is independent base-R code, not a package.",
+    "Standard-curve tolerance 1e-6 reflects root-finding tolerances in both implementations; weighted fits are not compared.",
+    "Published worked example (e.g. Livak and Schmittgen 2001): UNMET; full text not retrievable from PMC."
+  ]
+}

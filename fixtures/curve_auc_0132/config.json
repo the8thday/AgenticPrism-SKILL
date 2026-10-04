@@ -1,0 +1,30 @@
+{
+  "analysis_type": "curve_auc",
+  "input": "killing.csv",
+  "source": "Synthetic fixture (seed 13204); not team data",
+  "design": {
+    "unit": "donor",
+    "unit_rationale": "PBMC from independent donors, one well series per donor and condition (synthetic)",
+    "outcome": "Target-cell killing",
+    "outcome_unit": "%",
+    "time_unit": "hour"
+  },
+  "auc": {
+    "interval": [
+      0,
+      72
+    ],
+    "baseline": "first_value",
+    "incomplete_policy": "withhold_unit",
+    "policy_rationale": "Wells lost to contamination, unrelated to killing (synthetic declaration)"
+  },
+  "comparison": {
+    "groups": [
+      "isotype",
+      "TCE-low",
+      "TCE-high"
+    ],
+    "post_hoc": "vs_control",
+    "control_group": "isotype"
+  }
+}

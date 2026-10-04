@@ -1,0 +1,25 @@
+{
+  "analysis_type": "ancova",
+  "input": "study_slope_flag.csv",
+  "source": "Synthetic fixture (seed 13202): generated with a common slope; the homogeneity test happens to reject (p = 0.047) and withholds, as it does in about 5% of such data. Not team data",
+  "design": {
+    "unit": "mouse",
+    "unit_rationale": "Each mouse randomized individually (synthetic)",
+    "outcome": "Day-21 tumor volume",
+    "outcome_unit": "mm3",
+    "covariates": [
+      "baseline_volume_mm3"
+    ],
+    "covariate_timing": "before_treatment",
+    "covariate_rationale": "Tumor volume at randomization, measured before the first dose; prespecified in the study plan (synthetic)"
+  },
+  "comparison": {
+    "groups": [
+      "vehicle",
+      "mAb-low",
+      "mAb-high"
+    ],
+    "post_hoc": "vs_control",
+    "control_group": "vehicle"
+  }
+}

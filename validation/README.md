@@ -1,4 +1,12 @@
-# Validation — AgenticPrism development 0.13.1
+# Validation — AgenticPrism development 0.13.2
+
+## 0.13.2
+
+[Release evidence](RELEASE_0.13.2.md): nested comparisons (lmerTest within 1.7e-7), ANCOVA (lm/emmeans/car
+within 4.2e-12), curve AUC (base R within 1.8e-13), standard curves (investr within 5.1e-8) and qPCR
+(independent base R within 1.9e-13); 17/17 registered calibration rows passed, with descriptive rows for
+pseudo-replication (type I 0.258), unadjusted power, outcome-related dropout and misdeclared efficiency.
+Published worked examples UNMET; live-agent misuse scenarios 10/10 passed ([results](agent-scenarios/0.13.2/RESULTS.md)).
 
 ## 0.13.1
 

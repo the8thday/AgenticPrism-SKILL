@@ -1,0 +1,22 @@
+{
+  "analysis_type": "standard_curve",
+  "input": "bca.csv",
+  "source": "Synthetic BCA fixture (seed 13205); not team data",
+  "assay": {
+    "analyte": "Total protein",
+    "readout": "A562 (blank-subtracted by the reader)",
+    "concentration_unit": "ug/mL",
+    "rationale": "BCA microplate protocol, BSA standards 0-2000 ug/mL (synthetic)"
+  },
+  "model": {
+    "form": "quadratic",
+    "form_rationale": "Second-order fit is the validated model for this BCA kit range in SOP-12 (synthetic declaration)",
+    "weighting": "none"
+  },
+  "acceptance": {
+    "recovery_percent": 15,
+    "recovery_percent_lowest": 20,
+    "min_passing_fraction": 0.75,
+    "source": "SOP-12 section 6 (synthetic declaration)"
+  }
+}

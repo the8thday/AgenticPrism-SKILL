@@ -1,0 +1,47 @@
+{
+  "analysis_type": "qpcr_relative",
+  "input": "cq.csv",
+  "source": "Synthetic qPCR fixture (seed 13206); not team data",
+  "assay": {
+    "chemistry": "SYBR Green with melt curve",
+    "instrument": "QuantStudio 5 (synthetic)",
+    "cq_method": "Auto threshold, auto baseline",
+    "rationale": "Macrophage cytokine response to mAb (synthetic)"
+  },
+  "genes": {
+    "targets": [
+      "IL6",
+      "CXCL10"
+    ],
+    "references": [
+      "GAPDH",
+      "ACTB"
+    ],
+    "reference_rationale": "geNorm M < 0.5 for GAPDH and ACTB across these treatments in the pilot (synthetic declaration)"
+  },
+  "efficiency": {
+    "mode": "declared",
+    "values": {
+      "IL6": 1.93,
+      "CXCL10": 1.97,
+      "GAPDH": 1.95,
+      "ACTB": 2.0
+    },
+    "source": "Five-point 4-fold dilution standard curves, run R-07 (synthetic declaration)"
+  },
+  "design": {
+    "conditions": [
+      "vehicle",
+      "mAb"
+    ],
+    "control_condition": "vehicle",
+    "pairing": "independent",
+    "pairing_rationale": "Different donors per condition (synthetic)"
+  },
+  "qc": {
+    "cq_max": 35,
+    "technical_sd_flag": 0.3,
+    "reference_shift_flag_cycles": 0.5,
+    "source": "Lab qPCR SOP-4 (synthetic declaration)"
+  }
+}

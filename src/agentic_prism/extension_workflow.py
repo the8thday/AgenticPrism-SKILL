@@ -9,11 +9,16 @@ import importlib.metadata
 from .workflow import dump,sha,implementation_hash,verify_run
 from . import __version__
 from .routine import TYPES as ROUTINE_TYPES
-TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks"}
+TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative"}
 
 
 def module_for(kind):
- from . import routine, epitope, combination, hts, sample_size, thermal, competing
+ from . import routine, epitope, combination, hts, sample_size, thermal, competing, nested, ancova, curve_auc, standard_curve, qpcr
+ if kind in qpcr.TYPES:return qpcr
+ if kind in standard_curve.TYPES:return standard_curve
+ if kind in curve_auc.TYPES:return curve_auc
+ if kind in ancova.TYPES:return ancova
+ if kind in nested.TYPES:return nested
  if kind in competing.TYPES:return competing
  if kind in sample_size.TYPES:return sample_size
  if kind in thermal.TYPES:return thermal
@@ -61,6 +66,9 @@ def analyze_extension(config_path,output,render=True):
    from .evidence_0131 import EVIDENCE
    if r['analysis_type'] in EVIDENCE:
     r['validation_evidence']=EVIDENCE[r['analysis_type']];r['must_mention']+=r['validation_evidence']['must_mention']
+  if r['analysis_type'] in ('nested_comparison','ancova','curve_auc','standard_curve','qpcr_relative'):
+   from .evidence_0132 import EVIDENCE
+   r['validation_evidence']=EVIDENCE[r['analysis_type']];r['must_mention']+=r['validation_evidence']['must_mention']
   if r['analysis_type']=='hts_qc' and 'hit_reference' in cfg:
    from .evidence_0131 import EVIDENCE
    r['validation_evidence_0131']=EVIDENCE['hts_layout_simulation'];r['must_mention']+=r['validation_evidence_0131']['must_mention']
@@ -97,6 +105,21 @@ def render_extension(run,style=None,extra_figures=''):
   names=render(run,r,style)
  if r['analysis_type']=='competing_risks':
   from .competing import render
+  names=render(run,r,style)
+ if r['analysis_type']=='nested_comparison':
+  from .nested import render
+  names=render(run,r,style)
+ if r['analysis_type']=='ancova':
+  from .ancova import render
+  names=render(run,r,style)
+ if r['analysis_type']=='curve_auc':
+  from .curve_auc import render
+  names=render(run,r,style)
+ if r['analysis_type']=='standard_curve':
+  from .standard_curve import render
+  names=render(run,r,style)
+ if r['analysis_type']=='qpcr_relative':
+  from .qpcr import render
   names=render(run,r,style)
  figures=''.join(shell.single_figure(run/'figures',name,name.replace('_',' ')) for name in names)+extra_figures
  title=r['analysis_type'].replace('_',' ')

@@ -1,0 +1,22 @@
+{
+  "analysis_type": "nested_comparison",
+  "input": "organoid.csv",
+  "source": "Synthetic fixture (seed 13201); not team data",
+  "design": {
+    "unit": "mouse",
+    "unit_rationale": "Each mouse randomized and dosed independently (synthetic declaration)",
+    "replicate": "well",
+    "replicate_rationale": "Tumor-derived organoid wells from the same mouse share its tumor (synthetic)",
+    "outcome": "Viability",
+    "outcome_unit": "% of vehicle plate mean"
+  },
+  "comparison": {
+    "groups": [
+      "vehicle",
+      "mAb-low",
+      "mAb-high"
+    ],
+    "post_hoc": "vs_control",
+    "control_group": "vehicle"
+  }
+}

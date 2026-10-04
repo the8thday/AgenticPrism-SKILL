@@ -16,7 +16,7 @@ Each method is checked against established implementations, calibrated by
 simulation, and tested with a real agent on misuse scenarios
 ([how](#tested-with-a-real-agent-not-only-numerically)).
 
-## Status: public beta 0.13.1
+## Status: public beta 0.13.2
 
 AgenticPrism is for research analysis. It has **not** been validated as a
 computerized system for GLP/GMP work or regulatory submissions (for example
@@ -36,6 +36,10 @@ data; feedback from real project data is welcome through GitHub issues.
 Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
+
+## 0.13.2
+
+Five everyday analyses: nested comparisons (technical replicates within animals or donors), ANCOVA with pre-treatment covariates, area under time curves, linear/quadratic standard curves and qPCR relative quantification. Each agrees with an R reference implementation (lmerTest, emmeans/car, investr, independent base-R code) and passed every registered calibration row (17/17). Descriptive rows quantify what they guard against, for example a pseudo-replicated ANOVA rejected a true null 26% of the time. Published worked examples are unmet; live-agent misuse scenarios passed 10/10 and surfaced one gap (curve AUC has no paired design yet). See [release evidence](validation/RELEASE_0.13.2.md).
 
 ## 0.13.1
 
@@ -83,6 +87,11 @@ See [release evidence](validation/RELEASE_0.12.1.md) for retained misses and unm
 | | Relative potency across runs and validation | [potency-assay](skills/potency-assay/SKILL.md) | Log-RP random-run REML, MLS/MOVER intermediate precision, bias, linearity equivalence and tested range; failing runs retained |
 | | Lot comparability and biosimilarity (one attribute) | [comparability](skills/comparability/SKILL.md) | TOST equivalence of lot means against a declared margin, quality range with declared k, or descriptive; tier recorded, never inferred |
 | | Tolerance intervals and process capability | [specifications](skills/specifications/SKILL.md) | Exact normal and nonparametric tolerance intervals (minimum n when too few lots); Pp/Ppk and within-subgroup Cp/Cpk with intervals |
+| Any stage | Technical replicates within animals or donors | [group-comparison](skills/group-comparison/SKILL.md) | Nested comparison: random-intercept REML with Satterthwaite, unit-means analysis, ICC and design effect |
+| Any stage | Comparison adjusted for baseline | [group-comparison](skills/group-comparison/SKILL.md) | ANCOVA with pre-treatment covariates, slope-homogeneity gate, adjusted means and contrasts |
+| Any stage | Area under time curves | [curve-auc](skills/curve-auc/SKILL.md) | Linear trapezoid per unit on a declared interval and baseline, dropout policy, Welch comparisons |
+| In vitro assays | Linear or quadratic standard curves | [standard-curve](skills/standard-curve/SKILL.md) | BCA/Bradford/copy-number standards, recovery and lack-of-fit acceptance, inversion intervals, no extrapolation |
+| In vitro assays | qPCR relative expression | [qpcr](skills/qpcr/SKILL.md) | Efficiency-corrected ΔΔCq with geometric-mean references, biological-replicate statistics, NTC and reference-stability checks |
 | Any stage | Planning sample size or power | [sample-size](skills/sample-size/SKILL.md) | Exact noncentral t/F and TOST power, arcsine or pooled-normal proportions, Schoenfeld log-rank events; sourced assumptions, power curve and sensitivity grid |
 | Any stage | Comparing groups | [group-comparison](skills/group-comparison/SKILL.md) | Welch or paired t, one-way ANOVA with Dunnett/Tukey/Games-Howell/Holm families, Mann–Whitney and signed-rank with Hodges–Lehmann, Kruskal–Wallis with Dunn, Friedman |
 
@@ -192,6 +201,7 @@ cannot detect any of that. So each release is also tested behaviorally.
 | 0.12.1 epitope binning | 2/3 passed; the agent merged bins by eye without reading the Skill in 2 of 3 attempts |
 | 0.13.0 combination and HTS | 4/4 passed |
 | 0.13.1 HTS reference, ISR, dose models, sample size, competing risks, Tm | 10/10 passed (scored by the implementer, not blinded) |
+| 0.13.2 nested, ANCOVA, curve AUC, standard curves, qPCR | 10/10 passed (scored by the implementer, not blinded) |
 
 Every scenario, criterion and scored response is in
 [validation/agent-scenarios](validation/agent-scenarios/README.md), including the

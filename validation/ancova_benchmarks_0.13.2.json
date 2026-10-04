@@ -1,0 +1,56 @@
+{
+  "release": "0.13.2",
+  "oracle": "R 4.6.0 lm, emmeans 2.0.4, car 3.1.5 Anova type III",
+  "tolerance_relative": 1e-08,
+  "checks": [
+    {
+      "dataset": "two_groups_one_covariate",
+      "n": 24,
+      "reportable": true,
+      "slope_homogeneity_p": 0.9638348247315445,
+      "max_relative_difference": 4.240902534106317e-12,
+      "worst_field": "homog_F",
+      "passed": true
+    },
+    {
+      "dataset": "three_groups_unequal_n",
+      "n": 25,
+      "reportable": true,
+      "slope_homogeneity_p": 0.29488101385355114,
+      "max_relative_difference": 9.052296542724856e-13,
+      "worst_field": "group_p",
+      "passed": true
+    },
+    {
+      "dataset": "four_groups_two_covariates",
+      "n": 36,
+      "reportable": true,
+      "slope_homogeneity_p": 0.3507996315832646,
+      "max_relative_difference": 1.1757890369082508e-13,
+      "worst_field": "b - c p",
+      "passed": true
+    },
+    {
+      "dataset": "heterogeneous_slopes",
+      "n": 30,
+      "reportable": false,
+      "slope_homogeneity_p": 8.743563223683052e-07,
+      "max_relative_difference": 4.2140637933238275e-14,
+      "worst_field": "homog_p",
+      "passed": true
+    },
+    {
+      "dataset": "fixture",
+      "n": 27,
+      "reportable": true,
+      "slope_homogeneity_p": 0.4901235712546477,
+      "max_relative_difference": 1.9374322600012153e-14,
+      "worst_field": "mAb-low - vehicle p",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "heterogeneous_slopes checks the audit (withheld) contrasts and the homogeneity test; its adjusted comparison is not reportable by design."
+  ]
+}

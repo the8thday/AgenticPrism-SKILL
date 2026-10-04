@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.13.2
+
+- New `nested_comparison` (group-comparison): technical replicates within independent units, random-intercept REML with Satterthwaite t/F, unit-means analysis, ICC and design effect.
+- New `ancova` (group-comparison): pre-treatment covariates, common-slope adjusted means and contrasts, slope-homogeneity gate.
+- New `curve-auc` Skill (`curve_auc`): per-unit linear-trapezoid AUC on a declared interval and baseline, early-end policy, Welch comparisons.
+- New `standard-curve` Skill (`standard_curve`): linear/quadratic curves with recovery and lack-of-fit acceptance and inversion intervals.
+- New `qpcr` Skill (`qpcr_relative`): efficiency-corrected ΔΔCq with geometric-mean references and biological-replicate statistics.
+- Evidence: R benchmarks and 17/17 registered calibration rows passed; earlier scientific outputs byte-identical to 0.13.1. Live-agent misuse review: 10/10 passed; harness now writes traces outside agent workspaces.
+
 ## 0.13.1
 
 - HTS: opt-in `hit_reference=layout_simulation`, a layout-conditional simulated null for well-level hit p-values. Registered global-null false-hit rate 0.037–0.044 (default predictive t: 0.093–0.098) at a power cost; default unchanged.

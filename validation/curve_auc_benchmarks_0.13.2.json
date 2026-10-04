@@ -1,0 +1,36 @@
+{
+  "release": "0.13.2",
+  "oracle": "R 4.6.0 base trapezoid (independent code) and t.test(var.equal = FALSE)",
+  "tolerance_relative": 1e-10,
+  "checks": [
+    {
+      "dataset": "regular_no_baseline",
+      "units_with_auc": 14,
+      "max_relative_difference": 3.59855276444969e-14,
+      "worst_field": "t - c p",
+      "passed": true
+    },
+    {
+      "dataset": "irregular_first_value",
+      "units_with_auc": 14,
+      "max_relative_difference": 1.477232624618451e-14,
+      "worst_field": "t - c p",
+      "passed": true
+    },
+    {
+      "dataset": "declared_constant",
+      "units_with_auc": 14,
+      "max_relative_difference": 2.8998732615179586e-15,
+      "worst_field": "auc",
+      "passed": true
+    },
+    {
+      "dataset": "fixture_with_dropout",
+      "units_with_auc": 14,
+      "max_relative_difference": 1.7765110592008768e-13,
+      "worst_field": "TCE-low - isotype p",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

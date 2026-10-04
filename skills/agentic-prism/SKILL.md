@@ -156,3 +156,12 @@ Route combination matrices to [drug-combination](../drug-combination/SKILL.md), 
 ## 0.13.1 routing
 
 Bell-shaped or asymmetric concentration-response curves stay with [dose-response](../dose-response/SKILL.md); the shape must be declared from assay knowledge before fitting, never chosen after a poor 4PL fit. Incurred sample reanalysis and carry-over go to [method-validation](../method-validation/SKILL.md). HTS hit calling may use the declared layout-conditional simulated reference in [import-plate](../import-plate/SKILL.md). Planning a study's n or power goes to [sample-size](../sample-size/SKILL.md); refuse post-hoc "observed power". Time-to-event data where another event precludes the event of interest go to the competing-risks contract in [time-to-event](../time-to-event/SKILL.md). nanoDSF/DSF/CD melting curves go to [thermal-stability](../thermal-stability/SKILL.md).
+
+## 0.13.2 routing
+
+Several technical replicates per independent unit go to the nested contract, and baseline-adjusted
+comparisons of one value per unit to the ANCOVA contract, both in [group-comparison](../group-comparison/SKILL.md).
+Area under time curves goes to [curve-auc](../curve-auc/SKILL.md); linear or quadratic standard curves
+(BCA, Bradford, copy-number standards) to [standard-curve](../standard-curve/SKILL.md); qPCR relative
+expression to [qpcr](../qpcr/SKILL.md). Sigmoid immunoassay calibration stays with elisa-quantification,
+and PK exposure (NCA) is not covered.
