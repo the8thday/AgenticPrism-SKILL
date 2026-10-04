@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.13.3
+
+- New `nonlinear-models` Skill (`nonlinear_fit`): one/two-phase decay, association, exponential and logistic growth, Michaelis–Menten, with profile-F intervals, derived half-lives and doubling times, runs test and design-support gates.
+- R-package audit: evidence that relied on drc (2016), pwr (2020) and investr (2022) re-checked with base R only; the nonlinear library uses base R only.
+
 ## 0.13.2
 
 - New `nested_comparison` (group-comparison): technical replicates within independent units, random-intercept REML with Satterthwaite t/F, unit-means analysis, ICC and design effect.

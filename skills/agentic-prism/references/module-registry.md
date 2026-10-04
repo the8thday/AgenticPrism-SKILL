@@ -1,4 +1,4 @@
-# Module registry — development 0.13.2
+# Module registry — development 0.13.3
 
 | Purpose | Skill | Capability state |
 |---|---|---|
@@ -32,6 +32,7 @@
 | Area under time curves | [curve-auc](../../curve-auc/SKILL.md) | 0.13.2: linear trapezoid per unit on a declared interval, declared baseline and early-end policy, unequal-withholding flag, Welch comparisons; 3/3 calibration rows passed; not PK/NCA; live-agent scenarios passed (0.13.2) |
 | Linear/quadratic standard curves | [standard-curve](../../standard-curve/SKILL.md) | 0.13.2: declared form and weighting, recovery acceptance, lack of fit, monotonicity, inversion intervals (investr within 5.1e-8), no extrapolation; 2/2 calibration rows passed; live-agent scenarios passed (0.13.2) |
 | qPCR relative quantification | [qpcr](../../qpcr/SKILL.md) | 0.13.2: efficiency-corrected ΔΔCq with geometric-mean references, biological-replicate Welch/paired t, NTC/undetermined/technical-SD/reference-shift flags (base-R within 1.9e-13); 3/3 calibration rows passed; published example unmet; live-agent scenarios passed (0.13.2) |
+| Common nonlinear models | [nonlinear-models](../../nonlinear-models/SKILL.md) | 0.13.3 (`analysis_type=nonlinear_fit`): one/two-phase decay, association, exponential and logistic growth, Michaelis-Menten; profile-F intervals, derived half-lives, design-support gates; base-R nls/confint agreement 18/18; 11/11 calibration rows passed; live-agent gate not run |
 | Prospective sample size and power | [sample-size](../../sample-size/SKILL.md) | 0.13.1: two-sample/paired t, one-way ANOVA, two proportions (approximate), log-rank events (Schoenfeld), TOST for two means; sourced assumptions; pwr/PowerTOST agreement 9.5e-10, simulated power within bounds for 10/10 rows; no repeated-measures, clustered or multiplicity designs; live-agent scenarios passed (0.13.1) |
 | Precision variance components | [variance-components](../../variance-components/SKILL.md) | 0.9.1–0.9.3: REML nested/crossed components; MLS/MOVER intervals for sums are the default from 0.9.3 |
 

@@ -165,3 +165,9 @@ Area under time curves goes to [curve-auc](../curve-auc/SKILL.md); linear or qua
 (BCA, Bradford, copy-number standards) to [standard-curve](../standard-curve/SKILL.md); qPCR relative
 expression to [qpcr](../qpcr/SKILL.md). Sigmoid immunoassay calibration stays with elisa-quantification,
 and PK exposure (NCA) is not covered.
+
+## 0.13.3 routing
+
+Decay, association, exponential or logistic growth and Michaelis-Menten curves go to
+[nonlinear-models](../nonlinear-models/SKILL.md) with a model declared from prior knowledge; sigmoid
+concentration-response stays with dose-response and melting curves with thermal-stability.

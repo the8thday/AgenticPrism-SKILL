@@ -1,3 +1,5 @@
+<img src="assets/logo.png" align="right" height="139" alt="AgenticPrism hex logo" />
+
 # AgenticPrism — modular scientific analysis skills
 
 **English** | [简体中文](README.zh-CN.md) | [Changelog](CHANGELOG.md)
@@ -16,7 +18,7 @@ Each method is checked against established implementations, calibrated by
 simulation, and tested with a real agent on misuse scenarios
 ([how](#tested-with-a-real-agent-not-only-numerically)).
 
-## Status: public beta 0.13.2
+## Status: public beta 0.13.3
 
 AgenticPrism is for research analysis. It has **not** been validated as a
 computerized system for GLP/GMP work or regulatory submissions (for example
@@ -36,6 +38,10 @@ data; feedback from real project data is welcome through GitHub issues.
 Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
+
+## 0.13.3
+
+A library of common nonlinear models (one/two-phase decay, association, exponential and logistic growth, Michaelis–Menten) checked against base R only, with 11/11 calibration rows passed. An audit of the R packages used as references found three that are old or small (drc 2016, pwr 2020, investr 2022); their earlier evidence was re-checked with base R alone and agreed. See [release evidence](validation/RELEASE_0.13.3.md).
 
 ## 0.13.2
 
@@ -92,6 +98,7 @@ See [release evidence](validation/RELEASE_0.12.1.md) for retained misses and unm
 | Any stage | Area under time curves | [curve-auc](skills/curve-auc/SKILL.md) | Linear trapezoid per unit on a declared interval and baseline, dropout policy, Welch comparisons |
 | In vitro assays | Linear or quadratic standard curves | [standard-curve](skills/standard-curve/SKILL.md) | BCA/Bradford/copy-number standards, recovery and lack-of-fit acceptance, inversion intervals, no extrapolation |
 | In vitro assays | qPCR relative expression | [qpcr](skills/qpcr/SKILL.md) | Efficiency-corrected ΔΔCq with geometric-mean references, biological-replicate statistics, NTC and reference-stability checks |
+| Any stage | Decay, association, growth and enzyme kinetics | [nonlinear-models](skills/nonlinear-models/SKILL.md) | One/two-phase decay, association, exponential and logistic growth, Michaelis–Menten; profile intervals, half-lives and design-support gates |
 | Any stage | Planning sample size or power | [sample-size](skills/sample-size/SKILL.md) | Exact noncentral t/F and TOST power, arcsine or pooled-normal proportions, Schoenfeld log-rank events; sourced assumptions, power curve and sensitivity grid |
 | Any stage | Comparing groups | [group-comparison](skills/group-comparison/SKILL.md) | Welch or paired t, one-way ANOVA with Dunnett/Tukey/Games-Howell/Holm families, Mann–Whitney and signed-rank with Hodges–Lehmann, Kruskal–Wallis with Dunn, Friedman |
 

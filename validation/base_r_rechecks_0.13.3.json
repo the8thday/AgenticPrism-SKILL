@@ -1,0 +1,353 @@
+{
+  "release": "0.13.3",
+  "oracle": "R 4.6.0 base stats only (nls port, pf/qf, pnorm, uniroot)",
+  "packages_rechecked": {
+    "drc": "3.0-1, CRAN 2016-08-30",
+    "pwr": "1.3-0, CRAN 2020-03-17",
+    "investr": "1.4.2, CRAN 2022-03-31"
+  },
+  "checks": [
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "S1-E1",
+      "sse_relative_difference": -2.0129055142067632e-13,
+      "ec50_relative_difference": 2.1260847526960447e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "S1-E2",
+      "sse_relative_difference": -1.547123564207778e-13,
+      "ec50_relative_difference": 4.7880840403635716e-08,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "S1-E3",
+      "sse_relative_difference": -1.9316792978435924e-12,
+      "ec50_relative_difference": 2.884364426192221e-07,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-00",
+      "sse_relative_difference": null,
+      "ec50_relative_difference": null,
+      "passed": false
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-01",
+      "sse_relative_difference": -2.729812956162728e-13,
+      "ec50_relative_difference": 8.229390124903091e-08,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-02",
+      "sse_relative_difference": -4.9399440870878896e-12,
+      "ec50_relative_difference": 5.593268370684967e-07,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-03",
+      "sse_relative_difference": -9.815639760514186e-14,
+      "ec50_relative_difference": 4.241234852209175e-08,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-04",
+      "sse_relative_difference": -5.1996644377281864e-14,
+      "ec50_relative_difference": 6.751787795522546e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-05",
+      "sse_relative_difference": null,
+      "ec50_relative_difference": null,
+      "passed": false
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-06",
+      "sse_relative_difference": -2.969078599730729e-14,
+      "ec50_relative_difference": 2.8959098452574494e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-07",
+      "sse_relative_difference": -2.0003751782701508e-15,
+      "ec50_relative_difference": 6.836080590488791e-10,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-08",
+      "sse_relative_difference": -1.283025500897162e-15,
+      "ec50_relative_difference": 3.004176241105938e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-09",
+      "sse_relative_difference": -9.142404541253522e-12,
+      "ec50_relative_difference": 9.834123553265073e-07,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-10",
+      "sse_relative_difference": -4.209133359614893e-14,
+      "ec50_relative_difference": 1.917794456574029e-08,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-11",
+      "sse_relative_difference": -5.0199472014300936e-11,
+      "ec50_relative_difference": 2.942347554490965e-07,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-12",
+      "sse_relative_difference": -7.637386436228486e-14,
+      "ec50_relative_difference": 1.3438411849975296e-07,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-13",
+      "sse_relative_difference": -2.5278575850456135e-14,
+      "ec50_relative_difference": 3.6151570625975182e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-14",
+      "sse_relative_difference": -7.706133925344539e-15,
+      "ec50_relative_difference": 2.6014126408568927e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-15",
+      "sse_relative_difference": -8.995424263492423e-15,
+      "ec50_relative_difference": 4.73436845283004e-10,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-16",
+      "sse_relative_difference": 3.891987166701108e-16,
+      "ec50_relative_difference": 3.3395342047271015e-10,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-17",
+      "sse_relative_difference": -2.0214385475096277e-12,
+      "ec50_relative_difference": 1.8521259215198427e-07,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-18",
+      "sse_relative_difference": -8.429491170955454e-16,
+      "ec50_relative_difference": 1.3739483994967827e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-19",
+      "sse_relative_difference": -7.38364999139054e-14,
+      "ec50_relative_difference": 2.9190531991574176e-07,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-20",
+      "sse_relative_difference": -1.0215180487518598e-14,
+      "ec50_relative_difference": 5.078658160684313e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-21",
+      "sse_relative_difference": -7.780980945026877e-11,
+      "ec50_relative_difference": 9.637563187347986e-05,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-22",
+      "sse_relative_difference": null,
+      "ec50_relative_difference": null,
+      "passed": false
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-23",
+      "sse_relative_difference": -4.658312938911349e-15,
+      "ec50_relative_difference": 2.9498916420678256e-08,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-24",
+      "sse_relative_difference": -1.1764506425198287e-14,
+      "ec50_relative_difference": 2.0956251400860992e-08,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-25",
+      "sse_relative_difference": null,
+      "ec50_relative_difference": null,
+      "passed": false
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-26",
+      "sse_relative_difference": -2.340845559884123e-13,
+      "ec50_relative_difference": 2.1947466233296353e-06,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-27",
+      "sse_relative_difference": -1.0119060720372952e-14,
+      "ec50_relative_difference": 1.1208176609045495e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-28",
+      "sse_relative_difference": null,
+      "ec50_relative_difference": null,
+      "passed": false
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-29",
+      "sse_relative_difference": -3.314904768002945e-11,
+      "ec50_relative_difference": 2.1654455658270955e-05,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-30",
+      "sse_relative_difference": -4.399773701471117e-14,
+      "ec50_relative_difference": 7.1806784962547e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-31",
+      "sse_relative_difference": -1.693500444330668e-14,
+      "ec50_relative_difference": 4.19334544865535e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-32",
+      "sse_relative_difference": -1.3188803341282916e-11,
+      "ec50_relative_difference": 1.677147934087131e-06,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-33",
+      "sse_relative_difference": -6.3134626887680235e-15,
+      "ec50_relative_difference": 1.1144789535677546e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-34",
+      "sse_relative_difference": -2.1898531233565563e-15,
+      "ec50_relative_difference": 3.925465730247879e-09,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-35",
+      "sse_relative_difference": -5.653661856182644e-11,
+      "ec50_relative_difference": 4.4546198906370016e-05,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-36",
+      "sse_relative_difference": 1.0375982933143558e-09,
+      "ec50_relative_difference": 2.9291054854940768e-06,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-37",
+      "sse_relative_difference": -2.311483649668048e-15,
+      "ec50_relative_difference": 7.615348351919238e-10,
+      "passed": true
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-38",
+      "sse_relative_difference": null,
+      "ec50_relative_difference": null,
+      "passed": false
+    },
+    {
+      "item": "5PL (previously drc only)",
+      "dataset": "steep-39",
+      "sse_relative_difference": 1.533438016157983e-14,
+      "ec50_relative_difference": 6.542998032266212e-08,
+      "passed": true
+    },
+    {
+      "item": "one-way ANOVA power (previously pwr)",
+      "dataset": "18 cases",
+      "max_abs_difference": 9.482750695788411e-10,
+      "passed": true
+    },
+    {
+      "item": "arcsine two-proportion power (previously pwr)",
+      "dataset": "72 cases",
+      "max_abs_difference": 7.771561172376096e-16,
+      "passed": true
+    },
+    {
+      "item": "inversion interval (previously investr)",
+      "dataset": "linear_m3",
+      "max_relative_difference": 2.6619163495812177e-15,
+      "passed": true
+    },
+    {
+      "item": "inversion interval (previously investr)",
+      "dataset": "linear_m1",
+      "max_relative_difference": 2.9379882458027198e-15,
+      "passed": true
+    },
+    {
+      "item": "inversion interval (previously investr)",
+      "dataset": "quadratic_m2",
+      "max_relative_difference": 9.814172842844221e-13,
+      "passed": true
+    },
+    {
+      "item": "inversion interval (previously investr)",
+      "dataset": "fixture_plate_P1",
+      "max_relative_difference": 6.807920161359956e-13,
+      "passed": true
+    }
+  ],
+  "passed": false,
+  "limits": [
+    "The initial run (base_r_rechecks_0.13.3_initial.json) refitted 5PL without bounds: 21/43 differed, all fits at the package bounds and withheld, where unconstrained nls moved past the bounds or failed; the comparison now solves the same bounded problem (changed after seeing the initial run).",
+    "nls re-fits start near the Python solution: they confirm a local optimum with an independent optimizer, not a global search."
+  ]
+}

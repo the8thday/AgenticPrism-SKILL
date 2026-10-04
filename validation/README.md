@@ -1,4 +1,11 @@
-# Validation — AgenticPrism development 0.13.2
+# Validation — AgenticPrism development 0.13.3
+
+## 0.13.3
+
+[Release evidence](RELEASE_0.13.3.md): R-package audit (drc 2016, pwr 2020 and investr 2022 evidence re-checked
+with base R only: power and inversion intervals agree; bounded 5PL refits agree on every converged curve)
+and the nonlinear model library (base-R nls/confint 18/18, calibration 11/11; initial benchmark and
+re-check runs retained). Live-agent scenarios not run.
 
 ## 0.13.2
 

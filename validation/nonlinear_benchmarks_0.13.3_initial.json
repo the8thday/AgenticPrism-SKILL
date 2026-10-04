@@ -1,0 +1,191 @@
+{
+  "release": "0.13.3",
+  "oracle": "R 4.6.0 stats only: nls with R-side starting values, confint profile intervals",
+  "checks": [
+    {
+      "dataset": "one_phase_decay_seed1",
+      "model": "one_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": 3.0225534515450467e-16,
+      "max_estimate_relative_difference": 1.1920029739248783e-08,
+      "max_interval_relative_difference": 4.889133987583497e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "one_phase_decay_seed2",
+      "model": "one_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": -7.266169563500556e-16,
+      "max_estimate_relative_difference": 1.3146730148378447e-09,
+      "max_interval_relative_difference": 9.978411737022977e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "one_phase_association_seed1",
+      "model": "one_phase_association",
+      "r_converged": true,
+      "sse_relative_difference": -1.968986247800575e-15,
+      "max_estimate_relative_difference": 6.696106003547527e-08,
+      "max_interval_relative_difference": 3.3633891276488267e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "one_phase_association_seed2",
+      "model": "one_phase_association",
+      "r_converged": true,
+      "sse_relative_difference": 3.80531129240572e-16,
+      "max_estimate_relative_difference": 3.676380575386208e-08,
+      "max_interval_relative_difference": 4.9563941656896995e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "two_phase_decay_seed1",
+      "model": "two_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": -4.868414317028261e-16,
+      "max_estimate_relative_difference": 1.5612014824554578e-08,
+      "max_interval_relative_difference": 0.00031899667652284875,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "two_phase_decay_seed2",
+      "model": "two_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": -1.5754126420710657e-16,
+      "max_estimate_relative_difference": 2.5610426058862665e-08,
+      "max_interval_relative_difference": 0.00048016622427208986,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "exponential_growth_seed1",
+      "model": "exponential_growth",
+      "r_converged": true,
+      "sse_relative_difference": 3.4628961609609725e-16,
+      "max_estimate_relative_difference": 1.415388246634433e-09,
+      "max_interval_relative_difference": 3.5269968413353943e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "exponential_growth_seed2",
+      "model": "exponential_growth",
+      "r_converged": true,
+      "sse_relative_difference": -1.891988046536075e-16,
+      "max_estimate_relative_difference": 1.3973756825488435e-09,
+      "max_interval_relative_difference": 3.0563882040295755e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "michaelis_menten_seed1",
+      "model": "michaelis_menten",
+      "r_converged": true,
+      "sse_relative_difference": 1.8450224452742444e-15,
+      "max_estimate_relative_difference": 6.849494608232693e-10,
+      "max_interval_relative_difference": 5.01949078114151e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "michaelis_menten_seed2",
+      "model": "michaelis_menten",
+      "r_converged": true,
+      "sse_relative_difference": -4.7889306972541694e-15,
+      "max_estimate_relative_difference": 2.3181289848964093e-09,
+      "max_interval_relative_difference": 6.62288005880728e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "logistic_growth_seed1",
+      "model": "logistic_growth",
+      "r_converged": true,
+      "sse_relative_difference": -4.793808834902368e-15,
+      "max_estimate_relative_difference": 2.665629844800497e-10,
+      "max_interval_relative_difference": 1.7793667853717204e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "logistic_growth_seed2",
+      "model": "logistic_growth",
+      "r_converged": true,
+      "sse_relative_difference": -1.2053287627932117e-15,
+      "max_estimate_relative_difference": 2.394975716310366e-09,
+      "max_interval_relative_difference": 2.511732287777768e-06,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "fixture mAb-X-E1-r1",
+      "model": "one_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": -1.5286204557826431e-16,
+      "max_estimate_relative_difference": 2.4469028031221113e-08,
+      "max_interval_relative_difference": 7.583443861991755e-05,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "fixture mAb-X-E1-r2",
+      "model": "one_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": -4.4122044510076745e-14,
+      "max_estimate_relative_difference": 1.3380441168657903e-07,
+      "max_interval_relative_difference": 0.002208819975822192,
+      "python_lower_objective": false,
+      "passed": false
+    },
+    {
+      "dataset": "fixture mAb-X-E2-r1",
+      "model": "one_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": 3.2877429081489993e-15,
+      "max_estimate_relative_difference": 4.1007470747690206e-08,
+      "max_interval_relative_difference": 0.0008195137759989223,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "fixture mAb-X-E2-r2",
+      "model": "one_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": -1.3510894215398051e-14,
+      "max_estimate_relative_difference": 2.4163028119360248e-08,
+      "max_interval_relative_difference": 0.00022414076563066827,
+      "python_lower_objective": false,
+      "passed": true
+    },
+    {
+      "dataset": "fixture mAb-X-E3-r1",
+      "model": "one_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": -3.286902342751515e-15,
+      "max_estimate_relative_difference": 1.7387586887459415e-08,
+      "max_interval_relative_difference": null,
+      "python_lower_objective": false,
+      "passed": false
+    },
+    {
+      "dataset": "fixture mAb-X-E3-r2",
+      "model": "one_phase_decay",
+      "r_converged": true,
+      "sse_relative_difference": -8.470052929333011e-15,
+      "max_estimate_relative_difference": 2.4254792009120617e-08,
+      "max_interval_relative_difference": 5.225684202824464e-05,
+      "python_lower_objective": false,
+      "passed": true
+    }
+  ],
+  "passed": false,
+  "limits": [
+    "Interval tolerance 2e-3 reflects spline interpolation of the profile in confint.nls.",
+    "Only base R is used; no contributed package."
+  ]
+}

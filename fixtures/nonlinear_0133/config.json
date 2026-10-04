@@ -1,0 +1,21 @@
+{
+  "analysis_type": "nonlinear_fit",
+  "input": "serum_stability.csv",
+  "source": "Synthetic fixture (seed 13301); not team data",
+  "model": {
+    "name": "one_phase_decay",
+    "rationale": "Single first-order loss of intact antibody expected (prior serum studies, synthetic declaration)",
+    "weighting": "none"
+  },
+  "design": {
+    "x_label": "Time in serum",
+    "x_unit": "day",
+    "y_label": "Intact antibody",
+    "y_unit": "% of day 0",
+    "rationale": "Serum stability at 37 C (synthetic)"
+  },
+  "replicates": {
+    "independent_unit": "experiment_id",
+    "independence_source": "Separate serum lots and days (synthetic declaration)"
+  }
+}

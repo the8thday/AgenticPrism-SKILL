@@ -1,3 +1,5 @@
+<img src="assets/logo.png" align="right" height="139" alt="AgenticPrism hex logo" />
+
 # AgenticPrism — modular scientific analysis skills
 
 [English](README.md) | **简体中文** | [版本历史（英文）](CHANGELOG.md)
@@ -12,7 +14,7 @@ JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保�
 每个方法都与公认实现比对、用模拟做校准，并用真实 Agent 在误用场景下测试行为
 （[详见](#不只测数值还用真实-agent-测行为)）。
 
-## 状态：公开测试版 0.13.2
+## 状态：公开测试版 0.13.3
 
 AgenticPrism 供科研分析使用。它**没有**按 GLP/GMP 或法规申报要求（例如
 21 CFR Part 11）做过计算机化系统验证；如果某项决策依赖分析结果，仍需统计人员
@@ -29,6 +31,10 @@ issue 反馈真实项目数据上的使用情况。
 
 各模块的具体限制见[模块登记表](skills/agentic-prism/references/module-registry.md)
 和对应的发布记录；所有校准失败都保留在 `validation/` 中。
+
+## 0.13.3
+
+新增常用非线性模型库（一相/两相衰减、结合、指数与 logistic 增长、Michaelis–Menten），只用 R 核心做核对，11/11 校准行通过。同时审查了作为参考实现的 R 包，发现三个较旧或较小的包（drc 2016、pwr 2020、investr 2022），并改用只依赖 R 核心的实现重新核对了相关证据，结果一致。见[发布证据](validation/RELEASE_0.13.3.md)。
 
 ## 0.13.2
 
@@ -84,6 +90,7 @@ Bliss、Loewe、HSA、ZIP 组合参考模型与独立矩阵不确定性；HTS �
 | 各阶段通用 | 时间曲线下面积 | [curve-auc](skills/curve-auc/SKILL.md) | 按单位在声明区间与基线下做线性梯形积分，退出处理规则，Welch 比较 |
 | 体外检测 | 线性或二次标准曲线 | [standard-curve](skills/standard-curve/SKILL.md) | BCA/Bradford/拷贝数标准品，回收率与失拟接受标准，逆推区间，不外推 |
 | 体外检测 | qPCR 相对表达 | [qpcr](skills/qpcr/SKILL.md) | 效率校正的 ΔΔCq，多内参几何均值，按生物学重复统计，NTC 与内参稳定性检查 |
+| 各阶段通用 | 衰减、结合、增长与酶动力学 | [nonlinear-models](skills/nonlinear-models/SKILL.md) | 一相/两相衰减、结合、指数与 logistic 增长、Michaelis–Menten；profile 区间、半衰期与设计支持门槛 |
 | 各阶段通用 | 样本量与功效规划 | [sample-size](skills/sample-size/SKILL.md) | 精确非中心 t/F 与 TOST 功效，反正弦或合并正态的比例检验，Schoenfeld log-rank 事件数；假设须注明来源，附功效曲线与敏感性分析 |
 | 各阶段通用 | 组间比较 | [group-comparison](skills/group-comparison/SKILL.md) | Welch 或配对 t 检验，单因素 ANOVA 加 Dunnett/Tukey/Games-Howell/Holm 比较族，Mann–Whitney 与 signed-rank（Hodges–Lehmann），Kruskal–Wallis + Dunn，Friedman |
 
