@@ -1,0 +1,120 @@
+{
+  "release": "0.13.4",
+  "oracle": "base R stats nls/confint, t.test, p.adjust and independent trapezoid",
+  "r_version": "4.6.0",
+  "script_sha256": "b2df36724f4147dcc7ca21d3c65c28aeebdec13420a5117f3bc75cf3753d04fc",
+  "oracle_sha256": "8d9103a366a99d550fa52a86819363aada2409f3535b0a94b489b446f3e93a59",
+  "checks": [
+    {
+      "case": "ecx",
+      "passed": false,
+      "r_error": "Warning message:\nIn read.table(file = file, header = header, sep = sep, quote = quote,  :\n  not all columns named in 'colClasses' exist\nError: R nls failed\nExecution halted\n"
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC10",
+      "estimate_relative_difference": 5.467284402982386e-10,
+      "sse_relative_difference": 1.2212453270876722e-15,
+      "interval_difference_over_width": null,
+      "r_interval_available": false,
+      "python_reportable": true,
+      "passed": false
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC20",
+      "estimate_relative_difference": 3.5645741913725715e-09,
+      "sse_relative_difference": 1.2212453270876722e-15,
+      "interval_difference_over_width": null,
+      "r_interval_available": false,
+      "python_reportable": true,
+      "passed": false
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC50",
+      "estimate_relative_difference": 2.9938773682403053e-10,
+      "sse_relative_difference": 1.2212453270876722e-15,
+      "interval_difference_over_width": null,
+      "r_interval_available": false,
+      "python_reportable": true,
+      "passed": false
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC80",
+      "estimate_relative_difference": 1.14790199567949e-09,
+      "sse_relative_difference": 2.4424906541753444e-15,
+      "interval_difference_over_width": null,
+      "r_interval_available": false,
+      "python_reportable": true,
+      "passed": false
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC90",
+      "estimate_relative_difference": 3.9238959859133615e-09,
+      "sse_relative_difference": 1.2212453270876722e-15,
+      "interval_difference_over_width": null,
+      "r_interval_available": false,
+      "python_reportable": true,
+      "passed": false
+    },
+    {
+      "case": "icx_lack_of_fit",
+      "passed": true
+    },
+    {
+      "case": "hook",
+      "passed": false,
+      "r_error": "Warning message:\nIn read.table(file = file, header = header, sep = sep, quote = quote,  :\n  not all columns named in 'colClasses' exist\nError: R nls failed\nExecution halted\n"
+    },
+    {
+      "case": "paired_auc",
+      "contrast_index": 0,
+      "max_absolute_difference": 2.4868995751603507e-14,
+      "passed": true
+    },
+    {
+      "case": "paired_auc",
+      "contrast_index": 1,
+      "max_absolute_difference": 4.973799150320701e-14,
+      "passed": true
+    },
+    {
+      "case": "paired_auc",
+      "contrast_index": 2,
+      "max_absolute_difference": 2.4868995751603507e-14,
+      "passed": true
+    },
+    {
+      "case": "one_sample_t",
+      "contrast_index": 0,
+      "max_absolute_difference": 2.5579538487363607e-13,
+      "passed": true
+    },
+    {
+      "case": "one_sample_ratio_t",
+      "contrast_index": 0,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "case": "paired_ratio_t",
+      "contrast_index": 0,
+      "max_absolute_difference": 3.9968028886505635e-15,
+      "passed": true
+    },
+    {
+      "case": "independent_ratio_welch",
+      "contrast_index": 0,
+      "max_absolute_difference": 3.197442310920451e-14,
+      "passed": true
+    }
+  ],
+  "passed": false,
+  "limits": [
+    "No Prism numerical benchmark. Hook intervals are not compared because model adequacy failed.",
+    "Dose oracle checks are unweighted; relative-weighting endpoint coverage is tested separately in the registered calibration."
+  ]
+}

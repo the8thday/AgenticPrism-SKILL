@@ -1,4 +1,19 @@
-# Validation — AgenticPrism development 0.13.3
+# Validation — AgenticPrism development 0.13.4
+
+## 0.13.4
+
+[Release evidence](RELEASE_0.13.4.md): 4PL adequacy gates, relative ECx/ICx,
+paired time-curve AUC and single-sample/log-ratio tests. Base-R recheck 20/25
+(all ten reportable endpoints passed; five audit-only hook estimates missed),
+registered calibration 36/37 bounded rows, with every draw and Monte Carlo SE retained.
+The one-sample log-ratio coverage miss and narrow-dose C80 stress limitation are
+written into saved facts. Unchanged methods: 172 configurations checked against
+0.13.3, 1270 byte-identical scientific artifacts; default 4PL numeric estimates
+and original intervals unchanged, with intentional new withholding. Published
+worked-example gate UNMET. Six independent behavioral scenarios passed (implementer-scored); initial login
+failures and the corrected CLI completion bug are retained. Clean git-archive
+build and isolated wheel install passed (15 configs, 163 artifacts equal to source);
+see the release evidence for scope and all records.
 
 ## 0.13.3
 

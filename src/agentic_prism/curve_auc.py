@@ -17,7 +17,8 @@ TYPES = {'curve_auc'}
 DEFAULTS = {'schema_version': 1, 'analysis_type': 'curve_auc', 'input': None, 'source': None,
             'design': {'unit': None, 'unit_rationale': None, 'outcome': None, 'outcome_unit': None, 'time_unit': None},
             'auc': {'interval': None, 'baseline': None, 'baseline_value': None, 'incomplete_policy': None, 'policy_rationale': None},
-            'comparison': {'groups': None, 'post_hoc': 'vs_control', 'control_group': None, 'confidence_level': .95},
+            'comparison': {'groups': None, 'post_hoc': 'vs_control', 'control_group': None, 'confidence_level': .95,
+                           'design': 'independent_welch', 'pair_policy': None, 'pair_rationale': None},
             'report': {'plot_style': 'prism_like'}}
 
 
@@ -43,16 +44,28 @@ def resolve_config(raw):
     for k in ('unit', 'unit_rationale', 'outcome', 'outcome_unit', 'time_unit'):
         _text(c['design'][k], 'design.' + k)
     a = c['auc']; iv = a['interval']
-    if not isinstance(iv, list) or len(iv) != 2 or any(isinstance(v, bool) or not isinstance(v, (int, float)) for v in iv) or not iv[0] < iv[1]:
+    if not isinstance(iv, list) or len(iv) != 2 or any(isinstance(v, bool) or not isinstance(v, (int, float)) or not np.isfinite(v) for v in iv) or not iv[0] < iv[1]:
         raise ValueError('Declare auc.interval [t_start, t_end] before seeing the curves')
     if a['baseline'] not in ('none', 'first_value', 'declared_constant'):
         raise ValueError('auc.baseline must be none, first_value or declared_constant')
     if (a['baseline'] == 'declared_constant') != (a['baseline_value'] is not None):
         raise ValueError('baseline_value is required for declared_constant and refused otherwise')
+    if a['baseline_value'] is not None and (type(a['baseline_value']) not in (int,float) or not np.isfinite(a['baseline_value'])):
+        raise ValueError('baseline_value must be finite')
     if a['incomplete_policy'] not in ('withhold_unit', 'common_interval'):
         raise ValueError('Declare auc.incomplete_policy: withhold_unit or common_interval')
     _text(a['policy_rationale'], 'auc.policy_rationale (why units may end early and why the policy is unbiased enough)')
     q = c['comparison']; g = q['groups']
+    if q['design'] not in ('independent_welch','paired_t'):
+        raise ValueError('comparison.design must be independent_welch or paired_t')
+    if q['design']=='paired_t':
+        if q['pair_policy'] not in ('require_complete','complete_pairs'):
+            raise ValueError('Declare pair_policy require_complete or complete_pairs')
+        _text(q['pair_rationale'],'comparison.pair_rationale')
+    else:
+        if q['pair_policy'] is not None or q['pair_rationale'] is not None:
+            raise ValueError('Pair settings require comparison.design paired_t')
+        for k in ('design','pair_policy','pair_rationale'):q.pop(k)
     if not isinstance(g, list) or len(g) < 2 or len(set(g)) != len(g):
         raise ValueError('Declare at least two distinct groups')
     if q['post_hoc'] not in ('vs_control', 'all_pairs'):
@@ -81,9 +94,12 @@ def load_data(path, cfg):
     if not d.exclude.isin(('true', 'false')).all() or ((d.exclude == 'true') & d.exclusion_reason.str.strip().eq('')).any():
         raise ValueError('Exclusions need true/false and a reason')
     d['exclude'] = d.exclude.eq('true')
-    if (d.groupby('unit_id').group.nunique() > 1).any():
+    paired = cfg['comparison'].get('design')=='paired_t'
+    if any(d[k].str.strip().eq('').any() for k in ('unit_id','group')):
+        raise ValueError('Unit IDs and groups must be nonempty')
+    if not paired and (d.groupby('unit_id').group.nunique() > 1).any():
         raise ValueError('A unit appears in more than one group')
-    if d.duplicated(['unit_id', 'time']).any():
+    if d.duplicated(['unit_id', 'group', 'time'] if paired else ['unit_id','time']).any():
         raise ValueError('Duplicate time within a unit; average technical replicates upstream only if that is the declared unit value')
     if set(d.group) != set(cfg['comparison']['groups']):
         raise ValueError('Input groups do not match declared groups')
@@ -103,6 +119,8 @@ def _holm(p):
 
 
 def compute(d, cfg):
+    if cfg['comparison'].get('design')=='paired_t':
+        return compute_paired(d,cfg)
     a, q = cfg['auc'], cfg['comparison']; groups = q['groups']; t0, t1 = a['interval']; lv = q['confidence_level']
     used = d[~d.exclude].sort_values(['unit_id', 'time'])
     last = used.groupby('unit_id').time.max(); first = used.groupby('unit_id').time.min()
@@ -171,6 +189,75 @@ def compute(d, cfg):
             'must_mention': must, 'failing_items': [r for r in comps if r['status'] != 'estimated'],
             'limitations': ['Linear trapezoid between observed times; no curve fitting, smoothing or extrapolation.',
                             'AUC summarises the whole interval; it does not show when groups diverge. Equal sampling schedules across groups are assumed.']}
+
+
+def compute_paired(d,cfg):
+    """AUC per unit-condition, paired contrasts on a single declared time interval."""
+    from .location_tests import t_summary
+    a,q=cfg['auc'],cfg['comparison'];groups=q['groups'];t0,t1=a['interval'];lv=q['confidence_level']
+    if d.duplicated(['unit_id','group','time']).any():raise ValueError('Duplicate time within a unit-condition')
+    used=d[~d.exclude].sort_values(['unit_id','group','time']);end=float(t1)
+    if used.empty:raise ValueError('No observations remain')
+    notes=[]
+    if a['incomplete_policy']=='common_interval':
+        end=float(min(t1,used.groupby(['unit_id','group']).time.max().min()))
+        if end<=t0:raise ValueError('No common interval remains')
+        if end<t1:notes.append(f'All curves use the shortened common interval [{t0:g}, {end:g}].')
+    units=[]
+    # Include completely excluded curves and missing conditions in the audit.
+    for uid in d.unit_id.drop_duplicates():
+        for g in groups:
+            u=used[(used.unit_id==uid)&(used.group==g)]
+            row={'unit_id':uid,'group':g,'auc':None,'status':'missing_or_excluded_condition'}
+            if len(u):
+                times=u.time.to_numpy(float)
+                if not np.any(times==t0):row['status']='no_observation_at_interval_start'
+                elif not np.any(times==end):row['status']='no_observation_at_interval_end'
+                else:
+                    w=u[(u.time>=t0)&(u.time<=end)];y=w.value.to_numpy(float)
+                    base=0. if a['baseline']=='none' else float(y[0]) if a['baseline']=='first_value' else float(a['baseline_value'])
+                    row.update(status='computed',auc=trapezoid(w.time,y-base),baseline=base,n_points=len(w),interval=[float(t0),end])
+            units.append(row)
+    ut=pd.DataFrame(units);ok=ut[ut.status=='computed'];summaries=[]
+    for g in groups:
+        v=ok[ok.group==g].auc.to_numpy(float)
+        s={'group':g,'n':len(v),'mean_auc':float(v.mean()) if len(v) else None,'sd':float(v.std(ddof=1)) if len(v)>1 else None,'ci':[None,None]}
+        if len(v)>1:
+            h=stats.t.ppf((1+lv)/2,len(v)-1)*s['sd']/np.sqrt(len(v));s['ci']=[s['mean_auc']-h,s['mean_auc']+h]
+        summaries.append(s)
+    pairs=[(q['control_group'],g) for g in groups if g!=q['control_group']] if q['post_hoc']=='vs_control' else list(combinations(groups,2))
+    m=len(pairs);comps=[];ids=set(d.unit_id)
+    for ga,gb in pairs:
+        sa=ok[ok.group==ga].set_index('unit_id').auc;sb=ok[ok.group==gb].set_index('unit_id').auc
+        complete=sorted(set(sa.index)&set(sb.index));lost=sorted(ids-set(complete))
+        row={'contrast':f'{gb} - {ga}','estimate':None,'ci':[None,None],'p_unadjusted':None,
+             'n_pairs':len(complete),'n_lost_pairs':len(lost),'paired_unit_ids':complete,'lost_pair_ids':lost,
+             'method':'paired t on within-unit AUC differences','pair_policy':q['pair_policy']}
+        if lost and q['pair_policy']=='require_complete':
+            row.update(status='withheld_incomplete_pairs',reportable=False)
+        else:
+            delta=sb.reindex(complete).to_numpy(float)-sa.reindex(complete).to_numpy(float)
+            z=t_summary(delta,0.,1-(1-lv)/m)
+            if z['reportable']:
+                row.update(status='estimated',reportable=True,estimate=z['estimate'],ci=z['ci'],standard_error=z['standard_error'],df=z['df'],p_unadjusted=z['p_two_sided'],
+                           paired_mean_auc_a=float(sa.reindex(complete).mean()),paired_mean_auc_b=float(sb.reindex(complete).mean()),
+                           paired_differences=[{'unit_id':uid,'difference':float(v)} for uid,v in zip(complete,delta)])
+            else:row.update(status='withheld_'+z['reason'],reportable=False)
+        if lost:notes.append(f"{row['contrast']}: {len(lost)} incomplete pairs; policy {q['pair_policy']}. Complete-pair inference may be biased when missingness relates to response.")
+        comps.append(row)
+    adjusted=_holm(np.array([r['p_unadjusted'] if r['reportable'] else 1. for r in comps]))
+    for r,p in zip(comps,adjusted):
+        if r['reportable']:r['p_holm']=p
+    notes.insert(0,f"AUC uses one curve per {cfg['design']['unit']} and condition on [{t0:g}, {end:g}]; paired contrasts are within-unit B minus A. Technical wells are not independent pairs.")
+    notes.append('Group summaries use all computed curves; each contrast reports its own complete pairs and paired means. Holm and Bonferroni use the full declared family, including withheld contrasts.')
+    return {'analysis_type':'curve_auc','primary':{'interval_used':[float(t0),end],'declared_interval':[float(t0),float(t1)],'baseline':a['baseline'],
+            'incomplete_policy':a['incomplete_policy'],'comparison_design':'paired_t','pair_policy':q['pair_policy'],'pair_rationale':q['pair_rationale'],
+            'group_summaries':summaries,'comparisons':comps,'units':units,'design':cfg['design'],'confidence_level':lv,
+            'interval_adjustment':'Bonferroni across the declared family' if m>1 else 'none (single contrast)'},
+            'must_mention':notes,'failing_items':[r for r in comps if not r['reportable']],
+            'limitations':['Linear trapezoid; no smoothing, fitting or extrapolation. Net area below the baseline is negative.',
+                           'Paired t inference assumes independent units and approximately normal within-unit AUC differences.',
+                           'Complete-pair selection does not correct outcome-related dropout; no PK/NCA interpretation.']}
 
 
 def render(run, result, style):

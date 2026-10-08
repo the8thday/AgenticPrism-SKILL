@@ -137,7 +137,7 @@ def inverse_interval(responses, dilutions, fit, cfg, model, direction, level):
 def fit_5pl(std, cfg, dc, factor):
     """Asymmetric 5PL on the plate's included standards, with the 4PL fitted for comparison."""
     direction, f = cfg["direction"], dc["fit"]
-    base, _, _ = fit_dose_curve(std, dc)
+    base, _, _ = fit_dose_curve(std, dc, shape_diagnostics=False)
     x = std.concentration_canonical.to_numpy(float)
     y = std.response.to_numpy(float)
     positive = x[x > 0]

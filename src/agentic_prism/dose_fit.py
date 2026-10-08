@@ -109,7 +109,7 @@ def _at_bound(z, lower, upper):
     return bool(np.any(np.minimum(np.asarray(z) - lower, upper - np.asarray(z)) < 1e-4))
 
 
-def fit_dose_curve(group, cfg):
+def fit_dose_curve(group, cfg, *, shape_diagnostics=True):
     curve_id = str(group.curve_id.iloc[0])
     used = group.loc[~group.exclude]
     f = cfg["fit"]
@@ -205,6 +205,16 @@ def fit_dose_curve(group, cfg):
     if opposite:
         result["diagnostics"].append("observed_direction_opposite_to_declared")
 
+    # Only the default 4PL workflow changes. Internal 4PL reference fits used by
+    # other declared models retain their original scientific artifacts.
+    shape_passed = True
+    if shape_diagnostics and cfg.get('model', 'relative_four_parameter_logistic') == 'relative_four_parameter_logistic':
+        from .dose_diagnostics import shape_checks
+        checks = shape_checks(x, y, prediction, n_parameters, f['weighting'])
+        result['shape_diagnostics'] = checks
+        result['diagnostics'].extend(checks['diagnostics'])
+        shape_passed = checks['passed']
+
     if cfg["uncertainty"]["method"] == "profile_f":
         if sse <= _noise_floor(y, cfg):
             result["ci_status"] = "noise_scale_not_estimable"
@@ -247,7 +257,7 @@ def fit_dose_curve(group, cfg):
         result["ci_status"] = "not_requested"
 
     result["reportable"] = (not boundary and rank == 2 and result["range_status"] == "within_range"
-                            and amp > 3 * rmse and not opposite
+                            and amp > 3 * rmse and not opposite and shape_passed
                             and result["ci_status"] in ("two_sided_profile_f", "not_requested")
                             and "profile_hill_nuisance_at_boundary" not in result["diagnostics"])
     result["status"] = "limited" if not result["reportable"] else "estimated_with_diagnostics" if result["diagnostics"] else "estimated"

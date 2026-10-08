@@ -10,7 +10,9 @@ def safe_copy(value):
  if isinstance(value,list):return [safe_copy(v) for v in value]
  if not isinstance(value,dict):return value
  if value.get('reportable') is False or value.get('status') in ('failed','withheld'):
-  return {k:deepcopy(v) for k,v in value.items() if k in ('status','reportable','diagnostics','reason','curve_id','fit_group_id','plate_id','sample_id')}
+  keep=('status','reportable','diagnostics','reason','curve_id','fit_group_id','plate_id','sample_id')
+  if 'percent' in value:keep+=('endpoint','percent','basis','range_status','ci_status','input_unit','experiment_id')
+  return {k:deepcopy(v) for k,v in value.items() if k in keep}
  return {k:safe_copy(v) for k,v in value.items() if not k.startswith('audit_')}
 
 

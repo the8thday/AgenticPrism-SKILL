@@ -1,6 +1,6 @@
 ---
 name: curve-auc
-description: Compute the area under time curves (linear trapezoid) per independent unit over a declared interval with declared baseline handling and early-dropout policy, then compare groups with Welch t (Holm p, Bonferroni intervals). Use for killing or confluence time courses, cytokine kinetics, body-weight or tumor-volume summaries over a fixed window. Not for PK exposure (NCA), and not a substitute for growth models when dropout is outcome-related.
+description: Compute area under time curves per biological unit over a declared interval and baseline, with independent Welch or paired within-unit comparisons, Holm p values and Bonferroni intervals. Use for killing, confluence, cytokine, body-weight or tumor-volume time courses. Requires explicit dropout/pair policies; not PK/NCA or a correction for outcome-related dropout.
 ---
 
 # Curve AUC
@@ -19,9 +19,11 @@ Read the [runtime procedure](../agentic-prism/references/runtime.md) and the
    rationale. If dropout is related to the outcome (tumor-volume humane endpoints, deaths), any AUC
    comparison is biased; say so and suggest tumor-growth or time-to-event instead. The run flags groups
    whose withholding differs by more than 20 percentage points.
-4. **Pairing.** The comparison assumes different units in each group. If the same donor or culture was
-   measured under every treatment, the design is paired and is not supported yet (0.13.2 live-agent
-   review): say so and ask, rather than running the independent-group Welch comparison.
+4. **Pairing.** For the same donor or culture under several treatments, declare
+   `comparison.design=paired_t` and the pair policy/rationale in the
+   [paired contract](references/input-and-model.md#paired-comparisons-0134).
+   Pair by unit ID; never rename shared donors into independent IDs. The default
+   independent-group Welch calculation remains available for different units.
 
 ## Run and report
 

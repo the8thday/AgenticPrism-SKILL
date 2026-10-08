@@ -61,10 +61,26 @@ def analyze_dose(config_path, output, render=True):
         potency = summarize_potency(comparisons, cfg)
         results = {"schema_version": 1, "analysis_type": "dose_response_4pl", "fits": fits,
                    "summaries": summaries, "comparisons": comparisons, "potency_summaries": potency}
+        if 'effect_levels' in cfg:
+            from .dose_endpoints import effect_endpoints, summarize_endpoints
+            endpoints = [r for fit in fits for r in effect_endpoints(groups[fit['curve_id']],fit,cfg)]
+            results['effect_endpoints'] = endpoints
+            results['endpoint_summaries'] = summarize_endpoints(endpoints,cfg)
+            pd.DataFrame([{k:v for k,v in r.items() if k not in ('ci_canonical','ci_input_unit','diagnostics')} |
+                          {'ci_low_input_unit':r['ci_input_unit'][0], 'ci_high_input_unit':r['ci_input_unit'][1],
+                           'diagnostics':';'.join(r['diagnostics'])} for r in endpoints]).to_csv(out/'effect_endpoints.csv',index=False)
+            pd.DataFrame(results['endpoint_summaries']).to_csv(out/'endpoint_summaries.csv',index=False)
         if cfg["model"] != "relative_four_parameter_logistic":
             from .evidence_0131 import EVIDENCE
             results["model"] = cfg["model"]
             results["validation_evidence"] = EVIDENCE["dose_5pl" if cfg["model"] == "relative_five_parameter_logistic" else "dose_bell"]
+        else:
+            from copy import deepcopy
+            from .evidence_0134 import EVIDENCE
+            results['validation_evidence'] = deepcopy(EVIDENCE['dose_4pl'])
+            if 'effect_levels' in cfg:
+                results['validation_evidence']['effect_endpoints'] = deepcopy(EVIDENCE['effect_endpoints'])
+                results['validation_evidence']['must_mention'] += EVIDENCE['effect_endpoints']['must_mention']
         dump(out / "results.json", results)
         pd.DataFrame(summaries).to_csv(out / "sample_summary.csv", index=False)
         if comparisons:

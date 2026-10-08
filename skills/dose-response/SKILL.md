@@ -1,9 +1,14 @@
 ---
 name: dose-response
-description: Fit empirical 4PL (or, when predeclared, asymmetric 5PL or bell-shaped) concentration-response curves for relative EC50 or IC50, with optional fixed plateaus and relative (1/Y²) weighting, summaries across independent experiments, and reference-vs-test comparison (relative potency, parallelism by F test or by predeclared equivalence margins, optional RP acceptance limits, shared-C50 F test), plus diagnostics and offline reports. Use for ELISA/FACS binding EC50, blocking or neutralization IC50, reporter, ADCC/CDC and other dose-response data; not equilibrium KD, Ki, or ELISA unknown interpolation.
+description: Analyze functional concentration-response curves, relative EC50/IC50 and 4PL ECx/ICx including EC10/20/80/90 and IC90, with profile intervals and model-adequacy gates. Supports declared 5PL/bell-shaped curves, independent-experiment summaries and 4PL relative potency/parallelism. Use for binding EC50, blocking, neutralization, reporter, ADCC/CDC or killing responses; not equilibrium KD, Ki or unknown-concentration interpolation.
 ---
 
 # Dose response (4PL; opt-in 5PL and bell-shaped)
+
+0.13.4 adds relative EC10/20/80/90 and ICx (including IC90) with endpoint-specific
+profile intervals and range gates. Read [effect levels and 4PL reliability](references/effect-levels-0134.md)
+for these requests. Default 4PL now withholds fits with significant lack of fit
+or structured residuals; never report an endpoint/RP from those audit estimates.
 
 Use this specialist for a measured response across a concentration series when a four-parameter, symmetric sigmoid is scientifically appropriate. Read the [input and model contract](references/input-and-model.md) before configuring new data. This module reports **relative EC50 or IC50**, the concentration halfway between fitted (or fixed) Bottom and Top. It is the absolute Y=50 concentration only when the plateaus are fixed at 0 and 100 on a normalized scale.
 

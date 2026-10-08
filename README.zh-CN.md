@@ -14,7 +14,14 @@ JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保�
 每个方法都与公认实现比对、用模拟做校准，并用真实 Agent 在误用场景下测试行为
 （[详见](#不只测数值还用真实-agent-测行为)）。
 
-## 状态：公开测试版 0.13.3
+## 我们真实的目的
+
+我们希望各行各业的人们在做统计分析时，优先想到用 Agent 的方式去做。抗体与
+生物药研发是我们的起点；适用性检查、保存的配置与哈希以及解读依据
+（interpretation facts），都是为了说明：由 Agent 完成的统计分析同样可以核对、
+可以复现、值得信任。
+
+## 状态：公开测试版 0.13.4
 
 AgenticPrism 供科研分析使用。它**没有**按 GLP/GMP 或法规申报要求（例如
 21 CFR Part 11）做过计算机化系统验证；如果某项决策依赖分析结果，仍需统计人员
@@ -31,6 +38,14 @@ issue 反馈真实项目数据上的使用情况。
 
 各模块的具体限制见[模块登记表](skills/agentic-prism/references/module-registry.md)
 和对应的发布记录；所有校准失败都保留在 `validation/` 中。
+
+## 0.13.4
+
+4PL 新增重复浓度的失拟检查和有序残差检查，检查失败时暂不报告浓度及相对效价。支持相对 **EC10/20/80/90、IC10/20/80/90**（包括 IC90）及其他预先声明的百分比，各端点分别计算 profile-F 区间；母曲线不可报告或端点超出实测浓度范围时会暂扣结果。目前这些端点仅支持对称 4PL。
+
+时间曲线 AUC 新增配对设计、明确的不完整配对处理、Holm 校正 p 值和 Bonferroni 家族区间。组间比较新增单样本 t 检验，以及对数尺度的单样本、配对和独立 Welch 比值检验；比值针对几何均值，要求观测值严格为正。
+
+注册校准 36/37 个有界限的指标通过；单样本对数比值覆盖率未达标，以及窄浓度范围下 EC80 的选择后覆盖问题，均保留并写入 saved facts。与 R 核心实现核对：十个可报告端点的点估计及区间、四类位置检验和三个配对 AUC 对比均通过；仅供审计的五个 hook 端点未通过点估计容差。公开实例验证仍未达到。行为测试、构建、兼容性检查及保留的初次失败见[发布证据](validation/RELEASE_0.13.4.md)。
 
 ## 0.13.3
 
@@ -73,7 +88,7 @@ Bliss、Loewe、HSA、ZIP 组合参考模型与独立矩阵不确定性；HTS �
 | | 细胞表面表观亲和力 | [cell-binding](skills/cell-binding/SKILL.md) | 联合拟合总结合与对照，明确背景和受体耗竭；只报告表观 KD |
 | | 结合与解离速率 | [binding-kinetics](skills/binding-kinetics/SKILL.md) | 多循环或单循环 BLI/SPR 全局 1:1 拟合，参比或双参比扣除，带可靠性门控的块 bootstrap 区间；显式选择漂移、异质配体、双价分析物、传质及解离速率筛选；限定布局的 Octet/T200/Carterra 导入 |
 | 可开发性 | 热稳定性（表观 Tm） | [thermal-stability](skills/thermal-stability/SKILL.md) | nanoDSF/DSF/CD 两态转变与倾斜基线，声明的转变数需优于少一个转变的模型，profile-F Tm 区间，导数拐点，重复汇总与 ΔTm |
-| 体外功能 | EC50/IC50 与相对效价 | [dose-response](skills/dose-response/SKILL.md) | 对称 4PL，相对中点及 profile 区间，平行线相对效价（F 检验或预设界限的等效性平行性）；可选不对称 5PL 与钟形（hook）曲线 |
+| 体外功能 | ECx/ICx 与相对效价 | [dose-response](skills/dose-response/SKILL.md) | 对称 4PL、失拟门槛、各相对端点的 profile 区间，平行线相对效价（F 检验或预设界限的等效性平行性）；可选不对称 5PL 与钟形（hook）曲线 |
 | | 由标准曲线求浓度 | [elisa-quantification](skills/elisa-quantification/SKILL.md) | 逐板 4PL/5PL，标准品回算质控，独立质控，delta 法未知浓度区间，稀释线性；读板仪网格导入 |
 | 体内药效 | 肿瘤体积随时间变化 | [tumor-growth](skills/tumor-growth/SKILL.md) | 对数体积随机斜率模型：生长速率、倍增时间、速率差、模型 T/C；观测 TGI%、T/C% 的 Fieller 区间及脱落诊断 |
 | | 生存、到达人道终点的时间 | [time-to-event](skills/time-to-event/SKILL.md) | Kaplan–Meier、log-rank（渐近或置换）、Cox 风险比、比例风险检验；竞争风险（累积发生率、Gray 检验、Fine–Gray 与原因别风险比） |
@@ -87,11 +102,12 @@ Bliss、Loewe、HSA、ZIP 组合参考模型与独立矩阵不确定性；HTS �
 | | 容忍区间与过程能力 | [specifications](skills/specifications/SKILL.md) | 精确正态及非参数容忍区间（批次不足时给出所需最少数量）；Pp/Ppk 及子组内 Cp/Cpk 与区间 |
 | 各阶段通用 | 动物或供体内的技术重复 | [group-comparison](skills/group-comparison/SKILL.md) | 嵌套比较：随机截距 REML 与 Satterthwaite，单位均值分析，ICC 与设计效应 |
 | 各阶段通用 | 校正基线的组间比较 | [group-comparison](skills/group-comparison/SKILL.md) | 处理前协变量的 ANCOVA，斜率齐性门槛，校正均值与对比 |
-| 各阶段通用 | 时间曲线下面积 | [curve-auc](skills/curve-auc/SKILL.md) | 按单位在声明区间与基线下做线性梯形积分，退出处理规则，Welch 比较 |
+| 各阶段通用 | 时间曲线下面积 | [curve-auc](skills/curve-auc/SKILL.md) | 按单位在声明区间与基线下做线性梯形积分，退出处理规则，Welch 或配对 t 对比及多重比较校正 |
 | 体外检测 | 线性或二次标准曲线 | [standard-curve](skills/standard-curve/SKILL.md) | BCA/Bradford/拷贝数标准品，回收率与失拟接受标准，逆推区间，不外推 |
 | 体外检测 | qPCR 相对表达 | [qpcr](skills/qpcr/SKILL.md) | 效率校正的 ΔΔCq，多内参几何均值，按生物学重复统计，NTC 与内参稳定性检查 |
 | 各阶段通用 | 衰减、结合、增长与酶动力学 | [nonlinear-models](skills/nonlinear-models/SKILL.md) | 一相/两相衰减、结合、指数与 logistic 增长、Michaelis–Menten；profile 区间、半衰期与设计支持门槛 |
 | 各阶段通用 | 样本量与功效规划 | [sample-size](skills/sample-size/SKILL.md) | 精确非中心 t/F 与 TOST 功效，反正弦或合并正态的比例检验，Schoenfeld log-rank 事件数；假设须注明来源，附功效曲线与敏感性分析 |
+| 各阶段通用 | 单样本与比值检验 | [group-comparison](skills/group-comparison/SKILL.md) | 有来源的理论值与单样本 t；正值几何均值检验、配对及独立比值 |
 | 各阶段通用 | 组间比较 | [group-comparison](skills/group-comparison/SKILL.md) | Welch 或配对 t 检验，单因素 ANOVA 加 Dunnett/Tukey/Games-Howell/Holm 比较族，Mann–Whitney 与 signed-rank（Hodges–Lehmann），Kruskal–Wallis + Dunn，Friedman |
 
 [总入口 Skill](skills/agentic-prism/SKILL.md) 按实验目的选择专用 Skill；

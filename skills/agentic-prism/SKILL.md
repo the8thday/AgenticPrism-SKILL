@@ -171,3 +171,13 @@ and PK exposure (NCA) is not covered.
 Decay, association, exponential or logistic growth and Michaelis-Menten curves go to
 [nonlinear-models](../nonlinear-models/SKILL.md) with a model declared from prior knowledge; sigmoid
 concentration-response stays with dose-response and melting curves with thermal-stability.
+
+## 0.13.4 routing
+
+Relative EC10/20/80/90 and ICx/IC90 go to dose-response's effect-level contract;
+never substitute EC50, a fixed multiplier of its interval, or an absolute Y
+threshold. Nonmonotonic/poor 4PL fits retain their withholding diagnostics.
+Same-donor time-curve AUC uses curve-auc's declared paired design and pair policy.
+Single-sample comparisons and geometric-mean/paired-ratio tests go to
+group-comparison's `location_test` contract. Reject invented independent controls,
+technical wells as units, and pseudocounts for zero-valued ratio inputs.

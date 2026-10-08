@@ -18,7 +18,14 @@ Each method is checked against established implementations, calibrated by
 simulation, and tested with a real agent on misuse scenarios
 ([how](#tested-with-a-real-agent-not-only-numerically)).
 
-## Status: public beta 0.13.3
+## Our real purpose
+
+We want people in every field, when they need a statistical analysis, to think
+first of doing it with an agent. Antibody and biologics R&D is where we start;
+the gates, saved configurations, hashes and interpretation facts are there to
+show that agent-driven analysis can be checked, reproduced and trusted.
+
+## Status: public beta 0.13.4
 
 AgenticPrism is for research analysis. It has **not** been validated as a
 computerized system for GLP/GMP work or regulatory submissions (for example
@@ -38,6 +45,14 @@ data; feedback from real project data is welcome through GitHub issues.
 Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
+
+## 0.13.4
+
+4PL fits now check replicated lack of fit and ordered residual structure before reporting concentrations or relative potency. Relative **EC10/20/80/90 and IC10/20/80/90** (including IC90), or other declared percentages, have their own profile-F intervals; a failed parent fit or an endpoint outside the tested dose range is withheld. These endpoints currently support symmetric 4PL.
+
+Time-curve AUC now supports paired units, explicit incomplete-pair handling, Holm p values and Bonferroni family intervals. Group comparison adds a one-sample t test and log-scale one-sample, paired and independent Welch ratio tests. Ratios target geometric means and require positive observations.
+
+The registered calibration passed 36/37 bounded rows; the one-sample log-ratio coverage miss and poor conditional C80 coverage in a narrow-dose stress scenario remain disclosed in saved facts. Base-R checks agree for all ten reportable endpoint estimates/intervals, all four location tests and three paired-AUC contrasts; five audit-only hook estimates miss the point-estimate tolerance. Published worked examples are unmet. See [release evidence](validation/RELEASE_0.13.4.md) for behavioral, build and compatibility checks and preserved initial failures.
 
 ## 0.13.3
 
@@ -81,7 +96,7 @@ See [release evidence](validation/RELEASE_0.12.1.md) for retained misses and unm
 | | Cell-surface apparent affinity | [cell-binding](skills/cell-binding/SKILL.md) | Joint total/control fit, declared background, hyperbolic or quadratic receptor depletion; apparent KD only |
 | | Association and dissociation rates | [binding-kinetics](skills/binding-kinetics/SKILL.md) | Global 1:1 fit of independent-cycle or single-cycle BLI/SPR data, reference or double referencing, block-bootstrap intervals with reliability gates; opt-in drift, heterogeneous ligand, bivalent analyte, mass transport and off-rate screening; scoped Octet/T200/Carterra imports |
 | Developability | Thermal stability (apparent Tm) | [thermal-stability](skills/thermal-stability/SKILL.md) | nanoDSF/DSF/CD two-state transitions with sloping baselines, declared transition count tested against one fewer, profile-F Tm, derivative inflections, replicate summaries and delta-Tm |
-| In vitro function | EC50/IC50 and relative potency | [dose-response](skills/dose-response/SKILL.md) | Symmetric 4PL, relative midpoint with profile interval, parallel-line relative potency with F-test or equivalence-margin parallelism; opt-in asymmetric 5PL and bell-shaped (hook) curves |
+| In vitro function | ECx/ICx and relative potency | [dose-response](skills/dose-response/SKILL.md) | Symmetric 4PL, adequacy gates, relative endpoints with individual profile intervals, parallel-line relative potency with F-test or equivalence-margin parallelism; opt-in asymmetric 5PL and bell-shaped (hook) curves |
 | | Concentration from a standard curve | [elisa-quantification](skills/elisa-quantification/SKILL.md) | Per-plate 4PL/5PL, back-calculation QC, independent QC gates, delta-method unknown intervals, dilution linearity; plate-grid import |
 | In vivo efficacy | Tumor volumes over time | [tumor-growth](skills/tumor-growth/SKILL.md) | Log-volume random-slope model: growth rates, doubling times, rate differences, model T/C; observed TGI% and T/C% with Fieller limits and dropout diagnostics |
 | | Survival, time to humane endpoint | [time-to-event](skills/time-to-event/SKILL.md) | Kaplan–Meier, log-rank (asymptotic or permutation), Cox hazard ratios, proportional-hazards test; competing risks (cumulative incidence, Gray test, Fine–Gray and cause-specific hazard ratios) |
@@ -95,11 +110,12 @@ See [release evidence](validation/RELEASE_0.12.1.md) for retained misses and unm
 | | Tolerance intervals and process capability | [specifications](skills/specifications/SKILL.md) | Exact normal and nonparametric tolerance intervals (minimum n when too few lots); Pp/Ppk and within-subgroup Cp/Cpk with intervals |
 | Any stage | Technical replicates within animals or donors | [group-comparison](skills/group-comparison/SKILL.md) | Nested comparison: random-intercept REML with Satterthwaite, unit-means analysis, ICC and design effect |
 | Any stage | Comparison adjusted for baseline | [group-comparison](skills/group-comparison/SKILL.md) | ANCOVA with pre-treatment covariates, slope-homogeneity gate, adjusted means and contrasts |
-| Any stage | Area under time curves | [curve-auc](skills/curve-auc/SKILL.md) | Linear trapezoid per unit on a declared interval and baseline, dropout policy, Welch comparisons |
+| Any stage | Area under time curves | [curve-auc](skills/curve-auc/SKILL.md) | Linear trapezoid per unit on a declared interval and baseline, dropout policy, Welch or paired t contrasts with multiplicity control |
 | In vitro assays | Linear or quadratic standard curves | [standard-curve](skills/standard-curve/SKILL.md) | BCA/Bradford/copy-number standards, recovery and lack-of-fit acceptance, inversion intervals, no extrapolation |
 | In vitro assays | qPCR relative expression | [qpcr](skills/qpcr/SKILL.md) | Efficiency-corrected ΔΔCq with geometric-mean references, biological-replicate statistics, NTC and reference-stability checks |
 | Any stage | Decay, association, growth and enzyme kinetics | [nonlinear-models](skills/nonlinear-models/SKILL.md) | One/two-phase decay, association, exponential and logistic growth, Michaelis–Menten; profile intervals, half-lives and design-support gates |
 | Any stage | Planning sample size or power | [sample-size](skills/sample-size/SKILL.md) | Exact noncentral t/F and TOST power, arcsine or pooled-normal proportions, Schoenfeld log-rank events; sourced assumptions, power curve and sensitivity grid |
+| Any stage | One-sample and ratio tests | [group-comparison](skills/group-comparison/SKILL.md) | Sourced-null one-sample t; positive geometric-mean tests and paired/independent ratios |
 | Any stage | Comparing groups | [group-comparison](skills/group-comparison/SKILL.md) | Welch or paired t, one-way ANOVA with Dunnett/Tukey/Games-Howell/Holm families, Mann–Whitney and signed-rank with Hodges–Lehmann, Kruskal–Wallis with Dunn, Friedman |
 
 The [router Skill](skills/agentic-prism/SKILL.md) picks the specialist from the

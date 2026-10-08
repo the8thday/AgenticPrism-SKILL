@@ -1,0 +1,30 @@
+{
+  "full_suite": {
+    "passed": 795,
+    "warnings": 8,
+    "seconds": 342.3,
+    "stdout_sha256": "de8d136865a4156c938a4059259f881f07f469f8558fd0a03f77c0afaa40755d",
+    "scope": "Full suite after 4PL expectation updates; before adding four CLI regression cases."
+  },
+  "after_cli_fix": {
+    "passed": 20,
+    "seconds": 21.87,
+    "scope": "tests/test_everyday_0134.py including all four CLI subprocess cases",
+    "stdout_sha256": "2a0114cc78587b4ca028c404f8e40c1c46a00995e376fca46ec3b116ca2353ad"
+  },
+  "initial_full_suite": {
+    "passed": 793,
+    "failed": 2,
+    "reason": "Obsolete default-4PL reportability/evidence expectations; independent numerical assertions retained."
+  },
+  "skill_validation": {
+    "status": "passed",
+    "folders": [
+      "agentic-prism",
+      "dose-response",
+      "curve-auc",
+      "group-comparison"
+    ],
+    "tool": "skill-creator quick_validate.py"
+  }
+}

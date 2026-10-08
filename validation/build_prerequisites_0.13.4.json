@@ -1,0 +1,24 @@
+{
+  "attempts": [
+    {
+      "attempt": "build",
+      "status": "environment_prerequisite_failure",
+      "reason": "setuptools missing from dedicated offline cache",
+      "log_sha256": "719e6a957096fc56c7851151d77bcb6315880a73720cff2dfe9a28ecb3885545"
+    },
+    {
+      "attempt": "build-recheck",
+      "status": "environment_prerequisite_failure",
+      "reason": "retry before cache preparation completed",
+      "log_sha256": "f4df35ff3b8a3e963a3a50410379ce3b180d103fb20d8b13ae1058d9aafb05e4"
+    },
+    {
+      "attempt": "build-cached",
+      "status": "environment_prerequisite_failure",
+      "reason": "copied distributions needed uv archive links",
+      "log_sha256": "be00edbc6adc1993db39e37d516804061ce5e8ed6fa3c6f84f3a1f9b32f766f8"
+    }
+  ],
+  "resolution": "Copied already-cached locked dependencies and setuptools 84.0.0 into dedicated temporary cache with original uv archive links; no network downloads or source changes.",
+  "final_build": "validation/archive_build_0.13.4.json"
+}

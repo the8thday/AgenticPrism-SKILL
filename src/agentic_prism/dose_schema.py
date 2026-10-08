@@ -16,6 +16,7 @@ DEFAULTS = {
     "model_rationale": "",
     "input": None, "source": "User-supplied dose-response observations", "column_map": {},
     "provenance": None,
+    "effect_levels": {"percentages": [], "rationale": ""},
     "dose_scale": "linear",  # "log10" means log10 of values in the supplied concentration_unit.
     "assay": {"endpoint": None, "direction": None, "tested_agent": "", "response_definition": "",
               "relative_half_response_supported": None, "rationale": ""},
@@ -50,6 +51,19 @@ def resolve_dose_config(raw):
         return result
 
     c = merge(DEFAULTS, raw)
+    levels = c['effect_levels']
+    values = levels['percentages']
+    if not isinstance(values, list) or any(type(v) not in (int, float) or not np.isfinite(v) or not 0 < v < 100 for v in values) or len(set(values)) != len(values):
+        raise ValueError('effect_levels.percentages must be distinct finite percentages strictly between 0 and 100')
+    if values:
+        if c['model'] != MODELS[0]:
+            raise ValueError('ECx/ICx effect_levels currently require the symmetric 4PL; no 5PL or bell-phase endpoints')
+        if not isinstance(levels['rationale'], str) or not levels['rationale'].strip():
+            raise ValueError('Declare effect_levels.rationale and the requested relative-effect targets before fitting')
+    else:
+        if levels['rationale']:
+            raise ValueError('effect_levels.rationale requires percentages')
+        c.pop('effect_levels')
     if c["schema_version"] != 1 or c["analysis_type"] != "dose_response_4pl" or c["model"] not in MODELS:
         raise ValueError("Unsupported dose-response schema or model; models are " + ", ".join(MODELS))
     if c["model"] == MODELS[0]:

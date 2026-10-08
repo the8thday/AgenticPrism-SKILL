@@ -1,9 +1,14 @@
 ---
 name: group-comparison
-description: Compare one outcome between independent experimental units - two groups (Welch or paired t test) or three or more independent groups (classic or Welch one-way ANOVA with a predeclared Dunnett, Tukey, Games-Howell or Holm family). Reports differences, simultaneous intervals, adjusted p values and design checks. Use for unit-level antibody-project measurements such as candidates vs isotype control; also supports scoped Mann-Whitney, signed-rank, Kruskal-Wallis/Dunn and complete-block Friedman designs; not general mixed-effects or covariate models.
+description: Compare independent-unit outcomes with one-sample, Welch, paired or ratio t tests, one/two-way ANOVA and declared multiple-comparison families, scoped rank tests, nested comparisons and baseline ANCOVA. Use for antibody candidates vs controls, recovery vs a reference and geometric-mean ratios. Preserves biological units, pairing, effect scales and suitability gates; general repeated measures use their specialist.
 ---
 
 # Group comparison
+
+For a single sample versus a declared reference, or an explicitly multiplicative
+effect (geometric means / treatment-to-control ratio), use the
+[single-sample and ratio-test contract](references/location-tests-0134.md),
+`analysis_type=location_test`. Preserve positive-value and complete-pair gates.
 
 Read the [input and design contract](references/input-and-model.md). Establish the true independent unit (animal, donor, independent experiment, etc.), outcome and units before choosing a design. Technical wells or cells are not independent units. When the data hold several technical replicates per independent unit, use the nested contract below instead of averaging by hand or treating wells as the sample size. Preserve any upstream aggregation and exclusion decisions in the source record; the other designs require one value per unit per condition.
 
@@ -70,4 +75,3 @@ Evidence (0.13.2): nested agrees with lmerTest within 1.7e-7 and ANCOVA with lm/
 all registered calibration rows passed (nested coverage 0.946-0.963, type I 0.041; ANCOVA coverage
 0.947/0.954, type I 0.048, slope-test withholding 0.044, power 0.38 adjusted vs 0.21 unadjusted).
 Published worked example and live-agent gates: see [the 0.13.2 record](../../validation/RELEASE_0.13.2.md).
-

@@ -1,0 +1,218 @@
+{
+  "release": "0.13.4",
+  "oracle": "base R stats nls/confint, t.test, p.adjust and independent trapezoid",
+  "r_version": "4.6.0",
+  "script_sha256": "b2df36724f4147dcc7ca21d3c65c28aeebdec13420a5117f3bc75cf3753d04fc",
+  "oracle_sha256": "59d2b48919d1219ce2b21a61aacb57bc337b2a085e8336d46262ec9af5cdb5a8",
+  "checks": [
+    {
+      "case": "ecx",
+      "endpoint": "EC10",
+      "estimate_relative_difference": 4.851081598644669e-07,
+      "sse_relative_difference": 1.1959322421262186e-12,
+      "interval_difference_over_width": 2.029466130925527e-05,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "ecx",
+      "endpoint": "EC20",
+      "estimate_relative_difference": 4.1431762909382996e-07,
+      "sse_relative_difference": 1.9251267247000214e-12,
+      "interval_difference_over_width": 1.4946095797180956e-05,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "ecx",
+      "endpoint": "EC50",
+      "estimate_relative_difference": 2.191056225342436e-08,
+      "sse_relative_difference": 7.889244812986362e-13,
+      "interval_difference_over_width": 1.0134704686698798e-06,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "ecx",
+      "endpoint": "EC80",
+      "estimate_relative_difference": 1.972226419955092e-07,
+      "sse_relative_difference": 9.64117674584486e-13,
+      "interval_difference_over_width": 1.3644693189213287e-05,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "ecx",
+      "endpoint": "EC90",
+      "estimate_relative_difference": 2.840722729269274e-07,
+      "sse_relative_difference": 6.815659148173836e-13,
+      "interval_difference_over_width": 1.641782074945245e-05,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "ecx_lack_of_fit",
+      "passed": true
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC10",
+      "estimate_relative_difference": 5.537837455271699e-08,
+      "sse_relative_difference": 3.141931159689193e-14,
+      "interval_difference_over_width": 1.74748974440383e-05,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC20",
+      "estimate_relative_difference": 1.8154344161303015e-07,
+      "sse_relative_difference": 6.290523657526137e-13,
+      "interval_difference_over_width": 1.405751988288814e-05,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC50",
+      "estimate_relative_difference": 4.055646551925918e-08,
+      "sse_relative_difference": 8.260059303211165e-14,
+      "interval_difference_over_width": 4.261412437186897e-07,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC80",
+      "estimate_relative_difference": 1.3657595610006013e-08,
+      "sse_relative_difference": 2.90878432451791e-14,
+      "interval_difference_over_width": 1.0614243405510363e-05,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "icx",
+      "endpoint": "IC90",
+      "estimate_relative_difference": 6.18484788939e-08,
+      "sse_relative_difference": 1.0103029524088925e-13,
+      "interval_difference_over_width": 1.2509556066632627e-05,
+      "r_interval_available": true,
+      "python_reportable": true,
+      "passed": true
+    },
+    {
+      "case": "icx_lack_of_fit",
+      "passed": true
+    },
+    {
+      "case": "hook",
+      "endpoint": "EC10",
+      "estimate_relative_difference": 6.1094257858052e-05,
+      "sse_relative_difference": 5.701084049292149e-11,
+      "interval_difference_over_width": null,
+      "r_interval_available": false,
+      "python_reportable": false,
+      "passed": false
+    },
+    {
+      "case": "hook",
+      "endpoint": "EC20",
+      "estimate_relative_difference": 2.0693092529944224e-05,
+      "sse_relative_difference": 4.5947912141741654e-11,
+      "interval_difference_over_width": null,
+      "r_interval_available": false,
+      "python_reportable": false,
+      "passed": false
+    },
+    {
+      "case": "hook",
+      "endpoint": "EC50",
+      "estimate_relative_difference": 3.146740052484276e-05,
+      "sse_relative_difference": 1.6654011503192123e-11,
+      "interval_difference_over_width": null,
+      "r_interval_available": false,
+      "python_reportable": false,
+      "passed": false
+    },
+    {
+      "case": "hook",
+      "endpoint": "EC80",
+      "estimate_relative_difference": 8.06965281463512e-05,
+      "sse_relative_difference": 3.565703288188615e-11,
+      "interval_difference_over_width": null,
+      "r_interval_available": true,
+      "python_reportable": false,
+      "passed": false
+    },
+    {
+      "case": "hook",
+      "endpoint": "EC90",
+      "estimate_relative_difference": 0.00011938434698666178,
+      "sse_relative_difference": 4.1452619115034395e-11,
+      "interval_difference_over_width": null,
+      "r_interval_available": false,
+      "python_reportable": false,
+      "passed": false
+    },
+    {
+      "case": "hook_lack_of_fit",
+      "passed": true
+    },
+    {
+      "case": "paired_auc",
+      "contrast_index": 0,
+      "max_absolute_difference": 2.4868995751603507e-14,
+      "passed": true
+    },
+    {
+      "case": "paired_auc",
+      "contrast_index": 1,
+      "max_absolute_difference": 4.973799150320701e-14,
+      "passed": true
+    },
+    {
+      "case": "paired_auc",
+      "contrast_index": 2,
+      "max_absolute_difference": 2.4868995751603507e-14,
+      "passed": true
+    },
+    {
+      "case": "one_sample_t",
+      "contrast_index": 0,
+      "max_absolute_difference": 2.5579538487363607e-13,
+      "passed": true
+    },
+    {
+      "case": "one_sample_ratio_t",
+      "contrast_index": 0,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "case": "paired_ratio_t",
+      "contrast_index": 0,
+      "max_absolute_difference": 3.9968028886505635e-15,
+      "passed": true
+    },
+    {
+      "case": "independent_ratio_welch",
+      "contrast_index": 0,
+      "max_absolute_difference": 3.197442310920451e-14,
+      "passed": true
+    }
+  ],
+  "passed": false,
+  "limits": [
+    "No Prism numerical benchmark. Hook intervals are not compared because model adequacy failed.",
+    "Dose oracle checks are unweighted; relative-weighting endpoint coverage is tested separately in the registered calibration."
+  ]
+}

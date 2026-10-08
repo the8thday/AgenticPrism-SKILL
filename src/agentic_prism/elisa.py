@@ -228,7 +228,9 @@ def quantify(d, cfg):
         if model == "5pl":
             fit = fit_5pl(std, cfg, dc, factor)
         else:
-            fit, _, _ = fit_dose_curve(std, dc)
+            # ELISA has its own calibration/QC contract; 0.13.4 changes functional
+            # dose-response adequacy only, preserving this validated method.
+            fit, _, _ = fit_dose_curve(std, dc, shape_diagnostics=False)
             fit.update(calibration_model="4pl", asymmetry=1., log10_c_canonical=fit["log10_half_response_canonical"])
         fit["endpoint"] = "calibration_C50"
         fit["plate_id"] = plate

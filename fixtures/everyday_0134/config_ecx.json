@@ -1,0 +1,23 @@
+{
+  "analysis_type": "dose_response_4pl",
+  "assay": {
+    "endpoint": "EC50",
+    "direction": "increasing",
+    "tested_agent": "synthetic mAb",
+    "response_definition": "simulated fluorescence",
+    "relative_half_response_supported": true,
+    "rationale": "declared monotonic functional response"
+  },
+  "effect_levels": {
+    "percentages": [
+      10,
+      20,
+      50,
+      80,
+      90
+    ],
+    "rationale": "predeclared relative-effect panel"
+  },
+  "input": "ecx.csv",
+  "source": "Synthetic demonstration; seed 13134077"
+}

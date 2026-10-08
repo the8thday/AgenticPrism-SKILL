@@ -1,0 +1,18 @@
+{
+  "analysis_type": "location_test",
+  "method": "one_sample_t",
+  "design": {
+    "unit": "donor",
+    "rationale": "independent simulated donors",
+    "outcome": "response",
+    "outcome_unit": "AU"
+  },
+  "comparison": {
+    "group_a": "A",
+    "group_b": null,
+    "null_value": 100,
+    "null_source": "prespecified no-change reference"
+  },
+  "input": "one_sample_t.csv",
+  "source": "Synthetic demonstration; seed 13134077"
+}

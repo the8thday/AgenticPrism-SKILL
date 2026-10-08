@@ -12,3 +12,31 @@ Columns: `unit_id`, `group`, `time`, `value`, optional `exclude`/`exclusion_reas
 observations exactly at both interval ends (no extrapolation); interior gaps are joined linearly.
 `common_interval` shortens every unit to the earliest last time. Output: per-unit AUC and status, group
 mean AUC with t intervals, Welch contrasts (Holm p, Bonferroni CI).
+
+## Paired comparisons (0.13.4)
+
+Add to `comparison`:
+
+```json
+"design": "paired_t",
+"pair_policy": "require_complete",
+"pair_rationale": "The same independent donors contribute matched conditions"
+```
+
+Repeat the same `unit_id` across conditions, with no duplicate time within a
+unit-condition. Every AUC uses the same declared or common interval; interval
+endpoints must be observed exactly. A contrast is B-A within unit, with at least
+three complete pairs and nonzero variance of the differences. The t interval
+uses n_pairs-1 degrees of freedom. Holm p and Bonferroni intervals refer to the
+full predeclared contrast family, including contrasts withheld for missing data.
+
+`require_complete` withholds a contrast when any unit lacks either AUC.
+Alternatively, explicitly choose `complete_pairs` with a missingness rationale;
+the contrast then uses the intersection of units with both AUCs. All lost pair
+IDs and absent/excluded conditions remain in results and disclosures. Different
+contrasts can have different complete-pair sets. Group summaries use all
+computed curves; each contrast also reports its paired means and n_pairs.
+Complete-pair selection does not fix outcome-related dropout.
+
+The existing baseline and incomplete-curve policies still apply. No PK/NCA,
+extrapolation, imputation or automatic window selection is added.

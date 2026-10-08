@@ -1,0 +1,12 @@
+observation_id,independent_unit_id,group,outcome,value,unit
+o0,d0,test,recovery,96.10043642454323,%
+o1,d1,test,recovery,110.4196448555462,%
+o2,d2,test,recovery,92.77501550497611,%
+o3,d3,test,recovery,105.1718805215363,%
+o4,d4,test,recovery,102.79465236524274,%
+o5,d5,test,recovery,90.76500918129061,%
+o6,d6,test,recovery,88.80264839090826,%
+o7,d7,test,recovery,89.32079285183801,%
+o8,d8,test,recovery,93.54561031808986,%
+o9,d9,test,recovery,101.7789598118336,%
+o10,d10,test,recovery,106.66020320036934,%

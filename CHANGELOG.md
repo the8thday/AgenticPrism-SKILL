@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.4
+
+- 4PL reliability: approximate pure-error lack-of-fit F where replicated/unweighted data permit it, plus a calibrated residual-sign diagnostic. A failed check withholds C50, ECx/ICx, summaries and downstream relative potency; optimizer estimates and original C50 intervals are unchanged. The public Compound-A fixture is intentionally now withheld. ELISA's shared fitter remains isolated from these new gates.
+- Optional relative ECx/ICx, including EC10/20/80/90 and IC90, with endpoint-specific profile-F intervals and independent-experiment summaries. Symmetric 4PL only, pointwise intervals, no supported extrapolated endpoint.
+- Paired time-curve AUC with unit-ID matching, shared interval, explicit complete-pair policy, within-pair t inference, Holm p values and Bonferroni family intervals. Independent AUC outputs remain unchanged.
+- `location_test` in group-comparison: ordinary one-sample t, one-sample log ratio, paired log ratio and independent Welch log-ratio tests. Positive inputs and sourced null required; no pseudocounts or fabricated controls.
+- Base-R numerical comparisons, preregistered calibration (36/37 bounded rows passed), extraction-only interpretation facts and immutable re-render checks. Retain initial R failures, audit-only hook discrepancies, the one-sample log-ratio coverage miss and narrow-dose C80 stress result. See `validation/RELEASE_0.13.4.md` for all five evidence gates.
+
 ## 0.13.3
 
 - New `nonlinear-models` Skill (`nonlinear_fit`): one/two-phase decay, association, exponential and logistic growth, Michaelis–Menten, with profile-F intervals, derived half-lives and doubling times, runs test and design-support gates.

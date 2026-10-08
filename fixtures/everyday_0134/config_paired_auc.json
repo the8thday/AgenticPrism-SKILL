@@ -1,0 +1,32 @@
+{
+  "analysis_type": "curve_auc",
+  "design": {
+    "unit": "donor",
+    "unit_rationale": "same independent donors in every condition",
+    "outcome": "killing",
+    "outcome_unit": "%",
+    "time_unit": "hour"
+  },
+  "auc": {
+    "interval": [
+      0,
+      4
+    ],
+    "baseline": "none",
+    "incomplete_policy": "withhold_unit",
+    "policy_rationale": "prespecified window"
+  },
+  "comparison": {
+    "groups": [
+      "A",
+      "B",
+      "C"
+    ],
+    "post_hoc": "all_pairs",
+    "design": "paired_t",
+    "pair_policy": "require_complete",
+    "pair_rationale": "matched aliquots from each donor"
+  },
+  "input": "paired_auc.csv",
+  "source": "Synthetic demonstration; seed 13134077"
+}

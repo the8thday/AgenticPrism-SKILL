@@ -208,6 +208,21 @@ def render_dose(run, style=None):
                         '<p class="caption">同一实验内的技术重复曲线先在 log10 C50 上平均，再对独立实验等权；区间为实验间 log 尺度 Student-t 区间，不传播单条曲线的拟合区间。只要有一条曲线失败或受限，整个样本不汇总。独立实验和条件可比性须在配置中明确声明。</p></section>')
 
     comparison_html = ""
+    evidence_notices = results.get('validation_evidence', {}).get('must_mention', [])
+    if evidence_notices:
+        summary_html += '<section class="panel"><h2>验证范围与必须披露的限制</h2>' + ''.join(
+            '<p class="notice">' + html.escape(s) + '</p>' for s in evidence_notices) + '</section>'
+    if results.get('effect_endpoints'):
+        erows=[]
+        for e in results['effect_endpoints']:
+            estimate=format_num(e['estimate_input_unit']) if e['reportable'] else '暂不报告'
+            ci=' – '.join(format_num(v) for v in e['ci_input_unit']) if e['reportable'] else '—'
+            erows.append('<tr>'+''.join('<td>'+html.escape(str(v))+'</td>' for v in
+                (e['curve_id'],e['endpoint'],estimate,ci,e['input_unit'],e['status'],'; '.join(e['diagnostics'])))+'</tr>')
+        summary_html += '<section class="panel"><h2>相对效应端点 ECx / ICx</h2><p>百分比从低剂量平台向高剂量平台计数；IC90 表示达到 90% 相对抑制，不是剩余响应 90%。每个端点单独计算 profile-F 区间并检查实测剂量范围。区间为逐端点区间，未作多个端点的同时覆盖校正。</p><div class="table-wrap"><table><tr><th>曲线</th><th>端点</th><th>浓度</th><th>区间</th><th>单位</th><th>状态</th><th>诊断</th></tr>'+''.join(erows)+'</table></div></section>'
+    if any(f.get('shape_diagnostics') for f in results['fits']):
+        from .report_shell import value_html
+        summary_html += '<section class="panel"><h2>4PL 形状适用性</h2><p>未通过检验时，端点、样本汇总及相对效价被保留为不可报告。通过或无法计算检验不能证明模型正确，也不能排除实测范围外的 hook。相对加权不使用同方差的纯误差 F 检验。</p><details><summary>逐曲线诊断</summary>'+value_html([{'curve_id':f['curve_id'],**f['shape_diagnostics']} for f in results['fits'] if 'shape_diagnostics' in f])+'</details></section>'
     comparisons = results.get("comparisons", [])
     for number, c in enumerate(comparisons, 1):
         key = f"compare-{number:03d}"
