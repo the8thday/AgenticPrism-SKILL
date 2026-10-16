@@ -1,0 +1,57 @@
+{
+ "status": "passed",
+ "tolerance": 1e-09,
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "oracle": "scripts/potency_ranking_0140_oracle.R (t.test paired, p.adjust holm)",
+ "checks": [
+  {
+   "fixture": "above_range_and_failed_reference",
+   "same_withholding": true,
+   "max_abs_difference": 3.9968028886505635e-15,
+   "passed": true,
+   "items": {
+    "mAb01": 3.9968028886505635e-15,
+    "mAb03": 1.1102230246251565e-15
+   }
+  },
+  {
+   "fixture": "eight_candidates",
+   "same_withholding": true,
+   "max_abs_difference": 3.197442310920451e-14,
+   "passed": true,
+   "items": {
+    "mAb01": 3.197442310920451e-14,
+    "mAb02": 3.552713678800501e-15,
+    "mAb03": 4.440892098500626e-15,
+    "mAb04": 8.881784197001252e-16,
+    "mAb05": 2.6645352591003757e-15,
+    "mAb06": 1.1102230246251565e-15,
+    "mAb07": 4.218847493575595e-15,
+    "mAb08": 3.552713678800501e-15
+   }
+  },
+  {
+   "fixture": "eight_candidates_threshold",
+   "same_withholding": true,
+   "max_abs_difference": 7.105427357601002e-15,
+   "passed": true,
+   "items": {
+    "mAb01": 7.105427357601002e-15,
+    "mAb02": 4.218847493575595e-15,
+    "mAb03": 5.329070518200751e-15,
+    "mAb04": 1.3322676295501878e-15,
+    "mAb05": 8.881784197001252e-16,
+    "mAb06": 3.9968028886505635e-15,
+    "mAb07": 1.9984014443252818e-15,
+    "mAb08": 2.6645352591003757e-15
+   }
+  },
+  {
+   "fixture": "too_few_experiments",
+   "same_withholding": true,
+   "max_abs_difference": 0.0,
+   "passed": true,
+   "items": {}
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "analysis_type": "panel_comparison",
+ "input": "cytokines_holm.csv",
+ "source": "Synthetic fixture (seed 14040); not team data",
+ "design": {
+  "unit": "mouse",
+  "rationale": "One serum sample per mouse at day 7",
+  "pairing": "independent",
+  "scale": "log",
+  "scale_rationale": "Cytokine concentrations are approximately log-normal (prior studies, synthetic)"
+ },
+ "comparison": {
+  "group_a": "vehicle",
+  "group_b": "mAb"
+ },
+ "families": {
+  "cytokines": [
+   "IL2",
+   "IL6",
+   "IL10",
+   "IFNG",
+   "TNF",
+   "GZMB"
+  ],
+  "chemokines": [
+   "CXCL9",
+   "CXCL10",
+   "CCL2",
+   "CCL5"
+  ]
+ },
+ "multiplicity": {
+  "procedure": "holm",
+  "rationale": "Analysis plan section 4 (synthetic declaration)"
+ }
+}

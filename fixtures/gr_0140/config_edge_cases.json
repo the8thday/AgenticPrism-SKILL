@@ -1,0 +1,13 @@
+{
+ "analysis_type": "growth_rate_inhibition",
+ "input": "edge_cases.csv",
+ "source": "Synthetic fixture (seed 14030); not team data",
+ "design": {
+  "cell_line_rationale": "Two lines with different doubling times (synthetic)",
+  "readout": "Nuclei count (imaging)",
+  "concentration_unit": "uM",
+  "time_unit": "h",
+  "independent_unit": "experiment (separate seeding day)",
+  "independence_source": "Lab notebook (synthetic declaration)"
+ }
+}

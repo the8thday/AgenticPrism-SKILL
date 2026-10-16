@@ -1,0 +1,29 @@
+{
+ "analysis_type": "panel_comparison",
+ "input": "paired_markers.csv",
+ "source": "Synthetic fixture (seed 14040); not team data",
+ "design": {
+  "unit": "donor",
+  "rationale": "Same donor PBMC split",
+  "pairing": "paired",
+  "scale": "original"
+ },
+ "comparison": {
+  "group_a": "unstimulated",
+  "group_b": "stimulated"
+ },
+ "families": {
+  "activation": [
+   "marker1",
+   "marker2",
+   "marker3",
+   "marker4",
+   "marker5",
+   "marker6"
+  ]
+ },
+ "multiplicity": {
+  "procedure": "holm",
+  "rationale": "Analysis plan section 4 (synthetic declaration)"
+ }
+}

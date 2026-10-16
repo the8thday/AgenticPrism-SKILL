@@ -1,0 +1,74 @@
+{
+ "status": "passed",
+ "tolerance": 1e-06,
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "survival_version": "3.8.6",
+ "oracle": "scripts/censored_0140_oracle.R (survival::survreg interval2 gaussian on log values; survdiff rho = 1 on flipped values)",
+ "checks": [
+  {
+   "fixture": "left_and_right",
+   "max_abs_difference": 6.266343000049801e-11,
+   "passed": true,
+   "items": {
+    "log_ratio": 6.266343000049801e-11,
+    "log_ratio_se": 1.7445711542052322e-11,
+    "reference_log_mean": 3.474598386787875e-11,
+    "reference_log_se": 1.2135015214909117e-11,
+    "sigma": 3.6835867689433144e-11,
+    "lr": 4.618527782440651e-14
+   }
+  },
+  {
+   "fixture": "sparse_detected",
+   "max_abs_difference": 0.0,
+   "passed": true,
+   "items": {
+    "withheld_agreement": 0.0
+   }
+  },
+  {
+   "fixture": "three_group_peto",
+   "max_abs_difference": 3.774758283725532e-15,
+   "passed": true,
+   "items": {
+    "chi_square": 3.774758283725532e-15,
+    "p": 4.440892098500626e-16
+   }
+  },
+  {
+   "fixture": "three_group_two_limits",
+   "max_abs_difference": 1.2013279260258969e-11,
+   "passed": true,
+   "items": {
+    "log_ratio": 5.323852469985013e-12,
+    "log_ratio_se": 1.011918326909722e-11,
+    "reference_log_mean": 4.158007271826136e-12,
+    "reference_log_se": 1.2013279260258969e-11,
+    "sigma": 3.7336800318144014e-12,
+    "lr": 6.661338147750939e-14
+   }
+  },
+  {
+   "fixture": "two_group_lognormal",
+   "max_abs_difference": 3.9412362262680745e-12,
+   "passed": true,
+   "items": {
+    "log_ratio": 3.9412362262680745e-12,
+    "log_ratio_se": 2.1049273435380655e-12,
+    "reference_log_mean": 4.3076653355456074e-14,
+    "reference_log_se": 1.2031486917862821e-12,
+    "sigma": 2.5616175847176237e-12,
+    "lr": 3.9968028886505635e-15
+   }
+  },
+  {
+   "fixture": "two_group_peto",
+   "max_abs_difference": 4.191091917959966e-15,
+   "passed": true,
+   "items": {
+    "chi_square": 8.881784197001252e-16,
+    "p": 4.191091917959966e-15
+   }
+  }
+ ]
+}

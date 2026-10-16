@@ -1,0 +1,1480 @@
+{
+ "status": "passed",
+ "source": "https://github.com/datarail/gr_metrics/tree/9c181322bb0dbca3459d80840b26104178fdf803",
+ "files_sha256": {
+  "INPUT/toy_example_input1.tsv": "35f0ce610819cd02b80298af14a44b5e936e0bd5ceeac12ea7fba0a6ae36ce1c",
+  "OUTPUT/R_input1_GRmetrics.tsv": "7ded39d63759984abdd0c6356ee55686117d44bfebbf05f280fcbf28b9763926"
+ },
+ "n_curves": 112,
+ "fit_type_agreement": "112/112",
+ "max_abs": {
+  "observed_metrics": 4.218847493575595e-15
+ },
+ "max_rel": {
+  "fitted_parameters": 0.0006160571494716197
+ },
+ "tolerances": {
+  "observed_metrics_abs": 1e-09,
+  "fitted_parameters_rel": 0.002
+ },
+ "rss_not_larger_fraction": 1.0,
+ "curves": [
+  {
+   "curve": [
+    "MCF10A",
+    "drugA",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 2.7660137649569137e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugB",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 0.00026473843231791377
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugC",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.7755575615628914e-16,
+   "parameter_max_rel": 2.425515604800425e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugD",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 5.125353660303236e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugA",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 3.080622157177485e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugB",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.163336342344337e-16,
+   "parameter_max_rel": 2.572337618516993e-05
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugC",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 5.273559366969494e-16,
+   "parameter_max_rel": 8.405253593489426e-07
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugD",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 8.608478535368974e-07
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugA",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 3.201840898321452e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugB",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.6653345369377348e-16,
+   "parameter_max_rel": 0.0002873677049251763
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugC",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 1.4666317162976841e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugD",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 2.8376991596271186e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugA",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 6.581840973923492e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugB",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.885780586188048e-16,
+   "parameter_max_rel": 2.9333969847550145e-05
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugC",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 1.135140611249665e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugD",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 4.815080259821144e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugA",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.469446951953614e-16,
+   "parameter_max_rel": 6.9960547456411034e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugB",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 5.551115123125783e-17,
+   "parameter_max_rel": 0.00016484256829725472
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugC",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 5.644700976587307e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugD",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 3.4094701126135756e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugA",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 5.551115123125783e-16,
+   "parameter_max_rel": 4.487258342906354e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugB",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.0816681711721685e-17,
+   "parameter_max_rel": 5.058469577627479e-05
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugC",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.0531133177191805e-16,
+   "parameter_max_rel": 4.535711470748014e-08
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugD",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.885780586188048e-16,
+   "parameter_max_rel": 2.8248186895013196e-05
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugA",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 2.718383653090332e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugB",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.163336342344337e-16,
+   "parameter_max_rel": 4.278454161544436e-05
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugC",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.608224830031759e-16,
+   "parameter_max_rel": 1.115459730910334e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugD",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 5.551115123125783e-17,
+   "parameter_max_rel": 2.872545070115302e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugA",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 2.7060430704376286e-06
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugB",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.0531133177191805e-16,
+   "parameter_max_rel": 2.730300476390405e-05
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugC",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.163336342344337e-16,
+   "parameter_max_rel": 9.35084446655802e-07
+  },
+  {
+   "curve": [
+    "MCF10A",
+    "drugD",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 5.652639104433969e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugA",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 5.551115123125783e-17,
+   "parameter_max_rel": 2.636343695804428e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugB",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 1.5980411149881563e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugC",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 1.0765637175140164e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugD",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.885780586188048e-16,
+   "parameter_max_rel": 1.3131630240881024e-05
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugA",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 2.7649870097663704e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugB",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 2.320734776873427e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugC",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 5.908594779292423e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugD",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.942890293094024e-16,
+   "parameter_max_rel": 6.201063404898403e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugA",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.996003610813204e-16,
+   "parameter_max_rel": 5.757876228852441e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugB",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 2.457292916247186e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugC",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 4.538426630248846e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugD",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.6653345369377348e-16,
+   "parameter_max_rel": 7.567822222823304e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugA",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.7755575615628914e-16,
+   "parameter_max_rel": 1.6378210398209458e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugB",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 2.5794412120865996e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugC",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 4.244029984631528e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugD",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.942890293094024e-16,
+   "parameter_max_rel": 7.220284465883708e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugA",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.3877787807814457e-16,
+   "parameter_max_rel": 2.4216218678633354e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugB",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 1.969150364087527e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugC",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 9.559462009957567e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugD",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 1.4101818353549412e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugA",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.885780586188048e-16,
+   "parameter_max_rel": 2.8014247474900294e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugB",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 2.503607235013631e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugC",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 7.585947127230208e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugD",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.608224830031759e-16,
+   "parameter_max_rel": 2.446587704798029e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugA",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 7.103154984884219e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugB",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 2.018616897788243e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugC",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 4.6181864453415464e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugD",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 9.33359091328097e-05
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugA",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 1.6324741591822923e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugB",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 1.6056581236788562e-06
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugC",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 2.91877975256664e-07
+  },
+  {
+   "curve": [
+    "MCF7",
+    "drugD",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 4.112779721623186e-07
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 2.3543036228376566e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 1.1102230246251565e-16
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 5.4730263697477406e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    0,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 1.1761968631108161e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 6.28178783445028e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 0.0
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 2.057002147519647e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    0,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 4.1913113482367326e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    0,
+    3,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 6.568490267722649e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    0,
+    3,
+    48.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 5.10702591327572e-15
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    0,
+    3,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 5.04413854734839e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    0,
+    3,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 4.728930751910601e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 2.0231226144054522e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 2.220446049250313e-16
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 9.948514787514701e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    0,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 8.535181242237032e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 8.132974479815424e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 4.440892098500626e-16
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 1.501574486790247e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    0,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 1.8883291579434986e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    0,
+    3,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.996003610813204e-16,
+   "parameter_max_rel": 1.977156390113631e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    0,
+    3,
+    72.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 2.220446049250313e-16
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    0,
+    3,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 6.728892339051532e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    0,
+    3,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 1.7492618365296974e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 5.551115123125783e-16,
+   "parameter_max_rel": 8.16952080878178e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 3.3306690738754696e-15,
+   "parameter_max_rel": 4.440892098500626e-16
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 5.551115123125783e-16,
+   "parameter_max_rel": 7.712437422823777e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    1,
+    1,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 0.0006160571494716197
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 5.2450820766851215e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 3.9968028886505635e-15
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 3.986864688389764e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    1,
+    2,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.718447854656915e-16,
+   "parameter_max_rel": 6.91006323142557e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    1,
+    3,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.6653345369377348e-16,
+   "parameter_max_rel": 1.13224896725929e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    1,
+    3,
+    48.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 4.218847493575595e-15,
+   "parameter_max_rel": 3.552713678800501e-15
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    1,
+    3,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 1.1804409666871543e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    1,
+    3,
+    48.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 9.35623141064918e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.642919299551295e-17,
+   "parameter_max_rel": 0.00030154498005163755
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 3.3306690738754696e-16
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 5.1320214744552894e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    1,
+    1,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 4.793780399949135e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 1.1102230246251565e-16,
+   "parameter_max_rel": 1.2573634167407355e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 2.0816681711721685e-17,
+   "parameter_max_rel": 1.1102230246251565e-16
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 3.393455522961378e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    1,
+    2,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.3306690738754696e-16,
+   "parameter_max_rel": 2.951613653028042e-05
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugA",
+    1,
+    3,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 3.885780586188048e-16,
+   "parameter_max_rel": 0.00013444036140190454
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugB",
+    1,
+    3,
+    72.0
+   ],
+   "fit": "flat",
+   "R_fit": "flat",
+   "observed_max_abs": 4.440892098500626e-16,
+   "parameter_max_rel": 1.1102230246251565e-16
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugC",
+    1,
+    3,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 3.856492411254857e-06
+  },
+  {
+   "curve": [
+    "BT20",
+    "drugD",
+    1,
+    3,
+    72.0
+   ],
+   "fit": "sigmoid",
+   "R_fit": "sigmoid",
+   "observed_max_abs": 2.220446049250313e-16,
+   "parameter_max_rel": 3.8845960364543056e-05
+  }
+ ],
+ "scope": "Reproduce the authors' published GR toy example (datarail/gr_metrics) through the CLI.\n\nThe repository has no license, so its files are downloaded at validation time from\na pinned commit and checked by SHA-256; nothing is redistributed. Each of the 112\ncurves (cell line x agent x perturbation x replicate x time) is fitted by\n`agentic-prism analyze` and compared with OUTPUT/R_input1_GRmetrics.tsv (R GRmetrics).\nTolerances were set after the pre-freeze check recorded in the plan: observed\nmetrics (GRmax, GR_AOC) 1e-9 absolute; fitted parameters 2e-3 relative (independent\nbounded optimizers). The residual sum of squares at both parameter sets is reported.\n"
+}

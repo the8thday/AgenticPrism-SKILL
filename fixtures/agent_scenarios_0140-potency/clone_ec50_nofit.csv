@@ -1,0 +1,26 @@
+clone,assay_date,EC50_nM,fit_note
+benchmark,2026-09-02,1.165,fit ok
+clone_A,2026-09-02,0.237,fit ok
+clone_B,2026-09-02,5.949,fit ok
+clone_C,2026-09-02,0.918,fit ok
+clone_D,2026-09-02,0.424,fit ok
+benchmark,2026-09-05,0.41,fit ok
+clone_A,2026-09-05,0.262,fit ok
+clone_B,2026-09-05,3.955,fit ok
+clone_C,2026-09-05,0.349,fit ok
+clone_D,2026-09-05,0.299,fit ok
+benchmark,2026-09-08,1.701,fit ok
+clone_A,2026-09-08,1.477,fit ok
+clone_B,2026-09-08,,no fit: EC50 > top dose (10 nM)
+clone_C,2026-09-08,1.305,fit ok
+clone_D,2026-09-08,1.258,fit ok
+benchmark,2026-09-11,0.228,fit ok
+clone_A,2026-09-11,0.162,fit ok
+clone_B,2026-09-11,7.705,fit ok
+clone_C,2026-09-11,0.452,fit ok
+clone_D,2026-09-11,0.27,fit ok
+benchmark,2026-09-14,1.922,fit ok
+clone_A,2026-09-14,0.822,fit ok
+clone_B,2026-09-14,3.797,fit ok
+clone_C,2026-09-14,0.785,fit ok
+clone_D,2026-09-14,0.457,fit ok

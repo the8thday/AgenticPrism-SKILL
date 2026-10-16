@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.14.0 (in development) — discovery batch
+
+- New `censored_comparison` and `censored-data` Skill: group comparisons with values below/above quantification limits kept as censored (censored lognormal ML with geometric-mean ratios, or Peto-Peto rank test); no substitution. R survival oracle 6/6; registered calibration 10/10 with a retained convergence-check defect (fixed, post-hoc rerun 10/10); published-example gate unmet; live-agent scenarios 6/6. See `validation/RELEASE_0.14.0.md`.
+- New `potency_ranking` and `potency-ranking` Skill: many candidates against a same-experiment benchmark with Holm p values, Bonferroni simultaneous intervals, prespecified fold tiers and withholding of candidates with non-estimable runs. Base-R oracle 4/4; registered calibration 11/11 with low-power rows disclosed; published-example gate unmet; live-agent scenarios 6/6.
+- New `growth_rate_inhibition` and `growth-rate-inhibition` Skill: GR values and GR50/GEC50/GRinf/GRmax/GR_AOC following Hafner et al. (2016) and the authors' reference code; GR50 never extrapolated. The authors' published toy example reproduced (112 curves); registered calibration 6/7 (GRmax coverage miss retained); live-agent scenarios 6/6 (a stricter control-growth gate added after a finding).
+- New `panel_comparison` and `panel-comparison` Skill: two groups across a declared panel of outcomes, every measured outcome in a declared family, Holm or Benjamini-Hochberg within families. Base-R oracle 3/3; BH 1995 example reproduced; registered calibration 9/9; live-agent scenarios 6/6.
+
 ## 0.13.6 (in development)
 
 - New `roc_analysis` and `diagnostic-accuracy` Skill: empirical AUC in a declared direction against a declared reference standard, DeLong logit interval, Mann-Whitney test, paired DeLong comparison, Clopper-Pearson sensitivity/specificity at declared cut-offs and an exploratory (never reportable) Youden cut-off.

@@ -1,0 +1,15 @@
+{
+ "analysis_type": "potency_ranking",
+ "input": "eight_candidates.csv",
+ "source": "Synthetic fixture (seed 14020); not team data",
+ "design": {
+  "unit": "independent experiment (separate cell thaw and plate)",
+  "rationale": "Benchmark on every plate",
+  "quantity": "EC50",
+  "quantity_unit": "nM",
+  "estimate_source": "Reportable dose-response runs (synthetic declaration)"
+ },
+ "comparison": {
+  "reference": "BENCH"
+ }
+}

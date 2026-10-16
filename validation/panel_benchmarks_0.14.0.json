@@ -1,0 +1,67 @@
+{
+ "status": "passed",
+ "tolerance": 1e-09,
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "oracle": "scripts/panel_0140_oracle.R (t.test Welch/paired, p.adjust)",
+ "checks": [
+  {
+   "fixture": "cytokines_bh",
+   "max_abs_difference": 4.6629367034256575e-15,
+   "passed": true,
+   "items": {
+    "IL2": 2.4424906541753444e-15,
+    "IL6": 1.1657341758564144e-15,
+    "IL10": 3.552713678800501e-15,
+    "IFNG": 4.996003610813204e-16,
+    "TNF": 5.551115123125783e-16,
+    "GZMB": 2.0539125955565396e-15,
+    "CXCL9": 1.1102230246251565e-15,
+    "CXCL10": 1.609823385706477e-15,
+    "CCL2": 6.106226635438361e-16,
+    "CCL5": 4.6629367034256575e-15
+   }
+  },
+  {
+   "fixture": "cytokines_holm",
+   "max_abs_difference": 4.6629367034256575e-15,
+   "passed": true,
+   "items": {
+    "IL2": 3.3306690738754696e-15,
+    "IL6": 3.774758283725532e-15,
+    "IL10": 3.552713678800501e-15,
+    "IFNG": 4.6629367034256575e-15,
+    "TNF": 2.220446049250313e-15,
+    "GZMB": 3.1086244689504383e-15,
+    "CXCL9": 2.4424906541753444e-15,
+    "CXCL10": 1.609823385706477e-15,
+    "CCL2": 9.992007221626409e-16,
+    "CCL5": 4.6629367034256575e-15
+   }
+  },
+  {
+   "fixture": "paired_markers",
+   "max_abs_difference": 6.661338147750939e-15,
+   "passed": true,
+   "items": {
+    "marker1": 4.884981308350689e-15,
+    "marker2": 1.7763568394002505e-15,
+    "marker3": 2.6645352591003757e-15,
+    "marker4": 4.884981308350689e-15,
+    "marker5": 6.661338147750939e-15,
+    "marker6": 4.440892098500626e-15
+   }
+  }
+ ],
+ "published_bh1995": {
+  "source": "Benjamini Y, Hochberg Y. J R Stat Soc B 1995;57:289-300, 15 p values",
+  "printed": {
+   "BH_rejections": 4
+  },
+  "observed": {
+   "BH_rejections": 4,
+   "Holm_rejections": 3
+  },
+  "adjusted_vs_R_max_abs": 3.3306690738754696e-16,
+  "passed": true
+ }
+}

@@ -76,6 +76,32 @@ Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
 
+## 0.14.0 (in development) — discovery batch
+
+Values below a quantification limit are kept as censored rather than replaced by
+zero or LLOQ/2 (`censored_comparison`): censored lognormal maximum likelihood gives
+geometric-mean ratios, or the Peto-Peto rank test compares distributions. Results
+agree with R survival on every fixture. In the registered calibration a too-strict
+convergence check wrongly withheld some fits; it was fixed and a post-hoc rerun kept
+every criterion. No published worked example was found. See
+[release evidence](validation/RELEASE_0.14.0.md).
+
+Many candidates can be ranked against a benchmark tested in the same experiments
+(`potency_ranking`): relative potency with Holm-adjusted p values and simultaneous
+intervals, optional fold-threshold tiers declared in advance, and no ranking of a
+candidate on only its fittable runs. Calibration kept the family-wise error near 5%
+and disclosed low power with few experiments.
+
+Growth-rate inhibition (`growth_rate_inhibition`) computes GR values from time-zero,
+treated and untreated counts and the GR50/GRmax family (Hafner et al. 2016), so cell
+lines with different division rates can be compared fairly. It reproduces the authors'
+published example (112 curves); GRmax intervals undercovered in calibration and are
+labelled approximate.
+
+Panels of many outcomes (`panel_comparison`), such as cytokine or marker panels, are
+compared with every measured outcome in a declared family and Holm or
+Benjamini-Hochberg adjustment, so only-the-significant reporting is not possible.
+
 ## 0.13.6 (in development)
 
 ROC diagnostic accuracy and rater agreement. `roc_analysis` reports the empirical

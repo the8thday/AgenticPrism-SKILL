@@ -1,0 +1,4 @@
+interface:
+  display_name: "Censored Data (below LLOQ)"
+  short_description: "Compare groups with values below or above quantification limits"
+  default_prompt: "Use $censored-data to compare groups whose values include results below the quantification limit, without substituting values."

@@ -1,0 +1,7 @@
+candidate,experiment_id,ec50,unit,status,source_run
+BENCH,EXP1,0.5109,nM,estimated,runs/dose_EXP1
+mAb01,EXP1,0.2944,nM,estimated,runs/dose_EXP1
+mAb02,EXP1,0.5949,nM,estimated,runs/dose_EXP1
+BENCH,EXP2,2.0076,nM,estimated,runs/dose_EXP2
+mAb01,EXP2,0.978,nM,estimated,runs/dose_EXP2
+mAb02,EXP2,2.2021,nM,estimated,runs/dose_EXP2

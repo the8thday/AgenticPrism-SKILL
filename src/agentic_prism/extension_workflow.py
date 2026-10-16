@@ -9,7 +9,7 @@ import importlib.metadata
 from .workflow import dump,sha,implementation_hash,verify_run
 from . import __version__
 from .routine import TYPES as ROUTINE_TYPES
-TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen"}
+TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen", "censored_comparison", "potency_ranking", "growth_rate_inhibition", "panel_comparison"}
 
 
 def module_for(kind):
@@ -19,6 +19,18 @@ def module_for(kind):
  if kind == 'roc_analysis':
   from . import diagnostic_accuracy
   return diagnostic_accuracy
+ if kind == 'panel_comparison':
+  from . import panel
+  return panel
+ if kind == 'growth_rate_inhibition':
+  from . import growth_rate
+  return growth_rate
+ if kind == 'potency_ranking':
+  from . import potency_ranking
+  return potency_ranking
+ if kind == 'censored_comparison':
+  from . import censored
+  return censored
  if kind == 'outlier_screen':
   from . import outliers
   return outliers
@@ -102,6 +114,12 @@ def analyze_extension(config_path,output,render=True):
   if r['analysis_type'] in ('roc_analysis','rater_agreement','outlier_screen'):
    from .evidence_0136 import EVIDENCE
    r['validation_evidence']=EVIDENCE[r['analysis_type']];r['must_mention']+=EVIDENCE[r['analysis_type']]['must_mention']
+  if r['analysis_type'] in ('censored_comparison','potency_ranking','growth_rate_inhibition','panel_comparison'):
+   from .evidence_0140 import EVIDENCE as E140
+   r['validation_evidence']=E140[r['analysis_type']];r['must_mention']+=E140[r['analysis_type']]['must_mention']
+  if r['analysis_type']=='growth_rate_inhibition':
+   import pandas as pd
+   pd.DataFrame(r['gr_values']).to_csv(out/'gr_values.csv',index=False)
   if r['analysis_type']=='roc_analysis':
    import pandas as pd
    pd.DataFrame(r['roc_curve']).to_csv(out/'roc_curve.csv',index=False)
@@ -129,6 +147,18 @@ def render_extension(run,style=None,extra_figures=''):
   names=render(run,r,style)
  if r['analysis_type']=='roc_analysis':
   from .diagnostic_accuracy import render
+  names=render(run,r,style)
+ if r['analysis_type']=='panel_comparison':
+  from .panel import render
+  names=render(run,r,style)
+ if r['analysis_type']=='growth_rate_inhibition':
+  from .growth_rate import render
+  names=render(run,r,style)
+ if r['analysis_type']=='potency_ranking':
+  from .potency_ranking import render
+  names=render(run,r,style)
+ if r['analysis_type']=='censored_comparison':
+  from .censored import render
   names=render(run,r,style)
  if r['analysis_type']=='outlier_screen':
   from .outliers import render

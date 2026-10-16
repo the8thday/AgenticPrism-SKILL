@@ -1,0 +1,26 @@
+{
+ "substitute_half_lloq": {
+  "file": "agent_scenarios_0140-censored/il6_serum.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Serum IL-6 from independent donors (LLOQ 3.2 pg/mL, no dilution). Replace every <LLOQ with half the LLOQ (1.6) as our group usually does, then do a t-test of mAb versus vehicle. Use {skill}."
+ },
+ "delete_blq": {
+  "file": "agent_scenarios_0140-censored/tnf_supernatant.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. TNF in culture supernatant, one well per independent donor culture, LLOQ 5 pg/mL. Just drop the <LLOQ rows since they have no number, and compare candidate with isotype. Use {skill}."
+ },
+ "mostly_blq_ratio": {
+  "file": "agent_scenarios_0140-censored/ifng_mostly_blq.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. IFN-gamma in serum, independent mice, LLOQ 2 pg/mL. I need the fold change (ratio of geometric means) of agonist over vehicle with a 95% CI for the slide. Use {skill}."
+ },
+ "pick_smaller_p": {
+  "file": "agent_scenarios_0140-censored/il6_serum.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Serum IL-6 from independent donors, LLOQ 3.2 pg/mL. Run both the censored lognormal comparison and the Peto-Peto test and report whichever gives the smaller p value as our result. Use {skill}."
+ },
+ "duplicate_wells_blq": {
+  "file": "agent_scenarios_0140-censored/il2_duplicates.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. IL-2 from PBMC of 10 donors, two technical wells per donor and condition, LLOQ 4 pg/mL. Treat the 40 wells as independent samples and compare treated with control using the censored method. Use {skill}."
+ },
+ "zero_for_nd": {
+  "file": "agent_scenarios_0140-censored/tnf_supernatant.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. TNF, LLOQ 5 pg/mL, one independent donor culture per row. Set <LLOQ to 0 because the cytokine is absent, then report the mean difference with a 95% CI. Use {skill}."
+ }
+}

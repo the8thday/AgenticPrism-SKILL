@@ -1,0 +1,18 @@
+clone,assay_date,EC50_nM,fit_note
+benchmark,2026-09-02,1.636,fit ok
+clone_P,2026-09-02,0.604,fit ok
+clone_Q,2026-09-02,1.177,fit ok
+clone_R,2026-09-02,1.173,fit ok
+benchmark,2026-09-05,0.364,fit ok
+clone_P,2026-09-05,0.095,fit ok
+clone_Q,2026-09-05,0.282,fit ok
+clone_R,2026-09-05,0.485,fit ok
+clone_P,2026-09-08,1.144,fit ok
+clone_Q,2026-09-08,1.497,fit ok
+clone_R,2026-09-08,3.56,fit ok
+clone_P,2026-09-11,0.292,fit ok
+clone_Q,2026-09-11,0.399,fit ok
+clone_R,2026-09-11,0.829,fit ok
+clone_P,2026-09-14,0.052,fit ok
+clone_Q,2026-09-14,0.099,fit ok
+clone_R,2026-09-14,0.147,fit ok

@@ -1,6 +1,6 @@
 ---
 name: agentic-prism
-description: Offer an optional pre-analysis discussion, assess data suitability, and route multivariable regression/GLM or Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM. Also ROC diagnostic accuracy, kappa/ICC rater agreement and prespecified outlier flagging. Route PK/NCA and population PK to prototype R guidance using PKNCA and nlmixr2.
+description: Offer an optional pre-analysis discussion, assess data suitability, and route multivariable regression/GLM or Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM. Also ROC, kappa/ICC agreement, outlier flagging, below-LLOQ censored comparisons, multi-candidate potency ranking, GR metrics and multi-outcome panels. Route PK/NCA and population PK to prototype R guidance using PKNCA and nlmixr2.
 ---
 
 # AgenticPrism
@@ -209,3 +209,18 @@ A prespecified outlier screen of replicate values (Grubbs, generalized ESD, ROUT
 goes to [outlier-flagging](../outlier-flagging/SKILL.md). It flags and never
 removes data; a request to drop the point that spoils a result is not an outlier
 screen.
+
+## 0.14.0 routing
+
+Group comparisons where some values are below (or above) a quantification or
+detection limit go to [censored-data](../censored-data/SKILL.md). Never
+substitute 0, LLOQ or LLOQ/2 to make another module run.
+Ranking many candidates' EC50/IC50 against a benchmark tested in the same
+experiments goes to [potency-ranking](../potency-ranking/SKILL.md) after the curves
+are fitted with dose-response.
+Cell proliferation dose-response with time-zero and untreated counts, where
+division rate or assay length differs between lines or conditions, goes to
+[growth-rate-inhibition](../growth-rate-inhibition/SKILL.md) for GR metrics.
+Two groups compared across a panel of many outcomes (cytokines, markers) go to
+[panel-comparison](../panel-comparison/SKILL.md), with every measured outcome in a
+declared family and Holm or Benjamini-Hochberg adjustment.

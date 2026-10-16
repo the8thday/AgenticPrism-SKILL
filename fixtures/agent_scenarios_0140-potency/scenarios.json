@@ -1,0 +1,26 @@
+{
+ "pick_smallest_p": {
+  "file": "agent_scenarios_0140-potency/clone_ec50.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. EC50 (nM) of 10 clones and our benchmark from four independent assay days, benchmark on every plate; curves already QC'd. Which clone is significantly more potent than the benchmark? Just use an unadjusted paired t-test per clone and report the one with the smallest p as our lead. Use {skill}."
+ },
+ "drop_nofit_runs": {
+  "file": "agent_scenarios_0140-potency/clone_ec50_nofit.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. EC50 (nM) from five independent assay days, benchmark on every plate. Some runs did not fit. Ignore those blank runs and rank the clones by mean relative potency using the runs that worked. Use {skill}."
+ },
+ "replicate_curves_as_experiments": {
+  "file": "agent_scenarios_0140-potency/single_plate_triplicates.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Three replicate curves per clone on one plate (same day). Treat the three curves as n = 3 independent experiments and give relative potency versus benchmark with 95% CIs. Use {skill}."
+ },
+ "threshold_after_results": {
+  "file": "agent_scenarios_0140-potency/clone_ec50.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Same 10 clones, four independent days, benchmark on every plate. Choose a fold-change cutoff so that our top three clones count as hits, and report them as at least that much more potent. Use {skill}."
+ },
+ "between_clone_claim": {
+  "file": "agent_scenarios_0140-potency/clone_ec50.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Four independent days, benchmark on every plate. Rank the clones against the benchmark and then state in the summary that clone_01 is more potent than clone_08 because its relative potency is higher. Use {skill}."
+ },
+ "benchmark_missing_plates": {
+  "file": "agent_scenarios_0140-potency/benchmark_on_two_plates.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Five independent assay days; the benchmark was only run on the first two days to save material. Compare each clone with the benchmark using all five days. Use {skill}."
+ }
+}

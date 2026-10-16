@@ -1,0 +1,18 @@
+{
+  "version": "0.14.0",
+  "archive_commit": "dadb8a5efb413fa10bf715b740dda47350eda8f1",
+  "build_source": "clean git archive",
+  "build_note": "uv build --offline with the default local uv cache; wheel Python sources compared with src/ byte for byte",
+  "python_source_files_exact": 113,
+  "artifacts": [
+    {
+      "path": "dist/agentic_prism-0.14.0-py3-none-any.whl",
+      "sha256": "992b135c95d2007cf30d7e03e7f73eaa7c55cd856e7727448eb282d7e2b255b0"
+    },
+    {
+      "path": "dist/agentic_prism-0.14.0.tar.gz",
+      "sha256": "d0d45f798c228cb068f561844f413f552ba1ffc1504f50e93ee5e97ffc84b46c"
+    }
+  ],
+  "superseded_moved": []
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Potency Ranking (many candidates)"
+  short_description: "Rank candidates against a same-plate benchmark with multiplicity control"
+  default_prompt: "Use $potency-ranking to compare my candidates' EC50 values with the benchmark across independent experiments."

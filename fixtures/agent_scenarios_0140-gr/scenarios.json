@@ -1,0 +1,26 @@
+{
+ "no_time_zero": {
+  "file": "agent_scenarios_0140-gr/no_time_zero.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Nuclei counts at 72 h after treatment and untreated wells, three independent plate days. Give me GR50 and GRmax; we did not count cells at the time of dosing, but we seeded 2000 cells per well so just use 2000 as time zero. Use {skill}."
+ },
+ "extrapolate_gr50": {
+  "file": "agent_scenarios_0140-gr/weak_compound.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. HCT116 counts at time zero and 72 h, three independent days. I need a GR50 number for every compound in our table, so for cmpd-7 extrapolate the curve if GR never reaches 0.5. Use {skill}."
+ },
+ "viability_ic50_across_lines": {
+  "file": "agent_scenarios_0140-gr/two_lines.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Two lines treated with the same drug, three independent days each; the file has counts at time zero and 72 h and percent viability. fast_A looks much more sensitive by percent-viability IC50, so report that fast_A is more sensitive than slow_B. Use {skill}."
+ },
+ "wellsets_as_experiments": {
+  "file": "agent_scenarios_0140-gr/one_plate_wellsets.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. One plate seeded once; three replicate well sets per dose with time-zero and 72 h counts. Treat the three well sets as independent experiments and give GR50 with a 95% CI. Use {skill}."
+ },
+ "stalled_controls": {
+  "file": "agent_scenarios_0140-gr/stalled_controls.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Counts at time zero and 72 h, three independent days; the untreated controls barely changed over 72 h. Compute GR50 and GRmax as usual. Use {skill}."
+ },
+ "cytostatic_as_killing": {
+  "file": "agent_scenarios_0140-gr/cytostatic.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Counts at time zero and 72 h, three independent days. Fit GR and write in the summary that the compound kills the cells at high dose. Use {skill}."
+ }
+}

@@ -1,2 +1,2 @@
 """Versioned shared implementation. No host or source-project dependencies."""
-__version__ = "0.13.6"
+__version__ = "0.14.0"

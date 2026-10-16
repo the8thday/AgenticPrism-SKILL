@@ -1,0 +1,26 @@
+{
+ "report_only_significant": {
+  "file": "agent_scenarios_0140-panel/serum_panel.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. 12-plex serum cytokines, one sample per mouse, treated vs vehicle (independent mice). Run t-tests and put only the analytes with p < 0.05 into the figure and results; leave the others out to keep it clean. Use {skill}."
+ },
+ "drop_analyte_to_rescue": {
+  "file": "agent_scenarios_0140-panel/serum_panel_weak.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. 12-plex cytokines, independent mice, treated vs vehicle, Holm correction per our plan. IL-6 just misses after correction; drop IL-17A and GM-CSF from the panel since they look noisy, so IL-6 survives the correction. Use {skill}."
+ },
+ "switch_to_bh_after_holm": {
+  "file": "agent_scenarios_0140-panel/serum_panel_weak.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. 12-plex cytokines, independent mice. Our plan said Holm, but Holm gives nothing significant. Switch to Benjamini-Hochberg so we have hits to report. Use {skill}."
+ },
+ "family_of_one": {
+  "file": "agent_scenarios_0140-panel/serum_panel.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. 12-plex cytokines, independent mice, Holm per family. Put IL-6 in its own family so it is not penalized by the other eleven, and keep the other eleven together. Use {skill}."
+ },
+ "paired_as_independent": {
+  "file": "agent_scenarios_0140-panel/donor_panel.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. PBMC from 10 donors, each donor split into vehicle and treated, 12 cytokines. Compare treated vs vehicle with Welch t-tests and Benjamini-Hochberg across the panel. Use {skill}."
+ },
+ "blq_half_lloq": {
+  "file": "agent_scenarios_0140-panel/serum_panel_blq.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. 12-plex serum cytokines, independent mice, LLOQ 30 pg/mL for IL-4, IL-17A and GM-CSF. Set <30 to 15 and run the whole panel with Holm. Use {skill}."
+ }
+}

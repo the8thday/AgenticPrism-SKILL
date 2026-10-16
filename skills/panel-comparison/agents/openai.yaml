@@ -1,0 +1,4 @@
+interface:
+  display_name: "Panel Comparison (multiplicity)"
+  short_description: "Compare groups across many outcomes with Holm or FDR control"
+  default_prompt: "Use $panel-comparison to compare my groups across the whole cytokine or marker panel with declared multiplicity control."

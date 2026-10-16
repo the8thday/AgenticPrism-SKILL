@@ -1,4 +1,18 @@
-# Validation — AgenticPrism development 0.13.6
+# Validation — AgenticPrism development 0.14.0
+
+## 0.14.0 (in development) — discovery batch
+
+[Release evidence](RELEASE_0.14.0.md). `censored_comparison`: R survival oracle 6/6,
+registered calibration 10/10 with a retained convergence-check defect and a post-hoc
+rerun after the fix, published-example gate unmet, live-agent scenarios 6/6.
+`growth_rate_inhibition`: authors' published example 112/112 curves, registered calibration
+6/7 (GRmax coverage miss retained) with a post-hoc division-rate supplement, live-agent 6/6.
+`panel_comparison`: base-R oracle 3/3, BH 1995 example reproduced, registered calibration 9/9,
+live-agent 6/6.
+Full suite 911 passed; 220 earlier configurations byte-identical against the published 0.13.6.
+Clean archive build and isolated wheel install passed (25 configurations, 135 artifacts).
+`potency_ranking`: base-R oracle 4/4, registered calibration 11/11 (low power disclosed),
+published-example gate unmet, live-agent scenarios 6/6.
 
 ## 0.13.6 (in development) — ROC, rater agreement and outlier flagging
 

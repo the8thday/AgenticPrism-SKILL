@@ -1,0 +1,4 @@
+interface:
+  display_name: "Growth-Rate Inhibition (GR50)"
+  short_description: "GR metrics that correct drug sensitivity for division rate"
+  default_prompt: "Use $growth-rate-inhibition to compute GR values and GR50/GRmax for my proliferation dose-response data."
