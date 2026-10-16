@@ -5,6 +5,8 @@ description: Analyze functional concentration-response curves, relative EC50/IC5
 
 # Dose response (4PL; opt-in 5PL and bell-shaped)
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 0.13.4 adds relative EC10/20/80/90 and ICx (including IC90) with endpoint-specific
 profile intervals and range gates. Read [effect levels and 4PL reliability](references/effect-levels-0134.md)
 for these requests. Default 4PL now withholds fits with significant lack of fit

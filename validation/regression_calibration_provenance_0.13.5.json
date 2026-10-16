@@ -1,0 +1,14 @@
+{
+  "prespecified_commit": "fb28807",
+  "script_unchanged_since_registration": true,
+  "script_sha256": "5997be8c3fe98cc1ea574526e4d60b96dc2acee1bc08670e68d9fe84487fabc9",
+  "numerical_implementation_sha256": "bb4503d58bca704aa76e4bee186d0bb91a969e44d5d03669c705ee288d172a22",
+  "scope": "Calibration contains no prediction requests; later documentation/evidence-only changes do not alter simulated estimation.",
+  "python": "3.13.9",
+  "dependencies": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "statsmodels": "0.15.0"
+  }
+}

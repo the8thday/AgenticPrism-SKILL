@@ -1,0 +1,13 @@
+observation_id,independent_unit_id,group,outcome,value,unit
+1-control,donor-1,control,response,8,AU
+1-treated,donor-1,treated,response,11,AU
+2-control,donor-2,control,response,15,AU
+2-treated,donor-2,treated,response,17,AU
+3-control,donor-3,control,response,10,AU
+3-treated,donor-3,treated,response,15,AU
+4-control,donor-4,control,response,18,AU
+4-treated,donor-4,treated,response,22,AU
+5-control,donor-5,control,response,12,AU
+5-treated,donor-5,treated,response,13,AU
+6-control,donor-6,control,response,7,AU
+6-treated,donor-6,treated,response,10,AU

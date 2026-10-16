@@ -5,6 +5,8 @@ description: Compare independent-unit outcomes with one-sample, Welch, paired or
 
 # Group comparison
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 For a single sample versus a declared reference, or an explicitly multiplicative
 effect (geometric means / treatment-to-control ratio), use the
 [single-sample and ratio-test contract](references/location-tests-0134.md),

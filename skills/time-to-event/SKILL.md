@@ -5,6 +5,8 @@ description: Analyze time-to-event outcomes such as survival or time to a humane
 
 # Time-to-event analysis
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read the [input and model contract](references/input-and-model.md). The endpoint
 definition is a scientific decision, not a data column: establish it before any
 analysis.

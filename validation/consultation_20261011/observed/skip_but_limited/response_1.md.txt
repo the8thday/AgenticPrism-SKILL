@@ -1,0 +1,7 @@
+已按“直接分析”检查 `limited.csv`：12 行、6 位 donor，每人各有 control/treated 一条记录，单位均为 pg/mL；D2 的 treated（文件第 5 行）为 `<LLOQ`。
+
+按你声明的配对设计，目标应为 donor 内 treated/control 的**几何平均比值**，对其对数做配对比值 t 检验，H0=1，双侧 95% 置信区间。但 `<LLOQ` 只表示低于定量下限，不是实测零；代入 0 后 `log(treated/control)` 无定义，因此目前不能计算有效的该检验、区间或 p 值。
+
+**D2 的 treated 是否有有效的复测定量值？若没有，请提供数值 LLOQ（pg/mL）。** 仅知道 LLOQ 仍不能恢复真实浓度；保留这一受限观测需要能处理左删失数据的方法，当前配对比值模块不支持。
+
+暂停计算依据是 [group-comparison Skill](${REPOSITORY}/skills/group-comparison/SKILL.md) 的明确要求：“Preserve positive-value and complete-pair gates.” 其[比值检验契约](${REPOSITORY}/skills/group-comparison/references/location-tests-0134.md)也明确禁止将低于定量下限的值等同于零。原始表已保留，未替换或排除 D2。

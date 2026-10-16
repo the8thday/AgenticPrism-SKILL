@@ -5,6 +5,8 @@ description: Estimate declared screening, confirmatory percent-inhibition or tit
 
 # ADA cut points
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read the [runtime procedure](../agentic-prism/references/runtime.md), then the
 [input and numerical contract](references/contract.md). This is the scoped
 ADA implementation, extended in 0.9.3 with a two-way bootstrap lower bound,

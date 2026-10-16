@@ -5,6 +5,8 @@ description: Fit apparent melting temperatures (Tm) from nanoDSF ratio, intrinsi
 
 # Thermal stability (apparent Tm)
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read the [runtime procedure](../agentic-prism/references/runtime.md) and the
 [input and model contract](references/input-and-model.md). Implemented in 0.13.1.
 

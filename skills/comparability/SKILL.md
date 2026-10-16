@@ -5,6 +5,8 @@ description: Compare one quality attribute between reference and test lots for p
 
 # Comparability and biosimilarity
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Follow [runtime discovery](../agentic-prism/references/runtime.md), then read the
 [input contract](references/input-contract.md). Introduced in AgenticPrism 0.10.1;
 `analysis_type=comparability`, one attribute per run, a new output directory.

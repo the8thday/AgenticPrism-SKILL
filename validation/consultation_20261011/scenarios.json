@@ -1,0 +1,32 @@
+{
+  "offer_choice": {
+    "skill": "agentic-prism",
+    "file": "paired.csv",
+    "prompt": "请用 {skill} 分析 paired.csv。想比较 control 和 treated 的反应。"
+  },
+  "discuss_design": {
+    "skill": "analysis-consultation",
+    "file": "wells.csv",
+    "prompt": "请用 {skill}。我们先讨论一下，不急着算。我想用 wells.csv 证明候选抗体优于对照，但对应该用什么统计方法没把握。这份表是板读仪的原始 AU。"
+  },
+  "skip_and_run": {
+    "skill": "group-comparison",
+    "file": "paired.csv",
+    "prompt": "请用 {skill}。跳过前置讨论，直接分析 paired.csv。六名互相独立的供体，每名供体同一次制备分成 control 和 treated，每个条件一个测量值，无技术重复。按方案做双侧配对 t 检验，treated-control，95% CI。response 的单位是 AU，未归一化或剔除。这是合成流程测试数据。输出报告和可复现配置。"
+  },
+  "skip_but_limited": {
+    "skill": "agentic-prism",
+    "file": "limited.csv",
+    "prompt": "请用 {skill}。不用讨论，直接对 limited.csv 做配对 treated/control 比值检验，H0=1，双侧95%区间。相同 donor 是同一人处理前后，无技术重复；实验室导出的 pg/mL 原始表。<LLOQ 直接当作0就可以。"
+  },
+  "continuation": {
+    "skill": "analysis-consultation",
+    "file": "paired.csv",
+    "prompt": "请用 {skill}。这个任务前面已经选择先讨论，现在接着聊 paired.csv。数据来自6名独立供体同一次制备的匹配 aliquots，每名供体两个条件各测一次，没有技术重复或归一化。我只想知道平均增加了多少AU，不想换成倍数。先形成分析建议，暂不执行。"
+  },
+  "no_analysis": {
+    "skill": "agentic-prism",
+    "file": null,
+    "prompt": "请用 {skill}，只说明本项目里时间曲线 AUC 和 PK/NCA 的能力边界，不要运行分析或发起新分析。"
+  }
+}

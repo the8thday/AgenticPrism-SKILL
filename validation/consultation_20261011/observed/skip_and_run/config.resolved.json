@@ -1,0 +1,18 @@
+{
+  "analysis_type": "group_comparison",
+  "schema_version": 1,
+  "input": "input.csv",
+  "source": "Researcher-provided synthetic workflow test data: paired.csv; response in AU; no normalization or exclusions; six independent donors, each preparation split into control and treated with one measurement per condition and no technical replicates.",
+  "comparison": {
+    "design": "paired_t",
+    "group_a": "control",
+    "group_b": "treated",
+    "outcome": "response",
+    "unit": "AU",
+    "rationale": "Researcher-prespecified two-sided paired t test of the mean within-donor difference treated minus control against zero. Six mutually independent donors; paired conditions share the same donor preparation; 95% Student-t confidence interval. No normalization, aggregation or exclusion.",
+    "confidence_level": 0.95
+  },
+  "report": {
+    "plot_style": "prism_like"
+  }
+}

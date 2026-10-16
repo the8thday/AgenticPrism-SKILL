@@ -1,0 +1,147 @@
+{
+  "status": "passed",
+  "tool": "skill-creator quick_validate.py",
+  "count": 28,
+  "rows": [
+    {
+      "skill": "skills/ada-cut-point",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/agentic-prism",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/analysis-consultation",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/binding-kinetics",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/cell-binding",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/comparability",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/correlation-regression",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/curve-auc",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/dose-response",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/drug-combination",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/elisa-quantification",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/epitope-binning",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/equilibrium-binding",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/group-comparison",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/import-plate",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/method-validation",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/nonlinear-models",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/potency-assay",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/qpcr",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/repeated-measures",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/sample-size",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/specifications",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/stability",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/standard-curve",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/thermal-stability",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/time-to-event",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/tumor-growth",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/variance-components",
+      "passed": true,
+      "message": "Skill is valid!"
+    }
+  ]
+}

@@ -5,6 +5,8 @@ description: Estimate shelf life for a quantitative quality attribute from long-
 
 # Stability and shelf life
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Follow [runtime discovery](../agentic-prism/references/runtime.md), then read the
 [input contract](references/input-contract.md). This Skill belongs to AgenticPrism 0.10.0.
 Use the shared CLI with `analysis_type=stability` and a new output directory.

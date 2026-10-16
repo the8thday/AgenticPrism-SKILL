@@ -9,10 +9,13 @@ import importlib.metadata
 from .workflow import dump,sha,implementation_hash,verify_run
 from . import __version__
 from .routine import TYPES as ROUTINE_TYPES
-TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test"}
+TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression"}
 
 
 def module_for(kind):
+ if kind == 'generalized_regression':
+  from . import regression
+  return regression
  if kind == 'location_test':
   from . import location_tests
   return location_tests
@@ -83,6 +86,10 @@ def analyze_extension(config_path,output,render=True):
    from .evidence_0134 import EVIDENCE
    key='location_test' if r['analysis_type']=='location_test' else 'paired_auc'
    r['validation_evidence']=EVIDENCE[key];r['must_mention']+=EVIDENCE[key]['must_mention']
+  if r['analysis_type']=='generalized_regression':
+   from .evidence_0135 import EVIDENCE
+   r['validation_evidence']=EVIDENCE;r['must_mention']+=EVIDENCE['must_mention']
+   module.write_artifacts(out,r)
   dump(out/'results.json',r);write_facts(out)
   (out/'rerun.txt').write_text('agentic-prism analyze --config config.resolved.json --output ../extension-rerun-new\n')
   dump(out/'manifest.json',{'schema_version':1,'analysis_type':cfg['analysis_type'],'package_version':__version__,
@@ -102,6 +109,9 @@ def render_extension(run,style=None,extra_figures=''):
  if style not in ('prism_like','standard'):raise ValueError('Unsupported style')
  show=shell.value_html
  names=[]
+ if r['analysis_type']=='generalized_regression':
+  from .regression import render
+  names=render(run,r,style)
  if r['analysis_type']=='location_test':
   from .location_tests import render
   names=render(run,r,style)

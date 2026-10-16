@@ -5,6 +5,8 @@ description: Quantify unknown ELISA sample concentrations from plate-specific 4P
 
 # ELISA quantification
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read the [input and method contract](references/input-and-model.md) before analyzing a plate. Confirm analyte, standard matrix, response scale, standards and unknowns, dilution factors, blank/reference processing, and whether a monotone 4PL is appropriate. An ELISA binding titration without a known-concentration calibration standard belongs in dose-response or equilibrium binding, depending on its scientific question.
 
 If the data are plate-reader grids (rows A–H/A–P, columns 1–12/1–24) plus a plate map, convert them with `agentic-prism import-plate --manifest MANIFEST --output NEW_DIRECTORY` (see the [plate import section](references/input-and-model.md#plate-reader-grids-070)); the importer copies values exactly, skips wells with a blank role and refuses non-numeric reads such as `OVRFLW`. Resolve saturated or missing reads in the source record yourself; never type a replacement number. Complete the generated `config.template.json` from the actual assay.

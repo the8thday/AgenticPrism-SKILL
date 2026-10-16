@@ -1,0 +1,22 @@
+已按方案完成 **6 对供体的双侧配对 t 检验**，差值定义为 treated − control。
+
+| 指标 | 结果 |
+|---|---:|
+| control 均值 | 11.67 AU |
+| treated 均值 | 14.67 AU |
+| 平均配对差 | **3.00 AU** |
+| 差值的 95% CI | **1.516–4.484 AU** |
+| t（自由度） | 5.196（5） |
+| 双侧 p | **0.003478** |
+
+该合成数据中的平均差为正，95% CI 不包含 0。推断依赖供体间独立及配对差值近似正态；6 对样本难以充分评估分布假设。这是流程测试结果，不能作为真实生物效应、实际重要性或等效性的证据。
+
+已保留全部原始观测，未归一化、聚合或剔除。AgenticPrism 0.13.4 的运行环境检查及结果哈希核验均通过，保存的结果无诊断标记。
+
+- [打开完整报告与配对图](${WORKSPACE}/run_paired_t/report.html)
+- [可复现配置](${WORKSPACE}/run_paired_t/config.resolved.json) · [结果表](${WORKSPACE}/run_paired_t/comparison.csv) · [解读依据](${WORKSPACE}/run_paired_t/interpretation_facts.json)
+- [复现脚本](${WORKSPACE}/reproduce.sh)：保留整个目录后运行下列命令，将生成新的输出目录。
+
+```bash
+sh ${WORKSPACE}/reproduce.sh
+```

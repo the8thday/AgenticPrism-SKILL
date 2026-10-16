@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analysis Consultation"
+  short_description: "Discuss study design and suitable analyses before running"
+  default_prompt: "Use $analysis-consultation to discuss my research question, experimental design, and what my data can support before analysis."

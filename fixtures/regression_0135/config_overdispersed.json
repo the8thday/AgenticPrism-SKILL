@@ -1,0 +1,61 @@
+{
+  "analysis_type": "generalized_regression",
+  "input": "overdispersed.csv",
+  "source": "Synthetic fixture, seed 131350101; independent units by construction",
+  "design": {
+    "unit": "independent synthetic donor",
+    "rationale": "One measurement per independent simulated donor; no technical/repeated rows",
+    "outcome": "response",
+    "outcome_unit": "event count",
+    "estimand": "Conditional association under the declared model"
+  },
+  "model": {
+    "family": "poisson",
+    "rationale": "Fixed simulation specification; not selected from observed significance",
+    "predictors": {
+      "x": {
+        "kind": "continuous",
+        "unit": "standard units"
+      },
+      "z": {
+        "kind": "continuous",
+        "unit": "standard units"
+      },
+      "arm": {
+        "kind": "categorical",
+        "levels": [
+          "control",
+          "A",
+          "B"
+        ],
+        "reference": "control"
+      }
+    },
+    "interactions": [
+      [
+        "x",
+        "arm"
+      ]
+    ],
+    "exposure": "exposure",
+    "offset_rationale": "Known simulated follow-up exposure, hours"
+  },
+  "prediction": {
+    "rows": [
+      {
+        "prediction_id": "observed_0",
+        "x": 0.7317486465459795,
+        "z": -0.9357102492220798,
+        "arm": "control",
+        "exposure": 1.8212673633439485
+      },
+      {
+        "prediction_id": "outside",
+        "x": 100,
+        "z": 0,
+        "arm": "control",
+        "exposure": 1.8212673633439485
+      }
+    ]
+  }
+}

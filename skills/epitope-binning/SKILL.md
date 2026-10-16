@@ -5,6 +5,8 @@ description: Analyze directed epitope competition matrices from declared tandem,
 
 # Epitope binning
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read [input contract](references/input-and-model.md) and the shared
 [runtime](../agentic-prism/references/runtime.md). Establish the assay format,
 what the detector measures, valency, background and whether every response and

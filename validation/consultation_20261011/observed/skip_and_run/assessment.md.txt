@@ -1,0 +1,11 @@
+# 分析前的数据评估
+
+研究者明确选择直接分析，预先指定双侧配对 t 检验、treated−control 和 95% CI。
+
+实际读取 paired.csv：12 条观测、6 个 donor ID，每个 ID 在 control 与 treated 各出现一次；response 的单位均为 AU，观测 ID 唯一、数值完整。原文件保留不变。
+
+研究者声明六名供体互相独立，同一次制备分成两个条件，每条件一个测量值，无技术重复，未归一化或剔除；数据为合成流程测试。
+
+目标量是供体内 treated−control 的平均差。配对 t 检验与此设计一致，n 为 6 对而非 12 个独立观测。检验假设供体独立且供体内差值近似正态；小样本不能充分验证正态假设。没有通过正态性检验或比较不同方法的 p 值来选择方法；不进行变换、归一化或剔除。合成结果不能支持真实生物学疗效、重要性或等效性结论。
+
+运行环境：${REPOSITORY}/.venv/bin/agentic-prism；doctor 返回 ok，package_version 与 collection_version 均为 0.13.4，依赖锁定版本无不匹配，详见 runtime-doctor.json。

@@ -5,6 +5,8 @@ description: Analyze single-site equilibrium binding titrations for KD with expl
 
 # Equilibrium binding
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Use the versioned `agentic-prism` runtime shipped with this skill collection.
 Do not generate ad hoc numerical scripts for production analysis.
 

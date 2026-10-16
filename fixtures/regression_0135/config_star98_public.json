@@ -1,0 +1,103 @@
+{
+  "analysis_type": "generalized_regression",
+  "input": "star98_public.csv",
+  "source": "statsmodels 0.15.0 Star98, distributed with permission from Jeff Gill (2000); official GLM worked example",
+  "design": {
+    "unit": "California county aggregate",
+    "rationale": "Independent county rows for numerical reproduction of the published model; within-row binomial assumptions diagnosed, not certified",
+    "outcome": "Students above national median math score",
+    "outcome_unit": "successes out of trials",
+    "estimand": "Reproduce published conditional logistic coefficients; no educational/biological causal claim"
+  },
+  "model": {
+    "family": "binomial",
+    "rationale": "Fixed simulation specification; not selected from observed significance",
+    "predictors": {
+      "LOWINC": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERASIAN": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERBLACK": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERHISP": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERMINTE": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "AVYRSEXP": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "AVSALK": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERSPENK": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PTRATIO": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PCTAF": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PCTCHRT": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PCTYRRND": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERMINTE_AVYRSEXP": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERMINTE_AVSAL": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "AVYRSEXP_AVSAL": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERSPEN_PTRATIO": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERSPEN_PCTAF": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PTRATIO_PCTAF": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERMINTE_AVYRSEXP_AVSAL": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      },
+      "PERSPEN_PTRATIO_PCTAF": {
+        "kind": "continuous",
+        "unit": "source dataset scale; interactions precomputed in source"
+      }
+    },
+    "interactions": [],
+    "trials": "trials"
+  },
+  "prediction": {
+    "rows": []
+  }
+}

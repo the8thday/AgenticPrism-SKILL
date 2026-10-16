@@ -5,6 +5,8 @@ description: Summarize bioanalytical method-validation experiments for ligand bi
 
 # Bioanalytical method validation
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read the [runtime procedure](../agentic-prism/references/runtime.md), then the
 [input and numerical contract](references/contract.md). Implemented in 0.9.3.
 

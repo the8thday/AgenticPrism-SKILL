@@ -5,6 +5,10 @@ description: Analyze independent paired measurements using Pearson or Spearman c
 
 # Correlation, regression and method comparison
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
+For a conditional model with multiple predictors or a binomial/count outcome, route to [multivariable-regression](../multivariable-regression/SKILL.md). This Skill retains its existing single-predictor and method-agreement scope.
+
 Read [input contract](references/input-and-model.md), then use the collection
 runtime described in [runtime](../agentic-prism/references/runtime.md).
 

@@ -1,0 +1,10 @@
+我已查看 `paired.csv`：共有 12 条记录、6 个 `independent_unit_id`，每个 ID 都有一条 control 和一条 treated，反应单位为 AU。从表结构看，应优先考虑配对比较。
+
+分析前，你希望采用哪种方式？
+
+1. **先讨论，再分析**：结合数据，澄清研究目标、配对设计和适合的统计方法。
+2. **直接分析**：按现有描述开展分析，并保留必要的数据适用性检查；仅在关键实验信息缺失时补问。
+
+请回复 **1 或 2**。
+
+这里先暂停，是因为 [agentic-prism Skill](${REPOSITORY}/skills/agentic-prism/SKILL.md) 要求：“Offer discussion or direct analysis once unless the user has already chosen.” 你尚未选择分析方式。

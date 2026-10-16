@@ -1,6 +1,6 @@
 ---
 name: agentic-prism
-description: Route Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM.
+description: Offer an optional pre-analysis discussion, assess data suitability, and route multivariable regression/GLM or Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM. Route PK/NCA and population PK to prototype R guidance using PKNCA and nlmixr2.
 ---
 
 # AgenticPrism
@@ -9,7 +9,18 @@ Use this entry point when the user asks for Prism-like analysis without selectin
 a specific module, or asks to combine analyses. For an explicit supported task,
 the specialist can be used directly.
 
-Before routing or interpreting saved results, follow the ordered
+For a new analysis, first follow the shared [optional discussion and data-assessment entry](references/analysis-entry.md). Offer discussion or direct analysis once unless the user has already chosen. Opt-in discussion uses [analysis-consultation](../analysis-consultation/SKILL.md); both paths include a concise, evidence-based assessment of suitable methods and limits. Preserve the choice across specialist handoffs.
+
+For one outcome with multiple predictors, Gaussian linear regression, binary/grouped-binomial Logistic regression or Poisson count/rate models, read [multivariable-regression](../multivariable-regression/SKILL.md). Establish independent units, predictor coding and the estimand; this does not cover repeated/clustered GLMM/GEE or ROC.
+
+For concentration-time PK exposure and NCA, read [pk-nca](../pk-nca/SKILL.md).
+For population compartmental PK, read [population-pk](../population-pk/SKILL.md).
+These are guidance prototypes using R packages directly, with their own R
+environment checks and evidence limits. They do not use the Python CLI or its
+doctor, and they do not yet cover PD/TMDD. Do not route PK through curve-auc,
+nonlinear-models or generalized_regression as a substitute.
+
+For the implemented Python modules, before numerical execution or interpreting saved results, follow the ordered
 [runtime discovery procedure](references/runtime.md): resolve this Skill’s real
 path → check the collection `.venv` → run doctor; PATH is a fallback only.
 Do not conclude “not installed” from `which` alone.
@@ -20,7 +31,8 @@ Do not conclude “not installed” from `which` alone.
    grids plus a plate map can be converted with `agentic-prism import-plate`
    (ELISA or dose-response target) before the specialist's analysis.
 2. Read [the module registry](references/module-registry.md). Load only the
-   relevant **implemented** specialist instructions. A registry entry is not
+   relevant specialist instructions and respect their declared maturity; R PK
+   guidance prototypes are not implemented Python modules. A registry entry is not
    evidence that an analysis exists or is validated.
 3. For cell-surface titrations, use [cell-binding](../cell-binding/SKILL.md):
    apparent KD only, measured nonspecific controls, declared receptor depletion,
@@ -70,7 +82,8 @@ Do not conclude “not installed” from `which` alone.
    Do not relabel another module's output to satisfy the request. Development of
    a new method requires an explicit development task and independent validation.
 13. Return the actual report, results, important limitations and rerun entry point.
-   Scientific outputs come from the fixed versioned implementation, not prose.
+   Scientific outputs come from the declared numerical implementation, not prose;
+   for R PK prototypes, record the exact upstream package versions and saved script.
    For repeated-measures, time-to-event, tumor-growth, variance-components, ADA
    and method-validation runs, read the verified `interpretation_facts.json` and
    follow its reportability and disclosures
@@ -79,7 +92,7 @@ Do not conclude “not installed” from `which` alone.
 
 These skills are sibling directories in one distribution. “Routing” means the
 agent reads and follows specialist instructions; it does not require spawning
-another agent. Users may invoke specialists directly. Keep the shared library
+another agent. Users may invoke specialists directly. For Python specialists, keep the shared library
 installed from the same release. Locate and check it with the
 [runtime instructions](references/runtime.md); if it is missing, ask the user
 before running `install.py`. Do not copy just this skill folder and assume its
@@ -164,7 +177,7 @@ comparisons of one value per unit to the ANCOVA contract, both in [group-compari
 Area under time curves goes to [curve-auc](../curve-auc/SKILL.md); linear or quadratic standard curves
 (BCA, Bradford, copy-number standards) to [standard-curve](../standard-curve/SKILL.md); qPCR relative
 expression to [qpcr](../qpcr/SKILL.md). Sigmoid immunoassay calibration stays with elisa-quantification,
-and PK exposure (NCA) is not covered.
+and PK exposure (NCA) uses the separate prototype pk-nca guidance above.
 
 ## 0.13.3 routing
 

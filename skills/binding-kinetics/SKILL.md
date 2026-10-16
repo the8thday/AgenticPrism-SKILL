@@ -5,6 +5,8 @@ description: Analyze BLI/SPR sensorgrams with explicit phases and reference proc
 
 # Binding kinetics
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Use this specialist for time-resolved association and dissociation data, not endpoint titrations. Inspect the actual export and experimental design before choosing the model. Read the [input and model contract](references/input-and-model.md) for new data, and the [Octet adapter guide](references/octet-results-txt.md) for the supported text export.
 
 1. Establish analyte concentration and units, phase boundaries, response units, reference/baseline processing, the injection design (`assay.injection_design`: `multi_cycle` with `independent_cycles=true`, or `single_cycle` with `independent_cycles=false` for sequential injections without regeneration), sample/experiment identity, and evidence for an ideal 1:1 interpretation. Choose `preprocessing.reference_mode` from what was actually measured: `reference_column` (reference channel/sensor, same cycle) or `double_reference` (also a matched buffer blank cycle on both channels). Do not construct a blank or reference trace that was not recorded. The `assay` flags and rationale require experiment-specific justification; do not copy them from a demonstration.

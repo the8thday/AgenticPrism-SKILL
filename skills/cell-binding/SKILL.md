@@ -5,6 +5,8 @@ description: Analyze cell-surface binding titrations for apparent KD with measur
 
 # Cell binding
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Use the packaged Python runtime and read [the input contract](references/input-contract.md).
 Establish the estimand before fitting: this specialist reports **apparent KD**.
 Bivalent IgG binding on cells is avidity-influenced. A functional cell EC50 is not

@@ -5,6 +5,8 @@ description: Estimate repeatability and intermediate precision using Gaussian RE
 
 # Variance components and precision
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Locate the runtime using the [ordered procedure](../agentic-prism/references/runtime.md).
 Read the [design and input contract](references/contract.md) before configuring.
 Use this specialist for precision components; full bioanalytical validation,

@@ -1,0 +1,922 @@
+{
+  "status": "passed",
+  "oracle": "base R lm/glm, separately constructed factors/interactions; HC3 explicit sandwich",
+  "script_sha256": "c704bf486bdfb03caff10032b3162f7e18e3886592bfb74a0e8c0121569f91bf",
+  "oracle_sha256": "418a8066b8b17a710e3afff8a9344c0d0439e7f466fa31de3b921d1fc6f1076b",
+  "rows": [
+    {
+      "fixture": "gaussian",
+      "reportable": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 3.9968028886505635e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 1.8041124150158794e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 3.58046925441613e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 4.218847493575595e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 4.85722573273506e-17,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 8.659739592076221e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 6.661338147750939e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 3.552713678800501e-14,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 8.586881206085195e-17,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "prediction:observed_0",
+          "passed": true,
+          "max_absolute_error": 1.3322676295501878e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "hc3",
+      "reportable": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 4.218847493575595e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 3.3306690738754696e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 5.10702591327572e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 4.6629367034256575e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 2.498001805406602e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 7.993605777301127e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 5.329070518200751e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 3.3306690738754696e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "prediction:observed_0",
+          "passed": true,
+          "max_absolute_error": 1.3322676295501878e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "binomial",
+      "reportable": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 6.661338147750939e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 6.661338147750939e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 5.551115123125783e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 2.220446049250313e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 6.661338147750939e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 2.7755575615628914e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 4.440892098500626e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 5.551115123125783e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "prediction:observed_0",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "grouped_binomial",
+      "reportable": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 2.7755575615628914e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 2.6520452500733427e-14,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 3.4466787063314186e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 5.206945985491984e-14,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 5.18855791664663e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 2.220446049250313e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 8.554934538551606e-12,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 6.9673000008263486e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "prediction:observed_0",
+          "passed": true,
+          "max_absolute_error": 4.440892098500626e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "poisson",
+      "reportable": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 4.440892098500626e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 1.1053744031208623e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 3.3965052992357414e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 2.1664939287013851e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 3.461053665887448e-11,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 7.105427357601002e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 9.660450217552352e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 4.880862380929329e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "prediction:observed_0",
+          "passed": true,
+          "max_absolute_error": 1.7218138026464658e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "offset",
+      "reportable": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 1.942890293094024e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 1.1053744031208623e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 3.396508074793303e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 2.1664944838128974e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 3.4610529719980576e-11,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 1.3322676295501878e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 9.660471533834425e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 4.880866821821428e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "prediction:observed_0",
+          "passed": true,
+          "max_absolute_error": 1.7218049208622688e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "quasipoisson",
+      "reportable": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 3.608224830031759e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 6.05992078739348e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 9.821881197247251e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 1.1960899048979456e-08,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 2.8749319383458705e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 8.43769498715119e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 1.394231579077143e-07,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 3.629909297586664e-07,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 1.1503934249645908e-08,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "prediction:observed_0",
+          "passed": true,
+          "max_absolute_error": 2.5801139003078788e-08,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "overdispersed",
+      "reportable": false,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 3.608224830031759e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 2.04177125207039e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 8.10021594244148e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 4.001801556796636e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 6.553512593709954e-10,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 8.43769498715119e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 2.7828325954715183e-07,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 8.228244086083691e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "hetero_classical",
+      "reportable": false,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 4.218847493575595e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 2.7755575615628914e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 3.941291737419306e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 4.9960036108132044e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 1.3877787807814457e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 7.993605777301127e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 1.9539925233402755e-14,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 8.881784197001252e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "missing",
+      "reportable": true,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 1.1102230246251565e-16,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 1.0547118733938987e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 2.220446049250313e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 2.914335439641036e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 2.1094237467877974e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 8.326672684688674e-17,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 1.1546319456101628e-14,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 5.551115123125783e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 7.815970093361102e-14,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 7.546047120499111e-17,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "prediction:observed_0",
+          "passed": true,
+          "max_absolute_error": 8.881784197001252e-16,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    },
+    {
+      "fixture": "star98_public",
+      "reportable": false,
+      "passed": true,
+      "checks": [
+        {
+          "field": "independently_coded_design",
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "atol": 1e-10,
+          "rtol": 1e-10
+        },
+        {
+          "field": "estimate",
+          "passed": true,
+          "max_absolute_error": 5.24469356832924e-13,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "standard_error",
+          "passed": true,
+          "max_absolute_error": 4.4860319903250456e-08,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "p_value",
+          "passed": true,
+          "max_absolute_error": 7.102855664742336e-09,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "coefficient_intervals",
+          "passed": true,
+          "max_absolute_error": 8.79251373930856e-08,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "covariance",
+          "passed": true,
+          "max_absolute_error": 1.3877198812295433e-07,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "fitted_means",
+          "passed": true,
+          "max_absolute_error": 8.770761894538737e-15,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "scale",
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_wald_statistics",
+          "passed": true,
+          "max_absolute_error": 5.468240487971343e-06,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        },
+        {
+          "field": "term_p_values",
+          "passed": true,
+          "max_absolute_error": 1.5611794422867344e-12,
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      ],
+      "r_version": "4.6.0"
+    }
+  ]
+}

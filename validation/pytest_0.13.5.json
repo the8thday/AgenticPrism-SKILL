@@ -1,0 +1,29 @@
+{
+  "full_suite": {
+    "command": ".venv/bin/python -m pytest -q",
+    "status": "passed",
+    "tests": 831,
+    "warnings": 8,
+    "seconds": 665.16,
+    "log_sha256": "ba8b434362ad405112b847bbb68d0a1a92c87335f2168b8760c65d9da12e464f",
+    "scope": "Suite started before final coefficient-name schema guard and behavior-evidence text refresh."
+  },
+  "final_targeted_suite": {
+    "command": ".venv/bin/python -m pytest -q tests/test_regression_0135.py",
+    "status": "passed",
+    "tests": 33,
+    "seconds": 17.24,
+    "log_sha256": "6baa5e46514e8d33b60e3fce9be19a2716870bed5a37fd397dcaefc410c05f41",
+    "scope": "Includes newly added coefficient-label collision guard; valid fixture numerical outputs exactly unchanged."
+  },
+  "numerical_equivalence": "validation/regression_schema_guard_0.13.5.json",
+  "figures": "Gaussian HC3 coefficient PNG visually inspected: labels and pointwise intervals readable; report generation covered for estimated/withheld states.",
+  "post_guard_full_suite_2026-10-16": {
+    "command": ".venv/bin/python -m pytest -q",
+    "status": "passed",
+    "tests": 832,
+    "warnings": 8,
+    "seconds": 364.5,
+    "scope": "Rerun at b282fa0 (after the coefficient-name schema guard and the R PK prototype commit); closes the gap noted for full_suite."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "analysis_type": "group_comparison",
+  "source_sha256": {
+    "results.json": "8d64518ba9c1a1f92e314c1843b7ec2f34d1658aaa077d43c7183ebb0e762506",
+    "config.resolved.json": "95748455c13192c9dc37f3ce5a9c766708943ae6887254e83a8aa35c32e4fc14"
+  },
+  "saved_results": {
+    "source": "results.json#",
+    "value": {
+      "schema_version": 1,
+      "analysis_type": "group_comparison",
+      "fits": [
+        {
+          "analysis_type": "group_comparison",
+          "design": "paired_t",
+          "group_a": "control",
+          "group_b": "treated",
+          "outcome": "response",
+          "unit": "AU",
+          "n_a": 6,
+          "n_b": 6,
+          "mean_a": 11.666666666666666,
+          "mean_b": 14.666666666666666,
+          "mean_difference_b_minus_a": 3.0,
+          "standard_error": 0.5773502691896258,
+          "df": 5.0,
+          "t_statistic": 5.196152422706632,
+          "p_two_sided": 0.0034781651152865035,
+          "confidence_level": 0.95,
+          "ci_difference": [
+            1.5158738852214113,
+            4.484126114778588
+          ],
+          "status": "estimated",
+          "diagnostics": []
+        }
+      ]
+    }
+  },
+  "states": [
+    {
+      "kind": "saved_state",
+      "value": "estimated",
+      "source": "results.json#/fits/0/status"
+    }
+  ],
+  "must_mention": [],
+  "limitations": [
+    "Saved-result extraction only; no refitting, new inference or promotion of audit estimates.",
+    "Independent units and declared preprocessing determine the interpretation; significance does not establish equivalence."
+  ]
+}

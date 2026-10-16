@@ -5,6 +5,8 @@ description: Plan prospective sample size or power from declared, sourced assump
 
 # Sample size and power
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read the [runtime procedure](../agentic-prism/references/runtime.md) and the
 [input and method contract](references/input-and-model.md). Implemented in 0.13.1.
 

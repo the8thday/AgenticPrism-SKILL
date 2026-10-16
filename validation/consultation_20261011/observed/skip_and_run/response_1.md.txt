@@ -1,0 +1,12 @@
+已按预设方案完成双侧配对 t 检验，无归一化或剔除。
+
+- **样本量：**6 名独立供体，6 个完整配对。
+- **treated−control 平均差：3.00 AU**，95% CI：**1.516–4.484 AU**。
+- **t(5)＝5.196，双侧 p＝0.00348**。
+- control、treated 均值分别为 11.67、14.67 AU。
+
+配对差值近似正态是方法假设，6 对数据不足以充分验证；这是合成流程测试，结果不支持真实生物学疗效、重要性或等效性结论。
+
+文件已保存：[完整报告](${WORKSPACE}/analysis_run/report.html) · [可复现配置](${WORKSPACE}/config.json) · [复现脚本](${WORKSPACE}/reproduce.sh) · [结果表](${WORKSPACE}/analysis_run/comparison.csv)。
+
+AgenticPrism 0.13.4 环境检查正常，未产生诊断警告；科学产物哈希验证通过，保存的输入副本与原文件一致。

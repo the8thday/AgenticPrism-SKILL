@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "change": "Reject Intercept predictor names and ambiguous factor/interaction labels; no numerical change for valid inputs",
+  "frozen_implementation_sha256": "bb4503d58bca704aa76e4bee186d0bb91a969e44d5d03669c705ee288d172a22",
+  "final_implementation_sha256": "7ac4fe7ef14c400d2069cb6aa1304e2fd5bbd7bee9c58507b5313729ed914c2a",
+  "configurations": 13,
+  "rows": [
+    {
+      "fixture": "fixtures/regression_0135/config_binomial.json",
+      "unchanged_compute_sha256": "fd89ec3d6bc794978d5ded221f61d8bf57de0d8a30475e6307637c667c1b2745"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_gaussian.json",
+      "unchanged_compute_sha256": "0dd21e185f349ffe682f9e7520b9084e5816985a2b90158bae50dba45601bc92"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_grouped_binomial.json",
+      "unchanged_compute_sha256": "0c8b889552163818d988899817286184e01d1a902640e6b01b76e5697d69ab74"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_hc3.json",
+      "unchanged_compute_sha256": "ba75a685866b0187168b90f749f7a5ad9e9983b3e68162e32909ef85c72cc27d"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_hetero_classical.json",
+      "unchanged_compute_sha256": "c6ad820a2f4d30bd3b55af4a59b93ad82c3c6d3cfabd95aa2eaabf2b2debc0cb"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_missing.json",
+      "unchanged_compute_sha256": "368ed29a485cefcce6c737966cbd998b94dedb5e74b60cc3a340b948a8c36b54"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_offset.json",
+      "unchanged_compute_sha256": "e06b5f3043397bab2d0faf2c6d36d4e92fd63a211f60d0c13fea1655b234eb1e"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_overdispersed.json",
+      "unchanged_compute_sha256": "af50016a52ce5f06fa54fd0fa59e00c2c2d6115b73407b04be64e15212fc36da"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_poisson.json",
+      "unchanged_compute_sha256": "af459346dd059ea7e543f6995dc3b320a3b6f09e76f8c17d4d8d0b11ed71cc74"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_quasipoisson.json",
+      "unchanged_compute_sha256": "e77ca95300c34d6f506cc90e27ae999ec2043b8c17db0cfcfa6535bd08cde42a"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_rank_deficient.json",
+      "unchanged_compute_sha256": "5c0abb67d9765f876f13977ee7336a159785146f2fb3af0562b6a3ad0574a2db"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_separated.json",
+      "unchanged_compute_sha256": "d205bc7dd1c5d5be1d0af69d0d9095e439f942f796a0b517ce97080930c862b4"
+    },
+    {
+      "fixture": "fixtures/regression_0135/config_star98_public.json",
+      "unchanged_compute_sha256": "84581e5467b1c503af6a8c6f529a752176f2ed47337dfcb090855b92d4f9a3ea"
+    }
+  ]
+}

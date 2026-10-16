@@ -1,0 +1,2 @@
+Scientific artifact hashes verified
+Original and run input SHA256 match: 25dae5c50a492c852d51b44327de0da8c2e2f76a24b5421fa11fc995b2148e86

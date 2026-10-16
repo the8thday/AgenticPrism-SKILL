@@ -1,0 +1,2 @@
+analysis_type,design,group_a,group_b,outcome,unit,n_a,n_b,mean_a,mean_b,mean_difference_b_minus_a,standard_error,df,t_statistic,p_two_sided,confidence_level,status,diagnostics,ci_low,ci_high
+group_comparison,paired_t,control,treated,response,AU,6,6,11.666666666666666,14.666666666666666,3.0,0.5773502691896258,5.0,5.196152422706632,0.0034781651152865035,0.95,estimated,,1.5158738852214113,4.484126114778588

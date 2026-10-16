@@ -1,0 +1,187 @@
+{
+  "status": "passed",
+  "source_url": "https://www.statsmodels.org/stable/examples/notebooks/generated/glm.html",
+  "source_section": "GLM: Binomial response data; Quantities of interest; six-decimal parameter display",
+  "accessed": "2026-10-11",
+  "fixture": "fixtures/regression_0135/star98_public.csv",
+  "scope": "Binomial numerical worked example only; inference correctly withheld for extra-binomial dispersion. Gaussian/HC3 and Poisson/quasi-Poisson published worked examples remain UNMET.",
+  "reportable": false,
+  "rows": [
+    {
+      "term": "Intercept",
+      "observed": 2.9588779261859113,
+      "printed": 2.958878,
+      "absolute_error": 7.381408861917294e-08,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "LOWINC",
+      "observed": -0.01681503661713045,
+      "printed": -0.016815,
+      "absolute_error": 3.661713044930681e-08,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERASIAN",
+      "observed": 0.00992547661120426,
+      "printed": 0.009925,
+      "absolute_error": 4.76611204260069e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERBLACK",
+      "observed": -0.01872421478048011,
+      "printed": -0.018724,
+      "absolute_error": 2.147804801094777e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERHISP",
+      "observed": -0.014238560943705254,
+      "printed": -0.014239,
+      "absolute_error": 4.3905629474629004e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERMINTE",
+      "observed": 0.25448717299644896,
+      "printed": 0.254487,
+      "absolute_error": 1.729964489438629e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "AVYRSEXP",
+      "observed": 0.24069366441822784,
+      "printed": 0.240694,
+      "absolute_error": 3.3558177214843e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "AVSALK",
+      "observed": 0.08040867393809008,
+      "printed": 0.080409,
+      "absolute_error": 3.2606190991657513e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERSPENK",
+      "observed": -1.9521605027240154,
+      "printed": -1.952161,
+      "absolute_error": 4.972759846122443e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PTRATIO",
+      "observed": -0.33408647482702497,
+      "printed": -0.334086,
+      "absolute_error": 4.7482702497658735e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PCTAF",
+      "observed": -0.16902216847396948,
+      "printed": -0.169022,
+      "absolute_error": 1.68473969469618e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PCTCHRT",
+      "observed": 0.00491670212297355,
+      "printed": 0.004917,
+      "absolute_error": 2.9787702645039243e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PCTYRRND",
+      "observed": -0.003579964352961726,
+      "printed": -0.00358,
+      "absolute_error": 3.5647038273880355e-08,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERMINTE_AVYRSEXP",
+      "observed": -0.014076564775628065,
+      "printed": -0.014077,
+      "absolute_error": 4.3522437193424524e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERMINTE_AVSAL",
+      "observed": -0.004004991755189837,
+      "printed": -0.004005,
+      "absolute_error": 8.244810162719163e-09,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "AVYRSEXP_AVSAL",
+      "observed": -0.003906395785915564,
+      "printed": -0.003906,
+      "absolute_error": 3.9578591556422085e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERSPEN_PTRATIO",
+      "observed": 0.09171430062532489,
+      "printed": 0.091714,
+      "absolute_error": 3.0062532488384086e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERSPEN_PCTAF",
+      "observed": 0.04898983814919575,
+      "printed": 0.04899,
+      "absolute_error": 1.6185080425196174e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PTRATIO_PCTAF",
+      "observed": 0.008040738901710384,
+      "printed": 0.008041,
+      "absolute_error": 2.610982896156938e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERMINTE_AVYRSEXP_AVSAL",
+      "observed": 0.00022200950302438124,
+      "printed": 0.000222,
+      "absolute_error": 9.503024381242366e-09,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "PERSPEN_PTRATIO_PCTAF",
+      "observed": -0.0022492486130484875,
+      "printed": -0.002249,
+      "absolute_error": 2.486130484874102e-07,
+      "rounding_tolerance": 5.01e-07,
+      "passed": true
+    },
+    {
+      "term": "deviance",
+      "observed": 4078.765417718446,
+      "printed": 4078.8,
+      "absolute_error": 0.034582281554321526,
+      "rounding_tolerance": 0.0501,
+      "passed": true
+    }
+  ]
+}

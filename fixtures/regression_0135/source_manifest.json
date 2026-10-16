@@ -1,0 +1,7 @@
+{
+  "source": "statsmodels.datasets.star98 (version 0.15.0)",
+  "reference": "Jeff Gill (2000), Generalized Linear Models: A Unified Approach; reproduced in official statsmodels GLM notebook",
+  "url": "https://www.statsmodels.org/stable/examples/notebooks/generated/glm.html",
+  "data_sha256": "b4d0d8cac11b6e9ae9be98497beca7bc0a7a1be0c671ba19667b4a1fbe89f85a",
+  "scope": "Published numerical example; substantial extra-binomial dispersion means model-based inference is audit-only here."
+}

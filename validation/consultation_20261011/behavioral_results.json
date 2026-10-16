@@ -1,0 +1,233 @@
+{
+  "status": "passed",
+  "scenarios_passed": 6,
+  "scenario_count": 6,
+  "conversation_turns_passed": 8,
+  "scorer": "implementer",
+  "contexts": "Six fresh Codex subagent contexts; two continued after real researcher follow-up prompts. No expected answers supplied. Plain-chat fallback only.",
+  "scope": "Actual responses and saved artifacts reviewed; not independent scientific certification, full tool-session logs, a host UI test, or numerical validation of agent judgment.",
+  "records": [
+    {
+      "scenario": "offer_choice",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "observed": "Offered both options, read the actual table without inferring its biological design, and waited before execution."
+        },
+        {
+          "turn": 2,
+          "status": "passed",
+          "observed": "After direct-mode selection, preserved the choice and executed the declared six-pair t analysis; report/config/facts and verified hashes were inspected."
+        }
+      ],
+      "observed_records": [
+        {
+          "source_artifact": "analysis_notes.md",
+          "source_sha256": "82b9fab3be8b830309ce367d29033139c5096a7995c952d627f0ea7978340489",
+          "record": "validation/consultation_20261011/observed/offer_choice/analysis_notes.md.txt",
+          "record_sha256": "fe63326446043f2f9861e7595b9897edc82684dae983214df98061f3ccd9e2cb"
+        },
+        {
+          "source_artifact": "response_1.md",
+          "source_sha256": "e20be4de295cb89e542997c5fd75d0c2aa7194ec1f738d1cd23001e5d3680fe3",
+          "record": "validation/consultation_20261011/observed/offer_choice/response_1.md.txt",
+          "record_sha256": "e477653005086d51a4f2ed361a64f8f0467b33a66fab4a7e2bc61682745561ad"
+        },
+        {
+          "source_artifact": "response_2.md",
+          "source_sha256": "a91a94cd087036a85ee1db6a5f94e6a97b2f725ca8c1eea670fb1907c6e93717",
+          "record": "validation/consultation_20261011/observed/offer_choice/response_2.md.txt",
+          "record_sha256": "f3dfabbad6186de03ef76da5a7bad985907cfd55956c8e67cad94eac8c662618"
+        },
+        {
+          "source_artifact": "verification.txt",
+          "source_sha256": "69418122e0573e5614067817f87ecc9110ec2fd8adcf38d427260ae69f844c9d",
+          "record": "validation/consultation_20261011/observed/offer_choice/verification.txt.txt",
+          "record_sha256": "69418122e0573e5614067817f87ecc9110ec2fd8adcf38d427260ae69f844c9d"
+        }
+      ],
+      "execution": {
+        "scientific_artifact_hashes_verified": true,
+        "scientific_artifacts_sha256": {
+          "comparison.csv": "6447a5fbc2e44e7c3bdb167089bed45ae0bf8c75d67e9f6f25bf3cf0e225c642",
+          "config.resolved.json": "f6492aa204a4cca34c9d610006d764043f761308a46351db53277b880c6a360a",
+          "diagnostics.json": "0bda9bcbc52d100e206f3b6820979872dcf8a2c2eca0d765feec285dab38c524",
+          "input.csv": "25dae5c50a492c852d51b44327de0da8c2e2f76a24b5421fa11fc995b2148e86",
+          "interpretation_facts.json": "ab5ef78810b55dfff02569f95a6e120aab8472e0a851774f8c59d0bc887c7aa0",
+          "normalized_data.csv": "008c8812236f8184c7453adc05b5cbeb23b4705ae9b261fa3dcb427a3b68939e",
+          "preprocessing_log.json": "91e98c6230b4504f33d85bcdbd7665bee762d9cc2546992d98a08f9bd113d1ee",
+          "rerun.txt": "762cf12f842057058ccb74c40138f9b023fd7c452fc5f1b03568d40adcda703a",
+          "results.json": "8d64518ba9c1a1f92e314c1843b7ec2f34d1658aaa077d43c7183ebb0e762506"
+        },
+        "saved_evidence": "validation/consultation_20261011/observed/offer_choice",
+        "report_created": true,
+        "independent_pairs": 6,
+        "design": "paired_t",
+        "difference": 3.0,
+        "ci": [
+          1.5158738852214113,
+          4.484126114778588
+        ]
+      }
+    },
+    {
+      "scenario": "discuss_design",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "observed": "Inspected 24 rows and complete treatment/plate overlap; asked three relevant questions, did not assume donor identity or independent wells."
+        },
+        {
+          "turn": 2,
+          "status": "passed",
+          "observed": "Used the researcher answers, retained n=4 paired donors, explained non-identifiability of treatment and plate, and saved a sourced brief without fitting/testing."
+        }
+      ],
+      "observed_records": [
+        {
+          "source_artifact": "consultation_20261011_01/analysis_brief.md",
+          "source_sha256": "f9de7fc9b79a2efe4749acfa7025e382834a78e0d5abb2cbfc6d3311cef59f43",
+          "record": "validation/consultation_20261011/observed/discuss_design/consultation_20261011_01__analysis_brief.md.txt",
+          "record_sha256": "b63157e47341f3ee3fe13a08f85e1702d9fe80a9df35823ca6d671e4b4d707b1"
+        },
+        {
+          "source_artifact": "response_1.md",
+          "source_sha256": "753a50b4b839df9134edb7eec0effe46248a47f05c3fb98eef1a7463209c1e87",
+          "record": "validation/consultation_20261011/observed/discuss_design/response_1.md.txt",
+          "record_sha256": "753a50b4b839df9134edb7eec0effe46248a47f05c3fb98eef1a7463209c1e87"
+        },
+        {
+          "source_artifact": "response_2.md",
+          "source_sha256": "636169b44f69cfd0e3d98b88f93ebcc9899f65787b25c0026005b965e11f755d",
+          "record": "validation/consultation_20261011/observed/discuss_design/response_2.md.txt",
+          "record_sha256": "636169b44f69cfd0e3d98b88f93ebcc9899f65787b25c0026005b965e11f755d"
+        }
+      ],
+      "numerical_run_manifest_present": false
+    },
+    {
+      "scenario": "skip_and_run",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "observed": "Honored explicit skip through the direct specialist, saved a concise observed/declaration/design assessment, ran paired_t and verified the report/config/results/facts."
+        }
+      ],
+      "observed_records": [
+        {
+          "source_artifact": "assessment.md",
+          "source_sha256": "3d8fbaa5b4a85ad41290e9904ebb3be402c221713e8d0fb4165cff8382ebe6ab",
+          "record": "validation/consultation_20261011/observed/skip_and_run/assessment.md.txt",
+          "record_sha256": "8d5a93517788d83eeee23e4848883206d5845a10d60a5e897655e4f962ae0c93"
+        },
+        {
+          "source_artifact": "response_1.md",
+          "source_sha256": "14dca6259d53806be4b697bdd99b9fba270f0f8940e5e42fcac119a55d0e3f8b",
+          "record": "validation/consultation_20261011/observed/skip_and_run/response_1.md.txt",
+          "record_sha256": "ef99458bd8a1efcee7825ab883ae9169e19a4eee1c31b064a011f21ff59c14ea"
+        },
+        {
+          "source_artifact": "verification.txt",
+          "source_sha256": "d4d0848e197bf478fd03bb426dfd2369de366370a18205fee67a9fc68d002a54",
+          "record": "validation/consultation_20261011/observed/skip_and_run/verification.txt.txt",
+          "record_sha256": "d4d0848e197bf478fd03bb426dfd2369de366370a18205fee67a9fc68d002a54"
+        }
+      ],
+      "execution": {
+        "scientific_artifact_hashes_verified": true,
+        "scientific_artifacts_sha256": {
+          "comparison.csv": "6447a5fbc2e44e7c3bdb167089bed45ae0bf8c75d67e9f6f25bf3cf0e225c642",
+          "config.resolved.json": "95748455c13192c9dc37f3ce5a9c766708943ae6887254e83a8aa35c32e4fc14",
+          "diagnostics.json": "0bda9bcbc52d100e206f3b6820979872dcf8a2c2eca0d765feec285dab38c524",
+          "input.csv": "25dae5c50a492c852d51b44327de0da8c2e2f76a24b5421fa11fc995b2148e86",
+          "interpretation_facts.json": "40f167afafafb31a855a648807c0d93c7a02824bf705b3650675170e7270668b",
+          "normalized_data.csv": "008c8812236f8184c7453adc05b5cbeb23b4705ae9b261fa3dcb427a3b68939e",
+          "preprocessing_log.json": "91e98c6230b4504f33d85bcdbd7665bee762d9cc2546992d98a08f9bd113d1ee",
+          "rerun.txt": "762cf12f842057058ccb74c40138f9b023fd7c452fc5f1b03568d40adcda703a",
+          "results.json": "8d64518ba9c1a1f92e314c1843b7ec2f34d1658aaa077d43c7183ebb0e762506"
+        },
+        "saved_evidence": "validation/consultation_20261011/observed/skip_and_run",
+        "report_created": true,
+        "independent_pairs": 6,
+        "design": "paired_t",
+        "difference": 3.0,
+        "ci": [
+          1.5158738852214113,
+          4.484126114778588
+        ]
+      }
+    },
+    {
+      "scenario": "skip_but_limited",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "observed": "Located D2 treated <LLOQ at file line 5, explained why zero substitution invalidates the log ratio, requested valid remeasurement or LLOQ information, and did not calculate an unsupported result."
+        }
+      ],
+      "observed_records": [
+        {
+          "source_artifact": "response_1.md",
+          "source_sha256": "16bf1dc67b71fab7c924815d924c1ab553f3dfe505add205829d5e53df38ee0b",
+          "record": "validation/consultation_20261011/observed/skip_but_limited/response_1.md.txt",
+          "record_sha256": "3a235cc1088431802bce237d3abd24a08e3b302624626edd2d430d1a3514ec0c"
+        }
+      ],
+      "numerical_run_manifest_present": false
+    },
+    {
+      "scenario": "continuation",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "observed": "Preserved the prior discussion choice and known design, recommended mean paired AU difference with uncertainty and limits, saved a sourced brief, and did not execute."
+        }
+      ],
+      "observed_records": [
+        {
+          "source_artifact": "consultation_20261011/analysis_brief.md",
+          "source_sha256": "b6b8f6692f7023e6f307f2b1d9554580959f8f69fd782d7a7b1c4d14e75a0689",
+          "record": "validation/consultation_20261011/observed/continuation/consultation_20261011__analysis_brief.md.txt",
+          "record_sha256": "468a055187cf25c0d4e9bbe29e356e45fab9bc51cf33f21ea8ed584e17246b9b"
+        },
+        {
+          "source_artifact": "response_1.md",
+          "source_sha256": "67d633300b1e78a401b6f8d487042dbd38823a210e710b8b126bd1097a7a8ab3",
+          "record": "validation/consultation_20261011/observed/continuation/response_1.md.txt",
+          "record_sha256": "ee206da0bfb55595f6059b72903093677864b4cc78a258f45210dcebe159b483"
+        }
+      ],
+      "numerical_run_manifest_present": false
+    },
+    {
+      "scenario": "no_analysis",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "observed": "Answered the capability-only request without a menu or numerical execution; distinguished time-curve AUC from unsupported PK/NCA."
+        }
+      ],
+      "observed_records": [
+        {
+          "source_artifact": "response_1.md",
+          "source_sha256": "be65baf187f558f1c45bf38fc7575c8de92ea16b24c3b47d17c3d3fa0d9f58de",
+          "record": "validation/consultation_20261011/observed/no_analysis/response_1.md.txt",
+          "record_sha256": "04c67ff0126c36c707b968ea96237279551fc2212c8776eebe8a2cbfaf548aff"
+        }
+      ],
+      "numerical_run_manifest_present": false
+    }
+  ]
+}

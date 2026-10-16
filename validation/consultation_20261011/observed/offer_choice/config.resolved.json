@@ -1,0 +1,18 @@
+{
+  "analysis_type": "group_comparison",
+  "schema_version": 1,
+  "input": "input.csv",
+  "source": "Researcher-supplied synthetic workflow-test data. The researcher declared six mutually independent donors, each preparation split into control and treated, one measurement per condition, no technical replicates, no normalization and no exclusions. Response unit: AU. These synthetic results do not establish a biological treatment effect.",
+  "comparison": {
+    "design": "paired_t",
+    "group_a": "control",
+    "group_b": "treated",
+    "outcome": "response",
+    "unit": "AU",
+    "rationale": "The researcher prespecified a two-sided paired t test and 95% confidence interval for treated minus control. Each independent_unit_id identifies one donor with one control and one treated measurement from the same preparation. The six paired donor differences are the independent observations; no data transformation, aggregation or exclusion is applied.",
+    "confidence_level": 0.95
+  },
+  "report": {
+    "plot_style": "prism_like"
+  }
+}

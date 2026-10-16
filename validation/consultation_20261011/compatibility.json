@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "baseline_commit": "ee85760612a8f03bd2d819a55dba257c76f376dd",
+  "runtime_files_byte_identical": 105,
+  "fixture_count": 3,
+  "artifact_count": 28,
+  "fixtures": [
+    {
+      "fixture": "fixtures/groups_synthetic/paired_config.json",
+      "scientific_artifacts_sha256": {
+        "comparison.csv": "6ab171f7495749e3f70aa68c963e8ff95fc4ea9987a7846e4eb587f773ea6ad2",
+        "config.resolved.json": "f701ff0c23b47baac03ae09638ca7bff2dfb6d0ed22b20dbf0a17d5d476e09d2",
+        "diagnostics.json": "0bda9bcbc52d100e206f3b6820979872dcf8a2c2eca0d765feec285dab38c524",
+        "input.csv": "d13c2a39a5c7cb1f0a66d281be276a68870941251eb2e91c02b85b09d437b649",
+        "interpretation_facts.json": "b499e4390863639a3e52524716bcfad41f1a0a776d449264044e8f4e9d87bb78",
+        "normalized_data.csv": "ebf1318c45324b7b0f000ad0935e557c18d9aa179c1ae85af4942e80af9d612b",
+        "preprocessing_log.json": "91e98c6230b4504f33d85bcdbd7665bee762d9cc2546992d98a08f9bd113d1ee",
+        "rerun.txt": "762cf12f842057058ccb74c40138f9b023fd7c452fc5f1b03568d40adcda703a",
+        "results.json": "8de3ca28b89748ed612687ee92ffdad1f7fea4a23237d58d64a141a8d36840e2"
+      }
+    },
+    {
+      "fixture": "fixtures/everyday_0134/config_icx.json",
+      "scientific_artifacts_sha256": {
+        "config.resolved.json": "964dbbcef1bafde09630bb979eb479bcb46a966b7bd2493a2c22305591c7c5c9",
+        "curve_grid.csv": "b3b0bfbd904233efde71d21e727aa4da338e07fe616b467b0f97bfe1ab8f0365",
+        "diagnostics.json": "4d32e0e5be2deafe522a46442fbaec67106c18ee95550ab8ee9bc86f27f5e3f9",
+        "effect_endpoints.csv": "7e58c16902fa9e42ad37add1449f6fd1373de8d222fd99db196b4962e33b4721",
+        "endpoint_summaries.csv": "8231610eaf84c55800ef1d141b33bfdb8ad5da7381606f9cf816d222484e7348",
+        "fit_results.csv": "2060e20bbebfd1bbfc1fd23386550547f6f236e256108fe210f1e06db5881204",
+        "input.csv": "eae79a02e622695ae99079f0e2c05fccc6ae852a0c64e8ef01763a584cd3ba69",
+        "interpretation_facts.json": "d199ad79da1d5c20cc29ad4e7bfc4e0201f55865e935ee5c0ff0ff9d1acd069d",
+        "normalized_data.csv": "aa1feb7a5eb704fb5dcbe0be421a70bf57d5e629deb997f1d3d5b037a97011ae",
+        "predictions.csv": "f8bcac1ecaa6171864688eef7764bababb24b765d4e84701ee9ede51d855d373",
+        "preprocessing_log.json": "f624c18acd4e1635bb2e279d9c5f95a29a371f092fa8a3af4beb13743ef731c5",
+        "rerun.txt": "45774c5a9e42d3a22016e64037160ffd1c85b6c07ca8314ac34bd0b7b953cc4c",
+        "results.json": "6c4795dcc47c46a04e9e62d0c123b810ad277cc9522f72745a9f90ccaf3f8f2d",
+        "sample_summary.csv": "b84e379af44734b244013773d54670f6b38b7f54865fb7f6d227f41bbad72bee"
+      }
+    },
+    {
+      "fixture": "fixtures/everyday_0134/config_paired_auc.json",
+      "scientific_artifacts_sha256": {
+        "config.resolved.json": "5753307cefff66488ca35cdf1699fa5cce5fad3634370ee9d66026f22239bd0a",
+        "input.csv": "128687bd383bbb441bb926a1862ad8d39bb87d18a38d50de5251dcd38e05ae2e",
+        "interpretation_facts.json": "85496ce8ec8b1ad98f0c71884857949e0b9db33b437041b055802af896d6305e",
+        "rerun.txt": "3841cc1d09d283593a1d3ee00b30eb8ac06e73f91d450208d39ea7c4342eed37",
+        "results.json": "9cfaa9734c4942be7a2ecb6ff08250421b186ce51525631b530e96a0de077224"
+      }
+    }
+  ],
+  "scope": "Skill/conversation update only. No numerical method/schema change; no benchmarks or calibrations rerun."
+}

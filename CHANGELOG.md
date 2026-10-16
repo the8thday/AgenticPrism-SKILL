@@ -1,5 +1,28 @@
 # Changelog
 
+## Unreleased — R PK guidance prototypes (2026-10-13)
+
+- Split R-first PK guidance into `pk-nca` (PKNCA) and `population-pk`
+  (nlmixr2/rxode2), with data/model contracts, diagnostic/reporting guidance,
+  primary-source references and educational R templates.
+- Supersede the old Python-first PK plan for this scope. No new numerical
+  implementation, Python CLI analysis type, automatic facts/report generator
+  or runtime release; version remains 0.13.5. PD/TMDD remain deferred.
+- Syntax/preflight checks only; package-backed fits and the five evidence gates
+  remain unmet. See `validation/PK_R_SKILLS_PROTOTYPE_2026-10-13.md`.
+
+## 0.13.5
+
+- New `generalized_regression` and `multivariable-regression` Skill: independent-unit Gaussian OLS/HC3, binomial logit, Poisson log with offset/exposure, and explicit Pearson quasi-Poisson. Declared factor references, pairwise interactions, conditional Wald tests and supported mean predictions.
+- Strict input/missingness contracts; rank, separation/recession, convergence, variance/dispersion, influence and prediction-support diagnostics. Withheld estimates remain audit-only; facts are extracted before manifests and rendering never refits.
+- Base-R independent design/fit comparisons, Star98 printed-number reproduction, and preregistered calibration (15/15 bounded rows; 12,000 draws). Retain the heteroscedastic-classical gate escape and quasi-Poisson negative-binomial stress limitations. Published worked examples are unmet for Gaussian/HC3 and Poisson/quasi. See `validation/RELEASE_0.13.5.md`.
+
+### Optional analysis consultation (2026-10-11)
+
+- New `analysis-consultation` Skill for optional Socratic discussion of goals, provenance, design, data features and method suitability, with a concise analysis brief and specialist handoff.
+- Router and direct specialist invocations offer “discuss first” or “analyze directly” once per task, honor explicit choices and preserve them across handoffs. Both paths retain data assessment and required scientific inputs; no repeated approval or mandatory interview in direct mode.
+- Conversation-only change; numerical runtime remains 0.13.4. No new estimator, CLI flag, runtime schema or statistical validation claim. See `validation/CONSULTATION_2026-10-11.md`.
+
 ## 0.13.4
 
 - 4PL reliability: approximate pure-error lack-of-fit F where replicated/unweighted data permit it, plus a calibrated residual-sign diagnostic. A failed check withholds C50, ECx/ICx, summaries and downstream relative potency; optimizer estimates and original C50 intervals are unchanged. The public Compound-A fixture is intentionally now withheld. ELISA's shared fitter remains isolated from these new gates.

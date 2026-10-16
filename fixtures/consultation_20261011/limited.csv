@@ -1,0 +1,13 @@
+donor,condition,value,unit
+D1,control,3,pg/mL
+D1,treated,6,pg/mL
+D2,control,4,pg/mL
+D2,treated,<LLOQ,pg/mL
+D3,control,5,pg/mL
+D3,treated,8,pg/mL
+D4,control,6,pg/mL
+D4,treated,9,pg/mL
+D5,control,7,pg/mL
+D5,treated,10,pg/mL
+D6,control,8,pg/mL
+D6,treated,11,pg/mL

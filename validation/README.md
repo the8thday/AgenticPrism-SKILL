@@ -1,4 +1,32 @@
-# Validation — AgenticPrism development 0.13.4
+# Validation — AgenticPrism development 0.13.5
+
+## R PK guidance prototypes — 2026-10-13
+
+[Prototype record](PK_R_SKILLS_PROTOTYPE_2026-10-13.md): `pk-nca` (PKNCA) and
+`population-pk` (nlmixr2/rxode2) guidance and educational R templates. Skill
+structure, R syntax and dependency/output-path preflight checks only; the R
+packages were absent, so no NCA or population fit was executed. All five
+evidence gates are unmet; runtime and numerical evidence are unchanged.
+
+## 0.13.5
+
+[Release evidence](RELEASE_0.13.5.md): independent-unit multivariable Gaussian,
+binomial and Poisson regression, declared HC3/quasi uncertainty, structured factors
+and interactions, mean predictions and diagnostic withholding. 11 base-R
+fixture comparisons and 22 printed Star98 checks passed; 15/15 registered
+calibration criteria across 12,000 draws passed. Retained stress limitations and
+family-specific unmet worked-example gates remain in runtime facts. Fresh-agent
+scenarios passed 6/6 (implementer-scored), full suite passed 831 tests plus the
+final 33-test targeted suite, and 180 legacy configurations retained 1,343 exact
+scientific artifacts. Clean archive and isolated wheel checks passed (23 configs,
+215 artifacts and six unchanged re-rendered states); see the release record.
+
+## Optional analysis consultation — 2026-10-11
+
+[Workflow evidence](CONSULTATION_2026-10-11.md): opt-in Socratic discussion, direct-mode
+data assessment and preserved specialist gates. Skill instructions only; no new
+numerical method or runtime schema. Behavioral outcomes and static validation
+are recorded separately from the unchanged 0.13.4 numerical evidence.
 
 ## 0.13.4
 

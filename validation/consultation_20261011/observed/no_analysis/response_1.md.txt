@@ -1,0 +1,14 @@
+**当前 0.13.4：已实现一般时间曲线 AUC；尚不支持 PK/NCA（药代动力学／非房室分析）。**
+
+| 范围 | 本项目的能力与边界 |
+|---|---|
+| 时间曲线 AUC | `curve-auc` 对每个独立动物、供者或培养单位，在预先声明的时间窗内用**线性梯形法**计算面积。适用于杀伤、细胞汇合度、细胞因子、体重、肿瘤体积等时间曲线。 |
+| 基线与时间覆盖 | 支持不扣基线、扣首个值或扣预先声明的常数；低于基线的面积计为负值。区间两端必须有实际观测，内部间隔线性连接；不拟合、平滑或外推，也不自动挑选最有利的时间窗。 |
+| 组间比较 | 不同独立单位可做 Welch 比较；同一单位跨条件可做配对 t 比较，并明确完整配对策略。支持 Holm 校正 p 值及 Bonferroni 家族置信区间。技术复孔不能当作独立单位。 |
+| 提前结束或缺失 | 可声明不计算不完整单位的 AUC，或将所有单位缩到共同区间；后者改变实际汇总的时间窗。与结局有关的退出会使比较产生偏倚，完整病例或完整配对筛选不能修复这种偏倚。 |
+
+这些边界见 [Curve AUC Skill](${REPOSITORY}/skills/curve-auc/SKILL.md) 和 [输入与模型契约](${REPOSITORY}/skills/curve-auc/references/input-and-model.md)。AUC 只汇总指定窗口内的响应，不能说明曲线何时分离。
+
+**PK/NCA 不能由上述 AUC 功能替代。** [路由 Skill](${REPOSITORY}/skills/agentic-prism/SKILL.md) 明确写明 PK exposure（NCA）未覆盖；[模块注册表](${REPOSITORY}/skills/agentic-prism/references/module-registry.md) 也将时间曲线 AUC 标为“not PK/NCA”，PK/PD 仍为延期范围。因此，不能把普通梯形面积包装成项目已支持的完整 NCA，也不能据此宣称能给出经过本项目支持的终末消除、无穷时间暴露外推或清除率等药代参数。项目虽有一般非线性衰减模型及其半衰期，但其 [Skill](${REPOSITORY}/skills/nonlinear-models/SKILL.md) 同样明确排除 PK。
+
+本次仅核对能力说明，未运行分析或发起新分析。

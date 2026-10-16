@@ -5,6 +5,8 @@ description: Combine replicated relative-potency determinations across independe
 
 # Relative potency across runs
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Follow [runtime discovery](../agentic-prism/references/runtime.md), then the
 [input contract](references/input-contract.md). AgenticPrism 0.10.0 uses
 `analysis_type=potency_assay`. Write each analysis to a new directory.

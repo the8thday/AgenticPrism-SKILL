@@ -5,6 +5,8 @@ description: Analyze two-agent inhibition matrices with named Bliss, Loewe, HSA 
 
 # Drug combinations
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read [input contract](references/input-and-model.md) and the shared
 [runtime](../agentic-prism/references/runtime.md). Establish the agents, doses,
 cell line/condition, readout and normalization. All responses must share a

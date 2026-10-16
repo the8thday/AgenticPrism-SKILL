@@ -18,6 +18,36 @@ Each method is checked against established implementations, calibrated by
 simulation, and tested with a real agent on misuse scenarios
 ([how](#tested-with-a-real-agent-not-only-numerically)).
 
+## R-based PK guidance prototype
+
+The local 2026-10-13 draft separates [PK/NCA with PKNCA](skills/pk-nca/SKILL.md)
+from [population PK with nlmixr2](skills/population-pk/SKILL.md). These Skills
+guide study design, data mapping, R-package execution and interpretation; they
+do not reimplement the estimators or add a Python CLI analysis type. Each has
+an input/output contract and a small R teaching template. Their facts/report
+requirements are guidance, not an automatic reporting implementation.
+
+The templates have been syntax-checked, but their R packages are absent from
+the checked environment, so no numerical fit or validation pass is claimed.
+PD, TMDD and broader PK extensions remain future work. Runtime stays at 0.13.5;
+the Python workflow and validation claims above apply to existing modules,
+not these prototypes. See [scope and checks](validation/PK_R_SKILLS_PROTOTYPE_2026-10-13.md).
+
+## Optional discussion before analysis
+
+At the start of a new analysis, the agent offers **Discuss first** or **Analyze directly**.
+An explicit preference in the prompt counts as the choice, and it is preserved across
+specialist handoffs. In discussion mode, [analysis-consultation](skills/analysis-consultation/SKILL.md)
+uses the data and a few focused questions to clarify the goal, experimental design,
+independent units, suitable methods and limits, then produces a short analysis brief.
+In direct mode, the agent uses the supplied description and proceeds with a concise
+data-suitability assessment; only missing facts essential to a valid analysis need clarification.
+Skipping discussion does not waive scientific applicability checks.
+
+This is a conversational choice in the host agent (numbered options if no choice UI is
+available), not a new CLI switch. It applies to direct specialist use as well as the router;
+verification and re-rendering do not restart the discussion. This conversational workflow was introduced on runtime 0.13.4. [Scope and behavioral evidence](validation/CONSULTATION_2026-10-11.md).
+
 ## Our real purpose
 
 We want people in every field, when they need a statistical analysis, to think
@@ -25,7 +55,7 @@ first of doing it with an agent. Antibody and biologics R&D is where we start;
 the gates, saved configurations, hashes and interpretation facts are there to
 show that agent-driven analysis can be checked, reproduced and trusted.
 
-## Status: public beta 0.13.4
+## Status: public beta 0.13.5
 
 AgenticPrism is for research analysis. It has **not** been validated as a
 computerized system for GLP/GMP work or regulatory submissions (for example
@@ -45,6 +75,25 @@ data; feedback from real project data is welcome through GitHub issues.
 Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
+
+## 0.13.5
+
+Independent-unit multivariable regression: Gaussian OLS or explicit HC3,
+binary/grouped-binomial Logistic, and Poisson counts/rates with exposure or log
+offset; explicit Pearson-scale quasi-Poisson is also available. Declare continuous
+and categorical predictors, reference levels and pairwise interactions. Saved
+outputs include conditional coefficients/odds or rate ratios, pointwise mean
+predictions, diagnostics, design matrix, preprocessing and interpretation facts.
+Rank deficiency, separation, failed variance assumptions and unsupported
+predictions withhold results rather than inventing estimates.
+
+Base-R comparisons agree on 11 fixtures; 15/15 registered calibration criteria
+passed across 12,000 simulated datasets. Stress results remain visible, including
+only 1/3 covered intervals among heteroscedastic classical fits that escaped the
+gate, and 0.936 quasi-Poisson coverage under negative-binomial variance.
+The Star98 published binomial coefficients/deviance were reproduced but its
+inference is withheld for extra-binomial dispersion. Published worked examples
+for Gaussian/HC3 and Poisson/quasi remain unmet. See [release evidence](validation/RELEASE_0.13.5.md).
 
 ## 0.13.4
 

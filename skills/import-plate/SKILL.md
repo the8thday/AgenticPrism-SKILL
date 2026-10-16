@@ -5,6 +5,8 @@ description: Convert explicitly mapped plate grids into canonical data and analy
 
 # Plate import and HTS QC
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read [input contract](references/input-and-model.md) and shared
 [runtime](../agentic-prism/references/runtime.md). Keep raw inputs and explicit
 well maps. Import establishes a data layout, not assay applicability; fill the

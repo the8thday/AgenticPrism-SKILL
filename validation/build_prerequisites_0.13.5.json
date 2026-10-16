@@ -1,0 +1,54 @@
+{
+  "attempts": [
+    {
+      "attempt": "initial_clean_archive_build",
+      "status": "environment_prerequisite_failure",
+      "reason": "Dedicated offline cache lacked setuptools resolver metadata",
+      "log_sha256": "0d09ba9f24a4ebd198aefc6b9c1ba8d216e6b8025ce6537cb88baeed4cce2ea4"
+    },
+    {
+      "attempt": "after_resolver_metadata_restore",
+      "status": "environment_prerequisite_failure",
+      "reason": "Pre-existing dedicated archive contained directories but omitted package files including METADATA",
+      "log_sha256": "4a26dd83b6f8d7ec02d9c7225a29a8fb13d5341dc863417c160669476ebe59bc"
+    }
+  ],
+  "resolution": "Restored complete cached package files, resolver/wheel metadata and archive links for locked dependencies and setuptools 84.0.0 from existing local cache; no network downloads or source changes.",
+  "packages_prepared": 33,
+  "final_build": "validation/archive_build_0.13.5.json",
+  "restored_archive_packages": [
+    "asteval",
+    "bindcurve",
+    "contourpy",
+    "cycler",
+    "dill",
+    "et-xmlfile",
+    "fonttools",
+    "formulaic",
+    "iniconfig",
+    "interface-meta",
+    "kiwisolver",
+    "lmfit",
+    "matplotlib",
+    "narwhals",
+    "numpy",
+    "openpyxl",
+    "packaging",
+    "pandas",
+    "patsy",
+    "pillow",
+    "pluggy",
+    "pygments",
+    "pyparsing",
+    "pytest",
+    "python-dateutil",
+    "pyyaml",
+    "scipy",
+    "setuptools",
+    "six",
+    "statsmodels",
+    "typing-extensions",
+    "uncertainties",
+    "wrapt"
+  ]
+}

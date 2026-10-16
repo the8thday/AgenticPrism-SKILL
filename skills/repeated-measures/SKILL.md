@@ -5,6 +5,8 @@ description: Analyze a continuous outcome measured repeatedly on the same donors
 
 # Repeated measurements
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read the [input and model contract](references/input-and-model.md). Establish the
 estimand (condition mean differences), independent unit, within-unit conditions,
 response scale and missingness mechanism before selecting a model. Technical

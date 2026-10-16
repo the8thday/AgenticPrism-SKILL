@@ -5,6 +5,8 @@ description: Fit linear or quadratic standard curves per plate (BCA, Bradford, a
 
 # Linear and quadratic standard curves
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read the [runtime procedure](../agentic-prism/references/runtime.md) and the
 [contract](references/input-and-model.md). Implemented in 0.13.2.
 

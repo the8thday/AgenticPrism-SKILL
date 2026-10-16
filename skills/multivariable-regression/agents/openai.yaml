@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multivariable Regression and GLM"
+  short_description: "Linear, Logistic and count models with multiple predictors"
+  default_prompt: "Use $multivariable-regression to assess my design and fit a prespecified model with multiple predictors."

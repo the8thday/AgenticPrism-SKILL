@@ -5,6 +5,8 @@ description: Analyze longitudinal tumor volumes from in-vivo efficacy studies (x
 
 # Tumor growth
 
+For a new analysis, follow the shared [optional discussion and data-assessment entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already made for this task; do not repeat the menu at a specialist handoff.
+
 Read the [input and model contract](references/input-and-model.md). Tumor-growth
 readouts are easy to overstate: decide the estimand and how dropout is handled
 before running anything.

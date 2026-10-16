@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "skill": "skills/agentic-prism",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/correlation-regression",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "skill": "skills/multivariable-regression",
+      "passed": true,
+      "message": "Skill is valid!"
+    }
+  ],
+  "schema_guard_follow_up": {
+    "skill": "skills/multivariable-regression",
+    "status": "passed",
+    "message": "Skill is valid!"
+  }
+}

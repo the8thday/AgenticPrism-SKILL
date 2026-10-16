@@ -1,0 +1,11 @@
+# Paired response workflow test
+
+Analysis mode: direct, selected by the researcher; do not repeat the consultation menu.
+
+Researcher declarations: six mutually independent donors; each donor preparation was split into control and treated, with one measurement per condition, no technical repeats, no normalization and no exclusions. Data are synthetic and intended to test the workflow. Prespecified method: two-sided paired t test, treated minus control, 95% confidence interval.
+
+Observed input: paired.csv contains 12 records, six donor IDs, one response in AU per donor per condition, complete matching pairs and no blank numeric values. The independent sample size is six pairs.
+
+Estimand: mean within-donor treated minus control response in AU. The t test and interval require independent donor differences and approximately normal differences; six pairs provide limited information about the difference distribution. No normality test is used to choose the method. Statistical significance cannot establish biological importance, equivalence or a real treatment effect from synthetic data.
+
+Runtime discovery: resolved Skill ${REPOSITORY}/skills/group-comparison/SKILL.md; collection ${REPOSITORY}; executable ${REPOSITORY}/.venv/bin/agentic-prism. Doctor status ok; package and collection version 0.13.4; no dependency pin mismatches. Full output is in runtime_doctor.json.
