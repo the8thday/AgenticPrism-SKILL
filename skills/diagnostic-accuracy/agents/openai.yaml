@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnostic Accuracy (ROC)"
+  short_description: "ROC AUC, paired AUC comparison and prespecified cut-offs"
+  default_prompt: "Use $diagnostic-accuracy to assess my design and run an ROC analysis against the declared reference standard."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rater Agreement (Kappa, ICC)"
+  short_description: "Cohen's kappa and intraclass correlation in a declared form"
+  default_prompt: "Use $rater-agreement to assess my design and compute agreement between raters in a prespecified form."

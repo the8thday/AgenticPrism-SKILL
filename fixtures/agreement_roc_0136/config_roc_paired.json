@@ -1,0 +1,28 @@
+{
+ "input": "roc_paired.csv",
+ "source": "Synthetic fixture (seed 13606); not team data",
+ "analysis_type": "roc_analysis",
+ "design": {
+  "unit": "patient",
+  "rationale": "One specimen per patient",
+  "reference_standard": "Histology",
+  "reference_source": "Synthetic declaration for the fixture"
+ },
+ "markers": [
+  {
+   "column": "marker_a",
+   "label": "marker_a",
+   "unit": "ng/mL",
+   "direction": "higher_indicates_condition",
+   "direction_source": "Synthetic declaration"
+  },
+  {
+   "column": "marker_b",
+   "label": "marker_b",
+   "unit": "ng/mL",
+   "direction": "higher_indicates_condition",
+   "direction_source": "Synthetic declaration"
+  }
+ ],
+ "comparison": "paired_delong"
+}

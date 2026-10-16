@@ -1,0 +1,4 @@
+interface:
+  display_name: "Outlier Flagging (Grubbs, ESD, ROUT)"
+  short_description: "Prespecified outlier screens that flag but never remove data"
+  default_prompt: "Use $outlier-flagging to run the prespecified outlier screen on my replicate values and report results with and without flags."

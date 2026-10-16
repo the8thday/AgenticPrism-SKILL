@@ -1,0 +1,24 @@
+{
+ "input": "kappa_unweighted.csv",
+ "source": "Synthetic fixture (seed 13606); not team data",
+ "analysis_type": "rater_agreement",
+ "method": "cohen_kappa",
+ "design": {
+  "unit": "slide",
+  "rationale": "Each slide scored once by each rater",
+  "raters": "Two pathologists",
+  "rater_rationale": "Synthetic declaration",
+  "outcome": "score",
+  "outcome_unit": "points"
+ },
+ "kappa": {
+  "categories": [
+   "neg",
+   "weak",
+   "moderate",
+   "strong"
+  ],
+  "ordered": true,
+  "weights": "none"
+ }
+}

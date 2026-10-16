@@ -1,0 +1,40 @@
+{
+ "analysis_type": "rater_agreement",
+ "method": "cohen_kappa",
+ "input": "cohen_1968.csv",
+ "source": "Cohen J. Psychol Bull 1968;70:213-220, 200 units from the printed proportion table (as quoted in the psych documentation)",
+ "design": {
+  "unit": "patient",
+  "rationale": "Published table",
+  "raters": "Two diagnosticians",
+  "rater_rationale": "Cohen 1968 example",
+  "outcome": "diagnosis",
+  "outcome_unit": "category"
+ },
+ "kappa": {
+  "categories": [
+   "d1",
+   "d2",
+   "d3"
+  ],
+  "ordered": false,
+  "weights": [
+   [
+    1.0,
+    0.8333333333333334,
+    0.5
+   ],
+   [
+    0.8333333333333334,
+    1.0,
+    0.0
+   ],
+   [
+    0.5,
+    0.0,
+    1.0
+   ]
+  ],
+  "weights_source": "Cohen 1968 disagreement weights 0,1,3,6 rescaled to agreement weights 1 - v/6"
+ }
+}

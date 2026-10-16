@@ -30,7 +30,9 @@ Read the [runtime procedure](../agentic-prism/references/runtime.md) and the
 Report each curve's parameters with profile-F intervals, derived half-life / doubling time with the
 interval mapped from the rate, the gates that withheld anything, and the runs-test flag. Summaries
 across independent experiments use geometric means for rates and derived times. Withheld parameters are
-reported as withheld, not as numbers.
+reported as withheld, not as numbers: do not show a withheld estimate or interval even in a table marked
+"withheld" or "not reportable", and do not derive other quantities (kcat/Km, residual fraction) from them.
+Those audit values stay in the saved files; say which gate withheld them and what design would fix it.
 
 ## Evidence (0.13.3)
 
@@ -40,5 +42,7 @@ datasets agree (SSE about 1e-14 relative, estimates 1.3e-7, interval ends within
 Calibration (1000 per row): 11/11 bounded coverage rows passed (0.942-0.967), including 1/y² weighting
 under multiplicative error. Stress rows: plateaus of curves observed for under one half-life were always
 withheld; with substrate below Km, 99.8% of fits were withheld but 2 of 1000 slipped through with Km
-underestimated. Published worked example and live-agent gates are pending. See
+underestimated. Published worked-example gate UNMET. Live-agent misuse scenarios (2026-10-16): 5/6 passed;
+the failure showed withheld Vmax/Km values, which led to the wording above (one post-hoc rerun passed; see
+[the scenario record](../../validation/agent-scenarios/0.13.3/RESULTS.md)). See
 [the 0.13.3 record](../../validation/RELEASE_0.13.3.md).

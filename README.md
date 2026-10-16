@@ -76,6 +76,27 @@ Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
 
+## 0.13.6 (in development)
+
+ROC diagnostic accuracy and rater agreement. `roc_analysis` reports the empirical
+AUC of a marker against a declared reference standard, in a direction declared
+before analysis (never flipped), with a DeLong interval, a paired comparison of two
+markers on the same units, and sensitivity/specificity only at declared cut-offs; a
+Youden cut-off is exploratory. `rater_agreement` computes Cohen's kappa (with
+declared weights) and the ICC form chosen for the question, not by its size.
+
+Base-R formula checks agree on 19/19 fixtures and published values from Hanley &
+McNeil, Shrout & Fleiss and Cohen are reproduced. 18/19 registered calibration
+criteria passed; the large-sample kappa interval undercovers for binary ratings
+(0.924 at n = 100) and results say so. Live-agent misuse scenarios passed 6/6.
+Prespecified outlier flagging (`outlier_screen`): Grubbs for one outlier,
+generalized ESD for up to a declared number, and ROUT with a false discovery level.
+It flags and never removes data, and shows results with and without flagged values.
+NIST examples are reproduced; in calibration the false-flag rate stayed near the
+nominal level, Grubbs never caught both of two planted outliers (masking), and
+heavy-tailed clean data were often flagged. ROUT follows the published description
+and is not claimed to equal Prism. See [release evidence](validation/RELEASE_0.13.6.md).
+
 ## 0.13.5
 
 Independent-unit multivariable regression: Gaussian OLS or explicit HC3,
@@ -105,7 +126,7 @@ The registered calibration passed 36/37 bounded rows; the one-sample log-ratio c
 
 ## 0.13.3
 
-A library of common nonlinear models (one/two-phase decay, association, exponential and logistic growth, Michaelis–Menten) checked against base R only, with 11/11 calibration rows passed. An audit of the R packages used as references found three that are old or small (drc 2016, pwr 2020, investr 2022); their earlier evidence was re-checked with base R alone and agreed. See [release evidence](validation/RELEASE_0.13.3.md).
+A library of common nonlinear models (one/two-phase decay, association, exponential and logistic growth, Michaelis–Menten) checked against base R only, with 11/11 calibration rows passed. An audit of the R packages used as references found three that are old or small (drc 2016, pwr 2020, investr 2022); their earlier evidence was re-checked with base R alone and agreed. See [release evidence](validation/RELEASE_0.13.3.md). Live-agent misuse scenarios run later (2026-10-16): 5/6 passed; see [the record](validation/agent-scenarios/0.13.3/RESULTS.md).
 
 ## 0.13.2
 

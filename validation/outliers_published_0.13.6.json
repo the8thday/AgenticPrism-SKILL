@@ -1,0 +1,153 @@
+{
+ "status": "passed",
+ "source": "NIST/SEMATECH e-Handbook of Statistical Methods 1.3.5.17.1 and 1.3.5.17.3",
+ "checks": [
+  {
+   "quantity": "Grubbs G",
+   "printed": 2.4687,
+   "observed": 2.46876461121245,
+   "passed": true
+  },
+  {
+   "quantity": "Grubbs upper one-sided critical value",
+   "printed": 2.032,
+   "observed": 2.0316520015499493,
+   "passed": true
+  },
+  {
+   "quantity": "Grubbs conclusion",
+   "printed": "245.57 is an outlier",
+   "observed": [
+    245.57
+   ],
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_1",
+   "printed": 3.118,
+   "observed": 3.1189060489824416,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_1",
+   "printed": 3.158,
+   "observed": 3.1587939408874943,
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_2",
+   "printed": 2.942,
+   "observed": 2.9429731136435064,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_2",
+   "printed": 3.151,
+   "observed": 3.1514300233160126,
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_3",
+   "printed": 3.179,
+   "observed": 3.179423936717836,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_3",
+   "printed": 3.143,
+   "observed": 3.143889685031995,
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_4",
+   "printed": 2.81,
+   "observed": 2.81018114442759,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_4",
+   "printed": 3.136,
+   "observed": 3.1361649560577938,
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_5",
+   "printed": 2.815,
+   "observed": 2.8155795634442775,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_5",
+   "printed": 3.128,
+   "observed": 3.1282473343309984,
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_6",
+   "printed": 2.848,
+   "observed": 2.848171627930343,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_6",
+   "printed": 3.12,
+   "observed": 3.1201277383148156,
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_7",
+   "printed": 2.279,
+   "observed": 2.2793270549903433,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_7",
+   "printed": 3.111,
+   "observed": 3.1117964542899896,
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_8",
+   "printed": 2.31,
+   "observed": 2.3103660590543,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_8",
+   "printed": 3.103,
+   "observed": 3.10324307760228,
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_9",
+   "printed": 2.101,
+   "observed": 2.101580651024145,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_9",
+   "printed": 3.094,
+   "observed": 3.09445644702339,
+   "passed": true
+  },
+  {
+   "quantity": "ESD R_10",
+   "printed": 2.067,
+   "observed": 2.0671780780253646,
+   "passed": true
+  },
+  {
+   "quantity": "ESD lambda_10",
+   "printed": 3.085,
+   "observed": 3.0854245712431028,
+   "passed": true
+  },
+  {
+   "quantity": "ESD number of outliers",
+   "printed": 3,
+   "observed": 3,
+   "passed": true
+  }
+ ],
+ "scope": "Reproduce NIST/SEMATECH e-Handbook printed values through the CLI.\n\nGrubbs (1.3.5.17.1): Tietjen & Moore uranium data, G = 2.4687, upper one-sided\ncritical value 2.032 (alpha .05), maximum flagged. Generalized ESD (1.3.5.17.3):\nRosner's 54 values, alpha .05, r = 10, ten R_i and lambda_i printed to three\ndecimals, three outliers. The handbook truncates rather than rounds (computed\n3.1189 is printed 3.118), so agreement is |difference| < 0.001.\n"
+}

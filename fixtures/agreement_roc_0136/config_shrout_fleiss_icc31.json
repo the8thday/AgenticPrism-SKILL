@@ -1,0 +1,20 @@
+{
+ "analysis_type": "rater_agreement",
+ "method": "icc",
+ "input": "shrout_fleiss_1979.csv",
+ "source": "Shrout PE, Fleiss JL. Psychol Bull 1979;86:420-428, Table 2 (6 targets x 4 judges)",
+ "design": {
+  "unit": "target",
+  "rationale": "Published example",
+  "raters": "Four judges",
+  "rater_rationale": "Shrout & Fleiss example",
+  "outcome": "rating",
+  "outcome_unit": "points"
+ },
+ "icc": {
+  "model": "two_way_mixed",
+  "type": "consistency",
+  "unit": "single",
+  "rationale": "Shrout & Fleiss case 31"
+ }
+}

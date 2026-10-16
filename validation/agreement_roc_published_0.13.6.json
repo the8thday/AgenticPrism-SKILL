@@ -1,0 +1,96 @@
+{
+ "status": "passed",
+ "checks": [
+  {
+   "source": "Hanley & McNeil 1982",
+   "quantity": "AUC",
+   "printed": 0.893,
+   "observed": 0.8931710615280595,
+   "decimals": 3,
+   "runtime": true,
+   "passed": true
+  },
+  {
+   "source": "Hanley & McNeil 1982",
+   "quantity": "SE (paper's formula, script-side)",
+   "printed": 0.032,
+   "observed": 0.03248657960734214,
+   "decimals": 3,
+   "runtime": false,
+   "passed": true
+  },
+  {
+   "source": "Shrout & Fleiss 1979",
+   "quantity": "ICC case 11",
+   "printed": 0.17,
+   "observed": 0.16574176840547553,
+   "decimals": 2,
+   "runtime": true,
+   "passed": true
+  },
+  {
+   "source": "Shrout & Fleiss 1979",
+   "quantity": "ICC case 21",
+   "printed": 0.29,
+   "observed": 0.2897637795275592,
+   "decimals": 2,
+   "runtime": true,
+   "passed": true
+  },
+  {
+   "source": "Shrout & Fleiss 1979",
+   "quantity": "ICC case 31",
+   "printed": 0.71,
+   "observed": 0.7148407148407154,
+   "decimals": 2,
+   "runtime": true,
+   "passed": true
+  },
+  {
+   "source": "Shrout & Fleiss 1979",
+   "quantity": "ICC case 1k",
+   "printed": 0.44,
+   "observed": 0.4427971336792688,
+   "decimals": 2,
+   "runtime": true,
+   "passed": true
+  },
+  {
+   "source": "Shrout & Fleiss 1979",
+   "quantity": "ICC case 2k",
+   "printed": 0.62,
+   "observed": 0.6200505475989893,
+   "decimals": 2,
+   "runtime": true,
+   "passed": true
+  },
+  {
+   "source": "Shrout & Fleiss 1979",
+   "quantity": "ICC case 3k",
+   "printed": 0.91,
+   "observed": 0.9093155423770696,
+   "decimals": 2,
+   "runtime": true,
+   "passed": true
+  },
+  {
+   "source": "Cohen 1968 (quoted by psych)",
+   "quantity": "kappa",
+   "printed": 0.492,
+   "observed": 0.49152542372881347,
+   "decimals": 3,
+   "runtime": true,
+   "passed": true
+  },
+  {
+   "source": "Cohen 1968 (quoted by psych)",
+   "quantity": "weighted kappa (0,1,3,6 weights)",
+   "printed": 0.348,
+   "observed": 0.34782608695652206,
+   "decimals": 3,
+   "runtime": true,
+   "passed": true
+  }
+ ],
+ "scope": "Reproduce printed values from published 0.13.6 worked examples through the CLI.\n\nHanley & McNeil (1982) CT ratings: AUC 0.893 and their SE 0.032. The SE uses the\npaper's own exponential approximation, computed here from the saved AUC; the\nruntime reports DeLong instead, so only the AUC is a runtime check.\nShrout & Fleiss (1979) Table 4: ICC(1,1) .17, ICC(2,1) .29, ICC(3,1) .71,\nICC(1,4) .44, ICC(2,4) .62, ICC(3,4) .91 (two decimals as printed).\nCohen (1968): kappa .492 and weighted kappa .348, as quoted in the psych\ndocumentation (primary article not inspected; scoped accordingly).\n"
+}

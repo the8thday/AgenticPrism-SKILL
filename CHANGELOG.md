@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.6 (in development)
+
+- New `roc_analysis` and `diagnostic-accuracy` Skill: empirical AUC in a declared direction against a declared reference standard, DeLong logit interval, Mann-Whitney test, paired DeLong comparison, Clopper-Pearson sensitivity/specificity at declared cut-offs and an exploratory (never reportable) Youden cut-off.
+- New `rater_agreement` and `rater-agreement` Skill: Cohen's kappa (unweighted, linear/quadratic or sourced weights; Fleiss-Cohen-Everitt intervals) and ICC in the declared McGraw-Wong form; complete balanced designs.
+- Base-R oracle 19/19 and psych checks; Hanley & McNeil, Shrout & Fleiss and Cohen printed values reproduced; registered calibration 18/19 (binary-kappa coverage 0.924 retained as a miss); live-agent scenarios 6/6. See `validation/RELEASE_0.13.6.md`.
+- New `outlier_screen` and `outlier-flagging` Skill: prespecified Grubbs, generalized ESD (declared maximum) and ROUT (Q) within declared groups; flags only, with results with and without flagged values side by side. NIST Grubbs/ESD examples reproduced (24/24); base-R oracle 14/14; registered false-flag calibration 5/5; masking and heavy-tail false flags disclosed; ROUT published-example gate unmet; no Prism equivalence; live-agent scenarios 6/6 (two weaker than designed).
+- 0.13.3 nonlinear_fit live-agent review (5/6; failure retained) and a harness fix that keeps scenario criteria out of the agent-readable copy.
+
 ## Unreleased — R PK guidance prototypes (2026-10-13)
 
 - Split R-first PK guidance into `pk-nca` (PKNCA) and `population-pk`

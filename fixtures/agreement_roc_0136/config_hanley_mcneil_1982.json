@@ -1,0 +1,20 @@
+{
+ "analysis_type": "roc_analysis",
+ "input": "hanley_mcneil_1982.csv",
+ "source": "Hanley JA, McNeil BJ. Radiology 1982;143:29-36, CT rating counts (58 normal, 51 abnormal)",
+ "design": {
+  "unit": "patient",
+  "rationale": "One CT reading per patient",
+  "reference_standard": "Final diagnosis",
+  "reference_source": "Hanley & McNeil 1982"
+ },
+ "markers": [
+  {
+   "column": "rating",
+   "label": "CT rating",
+   "unit": "5-point scale",
+   "direction": "higher_indicates_condition",
+   "direction_source": "Rating scale definition (5 = definitely abnormal)"
+  }
+ ]
+}

@@ -65,6 +65,14 @@ issue 反馈真实项目数据上的使用情况。
 各模块的具体限制见[模块登记表](skills/agentic-prism/references/module-registry.md)
 和对应的发布记录；所有校准失败都保留在 `validation/` 中。
 
+## 0.13.6（开发中）
+
+新增 ROC 诊断准确性和评分者一致性分析。`roc_analysis` 针对声明的参考标准计算标志物的经验 AUC，方向必须在分析前声明且不会事后翻转；给出 DeLong 区间、同一批对象上两个标志物的配对比较，敏感度/特异度只在预先声明的切点上报告，Youden 切点仅作探索。`rater_agreement` 计算 Cohen kappa（权重需声明）以及按研究问题选定的 ICC 形式，不按数值大小挑选。
+
+只用 R 核心公式的对照在 19/19 组数据上一致，并复现了 Hanley & McNeil、Shrout & Fleiss 和 Cohen 的印刷值。预注册校准 19 项中 18 项通过；二分类 kappa 的大样本区间偏窄（n = 100 时覆盖率 0.924），结果中会明确说明。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.13.6.md)。
+
+新增预先声明的离群值标记（`outlier_screen`）：Grubbs 检验单个离群值，广义 ESD 检验不超过声明个数的离群值，ROUT 按假发现率控制。只标记、不删除数据，并并排给出含与不含被标记值的结果。复现了 NIST 手册的例子；校准中假标记率接近名义水平，但有两个离群值时 Grubbs 一次也没能同时检出两个（遮蔽效应），重尾的干净数据也常被误标。ROUT 按论文描述实现，不声称与 Prism 相同。见[发布证据](validation/RELEASE_0.13.6.md)。
+
 ## 0.13.5
 
 新增独立单位的通用多元回归：Gaussian 线性回归（OLS 或明确选择 HC3）、
@@ -90,7 +98,7 @@ Gaussian/HC3、Poisson/quasi 的公开算例验证仍未达到。见[发布证�
 
 ## 0.13.3
 
-新增常用非线性模型库（一相/两相衰减、结合、指数与 logistic 增长、Michaelis–Menten），只用 R 核心做核对，11/11 校准行通过。同时审查了作为参考实现的 R 包，发现三个较旧或较小的包（drc 2016、pwr 2020、investr 2022），并改用只依赖 R 核心的实现重新核对了相关证据，结果一致。见[发布证据](validation/RELEASE_0.13.3.md)。
+新增常用非线性模型库（一相/两相衰减、结合、指数与 logistic 增长、Michaelis–Menten），只用 R 核心做核对，11/11 校准行通过。同时审查了作为参考实现的 R 包，发现三个较旧或较小的包（drc 2016、pwr 2020、investr 2022），并改用只依赖 R 核心的实现重新核对了相关证据，结果一致。见[发布证据](validation/RELEASE_0.13.3.md)。之后补跑的真实 Agent 误用场景测试（2026-10-16）6 个通过 5 个，见[记录](validation/agent-scenarios/0.13.3/RESULTS.md)。
 
 ## 0.13.2
 

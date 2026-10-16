@@ -1,0 +1,20 @@
+{
+ "input": "icc_agreement.csv",
+ "source": "Synthetic fixture (seed 13606); not team data",
+ "analysis_type": "rater_agreement",
+ "method": "icc",
+ "design": {
+  "unit": "slide",
+  "rationale": "Each slide scored once by each rater",
+  "raters": "Three operators",
+  "rater_rationale": "Synthetic declaration",
+  "outcome": "titer",
+  "outcome_unit": "log2"
+ },
+ "icc": {
+  "model": "two_way_random",
+  "type": "agreement",
+  "unit": "single",
+  "rationale": "Operators are a sample of future operators; absolute values matter"
+ }
+}

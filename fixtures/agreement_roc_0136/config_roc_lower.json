@@ -1,0 +1,28 @@
+{
+ "input": "roc_lower.csv",
+ "source": "Synthetic fixture (seed 13606); not team data",
+ "analysis_type": "roc_analysis",
+ "design": {
+  "unit": "patient",
+  "rationale": "One specimen per patient",
+  "reference_standard": "Histology",
+  "reference_source": "Synthetic declaration for the fixture"
+ },
+ "markers": [
+  {
+   "column": "marker_low",
+   "label": "marker_low",
+   "unit": "ng/mL",
+   "direction": "lower_indicates_condition",
+   "direction_source": "Synthetic declaration"
+  }
+ ],
+ "thresholds": [
+  {
+   "marker": "marker_low",
+   "cutoff": 5.0,
+   "source": "Synthetic prespecified cut-off"
+  }
+ ],
+ "exploratory_youden": true
+}

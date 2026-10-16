@@ -1,0 +1,187 @@
+{
+ "status": "passed",
+ "tolerance": 1e-09,
+ "rout_relative_tolerance": 1e-07,
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "oracle": "scripts/outliers_0136_oracle.R (base R: qt, pt, optimize)",
+ "checks": [
+  {
+   "fixture": "groups_esd",
+   "group": "lot_A",
+   "same_flags": true,
+   "max_difference": 7.549516567451064e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "R": 7.549516567451064e-15,
+    "lambda": 3.552713678800501e-15,
+    "n_outliers": 0
+   }
+  },
+  {
+   "fixture": "groups_esd",
+   "group": "lot_B",
+   "same_flags": true,
+   "max_difference": 4.884981308350689e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "R": 4.884981308350689e-15,
+    "lambda": 8.881784197001252e-16,
+    "n_outliers": 0
+   }
+  },
+  {
+   "fixture": "groups_esd",
+   "group": "lot_C",
+   "same_flags": true,
+   "max_difference": 4.218847493575595e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "R": 4.218847493575595e-15,
+    "lambda": 3.774758283725532e-15,
+    "n_outliers": 0
+   }
+  },
+  {
+   "fixture": "groups_grubbs",
+   "group": "lot_A",
+   "same_flags": true,
+   "max_difference": 2.6645352591003757e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "G": 2.6645352591003757e-15,
+    "critical": 4.440892098500626e-16,
+    "p": 4.363913744254155e-18
+   }
+  },
+  {
+   "fixture": "groups_grubbs",
+   "group": "lot_B",
+   "same_flags": true,
+   "max_difference": 8.604228440844963e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "G": 2.220446049250313e-15,
+    "critical": 0.0,
+    "p": 8.604228440844963e-15
+   }
+  },
+  {
+   "fixture": "groups_grubbs",
+   "group": "lot_C",
+   "same_flags": true,
+   "max_difference": 4.218847493575595e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "G": 4.218847493575595e-15,
+    "critical": 3.552713678800501e-15,
+    "p": 2.220446049250313e-16
+   }
+  },
+  {
+   "fixture": "groups_rout",
+   "group": "lot_A",
+   "same_flags": true,
+   "max_difference": 4.267925836413726e-16,
+   "tolerance": 1e-07,
+   "passed": true,
+   "items": {
+    "location": 4.267925836413726e-16,
+    "rsdr": 0.0
+   }
+  },
+  {
+   "fixture": "groups_rout",
+   "group": "lot_B",
+   "same_flags": true,
+   "max_difference": 3.0074892938399857e-09,
+   "tolerance": 1e-07,
+   "passed": true,
+   "items": {
+    "location": 6.629699491536771e-11,
+    "rsdr": 3.0074892938399857e-09
+   }
+  },
+  {
+   "fixture": "groups_rout",
+   "group": "lot_C",
+   "same_flags": true,
+   "max_difference": 2.206487134773359e-12,
+   "tolerance": 1e-07,
+   "passed": true,
+   "items": {
+    "location": 5.46166938887493e-14,
+    "rsdr": 2.206487134773359e-12
+   }
+  },
+  {
+   "fixture": "log_scale_grubbs",
+   "group": "donor_set",
+   "same_flags": true,
+   "max_difference": 2.220446049250313e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "G": 4.440892098500626e-16,
+    "critical": 2.220446049250313e-15,
+    "p": 1.2468324983583301e-18
+   }
+  },
+  {
+   "fixture": "nist_esd",
+   "group": "rosner",
+   "same_flags": true,
+   "max_difference": 4.884981308350689e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "R": 4.884981308350689e-15,
+    "lambda": 4.884981308350689e-15,
+    "n_outliers": 0
+   }
+  },
+  {
+   "fixture": "nist_grubbs",
+   "group": "uranium",
+   "same_flags": true,
+   "max_difference": 9.325873406851315e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "G": 0.0,
+    "critical": 9.325873406851315e-15,
+    "p": 1.3234889800848443e-22
+   }
+  },
+  {
+   "fixture": "nist_grubbs_two_sided",
+   "group": "uranium",
+   "same_flags": true,
+   "max_difference": 6.661338147750939e-15,
+   "tolerance": 1e-09,
+   "passed": true,
+   "items": {
+    "G": 0.0,
+    "critical": 6.661338147750939e-15,
+    "p": 2.6469779601696886e-22
+   }
+  },
+  {
+   "fixture": "nist_rout",
+   "group": "rosner",
+   "same_flags": true,
+   "max_difference": 2.48745869198574e-12,
+   "tolerance": 1e-07,
+   "passed": true,
+   "items": {
+    "location": 1.4127824880230467e-12,
+    "rsdr": 2.48745869198574e-12
+   }
+  }
+ ]
+}

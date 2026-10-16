@@ -1,0 +1,20 @@
+{
+ "input": "icc_consistency_average.csv",
+ "source": "Synthetic fixture (seed 13606); not team data",
+ "analysis_type": "rater_agreement",
+ "method": "icc",
+ "design": {
+  "unit": "slide",
+  "rationale": "Each slide scored once by each rater",
+  "raters": "Three operators",
+  "rater_rationale": "Synthetic declaration",
+  "outcome": "titer",
+  "outcome_unit": "log2"
+ },
+ "icc": {
+  "model": "two_way_mixed",
+  "type": "consistency",
+  "unit": "average",
+  "rationale": "These three operators, mean of three reported"
+ }
+}

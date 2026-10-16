@@ -1,0 +1,18 @@
+{
+  "version": "0.13.6",
+  "archive_commit": "36385f746b702f417477622c1399407eb0d975a3",
+  "build_source": "clean git archive",
+  "build_note": "uv build --offline with the default local uv cache (the dedicated /tmp cache used for 0.13.5 no longer existed; first attempt failed for that reason, no network)",
+  "python_source_files_exact": 108,
+  "artifacts": [
+    {
+      "path": "dist/agentic_prism-0.13.6-py3-none-any.whl",
+      "sha256": "39d01f4789360dfaf1b15d20cc3761389ed24b1ac08e15e915d60e8f09c7a42c"
+    },
+    {
+      "path": "dist/agentic_prism-0.13.6.tar.gz",
+      "sha256": "84ee6394bbc20eaa4fb24f6f7d40df48faad8d3ba721abac73b1849cb6a96f0b"
+    }
+  ],
+  "superseded_moved": []
+}

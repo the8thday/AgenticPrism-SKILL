@@ -1,0 +1,17 @@
+{
+ "analysis_type": "outlier_screen",
+ "method": "rout",
+ "input": "groups_rout.csv",
+ "source": "Synthetic fixture (seed 13630); not team data",
+ "design": {
+  "unit": "replicate determination",
+  "rationale": "Independent determinations",
+  "outcome": "value",
+  "outcome_unit": "AU",
+  "purpose": "Screen before reporting, flags reviewed for assignable causes",
+  "prespecified_source": "Synthetic SOP declaration"
+ },
+ "test": {
+  "q": 0.01
+ }
+}

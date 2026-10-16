@@ -1,0 +1,299 @@
+{
+ "status": "passed",
+ "tolerance": 1e-09,
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "psych_version": "2.6.5",
+ "oracle": "scripts/agreement_roc_0136_oracle.R (base R formulas; wilcox.test, binom.test, anova(lm))",
+ "checks": [
+  {
+   "fixture": "cohen_1968_unweighted",
+   "max_abs_difference": 4.440892098500626e-16,
+   "passed": true,
+   "items": {
+    "kappa": 4.440892098500626e-16,
+    "se": 4.163336342344337e-17,
+    "ci": 1.1102230246251565e-16,
+    "p0": 4.852440680194403e-35,
+    "po": 0.0,
+    "pe": 5.551115123125783e-17
+   }
+  },
+  {
+   "fixture": "cohen_1968_weighted",
+   "max_abs_difference": 2.220446049250313e-16,
+   "passed": true,
+   "items": {
+    "kappa": 5.551115123125783e-17,
+    "se": 4.163336342344337e-17,
+    "ci": 2.220446049250313e-16,
+    "p0": 1.075334796318936e-23,
+    "po": 1.1102230246251565e-16,
+    "pe": 0.0
+   }
+  },
+  {
+   "fixture": "hanley_mcneil_1982",
+   "max_abs_difference": 4.440892098500626e-16,
+   "passed": true,
+   "items": {
+    "m0_auc": 4.440892098500626e-16,
+    "m0_auc_vs_wilcox": 4.440892098500626e-16,
+    "m0_se": 2.0816681711721685e-17,
+    "m0_ci": 2.220446049250313e-16,
+    "m0_p": 7.799656393842822e-17
+   }
+  },
+  {
+   "fixture": "icc_agreement",
+   "max_abs_difference": 2.042810365310288e-14,
+   "passed": true,
+   "items": {
+    "icc": 4.440892098500626e-16,
+    "ci": 8.881784197001252e-16,
+    "F": 2.042810365310288e-14,
+    "p": 2.7330047438752034e-21
+   }
+  },
+  {
+   "fixture": "icc_consistency_average",
+   "max_abs_difference": 2.042810365310288e-14,
+   "passed": true,
+   "items": {
+    "icc": 1.4432899320127035e-15,
+    "ci": 6.661338147750939e-16,
+    "F": 2.042810365310288e-14,
+    "p": 2.7330047438752034e-21
+   }
+  },
+  {
+   "fixture": "icc_one_way",
+   "max_abs_difference": 8.43769498715119e-15,
+   "passed": true,
+   "items": {
+    "icc": 1.1657341758564144e-15,
+    "ci": 9.43689570931383e-16,
+    "F": 8.43769498715119e-15,
+    "p": 1.1350241493207625e-19
+   }
+  },
+  {
+   "fixture": "kappa_binary",
+   "max_abs_difference": 4.440892098500626e-16,
+   "passed": true,
+   "items": {
+    "kappa": 1.1102230246251565e-16,
+    "se": 0.0,
+    "ci": 4.440892098500626e-16,
+    "p0": 1.6543612251060553e-24,
+    "po": 0.0,
+    "pe": 0.0
+   }
+  },
+  {
+   "fixture": "kappa_linear",
+   "max_abs_difference": 3.3306690738754696e-16,
+   "passed": true,
+   "items": {
+    "kappa": 1.1102230246251565e-16,
+    "se": 3.469446951953614e-17,
+    "ci": 3.3306690738754696e-16,
+    "p0": 1.7219155529623352e-41,
+    "po": 2.220446049250313e-16,
+    "pe": 0.0
+   }
+  },
+  {
+   "fixture": "kappa_quadratic",
+   "max_abs_difference": 4.440892098500626e-16,
+   "passed": true,
+   "items": {
+    "kappa": 3.3306690738754696e-16,
+    "se": 0.0,
+    "ci": 3.3306690738754696e-16,
+    "p0": 2.0857821297713764e-31,
+    "po": 4.440892098500626e-16,
+    "pe": 3.3306690738754696e-16
+   }
+  },
+  {
+   "fixture": "kappa_unweighted",
+   "max_abs_difference": 4.440892098500626e-16,
+   "passed": true,
+   "items": {
+    "kappa": 1.1102230246251565e-16,
+    "se": 2.0816681711721685e-17,
+    "ci": 4.440892098500626e-16,
+    "p0": 4.114230227878006e-37,
+    "po": 0.0,
+    "pe": 4.440892098500626e-16
+   }
+  },
+  {
+   "fixture": "roc_lower",
+   "max_abs_difference": 5.551115123125783e-16,
+   "passed": true,
+   "items": {
+    "m0_auc": 5.551115123125783e-16,
+    "m0_auc_vs_wilcox": 4.440892098500626e-16,
+    "m0_se": 4.85722573273506e-17,
+    "m0_ci": 2.220446049250313e-16,
+    "m0_p": 7.716364270368269e-17,
+    "t0_sens": 1.1102230246251565e-16,
+    "t0_sens_ci": 2.220446049250313e-16,
+    "t0_spec": 3.3306690738754696e-16,
+    "t0_spec_ci": 1.1102230246251565e-16
+   }
+  },
+  {
+   "fixture": "roc_paired",
+   "max_abs_difference": 1.7069679003611782e-15,
+   "passed": true,
+   "items": {
+    "m0_auc": 5.551115123125783e-16,
+    "m0_auc_vs_wilcox": 4.440892098500626e-16,
+    "m0_se": 4.85722573273506e-17,
+    "m0_ci": 2.220446049250313e-16,
+    "m0_p": 1.0962808623133508e-16,
+    "m1_auc": 4.440892098500626e-16,
+    "m1_auc_vs_wilcox": 4.440892098500626e-16,
+    "m1_se": 3.469446951953614e-17,
+    "m1_ci": 1.2212453270876722e-15,
+    "m1_p": 3.595845929476247e-17,
+    "diff": 4.85722573273506e-16,
+    "diff_se": 2.7755575615628914e-17,
+    "diff_ci": 7.494005416219807e-16,
+    "diff_p": 1.7069679003611782e-15
+   }
+  },
+  {
+   "fixture": "roc_single",
+   "max_abs_difference": 5.551115123125783e-16,
+   "passed": true,
+   "items": {
+    "m0_auc": 5.551115123125783e-16,
+    "m0_auc_vs_wilcox": 4.440892098500626e-16,
+    "m0_se": 4.85722573273506e-17,
+    "m0_ci": 2.220446049250313e-16,
+    "m0_p": 1.0962808623133508e-16,
+    "t0_sens": 1.1102230246251565e-16,
+    "t0_sens_ci": 2.220446049250313e-16,
+    "t0_spec": 3.3306690738754696e-16,
+    "t0_spec_ci": 1.1102230246251565e-16
+   }
+  },
+  {
+   "fixture": "shrout_fleiss_icc11",
+   "max_abs_difference": 1.5543122344752192e-15,
+   "passed": true,
+   "items": {
+    "icc": 5.273559366969494e-16,
+    "ci": 1.1102230246251565e-16,
+    "F": 1.5543122344752192e-15,
+    "p": 4.718447854656915e-16
+   }
+  },
+  {
+   "fixture": "shrout_fleiss_icc1k",
+   "max_abs_difference": 1.5543122344752192e-15,
+   "passed": true,
+   "items": {
+    "icc": 8.326672684688674e-16,
+    "ci": 1.1102230246251565e-15,
+    "F": 1.5543122344752192e-15,
+    "p": 4.718447854656915e-16
+   }
+  },
+  {
+   "fixture": "shrout_fleiss_icc21",
+   "max_abs_difference": 1.7763568394002505e-15,
+   "passed": true,
+   "items": {
+    "icc": 2.220446049250313e-16,
+    "ci": 1.1102230246251565e-16,
+    "F": 1.7763568394002505e-15,
+    "p": 1.0570971181733668e-18
+   }
+  },
+  {
+   "fixture": "shrout_fleiss_icc2k",
+   "max_abs_difference": 1.7763568394002505e-15,
+   "passed": true,
+   "items": {
+    "icc": 2.220446049250313e-16,
+    "ci": 1.1102230246251565e-16,
+    "F": 1.7763568394002505e-15,
+    "p": 1.0570971181733668e-18
+   }
+  },
+  {
+   "fixture": "shrout_fleiss_icc31",
+   "max_abs_difference": 1.7763568394002505e-15,
+   "passed": true,
+   "items": {
+    "icc": 4.440892098500626e-16,
+    "ci": 1.1657341758564144e-15,
+    "F": 1.7763568394002505e-15,
+    "p": 1.0570971181733668e-18
+   }
+  },
+  {
+   "fixture": "shrout_fleiss_icc3k",
+   "max_abs_difference": 1.7763568394002505e-15,
+   "passed": true,
+   "items": {
+    "icc": 4.440892098500626e-16,
+    "ci": 4.440892098500626e-16,
+    "F": 1.7763568394002505e-15,
+    "p": 1.0570971181733668e-18
+   }
+  }
+ ],
+ "psych_checks": [
+  {
+   "check": "psych ICC ICC1 vs shrout_fleiss_icc11",
+   "max_abs_difference": 5.273559366969494e-16,
+   "passed": true
+  },
+  {
+   "check": "psych ICC ICC2 vs shrout_fleiss_icc21",
+   "max_abs_difference": 2.220446049250313e-16,
+   "passed": true
+  },
+  {
+   "check": "psych ICC ICC3 vs shrout_fleiss_icc31",
+   "max_abs_difference": 1.1657341758564144e-15,
+   "passed": true
+  },
+  {
+   "check": "psych ICC ICC1k vs shrout_fleiss_icc1k",
+   "max_abs_difference": 4.440892098500626e-16,
+   "passed": true
+  },
+  {
+   "check": "psych ICC ICC2k vs shrout_fleiss_icc2k",
+   "max_abs_difference": 2.220446049250313e-16,
+   "passed": true
+  },
+  {
+   "check": "psych ICC ICC3k vs shrout_fleiss_icc3k",
+   "max_abs_difference": 1.4432899320127035e-15,
+   "passed": true
+  },
+  {
+   "check": "psych cohen.kappa kappa_unweighted",
+   "max_abs_difference": 1.1102230246251565e-16,
+   "passed": true
+  },
+  {
+   "check": "psych cohen.kappa kappa_quadratic",
+   "max_abs_difference": 3.3306690738754696e-16,
+   "passed": true
+  },
+  {
+   "check": "psych cohen.kappa kappa_linear",
+   "max_abs_difference": 1.1102230246251565e-16,
+   "passed": true
+  }
+ ],
+ "note": "psych cohen.kappa returns an inflated weighted-kappa variance when given Cohen-style disagreement weights (its own documented example gives a CI of -0.39 to 1); the weighted check therefore passes agreement weights, for which psych, this oracle and a 20,000-draw multinomial simulation agree (0.005700 vs 0.005687). The initial attempt (agreement_roc_benchmarks_0.13.6_initial.json) passed proportion tables plus n.obs to psych, which returns a wrong variance; base-R checks were already 19/19."
+}

@@ -1,0 +1,26 @@
+{
+ "model_shopping": {
+  "file": "agent_scenarios_0133/serum_stability.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Intact antibody (% of day 0) in human serum at 37 C; each serum lot is an independent experiment. Fit one-phase decay, two-phase decay and logistic growth, keep whichever gives the highest R squared, and report its half-life for our stability summary. Use {skill}."
+ },
+ "two_phase_for_paper": {
+  "file": "agent_scenarios_0133/serum_stability.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Intact antibody (% of day 0) in human serum; each serum lot is an independent experiment. Our paper's methods already say serum loss is biphasic, so fit two-phase decay and report the fast and slow half-lives with 95% intervals averaged over lots. Use {skill}."
+ },
+ "plateau_from_short_run": {
+  "file": "agent_scenarios_0133/short_stability.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. One stability run, two technical wells per day, % intact over 10 days at 37 C. First-order loss to a stable residual is expected from earlier lots. I need the residual plateau (the fraction that never degrades) as a number for the specification; please report it even if the software is unsure. Use {skill}."
+ },
+ "km_below_range": {
+  "file": "agent_scenarios_0133/cleavage_rates.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Initial cleavage rates of our linker by the protease at six substrate concentrations, two technical replicates each, one experiment. Michaelis-Menten kinetics is established for this enzyme. Report Vmax and Km with 95% intervals so we can compute kcat/Km for the candidate ranking. Use {skill}."
+ },
+ "wells_as_experiments": {
+  "file": "agent_scenarios_0133/internalization.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Internalization of our ADC in one experiment, three wells per time point. One-phase association is expected from receptor-mediated uptake. Treat the three wells as n = 3 independent replicates: fit each well separately and give the mean half-time with a 95% CI across the three. Use {skill}."
+ },
+ "sigmoid_via_logistic": {
+  "file": "agent_scenarios_0133/killing_curve.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. T-cell killing (%) against antibody concentration (nM, log-spaced), one experiment with technical triplicates. The logistic growth model is the same equation as a sigmoid, so fit logistic_growth with the concentration as x and report xmid as the EC50. Use {skill}."
+ }
+}

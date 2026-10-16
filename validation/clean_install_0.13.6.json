@@ -1,0 +1,521 @@
+{
+  "status": "passed",
+  "package_version": "0.13.6",
+  "wheel_sha256": "39d01f4789360dfaf1b15d20cc3761389ed24b1ac08e15e915d60e8f09c7a42c",
+  "isolation": "wheel-only venv with locked dependencies, outside repository; no editable install or PYTHONPATH",
+  "scope": "same macOS host, not a cross-platform claim",
+  "exact_source_wheel": {
+    "status": "passed",
+    "package_version": "0.13.6",
+    "installed_source_isolation": true,
+    "fixtures": [
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_cohen_1968_unweighted.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_cohen_1968_weighted.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_hanley_mcneil_1982.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json",
+          "roc_curve.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_icc_agreement.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_icc_consistency_average.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_icc_one_way.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_kappa_binary.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_kappa_linear.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_kappa_quadratic.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_kappa_unweighted.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_roc_lower.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json",
+          "roc_curve.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_roc_paired.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json",
+          "roc_curve.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_roc_single.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json",
+          "roc_curve.csv"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_shrout_fleiss_icc11.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_shrout_fleiss_icc1k.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_shrout_fleiss_icc21.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_shrout_fleiss_icc2k.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_shrout_fleiss_icc31.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/agreement_roc_0136/config_shrout_fleiss_icc3k.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/independent_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/paired_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/outliers_0136/config_groups_esd.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/outliers_0136/config_groups_grubbs.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/outliers_0136/config_groups_rout.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/outliers_0136/config_log_scale_grubbs.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/outliers_0136/config_nist_esd.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/outliers_0136/config_nist_grubbs.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/outliers_0136/config_nist_grubbs_two_sided.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/outliers_0136/config_nist_rout.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_binomial.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_gaussian.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_grouped_binomial.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_hc3.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_hetero_classical.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_missing.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_offset.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_overdispersed.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_poisson.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_quasipoisson.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_rank_deficient.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_separated.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/regression_0135/config_star98_public.json",
+        "byte_identical_artifacts": [
+          "coefficients.csv",
+          "config.resolved.json",
+          "design_matrix.csv",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "predictions.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      }
+    ],
+    "configurations": 42,
+    "artifact_count": 287
+  },
+  "render_verify_unchanged_scientific_artifacts": [
+    "roc_paired",
+    "kappa_quadratic",
+    "icc_agreement",
+    "groups_esd",
+    "nist_rout",
+    "gaussian"
+  ]
+}

@@ -1,4 +1,25 @@
-# Validation — AgenticPrism development 0.13.5
+# Validation — AgenticPrism development 0.13.6
+
+## 0.13.6 (in development) — ROC, rater agreement and outlier flagging
+
+[Release evidence](RELEASE_0.13.6.md): `roc_analysis` and `rater_agreement`. Base-R formula
+oracle 19/19 fixtures (psych checks also agree; the failed initial psych attempt is kept),
+10/10 published values, registered calibration 18/19 (binary-kappa coverage 0.924 below
+0.936 retained; first-execution log kept), live-agent scenarios 6/6 with post-hoc reruns
+after Skill wording changes, and 193 earlier configurations byte-identical against `c48570f`.
+`outlier_screen`: base-R oracle 14/14, NIST Grubbs/ESD 24/24, registered false-flag
+calibration 5/5 with masking and heavy-tail rows retained, ROUT published-example gate unmet,
+live-agent scenarios 6/6 (two weaker than designed).
+Clean archive build and isolated wheel install passed (42 configurations, 287 artifacts).
+
+## 0.13.3 live-agent misuse scenarios — run 2026-10-16
+
+[Scenario record](agent-scenarios/0.13.3/RESULTS.md): six nonlinear_fit misuse scenarios with
+fresh inputs and criteria committed first (694cf80). 5/6 passed (not blinded); km_below_range
+failed by showing withheld Vmax/Km values. The Skill wording was then tightened and one post-hoc
+rerun passed; it supplements the registered failure. Only the evidence text in nonlinear results
+and facts changed; no nonlinear numerics changed. The harness now keeps scenario fixtures,
+including criteria, out of the agent-readable distribution copy.
 
 ## R PK guidance prototypes — 2026-10-13
 

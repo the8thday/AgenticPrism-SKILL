@@ -1,6 +1,6 @@
 ---
 name: agentic-prism
-description: Offer an optional pre-analysis discussion, assess data suitability, and route multivariable regression/GLM or Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM. Route PK/NCA and population PK to prototype R guidance using PKNCA and nlmixr2.
+description: Offer an optional pre-analysis discussion, assess data suitability, and route multivariable regression/GLM or Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM. Also ROC diagnostic accuracy, kappa/ICC rater agreement and prespecified outlier flagging. Route PK/NCA and population PK to prototype R guidance using PKNCA and nlmixr2.
 ---
 
 # AgenticPrism
@@ -194,3 +194,18 @@ Same-donor time-curve AUC uses curve-auc's declared paired design and pair polic
 Single-sample comparisons and geometric-mean/paired-ratio tests go to
 group-comparison's `location_test` contract. Reject invented independent controls,
 technical wells as units, and pseudocounts for zero-valued ratio inputs.
+
+## 0.13.6 routing
+
+Discrimination of a marker, assay or rating against a declared binary reference
+standard (ROC AUC, paired AUC comparison, sensitivity/specificity at declared
+cut-offs) goes to [diagnostic-accuracy](../diagnostic-accuracy/SKILL.md).
+Agreement between raters or operators scoring the same units (Cohen's kappa,
+ICC) goes to [rater-agreement](../rater-agreement/SKILL.md). Agreement between
+two measurement methods on a continuous scale stays with method comparison in
+correlation-regression; correlation is not agreement and agreement is not
+accuracy.
+A prespecified outlier screen of replicate values (Grubbs, generalized ESD, ROUT)
+goes to [outlier-flagging](../outlier-flagging/SKILL.md). It flags and never
+removes data; a request to drop the point that spoils a result is not an outlier
+screen.
