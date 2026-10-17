@@ -11,6 +11,11 @@ fit at 0.5; GRmax is the minimum observed GR at the two highest concentrations;
 GR_AOC is the trapezoid area of 1 - GR over log10 concentration divided by its range.
 GR50 outside the tested range is withheld (no extrapolation). Summaries across
 declared independent experiments use t intervals on log10 GR50 and on GRmax/GR_AOC.
+
+0.14.1 opt-in `fit.grmax_definition: fitted_minimum_top_two`: GRmax is the minimum of the
+selected fit (sigmoid, or the flat level) at the two highest tested concentrations, which
+targets the same quantity without the low bias of a minimum of two noisy observations; the
+authors' observed value is kept as GRmax_observed_audit.
 """
 from copy import deepcopy
 import numpy as np
@@ -21,7 +26,7 @@ TYPES = {'growth_rate_inhibition'}
 DEFAULTS = {'schema_version': 1, 'analysis_type': 'growth_rate_inhibition', 'input': None, 'source': None,
             'design': {'cell_line_rationale': None, 'readout': None, 'concentration_unit': None, 'time_unit': None,
                        'independent_unit': None, 'independence_source': None},
-            'fit': {'alpha': .05}, 'summary': {'confidence_level': .95},
+            'fit': {'alpha': .05, 'grmax_definition': None}, 'summary': {'confidence_level': .95},
             'report': {'plot_style': 'prism_like'}}
 KEYS = ['cell_line', 'agent', 'time', 'experiment']
 
@@ -42,6 +47,9 @@ def resolve_config(raw):
     for name, v in [('input', c['input']), ('source', c['source']), *c['design'].items()]:
         if not _text(v): raise ValueError('Declare ' + name)
     if c['fit']['alpha'] != .05: raise ValueError('The flat-fit test uses the published alpha 0.05')
+    gd = c['fit']['grmax_definition']
+    if gd is None: c['fit'].pop('grmax_definition')  # unused 0.14.1 key: resolved configurations stay as in 0.14.0
+    elif gd not in ('observed_minimum_top_two', 'fitted_minimum_top_two'): raise ValueError('grmax_definition must be observed_minimum_top_two (authors) or fitted_minimum_top_two')
     lv = c['summary']['confidence_level']
     if type(lv) not in (int, float) or not .5 < lv < 1: raise ValueError('Invalid confidence level')
     if c['report']['plot_style'] not in ('standard', 'prism_like'): raise ValueError('Invalid plot style')
@@ -87,7 +95,7 @@ def _fit(fn, c, y, prior, bounds):
     return optimize.minimize(rss, prior, bounds=bounds, method='L-BFGS-B', options={'ftol': 1e-15, 'gtol': 1e-12, 'maxiter': 20000})
 
 
-def fit_curve(conc, gr, alpha=.05):
+def fit_curve(conc, gr, alpha=.05, grmax_definition=None):
     order = np.argsort(conc, kind='mergesort'); c, y = np.asarray(conc, float)[order], np.asarray(gr, float)[order]; n = len(c)
     bounds = [(-1, 1), tuple(np.log10([c.min()/100, c.max()*100])), (.1, 5)]
     prior = np.array([.1, np.log10(np.median(c)), 2.])
@@ -111,6 +119,9 @@ def fit_curve(conc, gr, alpha=.05):
         gr50 = 10**lmid*((.5 - 1)/(einf - .5))**(1/h) if min(1, einf) <= .5 <= max(1, einf) else float('inf')
         out.update(fit='sigmoid', GRinf=float(einf), GEC50=float(10**lmid), h_GR=float(h), r2=1 - rss2/tss if tss > 0 else None,
                    GR50_audit=float(gr50))
+    if grmax_definition == 'fitted_minimum_top_two':
+        top = np.full(2, out['GRinf']) if out['fit'] == 'flat' else logistic(c[-2:], best.x)
+        out.update(GRmax_observed_audit=out['GRmax'], GRmax=float(min(top)), GRmax_definition='fitted_minimum_top_two')
     g = out['GR50_audit']; lo, hi = out['tested_range']
     if out['fit'] == 'flat':
         out.update(GR50=None, GR50_status='flat_fit_no_concentration_response')
@@ -140,7 +151,7 @@ def compute(d, c):
         if part.concentration.nunique() < 5:
             rec.update(status='withheld', reportable=False, reason='fewer_than_5_concentrations'); fits.append(rec)
             failing.append({**{k: rec[k] for k in KEYS}, 'reason': rec['reason']}); continue
-        f = fit_curve(part.concentration.to_numpy(float), part.GR.to_numpy(float), c['fit']['alpha'])
+        f = fit_curve(part.concentration.to_numpy(float), part.GR.to_numpy(float), c['fit']['alpha'], c['fit'].get('grmax_definition'))
         if not np.isfinite(f['GR50_audit']): f['GR50_audit'] = 'inf' if f['GR50_audit'] > 0 else '-inf'  # JSON has no infinity (post-freeze format fix)
         rec.update(f, status='estimated', reportable=True, control_fold_growth=float(growth), diagnostics=diag)
         fits.append(rec)
@@ -167,6 +178,8 @@ def compute(d, c):
              'Independent unit for summaries: ' + c['design']['independent_unit'] + ' (' + c['design']['independence_source'] + '). Replicate wells within one plate are not experiments.',
              'GR values near -1 indicate cell death; GR between 0 and 1 is partial growth inhibition (cytostatic). GRinf and GRmax describe efficacy; GEC50/GR50 describe potency.']
     if any('control_less_than_one_doubling' in f.get('diagnostics', []) for f in fits): notes.append('Some untreated controls grew less than one doubling; GR values are noisy when control growth is small.')
+    if c['fit'].get('grmax_definition') == 'fitted_minimum_top_two':
+        notes.append('GRmax here is the declared fitted definition: the minimum of the selected fit at the two highest tested concentrations (not the authors\' minimum of two observed values, which is biased low under noise and is kept as GRmax_observed_audit). It is not an extrapolation beyond the tested range.')
     if any(f.get('fit') == 'flat' for f in fits): notes.append('Curves with a non-significant concentration response were fitted flat; their GEC50 and GR50 are not defined.')
     if failing: notes.append('Withheld curves: ' + '; '.join(f"{x['cell_line']}/{x['agent']}/{x['experiment']} ({x['reason']})" for x in failing) + '.')
     primary = {'status': 'estimated' if any(f['reportable'] for f in fits) else 'withheld', 'reportable': any(f['reportable'] for f in fits),

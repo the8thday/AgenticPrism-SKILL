@@ -1,0 +1,64 @@
+{
+ "status": "passed",
+ "tolerance": 1e-06,
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "oracle": "scripts/receptor_occupancy_0142_oracle.R",
+ "checks": [
+  {
+   "fixture": "bound_saturation",
+   "passed": true,
+   "max_abs_difference": 1.0087221280485892e-08,
+   "items": {
+    "sample_ro": 3.126388037344441e-13,
+    "summary_mean": 1.7053025658242404e-13,
+    "summary_ci": 2.984279490192421e-13,
+    "ec50_relative": 1.0087221280485892e-08,
+    "bootstrap_reproducible": 0.0
+   }
+  },
+  {
+   "fixture": "free_baseline_dose_groups",
+   "passed": true,
+   "max_abs_difference": 6.138300978619782e-10,
+   "items": {
+    "sample_ro": 5.684341886080802e-14,
+    "summary_mean": 5.684341886080802e-14,
+    "summary_ci": 5.684341886080802e-14,
+    "ec50_relative": 6.138300978619782e-10,
+    "bootstrap_reproducible": 0.0
+   }
+  },
+  {
+   "fixture": "free_baseline_internalization",
+   "passed": true,
+   "max_abs_difference": 3.268496584496461e-13,
+   "items": {
+    "sample_ro": 4.973799150320701e-14,
+    "summary_mean": 5.684341886080802e-14,
+    "summary_ci": 3.268496584496461e-13
+   }
+  },
+  {
+   "fixture": "free_over_total_internalization",
+   "passed": true,
+   "max_abs_difference": 9.255689548126611e-10,
+   "items": {
+    "sample_ro": 4.973799150320701e-14,
+    "summary_mean": 4.973799150320701e-14,
+    "summary_ci": 7.105427357601002e-14,
+    "ec50_relative": 9.255689548126611e-10,
+    "bootstrap_reproducible": 0.0
+   }
+  },
+  {
+   "fixture": "too_few_subjects_exposure",
+   "passed": true,
+   "max_abs_difference": 4.973799150320701e-14,
+   "items": {
+    "sample_ro": 4.973799150320701e-14,
+    "summary_mean": 4.263256414560601e-14,
+    "summary_ci": 4.263256414560601e-14
+   }
+  }
+ ]
+}

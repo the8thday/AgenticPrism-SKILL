@@ -1,0 +1,25 @@
+{
+ "analysis_type": "censored_comparison",
+ "method": "censored_sign_test",
+ "input": "paired_heavy_sign_test.csv",
+ "source": "Synthetic fixture (seed 14110); not team data",
+ "design": {
+  "unit": "donor",
+  "rationale": "Pre- and post-dose serum from the same donor",
+  "outcome": "IL-6",
+  "outcome_unit": "pg/mL",
+  "limit_source": "Sample-specific LLOQ x dilution from the validated assay report (synthetic declaration)"
+ },
+ "comparison": {
+  "groups": [
+   "pre",
+   "post"
+  ],
+  "reference": "pre"
+ },
+ "paired": {
+  "scale": "log",
+  "scale_rationale": "Cytokine concentrations are right-skewed; effects are multiplicative (declared before results)",
+  "pairing_rationale": "Same donor sampled before and after dosing"
+ }
+}

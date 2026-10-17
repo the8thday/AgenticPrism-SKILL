@@ -1,0 +1,315 @@
+{
+ "status": "passed",
+ "oracle_status": "passed",
+ "published_status": "not_all_match_printed_precision",
+ "published_example": {
+  "source": "https://cdn.graphpad.com/faq/1757/file/P4-Competitive%20inhibition.pdf",
+  "sha256": "3e46f8b57256d2bfeed8a2bb923c1aabc7eced3aaf30643ff5bea32c52b63013",
+  "citation": "GraphPad Prism 4 Step-by-Step Examples, Computing Ki for a Competitive Enzyme Inhibitor (adapted from Miller 2003)",
+  "comparison": {
+   "Km": {
+    "printed": 236.7,
+    "this_implementation": 236.66637439641073,
+    "rounded": 236.7,
+    "matches_printed": true
+   },
+   "Ki": {
+    "printed": 2.744,
+    "this_implementation": 2.742607898347742,
+    "rounded": 2.743,
+    "matches_printed": false
+   },
+   "Vmax": {
+    "printed": 79.92,
+    "this_implementation": 79.925074353494,
+    "rounded": 79.93,
+    "matches_printed": false
+   }
+  },
+  "residual_ss": {
+   "this_implementation": 118.23296706095132,
+   "at_printed_values": 118.23331275425832
+  },
+  "note": "Printed values compared after rounding to the printed significant digits; residual SS at the printed values shows which is the least-squares minimum."
+ },
+ "oracle": "scripts/enzyme_0142_oracle.R (base R nls on log parameters, profile confint)",
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "tolerance_relative": 0.0001,
+ "checks": [
+  {
+   "case": "graphpad",
+   "experiment": "GraphPad",
+   "mechanism": "competitive",
+   "passed": true,
+   "max_rel_difference": 1.98135333318028e-06,
+   "items": {
+    "Vmax_estimate": 7.206273355819803e-10,
+    "Vmax_lower": 8.790807437542014e-08,
+    "Vmax_upper": 1.420689299536093e-07,
+    "Km_estimate": 2.2808194222179168e-09,
+    "Km_lower": 7.078196690990524e-07,
+    "Km_upper": 1.98135333318028e-06,
+    "Ki_estimate": 7.844367377884964e-10,
+    "Ki_lower": 7.305105195198891e-07,
+    "Ki_upper": 6.012022418788732e-07,
+    "ss": 2.6645352591003757e-15
+   }
+  },
+  {
+   "case": "competitive_three_experiments",
+   "experiment": "E1",
+   "mechanism": "competitive",
+   "passed": true,
+   "max_rel_difference": 1.4773768930442799e-06,
+   "items": {
+    "Vmax_estimate": 6.200818747359449e-10,
+    "Vmax_lower": 1.289883270194636e-07,
+    "Vmax_upper": 1.1212877348842909e-07,
+    "Km_estimate": 1.5463373914670342e-09,
+    "Km_lower": 4.090440988147037e-07,
+    "Km_upper": 5.028265515072405e-07,
+    "Ki_estimate": 1.4599377262669577e-09,
+    "Ki_lower": 1.4773768930442799e-06,
+    "Ki_upper": 1.0741475913178533e-06,
+    "ss": 2.3314683517128287e-15
+   }
+  },
+  {
+   "case": "competitive_three_experiments",
+   "experiment": "E2",
+   "mechanism": "competitive",
+   "passed": true,
+   "max_rel_difference": 1.4384967552683037e-06,
+   "items": {
+    "Vmax_estimate": 3.3309959235339193e-09,
+    "Vmax_lower": 1.2736890175890636e-07,
+    "Vmax_upper": 1.0564037333793408e-07,
+    "Km_estimate": 7.66584939970727e-09,
+    "Km_lower": 4.097874843900229e-07,
+    "Km_upper": 5.226785138034984e-07,
+    "Ki_estimate": 9.220232133344552e-09,
+    "Ki_lower": 1.4384967552683037e-06,
+    "Ki_upper": 1.0874027723817292e-06,
+    "ss": 5.329070518200751e-15
+   }
+  },
+  {
+   "case": "competitive_three_experiments",
+   "experiment": "E3",
+   "mechanism": "competitive",
+   "passed": true,
+   "max_rel_difference": 1.909361776131213e-06,
+   "items": {
+    "Vmax_estimate": 1.02874031515654e-09,
+    "Vmax_lower": 1.809410367092923e-07,
+    "Vmax_upper": 1.5613000148295697e-07,
+    "Km_estimate": 8.06135003195152e-09,
+    "Km_lower": 5.447991215934422e-07,
+    "Km_upper": 6.842381961025268e-07,
+    "Ki_estimate": 1.2962583673115091e-08,
+    "Ki_lower": 1.909361776131213e-06,
+    "Ki_upper": 1.3428811197480073e-06,
+    "ss": 6.661338147750939e-16
+   }
+  },
+  {
+   "case": "declared_rejected",
+   "experiment": "E1",
+   "mechanism": "competitive",
+   "passed": true,
+   "max_rel_difference": 5.255457766084604e-06,
+   "items": {
+    "Vmax_estimate": 2.3799909731891944e-07,
+    "Vmax_lower": 3.261503696005974e-07,
+    "Vmax_upper": 2.4676653748167965e-06,
+    "Km_estimate": 7.412075582191591e-07,
+    "Km_lower": 2.7088086183013615e-06,
+    "Km_upper": 3.589009092586082e-06,
+    "Ki_estimate": 8.806234896852061e-08,
+    "Ki_lower": 1.5568076467964431e-06,
+    "Ki_upper": 5.255457766084604e-06,
+    "ss": 6.104006189389111e-13
+   }
+  },
+  {
+   "case": "declared_rejected",
+   "experiment": "E2",
+   "mechanism": "competitive",
+   "passed": true,
+   "max_rel_difference": 9.819011408618294e-06,
+   "items": {
+    "Vmax_estimate": 4.551466030733309e-07,
+    "Vmax_lower": 4.2126083510396484e-07,
+    "Vmax_upper": 2.2595955737614304e-06,
+    "Km_estimate": 4.0900008679845e-07,
+    "Km_lower": 9.819011408618294e-06,
+    "Km_upper": 3.1305745000764773e-06,
+    "Ki_estimate": 2.1629907391851333e-06,
+    "Ki_lower": 1.3654129435991536e-06,
+    "Ki_upper": 4.621188449460689e-06,
+    "ss": 6.5601968302075875e-12
+   }
+  },
+  {
+   "case": "mixed_declared",
+   "experiment": "E1",
+   "mechanism": "mixed",
+   "passed": true,
+   "max_rel_difference": 1.0169945322879848e-05,
+   "items": {
+    "Vmax_estimate": 2.5327671071551094e-09,
+    "Vmax_lower": 2.436903272506896e-07,
+    "Vmax_upper": 1.8665810530560378e-07,
+    "Km_estimate": 1.6405504954519756e-08,
+    "Km_lower": 4.2444095837979035e-07,
+    "Km_upper": 5.381124512648938e-07,
+    "Ki_estimate": 9.270753009715804e-08,
+    "Ki_lower": 1.0169945322879848e-05,
+    "Ki_upper": 1.3178016711190566e-06,
+    "alpha_estimate": 1.6464551311212716e-07,
+    "alpha_lower": 1.81079435179754e-06,
+    "alpha_upper": 8.47345784582565e-06,
+    "ss": 2.3425705819590803e-14
+   }
+  },
+  {
+   "case": "mixed_declared",
+   "experiment": "E2",
+   "mechanism": "mixed",
+   "passed": true,
+   "max_rel_difference": 9.044533260893495e-06,
+   "items": {
+    "Vmax_estimate": 1.0671872274770067e-09,
+    "Vmax_lower": 2.645450432048335e-07,
+    "Vmax_upper": 2.008488396709751e-07,
+    "Km_estimate": 6.238286665016801e-09,
+    "Km_lower": 3.8597957963126817e-07,
+    "Km_upper": 4.7460860952419637e-07,
+    "Ki_estimate": 2.362816942103052e-08,
+    "Ki_lower": 9.044533260893495e-06,
+    "Ki_upper": 1.4527795670904453e-06,
+    "alpha_estimate": 4.0978062054719544e-08,
+    "alpha_lower": 8.117603725876776e-07,
+    "alpha_upper": 4.508884576925887e-06,
+    "ss": 6.661338147750939e-16
+   }
+  },
+  {
+   "case": "mixed_declared",
+   "experiment": "E3",
+   "mechanism": "mixed",
+   "passed": true,
+   "max_rel_difference": 1.2663841839288814e-05,
+   "items": {
+    "Vmax_estimate": 1.427679752197264e-09,
+    "Vmax_lower": 3.444364681248757e-07,
+    "Vmax_upper": 2.509909792225429e-07,
+    "Km_estimate": 8.453780009354261e-09,
+    "Km_lower": 5.085813856720023e-07,
+    "Km_upper": 6.383741695259459e-07,
+    "Ki_estimate": 4.782040030626433e-08,
+    "Ki_lower": 1.2663841839288814e-05,
+    "Ki_upper": 4.989165092617043e-06,
+    "alpha_estimate": 8.502396897647202e-08,
+    "alpha_lower": 3.0996440871788877e-06,
+    "alpha_upper": 5.598951264951246e-06,
+    "ss": 6.328271240363392e-15
+   }
+  },
+  {
+   "case": "tight_binding",
+   "experiment": "E1",
+   "mechanism": "competitive",
+   "passed": true,
+   "max_rel_difference": 1.7608567488558435e-06,
+   "items": {
+    "Vmax_estimate": 4.100367823056672e-10,
+    "Vmax_lower": 1.800311238975283e-07,
+    "Vmax_upper": 1.5316422996569656e-07,
+    "Km_estimate": 2.384971886648657e-09,
+    "Km_lower": 5.518615866506593e-07,
+    "Km_upper": 6.583288016948075e-07,
+    "Ki_estimate": 3.0614295543074377e-09,
+    "Ki_lower": 1.7608567488558435e-06,
+    "Ki_upper": 1.3674205433522602e-06,
+    "ss": 3.3306690738754696e-16
+   }
+  },
+  {
+   "case": "tight_binding",
+   "experiment": "E2",
+   "mechanism": "competitive",
+   "passed": true,
+   "max_rel_difference": 1.701314848445712e-06,
+   "items": {
+    "Vmax_estimate": 4.0672198942104387e-10,
+    "Vmax_lower": 1.5942356124121204e-07,
+    "Vmax_upper": 1.3576425328398756e-07,
+    "Km_estimate": 2.8201255775073264e-09,
+    "Km_lower": 4.096419319310485e-07,
+    "Km_upper": 4.880119057748544e-07,
+    "Ki_estimate": 4.1394803140804015e-09,
+    "Ki_lower": 1.701314848445712e-06,
+    "Ki_upper": 1.2333850836210303e-06,
+    "ss": 9.992007221626409e-16
+   }
+  },
+  {
+   "case": "uncompetitive",
+   "experiment": "E1",
+   "mechanism": "uncompetitive",
+   "passed": true,
+   "max_rel_difference": 7.509073571831948e-07,
+   "items": {
+    "Vmax_estimate": 5.771325528591831e-09,
+    "Vmax_lower": 7.287504721897875e-08,
+    "Vmax_upper": 8.260463324472056e-08,
+    "Km_estimate": 3.090104383485226e-08,
+    "Km_lower": 1.5783961226922827e-07,
+    "Km_upper": 8.1433180199042e-08,
+    "Ki_estimate": 6.534367047450473e-09,
+    "Ki_lower": 7.509073571831948e-07,
+    "Ki_upper": 5.313359362490999e-07,
+    "ss": 1.9095836023552692e-14
+   }
+  },
+  {
+   "case": "uncompetitive",
+   "experiment": "E2",
+   "mechanism": "uncompetitive",
+   "passed": true,
+   "max_rel_difference": 6.84847923260179e-07,
+   "items": {
+    "Vmax_estimate": 6.257798723652286e-10,
+    "Vmax_lower": 7.310397609483488e-08,
+    "Vmax_upper": 1.1030797053557251e-07,
+    "Km_estimate": 1.7660073403646948e-09,
+    "Km_lower": 1.4782314261552187e-07,
+    "Km_upper": 5.961155724598655e-08,
+    "Ki_estimate": 1.456237797015092e-09,
+    "Ki_lower": 6.84847923260179e-07,
+    "Ki_upper": 4.7602987995887247e-07,
+    "ss": 8.881784197001252e-16
+   }
+  },
+  {
+   "case": "uncompetitive",
+   "experiment": "E3",
+   "mechanism": "uncompetitive",
+   "passed": true,
+   "max_rel_difference": 1.171601577087955e-06,
+   "items": {
+    "Vmax_estimate": 2.8067966839628866e-09,
+    "Vmax_lower": 1.6264345992222928e-07,
+    "Vmax_upper": 1.8543747137833577e-07,
+    "Km_estimate": 1.4460094011070623e-08,
+    "Km_lower": 1.7879657043806674e-07,
+    "Km_upper": 4.1751481161256265e-09,
+    "Ki_estimate": 3.426632200209667e-09,
+    "Ki_lower": 1.171601577087955e-06,
+    "Ki_upper": 8.365522601305742e-07,
+    "ss": 4.107825191113079e-15
+   }
+  }
+ ]
+}

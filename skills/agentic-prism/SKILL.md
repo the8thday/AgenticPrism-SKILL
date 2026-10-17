@@ -1,6 +1,6 @@
 ---
 name: agentic-prism
-description: Offer an optional pre-analysis discussion, assess data suitability, and route multivariable regression/GLM or Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM. Also ROC, kappa/ICC agreement, outlier flagging, below-LLOQ censored comparisons, multi-candidate potency ranking, GR metrics and multi-outcome panels. Route PK/NCA and population PK to prototype R guidance using PKNCA and nlmixr2.
+description: Offer an optional pre-analysis discussion, assess data suitability, and route multivariable regression/GLM or Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM. Also ROC, kappa/ICC agreement, outlier flagging, below-LLOQ censored comparisons, multi-candidate potency ranking, GR metrics, multi-outcome panels, enzyme Ki and receptor occupancy. Route PK/NCA and population PK to prototype R guidance using PKNCA and nlmixr2.
 ---
 
 # AgenticPrism
@@ -209,6 +209,22 @@ A prespecified outlier screen of replicate values (Grubbs, generalized ESD, ROUT
 goes to [outlier-flagging](../outlier-flagging/SKILL.md). It flags and never
 removes data; a request to drop the point that spoils a result is not an outlier
 screen.
+
+## 0.14.3 routing
+
+A potent inhibitor titrated at one substrate concentration where Ki may be near the
+enzyme concentration (tight binding) goes to enzyme-inhibition's Morrison option, not
+dose-response. For a receptor-occupancy EC50, use that Skill's cluster-robust interval.
+
+## 0.14.2 routing
+
+Enzyme initial rates measured across substrate and inhibitor concentrations, to
+estimate Ki or describe the inhibition mechanism, go to
+[enzyme-inhibition](../enzyme-inhibition/SKILL.md); an IC50 at one substrate
+concentration stays in dose-response. Flow-cytometry receptor occupancy (free,
+total or bound-drug MFI) from dosed subjects goes to
+[receptor-occupancy](../receptor-occupancy/SKILL.md); in vitro binding KD stays in
+equilibrium-binding or cell-binding.
 
 ## 0.14.0 routing
 

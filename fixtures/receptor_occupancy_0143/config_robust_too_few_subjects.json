@@ -1,0 +1,22 @@
+{
+ "analysis_type": "receptor_occupancy",
+ "input": "too_few_subjects_exposure.csv",
+ "source": "Synthetic fixture (seed 14220); not team data",
+ "design": {
+  "receptor": "PD-1 (synthetic)",
+  "drug": "anti-PD-1 IgG4 (synthetic)",
+  "cell_population": "CD3+ T cells, whole blood",
+  "subject_unit": "cynomolgus monkey",
+  "matrix": "whole blood, stained within 4 h of collection"
+ },
+ "method": {
+  "name": "free_baseline",
+  "rationale": "Format chosen in the assay plan before dosing (synthetic declaration)",
+  "reagent_evidence": "Free-receptor reagent (clone EH12) competes with the drug for the same epitope (competition data, report RO-07; synthetic)"
+ },
+ "exposure_response": {
+  "concentration_unit": "ug/mL",
+  "rationale": "Occupancy expected to follow one-site binding with full occupancy at saturation (synthetic declaration)",
+  "interval": "cluster_robust_t"
+ }
+}

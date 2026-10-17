@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.14.3 (in development) — RO EC50 interval and Morrison tight binding
+
+- `receptor-occupancy` opt-in `exposure_response.interval: cluster_robust_t`: CR2 cluster-robust EC50 interval with Satterthwaite df (subject as cluster). R clubSandwich oracle 5/5; registered calibration 3/3 (0.953/0.963/0.961 among reportable fits, against 0.878/0.888 for the 0.14.2 bootstrap on the same draws), after a disclosed pilot. Default unchanged. See `validation/RELEASE_0.14.3.md`.
+- `enzyme-inhibition` opt-in `tight_binding` (Morrison): single-substrate inhibitor titrations with fixed or estimated active enzyme, Ki from the declared mechanism and Km. Base-R exact-profile oracle 13/13 (first `confint` comparison failed, kept); registered calibration 7/8 (Ki calibrated; active-enzyme coverage 0.822 retained, post hoc from open lower limits). Published-example gates unmet.
+- Rapid-equilibrium enzyme outputs no longer say Morrison is not implemented (text only). Live-agent scenarios 6/6. Legacy check: 257 configurations, 1,790 artifacts byte-identical against 0.14.2.
+
+## 0.14.2 (in development) — enzyme inhibition and receptor occupancy
+
+- New `enzyme_inhibition` and `enzyme-inhibition` Skill: declared competitive/noncompetitive/uncompetitive/mixed global fits of initial rates, profile-F intervals, descriptive model comparison, tight-binding and range gates. GraphPad's published competitive example: Km matches, Ki and Vmax one unit off in the last printed digit (printed fit slightly short of the least-squares minimum); base-R nls oracle 14/14; registered calibration 9/10 (summary Ki coverage miss from withholding retained, with a post-hoc breakdown). See `validation/RELEASE_0.14.2.md`.
+- New `receptor_occupancy` and `receptor-occupancy` Skill: flow-cytometry RO by free/baseline, free/total or bound/saturation with declared background and no clipping; subject-level summaries; optional exposure-occupancy EC50. Base-R oracle 5/5; registered calibration 3/5 — group-mean RO calibrated, EC50 cluster-bootstrap interval too narrow with 6–8 subjects (misses retained and stated in every run). Published-example gate unmet.
+- Live-agent misuse scenarios 6/6. Legacy check: 247 configurations, 1,750 artifacts byte-identical against 0.14.1.
+
+## 0.14.1 (in development) — closing the 0.14.0 follow-ups
+
+- `censored-data` paired designs: Helsel's censored paired difference (NADA2 `cen_paired`; log or original scale) and censored sign test (NADA2 `cen_signtest`, Fong correction shown). NADA2 reference code and R survival 10/10, including NADA2's atrazine data. First registered calibration (Wald z, as NADA2) passed 2/7 bounded metrics (5 misses, kept); the new small-sample t default passed a second registered calibration 7/7. Published-example gate unmet. See `validation/RELEASE_0.14.1.md`.
+- `panel-comparison` censored outcomes (opt-in `censoring` block): outcomes with values beyond quantification limits use censored lognormal ML with a small-sample t correction (independent or paired); others keep the t test. R survival oracle 24/24; registered calibration 9/9 (FWER, FDR, coverage). Published-example gate unmet.
+- `growth-rate-inhibition` opt-in `fit.grmax_definition: fitted_minimum_top_two`: GRmax from the selected fit at the two highest doses; registered calibration 3/3 with mean bias near zero (authors' observed definition −0.007 to −0.037 on the same draws); runs high with under one control doubling (disclosed). Default unchanged.
+- Live-agent misuse scenarios for the three additions: 6/6 (one weaker than designed). Legacy check: 235 configurations, 1,689 artifacts byte-identical against 0.14.0.
+
 ## 0.14.0 (in development) — discovery batch
 
 - New `censored_comparison` and `censored-data` Skill: group comparisons with values below/above quantification limits kept as censored (censored lognormal ML with geometric-mean ratios, or Peto-Peto rank test); no substitution. R survival oracle 6/6; registered calibration 10/10 with a retained convergence-check defect (fixed, post-hoc rerun 10/10); published-example gate unmet; live-agent scenarios 6/6. See `validation/RELEASE_0.14.0.md`.

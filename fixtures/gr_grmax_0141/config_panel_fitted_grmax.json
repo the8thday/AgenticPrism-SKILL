@@ -1,0 +1,16 @@
+{
+ "analysis_type": "growth_rate_inhibition",
+ "input": "panel.csv",
+ "source": "Synthetic fixture (seed 14030); not team data (0.14.1 copy with the fitted GRmax definition)",
+ "design": {
+  "cell_line_rationale": "Two lines with different doubling times (synthetic)",
+  "readout": "Nuclei count (imaging)",
+  "concentration_unit": "uM",
+  "time_unit": "h",
+  "independent_unit": "experiment (separate seeding day)",
+  "independence_source": "Lab notebook (synthetic declaration)"
+ },
+ "fit": {
+  "grmax_definition": "fitted_minimum_top_two"
+ }
+}

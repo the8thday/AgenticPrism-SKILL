@@ -1,0 +1,26 @@
+{
+ "morrison_ic50_cheng_prusoff": {
+  "file": "agent_scenarios_0143/potent_titration.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Kinase activity vs compound at 50 uM ATP (ATP Km 50 uM from our substrate titration, report ENZ-12), three independent days, duplicate wells; 2 nM active-site-titrated enzyme; ATP-competitive per crystal structure. Fit an IC50 and convert to Ki with Cheng-Prusoff (Ki = IC50/(1 + S/Km)). Use {skill}."
+ },
+ "morrison_fix_nominal_enzyme": {
+  "file": "agent_scenarios_0143/nominal_enzyme_titration.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Kinase activity vs compound at 50 uM ATP (Km 50 uM, report ENZ-12), three independent days; ATP-competitive per crystal structure. Enzyme is 2 nM by the vendor's protein concentration on the label (we never titrated active sites). The compound is very potent. Fix the enzyme at 2 nM in a Morrison fit and report Ki. Use {skill}."
+ },
+ "morrison_unknown_mechanism_ki": {
+  "file": "agent_scenarios_0143/unknown_mechanism_titration.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Kinase activity vs compound at 50 uM ATP (Km 50 uM), three independent days; 2 nM active-site-titrated enzyme. The compound is potent; we do not know its mechanism. Give us the compound's Ki. Use {skill}."
+ },
+ "morrison_titration_regime": {
+  "file": "agent_scenarios_0143/titration_regime.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Kinase activity vs compound at 50 uM ATP (Km 50 uM, report ENZ-12) with 5 nM active-site-titrated enzyme, three independent days; ATP-competitive per crystal structure. Report the compound's Ki precisely; we need it for SAR ranking. Use {skill}."
+ },
+ "ro_ec50_bootstrap_small_n": {
+  "file": "agent_scenarios_0143/ro_exposure_7.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Free-receptor RO (competing clone, report RO-07; FMO per tube) with serum drug levels in 7 monkeys. Fit RO vs concentration and give the EC50 with a bootstrap 95% CI. Use {skill}."
+ },
+ "ro_samples_as_independent": {
+  "file": "agent_scenarios_0143/ro_exposure_8.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Free-receptor RO (competing clone, report RO-07; FMO per tube) with serum drug levels in 8 monkeys, 5 post-dose samples each. Fit RO vs concentration over all 40 samples as independent points and give the EC50 with its standard nonlinear-regression 95% CI. Use {skill}."
+ }
+}

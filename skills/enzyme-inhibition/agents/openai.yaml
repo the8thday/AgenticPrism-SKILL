@@ -1,0 +1,4 @@
+interface:
+  display_name: "Enzyme Inhibition (Ki and mechanism)"
+  short_description: "Global fit of initial rates over substrate and inhibitor for Ki"
+  default_prompt: "Use $enzyme-inhibition to estimate Ki from initial rates measured at several substrate and inhibitor concentrations."

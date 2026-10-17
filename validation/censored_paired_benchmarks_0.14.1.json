@@ -1,0 +1,150 @@
+{
+ "status": "passed",
+ "tolerance_full_precision": 1e-06,
+ "printed_values": "NADA2 rounds Z to 4 decimals and p/mean to 4 significant digits; this implementation rounded the same way must match exactly",
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "survival_version": "3.8.6",
+ "nada2": {
+  "source": "https://cran.r-project.org/src/contrib/NADA2_2.0.2.tar.gz",
+  "sha256": "ad64872f4e3e76f6c5871df1a1aed7b2ddebb358ac04fbfd624eaea69a931429",
+  "use": "sourced cen_paired.R and cen_signtest.R; plotting stubbed; not installed or redistributed"
+ },
+ "oracle": "scripts/censored_paired_0141_oracle.R",
+ "checks": [
+  {
+   "case": "paired_heavy_censoring",
+   "inference": "small_sample_t",
+   "passed": true,
+   "max_abs_difference_full_precision": 1.6533663327322756e-11,
+   "items": {
+    "mean": 1.6533663327322756e-11,
+    "se_ml": 1.7323920076250943e-12,
+    "sd": 7.293277093367578e-12,
+    "loglik": 1.7763568394002505e-15,
+    "p": 9.333922523779847e-12
+   },
+   "r_iterations": 4
+  },
+  {
+   "case": "paired_heavy_sign_test",
+   "inference": "small_sample_t",
+   "passed": true,
+   "max_abs_difference_full_precision": 0.0,
+   "items": {
+    "p_exact": 0.0,
+    "p_vs_nada2_printed": 0.0,
+    "p_fong_vs_nada2_printed": 0.0
+   },
+   "r_iterations": null
+  },
+  {
+   "case": "paired_log_two_limits",
+   "inference": "small_sample_t",
+   "passed": true,
+   "max_abs_difference_full_precision": 2.2464918814080193e-11,
+   "items": {
+    "mean": 2.2464918814080193e-11,
+    "se_ml": 2.9966584769169913e-12,
+    "sd": 9.304668147080974e-12,
+    "loglik": 3.907985046680551e-14,
+    "p": 1.621234613571887e-15
+   },
+   "r_iterations": 7
+  },
+  {
+   "case": "paired_original",
+   "inference": "small_sample_t",
+   "passed": true,
+   "max_abs_difference_full_precision": 6.891243131690317e-11,
+   "items": {
+    "mean": 6.891243131690317e-11,
+    "se_ml": 7.596201445636552e-12,
+    "sd": 1.0271117290017173e-11,
+    "loglik": 3.552713678800501e-15,
+    "p": 5.472689358979044e-14,
+    "Z_vs_nada2_printed": 0.0,
+    "mean_vs_nada2_printed": 0.0
+   },
+   "r_iterations": 7
+  },
+  {
+   "case": "paired_sign_test",
+   "inference": "small_sample_t",
+   "passed": true,
+   "max_abs_difference_full_precision": 0.0,
+   "items": {
+    "p_exact": 0.0,
+    "p_vs_nada2_printed": 0.0,
+    "p_fong_vs_nada2_printed": 0.0
+   },
+   "r_iterations": null
+  },
+  {
+   "case": "paired_sparse_withheld",
+   "inference": "small_sample_t",
+   "passed": true,
+   "max_abs_difference_full_precision": 0.0,
+   "items": {
+    "withheld_agreement": 0.0
+   },
+   "r_iterations": null
+  },
+  {
+   "case": "paired_wald_z",
+   "inference": "wald_z",
+   "passed": true,
+   "max_abs_difference_full_precision": 2.2464918814080193e-11,
+   "items": {
+    "mean": 2.2464918814080193e-11,
+    "se_ml": 2.9966584769169913e-12,
+    "sd": 9.304668147080974e-12,
+    "loglik": 3.907985046680551e-14,
+    "p": 5.625940723284472e-19
+   },
+   "r_iterations": 7
+  },
+  {
+   "case": "atrazine_original",
+   "inference": "wald_z",
+   "passed": true,
+   "max_abs_difference_full_precision": 2.586305454244098e-07,
+   "items": {
+    "mean": 4.5918824298496475e-12,
+    "se_ml": 2.586305454244098e-07,
+    "sd": 8.292033726320369e-12,
+    "loglik": 6.536993168992922e-13,
+    "p": 3.4529909320735186e-08,
+    "Z_vs_nada2_printed": 0.0,
+    "mean_vs_nada2_printed": 0.0,
+    "p_vs_nada2_printed": 0.0
+   },
+   "r_iterations": 7
+  },
+  {
+   "case": "atrazine_log",
+   "inference": "small_sample_t",
+   "passed": true,
+   "max_abs_difference_full_precision": 5.781808365412644e-11,
+   "items": {
+    "mean": 1.1454837078872515e-11,
+    "se_ml": 5.781808365412644e-11,
+    "sd": 3.6003644510174126e-11,
+    "loglik": 4.973799150320701e-14,
+    "p": 2.576396561371208e-12
+   },
+   "r_iterations": 6
+  },
+  {
+   "case": "atrazine_sign_test",
+   "inference": "small_sample_t",
+   "passed": true,
+   "max_abs_difference_full_precision": 0.0,
+   "items": {
+    "p_exact": 0.0,
+    "p_vs_nada2_printed": 0.0,
+    "p_fong_vs_nada2_printed": 0.0
+   },
+   "r_iterations": null
+  }
+ ]
+}

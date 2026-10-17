@@ -1,6 +1,6 @@
 ---
 name: panel-comparison
-description: Compare two groups across a panel of many outcomes measured on the same units - cytokine/chemokine panels, flow-cytometry marker panels, multiplex biomarkers - with every measured outcome assigned to a declared family and Holm (family-wise error, simultaneous intervals) or Benjamini-Hochberg (false discovery rate) adjustment within each family. Use to avoid reporting only the outcomes that happened to reach significance; not for a single prespecified primary outcome (group-comparison) or values below quantification limits (censored-data).
+description: Compare two groups across a panel of many outcomes measured on the same units - cytokine/chemokine panels, flow-cytometry marker panels, multiplex biomarkers - with every measured outcome assigned to a declared family and Holm (family-wise error, simultaneous intervals) or Benjamini-Hochberg (false discovery rate) adjustment within each family. Use to avoid reporting only the outcomes that happened to reach significance; not for a single prespecified primary outcome (group-comparison). Outcomes with values below or above quantification limits stay censored through an opt-in censoring block.
 ---
 
 # Panel comparisons with multiplicity control
@@ -29,8 +29,16 @@ Read the [input contract](references/input-and-model.md). Use
    group-comparison; that does not remove it from the panel family.
 3. **Design.** Declare pairing (the same donors/animals in both groups versus
    independent groups) and the scale (log for concentration-type outcomes, with a
-   reason, before results). Technical replicates are averaged first. Values below
-   quantification limits are not numbers; use censored-data per outcome.
+   reason, before results). Technical replicates are averaged first.
+4. **Values beyond quantification limits stay censored.** Enter the
+   sample-specific limit as `value` with `censored: left` (or `right` above the
+   ULOQ) and add the `censoring` block with the limit's source; the scale must be
+   log. Never substitute 0, LLOQ or LLOQ/2 and never drop an analyte because many
+   values are below the limit. Outcomes with censored values use censored lognormal
+   maximum likelihood with a small-sample t correction (independent groups assume
+   a common SD; paired designs accept left censoring only); the others keep the t
+   test. An outcome with too few detected values is withheld but still counted as
+   measured.
 
 ## Run and report
 
@@ -41,8 +49,9 @@ family. Under BH some discoveries may be false. Non-significant outcomes are not
 shown to be unaffected. Respect `must_mention` and failing items in
 `interpretation_facts.json`.
 
-## Evidence (0.14.0)
+## Evidence
 
 See [the 0.14.0 record](../../validation/RELEASE_0.14.0.md): base-R oracle agreement,
 Benjamini & Hochberg (1995) reproduced, and the registered family-wise error and FDR
-calibration.
+calibration. Censored outcomes: [the 0.14.1 record](../../validation/RELEASE_0.14.1.md)
+(R survival oracle and a registered calibration; published-example gate unmet).

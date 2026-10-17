@@ -1,0 +1,31 @@
+{
+ "analysis_type": "enzyme_inhibition",
+ "input": "competitive_fixed.csv",
+ "source": "Synthetic fixture (seed 14320); not team data",
+ "design": {
+  "enzyme": "Recombinant protease catalytic domain (synthetic)",
+  "substrate_unit": "uM",
+  "inhibitor_unit": "nM",
+  "rate_unit": "RFU/min",
+  "initial_rate_rationale": "Linear fluorescence over 15 min, under 5% substrate conversion (synthetic)",
+  "independent_unit": "experiment (separate enzyme dilution and day)",
+  "independence_source": "Synthetic fixture"
+ },
+ "enzyme_concentration": {
+  "value": 1.0,
+  "unit": "nM"
+ },
+ "mechanism": {
+  "declared": "competitive",
+  "rationale": "Declared before the results (synthetic)"
+ },
+ "tight_binding": {
+  "model": "morrison",
+  "enzyme": "fixed",
+  "rationale": "Inhibitor potency expected near the enzyme concentration (synthetic declaration)",
+  "km": {
+   "value": 10.0,
+   "source": "Km from a separate substrate titration (synthetic)"
+  }
+ }
+}

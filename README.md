@@ -76,6 +76,43 @@ Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
 
+## 0.14.3 (in development) — RO EC50 interval and Morrison tight binding
+
+The receptor-occupancy EC50 gains a cluster-robust (CR2) interval with small-sample degrees
+of freedom, which covered 0.95–0.96 with 8 subjects where the 0.14.2 bootstrap covered
+0.88–0.89. Enzyme inhibition gains Morrison tight-binding fits for potent inhibitors
+titrated at one substrate concentration, with the declared enzyme fixed or the active
+enzyme estimated; Ki was calibrated, the active-enzyme interval was often open below
+(a retained miss). Both are opt-in; earlier outputs are unchanged. Live-agent misuse
+scenarios 6/6. See [release evidence](validation/RELEASE_0.14.3.md).
+
+## 0.14.2 (in development) — enzyme inhibition and receptor occupancy
+
+Enzyme initial rates across substrate and inhibitor concentrations give Ki from a
+mechanism declared before the results (`enzyme_inhibition`), with profile intervals, a
+descriptive comparison of competitive, noncompetitive, uncompetitive and mixed models,
+and gates for tight binding and design range. GraphPad's published competitive example
+is reproduced to within one unit in the last printed digit. Flow-cytometry receptor
+occupancy (`receptor_occupancy`) uses the free/baseline, free/total or bound/saturation
+format with declared background and no clipping; group means were calibrated, while
+the optional exposure-occupancy EC50 interval was too narrow with 6–8 subjects and says
+so in every run. Live-agent misuse scenarios 6/6. See
+[release evidence](validation/RELEASE_0.14.2.md).
+
+## 0.14.1 (in development) — closing the 0.14.0 follow-ups
+
+Paired designs with values below a quantification limit (pre/post samples from the
+same donors) can now be compared without dropping or substituting values: Helsel's
+censored paired difference or censored sign test (`censored-data`). Results agree
+with the NADA2 reference code and R survival, including NADA2's own example data.
+The first registered calibration, using NADA2's z-based inference, was too optimistic
+with 20 pairs; that record is kept, and a small-sample t default passed a second
+registered calibration. Panel comparisons accept censored analytes through an opt-in
+`censoring` block instead of dropping them. GR analyses can declare a fitted GRmax
+definition, which removed the low bias of the authors' definition in calibration.
+Published worked examples were not found for these additions. Live-agent misuse
+scenarios 6/6. See [release evidence](validation/RELEASE_0.14.1.md).
+
 ## 0.14.0 (in development) — discovery batch
 
 Values below a quantification limit are kept as censored rather than replaced by

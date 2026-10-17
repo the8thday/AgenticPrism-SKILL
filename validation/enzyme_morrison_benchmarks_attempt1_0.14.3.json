@@ -1,0 +1,248 @@
+{
+ "status": "failed",
+ "oracle": "scripts/enzyme_0143_oracle.R (base R nls port on log parameters, profile confint)",
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "tolerance_relative": 0.0001,
+ "published_example": {
+  "status": "UNMET",
+  "note": "No printed Morrison dataset with fitted values located; GraphPad's curve-fitting guide gives the equation only."
+ },
+ "checks": [
+  {
+   "case": "competitive_estimate",
+   "experiment": "E1",
+   "passed": false,
+   "max_rel_difference": Infinity,
+   "items": {
+    "ss": 1.0529910277057297e-11,
+    "v0": 5.6007065873942e-08,
+    "Ki_app": 7.053866842854362e-07,
+    "Et_active": 5.063725918574846e-07,
+    "v0_ci_lower": 1.3243108865079734e-07,
+    "v0_ci_upper": Infinity,
+    "Ki_app_ci_lower": Infinity,
+    "Ki_app_ci_upper": 4.9570581153179916e-06,
+    "Et_active_ci_lower": 0.00021087749736348194,
+    "Et_active_ci_upper": 0.0004694256558179788
+   },
+   "compared": true
+  },
+  {
+   "case": "competitive_estimate",
+   "experiment": "E2",
+   "passed": false,
+   "max_rel_difference": 0.00013580782889577314,
+   "items": {
+    "ss": 6.396105867167989e-12,
+    "v0": 4.4606407012537375e-08,
+    "Ki_app": 8.217022706702437e-07,
+    "Et_active": 2.6615593768930523e-06,
+    "v0_ci_lower": 9.758433083817408e-08,
+    "v0_ci_upper": 5.7456025825963764e-08,
+    "Ki_app_ci_lower": 8.56944335847487e-06,
+    "Ki_app_ci_upper": 9.313736864635658e-06,
+    "Et_active_ci_lower": 0.00013580782889577314,
+    "Et_active_ci_upper": 2.5623086165715847e-05
+   },
+   "compared": true
+  },
+  {
+   "case": "competitive_estimate",
+   "experiment": "E3",
+   "passed": false,
+   "max_rel_difference": Infinity,
+   "items": {
+    "ss": 1.0338285783006995e-11,
+    "v0": 8.071568946554919e-08,
+    "Ki_app": 1.4599569928552825e-06,
+    "Et_active": 5.0096258591425524e-06,
+    "v0_ci_lower": 9.484952534499769e-08,
+    "v0_ci_upper": 2.0292196445392818e-07,
+    "Ki_app_ci_lower": 2.174355336159728e-05,
+    "Ki_app_ci_upper": 1.655997400096254e-05,
+    "Et_active_ci_lower": Infinity,
+    "Et_active_ci_upper": 3.912811185791121e-05
+   },
+   "compared": true
+  },
+  {
+   "case": "competitive_fixed",
+   "experiment": "E1",
+   "passed": true,
+   "max_rel_difference": 5.670046898664793e-07,
+   "items": {
+    "ss": 6.3151706086728154e-12,
+    "v0": 4.760203498044291e-08,
+    "Ki_app": 5.670046898664793e-07,
+    "v0_ci_lower": 1.046365905033042e-08,
+    "v0_ci_upper": 1.2809944038849608e-07,
+    "Ki_app_ci_lower": 1.1148965839424818e-07,
+    "Ki_app_ci_upper": 5.571988233032954e-07
+   },
+   "compared": true
+  },
+  {
+   "case": "competitive_fixed",
+   "experiment": "E2",
+   "passed": true,
+   "max_rel_difference": 6.210449263743811e-07,
+   "items": {
+    "ss": 4.451994328746878e-14,
+    "v0": 3.6347784782009285e-09,
+    "Ki_app": 4.403528319762984e-08,
+    "v0_ci_lower": 3.202590881379308e-08,
+    "v0_ci_upper": 1.858894078665685e-07,
+    "Ki_app_ci_lower": 4.160520061802231e-08,
+    "Ki_app_ci_upper": 6.210449263743811e-07
+   },
+   "compared": true
+  },
+  {
+   "case": "competitive_fixed",
+   "experiment": "E3",
+   "passed": true,
+   "max_rel_difference": 4.40794502454267e-07,
+   "items": {
+    "ss": 4.991562718714704e-13,
+    "v0": 1.0705783703990335e-08,
+    "Ki_app": 1.3084304950616854e-07,
+    "v0_ci_lower": 3.692917083242264e-10,
+    "v0_ci_upper": 7.997012629878952e-08,
+    "Ki_app_ci_lower": 7.307017213520339e-10,
+    "Ki_app_ci_upper": 4.40794502454267e-07
+   },
+   "compared": true
+  },
+  {
+   "case": "mixed_kapp_only",
+   "experiment": "E1",
+   "passed": true,
+   "max_rel_difference": 1.4821035887457867e-07,
+   "items": {
+    "ss": 1.509903313490213e-14,
+    "v0": 2.6686584053692286e-09,
+    "Ki_app": 1.9254285721359565e-08,
+    "v0_ci_lower": 2.0677215495368273e-10,
+    "v0_ci_upper": 6.827461129788048e-08,
+    "Ki_app_ci_lower": 1.4821035887457867e-07,
+    "Ki_app_ci_upper": 9.544239021330725e-08
+   },
+   "compared": true
+  },
+  {
+   "case": "mixed_kapp_only",
+   "experiment": "E2",
+   "passed": true,
+   "max_rel_difference": 1.0301334540940843e-07,
+   "items": {
+    "ss": 1.2212453270876722e-15,
+    "v0": 1.047352315985961e-09,
+    "Ki_app": 1.1213201034365738e-08,
+    "v0_ci_lower": 6.133593632995371e-10,
+    "v0_ci_upper": 1.0301334540940843e-07,
+    "Ki_app_ci_lower": 8.171639853671309e-08,
+    "Ki_app_ci_upper": 5.70182889791937e-08
+   },
+   "compared": true
+  },
+  {
+   "case": "mixed_kapp_only",
+   "experiment": "E3",
+   "passed": true,
+   "max_rel_difference": 3.276794280360207e-07,
+   "items": {
+    "ss": 2.0317081350640365e-14,
+    "v0": 3.4820044625405444e-09,
+    "Ki_app": 3.815812832375087e-08,
+    "v0_ci_lower": 1.1298280977456443e-08,
+    "v0_ci_upper": 1.323039833245332e-07,
+    "Ki_app_ci_lower": 3.276794280360207e-07,
+    "Ki_app_ci_upper": 1.9532206807504338e-07
+   },
+   "compared": true
+  },
+  {
+   "case": "noncompetitive_fixed",
+   "experiment": "E1",
+   "passed": true,
+   "max_rel_difference": 2.9340068183891788e-06,
+   "items": {
+    "ss": 1.1657341758564144e-14,
+    "v0": 1.4635790357431233e-09,
+    "Ki_app": 2.8825697051537702e-08,
+    "v0_ci_lower": 1.0421629559331791e-08,
+    "v0_ci_upper": 1.2715224562143135e-07,
+    "Ki_app_ci_lower": 1.8743511347452113e-06,
+    "Ki_app_ci_upper": 2.9340068183891788e-06
+   },
+   "compared": true
+  },
+  {
+   "case": "noncompetitive_fixed",
+   "experiment": "E2",
+   "passed": true,
+   "max_rel_difference": 2.224311450582661e-06,
+   "items": {
+    "ss": 1.5065726444163374e-13,
+    "v0": 5.382218226657187e-09,
+    "Ki_app": 9.29804766514053e-08,
+    "v0_ci_lower": 5.741184638807795e-09,
+    "v0_ci_upper": 1.2636083424055755e-07,
+    "Ki_app_ci_lower": 7.339869296796309e-07,
+    "Ki_app_ci_upper": 2.224311450582661e-06
+   },
+   "compared": true
+  },
+  {
+   "case": "noncompetitive_fixed",
+   "experiment": "E3",
+   "passed": true,
+   "max_rel_difference": 2.8393245072866335e-06,
+   "items": {
+    "ss": 1.3211653993039363e-14,
+    "v0": 7.368594623358149e-11,
+    "Ki_app": 1.5200716241281498e-09,
+    "v0_ci_lower": 8.536672480019547e-09,
+    "v0_ci_upper": 1.224059880122752e-07,
+    "Ki_app_ci_lower": 1.6328246306152039e-06,
+    "Ki_app_ci_upper": 2.8393245072866335e-06
+   },
+   "compared": true
+  },
+  {
+   "case": "titration_regime",
+   "experiment": "E1",
+   "passed": true,
+   "python": "withheld:parameters_not_identifiable,Ki_app_below_enzyme_over_100_titration_regime",
+   "oracle": "singular gradient matrix at initial parameter estimates",
+   "compared": false
+  },
+  {
+   "case": "titration_regime",
+   "experiment": "E2",
+   "passed": true,
+   "python": "withheld:parameters_not_identifiable,Ki_app_below_enzyme_over_100_titration_regime",
+   "oracle": "singular gradient matrix at initial parameter estimates",
+   "compared": false
+  },
+  {
+   "case": "titration_regime",
+   "experiment": "E3",
+   "passed": false,
+   "max_rel_difference": 0.0004444093725270992,
+   "items": {
+    "ss": 5.873079800267078e-14,
+    "v0": 4.321408342278232e-09,
+    "Ki_app": 3.241630275319096e-07,
+    "Et_active": 4.7332759822715786e-08,
+    "v0_ci_lower": 1.4753915755782998e-08,
+    "v0_ci_upper": 9.152111291044207e-10,
+    "Ki_app_ci_lower": 0.000329101024029832,
+    "Ki_app_ci_upper": 0.0004444093725270992,
+    "Et_active_ci_lower": 7.3391720831761376e-06,
+    "Et_active_ci_upper": 1.4711643542941744e-05
+   },
+   "compared": true
+  }
+ ]
+}

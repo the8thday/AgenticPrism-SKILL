@@ -1,0 +1,8010 @@
+{
+ "source": "validation/enzyme_morrison_calibration_0.14.3.json",
+ "source_sha256": "fa99a5278fbc5e9bfbfb27afeab33c050e09c460913528af1b2b2649b2c60129",
+ "scenario": "kapp_1x_estimate",
+ "draws_match_registered_reportability": true,
+ "n_reportable": 998,
+ "fraction_two_sided": 0.8527054108216433,
+ "fraction_lower_open": 0.14729458917835672,
+ "fraction_upper_open": 0.0,
+ "coverage_among_two_sided": 0.963572267920094,
+ "mcse": 0.006422342062981172,
+ "n_two_sided": 851,
+ "median_estimate": 0.6058971117169336,
+ "true_active_enzyme": 0.6,
+ "note": "Post hoc; supplements the registered miss, which stands.",
+ "draws": [
+  {
+   "iteration": 0,
+   "ki_reportable": true,
+   "estimate": 0.2620123166148775,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 1,
+   "ki_reportable": true,
+   "estimate": 0.5091828331840563,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 2,
+   "ki_reportable": true,
+   "estimate": 0.6886354501706639,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 3,
+   "ki_reportable": true,
+   "estimate": 0.5474860174287626,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 4,
+   "ki_reportable": true,
+   "estimate": 0.7116926043724524,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 5,
+   "ki_reportable": true,
+   "estimate": 0.7046134139136627,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 6,
+   "ki_reportable": true,
+   "estimate": 0.7639021218351288,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 7,
+   "ki_reportable": true,
+   "estimate": 0.584127364646779,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 8,
+   "ki_reportable": true,
+   "estimate": 0.4728521923116327,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 9,
+   "ki_reportable": true,
+   "estimate": 0.19591502837524696,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 10,
+   "ki_reportable": true,
+   "estimate": 0.4959516854341483,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 11,
+   "ki_reportable": true,
+   "estimate": 0.8528067863459836,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 12,
+   "ki_reportable": true,
+   "estimate": 0.6692111242099604,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 13,
+   "ki_reportable": true,
+   "estimate": 0.6623368726856451,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 14,
+   "ki_reportable": true,
+   "estimate": 0.6413101274488646,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 15,
+   "ki_reportable": true,
+   "estimate": 0.34198685642553867,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 16,
+   "ki_reportable": true,
+   "estimate": 0.492051537065923,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 17,
+   "ki_reportable": true,
+   "estimate": 0.3244589572253401,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 18,
+   "ki_reportable": true,
+   "estimate": 0.6847424174398602,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 19,
+   "ki_reportable": true,
+   "estimate": 0.4519033960562605,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 20,
+   "ki_reportable": true,
+   "estimate": 0.45771786699692074,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 21,
+   "ki_reportable": true,
+   "estimate": 0.8438080307601717,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 22,
+   "ki_reportable": true,
+   "estimate": 1.0803329157423431,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 23,
+   "ki_reportable": true,
+   "estimate": 0.6789372160277864,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 24,
+   "ki_reportable": true,
+   "estimate": 0.8430684453949355,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 25,
+   "ki_reportable": true,
+   "estimate": 0.4515942829893642,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 26,
+   "ki_reportable": true,
+   "estimate": 0.5139211693755427,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 27,
+   "ki_reportable": true,
+   "estimate": 0.4370917826501126,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 28,
+   "ki_reportable": true,
+   "estimate": 0.2544612832340653,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 29,
+   "ki_reportable": true,
+   "estimate": 0.4362895631932301,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 30,
+   "ki_reportable": true,
+   "estimate": 0.8624920383986139,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 31,
+   "ki_reportable": false
+  },
+  {
+   "iteration": 32,
+   "ki_reportable": true,
+   "estimate": 0.9064514621108346,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 33,
+   "ki_reportable": true,
+   "estimate": 0.7779992955466895,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 34,
+   "ki_reportable": true,
+   "estimate": 0.48821584057149636,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 35,
+   "ki_reportable": true,
+   "estimate": 0.4541012211529914,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 36,
+   "ki_reportable": true,
+   "estimate": 0.7852117269703003,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 37,
+   "ki_reportable": true,
+   "estimate": 0.43908661267783755,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 38,
+   "ki_reportable": true,
+   "estimate": 0.6094388664647188,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 39,
+   "ki_reportable": true,
+   "estimate": 0.49578329499455487,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 40,
+   "ki_reportable": true,
+   "estimate": 0.44932510071185583,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 41,
+   "ki_reportable": true,
+   "estimate": 0.6981534766902138,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 42,
+   "ki_reportable": true,
+   "estimate": 0.6224212669659356,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 43,
+   "ki_reportable": true,
+   "estimate": 0.6850852141870177,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 44,
+   "ki_reportable": true,
+   "estimate": 0.5705476273546214,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 45,
+   "ki_reportable": true,
+   "estimate": 0.6615391048524802,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 46,
+   "ki_reportable": true,
+   "estimate": 0.5199119190360331,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 47,
+   "ki_reportable": true,
+   "estimate": 0.510805375364767,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 48,
+   "ki_reportable": true,
+   "estimate": 0.616384873431396,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 49,
+   "ki_reportable": true,
+   "estimate": 0.624261407514382,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 50,
+   "ki_reportable": true,
+   "estimate": 0.47241757550631786,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 51,
+   "ki_reportable": true,
+   "estimate": 0.41979198047882677,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 52,
+   "ki_reportable": true,
+   "estimate": 0.8383337886357272,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 53,
+   "ki_reportable": true,
+   "estimate": 0.5582285659845236,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 54,
+   "ki_reportable": true,
+   "estimate": 0.5998848654074217,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 55,
+   "ki_reportable": true,
+   "estimate": 0.49653840777267216,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 56,
+   "ki_reportable": true,
+   "estimate": 0.23887058044574266,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 57,
+   "ki_reportable": true,
+   "estimate": 0.4732214199733845,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 58,
+   "ki_reportable": true,
+   "estimate": 0.7714934610598442,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 59,
+   "ki_reportable": true,
+   "estimate": 0.5098934916669636,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 60,
+   "ki_reportable": true,
+   "estimate": 0.6252213961678729,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 61,
+   "ki_reportable": true,
+   "estimate": 0.7490910646053162,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 62,
+   "ki_reportable": true,
+   "estimate": 0.5550691762508494,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 63,
+   "ki_reportable": true,
+   "estimate": 0.8965760879947611,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 64,
+   "ki_reportable": true,
+   "estimate": 0.39471429759314103,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 65,
+   "ki_reportable": true,
+   "estimate": 0.31434215856621506,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 66,
+   "ki_reportable": true,
+   "estimate": 0.8124236904785803,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 67,
+   "ki_reportable": true,
+   "estimate": 0.13053411005696702,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 68,
+   "ki_reportable": true,
+   "estimate": 0.6816646876435414,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 69,
+   "ki_reportable": true,
+   "estimate": 0.6270706197979455,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 70,
+   "ki_reportable": true,
+   "estimate": 0.8265358095716745,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 71,
+   "ki_reportable": true,
+   "estimate": 0.8307127827735276,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 72,
+   "ki_reportable": true,
+   "estimate": 0.5843673343816168,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 73,
+   "ki_reportable": true,
+   "estimate": 0.7345055454024906,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 74,
+   "ki_reportable": true,
+   "estimate": 0.7376572187179177,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 75,
+   "ki_reportable": true,
+   "estimate": 0.8273334925171282,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 76,
+   "ki_reportable": true,
+   "estimate": 0.4764648888887008,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 77,
+   "ki_reportable": true,
+   "estimate": 0.6241665976053817,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 78,
+   "ki_reportable": true,
+   "estimate": 0.49755471263819506,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 79,
+   "ki_reportable": true,
+   "estimate": 0.3293115855891707,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 80,
+   "ki_reportable": true,
+   "estimate": 0.534215796438861,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 81,
+   "ki_reportable": true,
+   "estimate": 0.3914645033168247,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 82,
+   "ki_reportable": true,
+   "estimate": 0.2341881319027824,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 83,
+   "ki_reportable": true,
+   "estimate": 0.34026652398494805,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 84,
+   "ki_reportable": true,
+   "estimate": 0.5230367225201822,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 85,
+   "ki_reportable": true,
+   "estimate": 0.6574852096751316,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 86,
+   "ki_reportable": true,
+   "estimate": 0.2096192189884914,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 87,
+   "ki_reportable": true,
+   "estimate": 0.4914592471151373,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 88,
+   "ki_reportable": true,
+   "estimate": 0.6793665991997438,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 89,
+   "ki_reportable": true,
+   "estimate": 0.7707440492269337,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 90,
+   "ki_reportable": true,
+   "estimate": 0.8319981768595436,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 91,
+   "ki_reportable": true,
+   "estimate": 0.7343406167404214,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 92,
+   "ki_reportable": true,
+   "estimate": 0.7737417967691105,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 93,
+   "ki_reportable": true,
+   "estimate": 0.6072094513507582,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 94,
+   "ki_reportable": true,
+   "estimate": 0.6564635035307016,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 95,
+   "ki_reportable": true,
+   "estimate": 0.7827978284829097,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 96,
+   "ki_reportable": true,
+   "estimate": 0.2886866017089155,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 97,
+   "ki_reportable": true,
+   "estimate": 0.6265087009957252,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 98,
+   "ki_reportable": true,
+   "estimate": 0.6942332764325891,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 99,
+   "ki_reportable": true,
+   "estimate": 0.9334112060516724,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 100,
+   "ki_reportable": true,
+   "estimate": 0.4767460798586287,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 101,
+   "ki_reportable": true,
+   "estimate": 0.5123849030219986,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 102,
+   "ki_reportable": true,
+   "estimate": 0.8204725547361305,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 103,
+   "ki_reportable": true,
+   "estimate": 0.7257814320577151,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 104,
+   "ki_reportable": true,
+   "estimate": 0.5129846806700777,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 105,
+   "ki_reportable": true,
+   "estimate": 0.8806838813680419,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 106,
+   "ki_reportable": true,
+   "estimate": 0.30219012284334573,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 107,
+   "ki_reportable": true,
+   "estimate": 0.2298182313968525,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 108,
+   "ki_reportable": true,
+   "estimate": 0.760023068651266,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 109,
+   "ki_reportable": true,
+   "estimate": 0.24205126746094668,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 110,
+   "ki_reportable": true,
+   "estimate": 0.4823098026381301,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 111,
+   "ki_reportable": true,
+   "estimate": 0.6199930808248793,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 112,
+   "ki_reportable": true,
+   "estimate": 0.9085395168995183,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 113,
+   "ki_reportable": true,
+   "estimate": 0.6627734662663101,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 114,
+   "ki_reportable": true,
+   "estimate": 0.69107314100267,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 115,
+   "ki_reportable": true,
+   "estimate": 0.804288530122984,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 116,
+   "ki_reportable": true,
+   "estimate": 0.6294509391273433,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 117,
+   "ki_reportable": true,
+   "estimate": 0.5729948538689541,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 118,
+   "ki_reportable": true,
+   "estimate": 0.4026169330697372,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 119,
+   "ki_reportable": true,
+   "estimate": 0.22890063198097638,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 120,
+   "ki_reportable": true,
+   "estimate": 0.8780668896754503,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 121,
+   "ki_reportable": true,
+   "estimate": 0.8924083882153674,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 122,
+   "ki_reportable": true,
+   "estimate": 0.6084191759238441,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 123,
+   "ki_reportable": true,
+   "estimate": 0.3674676845353548,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 124,
+   "ki_reportable": true,
+   "estimate": 0.8794923561650387,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 125,
+   "ki_reportable": true,
+   "estimate": 0.6384288322863128,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 126,
+   "ki_reportable": true,
+   "estimate": 0.6009433907791809,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 127,
+   "ki_reportable": true,
+   "estimate": 0.4049351272304199,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 128,
+   "ki_reportable": true,
+   "estimate": 0.4624803782522765,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 129,
+   "ki_reportable": true,
+   "estimate": 0.6894800644283321,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 130,
+   "ki_reportable": true,
+   "estimate": 0.6306324075239,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 131,
+   "ki_reportable": true,
+   "estimate": 0.8274719340407373,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 132,
+   "ki_reportable": true,
+   "estimate": 0.15978213376139722,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 133,
+   "ki_reportable": true,
+   "estimate": 0.5910508889904605,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 134,
+   "ki_reportable": true,
+   "estimate": 0.5514587431488804,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 135,
+   "ki_reportable": true,
+   "estimate": 0.6129631463416702,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 136,
+   "ki_reportable": true,
+   "estimate": 0.3647013834770229,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 137,
+   "ki_reportable": true,
+   "estimate": 0.2552392965547963,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 138,
+   "ki_reportable": true,
+   "estimate": 0.4621311840459181,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 139,
+   "ki_reportable": true,
+   "estimate": 0.36965477275968367,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 140,
+   "ki_reportable": true,
+   "estimate": 0.526008641297758,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 141,
+   "ki_reportable": true,
+   "estimate": 0.622493272602944,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 142,
+   "ki_reportable": true,
+   "estimate": 0.47132852891497873,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 143,
+   "ki_reportable": true,
+   "estimate": 0.8121573090934021,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 144,
+   "ki_reportable": true,
+   "estimate": 0.7256016041220704,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 145,
+   "ki_reportable": true,
+   "estimate": 0.4773409322020855,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 146,
+   "ki_reportable": true,
+   "estimate": 0.7529143408429849,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 147,
+   "ki_reportable": true,
+   "estimate": 0.6184813765949251,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 148,
+   "ki_reportable": true,
+   "estimate": 0.39138313030071914,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 149,
+   "ki_reportable": true,
+   "estimate": 0.5255155551855332,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 150,
+   "ki_reportable": true,
+   "estimate": 0.48409352222955443,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 151,
+   "ki_reportable": true,
+   "estimate": 0.8456338854512598,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 152,
+   "ki_reportable": true,
+   "estimate": 0.8192882456360467,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 153,
+   "ki_reportable": true,
+   "estimate": 0.450157707344734,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 154,
+   "ki_reportable": true,
+   "estimate": 0.797173263850686,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 155,
+   "ki_reportable": true,
+   "estimate": 0.8465984885878223,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 156,
+   "ki_reportable": true,
+   "estimate": 0.870684996066752,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 157,
+   "ki_reportable": true,
+   "estimate": 0.3604883192570809,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 158,
+   "ki_reportable": true,
+   "estimate": 0.7805773635707083,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 159,
+   "ki_reportable": true,
+   "estimate": 0.7979266567722676,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 160,
+   "ki_reportable": true,
+   "estimate": 0.7626846579775841,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 161,
+   "ki_reportable": true,
+   "estimate": 0.7274789507791566,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 162,
+   "ki_reportable": true,
+   "estimate": 0.48193828834747704,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 163,
+   "ki_reportable": true,
+   "estimate": 0.6679444871207826,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 164,
+   "ki_reportable": true,
+   "estimate": 0.7799747314952293,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 165,
+   "ki_reportable": true,
+   "estimate": 0.5085779784728872,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 166,
+   "ki_reportable": true,
+   "estimate": 0.5840048821002853,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 167,
+   "ki_reportable": true,
+   "estimate": 0.8348145146705808,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 168,
+   "ki_reportable": true,
+   "estimate": 0.5983814770861113,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 169,
+   "ki_reportable": true,
+   "estimate": 0.6197222103096904,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 170,
+   "ki_reportable": true,
+   "estimate": 0.6124599703842994,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 171,
+   "ki_reportable": true,
+   "estimate": 0.6832848116813521,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 172,
+   "ki_reportable": true,
+   "estimate": 0.45622711588106823,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 173,
+   "ki_reportable": true,
+   "estimate": 0.5943065521654726,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 174,
+   "ki_reportable": true,
+   "estimate": 0.5430308527580457,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 175,
+   "ki_reportable": true,
+   "estimate": 0.3927085329706259,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 176,
+   "ki_reportable": true,
+   "estimate": 0.3936973351160176,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 177,
+   "ki_reportable": true,
+   "estimate": 0.6338029277890448,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 178,
+   "ki_reportable": true,
+   "estimate": 0.5903612498079507,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 179,
+   "ki_reportable": true,
+   "estimate": 0.4671703339216397,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 180,
+   "ki_reportable": true,
+   "estimate": 0.3560209730906925,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 181,
+   "ki_reportable": true,
+   "estimate": 0.806111549866296,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 182,
+   "ki_reportable": true,
+   "estimate": 0.706707920596972,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 183,
+   "ki_reportable": true,
+   "estimate": 0.44968227915245873,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 184,
+   "ki_reportable": true,
+   "estimate": 0.632085906646083,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 185,
+   "ki_reportable": true,
+   "estimate": 0.6117711410177297,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 186,
+   "ki_reportable": true,
+   "estimate": 0.44413597121526427,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 187,
+   "ki_reportable": true,
+   "estimate": 0.47114370827783725,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 188,
+   "ki_reportable": true,
+   "estimate": 0.6140346780988878,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 189,
+   "ki_reportable": true,
+   "estimate": 0.6899293282156908,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 190,
+   "ki_reportable": true,
+   "estimate": 0.351150991219488,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 191,
+   "ki_reportable": true,
+   "estimate": 0.689242206055617,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 192,
+   "ki_reportable": true,
+   "estimate": 0.6637018350329146,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 193,
+   "ki_reportable": true,
+   "estimate": 0.6253908864475872,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 194,
+   "ki_reportable": true,
+   "estimate": 0.2242123149616768,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 195,
+   "ki_reportable": true,
+   "estimate": 0.5508157813977681,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 196,
+   "ki_reportable": true,
+   "estimate": 0.9370959663017987,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 197,
+   "ki_reportable": true,
+   "estimate": 0.5909499932579425,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 198,
+   "ki_reportable": true,
+   "estimate": 0.60521816471821,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 199,
+   "ki_reportable": true,
+   "estimate": 1.0875791507506127,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 200,
+   "ki_reportable": true,
+   "estimate": 0.7267657523079778,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 201,
+   "ki_reportable": true,
+   "estimate": 0.678447241929878,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 202,
+   "ki_reportable": true,
+   "estimate": 0.6229741867839472,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 203,
+   "ki_reportable": true,
+   "estimate": 0.6593409754511793,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 204,
+   "ki_reportable": true,
+   "estimate": 0.6773456964367688,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 205,
+   "ki_reportable": true,
+   "estimate": 0.6693462397484041,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 206,
+   "ki_reportable": true,
+   "estimate": 0.3703648573126874,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 207,
+   "ki_reportable": true,
+   "estimate": 0.5578982067028364,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 208,
+   "ki_reportable": true,
+   "estimate": 0.857315087182019,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 209,
+   "ki_reportable": true,
+   "estimate": 0.6027767490033661,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 210,
+   "ki_reportable": true,
+   "estimate": 0.8356627007130681,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 211,
+   "ki_reportable": true,
+   "estimate": 0.35846035193001885,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 212,
+   "ki_reportable": true,
+   "estimate": 0.5569486209307654,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 213,
+   "ki_reportable": true,
+   "estimate": 0.5662479882191357,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 214,
+   "ki_reportable": true,
+   "estimate": 0.6981375344776989,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 215,
+   "ki_reportable": true,
+   "estimate": 0.4844385475836589,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 216,
+   "ki_reportable": true,
+   "estimate": 0.6247769407139238,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 217,
+   "ki_reportable": true,
+   "estimate": 0.7635963918731792,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 218,
+   "ki_reportable": true,
+   "estimate": 0.46282841745723535,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 219,
+   "ki_reportable": true,
+   "estimate": 0.8384117254955935,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 220,
+   "ki_reportable": true,
+   "estimate": 0.5181488263178126,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 221,
+   "ki_reportable": true,
+   "estimate": 0.41294092027496476,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 222,
+   "ki_reportable": true,
+   "estimate": 0.5071088082601358,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 223,
+   "ki_reportable": true,
+   "estimate": 0.5068935201421041,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 224,
+   "ki_reportable": true,
+   "estimate": 0.21869916757409175,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 225,
+   "ki_reportable": true,
+   "estimate": 0.5142916343560018,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 226,
+   "ki_reportable": true,
+   "estimate": 0.4945331128229732,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 227,
+   "ki_reportable": true,
+   "estimate": 0.6289052322278228,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 228,
+   "ki_reportable": true,
+   "estimate": 0.6048719724481573,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 229,
+   "ki_reportable": true,
+   "estimate": 0.8591560774078705,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 230,
+   "ki_reportable": true,
+   "estimate": 0.5943382535865978,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 231,
+   "ki_reportable": true,
+   "estimate": 0.7659385365738405,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 232,
+   "ki_reportable": true,
+   "estimate": 0.8668077259966576,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 233,
+   "ki_reportable": true,
+   "estimate": 0.31938175247268513,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 234,
+   "ki_reportable": true,
+   "estimate": 0.9293467769087239,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 235,
+   "ki_reportable": true,
+   "estimate": 0.43843170831219164,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 236,
+   "ki_reportable": true,
+   "estimate": 0.4362889602529191,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 237,
+   "ki_reportable": true,
+   "estimate": 0.520987913831698,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 238,
+   "ki_reportable": true,
+   "estimate": 0.8285597576905275,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 239,
+   "ki_reportable": true,
+   "estimate": 0.6251481859421258,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 240,
+   "ki_reportable": true,
+   "estimate": 0.5562796541546311,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 241,
+   "ki_reportable": true,
+   "estimate": 0.7252641068178043,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 242,
+   "ki_reportable": true,
+   "estimate": 0.5291688158596661,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 243,
+   "ki_reportable": true,
+   "estimate": 0.6868759962320949,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 244,
+   "ki_reportable": true,
+   "estimate": 0.5825919184067918,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 245,
+   "ki_reportable": true,
+   "estimate": 0.7456625975463833,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 246,
+   "ki_reportable": true,
+   "estimate": 0.6754157093291157,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 247,
+   "ki_reportable": true,
+   "estimate": 0.5051907244620987,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 248,
+   "ki_reportable": true,
+   "estimate": 0.6537734352448895,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 249,
+   "ki_reportable": true,
+   "estimate": 0.696003564197676,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 250,
+   "ki_reportable": true,
+   "estimate": 0.7373124029988135,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 251,
+   "ki_reportable": true,
+   "estimate": 0.5205817671401135,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 252,
+   "ki_reportable": true,
+   "estimate": 1.0260575665634222,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 253,
+   "ki_reportable": true,
+   "estimate": 0.7726721434306215,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 254,
+   "ki_reportable": true,
+   "estimate": 0.4713091873235581,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 255,
+   "ki_reportable": true,
+   "estimate": 0.34726096585397986,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 256,
+   "ki_reportable": true,
+   "estimate": 0.5927032531188475,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 257,
+   "ki_reportable": true,
+   "estimate": 0.7012483162437008,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 258,
+   "ki_reportable": true,
+   "estimate": 0.6750360447434423,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 259,
+   "ki_reportable": true,
+   "estimate": 0.6977674037457317,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 260,
+   "ki_reportable": true,
+   "estimate": 0.7611690422639165,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 261,
+   "ki_reportable": true,
+   "estimate": 0.537888661654032,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 262,
+   "ki_reportable": true,
+   "estimate": 0.3480018803068597,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 263,
+   "ki_reportable": true,
+   "estimate": 0.23175813242371754,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 264,
+   "ki_reportable": true,
+   "estimate": 0.8318830123752778,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 265,
+   "ki_reportable": true,
+   "estimate": 0.6120669251201202,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 266,
+   "ki_reportable": true,
+   "estimate": 0.693991363424622,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 267,
+   "ki_reportable": true,
+   "estimate": 0.9972735351315257,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 268,
+   "ki_reportable": true,
+   "estimate": 0.40210349267362405,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 269,
+   "ki_reportable": true,
+   "estimate": 0.6447749129592271,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 270,
+   "ki_reportable": true,
+   "estimate": 0.2087721929444688,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 271,
+   "ki_reportable": true,
+   "estimate": 0.5319512775038095,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 272,
+   "ki_reportable": true,
+   "estimate": 0.6513405647409168,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 273,
+   "ki_reportable": true,
+   "estimate": 0.45041058561985836,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 274,
+   "ki_reportable": true,
+   "estimate": 0.5370158271411153,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 275,
+   "ki_reportable": true,
+   "estimate": 0.41253388737878505,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 276,
+   "ki_reportable": true,
+   "estimate": 0.6638621124050369,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 277,
+   "ki_reportable": true,
+   "estimate": 0.27642166957281805,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 278,
+   "ki_reportable": true,
+   "estimate": 0.4626078737414966,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 279,
+   "ki_reportable": true,
+   "estimate": 0.5820723257780213,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 280,
+   "ki_reportable": true,
+   "estimate": 0.716346229860079,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 281,
+   "ki_reportable": true,
+   "estimate": 0.6677494154022061,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 282,
+   "ki_reportable": true,
+   "estimate": 0.5549732170943009,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 283,
+   "ki_reportable": true,
+   "estimate": 0.5352872620982156,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 284,
+   "ki_reportable": true,
+   "estimate": 0.24752976056704448,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 285,
+   "ki_reportable": true,
+   "estimate": 0.6347788215071967,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 286,
+   "ki_reportable": true,
+   "estimate": 0.799021746585922,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 287,
+   "ki_reportable": true,
+   "estimate": 0.6802080716744155,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 288,
+   "ki_reportable": true,
+   "estimate": 0.68680176625075,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 289,
+   "ki_reportable": true,
+   "estimate": 0.32288475179412274,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 290,
+   "ki_reportable": true,
+   "estimate": 0.669916914396106,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 291,
+   "ki_reportable": true,
+   "estimate": 0.9291077113875953,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 292,
+   "ki_reportable": true,
+   "estimate": 0.9782122984006129,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 293,
+   "ki_reportable": true,
+   "estimate": 0.14285559451841,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 294,
+   "ki_reportable": false
+  },
+  {
+   "iteration": 295,
+   "ki_reportable": true,
+   "estimate": 0.2842878233790344,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 296,
+   "ki_reportable": true,
+   "estimate": 0.706123362928203,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 297,
+   "ki_reportable": true,
+   "estimate": 0.3436970602575339,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 298,
+   "ki_reportable": true,
+   "estimate": 0.3425938537462768,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 299,
+   "ki_reportable": true,
+   "estimate": 0.6197763543097813,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 300,
+   "ki_reportable": true,
+   "estimate": 0.3823347662033867,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 301,
+   "ki_reportable": true,
+   "estimate": 0.7530775229325746,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 302,
+   "ki_reportable": true,
+   "estimate": 0.578027819337404,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 303,
+   "ki_reportable": true,
+   "estimate": 0.6239479846493724,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 304,
+   "ki_reportable": true,
+   "estimate": 0.6406562532184287,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 305,
+   "ki_reportable": true,
+   "estimate": 0.42157726467828416,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 306,
+   "ki_reportable": true,
+   "estimate": 0.715110683817828,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 307,
+   "ki_reportable": true,
+   "estimate": 0.4580971098462583,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 308,
+   "ki_reportable": true,
+   "estimate": 0.8014225429192016,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 309,
+   "ki_reportable": true,
+   "estimate": 0.5711425713604362,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 310,
+   "ki_reportable": true,
+   "estimate": 0.8478924306982188,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 311,
+   "ki_reportable": true,
+   "estimate": 0.6153335855732968,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 312,
+   "ki_reportable": true,
+   "estimate": 0.6327206982335487,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 313,
+   "ki_reportable": true,
+   "estimate": 0.8100950773080625,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 314,
+   "ki_reportable": true,
+   "estimate": 0.7743791839733888,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 315,
+   "ki_reportable": true,
+   "estimate": 0.9700320603560436,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 316,
+   "ki_reportable": true,
+   "estimate": 0.4184756119215569,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 317,
+   "ki_reportable": true,
+   "estimate": 0.7205159422417969,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 318,
+   "ki_reportable": true,
+   "estimate": 0.8256455500726145,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 319,
+   "ki_reportable": true,
+   "estimate": 0.5783698948968256,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 320,
+   "ki_reportable": true,
+   "estimate": 0.9872452276795878,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 321,
+   "ki_reportable": true,
+   "estimate": 0.8537944200457188,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 322,
+   "ki_reportable": true,
+   "estimate": 0.5828239930591604,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 323,
+   "ki_reportable": true,
+   "estimate": 0.4577266789087891,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 324,
+   "ki_reportable": true,
+   "estimate": 0.6722421940456886,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 325,
+   "ki_reportable": true,
+   "estimate": 0.6778999060878498,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 326,
+   "ki_reportable": true,
+   "estimate": 0.7822520581418819,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 327,
+   "ki_reportable": true,
+   "estimate": 0.6076776757046678,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 328,
+   "ki_reportable": true,
+   "estimate": 0.7204583850639912,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 329,
+   "ki_reportable": true,
+   "estimate": 0.407135752103711,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 330,
+   "ki_reportable": true,
+   "estimate": 0.6932846583389627,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 331,
+   "ki_reportable": true,
+   "estimate": 0.6806997287855872,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 332,
+   "ki_reportable": true,
+   "estimate": 0.534973892885786,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 333,
+   "ki_reportable": true,
+   "estimate": 0.39127336336149093,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 334,
+   "ki_reportable": true,
+   "estimate": 0.7810170137650918,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 335,
+   "ki_reportable": true,
+   "estimate": 0.41556328015028116,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 336,
+   "ki_reportable": true,
+   "estimate": 0.6248717071597357,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 337,
+   "ki_reportable": true,
+   "estimate": 0.717995591527678,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 338,
+   "ki_reportable": true,
+   "estimate": 0.4357785112073417,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 339,
+   "ki_reportable": true,
+   "estimate": 0.813773169439873,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 340,
+   "ki_reportable": true,
+   "estimate": 0.9586955448096682,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 341,
+   "ki_reportable": true,
+   "estimate": 0.5239695567160679,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 342,
+   "ki_reportable": true,
+   "estimate": 0.5431481387726522,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 343,
+   "ki_reportable": true,
+   "estimate": 0.5997494251368783,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 344,
+   "ki_reportable": true,
+   "estimate": 0.5173103686936616,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 345,
+   "ki_reportable": true,
+   "estimate": 0.7133822260242251,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 346,
+   "ki_reportable": true,
+   "estimate": 0.7626357099482929,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 347,
+   "ki_reportable": true,
+   "estimate": 0.7653826563690672,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 348,
+   "ki_reportable": true,
+   "estimate": 0.5221372587473917,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 349,
+   "ki_reportable": true,
+   "estimate": 0.32495241650568124,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 350,
+   "ki_reportable": true,
+   "estimate": 0.5375205887712335,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 351,
+   "ki_reportable": true,
+   "estimate": 0.3296136900230969,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 352,
+   "ki_reportable": true,
+   "estimate": 0.7379279047052066,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 353,
+   "ki_reportable": true,
+   "estimate": 0.8015794220110349,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 354,
+   "ki_reportable": true,
+   "estimate": 0.5293372528097974,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 355,
+   "ki_reportable": true,
+   "estimate": 0.45972770163434085,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 356,
+   "ki_reportable": true,
+   "estimate": 0.5072631877346104,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 357,
+   "ki_reportable": true,
+   "estimate": 0.3504375788174086,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 358,
+   "ki_reportable": true,
+   "estimate": 0.7412943124231749,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 359,
+   "ki_reportable": true,
+   "estimate": 0.25631629347972473,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 360,
+   "ki_reportable": true,
+   "estimate": 0.7259130888378077,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 361,
+   "ki_reportable": true,
+   "estimate": 0.8641987103841865,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 362,
+   "ki_reportable": true,
+   "estimate": 0.7460051363445588,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 363,
+   "ki_reportable": true,
+   "estimate": 0.8411045617519518,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 364,
+   "ki_reportable": true,
+   "estimate": 0.573318080216566,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 365,
+   "ki_reportable": true,
+   "estimate": 0.6496892823521293,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 366,
+   "ki_reportable": true,
+   "estimate": 0.42029645242072977,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 367,
+   "ki_reportable": true,
+   "estimate": 1.130860504653556,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 368,
+   "ki_reportable": true,
+   "estimate": 0.6210218448373562,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 369,
+   "ki_reportable": true,
+   "estimate": 0.841284324248957,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 370,
+   "ki_reportable": true,
+   "estimate": 0.7457577279835482,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 371,
+   "ki_reportable": true,
+   "estimate": 0.8785716154133109,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 372,
+   "ki_reportable": true,
+   "estimate": 0.38068704195554304,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 373,
+   "ki_reportable": true,
+   "estimate": 0.6211822689322453,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 374,
+   "ki_reportable": true,
+   "estimate": 0.8530291927783796,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 375,
+   "ki_reportable": true,
+   "estimate": 0.6041794937226193,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 376,
+   "ki_reportable": true,
+   "estimate": 0.42259340022039554,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 377,
+   "ki_reportable": true,
+   "estimate": 0.43418396801178394,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 378,
+   "ki_reportable": true,
+   "estimate": 0.7712582662378323,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 379,
+   "ki_reportable": true,
+   "estimate": 1.2392415418537417,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 380,
+   "ki_reportable": true,
+   "estimate": 0.4299646046552877,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 381,
+   "ki_reportable": true,
+   "estimate": 0.6271680754909439,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 382,
+   "ki_reportable": true,
+   "estimate": 0.6985715891825489,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 383,
+   "ki_reportable": true,
+   "estimate": 0.511422404030009,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 384,
+   "ki_reportable": true,
+   "estimate": 0.7341058028467106,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 385,
+   "ki_reportable": true,
+   "estimate": 0.6955227013637528,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 386,
+   "ki_reportable": true,
+   "estimate": 0.5185037847323923,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 387,
+   "ki_reportable": true,
+   "estimate": 0.9883460166767103,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 388,
+   "ki_reportable": true,
+   "estimate": 1.0200785897423268,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 389,
+   "ki_reportable": true,
+   "estimate": 0.9752312347507978,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 390,
+   "ki_reportable": true,
+   "estimate": 0.6151141980951509,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 391,
+   "ki_reportable": true,
+   "estimate": 0.6740097355750716,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 392,
+   "ki_reportable": true,
+   "estimate": 0.7881240786090373,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 393,
+   "ki_reportable": true,
+   "estimate": 0.7454799990425988,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 394,
+   "ki_reportable": true,
+   "estimate": 0.5304884009547383,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 395,
+   "ki_reportable": true,
+   "estimate": 0.801179711218239,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 396,
+   "ki_reportable": true,
+   "estimate": 0.40466277457789573,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 397,
+   "ki_reportable": true,
+   "estimate": 0.37968160811115365,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 398,
+   "ki_reportable": true,
+   "estimate": 0.6765101049878048,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 399,
+   "ki_reportable": true,
+   "estimate": 0.4692495497309419,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 400,
+   "ki_reportable": true,
+   "estimate": 0.7742151167662656,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 401,
+   "ki_reportable": true,
+   "estimate": 0.6044781410042315,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 402,
+   "ki_reportable": true,
+   "estimate": 0.8483663862092563,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 403,
+   "ki_reportable": true,
+   "estimate": 0.7914264193944109,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 404,
+   "ki_reportable": true,
+   "estimate": 0.7462434378436325,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 405,
+   "ki_reportable": true,
+   "estimate": 0.4721344896359793,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 406,
+   "ki_reportable": true,
+   "estimate": 0.7079161738252485,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 407,
+   "ki_reportable": true,
+   "estimate": 0.3560084521708365,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 408,
+   "ki_reportable": true,
+   "estimate": 0.6262181576003695,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 409,
+   "ki_reportable": true,
+   "estimate": 0.6031352256718066,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 410,
+   "ki_reportable": true,
+   "estimate": 0.5761900356428346,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 411,
+   "ki_reportable": true,
+   "estimate": 0.5990888923179227,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 412,
+   "ki_reportable": true,
+   "estimate": 0.7978217254397821,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 413,
+   "ki_reportable": true,
+   "estimate": 0.5927378674163974,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 414,
+   "ki_reportable": true,
+   "estimate": 0.4254145535704148,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 415,
+   "ki_reportable": true,
+   "estimate": 0.662243297613046,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 416,
+   "ki_reportable": true,
+   "estimate": 0.48240354653385825,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 417,
+   "ki_reportable": true,
+   "estimate": 0.3684468113477109,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 418,
+   "ki_reportable": true,
+   "estimate": 0.9394249446424745,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 419,
+   "ki_reportable": true,
+   "estimate": 0.4724597726827864,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 420,
+   "ki_reportable": true,
+   "estimate": 0.8291137077901429,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 421,
+   "ki_reportable": true,
+   "estimate": 0.7742733325649794,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 422,
+   "ki_reportable": true,
+   "estimate": 0.6753652303049668,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 423,
+   "ki_reportable": true,
+   "estimate": 0.6963908283910897,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 424,
+   "ki_reportable": true,
+   "estimate": 0.7007525093321566,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 425,
+   "ki_reportable": true,
+   "estimate": 0.8466431354824894,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 426,
+   "ki_reportable": true,
+   "estimate": 0.5711578413711662,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 427,
+   "ki_reportable": true,
+   "estimate": 0.594310069283176,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 428,
+   "ki_reportable": true,
+   "estimate": 0.6808442448029035,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 429,
+   "ki_reportable": true,
+   "estimate": 0.8321487105032869,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 430,
+   "ki_reportable": true,
+   "estimate": 0.6524021652700784,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 431,
+   "ki_reportable": true,
+   "estimate": 0.5176638197941966,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 432,
+   "ki_reportable": true,
+   "estimate": 0.6545473379571396,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 433,
+   "ki_reportable": true,
+   "estimate": 0.5278416024270637,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 434,
+   "ki_reportable": true,
+   "estimate": 0.7216511179019219,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 435,
+   "ki_reportable": true,
+   "estimate": 0.696210204876584,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 436,
+   "ki_reportable": true,
+   "estimate": 0.7383872009598785,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 437,
+   "ki_reportable": true,
+   "estimate": 0.2699655746996274,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 438,
+   "ki_reportable": true,
+   "estimate": 0.2877686026769314,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 439,
+   "ki_reportable": true,
+   "estimate": 0.6832857117363365,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 440,
+   "ki_reportable": true,
+   "estimate": 0.41062878113361384,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 441,
+   "ki_reportable": true,
+   "estimate": 0.9056652701796652,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 442,
+   "ki_reportable": true,
+   "estimate": 0.5256961621072855,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 443,
+   "ki_reportable": true,
+   "estimate": 0.595628157154338,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 444,
+   "ki_reportable": true,
+   "estimate": 0.4288794720140458,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 445,
+   "ki_reportable": true,
+   "estimate": 0.5934989544287325,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 446,
+   "ki_reportable": true,
+   "estimate": 0.4677976539501509,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 447,
+   "ki_reportable": true,
+   "estimate": 0.30721146906120506,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 448,
+   "ki_reportable": true,
+   "estimate": 0.7080837579026479,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 449,
+   "ki_reportable": true,
+   "estimate": 0.8187033098624833,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 450,
+   "ki_reportable": true,
+   "estimate": 0.6604577166225359,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 451,
+   "ki_reportable": true,
+   "estimate": 0.36016269203013584,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 452,
+   "ki_reportable": true,
+   "estimate": 0.6257668624625192,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 453,
+   "ki_reportable": true,
+   "estimate": 0.5556632382434782,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 454,
+   "ki_reportable": true,
+   "estimate": 1.0116736842495686,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 455,
+   "ki_reportable": true,
+   "estimate": 0.945492841685425,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 456,
+   "ki_reportable": true,
+   "estimate": 0.6981282092841142,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 457,
+   "ki_reportable": true,
+   "estimate": 0.729997161710963,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 458,
+   "ki_reportable": true,
+   "estimate": 0.5692088053598033,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 459,
+   "ki_reportable": true,
+   "estimate": 0.7108558119624219,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 460,
+   "ki_reportable": true,
+   "estimate": 1.2687747240456089,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 461,
+   "ki_reportable": true,
+   "estimate": 0.3055213374936332,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 462,
+   "ki_reportable": true,
+   "estimate": 0.9181391584783785,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 463,
+   "ki_reportable": true,
+   "estimate": 0.5057555438347616,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 464,
+   "ki_reportable": true,
+   "estimate": 0.6145195245698608,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 465,
+   "ki_reportable": true,
+   "estimate": 0.2771322389269494,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 466,
+   "ki_reportable": true,
+   "estimate": 0.1601219153409981,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 467,
+   "ki_reportable": true,
+   "estimate": 0.4255755721165004,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 468,
+   "ki_reportable": true,
+   "estimate": 0.261428306298015,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 469,
+   "ki_reportable": true,
+   "estimate": 0.7817490675857098,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 470,
+   "ki_reportable": true,
+   "estimate": 0.6139104082276343,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 471,
+   "ki_reportable": true,
+   "estimate": 0.6231804843299418,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 472,
+   "ki_reportable": true,
+   "estimate": 1.0470522202538992,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 473,
+   "ki_reportable": true,
+   "estimate": 0.4722953885234629,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 474,
+   "ki_reportable": true,
+   "estimate": 0.5969989233843123,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 475,
+   "ki_reportable": true,
+   "estimate": 0.9953350464852714,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 476,
+   "ki_reportable": true,
+   "estimate": 0.523443061388202,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 477,
+   "ki_reportable": true,
+   "estimate": 0.44324262186736646,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 478,
+   "ki_reportable": true,
+   "estimate": 0.5477176203074151,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 479,
+   "ki_reportable": true,
+   "estimate": 0.49968092087675303,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 480,
+   "ki_reportable": true,
+   "estimate": 0.6822859634014793,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 481,
+   "ki_reportable": true,
+   "estimate": 0.7820619326617138,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 482,
+   "ki_reportable": true,
+   "estimate": 0.34028846192897855,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 483,
+   "ki_reportable": true,
+   "estimate": 0.825515186241998,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 484,
+   "ki_reportable": true,
+   "estimate": 0.5119119689688547,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 485,
+   "ki_reportable": true,
+   "estimate": 0.6729269494215937,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 486,
+   "ki_reportable": true,
+   "estimate": 0.14885004135420235,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 487,
+   "ki_reportable": true,
+   "estimate": 0.6298330131735772,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 488,
+   "ki_reportable": true,
+   "estimate": 0.5843447823552,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 489,
+   "ki_reportable": true,
+   "estimate": 1.0185145713525106,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 490,
+   "ki_reportable": true,
+   "estimate": 0.20376435009762683,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 491,
+   "ki_reportable": true,
+   "estimate": 0.5146435794037583,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 492,
+   "ki_reportable": true,
+   "estimate": 0.7576596498179464,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 493,
+   "ki_reportable": true,
+   "estimate": 1.0202785491797113,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 494,
+   "ki_reportable": true,
+   "estimate": 0.6472507325342117,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 495,
+   "ki_reportable": true,
+   "estimate": 0.6612944108390841,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 496,
+   "ki_reportable": true,
+   "estimate": 0.6752432679713416,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 497,
+   "ki_reportable": true,
+   "estimate": 0.9041782953277386,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 498,
+   "ki_reportable": true,
+   "estimate": 0.15698363385732986,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 499,
+   "ki_reportable": true,
+   "estimate": 0.42250142668522606,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 500,
+   "ki_reportable": true,
+   "estimate": 0.5588078999914969,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 501,
+   "ki_reportable": true,
+   "estimate": 0.44397516461478187,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 502,
+   "ki_reportable": true,
+   "estimate": 0.4062467638641648,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 503,
+   "ki_reportable": true,
+   "estimate": 0.46678828600531796,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 504,
+   "ki_reportable": true,
+   "estimate": 0.6527039513618978,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 505,
+   "ki_reportable": true,
+   "estimate": 0.9588809057951014,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 506,
+   "ki_reportable": true,
+   "estimate": 0.18306078299169268,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 507,
+   "ki_reportable": true,
+   "estimate": 0.6585565797815988,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 508,
+   "ki_reportable": true,
+   "estimate": 0.6267593059755401,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 509,
+   "ki_reportable": true,
+   "estimate": 0.45060141398166154,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 510,
+   "ki_reportable": true,
+   "estimate": 0.3994234532226149,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 511,
+   "ki_reportable": true,
+   "estimate": 0.7813880004060183,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 512,
+   "ki_reportable": true,
+   "estimate": 0.31852271412232497,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 513,
+   "ki_reportable": true,
+   "estimate": 0.537448322074116,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 514,
+   "ki_reportable": true,
+   "estimate": 1.1784568048291553,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 515,
+   "ki_reportable": true,
+   "estimate": 0.5561802264758954,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 516,
+   "ki_reportable": true,
+   "estimate": 0.4528989561967325,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 517,
+   "ki_reportable": true,
+   "estimate": 0.6559391716801141,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 518,
+   "ki_reportable": true,
+   "estimate": 0.37765030419214063,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 519,
+   "ki_reportable": true,
+   "estimate": 0.4380748925871696,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 520,
+   "ki_reportable": true,
+   "estimate": 0.552545205359753,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 521,
+   "ki_reportable": true,
+   "estimate": 0.6597155509300053,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 522,
+   "ki_reportable": true,
+   "estimate": 0.25097628327660554,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 523,
+   "ki_reportable": true,
+   "estimate": 0.46736530353343003,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 524,
+   "ki_reportable": true,
+   "estimate": 0.4786480047231649,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 525,
+   "ki_reportable": true,
+   "estimate": 0.6742547584018034,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 526,
+   "ki_reportable": true,
+   "estimate": 0.6015369815067309,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 527,
+   "ki_reportable": true,
+   "estimate": 0.5394617353255918,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 528,
+   "ki_reportable": true,
+   "estimate": 0.22496829050309539,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 529,
+   "ki_reportable": true,
+   "estimate": 0.6921889343825772,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 530,
+   "ki_reportable": true,
+   "estimate": 1.0249028549185528,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 531,
+   "ki_reportable": true,
+   "estimate": 0.875703451007323,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 532,
+   "ki_reportable": true,
+   "estimate": 0.7213971770897026,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 533,
+   "ki_reportable": true,
+   "estimate": 0.4099141119656346,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 534,
+   "ki_reportable": true,
+   "estimate": 0.2671762209145316,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 535,
+   "ki_reportable": true,
+   "estimate": 0.29128443640741325,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 536,
+   "ki_reportable": true,
+   "estimate": 0.7532744187900305,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 537,
+   "ki_reportable": true,
+   "estimate": 0.8126797638115073,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 538,
+   "ki_reportable": true,
+   "estimate": 0.6055011997820325,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 539,
+   "ki_reportable": true,
+   "estimate": 0.6351242250595701,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 540,
+   "ki_reportable": true,
+   "estimate": 0.35650315177891795,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 541,
+   "ki_reportable": true,
+   "estimate": 0.6995740189323482,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 542,
+   "ki_reportable": true,
+   "estimate": 0.43727945844891575,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 543,
+   "ki_reportable": true,
+   "estimate": 0.5734046849604435,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 544,
+   "ki_reportable": true,
+   "estimate": 0.502923805851433,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 545,
+   "ki_reportable": true,
+   "estimate": 0.34516875781836137,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 546,
+   "ki_reportable": true,
+   "estimate": 0.47572648934582507,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 547,
+   "ki_reportable": true,
+   "estimate": 0.7868196490255631,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 548,
+   "ki_reportable": true,
+   "estimate": 0.9416239869075206,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 549,
+   "ki_reportable": true,
+   "estimate": 0.7771082940259053,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 550,
+   "ki_reportable": true,
+   "estimate": 0.34676515502292443,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 551,
+   "ki_reportable": true,
+   "estimate": 0.33112382656548506,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 552,
+   "ki_reportable": true,
+   "estimate": 0.5861165416541578,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 553,
+   "ki_reportable": true,
+   "estimate": 0.6342560403015541,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 554,
+   "ki_reportable": true,
+   "estimate": 0.9017186713013854,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 555,
+   "ki_reportable": true,
+   "estimate": 0.38231751304875533,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 556,
+   "ki_reportable": true,
+   "estimate": 0.4140403802341051,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 557,
+   "ki_reportable": true,
+   "estimate": 0.6039879960152376,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 558,
+   "ki_reportable": true,
+   "estimate": 0.6705346348038791,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 559,
+   "ki_reportable": true,
+   "estimate": 0.5522844801841099,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 560,
+   "ki_reportable": true,
+   "estimate": 0.32789833655958256,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 561,
+   "ki_reportable": true,
+   "estimate": 0.7819806432629566,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 562,
+   "ki_reportable": true,
+   "estimate": 0.7227391333082313,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 563,
+   "ki_reportable": true,
+   "estimate": 0.5833775892866544,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 564,
+   "ki_reportable": true,
+   "estimate": 0.4570701782182907,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 565,
+   "ki_reportable": true,
+   "estimate": 0.638305010033997,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 566,
+   "ki_reportable": true,
+   "estimate": 0.6920749105292494,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 567,
+   "ki_reportable": true,
+   "estimate": 0.652026877241628,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 568,
+   "ki_reportable": true,
+   "estimate": 0.801337726375371,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 569,
+   "ki_reportable": true,
+   "estimate": 0.7492485955693762,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 570,
+   "ki_reportable": true,
+   "estimate": 0.6337985436730942,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 571,
+   "ki_reportable": true,
+   "estimate": 0.46165506815093765,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 572,
+   "ki_reportable": true,
+   "estimate": 0.3449134058411734,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 573,
+   "ki_reportable": true,
+   "estimate": 0.7488934199282471,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 574,
+   "ki_reportable": true,
+   "estimate": 0.4677447500012842,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 575,
+   "ki_reportable": true,
+   "estimate": 0.8047100323007081,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 576,
+   "ki_reportable": true,
+   "estimate": 0.5404553657332312,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 577,
+   "ki_reportable": true,
+   "estimate": 0.8031757136174742,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 578,
+   "ki_reportable": true,
+   "estimate": 0.5813852874239753,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 579,
+   "ki_reportable": true,
+   "estimate": 0.6602883202025825,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 580,
+   "ki_reportable": true,
+   "estimate": 0.5134183430475062,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 581,
+   "ki_reportable": true,
+   "estimate": 0.2807226129347733,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 582,
+   "ki_reportable": true,
+   "estimate": 0.7230503187740038,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 583,
+   "ki_reportable": true,
+   "estimate": 0.5039837255888105,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 584,
+   "ki_reportable": true,
+   "estimate": 0.4706668872962834,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 585,
+   "ki_reportable": true,
+   "estimate": 0.49384831751698915,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 586,
+   "ki_reportable": true,
+   "estimate": 0.6546114780046327,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 587,
+   "ki_reportable": true,
+   "estimate": 0.5457008654758614,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 588,
+   "ki_reportable": true,
+   "estimate": 0.5755445742123002,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 589,
+   "ki_reportable": true,
+   "estimate": 0.6642181134776437,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 590,
+   "ki_reportable": true,
+   "estimate": 0.6574468969729943,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 591,
+   "ki_reportable": true,
+   "estimate": 0.7255114735966159,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 592,
+   "ki_reportable": true,
+   "estimate": 0.5114265107339259,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 593,
+   "ki_reportable": true,
+   "estimate": 0.17267043507644247,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 594,
+   "ki_reportable": true,
+   "estimate": 0.5731452600479482,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 595,
+   "ki_reportable": true,
+   "estimate": 0.722036344146647,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 596,
+   "ki_reportable": true,
+   "estimate": 0.7895836394256434,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 597,
+   "ki_reportable": true,
+   "estimate": 0.7181632169377238,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 598,
+   "ki_reportable": true,
+   "estimate": 0.40343074236347737,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 599,
+   "ki_reportable": true,
+   "estimate": 0.3446280223896923,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 600,
+   "ki_reportable": true,
+   "estimate": 0.5845534964598674,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 601,
+   "ki_reportable": true,
+   "estimate": 0.42391650697477706,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 602,
+   "ki_reportable": true,
+   "estimate": 0.5454253337566154,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 603,
+   "ki_reportable": true,
+   "estimate": 0.8063432620905292,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 604,
+   "ki_reportable": true,
+   "estimate": 0.5949604329741941,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 605,
+   "ki_reportable": true,
+   "estimate": 0.7627042634877503,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 606,
+   "ki_reportable": true,
+   "estimate": 0.9123397940310733,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 607,
+   "ki_reportable": true,
+   "estimate": 0.13137669078943107,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 608,
+   "ki_reportable": true,
+   "estimate": 0.6267172490901449,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 609,
+   "ki_reportable": true,
+   "estimate": 0.37853938092526884,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 610,
+   "ki_reportable": true,
+   "estimate": 0.6157106116481753,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 611,
+   "ki_reportable": true,
+   "estimate": 0.5411325090060437,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 612,
+   "ki_reportable": true,
+   "estimate": 0.6398753234932405,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 613,
+   "ki_reportable": true,
+   "estimate": 0.6801510647499107,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 614,
+   "ki_reportable": true,
+   "estimate": 0.644546539766042,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 615,
+   "ki_reportable": true,
+   "estimate": 0.6325304194110806,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 616,
+   "ki_reportable": true,
+   "estimate": 0.8408012443947069,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 617,
+   "ki_reportable": true,
+   "estimate": 0.5632399831047856,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 618,
+   "ki_reportable": true,
+   "estimate": 0.6411023863384782,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 619,
+   "ki_reportable": true,
+   "estimate": 0.5160089735246661,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 620,
+   "ki_reportable": true,
+   "estimate": 0.7641766434180065,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 621,
+   "ki_reportable": true,
+   "estimate": 0.5851213523672819,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 622,
+   "ki_reportable": true,
+   "estimate": 0.6887277080147652,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 623,
+   "ki_reportable": true,
+   "estimate": 0.5918263145056585,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 624,
+   "ki_reportable": true,
+   "estimate": 0.8869205873781206,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 625,
+   "ki_reportable": true,
+   "estimate": 0.4614865311082566,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 626,
+   "ki_reportable": true,
+   "estimate": 0.8747466145754634,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 627,
+   "ki_reportable": true,
+   "estimate": 0.6212167788101759,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 628,
+   "ki_reportable": true,
+   "estimate": 0.7928317443006351,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 629,
+   "ki_reportable": true,
+   "estimate": 0.9414912311365307,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 630,
+   "ki_reportable": true,
+   "estimate": 0.3882402324216603,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 631,
+   "ki_reportable": true,
+   "estimate": 0.4021341067145915,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 632,
+   "ki_reportable": true,
+   "estimate": 0.5228496322294758,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 633,
+   "ki_reportable": true,
+   "estimate": 0.4839208261895824,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 634,
+   "ki_reportable": true,
+   "estimate": 0.7402169849894574,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 635,
+   "ki_reportable": true,
+   "estimate": 0.886548811296315,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 636,
+   "ki_reportable": true,
+   "estimate": 0.6114333316948142,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 637,
+   "ki_reportable": true,
+   "estimate": 0.7268896581443208,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 638,
+   "ki_reportable": true,
+   "estimate": 0.9423938022558719,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 639,
+   "ki_reportable": true,
+   "estimate": 0.5646683170629473,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 640,
+   "ki_reportable": true,
+   "estimate": 0.5329173832003399,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 641,
+   "ki_reportable": true,
+   "estimate": 0.8155090748710082,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 642,
+   "ki_reportable": true,
+   "estimate": 0.43644047278053144,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 643,
+   "ki_reportable": true,
+   "estimate": 0.5842905050416924,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 644,
+   "ki_reportable": true,
+   "estimate": 0.8821435227852106,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 645,
+   "ki_reportable": true,
+   "estimate": 1.0141581623603735,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 646,
+   "ki_reportable": true,
+   "estimate": 0.5178941928365935,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 647,
+   "ki_reportable": true,
+   "estimate": 0.38431048480699426,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 648,
+   "ki_reportable": true,
+   "estimate": 0.5186885948113803,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 649,
+   "ki_reportable": true,
+   "estimate": 0.6420887795779827,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 650,
+   "ki_reportable": true,
+   "estimate": 0.48998909798419243,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 651,
+   "ki_reportable": true,
+   "estimate": 0.9096128640551719,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 652,
+   "ki_reportable": true,
+   "estimate": 0.5563288228685166,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 653,
+   "ki_reportable": true,
+   "estimate": 0.28142721007637583,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 654,
+   "ki_reportable": true,
+   "estimate": 0.8661661319484284,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 655,
+   "ki_reportable": true,
+   "estimate": 0.7022538276400697,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 656,
+   "ki_reportable": true,
+   "estimate": 0.7465331931898964,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 657,
+   "ki_reportable": true,
+   "estimate": 0.3848429090976686,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 658,
+   "ki_reportable": true,
+   "estimate": 0.5471034108698021,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 659,
+   "ki_reportable": true,
+   "estimate": 0.4186195573977526,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 660,
+   "ki_reportable": true,
+   "estimate": 0.5261511585224845,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 661,
+   "ki_reportable": true,
+   "estimate": 0.8781592877053287,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 662,
+   "ki_reportable": true,
+   "estimate": 0.47664642712359123,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 663,
+   "ki_reportable": true,
+   "estimate": 0.6382363457575968,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 664,
+   "ki_reportable": true,
+   "estimate": 0.6345133888794222,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 665,
+   "ki_reportable": true,
+   "estimate": 0.905976901840299,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 666,
+   "ki_reportable": true,
+   "estimate": 0.6908262980335573,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 667,
+   "ki_reportable": true,
+   "estimate": 0.5116576202685195,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 668,
+   "ki_reportable": true,
+   "estimate": 0.8008676218965123,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 669,
+   "ki_reportable": true,
+   "estimate": 0.7731088899565496,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 670,
+   "ki_reportable": true,
+   "estimate": 0.5450529700767973,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 671,
+   "ki_reportable": true,
+   "estimate": 0.7060840741456879,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 672,
+   "ki_reportable": true,
+   "estimate": 0.6198820885828036,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 673,
+   "ki_reportable": true,
+   "estimate": 0.06310473534858181,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 674,
+   "ki_reportable": true,
+   "estimate": 0.6399544776880193,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 675,
+   "ki_reportable": true,
+   "estimate": 0.5613960738211594,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 676,
+   "ki_reportable": true,
+   "estimate": 0.23808066437500547,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 677,
+   "ki_reportable": true,
+   "estimate": 0.9917440183172331,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 678,
+   "ki_reportable": true,
+   "estimate": 0.5908921321804771,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 679,
+   "ki_reportable": true,
+   "estimate": 0.8068185306099813,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 680,
+   "ki_reportable": true,
+   "estimate": 0.5786656258200744,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 681,
+   "ki_reportable": true,
+   "estimate": 0.8354300014440315,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 682,
+   "ki_reportable": true,
+   "estimate": 0.666970416468115,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 683,
+   "ki_reportable": true,
+   "estimate": 0.5180751757389526,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 684,
+   "ki_reportable": true,
+   "estimate": 0.6664660631586058,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 685,
+   "ki_reportable": true,
+   "estimate": 0.6458350643323454,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 686,
+   "ki_reportable": true,
+   "estimate": 1.0802536546469244,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 687,
+   "ki_reportable": true,
+   "estimate": 0.617908162679858,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 688,
+   "ki_reportable": true,
+   "estimate": 0.5227940146659722,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 689,
+   "ki_reportable": true,
+   "estimate": 0.8950414110869985,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 690,
+   "ki_reportable": true,
+   "estimate": 0.33807577652976156,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 691,
+   "ki_reportable": true,
+   "estimate": 0.49020265301289967,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 692,
+   "ki_reportable": true,
+   "estimate": 0.286457205932932,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 693,
+   "ki_reportable": true,
+   "estimate": 0.41433716815321114,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 694,
+   "ki_reportable": true,
+   "estimate": 0.4358393618004087,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 695,
+   "ki_reportable": true,
+   "estimate": 0.799904803236678,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 696,
+   "ki_reportable": true,
+   "estimate": 0.6377119066000851,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 697,
+   "ki_reportable": true,
+   "estimate": 0.36921986616242164,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 698,
+   "ki_reportable": true,
+   "estimate": 0.43861494581941785,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 699,
+   "ki_reportable": true,
+   "estimate": 0.47869999219092424,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 700,
+   "ki_reportable": true,
+   "estimate": 0.6926341624972574,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 701,
+   "ki_reportable": true,
+   "estimate": 0.735314600495706,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 702,
+   "ki_reportable": true,
+   "estimate": 0.5047978108714978,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 703,
+   "ki_reportable": true,
+   "estimate": 0.44927412543691897,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 704,
+   "ki_reportable": true,
+   "estimate": 0.40795472602632804,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 705,
+   "ki_reportable": true,
+   "estimate": 0.6914546265496531,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 706,
+   "ki_reportable": true,
+   "estimate": 0.588389008486622,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 707,
+   "ki_reportable": true,
+   "estimate": 0.7160262240239854,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 708,
+   "ki_reportable": true,
+   "estimate": 0.5392086470404761,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 709,
+   "ki_reportable": true,
+   "estimate": 0.6956325717245448,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 710,
+   "ki_reportable": true,
+   "estimate": 0.5260141408704506,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 711,
+   "ki_reportable": true,
+   "estimate": 0.6241426170089722,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 712,
+   "ki_reportable": true,
+   "estimate": 0.6279539899922626,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 713,
+   "ki_reportable": true,
+   "estimate": 0.4841693350827499,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 714,
+   "ki_reportable": true,
+   "estimate": 0.3979999755698372,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 715,
+   "ki_reportable": true,
+   "estimate": 0.8475087185330822,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 716,
+   "ki_reportable": true,
+   "estimate": 0.39637331061717773,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 717,
+   "ki_reportable": true,
+   "estimate": 0.8349249359999488,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 718,
+   "ki_reportable": true,
+   "estimate": 0.4118733510533554,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 719,
+   "ki_reportable": true,
+   "estimate": 0.18934147887613986,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 720,
+   "ki_reportable": true,
+   "estimate": 0.8256522561782904,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 721,
+   "ki_reportable": true,
+   "estimate": 0.5716675128015377,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 722,
+   "ki_reportable": true,
+   "estimate": 0.6509666226280859,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 723,
+   "ki_reportable": true,
+   "estimate": 0.5006095184113029,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 724,
+   "ki_reportable": true,
+   "estimate": 0.8352256010117982,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 725,
+   "ki_reportable": true,
+   "estimate": 0.46751888486491766,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 726,
+   "ki_reportable": true,
+   "estimate": 0.6543680685983138,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 727,
+   "ki_reportable": true,
+   "estimate": 0.3133773568547129,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 728,
+   "ki_reportable": true,
+   "estimate": 0.6871594803666138,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 729,
+   "ki_reportable": true,
+   "estimate": 0.3624798133624943,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 730,
+   "ki_reportable": true,
+   "estimate": 0.5834855176074364,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 731,
+   "ki_reportable": true,
+   "estimate": 0.22323865478834207,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 732,
+   "ki_reportable": true,
+   "estimate": 0.5144170366225927,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 733,
+   "ki_reportable": true,
+   "estimate": 0.6196333187772498,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 734,
+   "ki_reportable": true,
+   "estimate": 0.542331726766007,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 735,
+   "ki_reportable": true,
+   "estimate": 0.5370268063724625,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 736,
+   "ki_reportable": true,
+   "estimate": 0.4179412931105435,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 737,
+   "ki_reportable": true,
+   "estimate": 0.5005236550119055,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 738,
+   "ki_reportable": true,
+   "estimate": 0.5347453885606317,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 739,
+   "ki_reportable": true,
+   "estimate": 0.7110128859479963,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 740,
+   "ki_reportable": true,
+   "estimate": 0.4868298348656787,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 741,
+   "ki_reportable": true,
+   "estimate": 0.6475608321952235,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 742,
+   "ki_reportable": true,
+   "estimate": 0.5620739424449297,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 743,
+   "ki_reportable": true,
+   "estimate": 0.6703447851029103,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 744,
+   "ki_reportable": true,
+   "estimate": 0.41947972807897377,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 745,
+   "ki_reportable": true,
+   "estimate": 0.6900284377421552,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 746,
+   "ki_reportable": true,
+   "estimate": 0.5276392599328813,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 747,
+   "ki_reportable": true,
+   "estimate": 0.6214323856769148,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 748,
+   "ki_reportable": true,
+   "estimate": 0.422038741840771,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 749,
+   "ki_reportable": true,
+   "estimate": 0.5828086125439872,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 750,
+   "ki_reportable": true,
+   "estimate": 0.8589784905844555,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 751,
+   "ki_reportable": true,
+   "estimate": 0.5127919079266618,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 752,
+   "ki_reportable": true,
+   "estimate": 0.6107213132666028,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 753,
+   "ki_reportable": true,
+   "estimate": 0.6872228670223176,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 754,
+   "ki_reportable": true,
+   "estimate": 0.7399624484833524,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 755,
+   "ki_reportable": true,
+   "estimate": 0.48669494186129153,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 756,
+   "ki_reportable": true,
+   "estimate": 0.6429146981026438,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 757,
+   "ki_reportable": true,
+   "estimate": 0.9286111381279942,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 758,
+   "ki_reportable": true,
+   "estimate": 0.8002266003087927,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 759,
+   "ki_reportable": true,
+   "estimate": 0.372234720344354,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 760,
+   "ki_reportable": true,
+   "estimate": 0.6867959445552864,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 761,
+   "ki_reportable": true,
+   "estimate": 0.30895544448449885,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 762,
+   "ki_reportable": true,
+   "estimate": 0.3741163674636736,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 763,
+   "ki_reportable": true,
+   "estimate": 0.4731380756482292,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 764,
+   "ki_reportable": true,
+   "estimate": 0.6150317534899876,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 765,
+   "ki_reportable": true,
+   "estimate": 0.5947973147363882,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 766,
+   "ki_reportable": true,
+   "estimate": 0.5711520489553369,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 767,
+   "ki_reportable": true,
+   "estimate": 0.5151643413617764,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 768,
+   "ki_reportable": true,
+   "estimate": 0.6327600170419658,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 769,
+   "ki_reportable": true,
+   "estimate": 0.5539601715006501,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 770,
+   "ki_reportable": true,
+   "estimate": 0.7880436396759624,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 771,
+   "ki_reportable": true,
+   "estimate": 0.3244370447064359,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 772,
+   "ki_reportable": true,
+   "estimate": 0.5566652536508307,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 773,
+   "ki_reportable": true,
+   "estimate": 0.7863507003650824,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 774,
+   "ki_reportable": true,
+   "estimate": 0.7415346112370298,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 775,
+   "ki_reportable": true,
+   "estimate": 0.8008709794515539,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 776,
+   "ki_reportable": true,
+   "estimate": 0.2433910825794989,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 777,
+   "ki_reportable": true,
+   "estimate": 0.7265477126116596,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 778,
+   "ki_reportable": true,
+   "estimate": 0.5189366820798966,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 779,
+   "ki_reportable": true,
+   "estimate": 0.7908230165437397,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 780,
+   "ki_reportable": true,
+   "estimate": 0.5710636465015378,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 781,
+   "ki_reportable": true,
+   "estimate": 0.4094625222761522,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 782,
+   "ki_reportable": true,
+   "estimate": 0.6647719789086796,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 783,
+   "ki_reportable": true,
+   "estimate": 0.7426367457185712,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 784,
+   "ki_reportable": true,
+   "estimate": 0.8010993768806703,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 785,
+   "ki_reportable": true,
+   "estimate": 0.5185299807639474,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 786,
+   "ki_reportable": true,
+   "estimate": 0.256336276596072,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 787,
+   "ki_reportable": true,
+   "estimate": 0.7105129530732216,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 788,
+   "ki_reportable": true,
+   "estimate": 0.4642523949666908,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 789,
+   "ki_reportable": true,
+   "estimate": 0.9012205832582089,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 790,
+   "ki_reportable": true,
+   "estimate": 0.11139471267683633,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 791,
+   "ki_reportable": true,
+   "estimate": 0.48660503295547963,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 792,
+   "ki_reportable": true,
+   "estimate": 0.6566019242810677,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 793,
+   "ki_reportable": true,
+   "estimate": 0.5880162626007776,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 794,
+   "ki_reportable": true,
+   "estimate": 0.5080323057307837,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 795,
+   "ki_reportable": true,
+   "estimate": 0.8160445565394256,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 796,
+   "ki_reportable": true,
+   "estimate": 0.36019465086737645,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 797,
+   "ki_reportable": true,
+   "estimate": 0.3232224139825234,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 798,
+   "ki_reportable": true,
+   "estimate": 0.5215080574999189,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 799,
+   "ki_reportable": true,
+   "estimate": 0.6026039389022066,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 800,
+   "ki_reportable": true,
+   "estimate": 0.52926855179195,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 801,
+   "ki_reportable": true,
+   "estimate": 1.1060819583033694,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 802,
+   "ki_reportable": true,
+   "estimate": 0.3009063373294651,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 803,
+   "ki_reportable": true,
+   "estimate": 0.23001555758723846,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 804,
+   "ki_reportable": true,
+   "estimate": 0.7160445397399503,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 805,
+   "ki_reportable": true,
+   "estimate": 0.5006753414346128,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 806,
+   "ki_reportable": true,
+   "estimate": 0.6635238511683111,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 807,
+   "ki_reportable": true,
+   "estimate": 0.7444744881883778,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 808,
+   "ki_reportable": true,
+   "estimate": 0.6758842342096849,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 809,
+   "ki_reportable": true,
+   "estimate": 0.6393886081687783,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 810,
+   "ki_reportable": true,
+   "estimate": 0.6062930236518348,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 811,
+   "ki_reportable": true,
+   "estimate": 0.7402288452549723,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 812,
+   "ki_reportable": true,
+   "estimate": 0.43712493107954287,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 813,
+   "ki_reportable": true,
+   "estimate": 0.5742491600157728,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 814,
+   "ki_reportable": true,
+   "estimate": 0.7558808587907442,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 815,
+   "ki_reportable": true,
+   "estimate": 0.40927430662532643,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 816,
+   "ki_reportable": true,
+   "estimate": 0.6980024327155905,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 817,
+   "ki_reportable": true,
+   "estimate": 0.6302734065177026,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 818,
+   "ki_reportable": true,
+   "estimate": 0.5052561729118026,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 819,
+   "ki_reportable": true,
+   "estimate": 0.40997162958210565,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 820,
+   "ki_reportable": true,
+   "estimate": 0.20972009835691996,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 821,
+   "ki_reportable": true,
+   "estimate": 0.3910997727500162,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 822,
+   "ki_reportable": true,
+   "estimate": 0.6192770998356538,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 823,
+   "ki_reportable": true,
+   "estimate": 0.5457714860168995,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 824,
+   "ki_reportable": true,
+   "estimate": 0.6328913978210569,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 825,
+   "ki_reportable": true,
+   "estimate": 0.2652782614711903,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 826,
+   "ki_reportable": true,
+   "estimate": 0.4888494826674215,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 827,
+   "ki_reportable": true,
+   "estimate": 0.7159819532093546,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 828,
+   "ki_reportable": true,
+   "estimate": 0.4999753941445573,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 829,
+   "ki_reportable": true,
+   "estimate": 0.26991299155342585,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 830,
+   "ki_reportable": true,
+   "estimate": 0.4834654048959791,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 831,
+   "ki_reportable": true,
+   "estimate": 0.40708464145353884,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 832,
+   "ki_reportable": true,
+   "estimate": 0.49484626490111583,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 833,
+   "ki_reportable": true,
+   "estimate": 0.48258642340375907,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 834,
+   "ki_reportable": true,
+   "estimate": 0.44319522888492874,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 835,
+   "ki_reportable": true,
+   "estimate": 0.6957269319142056,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 836,
+   "ki_reportable": true,
+   "estimate": 0.7971565447380645,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 837,
+   "ki_reportable": true,
+   "estimate": 0.8538864314466365,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 838,
+   "ki_reportable": true,
+   "estimate": 0.7910768987823759,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 839,
+   "ki_reportable": true,
+   "estimate": 0.4591705265575524,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 840,
+   "ki_reportable": true,
+   "estimate": 0.3920692390745522,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 841,
+   "ki_reportable": true,
+   "estimate": 0.8154475530164979,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 842,
+   "ki_reportable": true,
+   "estimate": 0.7712769460808168,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 843,
+   "ki_reportable": true,
+   "estimate": 0.6801214223000438,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 844,
+   "ki_reportable": true,
+   "estimate": 0.5122479292375499,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 845,
+   "ki_reportable": true,
+   "estimate": 0.6042504345590811,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 846,
+   "ki_reportable": true,
+   "estimate": 0.5086382157542624,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 847,
+   "ki_reportable": true,
+   "estimate": 0.7412640961879472,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 848,
+   "ki_reportable": true,
+   "estimate": 0.2004424454678909,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 849,
+   "ki_reportable": true,
+   "estimate": 0.5920496135993645,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 850,
+   "ki_reportable": true,
+   "estimate": 0.3666201317828832,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 851,
+   "ki_reportable": true,
+   "estimate": 0.5083438393659686,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 852,
+   "ki_reportable": true,
+   "estimate": 0.7089877863172359,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 853,
+   "ki_reportable": true,
+   "estimate": 0.3432029667076657,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 854,
+   "ki_reportable": true,
+   "estimate": 0.6417768141322503,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 855,
+   "ki_reportable": true,
+   "estimate": 0.6850057573207283,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 856,
+   "ki_reportable": true,
+   "estimate": 0.6318720872734531,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 857,
+   "ki_reportable": true,
+   "estimate": 0.8532716583957204,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 858,
+   "ki_reportable": true,
+   "estimate": 0.3141924498832162,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 859,
+   "ki_reportable": true,
+   "estimate": 0.5535663345660945,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 860,
+   "ki_reportable": true,
+   "estimate": 0.7499996668799274,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 861,
+   "ki_reportable": true,
+   "estimate": 0.5562436839708608,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 862,
+   "ki_reportable": true,
+   "estimate": 0.8660730302337433,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 863,
+   "ki_reportable": true,
+   "estimate": 0.45125351578873696,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 864,
+   "ki_reportable": true,
+   "estimate": 0.5524522165029316,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 865,
+   "ki_reportable": true,
+   "estimate": 0.4128649624979416,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 866,
+   "ki_reportable": true,
+   "estimate": 0.678843411519512,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 867,
+   "ki_reportable": true,
+   "estimate": 0.5117174908694027,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 868,
+   "ki_reportable": true,
+   "estimate": 0.7709090858736256,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 869,
+   "ki_reportable": true,
+   "estimate": 0.629565105897302,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 870,
+   "ki_reportable": true,
+   "estimate": 0.5611401589541974,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 871,
+   "ki_reportable": true,
+   "estimate": 0.5077951858416014,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 872,
+   "ki_reportable": true,
+   "estimate": 0.6386741727929925,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 873,
+   "ki_reportable": true,
+   "estimate": 0.49099283551669554,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 874,
+   "ki_reportable": true,
+   "estimate": 0.6655384787211507,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 875,
+   "ki_reportable": true,
+   "estimate": 0.7097360284330142,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 876,
+   "ki_reportable": true,
+   "estimate": 0.5914252118100286,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 877,
+   "ki_reportable": true,
+   "estimate": 0.7547075021013808,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 878,
+   "ki_reportable": true,
+   "estimate": 0.6514661373179125,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 879,
+   "ki_reportable": true,
+   "estimate": 0.5689269682255513,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 880,
+   "ki_reportable": true,
+   "estimate": 0.7011872345870579,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 881,
+   "ki_reportable": true,
+   "estimate": 0.5006667923527436,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 882,
+   "ki_reportable": true,
+   "estimate": 0.9699863961573006,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 883,
+   "ki_reportable": true,
+   "estimate": 0.9588052623684857,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 884,
+   "ki_reportable": true,
+   "estimate": 0.5745025797267822,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 885,
+   "ki_reportable": true,
+   "estimate": 0.43566530054685165,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 886,
+   "ki_reportable": true,
+   "estimate": 0.5933318647442414,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 887,
+   "ki_reportable": true,
+   "estimate": 1.1008141829278344,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 888,
+   "ki_reportable": true,
+   "estimate": 0.42080135404577973,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 889,
+   "ki_reportable": true,
+   "estimate": 0.6703966475703724,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 890,
+   "ki_reportable": true,
+   "estimate": 0.9179959729133611,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 891,
+   "ki_reportable": true,
+   "estimate": 0.45852172679222664,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 892,
+   "ki_reportable": true,
+   "estimate": 0.6971700282962958,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 893,
+   "ki_reportable": true,
+   "estimate": 0.8233960435784337,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 894,
+   "ki_reportable": true,
+   "estimate": 0.7271655620810206,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 895,
+   "ki_reportable": true,
+   "estimate": 0.7240549169725344,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 896,
+   "ki_reportable": true,
+   "estimate": 0.7563329383751487,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 897,
+   "ki_reportable": true,
+   "estimate": 0.721948992302572,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 898,
+   "ki_reportable": true,
+   "estimate": 0.5906249523171389,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 899,
+   "ki_reportable": true,
+   "estimate": 0.626246218818995,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 900,
+   "ki_reportable": true,
+   "estimate": 0.7700665779594948,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 901,
+   "ki_reportable": true,
+   "estimate": 0.6774144441706337,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 902,
+   "ki_reportable": true,
+   "estimate": 0.41759235379187043,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 903,
+   "ki_reportable": true,
+   "estimate": 0.5998620107009243,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 904,
+   "ki_reportable": true,
+   "estimate": 0.5877957844650843,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 905,
+   "ki_reportable": true,
+   "estimate": 0.45105415191731135,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 906,
+   "ki_reportable": true,
+   "estimate": 0.48440067463562464,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 907,
+   "ki_reportable": true,
+   "estimate": 0.6335171590799158,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 908,
+   "ki_reportable": true,
+   "estimate": 0.7261871933822831,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 909,
+   "ki_reportable": true,
+   "estimate": 0.2906987608168907,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 910,
+   "ki_reportable": true,
+   "estimate": 0.6134494738706592,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 911,
+   "ki_reportable": true,
+   "estimate": 0.6577401347963601,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 912,
+   "ki_reportable": true,
+   "estimate": 0.5480573603727984,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 913,
+   "ki_reportable": true,
+   "estimate": 0.38965562734485243,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 914,
+   "ki_reportable": true,
+   "estimate": 0.5232132715342909,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 915,
+   "ki_reportable": true,
+   "estimate": 0.6910986899959862,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 916,
+   "ki_reportable": true,
+   "estimate": 0.658745239747306,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 917,
+   "ki_reportable": true,
+   "estimate": 0.6281801248990171,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 918,
+   "ki_reportable": true,
+   "estimate": 0.6331256204482328,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 919,
+   "ki_reportable": true,
+   "estimate": 0.8601051543576047,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 920,
+   "ki_reportable": true,
+   "estimate": 0.6482087241656523,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 921,
+   "ki_reportable": true,
+   "estimate": 0.3391864428194348,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 922,
+   "ki_reportable": true,
+   "estimate": 0.41571367419858896,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 923,
+   "ki_reportable": true,
+   "estimate": 0.5171706436544202,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 924,
+   "ki_reportable": true,
+   "estimate": 0.6162029105786078,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 925,
+   "ki_reportable": true,
+   "estimate": 0.8427381465057907,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 926,
+   "ki_reportable": true,
+   "estimate": 0.4854359304370346,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 927,
+   "ki_reportable": true,
+   "estimate": 0.5261860994699861,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 928,
+   "ki_reportable": true,
+   "estimate": 0.5114144922252204,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 929,
+   "ki_reportable": true,
+   "estimate": 0.7605307322035695,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 930,
+   "ki_reportable": true,
+   "estimate": 0.5628608877914769,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 931,
+   "ki_reportable": true,
+   "estimate": 0.4194081223933702,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 932,
+   "ki_reportable": true,
+   "estimate": 0.7176377783018951,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 933,
+   "ki_reportable": true,
+   "estimate": 0.37047169265772695,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 934,
+   "ki_reportable": true,
+   "estimate": 0.6579198227102413,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 935,
+   "ki_reportable": true,
+   "estimate": 0.7637289820902571,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 936,
+   "ki_reportable": true,
+   "estimate": 0.6737374500994457,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 937,
+   "ki_reportable": true,
+   "estimate": 0.8086495525451521,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 938,
+   "ki_reportable": true,
+   "estimate": 0.4923610827048354,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 939,
+   "ki_reportable": true,
+   "estimate": 0.645600466798331,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 940,
+   "ki_reportable": true,
+   "estimate": 0.5909514119424838,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 941,
+   "ki_reportable": true,
+   "estimate": 0.6639275573854804,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 942,
+   "ki_reportable": true,
+   "estimate": 0.6012572353263496,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 943,
+   "ki_reportable": true,
+   "estimate": 0.5566695435299215,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 944,
+   "ki_reportable": true,
+   "estimate": 0.8525006140312571,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 945,
+   "ki_reportable": true,
+   "estimate": 0.5167559868482138,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 946,
+   "ki_reportable": true,
+   "estimate": 0.9838163077575146,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 947,
+   "ki_reportable": true,
+   "estimate": 0.41880889611349165,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 948,
+   "ki_reportable": true,
+   "estimate": 0.5359393443927232,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 949,
+   "ki_reportable": true,
+   "estimate": 0.45670595191030644,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 950,
+   "ki_reportable": true,
+   "estimate": 0.883742353555157,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 951,
+   "ki_reportable": true,
+   "estimate": 0.6419339582912688,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 952,
+   "ki_reportable": true,
+   "estimate": 0.6773482634335595,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 953,
+   "ki_reportable": true,
+   "estimate": 0.5121433341454928,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 954,
+   "ki_reportable": true,
+   "estimate": 0.15495955289383423,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 955,
+   "ki_reportable": true,
+   "estimate": 0.6143324618628438,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 956,
+   "ki_reportable": true,
+   "estimate": 0.5106057287366997,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 957,
+   "ki_reportable": true,
+   "estimate": 0.6233880976896075,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 958,
+   "ki_reportable": true,
+   "estimate": 0.4586025640901001,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 959,
+   "ki_reportable": true,
+   "estimate": 0.5613276890590623,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 960,
+   "ki_reportable": true,
+   "estimate": 0.4890617862008363,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 961,
+   "ki_reportable": true,
+   "estimate": 0.567096072532575,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 962,
+   "ki_reportable": true,
+   "estimate": 0.836274271213522,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 963,
+   "ki_reportable": true,
+   "estimate": 0.8113655162062176,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 964,
+   "ki_reportable": true,
+   "estimate": 0.3660986934623518,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 965,
+   "ki_reportable": true,
+   "estimate": 0.5245267848900712,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 966,
+   "ki_reportable": true,
+   "estimate": 0.27012185630870994,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 967,
+   "ki_reportable": true,
+   "estimate": 0.4368496511551128,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 968,
+   "ki_reportable": true,
+   "estimate": 0.456635409012081,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 969,
+   "ki_reportable": true,
+   "estimate": 0.6043326338061633,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 970,
+   "ki_reportable": true,
+   "estimate": 0.4694030151316858,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 971,
+   "ki_reportable": true,
+   "estimate": 0.7227386610814986,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 972,
+   "ki_reportable": true,
+   "estimate": 0.45191294876183896,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 973,
+   "ki_reportable": true,
+   "estimate": 1.025011075874677,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 974,
+   "ki_reportable": true,
+   "estimate": 0.7525367558407131,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 975,
+   "ki_reportable": true,
+   "estimate": 0.6309838636946995,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 976,
+   "ki_reportable": true,
+   "estimate": 0.39042866277610133,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 977,
+   "ki_reportable": true,
+   "estimate": 0.6842009873719387,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 978,
+   "ki_reportable": true,
+   "estimate": 0.5373920186262326,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 979,
+   "ki_reportable": true,
+   "estimate": 0.8679067131581087,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 980,
+   "ki_reportable": true,
+   "estimate": 0.8262961330305659,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 981,
+   "ki_reportable": true,
+   "estimate": 0.8564178102456663,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 982,
+   "ki_reportable": true,
+   "estimate": 0.4351462128119896,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 983,
+   "ki_reportable": true,
+   "estimate": 0.5476364940014523,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 984,
+   "ki_reportable": true,
+   "estimate": 0.3952538989001073,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 985,
+   "ki_reportable": true,
+   "estimate": 0.05879140851735507,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 986,
+   "ki_reportable": true,
+   "estimate": 0.8909521338665759,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 987,
+   "ki_reportable": true,
+   "estimate": 1.067108813889236,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": false
+  },
+  {
+   "iteration": 988,
+   "ki_reportable": true,
+   "estimate": 0.74869510780345,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 989,
+   "ki_reportable": true,
+   "estimate": 0.5205772750586509,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 990,
+   "ki_reportable": true,
+   "estimate": 0.3157303776218321,
+   "lower_open": true,
+   "upper_open": false,
+   "covered_two_sided": null
+  },
+  {
+   "iteration": 991,
+   "ki_reportable": true,
+   "estimate": 0.6006885740267285,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 992,
+   "ki_reportable": true,
+   "estimate": 0.5230778524588304,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 993,
+   "ki_reportable": true,
+   "estimate": 0.6778279487366307,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 994,
+   "ki_reportable": true,
+   "estimate": 0.46965991636437904,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 995,
+   "ki_reportable": true,
+   "estimate": 0.6681642253598801,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 996,
+   "ki_reportable": true,
+   "estimate": 0.743472999222083,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 997,
+   "ki_reportable": true,
+   "estimate": 0.43957453405550173,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 998,
+   "ki_reportable": true,
+   "estimate": 0.7635655329860624,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  },
+  {
+   "iteration": 999,
+   "ki_reportable": true,
+   "estimate": 0.740310202424135,
+   "lower_open": false,
+   "upper_open": false,
+   "covered_two_sided": true
+  }
+ ]
+}

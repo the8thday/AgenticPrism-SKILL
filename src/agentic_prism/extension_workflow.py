@@ -9,7 +9,7 @@ import importlib.metadata
 from .workflow import dump,sha,implementation_hash,verify_run
 from . import __version__
 from .routine import TYPES as ROUTINE_TYPES
-TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen", "censored_comparison", "potency_ranking", "growth_rate_inhibition", "panel_comparison"}
+TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen", "censored_comparison", "potency_ranking", "growth_rate_inhibition", "panel_comparison", "enzyme_inhibition", "receptor_occupancy"}
 
 
 def module_for(kind):
@@ -19,6 +19,12 @@ def module_for(kind):
  if kind == 'roc_analysis':
   from . import diagnostic_accuracy
   return diagnostic_accuracy
+ if kind == 'receptor_occupancy':
+  from . import receptor_occupancy
+  return receptor_occupancy
+ if kind == 'enzyme_inhibition':
+  from . import enzyme_kinetics
+  return enzyme_kinetics
  if kind == 'panel_comparison':
   from . import panel
   return panel
@@ -114,9 +120,30 @@ def analyze_extension(config_path,output,render=True):
   if r['analysis_type'] in ('roc_analysis','rater_agreement','outlier_screen'):
    from .evidence_0136 import EVIDENCE
    r['validation_evidence']=EVIDENCE[r['analysis_type']];r['must_mention']+=EVIDENCE[r['analysis_type']]['must_mention']
-  if r['analysis_type'] in ('censored_comparison','potency_ranking','growth_rate_inhibition','panel_comparison'):
+  if r['analysis_type']=='censored_comparison' and cfg.get('paired') is not None:
+   from .evidence_0141 import EVIDENCE as E141
+   r['validation_evidence']=E141['censored_paired'];r['must_mention']+=E141['censored_paired']['must_mention']
+  elif r['analysis_type'] in ('censored_comparison','potency_ranking','growth_rate_inhibition','panel_comparison'):
    from .evidence_0140 import EVIDENCE as E140
    r['validation_evidence']=E140[r['analysis_type']];r['must_mention']+=E140[r['analysis_type']]['must_mention']
+   if r['analysis_type']=='growth_rate_inhibition' and cfg['fit'].get('grmax_definition')=='fitted_minimum_top_two':
+    from .evidence_0141 import EVIDENCE as E141
+    r['validation_evidence_0141']=E141['gr_fitted_grmax'];r['must_mention']+=E141['gr_fitted_grmax']['must_mention']
+   if r['analysis_type']=='panel_comparison' and cfg.get('censoring') is not None:
+    from .evidence_0141 import EVIDENCE as E141
+    r['validation_evidence_0141']=E141['panel_censored'];r['must_mention']+=E141['panel_censored']['must_mention']
+  if r['analysis_type']=='receptor_occupancy':
+   from .evidence_0142 import EVIDENCE as E142
+   r['validation_evidence']=E142['receptor_occupancy'];r['must_mention']+=E142['receptor_occupancy']['must_mention']
+   if cfg.get('exposure_response',{}).get('interval')=='cluster_robust_t':
+    from .evidence_0143 import EVIDENCE as E143
+    r['validation_evidence_0143']=E143['ro_cluster_robust_t'];r['must_mention']+=E143['ro_cluster_robust_t']['must_mention']
+  if r['analysis_type']=='enzyme_inhibition' and cfg.get('tight_binding') is not None:
+   from .evidence_0143 import EVIDENCE as E143
+   r['validation_evidence']=E143['enzyme_morrison'];r['must_mention']+=E143['enzyme_morrison']['must_mention']
+  elif r['analysis_type']=='enzyme_inhibition':
+   from .evidence_0142 import EVIDENCE as E142
+   r['validation_evidence']=E142['enzyme_inhibition'];r['must_mention']+=E142['enzyme_inhibition']['must_mention']
   if r['analysis_type']=='growth_rate_inhibition':
    import pandas as pd
    pd.DataFrame(r['gr_values']).to_csv(out/'gr_values.csv',index=False)
@@ -147,6 +174,12 @@ def render_extension(run,style=None,extra_figures=''):
   names=render(run,r,style)
  if r['analysis_type']=='roc_analysis':
   from .diagnostic_accuracy import render
+  names=render(run,r,style)
+ if r['analysis_type']=='receptor_occupancy':
+  from .receptor_occupancy import render
+  names=render(run,r,style)
+ if r['analysis_type']=='enzyme_inhibition':
+  from .enzyme_kinetics import render
   names=render(run,r,style)
  if r['analysis_type']=='panel_comparison':
   from .panel import render

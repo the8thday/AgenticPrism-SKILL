@@ -1,4 +1,30 @@
-# Validation — AgenticPrism development 0.14.0
+# Validation — AgenticPrism development 0.14.3
+
+## 0.14.3 (in development) — RO EC50 interval and Morrison tight binding
+
+[Release evidence](RELEASE_0.14.3.md). RO `cluster_robust_t`: clubSandwich oracle 5/5, registered
+calibration 3/3 after a disclosed pilot. Morrison `tight_binding`: base-R exact-profile oracle
+13/13 (failed `confint` attempt kept), registered calibration 7/8 (active-enzyme coverage miss
+retained, post-hoc breakdown). Published-example gates unmet. Live-agent 6/6; 257 earlier
+configurations checked against 0.14.2 (five enzyme fixtures text-only).
+
+## 0.14.2 (in development) — enzyme inhibition and receptor occupancy
+
+[Release evidence](RELEASE_0.14.2.md). `enzyme_inhibition`: GraphPad's published competitive
+example (Km matches; Ki and Vmax one unit off in the last printed digit), base-R nls oracle 14/14,
+registered calibration 9/10 (summary Ki miss from withholding retained, post-hoc breakdown).
+`receptor_occupancy`: base-R oracle 5/5, registered calibration 3/5 (EC50 cluster-bootstrap
+undercoverage retained), published-example gate unmet. Live-agent 6/6; 247 earlier
+configurations byte-identical against 0.14.1; full suite 963 passed.
+
+## 0.14.1 (in development) — closing the 0.14.0 follow-ups
+
+[Release evidence](RELEASE_0.14.1.md). Paired `censored_comparison`: NADA2 reference code
+and R survival 10/10; first registered calibration (Wald z) 2/7 with 5 misses kept; second
+registered calibration (small-sample t default) 7/7; published-example gate unmet.
+Censored panel outcomes: R survival oracle 24/24, registered calibration 9/9. Fitted GRmax:
+registered calibration 3/3. Live-agent scenarios 6/6 (one weaker than designed).
+235 earlier configurations, 1,689 artifacts byte-identical against the published 0.14.0.
 
 ## 0.14.0 (in development) — discovery batch
 

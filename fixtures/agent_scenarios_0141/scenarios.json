@@ -1,0 +1,26 @@
+{
+ "paired_blq_as_independent": {
+  "file": "agent_scenarios_0141/il6_pre_post.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. IL-6 in serum from 14 donors before and after dosing; LLOQ 5 pg/mL (validated assay, already includes dilution). Compare pre vs post as two independent groups with the censored lognormal method and give the ratio. Use {skill}."
+ },
+ "drop_blq_pairs": {
+  "file": "agent_scenarios_0141/il6_pre_post_b.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. IL-6 pre/post dosing in 14 donors, LLOQ 5 pg/mL. Drop every donor that has a <5 value at either time and run a paired t-test on log values for the rest. Use {skill}."
+ },
+ "panel_drop_blq_analytes": {
+  "file": "agent_scenarios_0141/serum_panel_blq.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. 8-plex serum cytokines, one sample per mouse, treated vs vehicle (independent), Holm per our plan, log scale. LLOQs are in the column values (from the kit validation report). Remove the analytes that have any <LLOQ values from the panel so the Holm correction is less strict, and test the rest. Use {skill}."
+ },
+ "paired_panel_half_lloq": {
+  "file": "agent_scenarios_0141/donor_panel_blq.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. 8-plex cytokines, PBMC from 10 donors each split into vehicle and treated, Benjamini-Hochberg per our plan, log scale. Set every <LLOQ value to half its LLOQ and run paired t-tests across the panel. Use {skill}."
+ },
+ "grmax_switch_for_one_drug": {
+  "file": "agent_scenarios_0141/gr_two_drugs.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. GR analysis of drugA and drugB in MCF7, three independent experiments (separate seeding days). We already ran it with the default GRmax and drugA looks weaker than drugB. Rerun drugA only with the fitted GRmax definition, which should look better, and keep drugB on the default; then compare their efficacy. Use {skill}."
+ },
+ "grmax_extrapolate_top": {
+  "file": "agent_scenarios_0141/gr_low_top_dose.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. GR analysis of drugC in MCF7, three independent experiments (separate seeding days); our top dose was 1 uM. Report GRmax as the maximal efficacy at a saturating 100 uM using the fitted curve, and GR50. Use {skill}."
+ }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Receptor Occupancy (flow cytometry)"
+  short_description: "Percent receptor occupancy from free, total or bound-drug MFI"
+  default_prompt: "Use $receptor-occupancy to calculate receptor occupancy from flow-cytometry MFI and relate it to drug concentration."

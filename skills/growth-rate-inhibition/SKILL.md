@@ -37,11 +37,17 @@ steepness), GRinf (efficacy at high dose), GR50 only when it is reached inside t
 tested range, GRmax and GR_AOC. GR near 0 means cytostatic; negative GR means cell
 death (−1 = all cells killed). Do not extrapolate GR50 beyond the tested range.
 GRmax follows the reference definition (minimum observed GR at the two highest
-doses) and is biased low under noise; treat its interval as approximate. Respect
+doses) by default; it is biased low under noise, so treat its interval as
+approximate. For efficacy comparisons, declare `fit.grmax_definition:
+fitted_minimum_top_two` before results: GRmax is then read from the selected fit at
+the two highest tested doses (calibrated without the low bias; the observed value
+is kept as an audit field). With control growth under one doubling it ran high in
+calibration. Do not switch definitions after seeing which looks better. Respect
 `must_mention` and failing items in `interpretation_facts.json`.
 
-## Evidence (0.14.0)
+## Evidence
 
 See [the 0.14.0 record](../../validation/RELEASE_0.14.0.md): the authors' published
 toy example reproduced (112 curves), the registered calibration with its GRmax
-coverage miss, and the division-rate supplement.
+coverage miss, and the division-rate supplement. The fitted GRmax definition:
+[the 0.14.1 record](../../validation/RELEASE_0.14.1.md).

@@ -1,0 +1,31 @@
+{
+ "source": "validation/receptor_occupancy_calibration_0.14.2.json",
+ "source_sha256": "3055260f1970e7d88f2b6044f13b5f864d6db4f0266b0eacc335c4192e30c462",
+ "rows": [
+  {
+   "scenario": "free_baseline_n8",
+   "registered_coverage_counting_withheld": 0.77,
+   "fraction_reportable": 0.877,
+   "coverage_among_reportable": 0.8779931584948689,
+   "mcse": 0.011051923277475825,
+   "n_reportable": 877
+  },
+  {
+   "scenario": "bound_saturation_n8",
+   "registered_coverage_counting_withheld": 0.767,
+   "fraction_reportable": 0.864,
+   "coverage_among_reportable": 0.8877314814814815,
+   "mcse": 0.01074021401414551,
+   "n_reportable": 864
+  },
+  {
+   "scenario": "free_baseline_n6_ec50",
+   "registered_coverage_counting_withheld": 0.673,
+   "fraction_reportable": 0.782,
+   "coverage_among_reportable": 0.860613810741688,
+   "mcse": 0.012385417519751415,
+   "n_reportable": 782
+  }
+ ],
+ "note": "Post hoc; supplements the registered misses. Withholding reasons were not saved per draw."
+}

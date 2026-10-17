@@ -1,0 +1,11 @@
+{
+ "source": "validation/enzyme_calibration_0.14.2.json",
+ "source_sha256": "8f6517fa3547ccf94d8738a4e922ce38f7f08fa7bd44c286bbc867ae7e7bb814",
+ "scenario": "competitive_true",
+ "registered_summary_coverage_counting_withheld": 0.874,
+ "fraction_summaries_estimated": 0.924,
+ "coverage_among_estimated": 0.9458874458874459,
+ "mcse": 0.007442738522205671,
+ "n_estimated": 924,
+ "note": "Post hoc; supplements the registered miss. A summary is withheld when any of its three experiments' Ki is withheld (each about 2% false rejection against mixed)."
+}

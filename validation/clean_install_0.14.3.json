@@ -1,0 +1,373 @@
+{
+  "status": "passed",
+  "package_version": "0.14.3",
+  "wheel_sha256": "86fa57d244849dfcc6c070932647fec2933bdd13f8e81bd4c65b30d8a1175a6c",
+  "isolation": "wheel-only venv with locked dependencies, outside repository; no editable install or PYTHONPATH",
+  "scope": "same macOS host, not a cross-platform claim",
+  "exact_source_wheel": {
+    "status": "passed",
+    "package_version": "0.14.3",
+    "installed_source_isolation": true,
+    "fixtures": [
+      {
+        "fixture": "fixtures/censored_paired_0141/config_paired_heavy_censoring.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/censored_paired_0141/config_paired_heavy_sign_test.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/censored_paired_0141/config_paired_log_two_limits.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/censored_paired_0141/config_paired_original.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/censored_paired_0141/config_paired_sign_test.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/censored_paired_0141/config_paired_sparse_withheld.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/censored_paired_0141/config_paired_wald_z.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0142/config_competitive_three_experiments.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0142/config_declared_rejected.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0142/config_mixed_declared.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0142/config_tight_binding.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0142/config_uncompetitive.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0143/config_competitive_estimate.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0143/config_competitive_fixed.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0143/config_mixed_kapp_only.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0143/config_noncompetitive_fixed.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/enzyme_0143/config_titration_regime.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/gr_grmax_0141/config_panel_fitted_grmax.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "gr_values.csv",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/independent_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/paired_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/panel_censored_0141/config_censored_bh.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/panel_censored_0141/config_censored_holm.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/panel_censored_0141/config_censored_paired.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/panel_censored_0141/config_censored_withheld_outcome.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0142/config_bound_saturation.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0142/config_free_baseline_dose_groups.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0142/config_free_baseline_internalization.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0142/config_free_over_total_internalization.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0142/config_too_few_subjects_exposure.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0143/config_robust_bound_saturation.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0143/config_robust_free_over_total.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0143/config_robust_hill_estimated.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0143/config_robust_hill_fixed.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/receptor_occupancy_0143/config_robust_too_few_subjects.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      }
+    ],
+    "configurations": 34,
+    "artifact_count": 179
+  },
+  "render_verify_unchanged_scientific_artifacts": [
+    "competitive_estimate",
+    "mixed_kapp_only",
+    "robust_hill_estimated",
+    "competitive_three_experiments",
+    "paired_heavy_censoring",
+    "censored_bh"
+  ]
+}

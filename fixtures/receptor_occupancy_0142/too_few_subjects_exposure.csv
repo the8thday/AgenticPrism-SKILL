@@ -1,0 +1,25 @@
+subject,group,timepoint,baseline,drug_concentration,free_mfi,free_background_mfi
+1 mg/kg-01,1 mg/kg,predose,True,0.0,2657.4,162.9
+1 mg/kg-01,1 mg/kg,1h,False,6.4907,318.9,145.6
+1 mg/kg-01,1 mg/kg,24h,False,5.4186,380.7,172.1
+1 mg/kg-01,1 mg/kg,72h,False,3.7175,424.0,162.1
+1 mg/kg-01,1 mg/kg,168h,False,1.7498,769.3,150.6
+1 mg/kg-01,1 mg/kg,336h,False,0.468,1318.5,148.6
+1 mg/kg-02,1 mg/kg,predose,True,0.0,1480.1,161.1
+1 mg/kg-02,1 mg/kg,1h,False,2.8294,335.0,164.4
+1 mg/kg-02,1 mg/kg,24h,False,2.5037,397.8,161.4
+1 mg/kg-02,1 mg/kg,72h,False,1.9399,424.9,146.8
+1 mg/kg-02,1 mg/kg,168h,False,1.1645,578.6,137.1
+1 mg/kg-02,1 mg/kg,336h,False,0.4768,936.3,149.8
+1 mg/kg-03,1 mg/kg,predose,True,0.0,1755.0,149.6
+1 mg/kg-03,1 mg/kg,1h,False,3.216,339.9,155.9
+1 mg/kg-03,1 mg/kg,24h,False,2.8196,422.0,155.9
+1 mg/kg-03,1 mg/kg,72h,False,2.1427,489.6,131.1
+1 mg/kg-03,1 mg/kg,168h,False,1.2374,602.8,158.5
+1 mg/kg-03,1 mg/kg,336h,False,0.4734,1022.9,140.6
+1 mg/kg-04,1 mg/kg,predose,True,0.0,2568.6,139.3
+1 mg/kg-04,1 mg/kg,1h,False,6.7624,331.6,136.4
+1 mg/kg-04,1 mg/kg,24h,False,5.7024,382.0,167.6
+1 mg/kg-04,1 mg/kg,72h,False,3.9952,392.0,124.8
+1 mg/kg-04,1 mg/kg,168h,False,1.9611,610.8,136.0
+1 mg/kg-04,1 mg/kg,336h,False,0.5645,1386.9,131.3

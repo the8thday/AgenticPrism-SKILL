@@ -1,0 +1,68 @@
+{
+ "status": "passed",
+ "tolerance_relative": 1e-06,
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "clubSandwich": "0.7.0",
+ "oracle": "scripts/receptor_occupancy_0143_oracle.R",
+ "checks": [
+  {
+   "fixture": "robust_bound_saturation",
+   "passed": true,
+   "max_rel_difference": 1.0398378380571671e-08,
+   "items": {
+    "ec50": 1.0087221280485892e-08,
+    "se_log_ec50": 1.9852339772086225e-09,
+    "df_ec50": 1.5521353091685341e-09,
+    "ci_ec50": 1.0398378380571671e-08
+   },
+   "oracle_linearized_coefficient_max_abs": 6.89250872335059e-09
+  },
+  {
+   "fixture": "robust_free_over_total",
+   "passed": true,
+   "max_rel_difference": 1.0998784105709092e-09,
+   "items": {
+    "ec50": 9.255689548126611e-10,
+    "se_log_ec50": 1.0998784105709092e-09,
+    "df_ec50": 2.3663826453912407e-10,
+    "ci_ec50": 1.0282126261529356e-09
+   },
+   "oracle_linearized_coefficient_max_abs": 1.67412020178804e-10
+  },
+  {
+   "fixture": "robust_hill_estimated",
+   "passed": true,
+   "max_rel_difference": 2.6954974918780295e-08,
+   "items": {
+    "ec50": 1.9442290666304984e-08,
+    "se_log_ec50": 1.6671845903815097e-08,
+    "df_ec50": 5.852868634192987e-09,
+    "ci_ec50": 2.6954974918780295e-08,
+    "hill": 6.915366057569372e-09,
+    "df_hill": 3.1687903412347396e-09,
+    "ci_hill": 7.565540194320874e-09
+   },
+   "oracle_linearized_coefficient_max_abs": 2.15048190909008e-08
+  },
+  {
+   "fixture": "robust_hill_fixed",
+   "passed": true,
+   "max_rel_difference": 6.890154002903159e-10,
+   "items": {
+    "ec50": 6.138300978619782e-10,
+    "se_log_ec50": 2.666704634890493e-10,
+    "df_ec50": 1.8516810307289688e-10,
+    "ci_ec50": 6.890154002903159e-10
+   },
+   "oracle_linearized_coefficient_max_abs": 3.1569729177311e-09
+  },
+  {
+   "fixture": "robust_too_few_subjects",
+   "passed": true,
+   "items": {
+    "both_withheld": true
+   },
+   "max_rel_difference": 0.0
+  }
+ ]
+}

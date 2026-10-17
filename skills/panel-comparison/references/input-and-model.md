@@ -21,3 +21,19 @@ exactly one family and every declared outcome must be measured.
 
 Withheld outcomes (fewer than 3 units or pairs, zero variance, incomplete pairs)
 are listed and excluded from the family size.
+
+## Censored outcomes (0.14.1)
+
+Add `"censoring": {"method": "censored_lognormal", "limit_source": "Plate LLOQ per analyte, validation report VR-7"}`
+with `design.scale: log`, and a `censored` column (`none`, `left`, `right`; the limit as
+`value`). A `censored` column without the block is refused.
+
+| Design | Outcome with any censored value |
+|---|---|
+| Independent | Tobit: ln value ~ Normal(group mean, common SD), left/right censoring (R `survreg`, `interval2`); ratio with SE × √(N/(N−2)) and N − 2 df (Student's pooled t without censoring) |
+| Paired | Interval-censored paired ln differences (as `censored-data` paired); SE × √(k/(k−1)), k − 1 df over k informative pairs (paired t without censoring); left censoring only; pairs with both values censored are uninformative |
+
+Withheld: fewer than 3 detected values in a group (independent), fewer than 3 pairs
+with both values detected (paired), non-converged likelihood. Outcomes without
+censored values use Welch or paired t as above. The family's Holm/BH adjustment and
+simultaneous intervals use each outcome's own df.

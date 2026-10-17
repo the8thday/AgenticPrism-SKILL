@@ -1,6 +1,6 @@
 ---
 name: censored-data
-description: Compare groups when some values are below a lower limit of quantification or detection (or above an upper limit) - cytokines, biomarkers, ADA titers, drug levels - keeping those values as censored at their limit instead of substituting zero, LLOQ or LLOQ/2. Censored lognormal maximum likelihood with geometric-mean ratios, or the Peto-Peto rank test for left-censored data. Use for independent units with one value each.
+description: Compare groups when some values are below a lower limit of quantification or detection (or above an upper limit) - cytokines, biomarkers, ADA titers, drug levels - keeping those values as censored at their limit instead of substituting zero, LLOQ or LLOQ/2. For independent units, censored lognormal maximum likelihood with geometric-mean ratios, or the Peto-Peto rank test. For paired designs (same unit measured twice), Helsel's censored paired difference or censored sign test.
 ---
 
 # Values below (or above) quantification limits
@@ -32,9 +32,22 @@ Read the [input contract](references/input-and-model.md). Use
    - `peto_peto`: a rank test that needs no distribution, for left-censored data
      only; it says whether distributions differ but gives no effect size.
    Do not run both and report the smaller p value.
-4. **Independent units.** One value per donor, animal or sample. Technical
-   replicate wells are averaged by a declared rule first (if any replicate is
-   below the limit, say how the assay SOP reports the sample).
+4. **Independent units or pairs.** One value per donor, animal or sample, or for
+   a paired design one value per unit in each of two conditions (pre/post, two
+   matrices from the same donor). Technical replicate wells are averaged by a
+   declared rule first (if any replicate is below the limit, say how the assay SOP
+   reports the sample). Do not analyse paired data as independent groups, and do
+   not drop a unit because one of its two values is censored.
+5. **Paired designs** add a `paired` block and use a paired method:
+   - `censored_paired_difference`: mean paired difference by censored maximum
+     likelihood (Helsel; NADA2 `cen_paired`); `scale: log` gives the ratio of paired
+     geometric means, `scale: original` a mean difference. Declare the scale and why
+     before results. Default inference is a small-sample t; `inference: wald_z`
+     only to match NADA2, which was anticonservative with 20 pairs.
+   - `censored_sign_test`: direction of paired differences (NADA2 `cen_signtest`);
+     pairs whose direction cannot be told are ties. No effect size.
+   On the log scale a pair with both values censored carries no information about
+   the difference; report how many there were.
 
 ## Run and report
 
@@ -46,8 +59,10 @@ heavily on the distributional assumption; with fewer than 3 detected values in a
 group the parametric fit is withheld. Respect `must_mention`, withheld states and
 failing items in `interpretation_facts.json`.
 
-## Evidence (0.14.0)
+## Evidence
 
-See [the 0.14.0 record](../../validation/RELEASE_0.14.0.md): R survival oracle
-agreement, the registered calibration (including a retained convergence-check
-defect, fixed and rerun post hoc) and the unmet published-example gate.
+Independent methods: [the 0.14.0 record](../../validation/RELEASE_0.14.0.md) (R
+survival oracle, registered calibration with a retained convergence-check defect,
+unmet published-example gate). Paired methods: [the 0.14.1 record](../../validation/RELEASE_0.14.1.md)
+(NADA2 reference code and R survival, the first registered calibration's Wald z
+misses kept, the second calibration for the small-sample t default).

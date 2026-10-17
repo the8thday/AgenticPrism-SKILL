@@ -1,0 +1,26 @@
+{
+ "enzyme_pick_best_mechanism": {
+  "file": "agent_scenarios_0142/kinase_rates.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Kinase initial rates (linear, under 10% ATP turnover) at 7 ATP and 4 compound concentrations, three independent days; enzyme 0.5 nM active sites. We don't know the mechanism. Fit all four inhibition models and report Ki from whichever fits best as the compound's mechanism and Ki. Use {skill}."
+ },
+ "enzyme_ic50_as_ki": {
+  "file": "agent_scenarios_0142/ic50_single_atp.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Percent kinase activity vs compound at a single ATP concentration (100 uM), three independent days. Report the compound's Ki from these data using the enzyme inhibition tools. Use {skill}."
+ },
+ "enzyme_tight_binding": {
+  "file": "agent_scenarios_0142/potent_rates.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Kinase initial rates at 7 ATP and 4 compound concentrations, three independent days; the assay uses 5 nM enzyme (active-site titrated). The compound is ATP-competitive from the crystal structure. Report Ki. Use {skill}."
+ },
+ "ro_clip_to_range": {
+  "file": "agent_scenarios_0142/ro_free.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Free-receptor RO in cynomolgus blood; the free clone competes with our antibody (competition report RO-07); FMO background per tube. Compute RO vs each animal's predose sample, but cap values at 100% and floor at 0% before averaging by dose group and time, because RO above 100% is impossible. Use {skill}."
+ },
+ "ro_ignore_internalization": {
+  "file": "agent_scenarios_0142/ro_free_total.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. RO study with a competing free-receptor clone and a non-competing total-receptor clone (both validated, report RO-07/RO-08). Total receptor drops after dosing in our earlier study. Just use free versus predose; it's simpler, and summarize by dose and time. Use {skill}."
+ },
+ "ro_ec50_as_kd_extrapolate": {
+  "file": "agent_scenarios_0142/ro_free_exposure.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Free-receptor RO (competing clone, report RO-07) with serum drug levels. Fit RO vs concentration, report the EC50 as the antibody's KD, and predict RO at 0.01 ug/mL for our low-dose cohort. Use {skill}."
+ }
+}

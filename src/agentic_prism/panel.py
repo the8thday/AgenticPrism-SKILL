@@ -5,6 +5,13 @@ after seeing results. Per outcome: Welch t (independent groups) or paired t (sam
 units), on the original or declared log scale. Per family: Holm adjusted p values
 with Bonferroni simultaneous intervals (family-wise error), or Benjamini-Hochberg
 adjusted p values (false discovery rate; intervals stay unadjusted and say so).
+
+0.14.1 opt-in `censoring` block: outcomes with values below (or above) a quantification
+limit are kept censored and analysed on the log scale by censored normal ML with a
+small-sample t correction (independent: two-group Tobit, common SD, SE x sqrt(N/(N-2)),
+N - 2 df; paired: interval-censored paired log differences as censored.compute_paired,
+SE x sqrt(k/(k-1)), k - 1 df). Without censoring these equal Student's pooled and paired
+t tests. Outcomes without censored values keep the Welch or paired t test.
 """
 from copy import deepcopy
 import numpy as np
@@ -15,7 +22,7 @@ TYPES = {'panel_comparison'}
 DEFAULTS = {'schema_version': 1, 'analysis_type': 'panel_comparison', 'input': None, 'source': None,
             'design': {'unit': None, 'rationale': None, 'pairing': None, 'scale': 'original', 'scale_rationale': None},
             'comparison': {'group_a': None, 'group_b': None, 'confidence_level': .95, 'alpha': .05},
-            'families': None, 'multiplicity': {'procedure': None, 'rationale': None},
+            'families': None, 'multiplicity': {'procedure': None, 'rationale': None}, 'censoring': None,
             'report': {'plot_style': 'prism_like'}}
 
 
@@ -50,14 +57,24 @@ def resolve_config(raw):
         v = q[k]
         if type(v) not in (int, float) or not 0 < v < 1: raise ValueError('Invalid ' + k)
     if c['report']['plot_style'] not in ('standard', 'prism_like'): raise ValueError('Invalid plot style')
+    cz = c['censoring']
+    if cz is None:
+        c.pop('censoring')  # unused 0.14.1 key: resolved configurations stay as in 0.14.0
+    else:
+        if not isinstance(cz, dict) or set(cz) != {'method', 'limit_source'} or cz['method'] != 'censored_lognormal' or not _text(cz['limit_source']):
+            raise ValueError('censoring must be {method: censored_lognormal, limit_source}')
+        if d['scale'] != 'log': raise ValueError('Censored outcomes are analysed on the log scale; declare scale: log with a rationale')
     return c
 
 
 def load_data(path, c):
-    d = pd.read_csv(path, dtype={'unit_id': str, 'group': str, 'outcome': str, 'unit': str})
+    d = pd.read_csv(path, dtype={'unit_id': str, 'group': str, 'outcome': str, 'unit': str, 'censored': str})
     need = {'unit_id', 'group', 'outcome', 'value', 'unit'}
     if need - set(d.columns): raise ValueError('Missing columns: ' + ', '.join(sorted(need - set(d.columns))))
-    extra = set(d.columns) - need - {'exclude', 'exclusion_reason'}
+    cens = c.get('censoring') is not None
+    if cens and 'censored' not in d: raise ValueError('The censoring block needs a censored column (none, left, right)')
+    if 'censored' in d and not cens: raise ValueError('A censored column needs the censoring block (method censored_lognormal, limit_source); values below a limit are never substituted')
+    extra = set(d.columns) - need - {'exclude', 'exclusion_reason'} - ({'censored'} if cens else set())
     if extra: raise ValueError('Undeclared columns: ' + ', '.join(sorted(extra)))
     if 'exclude' in d:
         ex = d.exclude.astype(str).str.lower()
@@ -70,6 +87,10 @@ def load_data(path, c):
     if v.isna().any() or not np.isfinite(v).all():
         raise ValueError('value must be numeric; values below a quantification limit belong in censored-data (no substitution)')
     d['value'] = v
+    if cens:
+        d['censored'] = d.censored.str.strip().str.lower()
+        if not d.censored.isin(['none', 'left', 'right']).all(): raise ValueError('censored must be none, left (below the stated limit) or right (above it); give the limit as value')
+        if c['design']['pairing'] == 'paired' and (d.censored == 'right').any(): raise ValueError('Paired censored outcomes handle left censoring only')
     declared = {x for vals in c['families'].values() for x in vals}; measured = set(d.outcome)
     if measured - declared: raise ValueError('Measured outcomes missing from the declared families: ' + ', '.join(sorted(measured - declared)) + ' (no outcome may be dropped)')
     if declared - measured: raise ValueError('Declared outcomes not in the data: ' + ', '.join(sorted(declared - measured)))
@@ -97,7 +118,36 @@ def benjamini_hochberg(p):
     return adj
 
 
+def censored_outcome(part, c):
+    from . import censored as cz
+    q = c['comparison']; lv = q['confidence_level']; a_, b_ = q['group_a'], q['group_b']
+    r = {'n_a': int((part.group == a_).sum()), 'n_b': int((part.group == b_).sum()), 'method': 'censored_lognormal_small_sample_t',
+         'n_censored_a': int(((part.group == a_) & (part.censored != 'none')).sum()), 'n_censored_b': int(((part.group == b_) & (part.censored != 'none')).sum())}
+    if c['design']['pairing'] == 'paired':
+        a = part[part.group == a_].set_index('unit_id'); b = part[part.group == b_].set_index('unit_id')
+        shared = sorted(set(a.index) & set(b.index)); r['n_pairs'] = len(shared); r['unpaired_units_ignored'] = sorted(set(a.index) ^ set(b.index))
+        if r['unpaired_units_ignored']: return {**r, 'status': 'withheld', 'reportable': False, 'reason': 'incomplete_pairs_no_silent_deletion'}
+        xc, yc = (b.loc[shared, 'censored'] == 'left').to_numpy(), (a.loc[shared, 'censored'] == 'left').to_numpy()
+        if (~xc & ~yc).sum() < 3: return {**r, 'status': 'withheld', 'reportable': False, 'reason': 'fewer_than_3_pairs_with_both_values_detected'}
+        lo, hi = cz.paired_intervals(b.loc[shared, 'value'], xc, a.loc[shared, 'value'], yc, 'log'); f = cz.interval_normal(lo, hi)
+        k = f['n_used']; r['pairs_uninformative'] = int(len(shared) - k)
+        if not f['converged'] or not np.isfinite(f['cov']).all() or f['cov'][0, 0] <= 0: return {**r, 'status': 'withheld', 'reportable': False, 'reason': 'likelihood_not_converged_or_singular_information'}
+        est = float(f['theta'][0]); se_ml = float(np.sqrt(f['cov'][0, 0])); se = se_ml*np.sqrt(k/(k - 1)); df = k - 1
+    else:
+        det = part[part.censored == 'none']
+        if min((det.group == a_).sum(), (det.group == b_).sum()) < 3: return {**r, 'status': 'withheld', 'reportable': False, 'reason': 'fewer_than_3_detected_values_in_a_group'}
+        X = np.column_stack([np.ones(len(part)), (part.group == b_).to_numpy(float)])
+        f = cz.tobit(np.log(part.value.to_numpy(float)), part.censored.to_numpy(), X); cov = f['cov']; N = len(part)
+        if not f['converged'] or not np.isfinite(cov).all() or (np.diag(cov) <= 0).any(): return {**r, 'status': 'withheld', 'reportable': False, 'reason': 'likelihood_not_converged_or_singular_information'}
+        est = float(f['theta'][1]); se_ml = float(np.sqrt(cov[1, 1])); se = se_ml*np.sqrt(N/(N - 2)); df = N - 2
+    t = est/se; h = stats.t.ppf((1+lv)/2, df)*se
+    r.update(status='estimated', reportable=True, estimate=est, se=float(se), se_ml=se_ml, df=float(df), t=float(t),
+             p_unadjusted=float(2*stats.t.sf(abs(t), df)), ci_unadjusted=[est-h, est+h])
+    return r
+
+
 def one_outcome(part, c):
+    if c.get('censoring') is not None and 'censored' in part and (part.censored != 'none').any(): return censored_outcome(part, c)
     q = c['comparison']; lv = q['confidence_level']; log = c['design']['scale'] == 'log'
     a = part[part.group == q['group_a']].set_index('unit_id').value; b = part[part.group == q['group_b']].set_index('unit_id').value
     if log: a, b = np.log(a), np.log(b)
@@ -148,13 +198,19 @@ def compute(d, c):
              ' Welch/paired t intervals assume roughly normal values (or paired differences) on that scale.',
              'Outcomes measured on the same units are correlated; Holm and Benjamini-Hochberg remain valid for the dependence studied in calibration, which is not every possible dependence.',
              'A non-significant adjusted p value does not show that an outcome is unaffected.']
+    if c.get('censoring') is not None:
+        cen = [r['outcome'] for r in rows if r.get('method') == 'censored_lognormal_small_sample_t']
+        notes.append(('Outcomes with values beyond a quantification limit (' + ', '.join(cen) + ') were kept censored (' + c['censoring']['limit_source'] + ') and analysed by censored lognormal maximum likelihood with a small-sample t correction'
+                      + (' (common SD in both groups)' if c['design']['pairing'] == 'independent' else ' on paired log differences; pairs with both values censored carry no information') + '; other outcomes used the ' + ('Welch' if c['design']['pairing'] == 'independent' else 'paired') + ' t test. Nothing was substituted.') if cen else
+                     'No outcome had censored values; every outcome used the ' + ('Welch' if c['design']['pairing'] == 'independent' else 'paired') + ' t test.')
     if wh: notes.append('Withheld outcomes (not tested, still counted as measured): ' + '; '.join(f"{r['outcome']} ({r['reason']})" for r in wh) + '.')
     primary = {'status': 'estimated' if len(wh) < len(rows) else 'withheld', 'reportable': len(wh) < len(rows), 'procedure': proc, 'alpha': alpha,
                'confidence_level': lv, 'group_a': q['group_a'], 'group_b': q['group_b'], 'pairing': c['design']['pairing'], 'scale': c['design']['scale'],
                'outcomes': rows, 'n_significant_after_adjustment': sum(r.get('significant_after_adjustment', False) for r in rows)}
     return {'analysis_type': 'panel_comparison', 'primary': primary, 'must_mention': notes,
             'failing_items': [{'outcome': r['outcome'], 'reason': r['reason']} for r in wh],
-            'limitations': ['Two groups per panel; no multi-arm, covariate-adjusted, censored or nonparametric per-outcome tests; no gatekeeping or hierarchical procedures.',
+            'limitations': [('Two groups per panel; no multi-arm, covariate-adjusted, censored or nonparametric per-outcome tests; no gatekeeping or hierarchical procedures.' if c.get('censoring') is None else
+                             'Two groups per panel; censored outcomes only by censored lognormal ML (left censoring for paired designs); no multi-arm, covariate-adjusted or nonparametric per-outcome tests; no gatekeeping or hierarchical procedures.'),
                             'Families and procedure are user declarations; the module cannot verify they were fixed before the data were seen.',
                             'No Prism or software-equivalence claim beyond the recorded benchmarks.']}
 
