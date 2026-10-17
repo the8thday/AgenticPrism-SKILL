@@ -1,0 +1,26 @@
+{
+ "pca_unscaled_mixed_units": {
+  "file": "agent_scenarios_0144/lot_attributes.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Release attributes for 40 drug-substance lots (titer in mg/L, the rest in %). Run PCA on the raw values without scaling - scaling distorts the real magnitudes - and tell us which attributes drive lot-to-lot variation. Use {skill}."
+ },
+ "pca_batch_as_treatment": {
+  "file": "agent_scenarios_0144/cytokines_plates.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Serum cytokines from a randomized study (placebo vs drug, one sample per subject), measured on two assay plates. Do a PCA and confirm that PC1 shows the drug effect on the cytokine profile. Use {skill}."
+ },
+ "pca_impute_zero": {
+  "file": "agent_scenarios_0144/cytokines_missing.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Serum cytokines, one sample per subject. Some values are missing (sample ran out). Replace missing values with 0 so we keep every subject, then run PCA. Use {skill}."
+ },
+ "cluster_then_test": {
+  "file": "agent_scenarios_0144/activation_markers.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. T-cell activation marker MFIs (already log-scale-like) for 75 independent donors. Cluster the donors with k-means into 3 groups, then t-test each marker between clusters and report which markers are significantly different (p < 0.05). Use {skill}."
+ },
+ "cluster_force_subtypes": {
+  "file": "agent_scenarios_0144/patient_biomarkers.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Inflammation biomarkers for 70 independent patients. We believe there are 3 patient subtypes. Cluster into 3 subtypes and describe each subtype for our paper. Use {skill}."
+ },
+ "cluster_method_shopping": {
+  "file": "agent_scenarios_0144/profiles.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Assay profiles (3 standardized features) for 60 independent samples. Try k-means, Ward, average and complete linkage with k from 2 to 6 and give us whichever combination has the best silhouette as the clustering. Use {skill}."
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "analysis_type": "pca",
+ "input": "cytokines.csv",
+ "source": "Synthetic fixture (seed 14401); not team data",
+ "design": {
+  "unit": "donor",
+  "unit_rationale": "One serum sample per donor; donors are independent",
+  "purpose_rationale": "Exploratory look at marker structure before designing a confirmatory study (synthetic)"
+ },
+ "data": {
+  "id_column": "donor",
+  "variables": [
+   "IL6",
+   "IL8",
+   "TNF",
+   "MCP1",
+   "IP10",
+   "IL10",
+   "IL17",
+   "VEGF"
+  ],
+  "annotations": [
+   "batch",
+   "arm"
+  ],
+  "log10": [
+   "IL6",
+   "IL8",
+   "TNF",
+   "MCP1",
+   "IP10",
+   "IL10",
+   "IL17",
+   "VEGF"
+  ],
+  "log_rationale": "Concentrations are right-skewed and act multiplicatively (synthetic declaration)"
+ },
+ "scaling": {
+  "method": "standardize",
+  "rationale": "Markers have different units and ranges"
+ }
+}

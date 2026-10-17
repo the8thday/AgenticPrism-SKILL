@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.14.4 (in development) — exploratory PCA and clustering
+
+- New `pca` and `clustering` analysis types and `exploratory-multivariate` Skill: declared variables, log10 and scaling, parallel-analysis retention, k-means (Hartigan transfers) or hierarchical clustering, gap-statistic k (k = 1 allowed), bootstrap Jaccard stability, silhouettes; batch/group annotations shown descriptively; no p-values. ISLR's printed USArrests PCA reproduced; base-R/cluster oracle 6/6 (first attempt failed on k-means optima, kept); registered calibration 5/5 after a stopped first run (kept); the gap statistic is conservative (descriptive rows). Clustering published-example gate unmet. Live-agent scenarios 6/6. Legacy check: 267 configurations, 1,850 artifacts byte-identical against 0.14.3. See `validation/RELEASE_0.14.4.md`.
+
 ## 0.14.3 (in development) — RO EC50 interval and Morrison tight binding
 
 - `receptor-occupancy` opt-in `exposure_response.interval: cluster_robust_t`: CR2 cluster-robust EC50 interval with Satterthwaite df (subject as cluster). R clubSandwich oracle 5/5; registered calibration 3/3 (0.953/0.963/0.961 among reportable fits, against 0.878/0.888 for the 0.14.2 bootstrap on the same draws), after a disclosed pilot. Default unchanged. See `validation/RELEASE_0.14.3.md`.

@@ -1,0 +1,206 @@
+{
+ "status": "passed",
+ "r_version": "R version 4.6.0 (2026-04-24)",
+ "cluster": "2.1.8.2",
+ "oracle": "scripts/multivariate_0144_oracle.R",
+ "published_example": {
+  "source": "James, Witten, Hastie, Tibshirani. An Introduction to Statistical Learning, PCA lab (prcomp(USArrests, scale = TRUE))",
+  "data": "R datasets::USArrests regenerated at validation time",
+  "comparison": {
+   "rotation_Murder_PC1": {
+    "printed": -0.5358995,
+    "this_implementation_sign_aligned": -0.5358994749381553,
+    "matches_printed": 1.0
+   },
+   "rotation_Murder_PC2": {
+    "printed": 0.4181809,
+    "this_implementation_sign_aligned": 0.4181808654209548,
+    "matches_printed": 1.0
+   },
+   "rotation_Murder_PC3": {
+    "printed": -0.3412327,
+    "this_implementation_sign_aligned": -0.34123272795282833,
+    "matches_printed": 1.0
+   },
+   "rotation_Murder_PC4": {
+    "printed": 0.6492278,
+    "this_implementation_sign_aligned": 0.6492278043419444,
+    "matches_printed": 1.0
+   },
+   "rotation_Assault_PC1": {
+    "printed": -0.5831836,
+    "this_implementation_sign_aligned": -0.5831836349096703,
+    "matches_printed": 1.0
+   },
+   "rotation_Assault_PC2": {
+    "printed": 0.1879856,
+    "this_implementation_sign_aligned": 0.1879856042319392,
+    "matches_printed": 1.0
+   },
+   "rotation_Assault_PC3": {
+    "printed": -0.2681484,
+    "this_implementation_sign_aligned": -0.26814842783288534,
+    "matches_printed": 1.0
+   },
+   "rotation_Assault_PC4": {
+    "printed": -0.74340748,
+    "this_implementation_sign_aligned": -0.7434074799367097,
+    "matches_printed": 1.0
+   },
+   "rotation_UrbanPop_PC1": {
+    "printed": -0.2781909,
+    "this_implementation_sign_aligned": -0.27819087461943315,
+    "matches_printed": 1.0
+   },
+   "rotation_UrbanPop_PC2": {
+    "printed": -0.8728062,
+    "this_implementation_sign_aligned": -0.8728061930604252,
+    "matches_printed": 1.0
+   },
+   "rotation_UrbanPop_PC3": {
+    "printed": -0.3780158,
+    "this_implementation_sign_aligned": -0.37801579308699956,
+    "matches_printed": 1.0
+   },
+   "rotation_UrbanPop_PC4": {
+    "printed": 0.13387773,
+    "this_implementation_sign_aligned": 0.13387773082424778,
+    "matches_printed": 1.0
+   },
+   "rotation_Rape_PC1": {
+    "printed": -0.5434321,
+    "this_implementation_sign_aligned": -0.5434320914456829,
+    "matches_printed": 1.0
+   },
+   "rotation_Rape_PC2": {
+    "printed": -0.1673186,
+    "this_implementation_sign_aligned": -0.16731863540174596,
+    "matches_printed": 1.0
+   },
+   "rotation_Rape_PC3": {
+    "printed": 0.8177779,
+    "this_implementation_sign_aligned": 0.8177779076261656,
+    "matches_printed": 1.0
+   },
+   "rotation_Rape_PC4": {
+    "printed": 0.08902432,
+    "this_implementation_sign_aligned": 0.08902432270362451,
+    "matches_printed": 1.0
+   },
+   "center_Murder": {
+    "printed": 7.788,
+    "this_implementation": 7.787999999999999,
+    "matches_printed": true
+   },
+   "center_Assault": {
+    "printed": 170.76,
+    "this_implementation": 170.76,
+    "matches_printed": true
+   },
+   "center_UrbanPop": {
+    "printed": 65.54,
+    "this_implementation": 65.54,
+    "matches_printed": true
+   },
+   "center_Rape": {
+    "printed": 21.232,
+    "this_implementation": 21.231999999999992,
+    "matches_printed": true
+   },
+   "scale_Murder": {
+    "printed": 4.35551,
+    "this_implementation": 4.355509764209288,
+    "matches_printed": true
+   },
+   "scale_Assault": {
+    "printed": 83.337661,
+    "this_implementation": 83.33766084001708,
+    "matches_printed": true
+   },
+   "scale_UrbanPop": {
+    "printed": 14.474763,
+    "this_implementation": 14.474763400836784,
+    "matches_printed": true
+   },
+   "scale_Rape": {
+    "printed": 9.366385,
+    "this_implementation": 9.366384531059648,
+    "matches_printed": true
+   }
+  },
+  "status": "all_match_printed_precision",
+  "note": "Column signs are arbitrary; this implementation makes the largest absolute loading positive, so columns are sign-aligned to the printed Murder loading before comparing."
+ },
+ "checks": [
+  {
+   "fixture": "average_correlation_k2",
+   "passed": true,
+   "max_abs_difference": 1.7763568394002505e-15,
+   "items": {
+    "wss_relative_ours_minus_r": 0.0,
+    "partition_ARI_with_R": 1.0,
+    "silhouette_mean": 2.220446049250313e-16,
+    "merge_heights": 1.7763568394002505e-15
+   }
+  },
+  {
+   "fixture": "kmeans_gap_null",
+   "passed": true,
+   "max_abs_difference": 1.3322676295501878e-15,
+   "items": {
+    "wss_relative_ours_minus_r": 0.0,
+    "partition_ARI_with_R": 1.0,
+    "gap_values": 1.3322676295501878e-15,
+    "gap_s": 1.249000902703301e-16,
+    "selected_k_equal": 0.0
+   }
+  },
+  {
+   "fixture": "kmeans_gap_three",
+   "passed": true,
+   "max_abs_difference": 5.416152404302821e-05,
+   "items": {
+    "wss_relative_ours_minus_r": 0.0,
+    "partition_ARI_with_R": 1.0,
+    "silhouette_mean": 2.220446049250313e-16,
+    "gap_values": 5.416152404302821e-05,
+    "gap_s": 2.512927213586813e-06,
+    "selected_k_equal": 0.0
+   }
+  },
+  {
+   "fixture": "pca_cytokines",
+   "passed": true,
+   "max_abs_difference": 5.329070518200751e-15,
+   "items": {
+    "eigenvalues": 2.4523708585053747e-15,
+    "rotation_up_to_sign": 2.609024107869118e-15,
+    "scores_pc1_up_to_sign": 5.329070518200751e-15,
+    "center": 4.884981308350689e-15,
+    "scale": 4.718447854656915e-16
+   }
+  },
+  {
+   "fixture": "pca_cytokines_declared3_unscaled",
+   "passed": true,
+   "max_abs_difference": 4.973799150320701e-13,
+   "items": {
+    "eigenvalues": 3.95082287555918e-15,
+    "rotation_up_to_sign": 1.915134717478395e-15,
+    "scores_pc1_up_to_sign": 4.973799150320701e-13,
+    "center": 4.547473508864641e-13
+   }
+  },
+  {
+   "fixture": "ward_pca_scores_k3",
+   "passed": true,
+   "max_abs_difference": 3.197442310920451e-14,
+   "items": {
+    "wss_relative_ours_minus_r": 0.0,
+    "partition_ARI_with_R": 1.0,
+    "silhouette_mean": 5.551115123125783e-17,
+    "merge_heights": 3.197442310920451e-14
+   }
+  }
+ ]
+}

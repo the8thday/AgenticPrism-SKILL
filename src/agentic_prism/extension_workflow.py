@@ -9,7 +9,7 @@ import importlib.metadata
 from .workflow import dump,sha,implementation_hash,verify_run
 from . import __version__
 from .routine import TYPES as ROUTINE_TYPES
-TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen", "censored_comparison", "potency_ranking", "growth_rate_inhibition", "panel_comparison", "enzyme_inhibition", "receptor_occupancy"}
+TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen", "censored_comparison", "potency_ranking", "growth_rate_inhibition", "panel_comparison", "enzyme_inhibition", "receptor_occupancy", "pca", "clustering"}
 
 
 def module_for(kind):
@@ -19,6 +19,9 @@ def module_for(kind):
  if kind == 'roc_analysis':
   from . import diagnostic_accuracy
   return diagnostic_accuracy
+ if kind in ('pca', 'clustering'):
+  from . import multivariate
+  return multivariate
  if kind == 'receptor_occupancy':
   from . import receptor_occupancy
   return receptor_occupancy
@@ -144,6 +147,10 @@ def analyze_extension(config_path,output,render=True):
   elif r['analysis_type']=='enzyme_inhibition':
    from .evidence_0142 import EVIDENCE as E142
    r['validation_evidence']=E142['enzyme_inhibition'];r['must_mention']+=E142['enzyme_inhibition']['must_mention']
+  if r['analysis_type'] in ('pca','clustering'):
+   module.write_artifacts(out,r)
+   from .evidence_0144 import EVIDENCE as E144
+   r['validation_evidence']=E144[r['analysis_type']];r['must_mention']+=E144[r['analysis_type']]['must_mention']
   if r['analysis_type']=='growth_rate_inhibition':
    import pandas as pd
    pd.DataFrame(r['gr_values']).to_csv(out/'gr_values.csv',index=False)
@@ -174,6 +181,9 @@ def render_extension(run,style=None,extra_figures=''):
   names=render(run,r,style)
  if r['analysis_type']=='roc_analysis':
   from .diagnostic_accuracy import render
+  names=render(run,r,style)
+ if r['analysis_type'] in ('pca','clustering'):
+  from .multivariate import render
   names=render(run,r,style)
  if r['analysis_type']=='receptor_occupancy':
   from .receptor_occupancy import render

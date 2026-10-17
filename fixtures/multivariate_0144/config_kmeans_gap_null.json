@@ -1,0 +1,35 @@
+{
+ "analysis_type": "clustering",
+ "input": "no_structure.csv",
+ "source": "Synthetic fixture (seed 14401); not team data",
+ "design": {
+  "unit": "donor",
+  "unit_rationale": "One serum sample per donor; donors are independent",
+  "purpose_rationale": "Exploratory look at marker structure before designing a confirmatory study (synthetic)"
+ },
+ "data": {
+  "id_column": "patient",
+  "variables": [
+   "a",
+   "b",
+   "c",
+   "d"
+  ]
+ },
+ "scaling": {
+  "method": "standardize",
+  "rationale": "Variables on different scales (synthetic)"
+ },
+ "clustering": {
+  "method": "kmeans",
+  "rationale": "Subtype search (synthetic declaration)"
+ },
+ "k": {
+  "select": "gap",
+  "max": 6,
+  "reference_replicates": 50
+ },
+ "stability": {
+  "bootstrap_replicates": 50
+ }
+}

@@ -210,6 +210,13 @@ goes to [outlier-flagging](../outlier-flagging/SKILL.md). It flags and never
 removes data; a request to drop the point that spoils a result is not an outlier
 screen.
 
+## 0.14.4 routing
+
+Exploratory structure in multi-variable data from independent units (PCA, clusters,
+batch effects, "are there subgroups?") goes to
+[exploratory-multivariate](../exploratory-multivariate/SKILL.md); testing whether
+known groups differ stays in group-comparison or panel-comparison.
+
 ## 0.14.3 routing
 
 A potent inhibitor titrated at one substrate concentration where Ki may be near the

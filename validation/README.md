@@ -1,4 +1,11 @@
-# Validation — AgenticPrism development 0.14.3
+# Validation — AgenticPrism development 0.14.4
+
+## 0.14.4 (in development) — exploratory PCA and clustering
+
+[Release evidence](RELEASE_0.14.4.md). ISLR's printed USArrests PCA reproduced; base-R/cluster
+oracle 6/6 (first attempt kept); registered calibration 5/5 after a stopped first run (kept);
+gap-statistic conservatism recorded; clustering published-example gate unmet. Live-agent 6/6;
+267 earlier configurations byte-identical against 0.14.3.
 
 ## 0.14.3 (in development) — RO EC50 interval and Morrison tight binding
 

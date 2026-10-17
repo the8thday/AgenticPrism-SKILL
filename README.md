@@ -76,6 +76,17 @@ Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
 
+## 0.14.4 (in development) — exploratory PCA and clustering
+
+Exploratory PCA and clustering of panels measured on independent units
+(`exploratory-multivariate`): declared variables, transform and scaling; parallel-analysis
+component retention; k-means or hierarchical clustering with the gap statistic (which may
+answer "no clusters"), bootstrap stability and silhouettes; batch or treatment columns are
+shown against the results but never used to build them. Nothing is tested and clusters are
+not called subtypes. ISLR's printed USArrests PCA is reproduced; the gap statistic proved
+conservative in calibration and says so. Live-agent misuse scenarios 6/6. See
+[release evidence](validation/RELEASE_0.14.4.md).
+
 ## 0.14.3 (in development) — RO EC50 interval and Morrison tight binding
 
 The receptor-occupancy EC50 gains a cluster-robust (CR2) interval with small-sample degrees
