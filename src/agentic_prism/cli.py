@@ -54,7 +54,19 @@ def main():
                                   "must_mention": facts["must_mention"],
                                   "interpretation": "Meeting declared criteria is part of a validation, not regulatory acceptance"}, ensure_ascii=False))
                 return 0
-            if result.get("analysis_type") in ("epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen", "censored_comparison", "potency_ranking", "growth_rate_inhibition", "panel_comparison", "enzyme_inhibition", "receptor_occupancy", "pca", "clustering"):
+            if result.get("analysis_type") == "population_pk":
+                p = result["primary"]
+                print(json.dumps({"output": str(out), "analysis_type": "population_pk", "structural_model": p["structural_model"],
+                                  "parameters": {k: v["status"] for k, v in p["parameters"].items()}, "covariance": p["covariance"]["status"],
+                                  "interpretation": "Read must_mention; withheld parameters are not results and comparison models are descriptive"}, ensure_ascii=False))
+                return 0
+            if result.get("analysis_type") == "pk_nca":
+                dp = result["primary"].get("dose_proportionality") or {"parameters": {}}
+                print(json.dumps({"output": str(out), "analysis_type": "pk_nca", "counts": result["primary"]["counts"],
+                                  "dose_proportionality": {k: v.get("conclusion", v["status"]) for k, v in dp["parameters"].items()},
+                                  "interpretation": "Read per-subject status and must_mention; withheld terminal parameters are not reportable"}, ensure_ascii=False))
+                return 0
+            if result.get("analysis_type") in ("epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen", "censored_comparison", "potency_ranking", "growth_rate_inhibition", "panel_comparison", "enzyme_inhibition", "receptor_occupancy", "pca", "clustering", "fih_dose", "quantal_dose_response", "ordinal_regression"):
                 print(json.dumps({"output": str(out), "analysis_type": result["analysis_type"], "primary": result["primary"]}, ensure_ascii=False))
                 return
             failed = sum(f["status"] == "failed" for f in result["fits"])

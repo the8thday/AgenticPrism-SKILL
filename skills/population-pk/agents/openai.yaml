@@ -1,0 +1,4 @@
+interface:
+  display_name: "Population PK and TMDD (nlmixr2)"
+  short_description: "Population PK with linear, Michaelis-Menten or QSS-TMDD models and identifiability gates"
+  default_prompt: "Use $population-pk to fit a population PK model across these dose levels."

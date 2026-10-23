@@ -1,0 +1,199 @@
+{
+ "tolerance_relative": 1e-09,
+ "cases": [
+  {
+   "case": "theoph_subject8_linear",
+   "subjects": 1,
+   "values_compared": 21,
+   "max_relative_difference": 9.177309372132913e-16,
+   "mismatches": [],
+   "passed": true
+  },
+  {
+   "case": "theoph_all_lin_up_log_down",
+   "subjects": 12,
+   "values_compared": 252,
+   "max_relative_difference": 2.5948852173524573e-15,
+   "mismatches": [],
+   "passed": true
+  },
+  {
+   "case": "cyno_bolus",
+   "subjects": 9,
+   "values_compared": 207,
+   "max_relative_difference": 4.5859567050969596e-15,
+   "mismatches": [],
+   "passed": true
+  },
+  {
+   "case": "rat_infusion",
+   "subjects": 8,
+   "values_compared": 176,
+   "max_relative_difference": 6.8310619232524055e-15,
+   "mismatches": [],
+   "passed": true
+  },
+  {
+   "case": "rat_oral",
+   "subjects": 9,
+   "values_compared": 189,
+   "max_relative_difference": 6.9942222656485145e-15,
+   "mismatches": [],
+   "passed": true
+  },
+  {
+   "case": "rat_oral_descriptive",
+   "subjects": 9,
+   "values_compared": 189,
+   "max_relative_difference": 6.9942222656485145e-15,
+   "mismatches": [],
+   "passed": true
+  }
+ ],
+ "published_worked_example": {
+  "source": "Kim H, Han S, Cho YS, Yoon SK, Bae KS. Transl Clin Pharmacol 2018;26(1):10-15, Table 3 (CC BY-NC); WinNonlin values for Theoph subject 8",
+  "rows": [
+   {
+    "parameter": "cmax",
+    "printed": 7.56,
+    "decimals": 2,
+    "ours": 7.56,
+    "ours_rounded": 7.56,
+    "passed": true
+   },
+   {
+    "parameter": "tmax",
+    "printed": 2.02,
+    "decimals": 2,
+    "ours": 2.02,
+    "ours_rounded": 2.02,
+    "passed": true
+   },
+   {
+    "parameter": "auclast",
+    "printed": 88.55995,
+    "decimals": 5,
+    "ours": 88.55995000000001,
+    "ours_rounded": 88.55995,
+    "passed": true
+   },
+   {
+    "parameter": "half_life",
+    "printed": 8.510037883,
+    "decimals": 9,
+    "ours": 8.510037883425065,
+    "ours_rounded": 8.510037883,
+    "passed": true
+   },
+   {
+    "parameter": "aucinf",
+    "printed": 103.906687,
+    "decimals": 6,
+    "ours": 103.9066868152432,
+    "ours_rounded": 103.906687,
+    "passed": true
+   },
+   {
+    "parameter": "cl",
+    "printed": 3.079686301,
+    "decimals": 9,
+    "ours": 3.0796863013156504,
+    "ours_rounded": 3.079686301,
+    "passed": true
+   },
+   {
+    "parameter": "vz",
+    "printed": 37.81050811,
+    "decimals": 8,
+    "ours": 37.81050811184082,
+    "ours_rounded": 37.81050811,
+    "passed": true
+   }
+  ],
+  "passed": true
+ },
+ "dose_proportionality_vs_r_lm": [
+  {
+   "case": "cyno_bolus",
+   "parameter": "cmax",
+   "ours": [
+    1.287382445837831,
+    1.140942602186195,
+    1.4338222894894668
+   ],
+   "r_lm": [
+    1.2873824458378305,
+    1.1409426021861944,
+    1.4338222894894666
+   ],
+   "max_abs_difference": 6.661338147750939e-16,
+   "passed": true
+  },
+  {
+   "case": "cyno_bolus",
+   "parameter": "aucinf",
+   "ours": [
+    1.305717517338525,
+    1.1521881007267623,
+    1.4592469339502876
+   ],
+   "r_lm": [
+    1.3057175173385231,
+    1.15218810072676,
+    1.4592469339502863
+   ],
+   "max_abs_difference": 2.220446049250313e-15,
+   "passed": true
+  },
+  {
+   "case": "rat_oral",
+   "parameter": "cmax",
+   "ours": [
+    1.0784747348263697,
+    0.9925859825966179,
+    1.1643634870561215
+   ],
+   "r_lm": [
+    1.07847473482637,
+    0.9925859825966183,
+    1.1643634870561215
+   ],
+   "max_abs_difference": 4.440892098500626e-16,
+   "passed": true
+  },
+  {
+   "case": "rat_oral",
+   "parameter": "auclast",
+   "ours": [
+    1.095075137414187,
+    0.9034508166594288,
+    1.286699458168945
+   ],
+   "r_lm": [
+    1.0950751374141867,
+    0.9034508166594291,
+    1.2866994581689444
+   ],
+   "max_abs_difference": 6.661338147750939e-16,
+   "passed": true
+  },
+  {
+   "case": "rat_oral",
+   "parameter": "aucinf",
+   "ours": [
+    1.0843632565302594,
+    0.8871078505955627,
+    1.2816186624649561
+   ],
+   "r_lm": [
+    1.0843632565302594,
+    0.887107850595563,
+    1.281618662464956
+   ],
+   "max_abs_difference": 2.220446049250313e-16,
+   "passed": true
+  }
+ ],
+ "pknca_version": "0.12.1",
+ "passed": true
+}

@@ -1,0 +1,37 @@
+{
+ "schema_version": 1,
+ "analysis_type": "fih_dose",
+ "source": "Synthetic 0.15.2 fixture; illustrative declared inputs, not a real programme",
+ "molecule": {
+  "name": "compound-Y",
+  "modality": "small_molecule",
+  "molecular_weight_kda": 0.45
+ },
+ "human": {
+  "body_weight_kg": 60,
+  "source": "FDA 2005 guidance reference weight"
+ },
+ "noael": {
+  "studies": [
+   {
+    "species": "rat",
+    "noael_mg_per_kg": 50,
+    "source": "Rat 28-day study (fixture)"
+   },
+   {
+    "species": "dog",
+    "noael_mg_per_kg": 15,
+    "source": "Dog 28-day study (fixture)"
+   },
+   {
+    "species": "monkey",
+    "noael_mg_per_kg": 50,
+    "source": "Monkey study (fixture)"
+   }
+  ],
+  "scaling": "bsa_table",
+  "species_selection": "most_sensitive",
+  "safety_factor": 10,
+  "safety_factor_rationale": "Guidance default"
+ }
+}

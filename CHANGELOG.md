@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.15.3 (in development) — quantal dose response and ordinal scores
+
+- New `quantal_dose_response` (`quantal-dose-response` Skill): probit/logit/cloglog ML for responder counts, natural response none/Abbott/estimated, Finney heterogeneity policy, EDp with Fieller limits (withheld when unbounded, extrapolated or separated), parallel-line relative potency.
+- New `ordinal_regression` (`ordinal-scores` Skill): cumulative-logit proportional odds for one score per subject, profile intervals, group LR test, proportional-odds check.
+- Evidence: Finney (1952) rotenone example reproduced; 85/85 R oracle checks (glm, MASS, ordinal::clm); registered calibration 9/10 with the ordinal OR-3 profile-coverage miss (0.924) and its post-hoc clm agreement kept; first calibration attempt (crashes under separation) kept; live-agent scenarios 6/6. Legacy: 282 configurations byte-identical. See `validation/RELEASE_0.15.3.md`.
+
+## 0.15.2 (in development) — first-in-human dose calculations
+
+- New design-only `fih_dose` analysis type and `first-in-human-dose` Skill: NOAEL to HED/MRSD (FDA 2005 body-surface-area divisors, body-weight exponent, or mg/kg, required for proteins > 100 kDa), MABEL from receptor occupancy or effect concentrations with molar conversion, allometric human two-compartment projection for candidate doses, and sensitivity tables. Never a recommended or approved dose.
+- Evidence: Nair & Jacob 2016 NOAEL-HED examples reproduced; base-R/deSolve oracle 29/29; MABEL and allometry worked-example gates unmet; calibration not applicable; live-agent scenarios 6/6. Legacy: 280 configurations byte-identical. See `validation/RELEASE_0.15.2.md`.
+
+## 0.15.1 (in development) — population PK and TMDD with nlmixr2
+
+- New `population_pk` analysis type; the `population-pk` Skill is upgraded from R guidance to the runtime. R nlmixr2 (FOCEi) fits one population across dose levels with two-compartment linear, Michaelis-Menten or quasi-steady-state TMDD models (IV bolus, IV infusion, SC with fixed F) through a fixed bridge with 67 exact pins (`install.py --with-r-pop`). Gates withhold parameters for failed covariance, |correlation| > 0.95, saturation outside the observed range, natural-scale RSE > 100% (jointly for nonlinear parameters) and individual estimates above 30% shrinkage; comparison models are descriptive.
+- Evidence: SciPy IPRED recheck missed its prespecified 1e-3 tolerance (max 1.7e-3; equations confirmed by rxode2 at tight tolerance, kept); Bolus_2CPTMM published truth inside the CI for 4 of 5 parameters (printed-estimate gate unmet); registered calibration rerun 9/9 after a first run crashed on unidentified parameters (kept); QSS target parameters reportable in 17% of simulated studies; live-agent scenarios 6/6. Legacy: 277 configurations byte-identical. See `validation/RELEASE_0.15.1.md`.
+
+## 0.15.0 (in development) — PK NCA with PKNCA
+
+- New `pk_nca` analysis type; the `pk-nca` Skill is upgraded from R guidance to the runtime. R PKNCA 0.12.1 computes single-dose NCA for IV bolus (back-extrapolated C0, two PKNCA passes so AUC and CL include it), IV infusion and extravascular dosing through a fixed R bridge with exact pins (`install.py --with-r-pk`, doctor `optional_r_pk`), separate from the unchanged MMRM bridge. Declared BLQ, AUC method, terminal rule and reportability; subject-level summaries; optional Smith power-model dose proportionality.
+- Evidence: WinNonlin values printed by Kim et al. 2018 (Theoph subject 8) reproduced to the printed digits; independent formula recheck of 1,034 values within 7e-15; registered calibration 6/6 (the power model rarely concludes proportionality in small studies, disclosed); live-agent scenarios 6/6 (first attempt rate-limited, kept). Legacy: 273 configurations byte-identical. See `validation/RELEASE_0.15.0.md`.
+- Population-PK template fixed for nlmixr2 7.x (`nlmixr2est::nlmixr2`) and executed. Roadmap 0.15-0.16 added.
+
 ## Unreleased — Prism extraction review fixes (2026-10-23)
 
 - Native cell-flag tokens outside the publicly observed set (plus `EXCLUDED`) now raise `unrecognized_cell_attribute` and leave otherwise unmarked cells unknown instead of "not marked". Explicit `EXCLUDED` is unchanged. Row ranges accept ASCII digits only.

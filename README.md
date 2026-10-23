@@ -101,6 +101,54 @@ Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
 
+## 0.15.3 (in development) — quantal dose response and ordinal scores
+
+ED50/LD50 and other effective doses from responder or mortality counts (`quantal-dose-response`)
+by probit, logit or cloglog maximum likelihood with Fieller limits, background (control)
+response, Finney's heterogeneity scaling and parallel-line relative potency; effective doses
+outside the tested range or with unbounded limits are withheld. Ordered scores such as
+histopathology grades (`ordinal-scores`) by a proportional-odds model with profile intervals,
+instead of t tests on mean grades. Finney's printed rotenone example is reproduced; in
+calibration ED50 intervals covered 95%, while small ordinal studies showed slightly low profile
+coverage (0.924) and a proportional-odds check with little power, both disclosed. Live-agent
+misuse scenarios 6/6. See [release evidence](validation/RELEASE_0.15.3.md).
+
+## 0.15.2 (in development) — first-in-human dose calculations
+
+The numbers behind a first-in-human starting-dose rationale (`first-in-human-dose`,
+`analysis_type: fih_dose`), from declared nonclinical inputs: NOAEL to human equivalent dose and
+maximum recommended starting dose (FDA 2005 body-surface-area table, or mg/kg for antibodies),
+MABEL from receptor occupancy or effect concentrations, and allometric projection of human
+antibody PK for candidate doses, with sensitivity tables. A less sensitive species or a safety
+factor below 10 is flagged for review, and no output is ever called the FIH dose. Published
+NOAEL-to-HED examples are reproduced; MABEL and allometry examples are not yet. Live-agent misuse
+scenarios 6/6. See [release evidence](validation/RELEASE_0.15.2.md).
+
+## 0.15.1 (in development) — population PK and TMDD with nlmixr2
+
+Population PK for antibodies across dose levels (`population-pk`, `analysis_type: population_pk`),
+estimated by the R package nlmixr2 through a fixed, version-pinned bridge
+(`python3 install.py --with-r-pop`): two-compartment linear, Michaelis-Menten (nonlinear) or
+quasi-steady-state TMDD models after IV or SC dosing, with the model, random effects and fixed
+parameters declared before fitting. Parameters the data cannot identify are withheld (failed
+covariance, near-perfect correlation, saturation outside the observed range, very large RSE),
+individual estimates are withheld under high shrinkage, and comparison models stay descriptive.
+In simulated studies a spurious nonlinearity passed these checks 2% of the time, and PK data alone
+identified the TMDD target parameters in only 17%. Live-agent misuse scenarios 6/6. See
+[release evidence](validation/RELEASE_0.15.1.md).
+
+## 0.15.0 (in development) — PK NCA with PKNCA
+
+Single-dose noncompartmental PK (`pk-nca`, `analysis_type: pk_nca`) computed by the R package
+PKNCA through a fixed, version-pinned bridge (`python3 install.py --with-r-pk`): Cmax, Tmax,
+AUClast, half-life, AUCinf, CL or CL/F, Vz, MRT and Vss for IV bolus, IV infusion and oral
+dosing, with declared BLQ, AUC-method, terminal-phase and reportability rules, subject-level
+summaries and an optional dose-proportionality power model. The Phoenix WinNonlin results
+printed by Kim et al. (2018) for a Theoph subject are reproduced to every printed digit; an
+independent recheck agrees on 1,034 values. Small studies rarely establish dose proportionality,
+and the output says so. Live-agent misuse scenarios 6/6. See
+[release evidence](validation/RELEASE_0.15.0.md) and the [0.15-0.16 roadmap](plans/ROADMAP_0.15-0.16.md).
+
 ## 0.14.4 (in development) — exploratory PCA and clustering
 
 Exploratory PCA and clustering of panels measured on independent units

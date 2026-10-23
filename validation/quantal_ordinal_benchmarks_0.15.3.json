@@ -1,0 +1,811 @@
+{
+ "published_worked_example": {
+  "source": "Finney DJ (1952) Probit Analysis, 2nd ed., Cambridge University Press, Ex. 6 and Ex. 9 (rotenone, Macrosiphoniella sanborni)",
+  "rows": [
+   {
+    "quantity": "log LD50",
+    "printed": 0.686,
+    "ours": 0.6858440722768149,
+    "passed": true
+   },
+   {
+    "quantity": "Pearson chi2",
+    "printed": 1.62,
+    "ours": 1.6209731756466668,
+    "passed": true
+   },
+   {
+    "quantity": "LD50 (mg/L)",
+    "printed": 4.85,
+    "ours": 4.851142949821119,
+    "passed": true
+   },
+   {
+    "quantity": "Fieller lower (log)",
+    "printed": 0.641,
+    "ours": 0.6398897572210202,
+    "passed": true
+   },
+   {
+    "quantity": "Fieller upper (log)",
+    "printed": 0.729,
+    "ours": 0.7296595228379176,
+    "passed": true
+   }
+  ],
+  "passed": true,
+  "note": "Finney's printed solution is one iteration short of convergence (b 4.176; converged 4.169), hence the 0.002 tolerance on the limits."
+ },
+ "ordinal_published_status": "MASS polr housing example reproduced against MASS 7.3.65 output; the printed values in Venables & Ripley (2002) were not checked here",
+ "oracle": {
+  "checks": [
+   {
+    "case": "finney",
+    "quantity": "intercept",
+    "ours": -2.859373127157787,
+    "r": -2.859373126996,
+    "relative_difference": 5.6581292833533136e-11,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "slope",
+    "ours": 4.169130043896785,
+    "r": 4.16913004363507,
+    "relative_difference": 6.277450962233543e-11,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "cov00",
+    "ours": 0.12117086040595224,
+    "r": 0.121170860965724,
+    "relative_difference": 4.619689636118881e-09,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "cov01",
+    "ours": -0.15945568606302324,
+    "r": -0.159455686889762,
+    "relative_difference": 5.184755570089219e-09,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "cov10",
+    "ours": -0.15945568606302324,
+    "r": -0.159455686889762,
+    "relative_difference": 5.184755570089219e-09,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "cov11",
+    "ours": 0.22579219819785826,
+    "r": 0.225792199467675,
+    "relative_difference": 5.623829143528692e-09,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "pearson_chi2",
+    "ours": 1.6209731756466668,
+    "r": 1.62097317547122,
+    "relative_difference": 1.0823545440452546e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "ED50_x",
+    "ours": 0.6858440722768149,
+    "r": 0.685844072281063,
+    "relative_difference": 6.194057152519616e-12,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "ED50_delta_se_vs_dose.p",
+    "ours": 0.02231582763646906,
+    "r": 0.0223158276675232,
+    "relative_difference": 1.3915745761294301e-09,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "ED50_fieller_low",
+    "ours": 0.6398897572210202,
+    "r": 0.639889757166347,
+    "relative_difference": 8.544152219967137e-11,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "finney",
+    "quantity": "ED50_fieller_high",
+    "ours": 0.7296595228379176,
+    "r": 0.729659522921161,
+    "relative_difference": 1.1408528162574805e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "intercept",
+    "ours": -5.371371082395103,
+    "r": -5.37137107943818,
+    "relative_difference": 5.504968215669279e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "slope",
+    "ours": 3.1775414520208765,
+    "r": 3.17754145034723,
+    "relative_difference": 5.267111635933525e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "cov00",
+    "ours": 2.0728646024332575,
+    "r": 2.07286453901162,
+    "relative_difference": 3.059613232110688e-08,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "cov01",
+    "ours": -1.1757247620638351,
+    "r": -1.17572472566147,
+    "relative_difference": 3.096163951283452e-08,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "cov10",
+    "ours": -1.1757247620638354,
+    "r": -1.17572472566147,
+    "relative_difference": 3.096163970169217e-08,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "cov11",
+    "ours": 0.6967361016797485,
+    "r": 0.696736080458997,
+    "relative_difference": 3.045737415432736e-08,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "pearson_chi2",
+    "ours": 0.44822730850536147,
+    "r": 0.448227307724133,
+    "relative_difference": 1.7429292176992986e-09,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED10_x",
+    "ours": 1.2871018611730236,
+    "r": 1.28710186092038,
+    "relative_difference": 1.9628880310270852e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED10_delta_se_vs_dose.p",
+    "ours": 0.14093340529729748,
+    "r": 0.140933403710027,
+    "relative_difference": 1.1262556923577413e-08,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED10_fieller_low",
+    "ours": 0.7895924386279826,
+    "r": 0.789592451691335,
+    "relative_difference": 1.654442411630103e-08,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED10_fieller_high",
+    "ours": 1.4957836402986509,
+    "r": 1.49578363871759,
+    "relative_difference": 1.0570117207345813e-09,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED50_x",
+    "ours": 1.6904173127242694,
+    "r": 1.69041731268406,
+    "relative_difference": 2.3786665618216075e-11,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED50_delta_se_vs_dose.p",
+    "ours": 0.09381512643050273,
+    "r": 0.093815125957367,
+    "relative_difference": 5.043277618772905e-09,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED50_fieller_low",
+    "ours": 1.476988540255641,
+    "r": 1.47698854268328,
+    "relative_difference": 1.6436410361856833e-09,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED50_fieller_high",
+    "ours": 1.9059686490189567,
+    "r": 1.90596864701084,
+    "relative_difference": 1.0535938180927227e-09,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED90_x",
+    "ours": 2.093732764275515,
+    "r": 2.09373276444774,
+    "relative_difference": 8.225734627247872e-11,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED90_delta_se_vs_dose.p",
+    "ours": 0.1420907272658743,
+    "r": 0.14209072597584,
+    "relative_difference": 9.078947923903102e-09,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED90_fieller_low",
+    "ours": 1.8838898725093376,
+    "r": 1.88388987370554,
+    "relative_difference": 6.349641171208842e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "mortality",
+    "quantity": "ED90_fieller_high",
+    "ours": 2.5966484271132244,
+    "r": 2.59664841527376,
+    "relative_difference": 4.559517742270965e-09,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "intercept",
+    "ours": -2.4301929713210844,
+    "r": -2.43019296939568,
+    "relative_difference": 7.922845241935545e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "slope",
+    "ours": 1.8044541792993265,
+    "r": 1.80445417767359,
+    "relative_difference": 9.009574498915958e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "cov00",
+    "ours": 0.476801910723933,
+    "r": 0.476801905162133,
+    "relative_difference": 1.166480242700756e-08,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "cov01",
+    "ours": -0.3078460942694742,
+    "r": -0.307846090211249,
+    "relative_difference": 1.3182643305773392e-08,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "cov10",
+    "ours": -0.3078460942694742,
+    "r": -0.307846090211249,
+    "relative_difference": 1.3182643305773392e-08,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "cov11",
+    "ours": 0.23422836541714906,
+    "r": 0.234228362200955,
+    "relative_difference": 1.3731018869157185e-08,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "pearson_chi2",
+    "ours": 4.598451803722979,
+    "r": 4.59845180021516,
+    "relative_difference": 7.628260720392435e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "ED50_x",
+    "ours": 1.1436588827878973,
+    "r": 1.14365888275125,
+    "relative_difference": 3.2043953291116724e-11,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "ED50_delta_se_vs_dose.p",
+    "ours": 0.15578430589554987,
+    "r": 0.155784305559742,
+    "relative_difference": 2.1555950729138968e-09,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "ED50_fieller_low",
+    "ours": 0.7137048430356787,
+    "r": 0.713704845489793,
+    "relative_difference": 3.4385562332420196e-09,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "cloglog",
+    "quantity": "ED50_fieller_high",
+    "ours": 1.4432901036149177,
+    "r": 1.44329010265738,
+    "relative_difference": 6.634409984823756e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "abbott",
+    "quantity": "intercept",
+    "ours": -4.641088931156534,
+    "r": -4.64109201238794,
+    "relative_difference": 6.639022449451474e-07,
+    "tolerance": 0.0001,
+    "passed": true
+   },
+   {
+    "case": "abbott",
+    "quantity": "slope",
+    "ours": 2.8080064358807086,
+    "r": 2.80800820351502,
+    "relative_difference": 6.294975595706467e-07,
+    "tolerance": 0.0001,
+    "passed": true
+   },
+   {
+    "case": "abbott",
+    "quantity": "cov11",
+    "ours": 0.3653151737506455,
+    "r": 0.365315850627607,
+    "relative_difference": 1.8528540723686441e-06,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "abbott",
+    "quantity": "loglik",
+    "ours": -32.022585745994064,
+    "r": -32.0225857459988,
+    "relative_difference": 1.479992929088196e-13,
+    "tolerance": 1e-08,
+    "passed": true
+   },
+   {
+    "case": "background",
+    "quantity": "intercept",
+    "ours": -4.795169139484604,
+    "r": -4.79517302045102,
+    "relative_difference": 8.093485676617679e-07,
+    "tolerance": 0.0001,
+    "passed": true
+   },
+   {
+    "case": "background",
+    "quantity": "slope",
+    "ours": 2.7046745022423004,
+    "r": 2.70467653554925,
+    "relative_difference": 7.517745367156516e-07,
+    "tolerance": 0.0001,
+    "passed": true
+   },
+   {
+    "case": "background",
+    "quantity": "natural_response",
+    "ours": 0.11529509969109528,
+    "r": 0.11529510441818057,
+    "relative_difference": 4.0999878672199574e-08,
+    "tolerance": 0.0001,
+    "passed": true
+   },
+   {
+    "case": "background",
+    "quantity": "loglik",
+    "ours": -39.040359979096216,
+    "r": -39.0403599791003,
+    "relative_difference": 1.0465120538867354e-13,
+    "tolerance": 1e-08,
+    "passed": true
+   },
+   {
+    "case": "potency",
+    "quantity": "log10_rho",
+    "ours": 0.34564727586124455,
+    "r": 0.345647274822351,
+    "relative_difference": 3.0056465143412223e-09,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "potency",
+    "quantity": "common_slope",
+    "ours": 2.2966553039360744,
+    "r": 2.29665530577117,
+    "relative_difference": 7.990296264299492e-10,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "potency",
+    "quantity": "fieller_low",
+    "ours": 1.1349086430132544,
+    "r": 1.13490864611279,
+    "relative_difference": 2.7310881168747415e-09,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "potency",
+    "quantity": "fieller_high",
+    "ours": 4.380851457630184,
+    "r": 4.38085141394703,
+    "relative_difference": 9.971384522169111e-09,
+    "tolerance": 1e-07,
+    "passed": true
+   },
+   {
+    "case": "potency",
+    "quantity": "lr_parallelism",
+    "ours": 1.7336801334036807,
+    "r": 1.73368013340369,
+    "relative_difference": 5.3792353198061196e-15,
+    "tolerance": 1e-06,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "grouphigh_coef",
+    "ours": 2.019179536354631,
+    "r": 2.01917950550113,
+    "relative_difference": 1.5280217040276597e-08,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "grouphigh_se",
+    "ours": 0.9884564659379138,
+    "r": 0.988456459556608,
+    "relative_difference": 6.455828939552969e-09,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "grouphigh_profile_low",
+    "ours": 0.12089536743927926,
+    "r": 0.120892387430089,
+    "relative_difference": 2.4650097939232336e-05,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "grouphigh_profile_high",
+    "ours": 4.038783103894951,
+    "r": 4.03884342892806,
+    "relative_difference": 1.4936214827539381e-05,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "grouplow_coef",
+    "ours": 1.5409837012288765,
+    "r": 1.54098367363243,
+    "relative_difference": 1.7908331498594146e-08,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "grouplow_se",
+    "ours": 0.8683315510653558,
+    "r": 0.868331545510349,
+    "relative_difference": 6.397333848592508e-09,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "grouplow_profile_low",
+    "ours": -0.1134619902442722,
+    "r": -0.113460156046923,
+    "relative_difference": 1.6166004111964154e-05,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "grouplow_profile_high",
+    "ours": 3.3308774075585337,
+    "r": 3.33094564801173,
+    "relative_difference": 2.0486810776072944e-05,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "w_coef",
+    "ours": 0.0574925461677497,
+    "r": 0.0574925454331411,
+    "relative_difference": 1.2777458322294507e-08,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "w_se",
+    "ours": 0.030417820438257706,
+    "r": 0.0304178202689263,
+    "relative_difference": 5.566848808965902e-09,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "w_profile_low",
+    "ours": -9.74733373172125e-05,
+    "r": -9.74466374125282e-05,
+    "relative_difference": 0.0002739951361407255,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "w_profile_high",
+    "ours": 0.1210523416541225,
+    "r": 0.121054184705215,
+    "relative_difference": 1.5225009337716843e-05,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "threshold",
+    "ours": -0.40069783115038576,
+    "r": -0.400697807020262,
+    "relative_difference": 6.022025417965607e-08,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "threshold",
+    "ours": 1.0014594267679249,
+    "r": 1.00145939124636,
+    "relative_difference": 3.5469800484352016e-08,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "threshold",
+    "ours": 1.729678657420237,
+    "r": 1.72967862444019,
+    "relative_difference": 1.9067152966828043e-08,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "threshold",
+    "ours": 3.065012544836885,
+    "r": 3.06501250243259,
+    "relative_difference": 1.3834950007078845e-08,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "histopathology",
+    "quantity": "nominal_lr",
+    "ours": 4.146154100122743,
+    "r": 4.14615406773073,
+    "relative_difference": 7.812544586321075e-09,
+    "tolerance": 0.0001,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "inflHigh_coef",
+    "ours": 1.2888191103758284,
+    "r": 1.28881906393967,
+    "relative_difference": 3.6030005897063945e-08,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "inflHigh_se",
+    "ours": 0.12715614456744245,
+    "r": 0.127156148983516,
+    "relative_difference": 3.472953191750403e-08,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "inflMedium_coef",
+    "ours": 0.5663937379060557,
+    "r": 0.566393738907175,
+    "relative_difference": 1.7675324245340338e-09,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "inflMedium_se",
+    "ours": 0.10465278136906736,
+    "r": 0.104652786217327,
+    "relative_difference": 4.6327095686769366e-08,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "apartment_coef",
+    "ours": -0.5723500020463318,
+    "r": -0.572350146410855,
+    "relative_difference": 2.522311283222907e-07,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "apartment_se",
+    "ours": 0.11923800860538773,
+    "r": 0.119238014177634,
+    "relative_difference": 4.673212901156025e-08,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "atrium_coef",
+    "ours": -0.3661863706924301,
+    "r": -0.366186566134618,
+    "relative_difference": 5.337229870038102e-07,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "atrium_se",
+    "ours": 0.15517333202458058,
+    "r": 0.155173338840767,
+    "relative_difference": 4.3926272849218755e-08,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "terrace_coef",
+    "ours": -1.091014658973435,
+    "r": -1.09101490767681,
+    "relative_difference": 2.2795598232013337e-07,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "terrace_se",
+    "ours": 0.1514860185440311,
+    "r": 0.151486025630395,
+    "relative_difference": 4.677899418672414e-08,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "cont_high_coef",
+    "ours": 0.3602840045689258,
+    "r": 0.360284149979341,
+    "relative_difference": 4.0359925691182e-07,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "cont_high_se",
+    "ours": 0.09553579500421816,
+    "r": 0.0955357993226758,
+    "relative_difference": 4.520250695313693e-08,
+    "tolerance": 0.001,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "threshold_uncentred",
+    "ours": -0.4961351381974801,
+    "r": -0.496135343945729,
+    "relative_difference": 4.147018578566509e-07,
+    "tolerance": 1e-05,
+    "passed": true
+   },
+   {
+    "case": "housing",
+    "quantity": "threshold_uncentred",
+    "ours": 0.6907082592605855,
+    "r": 0.690708290078076,
+    "relative_difference": 4.4617229720721725e-08,
+    "tolerance": 1e-05,
+    "passed": true
+   }
+  ],
+  "passed": true
+ },
+ "passed": true
+}

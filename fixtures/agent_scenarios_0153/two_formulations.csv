@@ -1,0 +1,11 @@
+preparation,dose_mg_kg,n,responders
+reference,5.0,12,1
+reference,10.0,12,2
+reference,20.0,12,3
+reference,40.0,12,8
+reference,80.0,12,11
+new_formulation,5.0,12,0
+new_formulation,10.0,12,2
+new_formulation,20.0,12,8
+new_formulation,40.0,12,11
+new_formulation,80.0,12,12

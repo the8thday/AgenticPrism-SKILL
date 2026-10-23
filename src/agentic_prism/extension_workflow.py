@@ -9,7 +9,7 @@ import importlib.metadata
 from .workflow import dump,sha,implementation_hash,verify_run
 from . import __version__
 from .routine import TYPES as ROUTINE_TYPES
-TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen", "censored_comparison", "potency_ranking", "growth_rate_inhibition", "panel_comparison", "enzyme_inhibition", "receptor_occupancy", "pca", "clustering"}
+TYPES = set(ROUTINE_TYPES) | {"epitope_binning", "drug_combination", "hts_qc", "sample_size", "thermal_unfolding", "competing_risks", "nested_comparison", "ancova", "curve_auc", "standard_curve", "qpcr_relative", "nonlinear_fit", "location_test", "generalized_regression", "roc_analysis", "rater_agreement", "outlier_screen", "censored_comparison", "potency_ranking", "growth_rate_inhibition", "panel_comparison", "enzyme_inhibition", "receptor_occupancy", "pca", "clustering", "pk_nca", "population_pk", "fih_dose", "quantal_dose_response", "ordinal_regression"}
 
 
 def module_for(kind):
@@ -22,6 +22,21 @@ def module_for(kind):
  if kind in ('pca', 'clustering'):
   from . import multivariate
   return multivariate
+ if kind == 'ordinal_regression':
+  from . import ordinal
+  return ordinal
+ if kind == 'quantal_dose_response':
+  from . import quantal
+  return quantal
+ if kind == 'fih_dose':
+  from . import fih_dose
+  return fih_dose
+ if kind == 'population_pk':
+  from . import population_pk
+  return population_pk
+ if kind == 'pk_nca':
+  from . import pk_nca
+  return pk_nca
  if kind == 'receptor_occupancy':
   from . import receptor_occupancy
   return receptor_occupancy
@@ -147,6 +162,18 @@ def analyze_extension(config_path,output,render=True):
   elif r['analysis_type']=='enzyme_inhibition':
    from .evidence_0142 import EVIDENCE as E142
    r['validation_evidence']=E142['enzyme_inhibition'];r['must_mention']+=E142['enzyme_inhibition']['must_mention']
+  if r['analysis_type'] in ('quantal_dose_response','ordinal_regression'):
+   from .evidence_0153 import EVIDENCE as E153
+   r['validation_evidence']=E153[r['analysis_type']];r['must_mention']+=E153[r['analysis_type']]['must_mention']
+  if r['analysis_type']=='fih_dose':
+   from .evidence_0152 import EVIDENCE as E152
+   r['validation_evidence']=E152['fih_dose'];r['must_mention']+=E152['fih_dose']['must_mention']
+  if r['analysis_type']=='population_pk':
+   from .evidence_0151 import EVIDENCE as E151
+   r['validation_evidence']=E151['population_pk'];r['must_mention']+=E151['population_pk']['must_mention']
+  if r['analysis_type']=='pk_nca':
+   from .evidence_0150 import EVIDENCE as E150
+   r['validation_evidence']=E150['pk_nca'];r['must_mention']+=E150['pk_nca']['must_mention']
   if r['analysis_type'] in ('pca','clustering'):
    module.write_artifacts(out,r)
    from .evidence_0144 import EVIDENCE as E144
@@ -184,6 +211,21 @@ def render_extension(run,style=None,extra_figures=''):
   names=render(run,r,style)
  if r['analysis_type'] in ('pca','clustering'):
   from .multivariate import render
+  names=render(run,r,style)
+ if r['analysis_type']=='ordinal_regression':
+  from .ordinal import render
+  names=render(run,r,style)
+ if r['analysis_type']=='quantal_dose_response':
+  from .quantal import render
+  names=render(run,r,style)
+ if r['analysis_type']=='fih_dose':
+  from .fih_dose import render
+  names=render(run,r,style)
+ if r['analysis_type']=='population_pk':
+  from .population_pk import render
+  names=render(run,r,style)
+ if r['analysis_type']=='pk_nca':
+  from .pk_nca import render
   names=render(run,r,style)
  if r['analysis_type']=='receptor_occupancy':
   from .receptor_occupancy import render

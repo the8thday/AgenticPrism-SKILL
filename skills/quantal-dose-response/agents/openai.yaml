@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quantal dose response (probit/logit)"
+  short_description: "ED50/LD50 and EDp with Fieller limits from responder counts"
+  default_prompt: "Use $quantal-dose-response to estimate the ED50 from these responder counts."

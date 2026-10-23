@@ -1,0 +1,136 @@
+{
+ "tolerance_relative": 0.001,
+ "ipred_recheck": [
+  {
+   "case": "mm_iv",
+   "structural_model": "linear_mm_2cmt",
+   "route": "iv_bolus",
+   "ipred_values": 117,
+   "max_relative_difference": 0.001337638531984723,
+   "mismatches": [
+    {
+     "subject": "A01",
+     "max_relative_difference": 0.001337638531984723
+    },
+    {
+     "subject": "A02",
+     "max_relative_difference": 0.0012427780549500846
+    },
+    {
+     "subject": "A07",
+     "max_relative_difference": 0.0012365337130422227
+    }
+   ],
+   "passed": false
+  },
+  {
+   "case": "linear_inf",
+   "structural_model": "linear_2cmt",
+   "route": "iv_infusion",
+   "ipred_values": 90,
+   "max_relative_difference": 0.0016831311983817583,
+   "mismatches": [
+    {
+     "subject": "R01",
+     "max_relative_difference": 0.0016831311983817583
+    },
+    {
+     "subject": "R02",
+     "max_relative_difference": 0.0014775844706652428
+    }
+   ],
+   "passed": false
+  },
+  {
+   "case": "qss_sc",
+   "structural_model": "qss_tmdd_2cmt",
+   "route": "sc",
+   "ipred_values": 119,
+   "max_relative_difference": 0.001516492772084789,
+   "mismatches": [
+    {
+     "subject": "S03",
+     "max_relative_difference": 0.001516492772084789
+    }
+   ],
+   "passed": false
+  }
+ ],
+ "published_dataset": {
+  "source": "Schoemaker et al. 2019 CPT:PSP 8:923 (CC BY-NC); nlmixr2data::Bolus_2CPTMM",
+  "n_subjects": 120,
+  "n_obs": 6960,
+  "covariance": {
+   "method": "r,s (full)",
+   "status": "sandwich"
+  },
+  "linear_cl_truth": 0.0,
+  "linear_cl": {
+   "estimate": 0.005670754031267032,
+   "status": "withheld",
+   "reasons": [
+    "not identified: natural-scale RSE 5.35e+03% > 100%"
+   ]
+  },
+  "rows": [
+   {
+    "parameter": "v1",
+    "truth": 70.0,
+    "estimate": 70.98236434259552,
+    "ci95": [
+     67.20754208005438,
+     74.96920571300409
+    ],
+    "status": "reportable",
+    "truth_in_ci": true
+   },
+   {
+    "parameter": "v2",
+    "truth": 40.0,
+    "estimate": 49.76103569244907,
+    "ci95": [
+     45.18194197566254,
+     54.80421081765334
+    ],
+    "status": "reportable",
+    "truth_in_ci": false
+   },
+   {
+    "parameter": "q",
+    "truth": 4.0,
+    "estimate": 3.9543884343732527,
+    "ci95": [
+     3.393784938663107,
+     4.607595405283638
+    ],
+    "status": "reportable",
+    "truth_in_ci": true
+   },
+   {
+    "parameter": "vmax",
+    "truth": 1000.0,
+    "estimate": 976.2850978259992,
+    "ci95": [
+     901.1624528990318,
+     1057.6701117217006
+    ],
+    "status": "reportable",
+    "truth_in_ci": true
+   },
+   {
+    "parameter": "km",
+    "truth": 250.0,
+    "estimate": 229.5221057981794,
+    "ci95": [
+     205.25170241443158,
+     256.66241220090666
+    ],
+    "status": "reportable",
+    "truth_in_ci": true
+   }
+  ],
+  "printed_estimate_gate": "UNMET (estimates printed only in figures)"
+ },
+ "nlmixr2est": "7.2.1",
+ "passed": false
+}

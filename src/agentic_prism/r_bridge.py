@@ -41,3 +41,63 @@ def call(method,payload):
 def availability():
     try:return {'available':True,**call('doctor',{})}
     except (RuntimeError,ArithmeticError,subprocess.TimeoutExpired) as exc:return {'available':False,'reason':str(exc)}
+
+
+# 0.15.0 PK methods: separate fixed scripts and pins, so the MMRM path and its
+# recorded script hashes are unchanged and MMRM does not require PKNCA.
+PK_SCRIPTS=Path(__file__).with_name('r_scripts_pk')
+PK_PINS={r['package']:r['version'] for r in csv.DictReader((PK_SCRIPTS/'packages.csv').open())}
+
+
+def call_pk(method,payload,timeout=600):
+    if method not in ('pknca','pk_doctor'):raise ValueError('Unsupported PK R bridge method')
+    executable=shutil.which('Rscript')
+    if executable is None:raise RuntimeError('This analysis requires optional R with PKNCA. Install R and run install.py --with-r-pk; Python methods remain available.')
+    with tempfile.TemporaryDirectory(prefix='prism-r-pk-') as tmp:
+        inp,out=Path(tmp)/'input.json',Path(tmp)/'output.json'
+        inp.write_text(json.dumps({'method':method,'pins':PK_PINS,'data':payload},allow_nan=False))
+        args=[executable,'--vanilla',str(PK_SCRIPTS/'pk_runner.R'),str(inp),str(out),str(library_path() or '')]
+        proc=subprocess.run(args,capture_output=True,text=True,timeout=timeout)
+        if proc.returncode or not out.exists():
+            raise RuntimeError('Optional R PK method unavailable or failed: '+proc.stderr[-1500:]+'; check agentic-prism doctor and install.py --with-r-pk')
+        result=json.loads(out.read_text())
+        if 'r_environment' in result:
+            result['r_environment']['scripts_sha256']={p.name:__import__('hashlib').sha256(p.read_bytes()).hexdigest() for p in sorted(PK_SCRIPTS.iterdir()) if p.is_file()}
+        if 'error' in result:
+            error=ArithmeticError(result['error']);error.r_environment=result.get('r_environment');raise error
+        return result
+
+
+def pk_availability():
+    try:return {'available':True,**call_pk('pk_doctor',{})}
+    except (RuntimeError,ArithmeticError,subprocess.TimeoutExpired) as exc:return {'available':False,'reason':str(exc)}
+
+
+# 0.15.1 population PK (nlmixr2): its own fixed script folder and pins, so NCA users
+# do not need nlmixr2 and the PK bridge's recorded script hashes are unchanged.
+POP_SCRIPTS=Path(__file__).with_name('r_scripts_pop')
+POP_PINS={r['package']:r['version'] for r in csv.DictReader((POP_SCRIPTS/'packages.csv').open())}
+
+
+def call_pop(method,payload,timeout=3600):
+    if method not in ('nlmixr2_fit','pop_doctor'):raise ValueError('Unsupported population-PK R bridge method')
+    executable=shutil.which('Rscript')
+    if executable is None:raise RuntimeError('This analysis requires optional R with nlmixr2. Install R and run install.py --with-r-pop; Python methods remain available.')
+    with tempfile.TemporaryDirectory(prefix='prism-r-pop-') as tmp:
+        inp,out=Path(tmp)/'input.json',Path(tmp)/'output.json'
+        inp.write_text(json.dumps({'method':method,'pins':POP_PINS,'data':payload},allow_nan=False))
+        args=[executable,'--vanilla',str(POP_SCRIPTS/'pop_runner.R'),str(inp),str(out),str(library_path() or '')]
+        proc=subprocess.run(args,capture_output=True,text=True,timeout=timeout)
+        if proc.returncode or not out.exists():
+            raise RuntimeError('Optional R population-PK method unavailable or failed: '+proc.stderr[-1500:]+'; check agentic-prism doctor and install.py --with-r-pop')
+        result=json.loads(out.read_text())
+        if 'r_environment' in result:
+            result['r_environment']['scripts_sha256']={p.name:__import__('hashlib').sha256(p.read_bytes()).hexdigest() for p in sorted(POP_SCRIPTS.iterdir()) if p.is_file()}
+        if 'error' in result:
+            error=ArithmeticError(result['error']);error.r_environment=result.get('r_environment');raise error
+        return result
+
+
+def pop_availability():
+    try:return {'available':True,**call_pop('pop_doctor',{})}
+    except (RuntimeError,ArithmeticError,subprocess.TimeoutExpired) as exc:return {'available':False,'reason':str(exc)}

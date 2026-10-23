@@ -1,0 +1,4 @@
+interface:
+  display_name: "PK NCA (PKNCA)"
+  short_description: "Single-dose noncompartmental PK with PKNCA, reportability and dose proportionality"
+  default_prompt: "Use $pk-nca to run a noncompartmental analysis of these concentration-time profiles."

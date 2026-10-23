@@ -1,62 +1,76 @@
-# NCA input and reporting contract
+# pk_nca input and output contract (0.15.0)
 
-This is a guidance contract, not an implemented JSON schema or automatic QC layer.
-The agent prepares transparent R analysis code for the actual study.
+## Input CSV
 
-## Required study declarations
+One long table, one row per subject and sample time, single dose at time 0.
 
-Record study/source, species or population, subject identity, analyte (including
-free/total drug), matrix, route, formulation, dose basis, time origin and actual
-versus nominal sample times. Identify single/repeated dose and serial versus
-destructive sampling. Do not infer these from the shape of the curve.
-
-| Input | Fields and checks |
+| Column | Meaning |
 |---|---|
-| Concentrations | `subject`, `time`, `concentration`; study/period/treatment/analyte keys as needed; original row ID, units, BLQ flag, applicable LLOQ, missing/exclusion reason |
-| Doses | Matching subject/period keys, actual dose time, amount, amount unit/basis, route; infusion start/end or duration if applicable; complete relevant prior dosing history |
-| Intervals | Start/end in the same time frame as data, requested endpoints, grouping keys when intervals differ; missing boundary/interpolation policy |
-| Analysis decisions | Integration method, BLQ rules by position, missing/duplicate handling, terminal-selection rule and override rationale, reportability criteria and sources |
+| `subject` | Subject or animal ID (the unit of analysis) |
+| `time` | Time after the dose (≥ 0) in `design.time_unit` |
+| `concentration` | Measured value; empty when `blq` is true |
+| `dose` | Dose in `design.dose_unit`, constant within subject |
+| `group` | Optional dose group label for summaries (otherwise grouped by dose) |
+| `blq` | Optional true/false; BLQ rows must leave `concentration` empty |
+| `exclude`, `exclusion_reason` | Optional declared exclusions; every excluded row needs a reason |
+| `infusion_duration` | Required for `intravascular_infusion`, constant within subject |
+| `lambda_z_point` | Required for `lambda_z.selection: declared_points` |
 
-Keep raw and analysis concentrations separate. Unresolved duplicate times must
-not be averaged automatically. Negative/zero concentrations, BLQ and missing
-values are distinct states. Sample and dose times must share one documented
-clock. A time-zero sample is not automatically zero, and an IV bolus C0 may
-require extrapolation; do not invent a measurement at zero.
+Other columns are refused. Duplicate subject-time rows, negative values and doses
+that vary within a subject are refused.
 
-First-version terminal analysis is log-linear on eligible positive quantified
-observations. Review at least the points used, start/end, slope sign, number of
-points, fit quality, time span and extrapolated AUC fraction. Thresholds come
-from the analysis plan or are explicitly labeled exploratory choices before
-calculation; they are not universal regulatory rules. If the installed package
-cannot expose a requested diagnostic, mark it unavailable rather than reconstruct
-an undocumented selection algorithm. Never select points just to obtain a
-preferred half-life. Record any manual override alongside the original fit.
+Time zero: for infusion and extravascular dosing declare `time_zero.rule`
+`observed` (a predose time-0 row exists; BLQ is fine) or `insert_zero` (a 0 at
+time 0 is added and logged). For IV bolus a time-0 row, if present, must be the
+predose sample (BLQ or 0); C0 is always back-extrapolated.
 
-Dose-independent endpoints may be reported when dose information is missing
-and their interval is still well defined. Withhold dose-derived endpoints.
-An incomplete curve does not support AUC0-t just because AUClast is computable;
-state the actual first/last included times and all imputations.
+## Configuration
 
-## Saved run and interpretation facts
+```json
+{"schema_version": 1, "analysis_type": "pk_nca", "input": "pk.csv", "source": "Study X bioanalytical report v2",
+ "design": {"analyte": "mAb-X total", "matrix": "serum", "species": "cynomolgus monkey", "subject_unit": "animal",
+            "route": "intravascular_bolus", "dose_unit": "mg/kg", "concentration_unit": "ug/mL",
+            "time_unit": "h", "time_basis": "nominal"},
+ "blq": {"first": "keep_as_zero", "middle": "drop", "last": "drop", "rationale": "SAP section 9.2"},
+ "nca": {"auc_method": "lin_up_log_down", "auc_method_rationale": "SAP",
+         "lambda_z": {"selection": "best_adjusted_r2", "min_points": 3, "adj_r2_factor": 0.0001}},
+ "reportability": {"min_adj_r2": 0.9, "min_span_ratio": 2, "max_aucinf_extrap_percent": 20, "source": "SAP section 9.4"},
+ "dose_proportionality": {"parameters": ["cmax", "aucinf"], "acceptance": [0.8, 1.25], "confidence_level": 0.9,
+                          "source": "Smith et al. 2000", "rationale": "Exposure scaling across 1-10 mg/kg"}}
+```
 
-Use a fresh directory. Preserve original inputs, analysis tables, interval table,
-resolved options, `analysis.R`, `sessionInfo.txt`, package citations, dependency
-versions/lockfile when available, warnings, PKNCA result RDS, full endpoint table,
-terminal diagnostics and plots. Retain every subject, including failures.
+`blq` is required when any post-dose row is BLQ. `reportability` may instead be
+`{"descriptive_only": true, "rationale": "..."}`: terminal parameters are then
+`not_assessed` and left out of summaries (and `aucinf` dose proportionality is
+refused). `dose_proportionality` is optional.
 
-Before the report and manifest, write `interpretation_facts.json` by copying
-saved outputs, without another fit. At minimum record:
+## Calculation (PKNCA)
 
-- `engine` and version; `validation_status: prototype_unvalidated`.
-- `source_artifacts` with relative file names and row/key pointers.
-- `endpoints`: subject/period/analyte, endpoint, unit, status, value or null,
-  reason and diagnostic pointers. Retain withheld estimates separately as audit.
-- `must_mention`: exclusions/BLQ rules, missing dose, actual sampling window,
-  terminal failures, extrapolation, apparent CL/F or Vz/F, and unmet validation.
+All values come from PKNCA's `pk.nca` with the declared options
+(`auc.method`, `conc.blq`, `min.hl.points`, `adj.r.squared.factor`,
+`allow.tmax.in.half.life = FALSE`). IV bolus runs two PKNCA passes: pass 1 on the
+observed samples gives C0 (PKNCA order c0, logslope, c1, cmin, set0), Cmax and Tmax;
+pass 2 inserts C0 at time 0 for AUC, AUMC, lambda-z, CL, Vz, MRT and Vss. When both
+passes choose the same lambda-z, pass-2 AUCinf must equal pass-1 `aucivinf.obs`.
 
-This file is produced by the agent's saved script; it is not generated by PKNCA
-or by the existing AgenticPrism CLI. Do not call unsaved prose a facts artifact.
-Save a manifest with input/script/output hashes, package versions, invocation,
-timestamp and failure state. Derive a short study report from the saved facts;
-report missing endpoint counts and reasons in summaries. Style-only rerendering
-reads saved outputs and does not rerun NCA.
+## Output (`results.json` → `primary`)
+
+- `subjects[]`: `values` (c0, cmax, tmax, tlast, clast, auclast, aumclast,
+  lambda_z and its points/times/R²/adjusted R²/span ratio, half_life, aucinf,
+  aucinf_extrap_percent, aumcinf, cl, vz, mrt, vss), `status` per parameter
+  (`reportable`, `withheld`, `not_estimated`, `not_assessed`, `not_applicable`),
+  `terminal_reasons`, `aucinf_reasons`, PKNCA exclusion text and `diagnostics`.
+- `parameter_labels` (CL/F, Vz/F for extravascular; MRT_iv for intravascular) and
+  composed `units` (no conversion).
+- `summaries[]` per group: n, n_not_reportable, geometric mean, geometric CV%,
+  mean, SD (Tmax/Tlast: median, min, max), reportable values only.
+- `dose_proportionality.parameters[k]`: slope b, SE, df, CI, dose ratio r,
+  acceptance interval for b, conclusion (`proportional_within_acceptance`,
+  `disproportionate`, `inconclusive`) and r^(b−1) with its CI; or `withheld`.
+- `pknca` (version, options, warnings), `preprocessing_log`, `excluded_samples`,
+  `bolus_two_pass_checks`; `mapped_input` is the exact table passed to PKNCA.
+
+Withholding: lambda-z not estimated, a declared criterion failed, or fewer declared
+points than `min_points` withholds t½ and every AUCinf-dependent parameter;
+%AUCinf extrapolated above its limit withholds the AUCinf-dependent ones. Cmax,
+Tmax and AUClast stay reportable.

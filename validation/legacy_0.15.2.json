@@ -1,0 +1,3333 @@
+{
+  "status": "passed",
+  "baseline_commit": "321501083e996d9a131f7cb21e35d906068c954f",
+  "configurations": 280,
+  "byte_identical_artifact_count": 1923,
+  "text_only_changed_configurations": [],
+  "fixtures": [
+    {
+      "fixture": "ada_performance/config_ada_two_way_bootstrap.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_performance/config_drug_tolerance.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_performance/config_sensitivity.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_public/config.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_synthetic/config_boxcox.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_synthetic/config_confirmatory.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_synthetic/config_dynamic.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_synthetic/config_fixed.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_synthetic/config_floating.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_synthetic/config_nonparametric.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ada_synthetic/config_titer.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_cell_antigen_negative.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_cell_quadratic.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_cell_relative.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_cell_unweighted.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_competition.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_depletion_declared.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_depletion_fitted.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_set.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_steady_state.json",
+      "byte_identical_artifacts": [
+        "bootstrap.csv",
+        "config.resolved.json",
+        "curve_parameters.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "steady_state.json",
+        "window_sensitivity.csv"
+      ]
+    },
+    {
+      "fixture": "affinity_0110/config_titration.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "profiles.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_cohen_1968_unweighted.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_cohen_1968_weighted.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_hanley_mcneil_1982.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json",
+        "roc_curve.csv"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_icc_agreement.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_icc_consistency_average.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_icc_one_way.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_kappa_binary.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_kappa_linear.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_kappa_quadratic.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_kappa_unweighted.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_roc_lower.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json",
+        "roc_curve.csv"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_roc_paired.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json",
+        "roc_curve.csv"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_roc_single.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json",
+        "roc_curve.csv"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_shrout_fleiss_icc11.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_shrout_fleiss_icc1k.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_shrout_fleiss_icc21.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_shrout_fleiss_icc2k.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_shrout_fleiss_icc31.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "agreement_roc_0136/config_shrout_fleiss_icc3k.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ancova_0132/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "ancova_0132/config_slope_flag.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_0140/config_left_and_right.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_0140/config_sparse_detected.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_0140/config_three_group_peto.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_0140/config_three_group_two_limits.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_0140/config_two_group_lognormal.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_0140/config_two_group_peto.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_paired_0141/config_paired_heavy_censoring.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_paired_0141/config_paired_heavy_sign_test.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_paired_0141/config_paired_log_two_limits.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_paired_0141/config_paired_original.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_paired_0141/config_paired_sign_test.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_paired_0141/config_paired_sparse_withheld.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "censored_paired_0141/config_paired_wald_z.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "comparability/config_descriptive.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "comparability/config_quality_range.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "comparability/config_quality_range_shifted.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "comparability/config_tost_absolute.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "comparability/config_tost_sd_multiple.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "competing_0131/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "curve_auc_0132/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "dose_models_0131/config_5pl.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "dose_models_0131/config_bell.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "dose_models_0131/config_bell_overlap.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "dose_synthetic/config_ec50.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "dose_synthetic/config_potency_equivalence.json",
+      "byte_identical_artifacts": [
+        "comparison_grid.csv",
+        "comparisons.csv",
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "parallelism_equivalence.csv",
+        "potency_summary.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "elisa_dilution_5pl/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "cross_plate_qc.csv",
+        "diagnostics.json",
+        "dilution_linearity.csv",
+        "independent_qc.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv",
+        "standards_qc.csv",
+        "unknown_wells.csv"
+      ]
+    },
+    {
+      "fixture": "elisa_independent_qc/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "cross_plate_qc.csv",
+        "diagnostics.json",
+        "dilution_linearity.csv",
+        "independent_qc.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv",
+        "standards_qc.csv",
+        "unknown_wells.csv"
+      ]
+    },
+    {
+      "fixture": "enzyme_0142/config_competitive_three_experiments.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "enzyme_0142/config_declared_rejected.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "enzyme_0142/config_mixed_declared.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "enzyme_0142/config_tight_binding.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "enzyme_0142/config_uncompetitive.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "enzyme_0143/config_competitive_estimate.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "enzyme_0143/config_competitive_fixed.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "enzyme_0143/config_mixed_kapp_only.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "enzyme_0143/config_noncompetitive_fixed.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "enzyme_0143/config_titration_regime.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "epitope_0121/config_asymmetric.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "epitope_0121/config_complete.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "epitope_0121/config_failed_control.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "epitope_0121/config_missing.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "epitope_0121/config_premix.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "epitope_0121/config_tandem.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "everyday_0134/config_ecx.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "effect_endpoints.csv",
+        "endpoint_summaries.csv",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "everyday_0134/config_hook.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "effect_endpoints.csv",
+        "endpoint_summaries.csv",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "everyday_0134/config_icx.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "curve_grid.csv",
+        "diagnostics.json",
+        "effect_endpoints.csv",
+        "endpoint_summaries.csv",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "sample_summary.csv"
+      ]
+    },
+    {
+      "fixture": "everyday_0134/config_independent_ratio_welch.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "everyday_0134/config_one_sample_ratio_t.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "everyday_0134/config_one_sample_t.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "everyday_0134/config_paired_auc.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "everyday_0134/config_paired_ratio_t.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "gr_0140/config_edge_cases.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "gr_values.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "gr_0140/config_panel.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "gr_values.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "gr_grmax_0141/config_panel_fitted_grmax.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "gr_values.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "groups_synthetic/independent_config.json",
+      "byte_identical_artifacts": [
+        "comparison.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "groups_synthetic/paired_config.json",
+      "byte_identical_artifacts": [
+        "comparison.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "interpretation_ovarian/config.json",
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "interpretation_states/config_boundary.json",
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "interpretation_states/config_dropout.json",
+      "byte_identical_artifacts": [
+        "arm_day_summary.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "dropout.csv",
+        "growth_rates.csv",
+        "growth_tests.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "model_contrasts.csv",
+        "normalized_data.csv",
+        "observed_tgi.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "interpretation_states/config_no_events_arm.json",
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ada_confirmatory_nonparametric.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ada_confirmatory_parametric.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ada_fixed_nonparametric.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ada_fixed_parametric.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ada_floating_nonparametric.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ada_floating_parametric.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ada_titer_nonparametric.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ada_titer_parametric.json",
+      "byte_identical_artifacts": [
+        "analysis_cells.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "per_run_audit.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_boundary_mls.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ep05_1_mls.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ep05_2_mls.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_ep05_3_mls.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_mixed_fixed_mls.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_nested_mls.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_penicillin_mls.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "intervals_092/config_unbalanced_mls.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "kinetics_0120/bivalent_analyte_config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "kinetics_0120/heterogeneous_ligand_config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "kinetics_0120/mass_transport_config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "kinetics_0120/off_rate_screening_config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "kinetics_0120/one_to_one_drift_config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "kinetics_single_cycle/config.json",
+      "byte_identical_artifacts": [
+        "bootstrap.csv",
+        "config.resolved.json",
+        "curve_parameters.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "window_sensitivity.csv"
+      ]
+    },
+    {
+      "fixture": "kinetics_synthetic/config.json",
+      "byte_identical_artifacts": [
+        "bootstrap.csv",
+        "config.resolved.json",
+        "curve_parameters.csv",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json",
+        "window_sensitivity.csv"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_accuracy_precision.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_accuracy_precision_unbalanced.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_carry_over.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_dilution_hook.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_dilution_linearity.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_isr.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_parallelism.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_selectivity.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_specificity.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "method_validation/config_stability.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "mmrm/config_synthetic_ar1_kenward_roger.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "mmrm/config_synthetic_ar1_satterthwaite.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "mmrm/config_synthetic_unstructured_kenward_roger.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "mmrm/config_synthetic_unstructured_satterthwaite.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "multigroup_synthetic/config_dunnett.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "multivariate_0144/config_average_correlation_k2.json",
+      "byte_identical_artifacts": [
+        "cluster_assignments.csv",
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "multivariate_0144/config_kmeans_gap_null.json",
+      "byte_identical_artifacts": [
+        "cluster_assignments.csv",
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "multivariate_0144/config_kmeans_gap_three.json",
+      "byte_identical_artifacts": [
+        "cluster_assignments.csv",
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "multivariate_0144/config_pca_cytokines.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "pca_loadings.csv",
+        "pca_scores.csv",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "multivariate_0144/config_pca_cytokines_declared3_unscaled.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "pca_loadings.csv",
+        "pca_scores.csv",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "multivariate_0144/config_ward_pca_scores_k3.json",
+      "byte_identical_artifacts": [
+        "cluster_assignments.csv",
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nested_0132/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nonlinear_0133/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nonparametric/config_fixture_friedman.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nonparametric/config_fixture_kw.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nonparametric/config_fixture_mw.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nonparametric/config_fixture_signed.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nonparametric/config_public_friedman.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nonparametric/config_public_kw.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nonparametric/config_public_mw.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "nonparametric/config_public_signed.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "outliers_0136/config_groups_esd.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "outliers_0136/config_groups_grubbs.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "outliers_0136/config_groups_rout.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "outliers_0136/config_log_scale_grubbs.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "outliers_0136/config_nist_esd.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "outliers_0136/config_nist_grubbs.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "outliers_0136/config_nist_grubbs_two_sided.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "outliers_0136/config_nist_rout.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "panel_0140/config_cytokines_bh.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "panel_0140/config_cytokines_holm.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "panel_0140/config_paired_markers.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "panel_censored_0141/config_censored_bh.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "panel_censored_0141/config_censored_holm.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "panel_censored_0141/config_censored_paired.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "panel_censored_0141/config_censored_withheld_outcome.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pharmacology_0130/config_combination.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pharmacology_0130/config_disagreement.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pharmacology_0130/config_hts.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pharmacology_0130/config_hts_failed.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pharmacology_0130/config_hts_simulated.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pharmacology_0130/config_public_oneil.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pharmacology_0130/config_public_oneil2.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pharmacology_0130/config_unreplicated.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pk_0150/config_cyno_bolus.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pk_0150/config_rat_infusion.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pk_0150/config_rat_oral.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "pk_0150/config_rat_oral_descriptive.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "poppk_0151/config_linear_inf.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "poppk_0151/config_mm_iv.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "poppk_0151/config_qss_sc.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "potency_assay/config_combine.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "potency_assay/config_failed.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "potency_assay/config_outlier.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "potency_assay/config_unbalanced.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "potency_assay/config_validate.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "potency_ranking_0140/config_above_range_and_failed_reference.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "potency_ranking_0140/config_eight_candidates.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "potency_ranking_0140/config_eight_candidates_threshold.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "potency_ranking_0140/config_too_few_experiments.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "public/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "diagnostics.json",
+        "fit_results.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "normalized_data.csv",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json",
+        "sample_summary.csv",
+        "sensitivity.csv"
+      ]
+    },
+    {
+      "fixture": "qpcr_0132/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0142/config_bound_saturation.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0142/config_free_baseline_dose_groups.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0142/config_free_baseline_internalization.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0142/config_free_over_total_internalization.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0142/config_too_few_subjects_exposure.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0143/config_robust_bound_saturation.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0143/config_robust_free_over_total.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0143/config_robust_hill_estimated.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0143/config_robust_hill_fixed.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "receptor_occupancy_0143/config_robust_too_few_subjects.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_binomial.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_gaussian.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_grouped_binomial.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_hc3.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_hetero_classical.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_missing.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_offset.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_overdispersed.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_poisson.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_quasipoisson.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_rank_deficient.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_separated.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "regression_0135/config_star98_public.json",
+      "byte_identical_artifacts": [
+        "coefficients.csv",
+        "config.resolved.json",
+        "design_matrix.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "predictions.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "repeated_synthetic/config_mixed.json",
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "repeated_synthetic/config_rm.json",
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "repeated_two_way_synthetic/config_two_way_anova.json",
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json",
+        "tests.csv"
+      ]
+    },
+    {
+      "fixture": "repeated_two_way_synthetic/config_two_way_mixed.json",
+      "byte_identical_artifacts": [
+        "bootstrap_samples.json",
+        "config.resolved.json",
+        "contrasts.csv",
+        "diagnostics.json",
+        "fixed_effects.csv",
+        "group_summary.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "missingness.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "residuals.csv",
+        "results.json",
+        "tests.csv"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_bland_altman.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_chi_square.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_clopper_pearson.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_deming.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_factorial_dunnett.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_factorial_holm.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_factorial_sidak.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_factorial_tukey.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_fisher.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_fisher_rc.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_linear.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_mcnemar.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_mcnemar_exact.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_passing_bablok.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_pearson.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_public_bland_altman.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_public_deming.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_public_linear.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_public_passing_bablok.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_public_pearson.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_public_spearman.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_spearman.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_toothgrowth.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_trend.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_warpbreaks.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "routine_0111/config_wilson.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "sample_size_0131/config_tost.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "sample_size_0131/config_two_sample.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "specification/config_capability_subgroups.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "specification/config_nonparametric.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "specification/config_nonparametric_small.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "specification/config_normal_exact.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "specification/config_normal_howe.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "specification/config_upper_impurity.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "stability/config_common_slope.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "stability/config_curvature.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "stability/config_extrapolated.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "stability/config_koleva.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "stability/config_pooled.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "stability/config_separate.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "stability/config_two_sided.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "stability/config_upper.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "standard_curve_0132/config.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "survival_synthetic/config.json",
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "survival_synthetic/config_adjusted.json",
+      "byte_identical_artifacts": [
+        "arm_summary.csv",
+        "config.resolved.json",
+        "contrasts.csv",
+        "cox_terms.csv",
+        "diagnostics.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "km_curves.csv",
+        "logrank.csv",
+        "normalized_data.csv",
+        "omnibus.csv",
+        "ph_test.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "thermal_0131/config_mab.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "thermal_0131/config_single.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "tumor_growth_synthetic/config.json",
+      "byte_identical_artifacts": [
+        "arm_day_summary.csv",
+        "config.resolved.json",
+        "diagnostics.json",
+        "dropout.csv",
+        "growth_rates.csv",
+        "growth_tests.csv",
+        "input.csv",
+        "interpretation_facts.json",
+        "model_contrasts.csv",
+        "normalized_data.csv",
+        "observed_tgi.csv",
+        "omnibus.csv",
+        "preprocessing_log.json",
+        "rerun.txt",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "variance_reml/config_boundary.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "variance_reml/config_ep05_1.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "variance_reml/config_ep05_2.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "variance_reml/config_ep05_3.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "variance_reml/config_mixed_fixed.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "variance_reml/config_nested.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "variance_reml/config_penicillin.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    },
+    {
+      "fixture": "variance_reml/config_unbalanced.json",
+      "byte_identical_artifacts": [
+        "config.resolved.json",
+        "input.csv",
+        "interpretation_facts.json",
+        "results.json"
+      ]
+    }
+  ],
+  "scope": "Scientific outputs unchanged; manifest version/code/time provenance is current. No old benchmark or calibration rerun."
+}

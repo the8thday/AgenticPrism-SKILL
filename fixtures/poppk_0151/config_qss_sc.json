@@ -1,0 +1,58 @@
+{
+ "schema_version": 1,
+ "analysis_type": "population_pk",
+ "source": "Synthetic 0.15.1 fixture (scripts/prepare_poppk_0151_fixtures.py, seed 20261024); not study data",
+ "blq": {
+  "rule": "drop",
+  "rationale": "Synthetic fixture: BLQ samples excluded from the likelihood (M1)"
+ },
+ "estimation": {
+  "method": "focei",
+  "seed": 15101,
+  "max_outer_iterations": 5000
+ },
+ "input": "cyno_qss_sc.csv",
+ "design": {
+  "analyte": "mAb-X total",
+  "matrix": "serum",
+  "species": "cynomolgus monkey",
+  "subject_unit": "animal",
+  "dose_unit": "mg/kg",
+  "concentration_unit": "ug/mL",
+  "time_unit": "h",
+  "route": "sc"
+ },
+ "model": {
+  "structural": "qss_tmdd_2cmt",
+  "observed_species": "total",
+  "rationale": "Declared before fitting: membrane target with TMDD",
+  "initial_estimates": {
+   "cl": 0.0003,
+   "v1": 0.05,
+   "q": 0.0005,
+   "v2": 0.04,
+   "kss": 1.0,
+   "kint": 0.03,
+   "r0": 1.5,
+   "ka": 0.015
+  },
+  "fixed": {
+   "kdeg": 0.01
+  },
+  "fixed_source": "Fixture: target turnover from a literature value",
+  "bioavailability": {
+   "value": 0.7,
+   "source": "Fixture: SC bioavailability from a separate IV/SC study"
+  },
+  "initial_estimates_source": "Typical cynomolgus IgG values (fixture)",
+  "random_effects": [
+   "cl",
+   "v1",
+   "r0"
+  ],
+  "residual": "proportional",
+  "residual_initial": {
+   "proportional": 0.2
+  }
+ }
+}

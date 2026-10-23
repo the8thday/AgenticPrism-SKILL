@@ -1,0 +1,32 @@
+{
+ "schema_version": 1,
+ "analysis_type": "ordinal_regression",
+ "input": "liver_histopathology.csv",
+ "source": "Synthetic 0.15.3 fixture (scripts/prepare_quantal_ordinal_0153_fixtures.py, seed 20261025); not study data",
+ "design": {
+  "outcome": "hepatocellular hypertrophy grade",
+  "categories": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "subject_unit": "rat",
+  "independence_rationale": "one terminal score per rat, rats randomised"
+ },
+ "group": {
+  "column": "group",
+  "reference": "vehicle"
+ },
+ "covariates": [
+  {
+   "name": "baseline_weight_g",
+   "rationale": "Pre-treatment body weight declared in the protocol (fixture)"
+  }
+ ],
+ "proportional_odds_check": {
+  "method": "nominal_lr",
+  "alpha": 0.05
+ }
+}

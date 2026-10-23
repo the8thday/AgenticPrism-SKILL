@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentic-prism"
-version = "0.14.4"
+version = "0.15.3"
 description = "Auditable binding, kinetics, dose-response, ELISA calibration and group-comparison analysis for modular Agent Skills"
 requires-python = ">=3.12"
 dependencies = ["numpy", "scipy>=1.15", "pandas", "matplotlib", "statsmodels>=0.15,<0.16"]
@@ -20,4 +20,4 @@ pythonpath = ["src"]
 testpaths = ["tests"]
 
 [tool.setuptools.package-data]
-agentic_prism = ["r_scripts/*.R", "r_scripts/*.csv"]
+agentic_prism = ["r_scripts/*.R", "r_scripts/*.csv", "r_scripts_pk/*.R", "r_scripts_pk/*.csv", "r_scripts_pop/*.R", "r_scripts_pop/*.csv"]

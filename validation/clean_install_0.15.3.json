@@ -1,0 +1,214 @@
+{
+  "status": "passed",
+  "package_version": "0.15.3",
+  "wheel_sha256": "1587805af1e0908599026c25702e22ade0249e4c0676a2060f456b111ec4abef",
+  "isolation": "wheel-only venv with locked dependencies, outside repository; no editable install or PYTHONPATH",
+  "scope": "same macOS host, not a cross-platform claim",
+  "exact_source_wheel": {
+    "status": "passed",
+    "package_version": "0.15.3",
+    "installed_source_isolation": true,
+    "fixtures": [
+      {
+        "fixture": "fixtures/fih_0152/config_mab.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/fih_0152/config_small_molecule.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/independent_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/groups_synthetic/paired_config.json",
+        "byte_identical_artifacts": [
+          "comparison.csv",
+          "config.resolved.json",
+          "diagnostics.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "normalized_data.csv",
+          "preprocessing_log.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/ordinal_0153/config_histopathology.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pk_0150/config_cyno_bolus.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pk_0150/config_rat_infusion.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pk_0150/config_rat_oral.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/pk_0150/config_rat_oral_descriptive.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/poppk_0151/config_linear_inf.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/poppk_0151/config_mm_iv.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/poppk_0151/config_qss_sc.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/quantal_0153/config_abbott.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/quantal_0153/config_background.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/quantal_0153/config_finney.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/quantal_0153/config_individual_cloglog.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/quantal_0153/config_mortality.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      },
+      {
+        "fixture": "fixtures/quantal_0153/config_potency.json",
+        "byte_identical_artifacts": [
+          "config.resolved.json",
+          "input.csv",
+          "interpretation_facts.json",
+          "rerun.txt",
+          "results.json"
+        ]
+      }
+    ],
+    "configurations": 18,
+    "artifact_count": 96
+  },
+  "render_verify_unchanged_scientific_artifacts": [
+    "cyno_bolus",
+    "mm_iv",
+    "mab",
+    "finney",
+    "potency",
+    "histopathology"
+  ],
+  "doctor_optional_r": {
+    "pk": "0.12.1",
+    "pop": "7.2.1"
+  }
+}

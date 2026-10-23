@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ordinal scores (proportional odds)"
+  short_description: "Compare histopathology or clinical scores between groups with odds ratios"
+  default_prompt: "Use $ordinal-scores to compare these severity scores between treatment groups."

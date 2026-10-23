@@ -18,12 +18,19 @@ For a new analysis, first follow the shared [optional discussion and data-assess
 
 For one outcome with multiple predictors, Gaussian linear regression, binary/grouped-binomial Logistic regression or Poisson count/rate models, read [multivariable-regression](../multivariable-regression/SKILL.md). Establish independent units, predictor coding and the estimand; this does not cover repeated/clustered GLMM/GEE or ROC.
 
-For concentration-time PK exposure and NCA, read [pk-nca](../pk-nca/SKILL.md).
-For population compartmental PK, read [population-pk](../population-pk/SKILL.md).
-These are guidance prototypes using R packages directly, with their own R
-environment checks and evidence limits. They do not use the Python CLI or its
-doctor, and they do not yet cover PD/TMDD. Do not route PK through curve-auc,
-nonlinear-models or generalized_regression as a substitute.
+For single-dose concentration-time PK and NCA, read [pk-nca](../pk-nca/SKILL.md):
+since 0.15.0 it is the runtime analysis type `pk_nca`, computed by R PKNCA through
+the collection's optional R bridge (`install.py --with-r-pk`; doctor reports
+`optional_r_pk`). For population PK across dose levels, including nonlinear (Michaelis-Menten) and
+QSS-TMDD antibody models, read [population-pk](../population-pk/SKILL.md): since
+0.15.1 it is `population_pk`, estimated by R nlmixr2 (`install.py --with-r-pop`;
+doctor `optional_r_pop`). PD response models are not covered. For first-in-human
+starting-dose numbers (NOAEL to HED/MRSD, MABEL, allometric human PK), read
+[first-in-human-dose](../first-in-human-dose/SKILL.md) (`fih_dose`, design-only).
+Responder or mortality counts per dose (ED50/LD50 with Fieller limits) go to
+[quantal-dose-response](../quantal-dose-response/SKILL.md); ordered scores such as
+histopathology grades go to [ordinal-scores](../ordinal-scores/SKILL.md), not to t tests. Do not route PK through curve-auc, nonlinear-models or
+generalized_regression as a substitute.
 
 For the implemented Python modules, before numerical execution or interpreting saved results, follow the ordered
 [runtime discovery procedure](references/runtime.md): resolve this Skill’s real
@@ -36,8 +43,8 @@ Do not conclude “not installed” from `which` alone.
    grids plus a plate map can be converted with `agentic-prism import-plate`
    (ELISA or dose-response target) before the specialist's analysis.
 2. Read [the module registry](references/module-registry.md). Load only the
-   relevant specialist instructions and respect their declared maturity; R PK
-   guidance prototypes are not implemented Python modules. A registry entry is not
+   relevant specialist instructions and respect their declared maturity; custom R
+   scripts outside `pk_nca` and `population_pk` are not implemented runtime modules. A registry entry is not
    evidence that an analysis exists or is validated.
 3. For cell-surface titrations, use [cell-binding](../cell-binding/SKILL.md):
    apparent KD only, measured nonspecific controls, declared receptor depletion,
@@ -88,7 +95,7 @@ Do not conclude “not installed” from `which` alone.
    a new method requires an explicit development task and independent validation.
 13. Return the actual report, results, important limitations and rerun entry point.
    Scientific outputs come from the declared numerical implementation, not prose;
-   for R PK prototypes, record the exact upstream package versions and saved script.
+   for custom PK R scripts, record the exact upstream package versions and saved script.
    For repeated-measures, time-to-event, tumor-growth, variance-components, ADA
    and method-validation runs, read the verified `interpretation_facts.json` and
    follow its reportability and disclosures
@@ -182,7 +189,7 @@ comparisons of one value per unit to the ANCOVA contract, both in [group-compari
 Area under time curves goes to [curve-auc](../curve-auc/SKILL.md); linear or quadratic standard curves
 (BCA, Bradford, copy-number standards) to [standard-curve](../standard-curve/SKILL.md); qPCR relative
 expression to [qpcr](../qpcr/SKILL.md). Sigmoid immunoassay calibration stays with elisa-quantification,
-and PK exposure (NCA) uses the separate prototype pk-nca guidance above.
+and PK exposure (NCA) uses pk-nca (`pk_nca`) above.
 
 ## 0.13.3 routing
 

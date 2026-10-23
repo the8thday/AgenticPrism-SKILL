@@ -47,7 +47,7 @@ writeLines(c("Educational template; no claim of a validated fit.",
            out("scope.txt"))
 warnings_seen <- character()
 fit <- tryCatch(withCallingHandlers(
-  nlmixr2::nlmixr2(oral_model, events, est = "saem", control = control),
+  nlmixr2est::nlmixr2(oral_model, events, est = "saem", control = control),
   warning = function(w) {
     warnings_seen <<- c(warnings_seen, conditionMessage(w))
     invokeRestart("muffleWarning")

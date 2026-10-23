@@ -1,0 +1,4 @@
+interface:
+  display_name: "First-in-human dose calculations"
+  short_description: "NOAEL-HED-MRSD, MABEL and allometric human PK projection from declared inputs"
+  default_prompt: "Use $first-in-human-dose to calculate the starting-dose inputs from these nonclinical results."

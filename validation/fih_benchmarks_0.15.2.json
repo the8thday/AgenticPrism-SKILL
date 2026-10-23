@@ -1,0 +1,241 @@
+{
+ "published_worked_example": {
+  "source": "Nair AB, Jacob S. J Basic Clin Pharm 2016;7(2):27-31 (CC BY-NC-SA)",
+  "rows": [
+   {
+    "example": "rat 18 mg/kg, 0.15 kg, exponent 0.33 -> HED",
+    "printed": 2.5,
+    "ours": 2.492256331394347,
+    "passed": true
+   },
+   {
+    "example": "HED x 60 kg (mg), from the printed 2.5 mg/kg",
+    "printed": 150,
+    "ours": 150.0,
+    "passed": true
+   },
+   {
+    "example": "safety factor 10 -> starting dose (mg)",
+    "printed": 15,
+    "ours": 15.0,
+    "passed": true
+   },
+   {
+    "example": "rat 50 mg/kg / 6.2 -> HED",
+    "printed": 8.1,
+    "ours": 8.064516129032258,
+    "passed": true
+   }
+  ],
+  "passed": true
+ },
+ "oracle": {
+  "checks": [
+   {
+    "case": "mab",
+    "quantity": "hed_monkey",
+    "ours": 10.0,
+    "r": 10,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "hed_rat",
+    "ours": 100.0,
+    "r": 100,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "mrsd_mg_per_kg",
+    "ours": 1.0,
+    "r": 1,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "mrsd_mg",
+    "ours": 70.0,
+    "r": 70,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "mabel_10% RO_concentration_ug_per_ml",
+    "ours": 0.01666666666666667,
+    "r": 0.0166666666666667,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "mabel_10% RO_dose_mg_per_kg",
+    "ours": 0.0006666666666666669,
+    "r": 0.000666666666666667,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "mabel_EC20 human T-cell activation_concentration_ug_per_ml",
+    "ours": 0.0075,
+    "r": 0.0075,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "mabel_EC20 human T-cell activation_dose_mg_per_kg",
+    "ours": 0.0003,
+    "r": 0.0003,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "human_cl",
+    "ours": 0.00013398765779271417,
+    "r": 0.000133987657792714,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "human_v1",
+    "ours": 0.04,
+    "r": 0.04,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "human_q",
+    "ours": 0.0003828218794077548,
+    "r": 0.000382821879407755,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "human_v2",
+    "ours": 0.030000000000000002,
+    "r": 0.03,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose0.001_cmax_ug_per_ml",
+    "ours": 0.024839694195196306,
+    "r": 0.0248396942582453,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose0.001_c_horizon_ug_per_ml",
+    "ours": 0.0037326515069917815,
+    "r": 0.00373265151844882,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose0.001_aucinf_ug_h_per_ml",
+    "ours": 7.463373988871808,
+    "r": 7.46337398887181,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose0.01_cmax_ug_per_ml",
+    "ours": 0.24839694303731952,
+    "r": 0.248396942920101,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose0.01_c_horizon_ug_per_ml",
+    "ours": 0.037326515145233996,
+    "r": 0.0373265151455499,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose0.01_aucinf_ug_h_per_ml",
+    "ours": 74.63373988871808,
+    "r": 74.6337398887181,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose0.1_cmax_ug_per_ml",
+    "ours": 2.4839694310196796,
+    "r": 2.48396943069213,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose0.1_c_horizon_ug_per_ml",
+    "ours": 0.3732651515855189,
+    "r": 0.373265151483676,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose0.1_aucinf_ug_h_per_ml",
+    "ours": 746.3373988871809,
+    "r": 746.337398887181,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose1_cmax_ug_per_ml",
+    "ours": 24.83969431146938,
+    "r": 24.8396943117007,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose1_c_horizon_ug_per_ml",
+    "ours": 3.7326515149754433,
+    "r": 3.73265151666982,
+    "passed": true
+   },
+   {
+    "case": "mab",
+    "quantity": "dose1_aucinf_ug_h_per_ml",
+    "ours": 7463.373988871808,
+    "r": 7463.37398887181,
+    "passed": true
+   },
+   {
+    "case": "small_molecule",
+    "quantity": "hed_rat",
+    "ours": 8.064516129032258,
+    "r": 8.06451612903226,
+    "passed": true
+   },
+   {
+    "case": "small_molecule",
+    "quantity": "hed_dog",
+    "ours": 8.333333333333334,
+    "r": 8.33333333333333,
+    "passed": true
+   },
+   {
+    "case": "small_molecule",
+    "quantity": "hed_monkey",
+    "ours": 16.129032258064516,
+    "r": 16.1290322580645,
+    "passed": true
+   },
+   {
+    "case": "small_molecule",
+    "quantity": "mrsd_mg_per_kg",
+    "ours": 0.8064516129032258,
+    "r": 0.806451612903226,
+    "passed": true
+   },
+   {
+    "case": "small_molecule",
+    "quantity": "mrsd_mg",
+    "ours": 48.387096774193544,
+    "r": 48.3870967741935,
+    "passed": true
+   }
+  ],
+  "passed": true
+ },
+ "passed": true
+}

@@ -1,0 +1,87 @@
+{
+ "schema_version": 1,
+ "analysis_type": "fih_dose",
+ "source": "Synthetic 0.15.2 fixture; illustrative declared inputs, not a real programme",
+ "molecule": {
+  "name": "mAb-X (IgG1 agonist)",
+  "modality": "protein_gt_100kda",
+  "molecular_weight_kda": 150
+ },
+ "human": {
+  "body_weight_kg": 70,
+  "source": "Typical adult weight used for antibody allometry (fixture)"
+ },
+ "noael": {
+  "studies": [
+   {
+    "species": "monkey",
+    "noael_mg_per_kg": 10,
+    "source": "4-week cynomolgus GLP study (fixture)"
+   },
+   {
+    "species": "rat",
+    "noael_mg_per_kg": 100,
+    "source": "Rat study, non-binding species (fixture)"
+   }
+  ],
+  "scaling": "mg_per_kg",
+  "species_selection": "monkey",
+  "selection_rationale": "Only pharmacologically relevant species (target cross-reactive)",
+  "safety_factor": 10,
+  "safety_factor_rationale": "Guidance default"
+ },
+ "mabel": {
+  "targets": [
+   {
+    "basis": "receptor_occupancy",
+    "name": "10% RO",
+    "kd_nM": 1.0,
+    "target_occupancy_percent": 10,
+    "source": "SPR human target KD (fixture)"
+   },
+   {
+    "basis": "effect_concentration",
+    "name": "EC20 human T-cell activation",
+    "value": 0.05,
+    "unit": "nM",
+    "source": "Human PBMC assay (fixture)"
+   }
+  ],
+  "central_volume_l_per_kg": 0.04,
+  "central_volume_source": "Human plasma volume for IgG (fixture)"
+ },
+ "allometric_pk": {
+  "species": "cynomolgus monkey",
+  "animal_body_weight_kg": 3.5,
+  "parameters_per_kg": {
+   "cl": 0.00021,
+   "v1": 0.04,
+   "q": 0.0006,
+   "v2": 0.03
+  },
+  "units": {
+   "cl": "L/h/kg",
+   "v": "L/kg",
+   "vmax": "mg/h/kg",
+   "km": "ug/mL"
+  },
+  "exponents": {
+   "cl": 0.85,
+   "q": 0.85,
+   "v1": 1.0,
+   "v2": 1.0
+  },
+  "exponents_source": "Deng et al. 2011 mAbs 3:61 (cynomolgus to human IgG)",
+  "candidate_doses_mg_per_kg": [
+   0.001,
+   0.01,
+   0.1,
+   1
+  ],
+  "route": "iv_infusion",
+  "infusion_duration_h": 1,
+  "horizon_h": 672,
+  "kd_nM": 1.0,
+  "source": "Cyno population PK (fixture)"
+ }
+}

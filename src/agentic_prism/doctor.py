@@ -64,6 +64,10 @@ def doctor(collection=None):
             report["notes"].append("this runtime is installed from a different source tree than the collection")
     from .r_bridge import availability
     report["optional_r"] = availability()
+    from .r_bridge import pk_availability
+    report["optional_r_pk"] = pk_availability()
+    from .r_bridge import pop_availability
+    report["optional_r_pop"] = pop_availability()
     if report["problems"]:
         report["status"] = "error"
     elif report.get("dependency_pin_mismatches"):

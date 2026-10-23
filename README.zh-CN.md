@@ -87,6 +87,22 @@ issue 反馈真实项目数据上的使用情况。
 各模块的具体限制见[模块登记表](skills/agentic-prism/references/module-registry.md)
 和对应的发布记录；所有校准失败都保留在 `validation/` 中。
 
+## 0.15.3（开发中）——定性剂量反应与有序评分
+
+由应答或死亡计数估计 ED50/LD50 及其他有效剂量（`quantal-dose-response`）：probit、logit 或 cloglog 最大似然，给出 Fieller 置信限，可处理对照组背景反应，支持 Finney 异质性校正和平行线相对效价；超出试验剂量范围或置信限无界的有效剂量暂不报告。病理分级等有序评分（`ordinal-scores`）用比例优势模型和轮廓似然区间分析，不再对平均分做 t 检验。已复现 Finney 书中印出的鱼藤酮算例。校准中 ED50 区间覆盖率为 95%；小样本有序评分的轮廓区间覆盖略低（0.924），比例优势检验的检验效能也很低，两者都会写明。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.15.3.md)。
+
+## 0.15.2（开发中）——首次人体剂量计算
+
+根据声明的非临床输入，算出首次人体（FIH）起始剂量论证所需的数字（`first-in-human-dose`，`analysis_type: fih_dose`）：由 NOAEL 换算人体等效剂量和最大推荐起始剂量（FDA 2005 体表面积换算表；抗体按 mg/kg）；由受体占有率或有效浓度计算 MABEL；用异速放大预测候选剂量下的人体抗体 PK；并给出敏感性分析表。选用非最敏感物种或安全系数低于 10 时会被标出供复核；任何输出都不会被称为 FIH 剂量。已复现公开发表的 NOAEL→HED 算例，MABEL 和异速放大的公开算例尚未复现。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.15.2.md)。
+
+## 0.15.1（开发中）——用 nlmixr2 做群体 PK 与 TMDD
+
+新增跨剂量组的抗体群体 PK 分析（`population-pk`，`analysis_type: population_pk`），由 R 包 nlmixr2 经固定且锁定版本的 R 桥估计（`python3 install.py --with-r-pop`）。可选二室线性、Michaelis-Menten（非线性）或准稳态 TMDD 模型，支持静脉和皮下给药；模型结构、随机效应和固定参数都须在拟合前声明。数据无法识别的参数会被暂不报告（协方差失败、参数高度相关、饱和点不在观测浓度范围内、相对标准误过大）；收缩过高时不报告个体估计；对比模型只作描述。模拟研究中，虚假的非线性有 2% 通过这些检查；仅凭 PK 数据，TMDD 靶点参数只有 17% 能被识别。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.15.1.md)。
+
+## 0.15.0（开发中）——用 PKNCA 做 PK 非房室分析
+
+新增单剂量非房室 PK 分析（`pk-nca`，`analysis_type: pk_nca`），计算由 R 包 PKNCA 完成，经固定且锁定版本的 R 桥调用（`python3 install.py --with-r-pk`）。支持静脉推注、静脉输注和口服，给出 Cmax、Tmax、AUClast、半衰期、AUCinf、CL 或 CL/F、Vz、MRT 和 Vss。BLQ 处理、AUC 算法、末端相选点规则和可报告标准都须事先声明；汇总以个体为单位，可选剂量比例性幂模型。Kim 等（2018）论文中印出的 Phoenix WinNonlin 结果（Theoph 一名受试者）逐位复现；独立重算的 1,034 个数值全部一致。小样本研究很难证明剂量比例性，输出会写明这一点。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.15.0.md)和 [0.15–0.16 路线图](plans/ROADMAP_0.15-0.16.md)。
+
 ## 0.14.4（开发中）——探索性主成分分析与聚类
 
 对独立单位上测得的多变量数据做探索性 PCA 和聚类（`exploratory-multivariate`）。变量、变换和标准化方式须事先声明。PCA 的主成分个数用平行分析确定。聚类可选 k-means 或层次聚类，用间隙统计量选 k（可能得出"没有聚类结构"），并报告 bootstrap 稳定性和轮廓系数。批次、处理组等列只用来对照结果，不参与计算。整个分析不做检验，也不把聚类称为亚型。ISLR 书中印出的 USArrests PCA 结果可复现。校准显示间隙统计量偏保守，每次运行都会写明。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.14.4.md)。

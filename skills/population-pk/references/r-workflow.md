@@ -1,4 +1,9 @@
-# R environment and first model
+# R workflow for custom population-PK models
+
+Since 0.15.1, two-compartment linear, Michaelis-Menten and QSS-TMDD models run through
+`analysis_type: population_pk` ([contract](contract.md)). Use a saved R script only for
+other structures (one-compartment oral below, covariates, PD), labelled as a custom analysis
+outside the validated runtime. The teaching template calls `nlmixr2est::nlmixr2` (nlmixr2 7.x).
 
 Check R and a project-local library for `nlmixr2`, `nlmixr2est`, `rxode2` and
 `nlmixr2data`. nlmixr2/rxode2 require appropriate compilation tools even when R

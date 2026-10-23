@@ -1,0 +1,53 @@
+{
+ "schema_version": 1,
+ "analysis_type": "population_pk",
+ "source": "Synthetic 0.15.1 fixture (scripts/prepare_poppk_0151_fixtures.py, seed 20261024); not study data",
+ "blq": {
+  "rule": "drop",
+  "rationale": "Synthetic fixture: BLQ samples excluded from the likelihood (M1)"
+ },
+ "estimation": {
+  "method": "focei",
+  "seed": 15101,
+  "max_outer_iterations": 5000
+ },
+ "input": "rat_linear_inf.csv",
+ "design": {
+  "analyte": "compound-Y",
+  "matrix": "plasma",
+  "species": "rat",
+  "subject_unit": "animal",
+  "dose_unit": "mg/kg",
+  "concentration_unit": "ug/mL",
+  "time_unit": "h",
+  "route": "iv_infusion"
+ },
+ "model": {
+  "structural": "linear_2cmt",
+  "rationale": "Small molecule, linear PK expected",
+  "initial_estimates": {
+   "cl": 1.0,
+   "v1": 1.0,
+   "q": 0.5,
+   "v2": 2.0
+  },
+  "initial_estimates_source": "Allometric rat values (fixture)",
+  "random_effects": [
+   "cl",
+   "v1"
+  ],
+  "residual": "proportional",
+  "residual_initial": {
+   "proportional": 0.2
+  }
+ },
+ "comparison_models": [
+  {
+   "structural": "linear_mm_2cmt",
+   "additional_initial_estimates": {
+    "vmax": 0.5,
+    "km": 0.5
+   }
+  }
+ ]
+}

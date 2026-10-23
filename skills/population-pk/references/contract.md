@@ -1,77 +1,66 @@
-# Population PK data, model and output contract
+# population_pk input and model contract (0.15.1)
 
-This is an agent guidance contract, not an automatic validator. Keep the exact
-source-to-analysis mapping and do not execute model code taken from data cells.
+## Input CSV
 
-## Input and events
+Long table with dose rows and observation rows.
 
-| Item | Declaration/check |
+| Column | Meaning |
 |---|---|
-| Study | Species/population, analyte/free-total definition, matrix, route/formulation, concentration/amount/time units, subject and period/occasion definitions |
-| Subject | Stable `ID`; preserve repeated samples and dose history within subject; covariate units, timing and missingness |
-| Time | `TIME` on one continuous documented clock per subject; keep actual dose/sample times and same-time ordering; resetting time per dose must not erase history |
-| Observations | `DV`, observation `EVID`, source row, missing/BLQ/LLOQ fields; do not use missing/BLQ as measured zero |
-| Doses | `AMT`, dosing `EVID`, model-specific `CMT`; route, infusion rate/duration where relevant; explicit records or documented `ADDL`/`II` expansion |
-| Regimen | Relevant previous doses, actual versus prescribed administration, missed doses, and explicit steady-state initialization if used |
+| `subject` | Animal or subject ID |
+| `time` | Time in `design.time_unit` (≥ 0), one clock per subject |
+| `dose` | Dose amount on dose rows (empty on observations); multiple doses allowed |
+| `concentration` | Observation (empty on dose rows; empty when `blq` is true) |
+| `infusion_duration` | IV infusion only: duration on every dose row |
+| `group`, `blq`, `exclude`, `exclusion_reason` | Optional; every excluded row needs a reason |
 
-Use the installed rxode2/nlmixr2 event convention. Standard NONMEM-style
-observation `EVID=0` and dose `EVID=1` are not interchangeable with legacy
-rxode2 codes (the upstream theophylline example uses codes such as 101).
-Do not change legacy codes by a blanket replacement. Compartment numbers depend
-on the model: oral depot, IV central input and observation compartments differ.
-Infusion rate and duration must agree with amount and units. Dose rows are not
-concentration observations, even when a source uses `DV=0` as their placeholder.
-Retain documented same-time dose/sample ordering; do not just sort on TIME and
-assume a predose sample became postdose.
+Observations at or before a subject's first dose (predose samples) must be
+excluded with a reason. Doses are into the central compartment (IV) or a depot (SC).
 
-Prefer explicit dose records for the first adaptation. For complex event codes,
-infusions, steady state or expanded regimens, verify the event trajectory against
-the source schedule before fitting. Missing dosing history blocks the affected
-model; covariate values or records cannot be invented to get a fit.
+## Configuration
 
-If BLQ exists, stop the basic-example path and establish a justified treatment
-and sensitivity plan. Never silently drop BLQ or use LLOQ/2. A censored-likelihood
-extension needs version-specific coding and its own verification; this prototype
-does not demonstrate it.
+```json
+{"schema_version": 1, "analysis_type": "population_pk", "input": "pk.csv", "source": "Study X report",
+ "design": {"analyte": "mAb-X total", "matrix": "serum", "species": "cynomolgus monkey", "subject_unit": "animal",
+            "route": "iv_bolus", "dose_unit": "mg/kg", "concentration_unit": "ug/mL", "time_unit": "h"},
+ "model": {"structural": "linear_mm_2cmt", "rationale": "Expected target-mediated elimination (declared before fitting)",
+           "initial_estimates": {"cl": 3e-4, "v1": 0.05, "q": 5e-4, "v2": 0.04, "vmax": 1e-3, "km": 2},
+           "initial_estimates_source": "Typical cynomolgus IgG values; NCA",
+           "random_effects": ["cl", "v1", "vmax"], "residual": "proportional", "residual_initial": {"proportional": 0.2}},
+ "estimation": {"method": "focei", "seed": 15101, "max_outer_iterations": 5000},
+ "blq": {"rule": "drop", "rationale": "SAP: BLQ excluded (M1)"},
+ "comparison_models": [{"structural": "linear_2cmt", "additional_initial_estimates": {}}]}
+```
 
-## Model plan and diagnostics
+- Parameters: `linear_2cmt` cl, v1, q, v2; `linear_mm_2cmt` adds vmax, km (parallel
+  linear and Michaelis-Menten elimination); `qss_tmdd_2cmt` adds kss, kint, kdeg, r0
+  (Gibiansky quasi-steady-state, target turnover from kdeg and baseline r0), with
+  `observed_species` total or free. SC adds ka and needs `bioavailability`
+  `{value, source}` (fixed).
+- `fixed` (with `fixed_source`) fixes parameters; `initial_estimates` must cover
+  every other parameter. `random_effect_initial_variance` defaults to 0.1.
+- Residual `proportional` or `combined` (`residual_initial` has `additive` too).
+- `comparison_models` are optional and descriptive; each lists starting values for
+  its extra parameters.
 
-Save the target population and requested predictions; structural model and
-route; parameter scales/units and F convention; fixed/random effects including
-omega covariance; residual error; starting values and any bounds; estimator and
-controls; random seeds; exclusion policy; and prespecified comparisons. Covariate
-extensions require explicit hypotheses and assessment of available information.
-Starting values from the educational example are not study-derived priors.
+Units are composed, never converted: volumes `dose_unit/concentration_unit`,
+clearances per time unit, Vmax `dose_unit/time`, Km, KSS and R0 in the
+concentration unit.
 
-Record package diagnostic outputs and human/agent review separately. At minimum
-review convergence/SAEM traces, covariance and SE, correlation/conditioning when
-available, boundary estimates, shrinkage, individual trajectories and residual
-patterns. Do not invent universal cutoff values. Missing SE/covariance withholds
-precision claims; unstable or implausible fits remain exploratory/audit only.
-Save reasons at parameter and prediction level, not just a single pass flag.
+## Output (`results.json` → `primary`)
 
-Model selection, sensitivity analysis, bootstrap and VPC each get a declared
-purpose and budget. Retain failed replicates and alternative runs. No VPC is
-produced merely by plotting observed versus fitted concentrations. Do not compare
-objective values across different likelihood approximations without justification.
+- `parameters[p]`: estimate, log estimate and SE, natural-scale RSE, 95% CI,
+  unit, `status` (`reportable`, `withheld`, `fixed`), `reasons`, `flags`.
+- `iiv[p]`: omega variance, CV%, shrinkage (nlmixr2 Shrink(SD)%),
+  `individual_estimates` (`withheld` above 30% shrinkage).
+- `residual`, `covariance` (method, `sandwich`/`fallback`/`failed`),
+  `high_correlation_pairs`, `nonlinearity_check`, `fit` (objective, AIC, BIC, n),
+  `comparisons` (ΔAIC, descriptive), `observed_concentration_range`, BLQ dropped,
+  excluded rows, nlmixr2 versions and warnings, the exact model code.
+- `fit_table` (DV, PRED, IPRED, IWRES, individual parameters) drives the
+  goodness-of-fit and individual-fit figures.
 
-## Artifacts and narrative
-
-Each run saves source files and hashes, mapped event data, mapping log, study
-plan, `model.R`/`analysis.R`, dependency versions (prefer a project lockfile),
-`sessionInfo.txt`, seed/controls, console/warnings, fit RDS, parameter and
-prediction tables, diagnostics and figures. A failed fit still retains its inputs
-and error. Never overwrite a previous fit directory.
-
-Before report and manifest, create extraction-only `interpretation_facts.json`:
-engine/version, `validation_status: prototype_unvalidated`, subject/observation
-counts, parameter scales/units, reportable/withheld/audit states with reasons,
-diagnostics, missing checks, and `must_mention`. Each value or diagnostic refers
-to an actual saved table row or fit-object component. Preserve CL/F labeling,
-shrinkage, missing uncertainty and unmet evidence gates in `must_mention`.
-This is agent-authored extraction code, not an existing nlmixr2/AgenticPrism
-automatic feature. Do not refit or introduce new inference during extraction.
-
-Then save a manifest with relative artifact paths, hashes, invocation, timestamp
-and environment. Base the narrative on saved facts; do not declare a fit validated
-because the package is widely used. Re-rendering reads saved outputs only.
+Gates: failed covariance withholds every interval; |correlation| > 0.95 withholds
+both parameters; Km or KSS outside the observed concentration range withholds the
+nonlinear parameters; natural-scale RSE > 100% (or an overflowing log-scale SE)
+withholds a parameter as not identified, and any withheld nonlinear parameter
+withholds all of them; 50–100% RSE is a flag.

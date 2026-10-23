@@ -1,0 +1,5 @@
+dose_mg_kg,n_treated,n_responding
+1.0,10,0
+2.0,10,0
+4.0,10,0
+8.0,10,2

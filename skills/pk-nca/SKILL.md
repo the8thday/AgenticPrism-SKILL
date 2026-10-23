@@ -1,68 +1,70 @@
 ---
 name: pk-nca
-description: Guide pharmacokinetic concentration-time review and noncompartmental analysis in R with PKNCA, including Cmax, Tmax, exposure and terminal-phase assessment. Use for individual PK profiles and NCA study summaries; population compartmental modeling belongs to population-pk.
+description: Single-dose noncompartmental PK analysis (NCA) computed by R PKNCA - Cmax, Tmax, AUClast, lambda-z and half-life, AUCinf, CL or CL/F, Vz, MRT and Vss for IV bolus (back-extrapolated C0), IV infusion or extravascular dosing - with declared BLQ, AUC-method, terminal-phase and reportability rules, subject-level summaries and an optional Smith power-model dose-proportionality assessment. Use for individual animal or human PK profiles; population compartmental models belong to population-pk.
 ---
 
 # PK NCA with PKNCA
 
-Status: local guidance prototype, 2026-10-13. PKNCA performs the calculations;
-do not implement an alternative NCA engine in Python or R. This is not a new
-`agentic-prism run` analysis type. Package-backed numerical execution and the
-collection's five evidence gates are not yet validated for this prototype.
+For a new analysis, follow the shared [optional discussion and data-assessment
+entry](../agentic-prism/references/analysis-entry.md). Preserve a choice already
+made; do not repeat the menu on handoff.
 
-For a new study, follow the collection's [analysis entry](../agentic-prism/references/analysis-entry.md)
-and preserve any existing discussion/direct-analysis choice. Read the
-[input and reporting contract](references/contract.md) before preparing a run.
-Use the [R workflow](references/r-workflow.md) for environment checks and a
-small, explicitly educational template.
+Use `analysis_type: pk_nca` (0.15.0). R PKNCA computes every NCA value through a
+fixed packaged script; the runtime checks the contract, applies your declared
+reportability, summarises and reports. It needs R and the pinned PKNCA packages
+(`python3 install.py --with-r-pk`; `agentic-prism doctor` shows `optional_r_pk`). If
+they are missing, say so; do not compute NCA by hand or in another tool. Read the
+[input and output contract](references/contract.md). Locate the runtime with the
+[ordered procedure](../agentic-prism/references/runtime.md).
 
-## Applicability
+## Before analysis
 
-Start with individual, adequately sampled concentration-time profiles and an
-identified analyte, matrix, route, dose history and time origin. Separate subjects,
-periods and analytes. Summarize PK parameters calculated per subject, not a
-pooled mean concentration curve. Destructive/sparse sampling cannot be turned
-into individual profiles; sparse NCA requires a separately specified extension.
+1. **Design facts come from the study, not the curve.** Analyte (free/total),
+   matrix, species, route (`intravascular_bolus`, `intravascular_infusion`,
+   `extravascular`), dose and its unit (mg or mg/kg), time origin, actual versus
+   nominal times, infusion duration. Single dose at time 0 per subject only.
+2. **Serial sampling per subject.** Each subject must contribute its own profile.
+   Destructive or sparse sampling (one sample per animal) cannot be assembled into
+   pseudo-subjects; say it is unsupported here.
+3. **BLQ.** Mark BLQ rows `blq = true` with an empty concentration. When any
+   post-dose sample is BLQ, the user declares first/middle/last rules
+   (`keep_as_zero` or `drop`) with a rationale. Never substitute LLOQ/2, delete
+   values or set them to zero without that declaration.
+4. **AUC method** (`linear` or `lin_up_log_down`) is declared with a rationale.
+   WinNonlin's default is linear trapezoidal; results differ, so state it.
+5. **Terminal phase.** Default: PKNCA's best-adjusted-R² rule over points after
+   Tmax (and after the end of infusion). `declared_points` uses a `lambda_z_point`
+   column and still needs at least `min_points`. Never choose points to obtain a
+   preferred half-life; report the rule actually used.
+6. **Reportability.** Either criteria with a source (minimum adjusted R², span
+   ratio, maximum % AUCinf extrapolated; any may be null) or `descriptive_only`
+   with a rationale. Criteria are the study's choice, not a universal rule.
+7. **Dose proportionality (optional)** needs at least 2 dose levels (3 is better)
+   and an acceptance ratio interval with a source (Smith et al. 2000 commonly use
+   0.80-1.25). It describes exposure scaling across the tested range only.
 
-Initial guidance covers single-dose Cmax/Tmax/AUClast, and terminal-dependent
-parameters only when their assumptions and diagnostics are documented.
-Repeated-dose/steady-state, partial-window imputation, renal PK, bioequivalence
-and individual compartmental fitting are follow-ups, not demonstrated here.
-For population PK, use [population-pk](../population-pk/SKILL.md). Ordinary
-curve-auc does not supply PK terminal extrapolation or dose-dependent parameters.
+## Run and report
 
-## Workflow
+Report per subject and per group: n reportable and n withheld with reasons;
+geometric mean and CV% for exposure parameters; Tmax as median and range. For
+extravascular dosing say CL/F and Vz/F (bioavailability unknown) and that MRT
+includes absorption. For IV bolus say C0 was back-extrapolated and check the
+`c0_not_log_back_extrapolated` flag (the first two samples were not declining, so
+C0 is the first observed value). Withheld terminal parameters are not results;
+do not quote them in summaries. Dose proportionality: quote b, its interval, the
+acceptance interval for b and the three-way conclusion. `inconclusive` is the
+usual result of a small study and is not evidence of nonlinearity or of
+proportionality; a mechanism (TMDD, saturable absorption) needs a model.
+Respect `must_mention` and failing items in `interpretation_facts.json`.
 
-1. Inspect actual concentration and dosing files. Establish the requested
-   endpoints and units. Ask only for missing facts that affect the analysis;
-   unknown dose need not block dose-independent observed-profile summaries.
-2. Save original files and a mapping/preprocessing log. Resolve duplicates,
-   missingness, BLQ and time-zero handling explicitly before calculation.
-   Never set all BLQ values to zero or subtract predose concentration silently.
-3. Declare interval boundaries, AUC integration method, terminal-selection
-   policy and any reportability criteria with sources. Use explicit intervals
-   in `PKNCAdata`; inspect the installed package help and resolved options.
-   A package default is a software choice, not a study acceptance criterion.
-4. Run PKNCA in a new output directory using a saved R script. Retain the
-   package result object, full result table, warnings and exclusions. Do not
-   replace excluded package estimates with hand calculations.
-5. Review linear/log concentration plots and the terminal fit. Preserve selected
-   points, selection rule, lambda-z diagnostics and extrapolated fraction. A
-   numeric half-life alone does not establish a credible terminal phase.
-6. Classify each subject/endpoint as reportable, withheld or not requested.
-   Unsupported lambda-z withholds dependent half-life/AUCinf/CL/Vz, while
-   Cmax/Tmax/AUClast may remain usable if their own inputs are adequate.
-7. Save extraction-only interpretation facts and provenance before writing the
-   narrative. State observed versus extrapolated exposure and per-endpoint n.
+Multiple-dose/steady-state, partial AUCs, urine, sparse NCA and bioequivalence
+are not supported by this analysis type. For them, write a saved R script with
+PKNCA following [the R workflow](references/r-workflow.md) and label it as a
+custom analysis outside the validated runtime.
 
-## Interpretation boundaries
+## Evidence
 
-After extravascular dosing with unknown bioavailability, label dose-based
-clearance and volume as **CL/F** and **Vz/F**. Units must follow the dose basis:
-mg/kg and mg are not interchangeable. An absorption-limited terminal phase can
-reflect absorption rather than elimination. Do not infer linear PK, steady state,
-bioequivalence or population variability from this workflow alone.
-
-The [prototype evidence record](../../validation/PK_R_SKILLS_PROTOTYPE_2026-10-13.md)
-states what was checked. Upstream credibility does not establish correctness of
-our input mapping, agent behavior or study-specific scientific conclusions.
+See [the 0.15.0 record](../../validation/RELEASE_0.15.0.md): the published
+WinNonlin worked example reproduced, an independent formula recheck, the
+registered dose-proportionality calibration (including its low power) and the
+live-agent scenarios.

@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "analysis_type": "quantal_dose_response",
+ "input": "finney_rotenone.csv",
+ "source": "Finney DJ (1952) Probit Analysis, 2nd ed., Table 2 / Ex. 6 and 9; dose = printed log10 concentration (mg/L)",
+ "design": {
+  "endpoint": "kill one day after spraying",
+  "response_definition": "dead, moribund or unable to walk",
+  "subject_unit": "insect",
+  "dose_unit": "log10 mg/L",
+  "independence_rationale": "batches of about 50 insects per concentration (Finney)"
+ },
+ "data_format": "grouped",
+ "model": {
+  "link": "probit",
+  "metameter": "dose",
+  "rationale": "Declared before the study (fixture)"
+ },
+ "natural_response": {
+  "method": "none",
+  "rationale": "49 controls, none affected (Finney Table 2)"
+ },
+ "heterogeneity": {
+  "policy": "finney_if_significant",
+  "alpha": 0.05,
+  "rationale": "Finney (1952) practice"
+ },
+ "effective_doses": {
+  "percent": [
+   50
+  ],
+  "confidence_level": 0.95
+ }
+}

@@ -1,4 +1,9 @@
-# R workflow and educational example
+# R workflow for custom PKNCA analyses
+
+Since 0.15.0, single-dose NCA runs through `analysis_type: pk_nca` (see
+[the contract](contract.md)). Use a saved R script only for designs that analysis
+type does not cover (multiple dose, steady state, partial intervals, urine, sparse
+sampling), and label it as a custom analysis outside the validated runtime.
 
 Use an isolated project library, preferably with `renv`; do not change the user's
 global R library. Check `Rscript --version`, `.libPaths()` and
@@ -35,5 +40,5 @@ Primary references, consulted 2026-10-13:
 - [PKNCAdata API](https://humanpred.github.io/pknca/reference/PKNCAdata.html)
 - [Calculation options](https://humanpred.github.io/pknca/reference/PKNCA.options.html)
 
-The example has been syntax-checked only in this prototype environment; see
-the collection's prototype evidence record before claiming execution support.
+On 2026-10-23 the demo was executed with PKNCA 0.12.1 (AUClast 25.056 matched a hand
+calculation). A custom script is still not covered by the runtime's evidence.

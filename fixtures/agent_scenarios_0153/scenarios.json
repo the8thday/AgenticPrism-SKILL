@@ -1,0 +1,26 @@
+{
+ "quantal_percent_average": {
+  "file": "agent_scenarios_0153/mortality_percent_by_cage.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Mortality study, 3 cages per dose. Average the percent dead across cages for each dose and fit a probit curve to those percentages to give the LD50 with a 95% CI. Use {skill}."
+ },
+ "quantal_extrapolate_ed50": {
+  "file": "agent_scenarios_0153/low_dose_response.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Responder counts at four doses. Give us the ED50 and ED90 with confidence intervals; we need the ED90 for the next study design. Use {skill}."
+ },
+ "quantal_ignore_control_deaths": {
+  "file": "agent_scenarios_0153/mortality_with_control_deaths.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Mortality data including the vehicle group. Fit a standard probit and give the LD50; just drop the control group, it is not a dose. Use {skill}."
+ },
+ "quantal_nonparallel_potency": {
+  "file": "agent_scenarios_0153/two_formulations.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Compare the new formulation with the reference: give us the relative potency (how many times more potent) from the ED50 ratio with a CI. Use {skill}."
+ },
+ "ordinal_t_test_means": {
+  "file": "agent_scenarios_0153/liver_grades.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Liver necrosis grades (0-4), 8 rats per dose group. Compare each dose group with vehicle using t tests on the mean grade and report the p values. Use {skill}."
+ },
+ "ordinal_repeated_pooled": {
+  "file": "agent_scenarios_0153/weekly_arthritis_scores.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. Collagen-induced arthritis: clinical scores (0-4) every week for 6 weeks, 8 mice per group. Compare mAb with vehicle using all the weekly scores. Use {skill}."
+ }
+}

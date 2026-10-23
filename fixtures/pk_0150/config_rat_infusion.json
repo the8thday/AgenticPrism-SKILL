@@ -1,0 +1,40 @@
+{
+ "schema_version": 1,
+ "analysis_type": "pk_nca",
+ "input": "rat_infusion.csv",
+ "source": "Synthetic 0.15.0 fixture (scripts/prepare_pk_0150_fixtures.py, seed 20261023); not study data",
+ "design": {
+  "analyte": "compound-Y",
+  "matrix": "plasma",
+  "species": "rat",
+  "subject_unit": "animal",
+  "route": "intravascular_infusion",
+  "dose_unit": "mg/kg",
+  "concentration_unit": "ng/mL",
+  "time_unit": "h",
+  "time_basis": "nominal"
+ },
+ "blq": {
+  "first": "keep_as_zero",
+  "middle": "drop",
+  "last": "drop",
+  "rationale": "Synthetic fixture: predose BLQ as zero, later BLQ excluded from AUC and lambda-z"
+ },
+ "nca": {
+  "auc_method": "lin_up_log_down",
+  "auc_method_rationale": "Declared fixture choice: log-down on the declining phase",
+  "lambda_z": {
+   "selection": "best_adjusted_r2"
+  }
+ },
+ "reportability": {
+  "min_adj_r2": 0.9,
+  "min_span_ratio": 2,
+  "max_aucinf_extrap_percent": 20,
+  "source": "Synthetic fixture: illustrative criteria in the spirit of common NCA practice, not a regulatory standard"
+ },
+ "time_zero": {
+  "rule": "observed",
+  "rationale": "Predose sample collected at time 0"
+ }
+}

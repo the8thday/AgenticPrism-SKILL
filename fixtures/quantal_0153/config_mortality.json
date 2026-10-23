@@ -1,0 +1,36 @@
+{
+ "schema_version": 1,
+ "analysis_type": "quantal_dose_response",
+ "input": "mortality_probit.csv",
+ "source": "Synthetic 0.15.3 fixture (scripts/prepare_quantal_ordinal_0153_fixtures.py, seed 20261025); not study data",
+ "design": {
+  "endpoint": "mortality at 14 days",
+  "response_definition": "dead or moribund (humane endpoint)",
+  "subject_unit": "animal",
+  "dose_unit": "mg/kg",
+  "independence_rationale": "animals singly housed and randomised to dose"
+ },
+ "data_format": "grouped",
+ "model": {
+  "link": "probit",
+  "metameter": "log10_dose",
+  "rationale": "Declared before the study (fixture)"
+ },
+ "natural_response": {
+  "method": "none",
+  "rationale": "Vehicle controls without deaths (fixture)"
+ },
+ "heterogeneity": {
+  "policy": "finney_if_significant",
+  "alpha": 0.05,
+  "rationale": "Finney (1952) practice"
+ },
+ "effective_doses": {
+  "percent": [
+   10,
+   50,
+   90
+  ],
+  "confidence_level": 0.95
+ }
+}

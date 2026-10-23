@@ -1,0 +1,178 @@
+{
+ "registered_in": "plans/RELEASE_0.15.0_PLAN.md",
+ "replicates": 2000,
+ "seed": 20261023,
+ "acceptance_ratio": [
+  0.8,
+  1.25
+ ],
+ "confidence_level": 0.9,
+ "rows": [
+  {
+   "scenario": "dp_null_n3",
+   "doses": [
+    1,
+    3,
+    10
+   ],
+   "per_dose": 3,
+   "true_b": 1.0,
+   "cv": 0.3,
+   "metric": "coverage",
+   "n": 2000,
+   "rate": 0.896,
+   "mcse": 0.0068258332824644935,
+   "bound_kind": "two_sided",
+   "bound": [
+    0.88,
+    0.92
+   ],
+   "passed": true
+  },
+  {
+   "scenario": "dp_null_n3",
+   "doses": [
+    1,
+    3,
+    10
+   ],
+   "per_dose": 3,
+   "true_b": 1.0,
+   "cv": 0.3,
+   "metric": "rate_disproportionate",
+   "n": 2000,
+   "rate": 0.0165,
+   "mcse": 0.0028484864401994267,
+   "bound_kind": "upper",
+   "bound": 0.05,
+   "passed": true
+  },
+  {
+   "scenario": "dp_null_n6",
+   "doses": [
+    1,
+    3,
+    10
+   ],
+   "per_dose": 6,
+   "true_b": 1.0,
+   "cv": 0.3,
+   "metric": "coverage",
+   "n": 2000,
+   "rate": 0.9125,
+   "mcse": 0.006318375978050056,
+   "bound_kind": "two_sided",
+   "bound": [
+    0.88,
+    0.92
+   ],
+   "passed": true
+  },
+  {
+   "scenario": "dp_supra_n3",
+   "doses": [
+    1,
+    3,
+    10
+   ],
+   "per_dose": 3,
+   "true_b": 1.3,
+   "cv": 0.3,
+   "metric": "coverage",
+   "n": 2000,
+   "rate": 0.903,
+   "mcse": 0.006617816860566631,
+   "bound_kind": "two_sided",
+   "bound": [
+    0.88,
+    0.92
+   ],
+   "passed": true
+  },
+  {
+   "scenario": "dp_supra_n3",
+   "doses": [
+    1,
+    3,
+    10
+   ],
+   "per_dose": 3,
+   "true_b": 1.3,
+   "cv": 0.3,
+   "metric": "rate_proportional",
+   "n": 2000,
+   "rate": 0.0,
+   "mcse": 0.0,
+   "bound_kind": "upper",
+   "bound": 0.05,
+   "passed": true
+  },
+  {
+   "scenario": "dp_two_dose_cv50",
+   "doses": [
+    1,
+    10
+   ],
+   "per_dose": 4,
+   "true_b": 1.0,
+   "cv": 0.5,
+   "metric": "coverage",
+   "n": 2000,
+   "rate": 0.894,
+   "mcse": 0.006883458433084346,
+   "bound_kind": "two_sided",
+   "bound": [
+    0.88,
+    0.92
+   ],
+   "passed": true
+  },
+  {
+   "scenario": "dp_null_power",
+   "doses": [
+    1,
+    3,
+    10
+   ],
+   "per_dose": 6,
+   "true_b": 1.0,
+   "cv": 0.2,
+   "metric": "rate_proportional",
+   "n": 2000,
+   "rate": 0.2005,
+   "mcse": 0.008952646256833787,
+   "bound_kind": "descriptive",
+   "bound": null,
+   "passed": null
+  }
+ ],
+ "all_rates": {
+  "dp_null_n3": {
+   "coverage": 0.896,
+   "rate_proportional": 0.0035,
+   "rate_disproportionate": 0.0165
+  },
+  "dp_null_n6": {
+   "coverage": 0.9125,
+   "rate_proportional": 0.0085,
+   "rate_disproportionate": 0.0025
+  },
+  "dp_supra_n3": {
+   "coverage": 0.903,
+   "rate_proportional": 0.0,
+   "rate_disproportionate": 0.5515
+  },
+  "dp_two_dose_cv50": {
+   "coverage": 0.894,
+   "rate_proportional": 0.0005,
+   "rate_disproportionate": 0.025
+  },
+  "dp_null_power": {
+   "coverage": 0.913,
+   "rate_proportional": 0.2005,
+   "rate_disproportionate": 0.0
+  }
+ },
+ "bounded_passed": 6,
+ "bounded_total": 6
+}
