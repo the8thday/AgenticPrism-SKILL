@@ -1,0 +1,329 @@
+{
+  "source_id": "5BA543B9-237C-4676-80A0-7C11FDBA76A1",
+  "title": "Survival: Two groups",
+  "kind": "input_data",
+  "source": "data/tables/9ED43B07-837D-4588-A7CC-CF3F852A1D38/data.csv",
+  "metadata_source": "data/sheets/5BA543B9-237C-4676-80A0-7C11FDBA76A1/sheet.json",
+  "declared_format": "y_single",
+  "table_metadata": {
+    "@class": "XYDataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "9ED43B07-837D-4588-A7CC-CF3F852A1D38",
+    "format": "survival",
+    "dataFormat": "y_single",
+    "rowTitlesDataSet": "ACBE84CE-AD9B-4502-8CFA-92FE49253580",
+    "dataSets": [
+      "2068CF92-9C1E-4A64-81A9-1142A9F54E85",
+      "337B8FD7-2BB7-47E9-A5DF-4CDE8198FEE4"
+    ],
+    "xDataSetFormat": "y_single",
+    "xDataSet": "767FFC30-C9CB-4ED4-AE19-AD0C23E816D4"
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 4,
+    "numberOfRows": 17,
+    "version": 1
+  },
+  "result_links": [],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "row_title",
+      "dataset_id": "ACBE84CE-AD9B-4502-8CFA-92FE49253580",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": null,
+      "stored_role": "row_title",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/ACBE84CE-AD9B-4502-8CFA-92FE49253580.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "lastRow": -1,
+        "firstRow": -1
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 1,
+      "kind": "x",
+      "dataset_id": "767FFC30-C9CB-4ED4-AE19-AD0C23E816D4",
+      "title": "Days elapsed",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/767FFC30-C9CB-4ED4-AE19-AD0C23E816D4.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "NOTCONV"
+        ],
+        "significantDigitsCount": 7,
+        "lastRow": 16,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "2068CF92-9C1E-4A64-81A9-1142A9F54E85",
+      "title": "Control",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/2068CF92-9C1E-4A64-81A9-1142A9F54E85.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "INTEGER",
+          "POSITIVE",
+          "NUMERIC"
+        ],
+        "significantDigitsCount": 7,
+        "lastRow": 7,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 3,
+      "kind": "y",
+      "dataset_id": "337B8FD7-2BB7-47E9-A5DF-4CDE8198FEE4",
+      "title": "Treated",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/337B8FD7-2BB7-47E9-A5DF-4CDE8198FEE4.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "INTEGER",
+          "POSITIVE",
+          "NUMERIC"
+        ],
+        "significantDigitsCount": 7,
+        "lastRow": 16,
+        "firstRow": 8
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "exclusion_summary": {
+    "marked_excluded": 0,
+    "not_marked_excluded": 68,
+    "unknown_stored_cells": 0,
+    "unmapped_stored_cells": 0,
+    "scope": "mapped_stored_cells_only; false does not establish use in an analysis"
+  },
+  "raw_rows": [
+    [
+      "",
+      "46",
+      "1",
+      ""
+    ],
+    [
+      "",
+      "46",
+      "0",
+      ""
+    ],
+    [
+      "",
+      "64",
+      "0",
+      ""
+    ],
+    [
+      "",
+      "78",
+      "1",
+      ""
+    ],
+    [
+      "",
+      "124",
+      "1",
+      ""
+    ],
+    [
+      "",
+      "130",
+      "0",
+      ""
+    ],
+    [
+      "",
+      "150",
+      "0",
+      ""
+    ],
+    [
+      "",
+      "150",
+      "0",
+      ""
+    ],
+    [
+      "",
+      "9",
+      "",
+      "1"
+    ],
+    [
+      "",
+      "26",
+      "",
+      "1"
+    ],
+    [
+      "",
+      "43",
+      "",
+      "0"
+    ],
+    [
+      "",
+      "46",
+      "",
+      "1"
+    ],
+    [
+      "",
+      "64",
+      "",
+      "1"
+    ],
+    [
+      "",
+      "75",
+      "",
+      "1"
+    ],
+    [
+      "",
+      "100",
+      "",
+      "1"
+    ],
+    [
+      "",
+      "130",
+      "",
+      "0"
+    ],
+    [
+      "",
+      "150",
+      "",
+      "0"
+    ]
+  ],
+  "observed_rows": 17,
+  "observed_columns": 4,
+  "id": "table_0005"
+}

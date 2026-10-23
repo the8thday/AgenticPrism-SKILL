@@ -1,0 +1,513 @@
+{
+  "source_id": "Table0",
+  "title": "XY: Entering replicate data",
+  "kind": "input_data",
+  "source": "/GraphPadPrismFile/Table[@document_child=4]",
+  "table_metadata": {
+    "ID": "Table0",
+    "XFormat": "numbers",
+    "YFormat": "replicates",
+    "Replicates": "3",
+    "TableType": "XY",
+    "EVFormat": "AsteriskAfterNumber"
+  },
+  "declared_format": "replicates",
+  "columns": [
+    {
+      "index": 0,
+      "kind": "XColumn",
+      "title": "Hours",
+      "source_column_index": 1,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "81",
+        "Subcolumns": "1",
+        "Decimals": "1"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "x",
+      "declared_format": "numbers",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "6",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>6</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "12",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>12</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "24",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>24</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "48",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>48</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "72",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>72</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "kind": "YColumn",
+      "title": "Control",
+      "source_column_index": 3,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "243",
+        "Decimals": "0",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "45",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>45</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "56",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>56</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "76",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>76</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "81",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>81</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "99",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>99</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "97",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>97</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "kind": "YColumn",
+      "title": "Control",
+      "source_column_index": 3,
+      "subcolumn_index": 1,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "243",
+        "Decimals": "0",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "34",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>34</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "58",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>58</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "72",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>72</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "95",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>95</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "100",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>100</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "110",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>110</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "kind": "YColumn",
+      "title": "Control",
+      "source_column_index": 3,
+      "subcolumn_index": 2,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "243",
+        "Decimals": "0",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "61",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>61</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "77",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>77</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "83",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>83</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "104",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>104</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "115",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>115</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "kind": "YColumn",
+      "title": "Treated",
+      "source_column_index": 4,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "243",
+        "Decimals": "0",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "34",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>34</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "41",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>41</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "52",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>52</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "63",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>63</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "72",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>72</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "78",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>78</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "kind": "YColumn",
+      "title": "Treated",
+      "source_column_index": 4,
+      "subcolumn_index": 1,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "243",
+        "Decimals": "0",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "31",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>31</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "43",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>43</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "55",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>55</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "63",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>63</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "67",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>67</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "87",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>87</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "kind": "YColumn",
+      "title": "Treated",
+      "source_column_index": 4,
+      "subcolumn_index": 2,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "243",
+        "Decimals": "0",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "29",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>29</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "42",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>42</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "55",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>55</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "81",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>81</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        }
+      ]
+    }
+  ],
+  "alternate_x_columns": [
+    {
+      "index": 0,
+      "kind": "XAdvancedColumn",
+      "title": "Hours",
+      "source_column_index": 2,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Version": "1",
+        "Width": "81",
+        "Decimals": "1",
+        "Subcolumns": "1"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "x",
+      "declared_format": "numbers",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "6",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>6</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "12",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>12</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "24",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>24</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "48",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>48</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "72",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>72</d>\n"
+        }
+      ]
+    }
+  ],
+  "subcolumn_titles_xml": [],
+  "observed_rows": 6,
+  "observed_columns": 7,
+  "raw_xml": "<Table ID=\"Table0\" XFormat=\"numbers\" YFormat=\"replicates\" Replicates=\"3\" TableType=\"XY\" EVFormat=\"AsteriskAfterNumber\">\n<Title>XY: Entering replicate data</Title>\n<XColumn Width=\"81\" Subcolumns=\"1\" Decimals=\"1\">\n<Title>Hours</Title>\n<Subcolumn>\n<d>0</d>\n<d>6</d>\n<d>12</d>\n<d>24</d>\n<d>48</d>\n<d>72</d>\n</Subcolumn>\n</XColumn>\n<XAdvancedColumn Version=\"1\" Width=\"81\" Decimals=\"1\" Subcolumns=\"1\">\n<Title>Hours</Title>\n<Subcolumn>\n<d>0</d>\n<d>6</d>\n<d>12</d>\n<d>24</d>\n<d>48</d>\n<d>72</d>\n</Subcolumn>\n</XAdvancedColumn>\n<YColumn Width=\"243\" Decimals=\"0\" Subcolumns=\"3\">\n<Title>Control</Title>\n<Subcolumn>\n<d>45</d>\n<d>56</d>\n<d>76</d>\n<d>81</d>\n<d>99</d>\n<d>97</d>\n</Subcolumn>\n<Subcolumn>\n<d>34</d>\n<d>58</d>\n<d>72</d>\n<d>95</d>\n<d>100</d>\n<d>110</d>\n</Subcolumn>\n<Subcolumn>\n<d />\n<d>61</d>\n<d>77</d>\n<d>83</d>\n<d>104</d>\n<d>115</d>\n</Subcolumn>\n</YColumn>\n<YColumn Width=\"243\" Decimals=\"0\" Subcolumns=\"3\">\n<Title>Treated</Title>\n<Subcolumn>\n<d>34</d>\n<d>41</d>\n<d>52</d>\n<d>63</d>\n<d>72</d>\n<d>78</d>\n</Subcolumn>\n<Subcolumn>\n<d>31</d>\n<d>43</d>\n<d>55</d>\n<d>63</d>\n<d>67</d>\n<d>87</d>\n</Subcolumn>\n<Subcolumn>\n<d>29</d>\n<d>42</d>\n<d>55</d>\n<d />\n<d>81</d>\n<d />\n</Subcolumn>\n</YColumn>\n</Table>\n",
+  "id": "table_0001"
+}

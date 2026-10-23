@@ -1,0 +1,401 @@
+{
+  "source_id": "1F8EFA4E-9249-4AE5-B2B6-5E4889FE6E1A",
+  "title": "Data 6",
+  "kind": "input_data",
+  "source": "data/tables/084366DE-AFEC-4C71-B93A-1BF4B4E3D5AC/data.csv",
+  "metadata_source": "data/sheets/1F8EFA4E-9249-4AE5-B2B6-5E4889FE6E1A/sheet.json",
+  "declared_format": "y_replicates",
+  "table_metadata": {
+    "@class": "XYDataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "084366DE-AFEC-4C71-B93A-1BF4B4E3D5AC",
+    "format": "xy",
+    "dataFormat": "y_replicates",
+    "replicatesCount": 3,
+    "dataSets": [
+      "337FF6CD-DB37-4D93-AB6E-7D966A8A3030",
+      "66527F2B-24A3-4D4C-B381-545BF93B1DC6"
+    ],
+    "xDataSetFormat": "y_single",
+    "xDataSet": "F498C77D-8281-4EBA-9856-0440A4813FD3"
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 7,
+    "numberOfRows": 10,
+    "version": 1
+  },
+  "result_links": [],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "x",
+      "dataset_id": "F498C77D-8281-4EBA-9856-0440A4813FD3",
+      "title": "conc",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/F498C77D-8281-4EBA-9856-0440A4813FD3.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "337FF6CD-DB37-4D93-AB6E-7D966A8A3030",
+      "title": "Negative",
+      "subcolumn_index": 0,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/337FF6CD-DB37-4D93-AB6E-7D966A8A3030.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 9,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "337FF6CD-DB37-4D93-AB6E-7D966A8A3030",
+      "title": "Negative",
+      "subcolumn_index": 1,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/337FF6CD-DB37-4D93-AB6E-7D966A8A3030.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 8,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 3,
+      "kind": "y",
+      "dataset_id": "337FF6CD-DB37-4D93-AB6E-7D966A8A3030",
+      "title": "Negative",
+      "subcolumn_index": 2,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/337FF6CD-DB37-4D93-AB6E-7D966A8A3030.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 8,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 4,
+      "kind": "y",
+      "dataset_id": "66527F2B-24A3-4D4C-B381-545BF93B1DC6",
+      "title": "Positive",
+      "subcolumn_index": 0,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/66527F2B-24A3-4D4C-B381-545BF93B1DC6.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 5,
+      "kind": "y",
+      "dataset_id": "66527F2B-24A3-4D4C-B381-545BF93B1DC6",
+      "title": "Positive",
+      "subcolumn_index": 1,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/66527F2B-24A3-4D4C-B381-545BF93B1DC6.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 6,
+      "kind": "y",
+      "dataset_id": "66527F2B-24A3-4D4C-B381-545BF93B1DC6",
+      "title": "Positive",
+      "subcolumn_index": 2,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/66527F2B-24A3-4D4C-B381-545BF93B1DC6.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "exclusion_summary": {
+    "marked_excluded": 0,
+    "not_marked_excluded": 70,
+    "unknown_stored_cells": 0,
+    "unmapped_stored_cells": 0,
+    "scope": "mapped_stored_cells_only; false does not establish use in an analysis"
+  },
+  "raw_rows": [
+    [
+      "18.80023",
+      "0.3790263",
+      "-0.4718308",
+      "-0.07768631",
+      "56.41881",
+      "57.23752",
+      "57.92625"
+    ],
+    [
+      "24.29337",
+      "0.2770129",
+      "1.365832",
+      "-0.4789642",
+      "71.93008",
+      "72.761",
+      "72.51466"
+    ],
+    [
+      "26.89343",
+      "-1.354996",
+      "-0.5394541",
+      "-0.6241822",
+      "79.58321",
+      "82.21495",
+      "79.91557"
+    ],
+    [
+      "32.22855",
+      "0.3818802",
+      "1.266868",
+      "-2.033603",
+      "97.22246",
+      "95.6394",
+      "97.8894"
+    ],
+    [
+      "40.44284",
+      "-0.8512079",
+      "0.07248217",
+      "0.8724021",
+      "122.0256",
+      "122.6401",
+      "121.7722"
+    ],
+    [
+      "50.73995",
+      "0.3650672",
+      "-1.587438",
+      "-0.2121839",
+      "151.2703",
+      "152.8182",
+      "151.793"
+    ],
+    [
+      "65.64558",
+      "1.169525",
+      "0.1997985",
+      "-0.1741235",
+      "195.5587",
+      "197.2429",
+      "195.8058"
+    ],
+    [
+      "75.34528",
+      "-2.34642",
+      "-0.253897",
+      "1.461935",
+      "225.0677",
+      "227.0232",
+      "226.5011"
+    ],
+    [
+      "85.2401",
+      "1.220724",
+      "0.7744333",
+      "-0.5294922",
+      "255.8247",
+      "254.185",
+      "254.2045"
+    ],
+    [
+      "93.87945",
+      "0.007722979",
+      "0.106246",
+      "-0.1847766",
+      "280.6338",
+      "281.3307",
+      "281.0472"
+    ]
+  ],
+  "observed_rows": 10,
+  "observed_columns": 7,
+  "id": "table_0014"
+}

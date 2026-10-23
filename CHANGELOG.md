@@ -1,5 +1,22 @@
 # Changelog
 
+## Unreleased — Prism extraction review fixes (2026-10-23)
+
+- Native cell-flag tokens outside the publicly observed set (plus `EXCLUDED`) now raise `unrecognized_cell_attribute` and leave otherwise unmarked cells unknown instead of "not marked". Explicit `EXCLUDED` is unchanged. Row ranges accept ASCII digits only.
+- Non-string `formatVersion`, sheet/table uids and result `dataSheet` links become issues instead of aborting the import. `verify-prism` rejects files the manifest does not record. The validation script uses explicit checks that survive `python -O`.
+- Public demo extraction unchanged apart from the parser hash; schema stays `prism-extraction/2`; no statistical change. See [evidence](validation/PRISM_REVIEW_FIXES_2026-10-23.md).
+
+## Unreleased — native Prism compatibility follow-up (2026-10-20)
+
+- Add scoped `1-2-0` storage-role recognition and correctly separate implicit X series from physical CSV columns. The profile does not claim every table format supported by that Prism version.
+- Expose native EXCLUDED bits per row without removing values. Invalid or ambiguous default/range combinations remain unknown; stored exclusion is separate from analysis dataset selection. New independent synthetic tests contain no private file content.
+- Extraction schema advances to `prism-extraction/2`; existing /1 manifests remain verifiable. Runtime stays 0.14.4 and statistical methods are unchanged. See [evidence](validation/PRISM_NATIVE_SEMANTICS_2026-10-20.md).
+
+## Unreleased — Prism file extraction (2026-10-19)
+
+- Add local `inspect-prism`, `import-prism`, `verify-prism` and an `import-prism` Skill for `.prism`/`.pzfx` stored data. Preserve raw strings, metadata, excluded values and original bytes; describe storage versus display formats without conversion or fitting.
+- Separate input tables, saved results and unlinked CSVs. Preserve opaque binary/template payloads in the source snapshot; unknown native versions receive unverified roles. No statistical changes or version bump. See [scope and checks](validation/PRISM_IMPORT_2026-10-19.md).
+
 ## 0.14.4 (in development) — exploratory PCA and clustering
 
 - New `pca` and `clustering` analysis types and `exploratory-multivariate` Skill: declared variables, log10 and scaling, parallel-analysis retention, k-means (Hartigan transfers) or hierarchical clustering, gap-statistic k (k = 1 allowed), bootstrap Jaccard stability, silhouettes; batch/group annotations shown descriptively; no p-values. ISLR's printed USArrests PCA reproduced; base-R/cluster oracle 6/6 (first attempt failed on k-means optima, kept); registered calibration 5/5 after a stopped first run (kept); the gap statistic is conservative (descriptive rows). Clustering published-example gate unmet. Live-agent scenarios 6/6. Legacy check: 267 configurations, 1,850 artifacts byte-identical against 0.14.3. See `validation/RELEASE_0.14.4.md`.

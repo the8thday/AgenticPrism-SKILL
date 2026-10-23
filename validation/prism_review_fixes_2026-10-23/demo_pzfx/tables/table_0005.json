@@ -1,0 +1,528 @@
+{
+  "source_id": "Table14",
+  "title": "Survival: Two groups",
+  "kind": "input_data",
+  "source": "/GraphPadPrismFile/Table[@document_child=8]",
+  "table_metadata": {
+    "ID": "Table14",
+    "XFormat": "numbers",
+    "TableType": "Survival",
+    "EVFormat": "AsteriskAfterNumber"
+  },
+  "declared_format": null,
+  "columns": [
+    {
+      "index": 0,
+      "kind": "RowTitlesColumn",
+      "title": "",
+      "source_column_index": 1,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "39"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "row_title",
+      "declared_format": null,
+      "role_evidence": "xml_format_mapping",
+      "values": []
+    },
+    {
+      "index": 1,
+      "kind": "XColumn",
+      "title": "Days elapsed",
+      "source_column_index": 2,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "81",
+        "Subcolumns": "1",
+        "Decimals": "0"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "x",
+      "declared_format": "numbers",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "46",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>46</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "46",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>46</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "64",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>64</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "78",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>78</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "124",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>124</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "130",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>130</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "150",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>150</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "150",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>150</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "9",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>9</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "26",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>26</d>\n"
+        },
+        {
+          "row": 10,
+          "raw_text": "43",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>43</d>\n"
+        },
+        {
+          "row": 11,
+          "raw_text": "46",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>46</d>\n"
+        },
+        {
+          "row": 12,
+          "raw_text": "64",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>64</d>\n"
+        },
+        {
+          "row": 13,
+          "raw_text": "75",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>75</d>\n"
+        },
+        {
+          "row": 14,
+          "raw_text": "100",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>100</d>\n"
+        },
+        {
+          "row": 15,
+          "raw_text": "130",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>130</d>\n"
+        },
+        {
+          "row": 16,
+          "raw_text": "150",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>150</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "kind": "YColumn",
+      "title": "Control",
+      "source_column_index": 4,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "81",
+        "Decimals": "0",
+        "Subcolumns": "1"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "value_unspecified",
+      "declared_format": null,
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "1",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "1",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "1",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "kind": "YColumn",
+      "title": "Treated",
+      "source_column_index": 5,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "81",
+        "Decimals": "0",
+        "Subcolumns": "1"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "value_unspecified",
+      "declared_format": null,
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d />\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "1",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "1",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1</d>\n"
+        },
+        {
+          "row": 10,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 11,
+          "raw_text": "1",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1</d>\n"
+        },
+        {
+          "row": 12,
+          "raw_text": "1",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1</d>\n"
+        },
+        {
+          "row": 13,
+          "raw_text": "1",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1</d>\n"
+        },
+        {
+          "row": 14,
+          "raw_text": "1",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1</d>\n"
+        },
+        {
+          "row": 15,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 16,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        }
+      ]
+    }
+  ],
+  "alternate_x_columns": [
+    {
+      "index": 0,
+      "kind": "XAdvancedColumn",
+      "title": "Days elapsed",
+      "source_column_index": 3,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Version": "1",
+        "Width": "81",
+        "Decimals": "0",
+        "Subcolumns": "1"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "x",
+      "declared_format": "numbers",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "46",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>46</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "46",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>46</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "64",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>64</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "78",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>78</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "124",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>124</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "130",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>130</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "150",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>150</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "150",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>150</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "9",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>9</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "26",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>26</d>\n"
+        },
+        {
+          "row": 10,
+          "raw_text": "43",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>43</d>\n"
+        },
+        {
+          "row": 11,
+          "raw_text": "46",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>46</d>\n"
+        },
+        {
+          "row": 12,
+          "raw_text": "64",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>64</d>\n"
+        },
+        {
+          "row": 13,
+          "raw_text": "75",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>75</d>\n"
+        },
+        {
+          "row": 14,
+          "raw_text": "100",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>100</d>\n"
+        },
+        {
+          "row": 15,
+          "raw_text": "130",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>130</d>\n"
+        },
+        {
+          "row": 16,
+          "raw_text": "150",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>150</d>\n"
+        }
+      ]
+    }
+  ],
+  "subcolumn_titles_xml": [],
+  "observed_rows": 17,
+  "observed_columns": 4,
+  "raw_xml": "<Table ID=\"Table14\" XFormat=\"numbers\" TableType=\"Survival\" EVFormat=\"AsteriskAfterNumber\">\n<Title>Survival: Two groups</Title>\n<RowTitlesColumn Width=\"39\">\n<Subcolumn />\n</RowTitlesColumn>\n<XColumn Width=\"81\" Subcolumns=\"1\" Decimals=\"0\">\n<Title>Days elapsed</Title>\n<Subcolumn>\n<d>46</d>\n<d>46</d>\n<d>64</d>\n<d>78</d>\n<d>124</d>\n<d>130</d>\n<d>150</d>\n<d>150</d>\n<d>9</d>\n<d>26</d>\n<d>43</d>\n<d>46</d>\n<d>64</d>\n<d>75</d>\n<d>100</d>\n<d>130</d>\n<d>150</d>\n</Subcolumn>\n</XColumn>\n<XAdvancedColumn Version=\"1\" Width=\"81\" Decimals=\"0\" Subcolumns=\"1\">\n<Title>Days elapsed</Title>\n<Subcolumn>\n<d>46</d>\n<d>46</d>\n<d>64</d>\n<d>78</d>\n<d>124</d>\n<d>130</d>\n<d>150</d>\n<d>150</d>\n<d>9</d>\n<d>26</d>\n<d>43</d>\n<d>46</d>\n<d>64</d>\n<d>75</d>\n<d>100</d>\n<d>130</d>\n<d>150</d>\n</Subcolumn>\n</XAdvancedColumn>\n<YColumn Width=\"81\" Decimals=\"0\" Subcolumns=\"1\">\n<Title>Control</Title>\n<Subcolumn>\n<d>1</d>\n<d>0</d>\n<d>0</d>\n<d>1</d>\n<d>1</d>\n<d>0</d>\n<d>0</d>\n<d>0</d>\n</Subcolumn>\n</YColumn>\n<YColumn Width=\"81\" Decimals=\"0\" Subcolumns=\"1\">\n<Title>Treated</Title>\n<Subcolumn>\n<d />\n<d />\n<d />\n<d />\n<d />\n<d />\n<d />\n<d />\n<d>1</d>\n<d>1</d>\n<d>0</d>\n<d>1</d>\n<d>1</d>\n<d>1</d>\n<d>1</d>\n<d>0</d>\n<d>0</d>\n</Subcolumn>\n</YColumn>\n</Table>\n",
+  "id": "table_0005"
+}

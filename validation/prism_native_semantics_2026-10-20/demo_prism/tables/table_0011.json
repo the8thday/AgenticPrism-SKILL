@@ -1,0 +1,262 @@
+{
+  "source_id": "7AF291C0-BD80-454A-B4B7-B908B8C4BB70",
+  "title": "Y CV",
+  "kind": "input_data",
+  "source": "data/tables/41D612EF-8964-4753-821C-40EF321A93AF/data.csv",
+  "metadata_source": "data/sheets/7AF291C0-BD80-454A-B4B7-B908B8C4BB70/sheet.json",
+  "declared_format": "y_cv",
+  "table_metadata": {
+    "@class": "XYDataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "41D612EF-8964-4753-821C-40EF321A93AF",
+    "format": "xy",
+    "dataFormat": "y_cv",
+    "dataSets": [
+      "6F3F4C56-2DB8-48FC-9064-7FD1E3361787",
+      "2E4440E9-3FF8-414B-A161-E7C8C017BCCC"
+    ],
+    "xDataSetFormat": "y_single",
+    "xDataSet": "B2CC6127-8C1D-49E3-9B27-6532E373AE65"
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 5,
+    "numberOfRows": 6,
+    "version": 1
+  },
+  "result_links": [],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "x",
+      "dataset_id": "B2CC6127-8C1D-49E3-9B27-6532E373AE65",
+      "title": "Hours",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/B2CC6127-8C1D-49E3-9B27-6532E373AE65.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "6F3F4C56-2DB8-48FC-9064-7FD1E3361787",
+      "title": "ctrl",
+      "subcolumn_index": 0,
+      "declared_format": "y_sd",
+      "table_display_format": "y_cv",
+      "stored_role": "mean",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/6F3F4C56-2DB8-48FC-9064-7FD1E3361787.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "6F3F4C56-2DB8-48FC-9064-7FD1E3361787",
+      "title": "ctrl",
+      "subcolumn_index": 1,
+      "declared_format": "y_sd",
+      "table_display_format": "y_cv",
+      "stored_role": "sd",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/6F3F4C56-2DB8-48FC-9064-7FD1E3361787.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "POSITIVE",
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 6,
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 3,
+      "kind": "y",
+      "dataset_id": "2E4440E9-3FF8-414B-A161-E7C8C017BCCC",
+      "title": "treat",
+      "subcolumn_index": 0,
+      "declared_format": "y_sd",
+      "table_display_format": "y_cv",
+      "stored_role": "mean",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/2E4440E9-3FF8-414B-A161-E7C8C017BCCC.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 4,
+      "kind": "y",
+      "dataset_id": "2E4440E9-3FF8-414B-A161-E7C8C017BCCC",
+      "title": "treat",
+      "subcolumn_index": 1,
+      "declared_format": "y_sd",
+      "table_display_format": "y_cv",
+      "stored_role": "sd",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/2E4440E9-3FF8-414B-A161-E7C8C017BCCC.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "POSITIVE",
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 6,
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "exclusion_summary": {
+    "marked_excluded": 0,
+    "not_marked_excluded": 30,
+    "unknown_stored_cells": 0,
+    "unmapped_stored_cells": 0,
+    "scope": "mapped_stored_cells_only; false does not establish use in an analysis"
+  },
+  "raw_rows": [
+    [
+      "0",
+      "39.5",
+      "7.77817409999999843",
+      "31.3333300000000001",
+      "2.51661128560869995"
+    ],
+    [
+      "6",
+      "58.3333299999999966",
+      "2.51661127286029984",
+      "42",
+      "0.999999840000000084"
+    ],
+    [
+      "12",
+      "75",
+      "2.64575099999999974",
+      "54",
+      "1.73205054000000014"
+    ],
+    [
+      "24",
+      "86.3333300000000037",
+      "7.57187765764949994",
+      "63",
+      "0"
+    ],
+    [
+      "48",
+      "101",
+      "2.64575156000000034",
+      "73.3333300000000037",
+      "7.0945985441849011"
+    ],
+    [
+      "72",
+      "107.333299999999994",
+      "9.29157008108500015",
+      "82.5",
+      "6.36396090000000036"
+    ]
+  ],
+  "observed_rows": 6,
+  "observed_columns": 5,
+  "id": "table_0011"
+}

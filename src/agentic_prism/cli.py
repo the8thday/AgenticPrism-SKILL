@@ -3,7 +3,6 @@ import json
 import sys
 from pathlib import Path
 from . import __version__
-from .workflow import analyze, verify_run
 
 
 def main():
@@ -30,11 +29,19 @@ def main():
     plate = sub.add_parser("import-plate", help="Convert plate-reader grid CSVs and plate-map layers to a long table")
     plate.add_argument("--manifest", required=True)
     plate.add_argument("--output", required=True)
+    inspect = sub.add_parser("inspect-prism", help="Inventory .prism/.pzfx data without writing or fitting")
+    inspect.add_argument("--input", required=True)
+    prism = sub.add_parser("import-prism", help="Preserve Prism stored values, metadata and source hashes")
+    prism.add_argument("--input", required=True)
+    prism.add_argument("--output", required=True)
+    prism_verify = sub.add_parser("verify-prism", help="Verify extraction hashes, not scientific validity")
+    prism_verify.add_argument("--run", required=True)
     doc = sub.add_parser("doctor", help="Report runtime version, Python, dependency pins and collection match")
     doc.add_argument("--collection", help="Skill collection root to compare against (the folder holding skills/)")
     args = p.parse_args()
     try:
         if args.command == "analyze":
+            from .workflow import analyze
             out = analyze(args.config, args.output, not args.no_render)
             result = json.loads((out / "results.json").read_text())
             if result.get("analysis_type") == "variance_components":
@@ -110,6 +117,18 @@ def main():
             report = doctor(args.collection)
             print(json.dumps(report, ensure_ascii=False, indent=2))
             return 1 if report["status"] == "error" else 0
+        elif args.command == "inspect-prism":
+            from .prism_import import read_prism, summarize
+            print(json.dumps(summarize(read_prism(args.input)), ensure_ascii=False, indent=2))
+        elif args.command == "import-prism":
+            from .prism_import import import_prism
+            out = import_prism(args.input, args.output)
+            print(json.dumps({"output": str(out), "report": str(out / "import_report.json"),
+                              "status": "extracted_with_limits", "scientific_inference": "not_performed"}))
+        elif args.command == "verify-prism":
+            from .prism_import import verify_prism_import
+            verify_prism_import(args.run)
+            print("Extraction artifact hashes verified; scientific validity not assessed")
         elif args.command == "import-surface":
             from .surface_import import import_surface
             print(import_surface(args.manifest, args.output))
@@ -120,6 +139,7 @@ def main():
             from .octet_import import import_octet
             print(import_octet(args.manifest,args.output))
         else:
+            from .workflow import verify_run
             verify_run(args.run)
             print("Scientific artifact hashes verified")
         return 0

@@ -1,0 +1,381 @@
+{
+  "schema_version": "prism-extraction/1",
+  "format": "prism",
+  "source": {
+    "name": "demo_dataset.prism",
+    "bytes": 216896,
+    "sha256": "e1d13e915a707c0605b599859c5f10a7433bd4b5e4578dfa3a4f4d5a7517c23d"
+  },
+  "version": {
+    "formatVersion": "1-4-1",
+    "minFormatVersion": "1-4-0",
+    "minPrismVersion": "10.3.0",
+    "createdBy": {
+      "name": "Prism",
+      "user": "mihakosmac",
+      "version": "10.4.0.527",
+      "platform": "Mac"
+    },
+    "modifiedBy": {
+      "name": "Prism",
+      "user": "mihakosmac",
+      "version": "10.4.1.532",
+      "platform": "Mac"
+    }
+  },
+  "status": "extracted_with_limits",
+  "tables": [
+    {
+      "id": "table_0001",
+      "source_id": "143BEB35-AB08-4946-B528-315F97D17CDB",
+      "title": "XY: Entering replicate data",
+      "kind": "input_data",
+      "declared_format": "y_replicates",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "data/tables/C950F42A-0B8D-434A-8771-91EC6FEC02EE/data.csv"
+    },
+    {
+      "id": "table_0002",
+      "source_id": "ED01F6B2-22F1-45F2-A8C0-A83DDC0708DB",
+      "title": "XY: Entering mean with error values",
+      "kind": "input_data",
+      "declared_format": "y_sd_n",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "data/tables/3467786F-5933-402C-B6CF-0FCAA9E32633/data.csv"
+    },
+    {
+      "id": "table_0003",
+      "source_id": "FDF36E64-D11E-4D68-84F6-D54CE054B792",
+      "title": "Grouped: Entering replicate data",
+      "kind": "input_data",
+      "declared_format": "y_replicates",
+      "observed_rows": 5,
+      "observed_columns": 7,
+      "source": "data/tables/D0141547-F151-4CD8-8171-4D4E64D6CA9C/data.csv"
+    },
+    {
+      "id": "table_0004",
+      "source_id": "CCDF34B2-7AA7-4240-BA3D-BC85F813BA84",
+      "title": "Data 6",
+      "kind": "input_data",
+      "declared_format": "y_replicates",
+      "observed_rows": 10,
+      "observed_columns": 7,
+      "source": "data/tables/E0ADD1A8-D92B-45FB-9680-EAFAD5C6EB09/data.csv"
+    },
+    {
+      "id": "table_0005",
+      "source_id": "5BA543B9-237C-4676-80A0-7C11FDBA76A1",
+      "title": "Survival: Two groups",
+      "kind": "input_data",
+      "declared_format": "y_single",
+      "observed_rows": 17,
+      "observed_columns": 4,
+      "source": "data/tables/9ED43B07-837D-4588-A7CC-CF3F852A1D38/data.csv"
+    },
+    {
+      "id": "table_0006",
+      "source_id": "CBCC9394-1A67-421A-9E13-AD363F55122F",
+      "title": "Data - missing columns",
+      "kind": "input_data",
+      "declared_format": "y_single",
+      "observed_rows": 10,
+      "observed_columns": 7,
+      "source": "data/tables/A4415240-0939-479D-A3E4-4D34A8C4A275/data.csv"
+    },
+    {
+      "id": "table_0007",
+      "source_id": "3E37C241-544D-4CE6-84B7-1A79D4894F63",
+      "title": "Y SEN",
+      "kind": "input_data",
+      "declared_format": "y_se_n",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "data/tables/CBB17920-47B0-4044-A16D-0A490E91A195/data.csv"
+    },
+    {
+      "id": "table_0008",
+      "source_id": "73FC4B5A-BAD0-4DBD-9663-D255A3596BC8",
+      "title": "Y CVN",
+      "kind": "input_data",
+      "declared_format": "y_cv_n",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "data/tables/DF717E68-5E40-4BBF-98DF-7E6F6F6F34FD/data.csv"
+    },
+    {
+      "id": "table_0009",
+      "source_id": "45DC6E23-890E-4F00-BF2B-B57D76B4991B",
+      "title": "Y SD",
+      "kind": "input_data",
+      "declared_format": "y_sd",
+      "observed_rows": 6,
+      "observed_columns": 5,
+      "source": "data/tables/36718757-4FD1-4C09-B3A6-3C49D5840619/data.csv"
+    },
+    {
+      "id": "table_0010",
+      "source_id": "B3B4CFEE-9968-451B-BAB0-4B6C3DFACE79",
+      "title": "Y SE",
+      "kind": "input_data",
+      "declared_format": "y_se",
+      "observed_rows": 6,
+      "observed_columns": 5,
+      "source": "data/tables/0A413629-4A22-44CC-BFA2-92E7D924B36C/data.csv"
+    },
+    {
+      "id": "table_0011",
+      "source_id": "7AF291C0-BD80-454A-B4B7-B908B8C4BB70",
+      "title": "Y CV",
+      "kind": "input_data",
+      "declared_format": "y_cv",
+      "observed_rows": 6,
+      "observed_columns": 5,
+      "source": "data/tables/41D612EF-8964-4753-821C-40EF321A93AF/data.csv"
+    },
+    {
+      "id": "table_0012",
+      "source_id": "3A5E0A53-49EA-4F8C-BDF0-F828A84231D9",
+      "title": "Y error",
+      "kind": "input_data",
+      "declared_format": "y_plus_minus",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "data/tables/220F3198-1490-4DEB-AD31-423F3E676C6A/data.csv"
+    },
+    {
+      "id": "table_0013",
+      "source_id": "19342901-B49B-4C4D-B552-67AB4C426244",
+      "title": "Y high low",
+      "kind": "input_data",
+      "declared_format": "y_high_low",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "data/tables/3BDBC93E-ECB7-4379-8337-5199902990C1/data.csv"
+    },
+    {
+      "id": "table_0014",
+      "source_id": "1F8EFA4E-9249-4AE5-B2B6-5E4889FE6E1A",
+      "title": "Data 6",
+      "kind": "input_data",
+      "declared_format": "y_replicates",
+      "observed_rows": 10,
+      "observed_columns": 7,
+      "source": "data/tables/084366DE-AFEC-4C71-B93A-1BF4B4E3D5AC/data.csv"
+    },
+    {
+      "id": "table_0015",
+      "source_id": "09E94562-6D47-4F23-9455-59D14BDAA58A",
+      "title": "Survival of Survival: Two groups:Curve comparison",
+      "kind": "analysis_result",
+      "declared_format": "text",
+      "observed_rows": 27,
+      "observed_columns": 3,
+      "source": "data/tables/C7C36BF9-D488-4CF4-BB29-56605449C768/data.csv"
+    },
+    {
+      "id": "table_0016",
+      "source_id": "3C6D6E75-C66E-4782-B431-D2AE03D4FADA",
+      "title": "Nonlin fit of XY: Entering replicate data:Table of results",
+      "kind": "analysis_result",
+      "declared_format": "text",
+      "observed_rows": 23,
+      "observed_columns": 3,
+      "source": "data/tables/4ED17B72-9D38-47F1-877F-0190A2883122/data.csv"
+    },
+    {
+      "id": "table_0017",
+      "source_id": "9E2691E6-A48C-482C-8A27-C93B9EEAAD48",
+      "title": "Survival of Survival: Two groups:Survival proportions",
+      "kind": "analysis_result",
+      "declared_format": "y_single",
+      "observed_rows": 12,
+      "observed_columns": 3,
+      "source": "data/tables/D6CDAC27-402A-4B83-B886-1F2DE6CFD733/data.csv"
+    },
+    {
+      "id": "table_0018",
+      "source_id": "A3A8C651-0527-4641-A9DE-E9F7557E90FE",
+      "title": "Survival of Survival: Two groups:# at risk",
+      "kind": "analysis_result",
+      "declared_format": "y_single",
+      "observed_rows": 12,
+      "observed_columns": 3,
+      "source": "data/tables/D9723C73-5116-42AC-AC1F-3BDF3A7CA9AA/data.csv"
+    },
+    {
+      "id": "table_0019",
+      "source_id": "CB911BE1-0C93-4007-8C3E-6A07F6130124",
+      "title": "Nonlin fit of XY: Entering replicate data:Curve",
+      "kind": "analysis_result",
+      "declared_format": "y_single",
+      "observed_rows": 1000,
+      "observed_columns": 3,
+      "source": "data/tables/E146A4D1-8D70-4928-B418-237AD3440BDF/data.csv"
+    },
+    {
+      "id": "table_0020",
+      "source_id": "DC978CAF-BF30-4643-8229-7F104099F055",
+      "title": "Survival of Survival: Two groups:Data summary",
+      "kind": "analysis_result",
+      "declared_format": "text",
+      "observed_rows": 7,
+      "observed_columns": 3,
+      "source": "data/tables/0889795B-93E1-4B27-A521-8A4E2A2A2110/data.csv"
+    },
+    {
+      "id": "table_0021",
+      "source_id": "F6B1142F-B8D3-423C-A467-1055F9687372",
+      "title": "Nonlin fit of XY: Entering replicate data:Curve",
+      "kind": "analysis_result",
+      "declared_format": "y_single",
+      "observed_rows": 1000,
+      "observed_columns": 2,
+      "source": "data/tables/01976B47-4537-4E90-A248-3209AC4C17DB/data.csv"
+    },
+    {
+      "id": "table_0022",
+      "source_id": "data/tables/0B373C5A-F5CC-4B39-B9C0-B457191BE5ED/data.csv",
+      "title": null,
+      "kind": "unlinked_csv",
+      "declared_format": null,
+      "observed_rows": 0,
+      "observed_columns": 0,
+      "source": "data/tables/0B373C5A-F5CC-4B39-B9C0-B457191BE5ED/data.csv"
+    },
+    {
+      "id": "table_0023",
+      "source_id": "data/tables/26B2F3E0-4080-4C88-9E9F-0E3489CA2AD5/data.csv",
+      "title": null,
+      "kind": "unlinked_csv",
+      "declared_format": null,
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "data/tables/26B2F3E0-4080-4C88-9E9F-0E3489CA2AD5/data.csv"
+    },
+    {
+      "id": "table_0024",
+      "source_id": "data/tables/381EBCB0-2EA7-4074-8138-D345CF9DB630/data.csv",
+      "title": null,
+      "kind": "unlinked_csv",
+      "declared_format": null,
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "data/tables/381EBCB0-2EA7-4074-8138-D345CF9DB630/data.csv"
+    },
+    {
+      "id": "table_0025",
+      "source_id": "data/tables/656D5591-5343-4F0B-A9FC-5A881252594A/data.csv",
+      "title": null,
+      "kind": "unlinked_csv",
+      "declared_format": null,
+      "observed_rows": 5,
+      "observed_columns": 0,
+      "source": "data/tables/656D5591-5343-4F0B-A9FC-5A881252594A/data.csv"
+    },
+    {
+      "id": "table_0026",
+      "source_id": "data/tables/8274B217-319F-440F-A66A-817931BE4319/data.csv",
+      "title": null,
+      "kind": "unlinked_csv",
+      "declared_format": null,
+      "observed_rows": 6,
+      "observed_columns": 5,
+      "source": "data/tables/8274B217-319F-440F-A66A-817931BE4319/data.csv"
+    },
+    {
+      "id": "table_0027",
+      "source_id": "data/tables/892C9D94-40DC-46B9-9695-6AEE5EB64306/data.csv",
+      "title": null,
+      "kind": "unlinked_csv",
+      "declared_format": null,
+      "observed_rows": 0,
+      "observed_columns": 0,
+      "source": "data/tables/892C9D94-40DC-46B9-9695-6AEE5EB64306/data.csv"
+    },
+    {
+      "id": "table_0028",
+      "source_id": "data/tables/CEA56CEE-D7BB-4913-945B-9B61EAE84E1D/data.csv",
+      "title": null,
+      "kind": "unlinked_csv",
+      "declared_format": null,
+      "observed_rows": 5,
+      "observed_columns": 7,
+      "source": "data/tables/CEA56CEE-D7BB-4913-945B-9B61EAE84E1D/data.csv"
+    },
+    {
+      "id": "table_0029",
+      "source_id": "data/tables/F3539E46-68C1-4C71-8ED4-2A18EFD87CF7/data.csv",
+      "title": null,
+      "kind": "unlinked_csv",
+      "declared_format": null,
+      "observed_rows": 0,
+      "observed_columns": 0,
+      "source": "data/tables/F3539E46-68C1-4C71-8ED4-2A18EFD87CF7/data.csv"
+    }
+  ],
+  "counts": {
+    "input_data": 14,
+    "analysis_result": 7,
+    "unclassified": 0,
+    "unlinked_csv": 8
+  },
+  "issues": [
+    {
+      "code": "implicit_series",
+      "source": "data/sets/FBA77059-83D0-4E0C-A0FC-A7A89640AE82.json",
+      "detail": "Series definition preserved separately; no generated X values or shifted Y columns"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/0B373C5A-F5CC-4B39-B9C0-B457191BE5ED/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/26B2F3E0-4080-4C88-9E9F-0E3489CA2AD5/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/381EBCB0-2EA7-4074-8138-D345CF9DB630/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/656D5591-5343-4F0B-A9FC-5A881252594A/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/8274B217-319F-440F-A66A-817931BE4319/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/892C9D94-40DC-46B9-9695-6AEE5EB64306/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/CEA56CEE-D7BB-4913-945B-9B61EAE84E1D/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/F3539E46-68C1-4C71-8ED4-2A18EFD87CF7/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    }
+  ],
+  "limitations": [
+    "Extraction does not identify independent units, infer units or validate an analysis.",
+    "Values are stored representations. No CV conversion, bound reconstruction, normalization, fitting or exclusion is performed.",
+    "Native .prism role mappings have one public formatVersion 1-4-1 fixture, not a cross-version guarantee.",
+    "Native cell/replicate attributes are preserved verbatim; exclusions and censoring are not interpreted.",
+    "Native CV/CVN second values remain stored SD; high/low values remain stored distances in the verified fixture. No conversion applied.",
+    "Graphs, layouts, binary payloads and .dt semantics are not decoded. SHA-256 hashes are ours, not a Prism .dt validation.",
+    "Saved analysis results are historical file contents, not recomputed or scientifically validated results."
+  ]
+}

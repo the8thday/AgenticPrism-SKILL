@@ -1,0 +1,306 @@
+{
+  "source_id": "CBCC9394-1A67-421A-9E13-AD363F55122F",
+  "title": "Data - missing columns",
+  "kind": "input_data",
+  "source": "data/tables/A4415240-0939-479D-A3E4-4D34A8C4A275/data.csv",
+  "metadata_source": "data/sheets/CBCC9394-1A67-421A-9E13-AD363F55122F/sheet.json",
+  "declared_format": "y_single",
+  "table_metadata": {
+    "@class": "XYDataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "A4415240-0939-479D-A3E4-4D34A8C4A275",
+    "format": "xy",
+    "dataFormat": "y_single",
+    "dataSets": [
+      "FB6C0EAD-35AA-4ED4-B800-3DAF777CD6EE",
+      "0EC1E17F-358A-4110-9308-7D4F93E86BE2",
+      "403D7987-0D25-4E9D-82ED-ECC9C52B0152",
+      "4B658D64-C061-4083-B611-568BA8002BD1",
+      "C6A45126-FBB4-4489-AD0D-F2A3B6CA9649",
+      "3DA7B1BC-C151-4CCA-AEA2-91F32997C77B"
+    ],
+    "xDataSetFormat": "y_single",
+    "xDataSet": "D3763CD9-A38B-460C-8F86-F18BAAE2B1B8"
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 7,
+    "numberOfRows": 10,
+    "version": 1
+  },
+  "result_links": [],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "x",
+      "dataset_id": "D3763CD9-A38B-460C-8F86-F18BAAE2B1B8",
+      "title": "conc",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/D3763CD9-A38B-460C-8F86-F18BAAE2B1B8.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "FB6C0EAD-35AA-4ED4-B800-3DAF777CD6EE",
+      "title": "Negative",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/FB6C0EAD-35AA-4ED4-B800-3DAF777CD6EE.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 9,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "0EC1E17F-358A-4110-9308-7D4F93E86BE2",
+      "title": "Negative",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/0EC1E17F-358A-4110-9308-7D4F93E86BE2.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 8,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 3,
+      "kind": "y",
+      "dataset_id": "403D7987-0D25-4E9D-82ED-ECC9C52B0152",
+      "title": "Negative",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/403D7987-0D25-4E9D-82ED-ECC9C52B0152.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 8,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 4,
+      "kind": "y",
+      "dataset_id": "4B658D64-C061-4083-B611-568BA8002BD1",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/4B658D64-C061-4083-B611-568BA8002BD1.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 5,
+      "kind": "y",
+      "dataset_id": "C6A45126-FBB4-4489-AD0D-F2A3B6CA9649",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/C6A45126-FBB4-4489-AD0D-F2A3B6CA9649.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 6,
+      "kind": "y",
+      "dataset_id": "3DA7B1BC-C151-4CCA-AEA2-91F32997C77B",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/3DA7B1BC-C151-4CCA-AEA2-91F32997C77B.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 9,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "raw_rows": [
+    [
+      "18.80023",
+      "0.3790263",
+      "-0.4718308",
+      "-0.07768631",
+      "56.41881",
+      "57.23752",
+      "57.92625"
+    ],
+    [
+      "24.29337",
+      "0.2770129",
+      "1.365832",
+      "-0.4789642",
+      "71.93008",
+      "72.761",
+      "72.51466"
+    ],
+    [
+      "26.89343",
+      "-1.354996",
+      "-0.5394541",
+      "-0.6241822",
+      "79.58321",
+      "82.21495",
+      "79.91557"
+    ],
+    [
+      "32.22855",
+      "0.3818802",
+      "1.266868",
+      "-2.033603",
+      "97.22246",
+      "95.6394",
+      "97.8894"
+    ],
+    [
+      "40.44284",
+      "-0.8512079",
+      "0.07248217",
+      "0.8724021",
+      "122.0256",
+      "122.6401",
+      "121.7722"
+    ],
+    [
+      "50.73995",
+      "0.3650672",
+      "-1.587438",
+      "-0.2121839",
+      "151.2703",
+      "152.8182",
+      "151.793"
+    ],
+    [
+      "65.64558",
+      "1.169525",
+      "0.1997985",
+      "-0.1741235",
+      "195.5587",
+      "197.2429",
+      "195.8058"
+    ],
+    [
+      "75.34528",
+      "-2.34642",
+      "-0.253897",
+      "1.461935",
+      "225.0677",
+      "227.0232",
+      "226.5011"
+    ],
+    [
+      "85.2401",
+      "1.220724",
+      "0.7744333",
+      "-0.5294922",
+      "255.8247",
+      "254.185",
+      "254.2045"
+    ],
+    [
+      "93.87945",
+      "0.007722979",
+      "0.106246",
+      "-0.1847766",
+      "280.6338",
+      "281.3307",
+      "281.0472"
+    ]
+  ],
+  "observed_rows": 10,
+  "observed_columns": 7,
+  "id": "table_0006"
+}

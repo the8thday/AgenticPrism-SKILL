@@ -1,0 +1,57 @@
+{
+  "source_id": "data/tables/CEA56CEE-D7BB-4913-945B-9B61EAE84E1D/data.csv",
+  "title": null,
+  "kind": "unlinked_csv",
+  "source": "data/tables/CEA56CEE-D7BB-4913-945B-9B61EAE84E1D/data.csv",
+  "columns": [],
+  "raw_rows": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "observed_rows": 5,
+  "observed_columns": 7,
+  "id": "table_0028"
+}

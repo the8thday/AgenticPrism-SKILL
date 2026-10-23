@@ -1,0 +1,390 @@
+{
+  "source_id": "Table32",
+  "title": "Y CV",
+  "kind": "input_data",
+  "source": "/GraphPadPrismFile/Table[@document_child=14]",
+  "table_metadata": {
+    "ID": "Table32",
+    "XFormat": "numbers",
+    "YFormat": "CV",
+    "TableType": "XY",
+    "EVFormat": "AsteriskAfterNumber"
+  },
+  "declared_format": "CV",
+  "columns": [
+    {
+      "index": 0,
+      "kind": "XColumn",
+      "title": "Hours",
+      "source_column_index": 1,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "81",
+        "Subcolumns": "1",
+        "Decimals": "0"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "x",
+      "declared_format": "numbers",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "6",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>6</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "12",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>12</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "24",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>24</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "48",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>48</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "72",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>72</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "kind": "YColumn",
+      "title": "ctrl",
+      "source_column_index": 3,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "162",
+        "Decimals": "5",
+        "Subcolumns": "2"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "mean",
+      "declared_format": "CV",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "39.5",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>39.5</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "58.33333",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>58.33333</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "75",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>75</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "86.33333",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>86.33333</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "101",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>101</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "107.3333",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>107.3333</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "kind": "YColumn",
+      "title": "ctrl",
+      "source_column_index": 3,
+      "subcolumn_index": 1,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "162",
+        "Decimals": "5",
+        "Subcolumns": "2"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "cv_percent",
+      "declared_format": "CV",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "19.69158",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>19.69158</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "4.314191",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>4.314191</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "3.527668",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>3.527668</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "8.770515",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>8.770515</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "2.619556",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>2.619556</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "8.656745",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>8.656745</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "kind": "YColumn",
+      "title": "treat",
+      "source_column_index": 4,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "162",
+        "Decimals": "5",
+        "Subcolumns": "2"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "mean",
+      "declared_format": "CV",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "31.33333",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>31.33333</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "42",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>42</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "54",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>54</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "63",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>63</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "73.33333",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>73.33333</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "82.5",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>82.5</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "kind": "YColumn",
+      "title": "treat",
+      "source_column_index": 4,
+      "subcolumn_index": 1,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "162",
+        "Decimals": "5",
+        "Subcolumns": "2"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "cv_percent",
+      "declared_format": "CV",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "8.031739",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>8.031739</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "2.380952",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>2.380952</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "3.207501",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>3.207501</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "9.674453",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>9.674453</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "7.713892",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>7.713892</d>\n"
+        }
+      ]
+    }
+  ],
+  "alternate_x_columns": [
+    {
+      "index": 0,
+      "kind": "XAdvancedColumn",
+      "title": "Hours",
+      "source_column_index": 2,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Version": "1",
+        "Width": "81",
+        "Decimals": "0",
+        "Subcolumns": "1"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "x",
+      "declared_format": "numbers",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "0",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "6",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>6</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "12",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>12</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "24",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>24</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "48",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>48</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "72",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>72</d>\n"
+        }
+      ]
+    }
+  ],
+  "subcolumn_titles_xml": [],
+  "observed_rows": 6,
+  "observed_columns": 5,
+  "raw_xml": "<Table ID=\"Table32\" XFormat=\"numbers\" YFormat=\"CV\" TableType=\"XY\" EVFormat=\"AsteriskAfterNumber\">\n<Title>Y CV</Title>\n<XColumn Width=\"81\" Subcolumns=\"1\" Decimals=\"0\">\n<Title>Hours</Title>\n<Subcolumn>\n<d>0</d>\n<d>6</d>\n<d>12</d>\n<d>24</d>\n<d>48</d>\n<d>72</d>\n</Subcolumn>\n</XColumn>\n<XAdvancedColumn Version=\"1\" Width=\"81\" Decimals=\"0\" Subcolumns=\"1\">\n<Title>Hours</Title>\n<Subcolumn>\n<d>0</d>\n<d>6</d>\n<d>12</d>\n<d>24</d>\n<d>48</d>\n<d>72</d>\n</Subcolumn>\n</XAdvancedColumn>\n<YColumn Width=\"162\" Decimals=\"5\" Subcolumns=\"2\">\n<Title>ctrl</Title>\n<Subcolumn>\n<d>39.5</d>\n<d>58.33333</d>\n<d>75</d>\n<d>86.33333</d>\n<d>101</d>\n<d>107.3333</d>\n</Subcolumn>\n<Subcolumn>\n<d>19.69158</d>\n<d>4.314191</d>\n<d>3.527668</d>\n<d>8.770515</d>\n<d>2.619556</d>\n<d>8.656745</d>\n</Subcolumn>\n</YColumn>\n<YColumn Width=\"162\" Decimals=\"5\" Subcolumns=\"2\">\n<Title>treat</Title>\n<Subcolumn>\n<d>31.33333</d>\n<d>42</d>\n<d>54</d>\n<d>63</d>\n<d>73.33333</d>\n<d>82.5</d>\n</Subcolumn>\n<Subcolumn>\n<d>8.031739</d>\n<d>2.380952</d>\n<d>3.207501</d>\n<d>0</d>\n<d>9.674453</d>\n<d>7.713892</d>\n</Subcolumn>\n</YColumn>\n</Table>\n",
+  "id": "table_0011"
+}

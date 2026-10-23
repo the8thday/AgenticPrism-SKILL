@@ -1,0 +1,79 @@
+{
+  "schema_version": "prism-extraction/2",
+  "purpose": "extraction_only",
+  "source_sha256": {
+    "import_report.json": "34443d742361ad95674c6da773958e01d57401c1ac304edcfb2ff7f73bd3bf27"
+  },
+  "primary": {
+    "counts": {
+      "input_data": 14,
+      "analysis_result": 7,
+      "unclassified": 0,
+      "unlinked_csv": 8
+    },
+    "status": "extracted_with_limits",
+    "native_exclusions": {
+      "marked_excluded": 0,
+      "not_marked_excluded": 5898,
+      "unknown_stored_cells": 0,
+      "unmapped_stored_cells": 149
+    }
+  },
+  "must_mention": [
+    "Extraction does not identify independent units, infer units or validate an analysis.",
+    "Values are stored representations. No CV conversion, bound reconstruction, normalization, fitting or exclusion is performed.",
+    "Native roles use scoped 1-4-1 and 1-2-0 profiles; unsupported versions/layouts remain unverified, not a cross-version guarantee.",
+    "Native EXCLUDED markers are decoded without removing values; ambiguous or unsupported flags stay null. False is not proof of analysis inclusion. Censoring remains uninterpreted.",
+    "Native CV/CVN second values remain stored SD; high/low values remain stored distances in the verified fixture. No conversion applied.",
+    "Graphs, layouts, binary payloads and .dt semantics are not decoded. SHA-256 hashes are ours, not a Prism .dt validation.",
+    "Saved analysis results are historical file contents, not recomputed or scientifically validated results."
+  ],
+  "issues": [
+    {
+      "code": "implicit_series",
+      "source": "data/sets/FBA77059-83D0-4E0C-A0FC-A7A89640AE82.json",
+      "detail": "Series definition preserved separately; no generated X values or shifted Y columns"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/0B373C5A-F5CC-4B39-B9C0-B457191BE5ED/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/26B2F3E0-4080-4C88-9E9F-0E3489CA2AD5/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/381EBCB0-2EA7-4074-8138-D345CF9DB630/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/656D5591-5343-4F0B-A9FC-5A881252594A/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/8274B217-319F-440F-A66A-817931BE4319/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/892C9D94-40DC-46B9-9695-6AEE5EB64306/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/CEA56CEE-D7BB-4913-945B-9B61EAE84E1D/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    },
+    {
+      "code": "unlinked_csv",
+      "source": "data/tables/F3539E46-68C1-4C71-8ED4-2A18EFD87CF7/data.csv",
+      "detail": "Extracted, but not identified as input observations"
+    }
+  ],
+  "scientific_inference": "not_performed"
+}

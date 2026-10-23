@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "full_suite": {
+    "passed": 1047,
+    "warnings": 8,
+    "seconds": 472.25,
+    "warning_scope": "Existing Pandas4Warning in src/agentic_prism/ada.py:209-210"
+  },
+  "parser_suite": {
+    "passed": 68,
+    "additional_independent_synthetic_cases": 26
+  },
+  "legacy": {
+    "selected_configurations": 6,
+    "byte_identical_scientific_artifacts": 61,
+    "unchanged_existing_non_cli_python_files": 119
+  },
+  "public_demo_raw_table_identity_count": 43,
+  "old_and_new_manifest_verification": "passed",
+  "stdlib_only_inspection": "passed",
+  "skill_validation": [
+    "import-prism",
+    "agentic-prism"
+  ],
+  "privacy": "No private input, hash, object ID, measurement or output path included in repository evidence",
+  "parser_sha256": "b14e5368886951dd6de0ce347168bc05e46c119f4e4854481c43807206c25bbd"
+}

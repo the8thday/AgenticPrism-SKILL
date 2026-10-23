@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "public_files": 25,
+  "public_tables": 66,
+  "cells": 7571,
+  "native_version_scope": "One public formatVersion 1-4-1 file; no native GUI oracle",
+  "schema_version": "prism-extraction/1",
+  "legacy_configurations": 6,
+  "legacy_artifacts": 61,
+  "parser_sha256": "8d73ff143e49f330249a36bea38682a6b2b19400fdba4bca93cede649aa2014b",
+  "test_sha256": "f55243b778d04f6f57597ba5a0315c9d685cbcbc32729e53df3fdf89243f9965",
+  "script_sha256": "5493b47184918d0ae9c31ba8ed7a955b78768e04824105f61b9daa184fc359db"
+}

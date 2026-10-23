@@ -1,0 +1,177 @@
+[
+  {
+    "file": "prism2R/demo_dataset.prism",
+    "repository": "Biomiha/prism2R",
+    "commit": "3bef7980c9abf4d194d89ca15f796246c3b84a47",
+    "source_path": "inst/extdata/demo_dataset.prism",
+    "sha256": "e1d13e915a707c0605b599859c5f10a7433bd4b5e4578dfa3a4f4d5a7517c23d"
+  },
+  {
+    "file": "prism2R/demo_dataset.pzfx",
+    "repository": "Biomiha/prism2R",
+    "commit": "3bef7980c9abf4d194d89ca15f796246c3b84a47",
+    "source_path": "inst/extdata/demo_dataset.pzfx",
+    "sha256": "1a13a3b3e0ae46c6deb04ce74101c5cdd5c857e3998c990faddb2b08e75ac2ec"
+  },
+  {
+    "file": "pzfx/exponential_decay.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/extdata/exponential_decay.pzfx",
+    "sha256": "52a2c79efb6f3976f569dd70a52dd654b3ec4e7465c07edeb48c01da23255dbf"
+  },
+  {
+    "file": "pzfx/column.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column.pzfx",
+    "sha256": "bff0b218bf8d9b01cbed0be30de04a42a7d387e53d9acddc1c666013392ad407"
+  },
+  {
+    "file": "pzfx/column_cv.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_cv.pzfx",
+    "sha256": "7d224839f53d203859e4557e19a73891cd3c7cea203f6c166e15d6b53f349f0f"
+  },
+  {
+    "file": "pzfx/column_cvn.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_cvn.pzfx",
+    "sha256": "f2d29de422692a5ba604b725992b9a45a59d73496dc9ebd2b2111abecb49dedf"
+  },
+  {
+    "file": "pzfx/column_empty.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_empty.pzfx",
+    "sha256": "c87ee7033df3a87682d796a3e0b59b9976250721e311064fef3a0bdd8c5d9e03"
+  },
+  {
+    "file": "pzfx/column_hugetable.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_hugetable.pzfx",
+    "sha256": "3d5a8c036341ab9875903955688add0065ac7990ac268f4d6853803ea17d816e"
+  },
+  {
+    "file": "pzfx/column_low-high.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_low-high.pzfx",
+    "sha256": "8987aa3af40d97caf995b27caeb7456f8a30fb687d95cbe09e54e228782f04e3"
+  },
+  {
+    "file": "pzfx/column_sd.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_sd.pzfx",
+    "sha256": "a15712f11d2e56d5ce59b681ad2f2ed12a9f42d25f8aa189887bac22f7a13ef7"
+  },
+  {
+    "file": "pzfx/column_sdn.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_sdn.pzfx",
+    "sha256": "f9fe3fa993834bcd7b623e197feb75962f19399f603242b8247b09a95542acc4"
+  },
+  {
+    "file": "pzfx/column_se.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_se.pzfx",
+    "sha256": "0cffc2baa61f91ca8e78ad3935476b3c0ecb366bae40b8dd5a42021733bd3981"
+  },
+  {
+    "file": "pzfx/column_sen.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_sen.pzfx",
+    "sha256": "1690757ab9233f5add7990fcfdc1e2c521fb0c5eafaad4c9d165feeb15bd9eeb"
+  },
+  {
+    "file": "pzfx/column_unequal_lengths.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_unequal_lengths.pzfx",
+    "sha256": "d1cdf6667612b6361e15f4520d5fb86560b4902c1340ca47d8a783dd9c7389fd"
+  },
+  {
+    "file": "pzfx/column_upper-lower-limits.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/column_upper-lower-limits.pzfx",
+    "sha256": "a626c277be37530cc9a58ddd36dab76715737a5c1dc88f9f2d581c6f12e60bcb"
+  },
+  {
+    "file": "pzfx/comma_decimal.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/comma_decimal.pzfx",
+    "sha256": "29c483a6c7b01d28a1a022cb9471717df66e6c29e497a83504c20d21ee2aa313"
+  },
+  {
+    "file": "pzfx/contingency.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/contingency.pzfx",
+    "sha256": "3c4f29a35949e9df139da6a388ff832a566cc730b35434a846da6f08d581770c"
+  },
+  {
+    "file": "pzfx/empty.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/empty.pzfx",
+    "sha256": "d097ca14a5c1b19c06cc6c5412e3f9ca0d8db8e9f2ff922773741fb65deef98e"
+  },
+  {
+    "file": "pzfx/parts_of_whole.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/parts_of_whole.pzfx",
+    "sha256": "dd41f1b79d3195b5564621550e3e4853a5228f4671c5ff38d45d2f2c436f656a"
+  },
+  {
+    "file": "pzfx/survival.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/survival.pzfx",
+    "sha256": "5e086a8e839fd342a0b19c8c7c2cba12c88e4603e2458877d2f21d6c1bac2ae7"
+  },
+  {
+    "file": "pzfx/x_date.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/x_date.pzfx",
+    "sha256": "9e89daa046e149ed0fa3fd8cd11705830710dc84da91de7f6e6a5d18339d90f8"
+  },
+  {
+    "file": "pzfx/x_error_y_sdn.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/x_error_y_sdn.pzfx",
+    "sha256": "25880625bf12b35c850eeb5d1136360a8d4fdc79af8eeb07f9158cd728e44dff"
+  },
+  {
+    "file": "pzfx/x_y_no_rep.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/x_y_no_rep.pzfx",
+    "sha256": "0ef71b4bac4e49ceb599d5d60d006db0d29b64a77f1a9714e7f0cff46a885496"
+  },
+  {
+    "file": "pzfx/x_y_rep.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/x_y_rep.pzfx",
+    "sha256": "8d6b619675d0e121ac6be50ee097bc6b2aaef7d1396f55a2899a0b49f2182e99"
+  },
+  {
+    "file": "pzfx/x_y_with_strike.pzfx",
+    "repository": "Yue-Jiang/pzfx",
+    "commit": "ceb5dbb5331d702d0197b26f773816c339dbe835",
+    "source_path": "inst/testdata/x_y_with_strike.pzfx",
+    "sha256": "25c55da4e7b866fe95c785a698655fd4fbe400c40448a14069ae4fb9a0c4d0b3"
+  }
+]

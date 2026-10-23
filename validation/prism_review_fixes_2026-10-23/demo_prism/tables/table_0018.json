@@ -1,0 +1,244 @@
+{
+  "source_id": "A3A8C651-0527-4641-A9DE-E9F7557E90FE",
+  "title": "Survival of Survival: Two groups:# at risk",
+  "kind": "analysis_result",
+  "source": "data/tables/D9723C73-5116-42AC-AC1F-3BDF3A7CA9AA/data.csv",
+  "metadata_source": "data/sheets/A3A8C651-0527-4641-A9DE-E9F7557E90FE/sheet.json",
+  "declared_format": "y_single",
+  "table_metadata": {
+    "@class": "XYDataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "D9723C73-5116-42AC-AC1F-3BDF3A7CA9AA",
+    "format": "view",
+    "dataFormat": "y_single",
+    "dataSets": [
+      "24F6581C-D8F6-49D1-95AC-B5E4375EE23E",
+      "56A0482F-FBBF-4318-AA4F-B84D3375CF37"
+    ],
+    "xDataSetFormat": "y_single",
+    "xDataSet": "5AB2A715-F47E-490E-8F51-7BFD2E4E27ED"
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 3,
+    "numberOfRows": 12,
+    "version": 1
+  },
+  "result_links": [
+    {
+      "source": "analyses/791F6B81-B301-48E0-9904-34E810B8F9AB/result_sheets/5910EAEF-066D-477E-84D1-104812196B93.json",
+      "metadata": {
+        "@class": "AnalysisView",
+        "uid": "5910EAEF-066D-477E-84D1-104812196B93",
+        "$id": "analyses/view.schema.json",
+        "dataSheet": "A3A8C651-0527-4641-A9DE-E9F7557E90FE",
+        "name": "# at risk",
+        "viewIdx": 1,
+        "graphId": -1,
+        "graphFlags": 0,
+        "tabState": "AUTO",
+        "isVisible": true,
+        "isInternal": false,
+        "isColumnLabelsVisible": true
+      }
+    }
+  ],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "x",
+      "dataset_id": "5AB2A715-F47E-490E-8F51-7BFD2E4E27ED",
+      "title": "Days elapsed",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/5AB2A715-F47E-490E-8F51-7BFD2E4E27ED.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 3,
+        "significantDigitsCount": 7,
+        "lastRow": 11,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "24F6581C-D8F6-49D1-95AC-B5E4375EE23E",
+      "title": "Control",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/24F6581C-D8F6-49D1-95AC-B5E4375EE23E.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "INTEGER",
+          "NUMERIC"
+        ],
+        "decimalsLength": 3,
+        "significantDigitsCount": 7,
+        "lastRow": 11,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "56A0482F-FBBF-4318-AA4F-B84D3375CF37",
+      "title": "Treated",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/56A0482F-FBBF-4318-AA4F-B84D3375CF37.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "INTEGER",
+          "NUMERIC"
+        ],
+        "decimalsLength": 3,
+        "significantDigitsCount": 7,
+        "lastRow": 11,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "exclusion_summary": {
+    "marked_excluded": 0,
+    "not_marked_excluded": 36,
+    "unknown_stored_cells": 0,
+    "unmapped_stored_cells": 0,
+    "scope": "mapped_stored_cells_only; false does not establish use in an analysis"
+  },
+  "raw_rows": [
+    [
+      "0",
+      "8",
+      "9"
+    ],
+    [
+      "9",
+      "",
+      "9"
+    ],
+    [
+      "26",
+      "",
+      "8"
+    ],
+    [
+      "43",
+      "",
+      "7"
+    ],
+    [
+      "46",
+      "8",
+      "6"
+    ],
+    [
+      "64",
+      "6",
+      "5"
+    ],
+    [
+      "75",
+      "",
+      "4"
+    ],
+    [
+      "78",
+      "5",
+      ""
+    ],
+    [
+      "100",
+      "",
+      "3"
+    ],
+    [
+      "124",
+      "4",
+      ""
+    ],
+    [
+      "130",
+      "3",
+      "2"
+    ],
+    [
+      "150",
+      "2",
+      "1"
+    ]
+  ],
+  "observed_rows": 12,
+  "observed_columns": 3,
+  "id": "table_0018"
+}

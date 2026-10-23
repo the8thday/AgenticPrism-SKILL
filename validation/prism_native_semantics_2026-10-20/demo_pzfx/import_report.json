@@ -1,0 +1,266 @@
+{
+  "schema_version": "prism-extraction/2",
+  "format": "pzfx",
+  "source": {
+    "name": "demo_dataset.pzfx",
+    "bytes": 130404,
+    "sha256": "1a13a3b3e0ae46c6deb04ce74101c5cdd5c857e3998c990faddb2b08e75ac2ec"
+  },
+  "version": {
+    "root_attributes": {
+      "PrismXMLVersion": "5.00"
+    },
+    "created": [
+      {
+        "CreatedByProgram": "GraphPad Prism",
+        "CreatedByVersion": "10.4.0.527",
+        "Login": "mihakosmac",
+        "DateTime": "2024-12-05T13:53:22-00:00"
+      }
+    ]
+  },
+  "status": "extracted_with_limits",
+  "tables": [
+    {
+      "id": "table_0001",
+      "source_id": "Table0",
+      "title": "XY: Entering replicate data",
+      "kind": "input_data",
+      "declared_format": "replicates",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=4]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0002",
+      "source_id": "Table5",
+      "title": "XY: Entering mean with error values",
+      "kind": "input_data",
+      "declared_format": "SDN",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=5]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0003",
+      "source_id": "Table7",
+      "title": "Grouped: Entering replicate data",
+      "kind": "input_data",
+      "declared_format": "replicates",
+      "observed_rows": 5,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=6]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0004",
+      "source_id": "Table8",
+      "title": "Data 6",
+      "kind": "input_data",
+      "declared_format": "replicates",
+      "observed_rows": 10,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=7]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0005",
+      "source_id": "Table14",
+      "title": "Survival: Two groups",
+      "kind": "input_data",
+      "declared_format": null,
+      "observed_rows": 17,
+      "observed_columns": 4,
+      "source": "/GraphPadPrismFile/Table[@document_child=8]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0006",
+      "source_id": "Table19",
+      "title": "Data - missing columns",
+      "kind": "input_data",
+      "declared_format": "replicates",
+      "observed_rows": 10,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=9]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0007",
+      "source_id": "Table28",
+      "title": "Y SEN",
+      "kind": "input_data",
+      "declared_format": "SEN",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=10]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0008",
+      "source_id": "Table29",
+      "title": "Y CVN",
+      "kind": "input_data",
+      "declared_format": "CVN",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=11]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0009",
+      "source_id": "Table30",
+      "title": "Y SD",
+      "kind": "input_data",
+      "declared_format": "SD",
+      "observed_rows": 6,
+      "observed_columns": 5,
+      "source": "/GraphPadPrismFile/Table[@document_child=12]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0010",
+      "source_id": "Table31",
+      "title": "Y SE",
+      "kind": "input_data",
+      "declared_format": "SE",
+      "observed_rows": 6,
+      "observed_columns": 5,
+      "source": "/GraphPadPrismFile/Table[@document_child=13]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0011",
+      "source_id": "Table32",
+      "title": "Y CV",
+      "kind": "input_data",
+      "declared_format": "CV",
+      "observed_rows": 6,
+      "observed_columns": 5,
+      "source": "/GraphPadPrismFile/Table[@document_child=14]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0012",
+      "source_id": "Table33",
+      "title": "Y error",
+      "kind": "input_data",
+      "declared_format": "low-high",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=15]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0013",
+      "source_id": "Table27",
+      "title": "Y high low",
+      "kind": "input_data",
+      "declared_format": "upper-lower-limits",
+      "observed_rows": 6,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=16]",
+      "exclusion_summary": null
+    },
+    {
+      "id": "table_0014",
+      "source_id": "Table34",
+      "title": "Data 6",
+      "kind": "input_data",
+      "declared_format": "replicates",
+      "observed_rows": 10,
+      "observed_columns": 7,
+      "source": "/GraphPadPrismFile/Table[@document_child=17]",
+      "exclusion_summary": null
+    }
+  ],
+  "counts": {
+    "input_data": 14,
+    "analysis_result": 0,
+    "unclassified": 0,
+    "unlinked_csv": 0
+  },
+  "native_exclusions": null,
+  "issues": [
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=4]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=5]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=7]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=8]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=9]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=10]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=11]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=12]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=13]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=14]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=15]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=16]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=17]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "opaque_template",
+      "source": "/Template",
+      "detail": "Compressed analysis/graph/layout payload preserved, not decoded"
+    }
+  ],
+  "limitations": [
+    "Extraction does not identify independent units, infer units or validate an analysis.",
+    "Values are stored representations. No CV conversion, bound reconstruction, normalization, fitting or exclusion is performed.",
+    "XML d values are text, never automatically converted to numbers, dates, NA or missing values.",
+    "Explicit empty d is an empty string; an absent row in a subcolumn is absent, never recycled or filled.",
+    "Template payloads and unknown XML metadata are preserved but not semantically decoded.",
+    "Table/Subcolumn titles and excluded values are retained; exclusion flags are not applied to remove observations."
+  ]
+}

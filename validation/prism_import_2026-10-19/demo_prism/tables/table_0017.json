@@ -1,0 +1,215 @@
+{
+  "source_id": "9E2691E6-A48C-482C-8A27-C93B9EEAAD48",
+  "title": "Survival of Survival: Two groups:Survival proportions",
+  "kind": "analysis_result",
+  "source": "data/tables/D6CDAC27-402A-4B83-B886-1F2DE6CFD733/data.csv",
+  "metadata_source": "data/sheets/9E2691E6-A48C-482C-8A27-C93B9EEAAD48/sheet.json",
+  "declared_format": "y_single",
+  "table_metadata": {
+    "@class": "XYDataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "D6CDAC27-402A-4B83-B886-1F2DE6CFD733",
+    "format": "view",
+    "dataFormat": "y_single",
+    "dataSets": [
+      "CEB37888-3F0E-4FF3-B04C-48B168CA4AAB",
+      "82C40FA9-3512-41C0-A007-C31A3FE10F29"
+    ],
+    "xDataSetFormat": "y_single",
+    "xDataSet": "BA0BA90A-F819-4030-B14A-B36630EE21EA"
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 3,
+    "numberOfRows": 12,
+    "version": 1
+  },
+  "result_links": [
+    {
+      "source": "analyses/791F6B81-B301-48E0-9904-34E810B8F9AB/result_sheets/81A944F8-3B8A-4DA4-ACEB-5AE3EB784647.json",
+      "metadata": {
+        "@class": "AnalysisView",
+        "uid": "81A944F8-3B8A-4DA4-ACEB-5AE3EB784647",
+        "$id": "analyses/view.schema.json",
+        "dataSheet": "9E2691E6-A48C-482C-8A27-C93B9EEAAD48",
+        "name": "Survival proportions",
+        "viewIdx": 0,
+        "graphId": -1,
+        "graphFlags": 0,
+        "tabState": "AUTO",
+        "isVisible": false,
+        "isInternal": false,
+        "isColumnLabelsVisible": true
+      }
+    }
+  ],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "x",
+      "dataset_id": "BA0BA90A-F819-4030-B14A-B36630EE21EA",
+      "title": "Days elapsed",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/BA0BA90A-F819-4030-B14A-B36630EE21EA.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 3,
+        "significantDigitsCount": 7,
+        "lastRow": 11,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "CEB37888-3F0E-4FF3-B04C-48B168CA4AAB",
+      "title": "Control",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/CEB37888-3F0E-4FF3-B04C-48B168CA4AAB.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 3,
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "4~5",
+            "attributes": [
+              "CENSORED"
+            ]
+          },
+          {
+            "rows": "10~11",
+            "attributes": [
+              "CENSORED"
+            ]
+          }
+        ],
+        "lastRow": 11,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "82C40FA9-3512-41C0-A007-C31A3FE10F29",
+      "title": "Treated",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/82C40FA9-3512-41C0-A007-C31A3FE10F29.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 3,
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "3",
+            "attributes": [
+              "CENSORED"
+            ]
+          },
+          {
+            "rows": "10~11",
+            "attributes": [
+              "CENSORED"
+            ]
+          }
+        ],
+        "lastRow": 11,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "raw_rows": [
+    [
+      "0",
+      "100",
+      "100"
+    ],
+    [
+      "9",
+      "",
+      "88.8888888888888857"
+    ],
+    [
+      "26",
+      "",
+      "77.7777777777777715"
+    ],
+    [
+      "43",
+      "",
+      "77.7777777777777715"
+    ],
+    [
+      "46",
+      "87.5",
+      "64.8148148148148096"
+    ],
+    [
+      "64",
+      "87.5",
+      "51.8518518518518476"
+    ],
+    [
+      "75",
+      "",
+      "38.8888888888888857"
+    ],
+    [
+      "78",
+      "70",
+      ""
+    ],
+    [
+      "100",
+      "",
+      "25.9259259259259238"
+    ],
+    [
+      "124",
+      "52.5",
+      ""
+    ],
+    [
+      "130",
+      "52.5",
+      "25.9259259259259238"
+    ],
+    [
+      "150",
+      "52.5",
+      "25.9259259259259238"
+    ]
+  ],
+  "observed_rows": 12,
+  "observed_columns": 3,
+  "id": "table_0017"
+}

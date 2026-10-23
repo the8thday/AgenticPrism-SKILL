@@ -1,0 +1,737 @@
+{
+  "source_id": "Table34",
+  "title": "Data 6",
+  "kind": "input_data",
+  "source": "/GraphPadPrismFile/Table[@document_child=17]",
+  "table_metadata": {
+    "ID": "Table34",
+    "XFormat": "numbers",
+    "YFormat": "replicates",
+    "Replicates": "3",
+    "TableType": "XY",
+    "EVFormat": "AsteriskAfterNumber"
+  },
+  "declared_format": "replicates",
+  "columns": [
+    {
+      "index": 0,
+      "kind": "XColumn",
+      "title": "conc",
+      "source_column_index": 1,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "81",
+        "Subcolumns": "1",
+        "Decimals": "5"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "x",
+      "declared_format": "numbers",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "18.80023",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>18.80023</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "24.29337",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>24.29337</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "26.89343",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>26.89343</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "32.22855",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>32.22855</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "40.44284",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>40.44284</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "50.73995",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>50.73995</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "65.64558",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>65.64558</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "75.34528",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>75.34528</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "85.2401",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>85.2401</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "93.87945",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>93.87945</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "kind": "YColumn",
+      "title": "Negative",
+      "source_column_index": 3,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "264",
+        "Decimals": "9",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "0.3790263",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.3790263</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "0.2770129",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.2770129</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "-1.354996",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-1.354996</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "0.3818802",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.3818802</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "-0.8512079",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.8512079</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "0.3650672",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.3650672</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "1.169525",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1.169525</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "-2.34642",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-2.34642</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "1.220724",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1.220724</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "0.007722979",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.007722979</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "kind": "YColumn",
+      "title": "Negative",
+      "source_column_index": 3,
+      "subcolumn_index": 1,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "264",
+        "Decimals": "9",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "-0.4718308",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.4718308</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "1.365832",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1.365832</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "-0.5394541",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.5394541</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "1.266868",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1.266868</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "0.07248217",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.07248217</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "-1.587438",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-1.587438</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "0.1997985",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.1997985</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "-0.253897",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.253897</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "0.7744333",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.7744333</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "0.106246",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.106246</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "kind": "YColumn",
+      "title": "Negative",
+      "source_column_index": 3,
+      "subcolumn_index": 2,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "264",
+        "Decimals": "9",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "-0.07768631",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.07768631</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "-0.4789642",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.4789642</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "-0.6241822",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.6241822</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "-2.033603",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-2.033603</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "0.8724021",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>0.8724021</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "-0.2121839",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.2121839</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "-0.1741235",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.1741235</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "1.461935",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>1.461935</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "-0.5294922",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.5294922</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "-0.1847766",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>-0.1847766</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "kind": "YColumn",
+      "title": "Positive",
+      "source_column_index": 4,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "243",
+        "Decimals": "5",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "56.41881",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>56.41881</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "71.93008",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>71.93008</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "79.58321",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>79.58321</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "97.22246",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>97.22246</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "122.0256",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>122.0256</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "151.2703",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>151.2703</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "195.5587",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>195.5587</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "225.0677",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>225.0677</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "255.8247",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>255.8247</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "280.6338",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>280.6338</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "kind": "YColumn",
+      "title": "Positive",
+      "source_column_index": 4,
+      "subcolumn_index": 1,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "243",
+        "Decimals": "5",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "57.23752",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>57.23752</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "72.761",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>72.761</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "82.21495",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>82.21495</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "95.6394",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>95.6394</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "122.6401",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>122.6401</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "152.8182",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>152.8182</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "197.2429",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>197.2429</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "227.0232",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>227.0232</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "254.185",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>254.185</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "281.3307",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>281.3307</d>\n"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "kind": "YColumn",
+      "title": "Positive",
+      "source_column_index": 4,
+      "subcolumn_index": 2,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Width": "243",
+        "Decimals": "5",
+        "Subcolumns": "3"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "replicate",
+      "declared_format": "replicates",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "57.92625",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>57.92625</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "72.51466",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>72.51466</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "79.91557",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>79.91557</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "97.8894",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>97.8894</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "121.7722",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>121.7722</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "151.793",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>151.793</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "195.8058",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>195.8058</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "226.5011",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>226.5011</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "254.2045",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>254.2045</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "281.0472",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>281.0472</d>\n"
+        }
+      ]
+    }
+  ],
+  "alternate_x_columns": [
+    {
+      "index": 0,
+      "kind": "XAdvancedColumn",
+      "title": "conc",
+      "source_column_index": 2,
+      "subcolumn_index": 0,
+      "subcolumn_title": "",
+      "column_attributes": {
+        "Version": "1",
+        "Width": "81",
+        "Decimals": "5",
+        "Subcolumns": "1"
+      },
+      "subcolumn_attributes": {},
+      "stored_role": "x",
+      "declared_format": "numbers",
+      "role_evidence": "xml_format_mapping",
+      "values": [
+        {
+          "row": 0,
+          "raw_text": "18.80023",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>18.80023</d>\n"
+        },
+        {
+          "row": 1,
+          "raw_text": "24.29337",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>24.29337</d>\n"
+        },
+        {
+          "row": 2,
+          "raw_text": "26.89343",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>26.89343</d>\n"
+        },
+        {
+          "row": 3,
+          "raw_text": "32.22855",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>32.22855</d>\n"
+        },
+        {
+          "row": 4,
+          "raw_text": "40.44284",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>40.44284</d>\n"
+        },
+        {
+          "row": 5,
+          "raw_text": "50.73995",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>50.73995</d>\n"
+        },
+        {
+          "row": 6,
+          "raw_text": "65.64558",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>65.64558</d>\n"
+        },
+        {
+          "row": 7,
+          "raw_text": "75.34528",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>75.34528</d>\n"
+        },
+        {
+          "row": 8,
+          "raw_text": "85.2401",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>85.2401</d>\n"
+        },
+        {
+          "row": 9,
+          "raw_text": "93.87945",
+          "excluded": false,
+          "attributes": {},
+          "xml": "<d>93.87945</d>\n"
+        }
+      ]
+    }
+  ],
+  "subcolumn_titles_xml": [],
+  "observed_rows": 10,
+  "observed_columns": 7,
+  "raw_xml": "<Table ID=\"Table34\" XFormat=\"numbers\" YFormat=\"replicates\" Replicates=\"3\" TableType=\"XY\" EVFormat=\"AsteriskAfterNumber\">\n<Title>Data 6</Title>\n<XColumn Width=\"81\" Subcolumns=\"1\" Decimals=\"5\">\n<Title>conc</Title>\n<Subcolumn>\n<d>18.80023</d>\n<d>24.29337</d>\n<d>26.89343</d>\n<d>32.22855</d>\n<d>40.44284</d>\n<d>50.73995</d>\n<d>65.64558</d>\n<d>75.34528</d>\n<d>85.2401</d>\n<d>93.87945</d>\n</Subcolumn>\n</XColumn>\n<XAdvancedColumn Version=\"1\" Width=\"81\" Decimals=\"5\" Subcolumns=\"1\">\n<Title>conc</Title>\n<Subcolumn>\n<d>18.80023</d>\n<d>24.29337</d>\n<d>26.89343</d>\n<d>32.22855</d>\n<d>40.44284</d>\n<d>50.73995</d>\n<d>65.64558</d>\n<d>75.34528</d>\n<d>85.2401</d>\n<d>93.87945</d>\n</Subcolumn>\n</XAdvancedColumn>\n<YColumn Width=\"264\" Decimals=\"9\" Subcolumns=\"3\">\n<Title>Negative</Title>\n<Subcolumn>\n<d>0.3790263</d>\n<d>0.2770129</d>\n<d>-1.354996</d>\n<d>0.3818802</d>\n<d>-0.8512079</d>\n<d>0.3650672</d>\n<d>1.169525</d>\n<d>-2.34642</d>\n<d>1.220724</d>\n<d>0.007722979</d>\n</Subcolumn>\n<Subcolumn>\n<d>-0.4718308</d>\n<d>1.365832</d>\n<d>-0.5394541</d>\n<d>1.266868</d>\n<d>0.07248217</d>\n<d>-1.587438</d>\n<d>0.1997985</d>\n<d>-0.253897</d>\n<d>0.7744333</d>\n<d>0.106246</d>\n</Subcolumn>\n<Subcolumn>\n<d>-0.07768631</d>\n<d>-0.4789642</d>\n<d>-0.6241822</d>\n<d>-2.033603</d>\n<d>0.8724021</d>\n<d>-0.2121839</d>\n<d>-0.1741235</d>\n<d>1.461935</d>\n<d>-0.5294922</d>\n<d>-0.1847766</d>\n</Subcolumn>\n</YColumn>\n<YColumn Width=\"243\" Decimals=\"5\" Subcolumns=\"3\">\n<Title>Positive</Title>\n<Subcolumn>\n<d>56.41881</d>\n<d>71.93008</d>\n<d>79.58321</d>\n<d>97.22246</d>\n<d>122.0256</d>\n<d>151.2703</d>\n<d>195.5587</d>\n<d>225.0677</d>\n<d>255.8247</d>\n<d>280.6338</d>\n</Subcolumn>\n<Subcolumn>\n<d>57.23752</d>\n<d>72.761</d>\n<d>82.21495</d>\n<d>95.6394</d>\n<d>122.6401</d>\n<d>152.8182</d>\n<d>197.2429</d>\n<d>227.0232</d>\n<d>254.185</d>\n<d>281.3307</d>\n</Subcolumn>\n<Subcolumn>\n<d>57.92625</d>\n<d>72.51466</d>\n<d>79.91557</d>\n<d>97.8894</d>\n<d>121.7722</d>\n<d>151.793</d>\n<d>195.8058</d>\n<d>226.5011</d>\n<d>254.2045</d>\n<d>281.0472</d>\n</Subcolumn>\n</YColumn>\n</Table>\n\n\n\n",
+  "id": "table_0014"
+}

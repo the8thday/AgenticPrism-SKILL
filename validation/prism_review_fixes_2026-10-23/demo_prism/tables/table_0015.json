@@ -1,0 +1,427 @@
+{
+  "source_id": "09E94562-6D47-4F23-9455-59D14BDAA58A",
+  "title": "Survival of Survival: Two groups:Curve comparison",
+  "kind": "analysis_result",
+  "source": "data/tables/C7C36BF9-D488-4CF4-BB29-56605449C768/data.csv",
+  "metadata_source": "data/sheets/09E94562-6D47-4F23-9455-59D14BDAA58A/sheet.json",
+  "declared_format": "text",
+  "table_metadata": {
+    "@class": "DataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "C7C36BF9-D488-4CF4-BB29-56605449C768",
+    "format": "view",
+    "dataFormat": "text",
+    "rowTitlesDataSet": "81FD863B-9D1B-4E2D-9849-79A8DBCF98B3",
+    "dataSets": [
+      "446F754E-06E1-420F-BF31-E68187E93FCD",
+      "B48CBF21-D961-4A31-885F-2DE94721A6EC"
+    ]
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 3,
+    "numberOfRows": 27,
+    "version": 1
+  },
+  "result_links": [
+    {
+      "source": "analyses/791F6B81-B301-48E0-9904-34E810B8F9AB/result_sheets/BFA9711C-004E-44BD-B6CF-49C68B402C6E.json",
+      "metadata": {
+        "@class": "AnalysisView",
+        "uid": "BFA9711C-004E-44BD-B6CF-49C68B402C6E",
+        "$id": "analyses/view.schema.json",
+        "dataSheet": "09E94562-6D47-4F23-9455-59D14BDAA58A",
+        "name": "Curve comparison",
+        "viewIdx": 2,
+        "graphId": -1,
+        "graphFlags": 0,
+        "tabState": "AUTO",
+        "isVisible": true,
+        "isInternal": false,
+        "isColumnLabelsVisible": true
+      }
+    }
+  ],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "row_title",
+      "dataset_id": "81FD863B-9D1B-4E2D-9849-79A8DBCF98B3",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": null,
+      "stored_role": "row_title",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/81FD863B-9D1B-4E2D-9849-79A8DBCF98B3.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "0",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "2",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "9",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "16",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "20",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "24",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          }
+        ],
+        "lastRow": 26,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "446F754E-06E1-420F-BF31-E68187E93FCD",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": "text",
+      "stored_role": "text",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/446F754E-06E1-420F-BF31-E68187E93FCD.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "20",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "24",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          }
+        ],
+        "lastRow": 26,
+        "firstRow": 3
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "B48CBF21-D961-4A31-885F-2DE94721A6EC",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": "text",
+      "stored_role": "text",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/B48CBF21-D961-4A31-885F-2DE94721A6EC.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "20",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "24",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          }
+        ],
+        "lastRow": 26,
+        "firstRow": 20
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "exclusion_summary": {
+    "marked_excluded": 0,
+    "not_marked_excluded": 81,
+    "unknown_stored_cells": 0,
+    "unmapped_stored_cells": 0,
+    "scope": "mapped_stored_cells_only; false does not establish use in an analysis"
+  },
+  "raw_rows": [
+    [
+      "Comparison of Survival Curves",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      ""
+    ],
+    [
+      "Log-rank (Mantel-Cox) test",
+      "",
+      ""
+    ],
+    [
+      "  Chi square",
+      "2.010",
+      ""
+    ],
+    [
+      "  df",
+      "1",
+      ""
+    ],
+    [
+      "  P value",
+      "0.1563",
+      ""
+    ],
+    [
+      "  P value summary",
+      "ns",
+      ""
+    ],
+    [
+      "  Are the survival curves sig different?",
+      "No",
+      ""
+    ],
+    [
+      "",
+      "",
+      ""
+    ],
+    [
+      "Gehan-Breslow-Wilcoxon test",
+      "",
+      ""
+    ],
+    [
+      "  Chi square",
+      "2.532",
+      ""
+    ],
+    [
+      "  df",
+      "1",
+      ""
+    ],
+    [
+      "  P value",
+      "0.1115",
+      ""
+    ],
+    [
+      "  P value summary",
+      "ns",
+      ""
+    ],
+    [
+      "  Are the survival curves sig different?",
+      "No",
+      ""
+    ],
+    [
+      "",
+      "",
+      ""
+    ],
+    [
+      "Median survival",
+      "",
+      ""
+    ],
+    [
+      "Control",
+      "Undefined",
+      ""
+    ],
+    [
+      "Treated",
+      "75.00",
+      ""
+    ],
+    [
+      "",
+      "",
+      ""
+    ],
+    [
+      "Hazard Ratio (Mantel-Haenszel)",
+      "A/B",
+      "B/A"
+    ],
+    [
+      "  Ratio (and its reciprocal)",
+      "0.3801",
+      "2.631"
+    ],
+    [
+      "  95% CI of ratio",
+      "0.09977 to 1.448",
+      "0.6907 to 10.02"
+    ],
+    [
+      "",
+      "",
+      ""
+    ],
+    [
+      "Hazard Ratio (logrank)",
+      "A/B",
+      "B/A"
+    ],
+    [
+      "  Ratio (and its reciprocal)",
+      "0.3863",
+      "2.589"
+    ],
+    [
+      "  95% CI of ratio",
+      "0.1034 to 1.442",
+      "0.6933 to 9.668"
+    ]
+  ],
+  "observed_rows": 27,
+  "observed_columns": 3,
+  "id": "table_0015"
+}

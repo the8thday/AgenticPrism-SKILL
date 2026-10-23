@@ -1,0 +1,378 @@
+{
+  "source_id": "3A5E0A53-49EA-4F8C-BDF0-F828A84231D9",
+  "title": "Y error",
+  "kind": "input_data",
+  "source": "data/tables/220F3198-1490-4DEB-AD31-423F3E676C6A/data.csv",
+  "metadata_source": "data/sheets/3A5E0A53-49EA-4F8C-BDF0-F828A84231D9/sheet.json",
+  "declared_format": "y_plus_minus",
+  "table_metadata": {
+    "@class": "XYDataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "220F3198-1490-4DEB-AD31-423F3E676C6A",
+    "format": "xy",
+    "dataFormat": "y_plus_minus",
+    "dataSets": [
+      "F806B931-E3C6-4CD6-BC51-0E4F1C062E40",
+      "956ECD6E-9E58-414C-A005-9F18FE65642F"
+    ],
+    "xDataSetFormat": "y_single",
+    "xDataSet": "60C8D5CE-A38D-4CA1-8B44-87E3DEFA9F90"
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 7,
+    "numberOfRows": 6,
+    "version": 1
+  },
+  "result_links": [],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "x",
+      "dataset_id": "60C8D5CE-A38D-4CA1-8B44-87E3DEFA9F90",
+      "title": "Hours",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/60C8D5CE-A38D-4CA1-8B44-87E3DEFA9F90.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "F806B931-E3C6-4CD6-BC51-0E4F1C062E40",
+      "title": "ctrl",
+      "subcolumn_index": 0,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_plus_minus",
+      "stored_role": "mean",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/F806B931-E3C6-4CD6-BC51-0E4F1C062E40.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "F806B931-E3C6-4CD6-BC51-0E4F1C062E40",
+      "title": "ctrl",
+      "subcolumn_index": 1,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_plus_minus",
+      "stored_role": "upper_distance",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/F806B931-E3C6-4CD6-BC51-0E4F1C062E40.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "5",
+            "attributes": [
+              "FLOAT",
+              "POSITIVE",
+              "NUMERIC"
+            ]
+          }
+        ],
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 3,
+      "kind": "y",
+      "dataset_id": "F806B931-E3C6-4CD6-BC51-0E4F1C062E40",
+      "title": "ctrl",
+      "subcolumn_index": 2,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_plus_minus",
+      "stored_role": "lower_distance",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/F806B931-E3C6-4CD6-BC51-0E4F1C062E40.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "5",
+            "attributes": [
+              "FLOAT",
+              "POSITIVE",
+              "NUMERIC"
+            ]
+          }
+        ],
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 4,
+      "kind": "y",
+      "dataset_id": "956ECD6E-9E58-414C-A005-9F18FE65642F",
+      "title": "treat",
+      "subcolumn_index": 0,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_plus_minus",
+      "stored_role": "mean",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/956ECD6E-9E58-414C-A005-9F18FE65642F.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 5,
+      "kind": "y",
+      "dataset_id": "956ECD6E-9E58-414C-A005-9F18FE65642F",
+      "title": "treat",
+      "subcolumn_index": 1,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_plus_minus",
+      "stored_role": "upper_distance",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/956ECD6E-9E58-414C-A005-9F18FE65642F.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "5",
+            "attributes": [
+              "FLOAT",
+              "POSITIVE",
+              "NUMERIC"
+            ]
+          }
+        ],
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 6,
+      "kind": "y",
+      "dataset_id": "956ECD6E-9E58-414C-A005-9F18FE65642F",
+      "title": "treat",
+      "subcolumn_index": 2,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_plus_minus",
+      "stored_role": "lower_distance",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/956ECD6E-9E58-414C-A005-9F18FE65642F.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "5",
+            "attributes": [
+              "FLOAT",
+              "POSITIVE",
+              "NUMERIC"
+            ]
+          }
+        ],
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "exclusion_summary": {
+    "marked_excluded": 0,
+    "not_marked_excluded": 42,
+    "unknown_stored_cells": 0,
+    "unmapped_stored_cells": 0,
+    "scope": "mapped_stored_cells_only; false does not establish use in an analysis"
+  },
+  "raw_rows": [
+    [
+      "0",
+      "39.5",
+      "1",
+      "1",
+      "31.33333",
+      "1",
+      "1"
+    ],
+    [
+      "6",
+      "58.33333",
+      "2",
+      "2",
+      "42",
+      "2",
+      "2"
+    ],
+    [
+      "12",
+      "75",
+      "3",
+      "3",
+      "54",
+      "3",
+      "3"
+    ],
+    [
+      "24",
+      "86.33333",
+      "4",
+      "4",
+      "63",
+      "4",
+      "4"
+    ],
+    [
+      "48",
+      "101",
+      "5",
+      "5",
+      "73.33333",
+      "5",
+      "5"
+    ],
+    [
+      "72",
+      "107.3333",
+      "6",
+      "6",
+      "82.5",
+      "6",
+      "6"
+    ]
+  ],
+  "observed_rows": 6,
+  "observed_columns": 7,
+  "id": "table_0012"
+}

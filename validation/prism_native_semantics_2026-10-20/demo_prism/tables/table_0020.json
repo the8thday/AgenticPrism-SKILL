@@ -1,0 +1,215 @@
+{
+  "source_id": "DC978CAF-BF30-4643-8229-7F104099F055",
+  "title": "Survival of Survival: Two groups:Data summary",
+  "kind": "analysis_result",
+  "source": "data/tables/0889795B-93E1-4B27-A521-8A4E2A2A2110/data.csv",
+  "metadata_source": "data/sheets/DC978CAF-BF30-4643-8229-7F104099F055/sheet.json",
+  "declared_format": "text",
+  "table_metadata": {
+    "@class": "DataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "0889795B-93E1-4B27-A521-8A4E2A2A2110",
+    "format": "view",
+    "dataFormat": "text",
+    "rowTitlesDataSet": "2099941A-B36A-4470-A5D6-05AEBA8F9871",
+    "dataSets": [
+      "CEA4C9D8-0239-483C-B87E-B20FCF93601F",
+      "BE5F9F4E-121F-4F4D-8C8D-CD423FC0ED59"
+    ]
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 3,
+    "numberOfRows": 7,
+    "version": 1
+  },
+  "result_links": [
+    {
+      "source": "analyses/791F6B81-B301-48E0-9904-34E810B8F9AB/result_sheets/3C1493B6-DBA9-4159-AE3D-D661C1B0E3A8.json",
+      "metadata": {
+        "@class": "AnalysisView",
+        "uid": "3C1493B6-DBA9-4159-AE3D-D661C1B0E3A8",
+        "$id": "analyses/view.schema.json",
+        "dataSheet": "DC978CAF-BF30-4643-8229-7F104099F055",
+        "name": "Data summary",
+        "viewIdx": 3,
+        "graphId": -1,
+        "graphFlags": 0,
+        "tabState": "AUTO",
+        "isVisible": true,
+        "isInternal": false,
+        "isColumnLabelsVisible": true
+      }
+    }
+  ],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "row_title",
+      "dataset_id": "2099941A-B36A-4470-A5D6-05AEBA8F9871",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": null,
+      "stored_role": "row_title",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/2099941A-B36A-4470-A5D6-05AEBA8F9871.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "cellAttributes": [
+          {
+            "rows": "0",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "6",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          }
+        ],
+        "lastRow": 6,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "CEA4C9D8-0239-483C-B87E-B20FCF93601F",
+      "title": "Control",
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": "text",
+      "stored_role": "text",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/CEA4C9D8-0239-483C-B87E-B20FCF93601F.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "lastRow": 6,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "BE5F9F4E-121F-4F4D-8C8D-CD423FC0ED59",
+      "title": "Treated",
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": "text",
+      "stored_role": "text",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/BE5F9F4E-121F-4F4D-8C8D-CD423FC0ED59.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "lastRow": 6,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "exclusion_summary": {
+    "marked_excluded": 0,
+    "not_marked_excluded": 21,
+    "unknown_stored_cells": 0,
+    "unmapped_stored_cells": 0,
+    "scope": "mapped_stored_cells_only; false does not establish use in an analysis"
+  },
+  "raw_rows": [
+    [
+      "Number of rows",
+      "17",
+      "17"
+    ],
+    [
+      "      # of blank rows",
+      "9",
+      "8"
+    ],
+    [
+      "      # rows with impossible data",
+      "0",
+      "0"
+    ],
+    [
+      "      # censored subjects",
+      "5",
+      "3"
+    ],
+    [
+      "      # deaths/events",
+      "3",
+      "6"
+    ],
+    [
+      "",
+      "",
+      ""
+    ],
+    [
+      "Median survival",
+      "Undefined",
+      "75"
+    ]
+  ],
+  "observed_rows": 7,
+  "observed_columns": 3,
+  "id": "table_0020"
+}

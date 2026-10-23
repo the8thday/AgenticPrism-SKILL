@@ -14,6 +14,28 @@ JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保�
 每个方法都与公认实现比对、用模拟做校准，并用真实 Agent 在误用场景下测试行为
 （[详见](#不只测数值还用真实-agent-测行为)）。
 
+## 读取 GraphPad 项目文件（本地开发版，尚未发布）
+
+新增 [import-prism](skills/import-prism/SKILL.md)，可以本地读取 `.prism` 和 `.pzfx`，
+客观保留文件内的值，并说明每张表、每列的含义。区分输入数据、已保存的分析结果和
+未关联 CSV；不自动拟合、不改变值、不替用户选择分析。例如表格展示 CV、底层存储 SD，
+会分别记录这两个信息，保留原始数字。输出包含原文件副本、结构化数据和哈希清单。
+
+```bash
+.venv/bin/agentic-prism inspect-prism --input project.prism
+.venv/bin/agentic-prism import-prism --input project.prism --output imports/project-001
+.venv/bin/agentic-prism verify-prism --run imports/project-001
+```
+
+已检查 1 个原生项目（格式版本 `1-4-1`）和 24 个 XML 文件，尚不能宣称所有版本都兼容。
+二进制图形/布局和 XML Template 仍保留为未解释内容。新增 `1-2-0` 的有限结构支持，
+可以区分实际 CSV 列与自动 X 序列，并逐行给出原生 EXCLUDED 标记；原值不删除，
+冲突或无法识别的标记保留为未知；`EXCLUDED` 写法目前还没有公开的原生文件样例。
+见[兼容性补充记录](validation/PRISM_NATIVE_SEMANTICS_2026-10-20.md)和[审查修复记录](validation/PRISM_REVIEW_FIXES_2026-10-23.md)。
+不需要安装 Prism、MCP 服务或新增依赖，也未改变已有统计方法。
+[数据契约](skills/import-prism/references/input-and-output.md) ·
+[检查记录](validation/PRISM_IMPORT_2026-10-19.md)。
+
 ## 基于 R 生态的 PK 指引初版
 
 2026-10-13 本地初稿将 [PK/NCA（PKNCA）](skills/pk-nca/SKILL.md) 与

@@ -18,6 +18,31 @@ Each method is checked against established implementations, calibrated by
 simulation, and tested with a real agent on misuse scenarios
 ([how](#tested-with-a-real-agent-not-only-numerically)).
 
+## Read GraphPad project files (local, unreleased)
+
+[import-prism](skills/import-prism/SKILL.md) reads `.prism` and `.pzfx` locally,
+preserving stored values and describing table/column roles. It distinguishes
+input data, saved analysis results and unlinked CSVs; it does not fit, change
+values or automatically select an analysis. CV display and SD storage remain
+separate metadata. Original files and output hashes are retained.
+
+```bash
+.venv/bin/agentic-prism inspect-prism --input project.prism
+.venv/bin/agentic-prism import-prism --input project.prism --output imports/project-001
+.venv/bin/agentic-prism verify-prism --run imports/project-001
+```
+
+Tested corpus: 1 native project (format `1-4-1`) and 24 XML files. This is not
+all-version compatibility or full project restoration: binary graph/layout
+objects and XML Template payloads remain uninterpreted. A scoped `1-2-0`
+profile now handles simple stored columns and implicit X series. Native EXCLUDED
+bits are exposed per row without deleting values; ambiguous or unrecognized flags
+stay unknown. The `EXCLUDED` token has no public native example yet.
+[Compatibility follow-up](validation/PRISM_NATIVE_SEMANTICS_2026-10-20.md) ·
+[review fixes](validation/PRISM_REVIEW_FIXES_2026-10-23.md). No new dependency or statistical method.
+[Contract](skills/import-prism/references/input-and-output.md) ·
+[Evidence](validation/PRISM_IMPORT_2026-10-19.md).
+
 ## R-based PK guidance prototype
 
 The local 2026-10-13 draft separates [PK/NCA with PKNCA](skills/pk-nca/SKILL.md)

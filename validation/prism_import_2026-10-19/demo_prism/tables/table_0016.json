@@ -1,0 +1,343 @@
+{
+  "source_id": "3C6D6E75-C66E-4782-B431-D2AE03D4FADA",
+  "title": "Nonlin fit of XY: Entering replicate data:Table of results",
+  "kind": "analysis_result",
+  "source": "data/tables/4ED17B72-9D38-47F1-877F-0190A2883122/data.csv",
+  "metadata_source": "data/sheets/3C6D6E75-C66E-4782-B431-D2AE03D4FADA/sheet.json",
+  "declared_format": "text",
+  "table_metadata": {
+    "@class": "DataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "4ED17B72-9D38-47F1-877F-0190A2883122",
+    "format": "view",
+    "dataFormat": "text",
+    "rowTitlesDataSet": "F51B9573-A4CF-40B0-89FA-840EE283FB67",
+    "dataSets": [
+      "EA35F1C4-EE5C-41BD-A739-B187F54B9C3C",
+      "706DB18D-F429-4127-B020-1A109C9D366B"
+    ]
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 3,
+    "numberOfRows": 23,
+    "version": 1
+  },
+  "result_links": [
+    {
+      "source": "analyses/B54D8CD0-1E73-44AC-AA7B-7890C3A5BFC4/result_sheets/E502348B-6755-446B-B6E7-3655B00C1BED.json",
+      "metadata": {
+        "@class": "AnalysisView",
+        "uid": "E502348B-6755-446B-B6E7-3655B00C1BED",
+        "$id": "analyses/view.schema.json",
+        "dataSheet": "3C6D6E75-C66E-4782-B431-D2AE03D4FADA",
+        "textBlocks": [
+          {
+            "block": {
+              "string": "Sigmoidal, 4PL, X is concentrationLeast squares fitFor at least one parameter, Prism was able to find a best-fit value, but was unable to calculate a complete confidence interval. This best-fit value should be interpreted with caution. \rLearn more ",
+              "version": 1,
+              "formatting": [
+                {
+                  "range": "0~235",
+                  "attributes": {
+                    "fontFamily": "Arial",
+                    "fontSize": 10.0,
+                    "horizontalAlignment": "left",
+                    "indentLeft": 0
+                  }
+                },
+                {
+                  "range": "236~247",
+                  "attributes": {
+                    "fontFamily": "Arial",
+                    "fontSize": 10.0,
+                    "horizontalAlignment": "left",
+                    "indentLeft": 0,
+                    "urlLink": ""
+                  }
+                }
+              ]
+            },
+            "fenID": 0
+          }
+        ],
+        "name": "Table of results",
+        "viewIdx": 1,
+        "graphId": -1,
+        "graphFlags": 0,
+        "tabState": "AUTO",
+        "isVisible": true,
+        "isInternal": false,
+        "isColumnLabelsVisible": true
+      }
+    }
+  ],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "row_title",
+      "dataset_id": "F51B9573-A4CF-40B0-89FA-840EE283FB67",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": null,
+      "stored_role": "row_title",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/F51B9573-A4CF-40B0-89FA-840EE283FB67.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "cellAlignments": [
+          {
+            "rows": "0~18",
+            "attributes": "left"
+          },
+          {
+            "rows": "20~22",
+            "attributes": "left"
+          }
+        ],
+        "cellAttributes": [
+          {
+            "rows": "0~1",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "8",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "14",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          },
+          {
+            "rows": "20",
+            "attributes": [
+              "SECTION_TITLE"
+            ]
+          }
+        ],
+        "lastRow": 22,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "EA35F1C4-EE5C-41BD-A739-B187F54B9C3C",
+      "title": "Control",
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": "text",
+      "stored_role": "text",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/EA35F1C4-EE5C-41BD-A739-B187F54B9C3C.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "cellAlignments": [
+          {
+            "rows": "2~7",
+            "attributes": "left"
+          },
+          {
+            "rows": "9~13",
+            "attributes": "left"
+          },
+          {
+            "rows": "15~18",
+            "attributes": "left"
+          },
+          {
+            "rows": "21~22",
+            "attributes": "left"
+          }
+        ],
+        "lastRow": 22,
+        "firstRow": 2
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "706DB18D-F429-4127-B020-1A109C9D366B",
+      "title": "Treated",
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": "text",
+      "stored_role": "text",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/706DB18D-F429-4127-B020-1A109C9D366B.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "cellAlignments": [
+          {
+            "rows": "2~7",
+            "attributes": "left"
+          },
+          {
+            "rows": "9~13",
+            "attributes": "left"
+          },
+          {
+            "rows": "15~18",
+            "attributes": "left"
+          },
+          {
+            "rows": "21~22",
+            "attributes": "left"
+          }
+        ],
+        "lastRow": 22,
+        "firstRow": 2
+      },
+      "exclusion_status": "not_interpreted"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "raw_rows": [
+    [
+      "Sigmoidal, 4PL, X is concentration",
+      "",
+      ""
+    ],
+    [
+      "Best-fit values",
+      "",
+      ""
+    ],
+    [
+      "     Bottom",
+      "39.26",
+      "31.08"
+    ],
+    [
+      "     Top",
+      "121.8",
+      "101.6"
+    ],
+    [
+      "     IC50",
+      "17.18",
+      "29.00"
+    ],
+    [
+      "     HillSlope",
+      "1.062",
+      "0.9759"
+    ],
+    [
+      "     logIC50",
+      "1.235",
+      "1.462"
+    ],
+    [
+      "     Span",
+      "82.54",
+      "70.56"
+    ],
+    [
+      "95% CI (profile likelihood)",
+      "",
+      ""
+    ],
+    [
+      "     Bottom",
+      "30.70 to 47.74",
+      "26.11 to 36.00"
+    ],
+    [
+      "     Top",
+      "104.0 to ???",
+      "78.53 to ???"
+    ],
+    [
+      "     IC50",
+      "9.735 to ???",
+      "12.16 to ???"
+    ],
+    [
+      "     HillSlope",
+      "0.3950 to 1.867",
+      "0.4230 to 1.846"
+    ],
+    [
+      "     logIC50",
+      "0.9883 to ???",
+      "1.085 to ???"
+    ],
+    [
+      "Goodness of Fit",
+      "",
+      ""
+    ],
+    [
+      "     Degrees of Freedom",
+      "13",
+      "12"
+    ],
+    [
+      "     R squared",
+      "0.9530",
+      "0.9615"
+    ],
+    [
+      "     Sum of Squares",
+      "415.1",
+      "192.0"
+    ],
+    [
+      "     Sy.x",
+      "5.651",
+      "4.000"
+    ],
+    [
+      "",
+      "",
+      ""
+    ],
+    [
+      "Number of points",
+      "",
+      ""
+    ],
+    [
+      "     # of X values",
+      "18",
+      "18"
+    ],
+    [
+      "     # Y values analyzed",
+      "17",
+      "16"
+    ]
+  ],
+  "observed_rows": 23,
+  "observed_columns": 3,
+  "id": "table_0016"
+}

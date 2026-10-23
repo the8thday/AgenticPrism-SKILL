@@ -1,0 +1,256 @@
+{
+  "source_id": "FDF36E64-D11E-4D68-84F6-D54CE054B792",
+  "title": "Grouped: Entering replicate data",
+  "kind": "input_data",
+  "source": "data/tables/D0141547-F151-4CD8-8171-4D4E64D6CA9C/data.csv",
+  "metadata_source": "data/sheets/FDF36E64-D11E-4D68-84F6-D54CE054B792/sheet.json",
+  "declared_format": "y_replicates",
+  "table_metadata": {
+    "@class": "DataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "D0141547-F151-4CD8-8171-4D4E64D6CA9C",
+    "format": "grouped",
+    "dataFormat": "y_replicates",
+    "replicatesCount": 3,
+    "rowTitlesDataSet": "B045C6E8-D677-4626-AC1D-62AFB8933E8D",
+    "dataSets": [
+      "9244C984-4CB3-4ECA-B396-6EC84B25CDD7",
+      "6D8C2D2A-26E5-4DC8-85C0-0973EDC52DD5"
+    ]
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 7,
+    "numberOfRows": 5,
+    "version": 1
+  },
+  "result_links": [],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "row_title",
+      "dataset_id": "B045C6E8-D677-4626-AC1D-62AFB8933E8D",
+      "title": null,
+      "subcolumn_index": 0,
+      "declared_format": "text",
+      "table_display_format": null,
+      "stored_role": "row_title",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/B045C6E8-D677-4626-AC1D-62AFB8933E8D.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "string",
+        "commonAttributes": [
+          "NUMERIC"
+        ],
+        "decimalsLength": 15,
+        "significantDigitsCount": 7,
+        "lastRow": 4,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "9244C984-4CB3-4ECA-B396-6EC84B25CDD7",
+      "title": "CTRL",
+      "subcolumn_index": 0,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/9244C984-4CB3-4ECA-B396-6EC84B25CDD7.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 6,
+        "significantDigitsCount": 7,
+        "lastRow": 4,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "9244C984-4CB3-4ECA-B396-6EC84B25CDD7",
+      "title": "CTRL",
+      "subcolumn_index": 1,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/9244C984-4CB3-4ECA-B396-6EC84B25CDD7.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 6,
+        "significantDigitsCount": 7,
+        "lastRow": 4,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 3,
+      "kind": "y",
+      "dataset_id": "9244C984-4CB3-4ECA-B396-6EC84B25CDD7",
+      "title": "CTRL",
+      "subcolumn_index": 2,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/9244C984-4CB3-4ECA-B396-6EC84B25CDD7.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 6,
+        "significantDigitsCount": 7,
+        "lastRow": 4,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 4,
+      "kind": "y",
+      "dataset_id": "6D8C2D2A-26E5-4DC8-85C0-0973EDC52DD5",
+      "title": "TREAT",
+      "subcolumn_index": 0,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/6D8C2D2A-26E5-4DC8-85C0-0973EDC52DD5.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 6,
+        "significantDigitsCount": 7,
+        "lastRow": 4,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 5,
+      "kind": "y",
+      "dataset_id": "6D8C2D2A-26E5-4DC8-85C0-0973EDC52DD5",
+      "title": "TREAT",
+      "subcolumn_index": 1,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/6D8C2D2A-26E5-4DC8-85C0-0973EDC52DD5.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 6,
+        "significantDigitsCount": 7,
+        "lastRow": 4,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    },
+    {
+      "index": 6,
+      "kind": "y",
+      "dataset_id": "6D8C2D2A-26E5-4DC8-85C0-0973EDC52DD5",
+      "title": "TREAT",
+      "subcolumn_index": 2,
+      "declared_format": "y_replicates",
+      "table_display_format": "y_replicates",
+      "stored_role": "replicate",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/6D8C2D2A-26E5-4DC8-85C0-0973EDC52DD5.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 6,
+        "significantDigitsCount": 7,
+        "lastRow": 4,
+        "firstRow": 0
+      },
+      "exclusion_status": "not_interpreted"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "raw_rows": [
+    [
+      "compound1",
+      "0.7054",
+      "0.7299",
+      "0.8065",
+      "1.3211",
+      "1.1908",
+      "1.2463"
+    ],
+    [
+      "compound2",
+      "0.6016",
+      "0.5615",
+      "0.5614",
+      "1.137",
+      "1.1783",
+      "1.1601"
+    ],
+    [
+      "compound3",
+      "0.5956",
+      "0.8783",
+      "0.4806",
+      "1.432",
+      "1.2638",
+      "1.3498"
+    ],
+    [
+      "compound4",
+      "0.6901",
+      "0.7125",
+      "0.7038",
+      "1.4868",
+      "1.4914",
+      "1.5154"
+    ],
+    [
+      "compound5",
+      "0.602307",
+      "0.530605",
+      "0.599976",
+      "1.599619",
+      "1.525888",
+      "1.441605"
+    ]
+  ],
+  "observed_rows": 5,
+  "observed_columns": 7,
+  "id": "table_0003"
+}

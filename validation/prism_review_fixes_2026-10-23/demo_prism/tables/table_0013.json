@@ -1,0 +1,339 @@
+{
+  "source_id": "19342901-B49B-4C4D-B552-67AB4C426244",
+  "title": "Y high low",
+  "kind": "input_data",
+  "source": "data/tables/3BDBC93E-ECB7-4379-8337-5199902990C1/data.csv",
+  "metadata_source": "data/sheets/19342901-B49B-4C4D-B552-67AB4C426244/sheet.json",
+  "declared_format": "y_high_low",
+  "table_metadata": {
+    "@class": "XYDataTable",
+    "$id": "sheets/data_sheet/data_table/data_table.schema.json",
+    "uid": "3BDBC93E-ECB7-4379-8337-5199902990C1",
+    "format": "xy",
+    "dataFormat": "y_high_low",
+    "dataSets": [
+      "72802A60-DB1F-49FE-BFB2-2DD4943A6702",
+      "296D744F-D0B7-4772-A4DC-23C5C772E0B1"
+    ],
+    "xDataSetFormat": "y_single",
+    "xDataSet": "4608981F-D055-42C7-B566-D1AE5847484C"
+  },
+  "storage_metadata": {
+    "$id": "sheets/data_sheet/data_table/data_table_storage.schema.json",
+    "numberOfColumns": 7,
+    "numberOfRows": 6,
+    "version": 1
+  },
+  "result_links": [],
+  "columns": [
+    {
+      "index": 0,
+      "kind": "x",
+      "dataset_id": "4608981F-D055-42C7-B566-D1AE5847484C",
+      "title": "Hours",
+      "subcolumn_index": 0,
+      "declared_format": "y_single",
+      "table_display_format": "y_single",
+      "stored_role": "value",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/4608981F-D055-42C7-B566-D1AE5847484C.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 1,
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 1,
+      "kind": "y",
+      "dataset_id": "72802A60-DB1F-49FE-BFB2-2DD4943A6702",
+      "title": "ctrl",
+      "subcolumn_index": 0,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_high_low",
+      "stored_role": "mean",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/72802A60-DB1F-49FE-BFB2-2DD4943A6702.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 2,
+      "kind": "y",
+      "dataset_id": "72802A60-DB1F-49FE-BFB2-2DD4943A6702",
+      "title": "ctrl",
+      "subcolumn_index": 1,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_high_low",
+      "stored_role": "upper_distance",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/72802A60-DB1F-49FE-BFB2-2DD4943A6702.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 3,
+      "kind": "y",
+      "dataset_id": "72802A60-DB1F-49FE-BFB2-2DD4943A6702",
+      "title": "ctrl",
+      "subcolumn_index": 2,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_high_low",
+      "stored_role": "lower_distance",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/72802A60-DB1F-49FE-BFB2-2DD4943A6702.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 4,
+      "kind": "y",
+      "dataset_id": "296D744F-D0B7-4772-A4DC-23C5C772E0B1",
+      "title": "treat",
+      "subcolumn_index": 0,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_high_low",
+      "stored_role": "mean",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/296D744F-D0B7-4772-A4DC-23C5C772E0B1.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "decimalsLength": 5,
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 5,
+      "kind": "y",
+      "dataset_id": "296D744F-D0B7-4772-A4DC-23C5C772E0B1",
+      "title": "treat",
+      "subcolumn_index": 1,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_high_low",
+      "stored_role": "upper_distance",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/296D744F-D0B7-4772-A4DC-23C5C772E0B1.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    },
+    {
+      "index": 6,
+      "kind": "y",
+      "dataset_id": "296D744F-D0B7-4772-A4DC-23C5C772E0B1",
+      "title": "treat",
+      "subcolumn_index": 2,
+      "declared_format": "y_plus_minus",
+      "table_display_format": "y_high_low",
+      "stored_role": "lower_distance",
+      "role_evidence": "pinned_native_1-4-1",
+      "metadata_source": "data/sets/296D744F-D0B7-4772-A4DC-23C5C772E0B1.json",
+      "replicate_metadata": {
+        "@class": "DriverReplicate",
+        "valueType": "real",
+        "commonAttributes": [
+          "NUMERIC",
+          "USER"
+        ],
+        "significantDigitsCount": 7,
+        "lastRow": 5,
+        "firstRow": 0
+      },
+      "exclusion_status": "decoded",
+      "excluded_by_row": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "exclusion_evidence": "stored_EXCLUDED_marker",
+      "exclusion_scope": "stored_cell_flag_only_not_analysis_selection"
+    }
+  ],
+  "unmapped_column_candidates": [],
+  "virtual_columns": [],
+  "exclusion_summary": {
+    "marked_excluded": 0,
+    "not_marked_excluded": 42,
+    "unknown_stored_cells": 0,
+    "unmapped_stored_cells": 0,
+    "scope": "mapped_stored_cells_only; false does not establish use in an analysis"
+  },
+  "raw_rows": [
+    [
+      "0",
+      "39.5",
+      "5.5",
+      "5.5",
+      "31.3333300000000001",
+      "2.66666999999999987",
+      "2.33333000000000013"
+    ],
+    [
+      "6",
+      "58.3333299999999966",
+      "2.66667000000000343",
+      "2.33332999999999657",
+      "42",
+      "1",
+      "1"
+    ],
+    [
+      "12",
+      "75",
+      "2",
+      "3",
+      "54",
+      "1",
+      "2"
+    ],
+    [
+      "24",
+      "86.3333300000000037",
+      "8.66666999999999632",
+      "5.33333000000000368",
+      "63",
+      "0",
+      "0"
+    ],
+    [
+      "48",
+      "101",
+      "3",
+      "2",
+      "73.3333300000000037",
+      "7.66666999999999632",
+      "6.33333000000000368"
+    ],
+    [
+      "72",
+      "107.333299999999994",
+      "7.66670000000000584",
+      "10.3332999999999942",
+      "82.5",
+      "4.5",
+      "4.5"
+    ]
+  ],
+  "observed_rows": 6,
+  "observed_columns": 7,
+  "id": "table_0013"
+}

@@ -1,0 +1,25 @@
+{
+  "full_suite": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 1020,
+    "warnings": 8,
+    "seconds": 457.48,
+    "warning_scope": "Existing Pandas4Warning in src/agentic_prism/ada.py:209-210",
+    "scope": "Collected 41 importer tests; final conservative guard plus one additional test covered by focused rerun, not another whole-suite run"
+  },
+  "final_importer_suite": {
+    "command": ".venv/bin/python -m pytest -q tests/test_prism_import.py",
+    "passed": 42,
+    "seconds": 0.69
+  },
+  "current_collected_tests": 1021,
+  "skills_validated": [
+    "skills/import-prism",
+    "skills/agentic-prism"
+  ],
+  "standard_library_only_inspection": "passed with site packages disabled (-S)",
+  "demo_hash_verification": "passed for native and XML",
+  "initial_final_table_byte_identity": 43,
+  "diff_check": "passed",
+  "parser_sha256": "8d73ff143e49f330249a36bea38682a6b2b19400fdba4bca93cede649aa2014b"
+}

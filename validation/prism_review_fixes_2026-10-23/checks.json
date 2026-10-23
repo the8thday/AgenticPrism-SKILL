@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "full_suite": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 1055,
+    "warnings": 8,
+    "seconds": 453.56,
+    "warning_scope": "Existing Pandas4Warning in src/agentic_prism/ada.py:209-210"
+  },
+  "parser_suite": {"passed": 76, "new_cases": 8},
+  "public_corpus_and_legacy_byte_identical_to_2026_10_20": true,
+  "demo_files_changed": ["demo_prism/import_manifest.json", "demo_pzfx/import_manifest.json"],
+  "committed_demo_manifests_verified": 6,
+  "skill_validation": ["import-prism", "agentic-prism"],
+  "stdlib_only_inspection": "passed",
+  "diff_check": "passed",
+  "parser_sha256": "fd6b6382b52e0d8a1728a188271a3544168f923fad0ee7c5373739408b79244d"
+}

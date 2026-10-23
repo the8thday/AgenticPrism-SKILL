@@ -1,0 +1,18 @@
+{
+  "source_id": "data/tables/0B373C5A-F5CC-4B39-B9C0-B457191BE5ED/data.csv",
+  "title": null,
+  "kind": "unlinked_csv",
+  "source": "data/tables/0B373C5A-F5CC-4B39-B9C0-B457191BE5ED/data.csv",
+  "columns": [],
+  "raw_rows": [],
+  "exclusion_summary": {
+    "marked_excluded": 0,
+    "not_marked_excluded": 0,
+    "unknown_stored_cells": 0,
+    "unmapped_stored_cells": 0,
+    "scope": "mapped_stored_cells_only; false does not establish use in an analysis"
+  },
+  "observed_rows": 0,
+  "observed_columns": 0,
+  "id": "table_0022"
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "prism-extraction/1",
+  "purpose": "extraction_only",
+  "source_sha256": {
+    "import_report.json": "fa59989306d605726268dee5e1615b39499bc216dcd5eba0fefc79250be12929"
+  },
+  "primary": {
+    "counts": {
+      "input_data": 14,
+      "analysis_result": 0,
+      "unclassified": 0,
+      "unlinked_csv": 0
+    },
+    "status": "extracted_with_limits"
+  },
+  "must_mention": [
+    "Extraction does not identify independent units, infer units or validate an analysis.",
+    "Values are stored representations. No CV conversion, bound reconstruction, normalization, fitting or exclusion is performed.",
+    "XML d values are text, never automatically converted to numbers, dates, NA or missing values.",
+    "Explicit empty d is an empty string; an absent row in a subcolumn is absent, never recycled or filled.",
+    "Template payloads and unknown XML metadata are preserved but not semantically decoded.",
+    "Table/Subcolumn titles and excluded values are retained; exclusion flags are not applied to remove observations."
+  ],
+  "issues": [
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=4]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=5]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=7]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=8]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=9]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=10]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=11]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=12]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=13]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=14]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=15]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=16]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "alternate_x_representation",
+      "source": "/GraphPadPrismFile/Table[@document_child=17]",
+      "detail": "XAdvancedColumn preserved separately; no date conversion or substitution"
+    },
+    {
+      "code": "opaque_template",
+      "source": "/Template",
+      "detail": "Compressed analysis/graph/layout payload preserved, not decoded"
+    }
+  ],
+  "scientific_inference": "not_performed"
+}

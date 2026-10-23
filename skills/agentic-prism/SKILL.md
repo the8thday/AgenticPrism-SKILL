@@ -1,6 +1,6 @@
 ---
 name: agentic-prism
-description: Offer an optional pre-analysis discussion, assess data suitability, and route multivariable regression/GLM or Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM. Also ROC, kappa/ICC agreement, outlier flagging, below-LLOQ censored comparisons, multi-candidate potency ranking, GR metrics, multi-outcome panels, enzyme Ki and receptor occupancy. Route PK/NCA and population PK to prototype R guidance using PKNCA and nlmixr2.
+description: Extract GraphPad .prism/.pzfx files. Offer an optional pre-analysis discussion, assess data suitability, and route multivariable regression/GLM or Prism-style analysis by experimental purpose to equilibrium KD, BLI/SPR kinetics (multi- or single-cycle), 4PL EC50/IC50 and relative potency, ELISA standard-curve quantification, time-to-event survival analysis, tumor growth curves, CMC stability, replicated potency across runs, lot comparability, tolerance intervals and process capability, scoped two-group and one-way multi-group statistics, rank tests, ADA cut points with sensitivity and drug tolerance, bioanalytical method validation, precision variance components, or repeated-measures ANOVA, random-intercept models and marginal US/AR(1) MMRM. Also ROC, kappa/ICC agreement, outlier flagging, below-LLOQ censored comparisons, multi-candidate potency ranking, GR metrics, multi-outcome panels, enzyme Ki and receptor occupancy. Route PK/NCA and population PK to prototype R guidance using PKNCA and nlmixr2.
 ---
 
 # AgenticPrism
@@ -8,6 +8,11 @@ description: Offer an optional pre-analysis discussion, assess data suitability,
 Use this entry point when the user asks for Prism-like analysis without selecting
 a specific module, or asks to combine analyses. For an explicit supported task,
 the specialist can be used directly.
+
+For `.prism` or `.pzfx` files, first use [import-prism](../import-prism/SKILL.md)
+to preserve stored values and explain their roles. Extraction alone is not a new
+analysis and does not require the discussion choice. Read its compatibility
+report before mapping a chosen table into a specialist's input contract.
 
 For a new analysis, first follow the shared [optional discussion and data-assessment entry](references/analysis-entry.md). Offer discussion or direct analysis once unless the user has already chosen. Opt-in discussion uses [analysis-consultation](../analysis-consultation/SKILL.md); both paths include a concise, evidence-based assessment of suitable methods and limits. Preserve the choice across specialist handoffs.
 

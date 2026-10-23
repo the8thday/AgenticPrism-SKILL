@@ -5,6 +5,7 @@ release. The entries below distinguish guidance from implemented numerical modul
 
 | Purpose | Skill | Capability state |
 |---|---|---|
+| Extract GraphPad .prism/.pzfx stored data | [import-prism](../../import-prism/SKILL.md) | Local unreleased extraction layer: values, metadata, input/result/unlinked classification, source hashes and facts; 1 native + 24 XML public files checked. No numerical method, project restoration or all-version guarantee. Scoped `1-2-0` simple-column/X-series support and per-row native EXCLUDED flags added; ambiguous or unrecognized flags and binary objects remain uninterpreted; the `EXCLUDED` token has no public native example. [Follow-up](../../../validation/PRISM_NATIVE_SEMANTICS_2026-10-20.md), [review fixes](../../../validation/PRISM_REVIEW_FIXES_2026-10-23.md). [Evidence](../../../validation/PRISM_IMPORT_2026-10-19.md) |
 | Individual PK profiles and NCA with R PKNCA | [pk-nca](../../pk-nca/SKILL.md) | Guidance prototype: input/reporting contract and observed-profile R template. No Python analysis type or new NCA estimator. R syntax and missing-dependency behavior checked; package calculations, worked-example reproduction, calibration, live-agent scenarios and facts extraction remain unvalidated. [Evidence](../../../validation/PK_R_SKILLS_PROTOTYPE_2026-10-13.md) |
 | Population PK with R nlmixr2/rxode2 | [population-pk](../../population-pk/SKILL.md) | Guidance prototype: event/model/diagnostic contract and oral one-compartment teaching template. Other basic routes/structures are guidance only; no PD/TMDD. R syntax and missing-dependency behavior checked; fitting and five evidence gates remain unvalidated. [Evidence](../../../validation/PK_R_SKILLS_PROTOTYPE_2026-10-13.md) |
 | Panel comparisons with multiplicity | [panel-comparison](../../panel-comparison/SKILL.md) | 0.14.0 `panel_comparison`: two groups across declared outcome families, Welch or paired t on a declared scale, Holm (simultaneous intervals) or Benjamini-Hochberg within families; undeclared outcomes refused. Base-R oracle; BH 1995 example reproduced. See [release evidence](../../../validation/RELEASE_0.14.0.md). 0.14.1: opt-in censored outcomes (censored lognormal ML with small-sample t, independent or paired); R survival oracle and registered calibration; see [0.14.1 evidence](../../../validation/RELEASE_0.14.1.md). |
@@ -63,8 +64,8 @@ contracts. No new statistical method was added in 0.8.1; at that release, nonpar
 MMRM, KR, Gompertz, cage effects, MNAR sensitivity, competing risks and RMST
 remained follow-up work. The 0.8.2 entries above supersede that earlier scope. See [0.8.1 evidence](../../../validation/RELEASE_0.8.1.md).
 
-“Implemented” is not Prism numerical equivalence. No Prism project benchmark has
-been run. New modules must supply their own data contract, estimand, assumptions,
+“Implemented” is not Prism numerical equivalence. No matched Prism numerical-analysis project benchmark has
+been run. File extraction checks do not establish numerical equivalence. New modules must supply their own data contract, estimand, assumptions,
 tests and release status. A requested mixture of available and unavailable tasks
 may complete the available work while explicitly identifying the remaining gap.
 
