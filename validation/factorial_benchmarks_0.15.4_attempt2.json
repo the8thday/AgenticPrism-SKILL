@@ -1,0 +1,3234 @@
+{
+  "status": "passed",
+  "oracle_checks_passed": 308,
+  "oracle_checks": 308,
+  "attempts": [
+    "validation/factorial_benchmarks_0.15.4_attempt1.json (4 Dunnett p misses vs emmeans default precision)",
+    "validation/factorial_dunnett_diagnostic_0.15.4.json"
+  ],
+  "published_checks_passed": 29,
+  "published_checks": 29,
+  "checks": [
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "contrast_set",
+      "n_runtime": 2,
+      "n_oracle": 2,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "contrast_estimate_audit",
+      "n_values": 2,
+      "max_relative_difference": 1.0596378342244394e-14,
+      "max_absolute_difference": 1.021405182655144e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "contrast_se",
+      "n_values": 2,
+      "max_relative_difference": 5.544467733367678e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "adjusted_p_vs_emmeans_default_precision",
+      "informational": true,
+      "max_absolute_difference": 3.864845532497441e-08,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "adjusted_p_vs_high_precision_mvtnorm",
+      "n_values": 2,
+      "max_relative_difference": 5.787253052164157e-06,
+      "max_absolute_difference": 3.864845632417513e-08,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_dunnett",
+      "metric": "dunnett_limits",
+      "max_difference_over_halfwidth": 3.9443295399696825e-05,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "contrast_set",
+      "n_runtime": 3,
+      "n_oracle": 3,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "contrast_estimate_audit",
+      "n_values": 3,
+      "max_relative_difference": 1.0596378342244394e-14,
+      "max_absolute_difference": 1.021405182655144e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "contrast_se",
+      "n_values": 3,
+      "max_relative_difference": 5.544467733367678e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "adjusted_p",
+      "n_values": 3,
+      "max_relative_difference": 7.046108554221795e-14,
+      "max_absolute_difference": 7.382983113757291e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_holm",
+      "metric": "limits_vs_bonferroni",
+      "n_values": 6,
+      "max_relative_difference": 4.0254251483361195e-14,
+      "max_absolute_difference": 1.0658141036401503e-14,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "contrast_set",
+      "n_runtime": 3,
+      "n_oracle": 3,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "contrast_estimate_audit",
+      "n_values": 3,
+      "max_relative_difference": 1.0596378342244394e-14,
+      "max_absolute_difference": 1.021405182655144e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "contrast_se",
+      "n_values": 3,
+      "max_relative_difference": 5.544467733367678e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "adjusted_p",
+      "n_values": 3,
+      "max_relative_difference": 5.5567706096461905e-14,
+      "max_absolute_difference": 9.048317650695026e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_sidak",
+      "metric": "limits",
+      "n_values": 6,
+      "max_relative_difference": 3.750855215177952e-14,
+      "max_absolute_difference": 1.1546319456101628e-14,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "contrast_set",
+      "n_runtime": 3,
+      "n_oracle": 3,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "contrast_estimate_audit",
+      "n_values": 3,
+      "max_relative_difference": 1.0596378342244394e-14,
+      "max_absolute_difference": 1.021405182655144e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "contrast_se",
+      "n_values": 3,
+      "max_relative_difference": 5.544467733367678e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "adjusted_p",
+      "n_values": 3,
+      "max_relative_difference": 1.2942690544937075e-11,
+      "max_absolute_difference": 3.136380044566067e-13,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_marginal_tukey",
+      "metric": "limits",
+      "n_values": 6,
+      "max_relative_difference": 1.3922417042069543e-10,
+      "max_absolute_difference": 3.7721270551571706e-11,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "contrast_set",
+      "n_runtime": 8,
+      "n_oracle": 8,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "contrast_estimate_audit",
+      "n_values": 8,
+      "max_relative_difference": 1.657214554709649e-13,
+      "max_absolute_difference": 2.4924506902834764e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "contrast_se",
+      "n_values": 8,
+      "max_relative_difference": 9.386273787350415e-16,
+      "max_absolute_difference": 7.771561172376096e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "adjusted_p_vs_emmeans_default_precision",
+      "informational": true,
+      "max_absolute_difference": 1.8080160124611666e-07,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "adjusted_p_vs_high_precision_mvtnorm",
+      "n_values": 8,
+      "max_relative_difference": 5.590538581284987e-06,
+      "max_absolute_difference": 1.8080160224531738e-07,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_dunnett",
+      "metric": "dunnett_limits",
+      "max_difference_over_halfwidth": 0.0001193204637063154,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "contrast_set",
+      "n_runtime": 12,
+      "n_oracle": 12,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "contrast_estimate_audit",
+      "n_values": 12,
+      "max_relative_difference": 1.657214554709649e-13,
+      "max_absolute_difference": 2.4924506902834764e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "contrast_se",
+      "n_values": 12,
+      "max_relative_difference": 1.3303792595835839e-15,
+      "max_absolute_difference": 9.992007221626409e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "adjusted_p",
+      "n_values": 12,
+      "max_relative_difference": 7.277984947483807e-14,
+      "max_absolute_difference": 6.772360450213455e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_holm",
+      "metric": "limits_vs_bonferroni",
+      "n_values": 24,
+      "max_relative_difference": 2.1595552957617215e-13,
+      "max_absolute_difference": 2.7977620220553945e-14,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "contrast_set",
+      "n_runtime": 12,
+      "n_oracle": 12,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "contrast_estimate_audit",
+      "n_values": 12,
+      "max_relative_difference": 1.657214554709649e-13,
+      "max_absolute_difference": 2.4924506902834764e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "contrast_se",
+      "n_values": 12,
+      "max_relative_difference": 1.3303792595835839e-15,
+      "max_absolute_difference": 9.992007221626409e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "adjusted_p",
+      "n_values": 12,
+      "max_relative_difference": 6.84351688314336e-14,
+      "max_absolute_difference": 4.9960036108132044e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_sidak",
+      "metric": "limits",
+      "n_values": 24,
+      "max_relative_difference": 1.937863601404939e-13,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "contrast_set",
+      "n_runtime": 12,
+      "n_oracle": 12,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "contrast_estimate_audit",
+      "n_values": 12,
+      "max_relative_difference": 1.657214554709649e-13,
+      "max_absolute_difference": 2.4924506902834764e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "contrast_se",
+      "n_values": 12,
+      "max_relative_difference": 1.3303792595835839e-15,
+      "max_absolute_difference": 9.992007221626409e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "adjusted_p",
+      "n_values": 12,
+      "max_relative_difference": 8.999248554575457e-11,
+      "max_absolute_difference": 4.034550471487819e-13,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_a_simple_tukey",
+      "metric": "limits",
+      "n_values": 24,
+      "max_relative_difference": 4.859601542762451e-10,
+      "max_absolute_difference": 8.843548116033162e-11,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "contrast_set",
+      "n_runtime": 3,
+      "n_oracle": 3,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "contrast_estimate_audit",
+      "n_values": 3,
+      "max_relative_difference": 1.692598870482612e-14,
+      "max_absolute_difference": 6.439293542825908e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "contrast_se",
+      "n_values": 3,
+      "max_relative_difference": 1.6828114448530056e-15,
+      "max_absolute_difference": 8.326672684688674e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "adjusted_p_vs_emmeans_default_precision",
+      "informational": true,
+      "max_absolute_difference": 0.00014849579152154124,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "adjusted_p_vs_high_precision_mvtnorm",
+      "n_values": 3,
+      "max_relative_difference": 2.893449039487199e-05,
+      "max_absolute_difference": 3.209071709475708e-07,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_dunnett",
+      "metric": "dunnett_limits",
+      "max_difference_over_halfwidth": 0.0001829695829571408,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "contrast_set",
+      "n_runtime": 6,
+      "n_oracle": 6,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "contrast_estimate_audit",
+      "n_values": 6,
+      "max_relative_difference": 1.692598870482612e-14,
+      "max_absolute_difference": 6.439293542825908e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "contrast_se",
+      "n_values": 6,
+      "max_relative_difference": 1.6828114448530056e-15,
+      "max_absolute_difference": 8.326672684688674e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "adjusted_p",
+      "n_values": 6,
+      "max_relative_difference": 2.583394209547673e-14,
+      "max_absolute_difference": 5.495603971894525e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_holm",
+      "metric": "limits_vs_bonferroni",
+      "n_values": 12,
+      "max_relative_difference": 3.9741958173884246e-14,
+      "max_absolute_difference": 7.549516567451064e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "contrast_set",
+      "n_runtime": 6,
+      "n_oracle": 6,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "contrast_estimate_audit",
+      "n_values": 6,
+      "max_relative_difference": 1.692598870482612e-14,
+      "max_absolute_difference": 6.439293542825908e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "contrast_se",
+      "n_values": 6,
+      "max_relative_difference": 1.6828114448530056e-15,
+      "max_absolute_difference": 8.326672684688674e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "adjusted_p",
+      "n_values": 6,
+      "max_relative_difference": 6.841761024802373e-13,
+      "max_absolute_difference": 3.9968028886505635e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_sidak",
+      "metric": "limits",
+      "n_values": 12,
+      "max_relative_difference": 2.891656174940079e-14,
+      "max_absolute_difference": 8.881784197001252e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.7709125050777147e-14,
+      "max_absolute_difference": 8.615330671091215e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 6.847240026874255e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.8124200179694434e-14,
+      "max_absolute_difference": 1.865174681370263e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "contrast_set",
+      "n_runtime": 6,
+      "n_oracle": 6,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "contrast_estimate_audit",
+      "n_values": 6,
+      "max_relative_difference": 1.692598870482612e-14,
+      "max_absolute_difference": 6.439293542825908e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "contrast_se",
+      "n_values": 6,
+      "max_relative_difference": 1.6828114448530056e-15,
+      "max_absolute_difference": 8.326672684688674e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "adjusted_p",
+      "n_values": 6,
+      "max_relative_difference": 1.737756675301971e-09,
+      "max_absolute_difference": 4.89208673570829e-12,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_III_factor_b_marginal_tukey",
+      "metric": "limits",
+      "n_values": 12,
+      "max_relative_difference": 4.915706213119444e-10,
+      "max_absolute_difference": 7.08970659957231e-11,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.1675948730399693e-14,
+      "max_absolute_difference": 1.0480505352461478e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 7.079075466715799e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.1974691191293766e-14,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "contrast_set",
+      "n_runtime": 2,
+      "n_oracle": 2,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "contrast_estimate_audit",
+      "n_values": 2,
+      "max_relative_difference": 1.0596378342244394e-14,
+      "max_absolute_difference": 1.021405182655144e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "contrast_se",
+      "n_values": 2,
+      "max_relative_difference": 5.544467733367678e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "adjusted_p_vs_emmeans_default_precision",
+      "informational": true,
+      "max_absolute_difference": 3.864845532497441e-08,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "adjusted_p_vs_high_precision_mvtnorm",
+      "n_values": 2,
+      "max_relative_difference": 5.787253052164157e-06,
+      "max_absolute_difference": 3.864845632417513e-08,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_dunnett",
+      "metric": "dunnett_limits",
+      "max_difference_over_halfwidth": 3.9443295399696825e-05,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.1675948730399693e-14,
+      "max_absolute_difference": 1.0480505352461478e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 7.079075466715799e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.1974691191293766e-14,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "contrast_set",
+      "n_runtime": 3,
+      "n_oracle": 3,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "contrast_estimate_audit",
+      "n_values": 3,
+      "max_relative_difference": 1.0596378342244394e-14,
+      "max_absolute_difference": 1.021405182655144e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "contrast_se",
+      "n_values": 3,
+      "max_relative_difference": 5.544467733367678e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "adjusted_p",
+      "n_values": 3,
+      "max_relative_difference": 7.046108554221795e-14,
+      "max_absolute_difference": 7.382983113757291e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_holm",
+      "metric": "limits_vs_bonferroni",
+      "n_values": 6,
+      "max_relative_difference": 4.0254251483361195e-14,
+      "max_absolute_difference": 1.0658141036401503e-14,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.1675948730399693e-14,
+      "max_absolute_difference": 1.0480505352461478e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 7.079075466715799e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.1974691191293766e-14,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "contrast_set",
+      "n_runtime": 3,
+      "n_oracle": 3,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "contrast_estimate_audit",
+      "n_values": 3,
+      "max_relative_difference": 1.0596378342244394e-14,
+      "max_absolute_difference": 1.021405182655144e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "contrast_se",
+      "n_values": 3,
+      "max_relative_difference": 5.544467733367678e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "adjusted_p",
+      "n_values": 3,
+      "max_relative_difference": 5.5567706096461905e-14,
+      "max_absolute_difference": 9.048317650695026e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_sidak",
+      "metric": "limits",
+      "n_values": 6,
+      "max_relative_difference": 3.750855215177952e-14,
+      "max_absolute_difference": 1.1546319456101628e-14,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.1675948730399693e-14,
+      "max_absolute_difference": 1.0480505352461478e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 7.079075466715799e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.1974691191293766e-14,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "contrast_set",
+      "n_runtime": 3,
+      "n_oracle": 3,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "contrast_estimate_audit",
+      "n_values": 3,
+      "max_relative_difference": 1.0596378342244394e-14,
+      "max_absolute_difference": 1.021405182655144e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "contrast_se",
+      "n_values": 3,
+      "max_relative_difference": 5.544467733367678e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "adjusted_p",
+      "n_values": 3,
+      "max_relative_difference": 1.2942690544937075e-11,
+      "max_absolute_difference": 3.136380044566067e-13,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_a_marginal_tukey",
+      "metric": "limits",
+      "n_values": 6,
+      "max_relative_difference": 1.3922417042069543e-10,
+      "max_absolute_difference": 3.7721270551571706e-11,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.1675948730399693e-14,
+      "max_absolute_difference": 1.0480505352461478e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 7.079075466715799e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.1974691191293766e-14,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "contrast_set",
+      "n_runtime": 3,
+      "n_oracle": 3,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "contrast_estimate_audit",
+      "n_values": 3,
+      "max_relative_difference": 1.692598870482612e-14,
+      "max_absolute_difference": 6.439293542825908e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "contrast_se",
+      "n_values": 3,
+      "max_relative_difference": 1.6828114448530056e-15,
+      "max_absolute_difference": 8.326672684688674e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "adjusted_p_vs_emmeans_default_precision",
+      "informational": true,
+      "max_absolute_difference": 0.00014849579152154124,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "adjusted_p_vs_high_precision_mvtnorm",
+      "n_values": 3,
+      "max_relative_difference": 2.893449039487199e-05,
+      "max_absolute_difference": 3.209071709475708e-07,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_dunnett",
+      "metric": "dunnett_limits",
+      "max_difference_over_halfwidth": 0.0001829695829571408,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.1675948730399693e-14,
+      "max_absolute_difference": 1.0480505352461478e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 7.079075466715799e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.1974691191293766e-14,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "contrast_set",
+      "n_runtime": 6,
+      "n_oracle": 6,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "contrast_estimate_audit",
+      "n_values": 6,
+      "max_relative_difference": 1.692598870482612e-14,
+      "max_absolute_difference": 6.439293542825908e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "contrast_se",
+      "n_values": 6,
+      "max_relative_difference": 1.6828114448530056e-15,
+      "max_absolute_difference": 8.326672684688674e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "adjusted_p",
+      "n_values": 6,
+      "max_relative_difference": 2.583394209547673e-14,
+      "max_absolute_difference": 5.495603971894525e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_holm",
+      "metric": "limits_vs_bonferroni",
+      "n_values": 12,
+      "max_relative_difference": 3.9741958173884246e-14,
+      "max_absolute_difference": 7.549516567451064e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.1675948730399693e-14,
+      "max_absolute_difference": 1.0480505352461478e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 7.079075466715799e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.1974691191293766e-14,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "contrast_set",
+      "n_runtime": 6,
+      "n_oracle": 6,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "contrast_estimate_audit",
+      "n_values": 6,
+      "max_relative_difference": 1.692598870482612e-14,
+      "max_absolute_difference": 6.439293542825908e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "contrast_se",
+      "n_values": 6,
+      "max_relative_difference": 1.6828114448530056e-15,
+      "max_absolute_difference": 8.326672684688674e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "adjusted_p",
+      "n_values": 6,
+      "max_relative_difference": 6.841761024802373e-13,
+      "max_absolute_difference": 3.9968028886505635e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_sidak",
+      "metric": "limits",
+      "n_values": 12,
+      "max_relative_difference": 2.891656174940079e-14,
+      "max_absolute_difference": 8.881784197001252e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 1.1675948730399693e-14,
+      "max_absolute_difference": 1.0480505352461478e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 7.079075466715799e-14,
+      "max_absolute_difference": 4.496403249731884e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 1.1974691191293766e-14,
+      "max_absolute_difference": 2.2737367544323206e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 2.159048090402814e-16,
+      "max_absolute_difference": 2.220446049250313e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "contrast_set",
+      "n_runtime": 6,
+      "n_oracle": 6,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "contrast_estimate_audit",
+      "n_values": 6,
+      "max_relative_difference": 1.692598870482612e-14,
+      "max_absolute_difference": 6.439293542825908e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "contrast_se",
+      "n_values": 6,
+      "max_relative_difference": 1.6828114448530056e-15,
+      "max_absolute_difference": 8.326672684688674e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "adjusted_p",
+      "n_values": 6,
+      "max_relative_difference": 1.737756675301971e-09,
+      "max_absolute_difference": 4.89208673570829e-12,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_additive_II_factor_b_marginal_tukey",
+      "metric": "limits",
+      "n_values": 12,
+      "max_relative_difference": 4.915706213119444e-10,
+      "max_absolute_difference": 7.08970659957231e-11,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 6.924299416064601e-15,
+      "max_absolute_difference": 7.815970093361102e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 4.2432662035060755e-14,
+      "max_absolute_difference": 1.0824674490095276e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 6.982725893075884e-15,
+      "max_absolute_difference": 1.3855583347321954e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "contrast_set",
+      "n_runtime": 3,
+      "n_oracle": 3,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "contrast_estimate_audit",
+      "n_values": 3,
+      "max_relative_difference": 1.673814762511857e-14,
+      "max_absolute_difference": 5.10702591327572e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "contrast_se",
+      "n_values": 3,
+      "max_relative_difference": 7.642312391805349e-16,
+      "max_absolute_difference": 2.7755575615628914e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "adjusted_p",
+      "n_values": 3,
+      "max_relative_difference": 2.7523317946572606e-09,
+      "max_absolute_difference": 1.539879335155092e-13,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_marginal_tukey",
+      "metric": "limits",
+      "n_values": 6,
+      "max_relative_difference": 5.083717467037835e-11,
+      "max_absolute_difference": 3.420375094265182e-11,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 6.924299416064601e-15,
+      "max_absolute_difference": 7.815970093361102e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 4.2432662035060755e-14,
+      "max_absolute_difference": 1.0824674490095276e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 6.982725893075884e-15,
+      "max_absolute_difference": 1.3855583347321954e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "contrast_set",
+      "n_runtime": 12,
+      "n_oracle": 12,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "contrast_estimate_audit",
+      "n_values": 12,
+      "max_relative_difference": 3.358427505296742e-14,
+      "max_absolute_difference": 1.199040866595169e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "contrast_se",
+      "n_values": 12,
+      "max_relative_difference": 1.0350185435654175e-15,
+      "max_absolute_difference": 6.661338147750939e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "adjusted_p",
+      "n_values": 12,
+      "max_relative_difference": 2.660151205179251e-09,
+      "max_absolute_difference": 7.780442956573097e-13,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_a_simple_tukey",
+      "metric": "limits",
+      "n_values": 24,
+      "max_relative_difference": 9.105024470866276e-10,
+      "max_absolute_difference": 8.018252728447806e-11,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 6.924299416064601e-15,
+      "max_absolute_difference": 7.815970093361102e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 4.2432662035060755e-14,
+      "max_absolute_difference": 1.0824674490095276e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 6.982725893075884e-15,
+      "max_absolute_difference": 1.3855583347321954e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "contrast_set",
+      "n_runtime": 9,
+      "n_oracle": 9,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "contrast_estimate_audit",
+      "n_values": 9,
+      "max_relative_difference": 2.862875256898276e-14,
+      "max_absolute_difference": 1.1546319456101628e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "contrast_se",
+      "n_values": 9,
+      "max_relative_difference": 1.2908949263265164e-15,
+      "max_absolute_difference": 7.771561172376096e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "adjusted_p_vs_emmeans_default_precision",
+      "informational": true,
+      "max_absolute_difference": 0.00019722493399354502,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "adjusted_p_vs_high_precision_mvtnorm",
+      "n_values": 9,
+      "max_relative_difference": 3.744356902854499e-05,
+      "max_absolute_difference": 4.028823469282017e-07,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_III_factor_b_simple_dunnett",
+      "metric": "dunnett_limits",
+      "max_difference_over_halfwidth": 0.0005851180384481107,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 6.0965298131921924e-15,
+      "max_absolute_difference": 8.526512829121202e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 4.177955198879952e-14,
+      "max_absolute_difference": 1.0824674490095276e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 6.046710951607893e-15,
+      "max_absolute_difference": 1.4921397450962104e-13,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "contrast_set",
+      "n_runtime": 6,
+      "n_oracle": 6,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "contrast_estimate_audit",
+      "n_values": 6,
+      "max_relative_difference": 6.09629837807973e-14,
+      "max_absolute_difference": 7.771561172376096e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "contrast_se",
+      "n_values": 6,
+      "max_relative_difference": 1.855625661691504e-15,
+      "max_absolute_difference": 8.326672684688674e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "adjusted_p",
+      "n_values": 6,
+      "max_relative_difference": 4.899324765326408e-14,
+      "max_absolute_difference": 1.3655743202889425e-14,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_interaction_II_factor_b_marginal_holm",
+      "metric": "limits_vs_bonferroni",
+      "n_values": 12,
+      "max_relative_difference": 2.3789178060040398e-14,
+      "max_absolute_difference": 9.325873406851315e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 5.791689602231187e-15,
+      "max_absolute_difference": 1.7763568394002505e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 3.6225633952155985e-15,
+      "max_absolute_difference": 1.1102230246251565e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 7.764738469232969e-15,
+      "max_absolute_difference": 1.3322676295501878e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 8.87077082547098e-16,
+      "max_absolute_difference": 5.551115123125783e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "contrast_set",
+      "n_runtime": 2,
+      "n_oracle": 2,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "contrast_estimate_audit",
+      "n_values": 2,
+      "max_relative_difference": 1.2961693141510784e-15,
+      "max_absolute_difference": 1.3322676295501878e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "contrast_se",
+      "n_values": 2,
+      "max_relative_difference": 8.87077082547098e-16,
+      "max_absolute_difference": 5.551115123125783e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "adjusted_p",
+      "n_values": 2,
+      "max_relative_difference": 3.630722407282885e-15,
+      "max_absolute_difference": 6.38378239159465e-16,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_III_factor_a_simple_holm",
+      "metric": "limits_vs_bonferroni",
+      "n_values": 4,
+      "max_relative_difference": 4.723698025371074e-15,
+      "max_absolute_difference": 2.886579864025407e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 5.984745922305558e-15,
+      "max_absolute_difference": 1.4210854715202004e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 2.8678626878790164e-15,
+      "max_absolute_difference": 1.1102230246251565e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 7.764738469232969e-15,
+      "max_absolute_difference": 8.743006318923108e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 8.87077082547098e-16,
+      "max_absolute_difference": 5.551115123125783e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "contrast_set",
+      "n_runtime": 1,
+      "n_oracle": 1,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "contrast_estimate_audit",
+      "n_values": 1,
+      "max_relative_difference": 1.562044354027652e-15,
+      "max_absolute_difference": 3.3306690738754696e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "contrast_se",
+      "n_values": 1,
+      "max_relative_difference": 1.003613152806771e-15,
+      "max_absolute_difference": 4.440892098500626e-16,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "adjusted_p",
+      "n_values": 1,
+      "max_relative_difference": 5.084417387879771e-16,
+      "max_absolute_difference": 3.3306690738754696e-16,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_minimal_II_factor_b_marginal_sidak",
+      "metric": "limits",
+      "n_values": 2,
+      "max_relative_difference": 1.093465261916932e-15,
+      "max_absolute_difference": 1.5543122344752192e-15,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 3.050068701006351e-14,
+      "max_absolute_difference": 1.9539925233402755e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 2.0769874340348623e-14,
+      "max_absolute_difference": 6.661338147750939e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 3.219589518900383e-14,
+      "max_absolute_difference": 1.1926223897340549e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 8.847355152117699e-16,
+      "max_absolute_difference": 2.6020852139652106e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "contrast_set",
+      "n_runtime": 5,
+      "n_oracle": 5,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "contrast_estimate_audit",
+      "n_values": 5,
+      "max_relative_difference": 1.6479873021779516e-13,
+      "max_absolute_difference": 6.591949208711867e-17,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "contrast_se",
+      "n_values": 5,
+      "max_relative_difference": 9.32593118303914e-16,
+      "max_absolute_difference": 1.734723475976807e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "adjusted_p",
+      "n_values": 5,
+      "max_relative_difference": 3.455049392723875e-14,
+      "max_absolute_difference": 2.7644553313166398e-14,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "metric": "limits",
+      "n_values": 10,
+      "max_relative_difference": 2.0138674268721986e-14,
+      "max_absolute_difference": 6.852157730108388e-17,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 3.050068701006351e-14,
+      "max_absolute_difference": 1.9539925233402755e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 2.0769874340348623e-14,
+      "max_absolute_difference": 6.661338147750939e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 3.219589518900383e-14,
+      "max_absolute_difference": 1.1926223897340549e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 8.847355152117699e-16,
+      "max_absolute_difference": 2.6020852139652106e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "contrast_set",
+      "n_runtime": 10,
+      "n_oracle": 10,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "contrast_estimate_audit",
+      "n_values": 10,
+      "max_relative_difference": 7.459310946699934e-14,
+      "max_absolute_difference": 4.0766001685454967e-17,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "contrast_se",
+      "n_values": 10,
+      "max_relative_difference": 1.4837465655913622e-15,
+      "max_absolute_difference": 1.951563910473908e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "adjusted_p",
+      "n_values": 10,
+      "max_relative_difference": 2.5785235430272936e-09,
+      "max_absolute_difference": 1.808242444667485e-11,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "metric": "limits",
+      "n_values": 20,
+      "max_relative_difference": 6.546801469409758e-10,
+      "max_absolute_difference": 2.9899260151067253e-13,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 3.050068701006351e-14,
+      "max_absolute_difference": 1.9539925233402755e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 2.0769874340348623e-14,
+      "max_absolute_difference": 6.661338147750939e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 3.219589518900383e-14,
+      "max_absolute_difference": 1.1926223897340549e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 8.847355152117699e-16,
+      "max_absolute_difference": 2.6020852139652106e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "contrast_set",
+      "n_runtime": 8,
+      "n_oracle": 8,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "contrast_estimate_audit",
+      "n_values": 8,
+      "max_relative_difference": 6.905882352941177,
+      "max_absolute_difference": 9.194034422677078e-17,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "contrast_se",
+      "n_values": 8,
+      "max_relative_difference": 1.2823155376678812e-15,
+      "max_absolute_difference": 2.3852447794681098e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "adjusted_p_vs_emmeans_default_precision",
+      "informational": true,
+      "max_absolute_difference": 0.00015672545572342766,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "adjusted_p_vs_high_precision_mvtnorm",
+      "n_values": 8,
+      "max_relative_difference": 6.792714730342101e-05,
+      "max_absolute_difference": 5.471048194483075e-07,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_simple_dunnett",
+      "metric": "dunnett_limits",
+      "max_difference_over_halfwidth": 0.000500262265468274,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "F",
+      "n_values": 3,
+      "max_relative_difference": 3.123564332355902e-14,
+      "max_absolute_difference": 1.4155343563970746e-14,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "p",
+      "n_values": 3,
+      "max_relative_difference": 1.3638558409305534e-14,
+      "max_absolute_difference": 6.8833827526759706e-15,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "df",
+      "n_values": 4,
+      "max_relative_difference": 0.0,
+      "max_absolute_difference": 0.0,
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "SS_from_saved_F",
+      "n_values": 3,
+      "max_relative_difference": 3.306021452293682e-14,
+      "max_absolute_difference": 8.673617379884035e-19,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "residual_sd",
+      "n_values": 1,
+      "max_relative_difference": 8.847355152117699e-16,
+      "max_absolute_difference": 2.6020852139652106e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "contrast_set",
+      "n_runtime": 10,
+      "n_oracle": 10,
+      "missing": [],
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "contrast_estimate_audit",
+      "n_values": 10,
+      "max_relative_difference": 7.459310946699934e-14,
+      "max_absolute_difference": 4.0766001685454967e-17,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "contrast_se",
+      "n_values": 10,
+      "max_relative_difference": 1.4837465655913622e-15,
+      "max_absolute_difference": 1.951563910473908e-18,
+      "relative_tolerance": 1e-08,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "adjusted_p",
+      "n_values": 10,
+      "max_relative_difference": 2.5785235430272936e-09,
+      "max_absolute_difference": 1.808242444667485e-11,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "metric": "limits",
+      "n_values": 20,
+      "max_relative_difference": 6.546801469409758e-10,
+      "max_absolute_difference": 2.9899260151067253e-13,
+      "relative_tolerance": 1e-06,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "fixture": "unbalanced_interaction",
+      "metric": "SS_II_differs_from_SS_III_main_effects",
+      "F_III": [
+        16.89597481501754,
+        4.874251952522679
+      ],
+      "F_II": [
+        20.458644392901313,
+        7.429980791152431
+      ],
+      "passed": true
+    }
+  ],
+  "published_example": [
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "ss_machine",
+      "printed": 0.000303,
+      "computed": 0.00030331999999999825,
+      "half_unit": 5e-07,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "ss_coolant",
+      "printed": 3.92e-06,
+      "computed": 3.919999999999741e-06,
+      "half_unit": 5e-09,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "ss_interaction",
+      "printed": 1.468e-05,
+      "computed": 1.4680000000000285e-05,
+      "half_unit": 5e-09,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "ss_residual",
+      "printed": 0.000346,
+      "computed": 0.00034600000000000017,
+      "half_unit": 5e-07,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "F_machine",
+      "printed": 8.8,
+      "computed": 8.766473988439252,
+      "half_unit": 0.05,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "F_coolant",
+      "printed": 0.45,
+      "computed": 0.453179190751415,
+      "half_unit": 0.005,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "F_interaction",
+      "printed": 0.42,
+      "computed": 0.4242774566474069,
+      "half_unit": 0.005,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "df_machine",
+      "printed": 4,
+      "computed": 4.0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "df_coolant",
+      "printed": 1,
+      "computed": 1.0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "df_interaction",
+      "printed": 4,
+      "computed": 4.0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "df_residual",
+      "printed": 40,
+      "computed": 40.0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_machine_marginal_tukey",
+      "quantity": "ms_residual",
+      "printed": 8.7e-06,
+      "computed": 8.650000000000004e-06,
+      "half_unit": 5e-08,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "ss_machine",
+      "printed": 0.000303,
+      "computed": 0.00030331999999999847,
+      "half_unit": 5e-07,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "ss_coolant",
+      "printed": 3.92e-06,
+      "computed": 3.919999999999738e-06,
+      "half_unit": 5e-09,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "ss_interaction",
+      "printed": 1.468e-05,
+      "computed": 1.4680000000000285e-05,
+      "half_unit": 5e-09,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "ss_residual",
+      "printed": 0.000346,
+      "computed": 0.00034600000000000017,
+      "half_unit": 5e-07,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "F_machine",
+      "printed": 8.8,
+      "computed": 8.766473988439259,
+      "half_unit": 0.05,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "F_coolant",
+      "printed": 0.45,
+      "computed": 0.4531791907514146,
+      "half_unit": 0.005,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "F_interaction",
+      "printed": 0.42,
+      "computed": 0.4242774566474069,
+      "half_unit": 0.005,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "df_machine",
+      "printed": 4,
+      "computed": 4.0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "df_coolant",
+      "printed": 1,
+      "computed": 1.0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "df_interaction",
+      "printed": 4,
+      "computed": 4.0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "df_residual",
+      "printed": 40,
+      "computed": 40.0,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_II_machine_marginal_tukey",
+      "quantity": "ms_residual",
+      "printed": 8.7e-06,
+      "computed": 8.650000000000004e-06,
+      "half_unit": 5e-08,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "quantity": "B_minus_A_M1",
+      "contrast": "B - A",
+      "printed_cell_mean_difference": 0.0005999999999999894,
+      "computed": 0.0005999999999999782,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "quantity": "B_minus_A_M2",
+      "contrast": "B - A",
+      "printed_cell_mean_difference": 0.0003999999999999976,
+      "computed": 0.00040000000000006957,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "quantity": "B_minus_A_M3",
+      "contrast": "B - A",
+      "printed_cell_mean_difference": -0.0010000000000000009,
+      "computed": -0.0009999999999999636,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "quantity": "B_minus_A_M4",
+      "contrast": "B - A",
+      "printed_cell_mean_difference": -0.00040000000000001146,
+      "computed": -0.00039999999999997416,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "fixture": "config_nist_III_coolant_simple_sidak",
+      "quantity": "B_minus_A_M5",
+      "contrast": "B - A",
+      "printed_cell_mean_difference": -0.0023999999999999994,
+      "computed": -0.0024000000000000176,
+      "tolerance": 0.0001,
+      "passed": true
+    }
+  ],
+  "oracle_versions": {
+    "R": "R version 4.6.0 (2026-04-24)",
+    "car": "3.1.5",
+    "emmeans": "2.0.4",
+    "mvtnorm": "1.4.2"
+  },
+  "source_manifest": "fixtures/factorial_0154/source_manifest.json",
+  "plan": "plans/RELEASE_0.15.4_PLAN.md",
+  "script_sha256": "fd649ef97165b24ea926d561ab58c054097d1662e54d665f80da410ff9847397"
+}

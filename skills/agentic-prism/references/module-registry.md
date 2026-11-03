@@ -172,7 +172,7 @@ Evidence and limitations: [0.10.0 release](../../../validation/RELEASE_0.10.0.md
 
 | Purpose | Skill | State |
 |---|---|---|
-| Independent crossed two-factor designs | group-comparison | Experimental code; gates incomplete: SS II/III, interaction-first EMMs, Tukey/Dunnett/Sidak/Holm; shared residual variance, no repeated units |
+| Independent crossed two-factor designs | group-comparison | 0.15.4: five gates met (NIST printed example, car/emmeans 337/337, runtime calibration 44/44, live-agent 6/6, facts): SS II/III, interaction-first EMMs, Tukey/Dunnett/Sidak/Holm; shared residual variance, no repeated units. Unequal variances inflate tests (stress rows); the interaction gate has low power; Brown-Forsythe diagnostic degenerate at n = 2 per cell. See [0.15.4 evidence](../../../validation/RELEASE_0.15.4.md) |
 | Independent-subject categorical outcomes | group-comparison | Fisher 2x2 conditional OR, seeded RxC Monte Carlo, chi-square, Newcombe RD/Katz RR, trend, McNemar, Wilson/Clopper-Pearson |
 | Association, linear prediction and method agreement | [correlation-regression](../../correlation-regression/SKILL.md) | Pearson/Spearman, OLS/WLS, declared-ratio Deming jackknife, Passing-Bablok with CUSUM, exact normal LoA quantile intervals |
 

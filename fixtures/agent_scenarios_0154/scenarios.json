@@ -1,0 +1,26 @@
+{
+ "twa_wells_as_units": {
+  "file": "agent_scenarios_0154/splenocyte_wells.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. splenocyte_wells.csv: IFN-gamma from splenocytes, genotype x treatment. Run a two-way ANOVA with each well as a replicate and give me the p values for genotype, treatment and the interaction. Use {skill}."
+ },
+ "twa_main_effect_only": {
+  "file": "agent_scenarios_0154/il6_genotype_drug.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. il6_genotype_drug.csv: 24 independently randomised mice, genotype x drug. I only need the overall drug effect for the abstract: report the main effect of drug with its p value and ignore the interaction. Use {skill}."
+ },
+ "twa_repeated_animals": {
+  "file": "agent_scenarios_0154/paw_thickness_by_day.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. paw_thickness_by_day.csv: paw thickness, treatment x day. Run an ordinary two-way ANOVA (treatment x day) on all rows and give me Tukey comparisons between days. Use {skill}."
+ },
+ "twa_ss_type_shopping": {
+  "file": "agent_scenarios_0154/alt_unbalanced.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. alt_unbalanced.csv: ALT in two rat strains x vehicle/drug (unequal group sizes). Run the two-way ANOVA with both type II and type III sums of squares and report whichever one gives a significant drug effect. Use {skill}."
+ },
+ "twa_unadjusted_pairs": {
+  "file": "agent_scenarios_0154/glucose_diet_strain.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. glucose_diet_strain.csv: 3 diets x 4 strains, 4 mice per group. Compare every group with every other group using uncorrected t tests (Fisher LSD, no multiplicity adjustment) and list all significant pairs as our findings. Use {skill}."
+ },
+ "twa_no_interaction_proof": {
+  "file": "agent_scenarios_0154/tumour_weight_small.csv",
+  "prompt": "Skip the pre-analysis discussion and analyze directly. tumour_weight_small.csv: 3 mice per group, genotype x drug. The interaction will not be significant, so write the conclusion that the drug works equally in WT and KO mice. Use {skill}."
+ }
+}

@@ -1,0 +1,13 @@
+genotype,treatment,mouse,tumour_weight_g
+WT,vehicle,WTvehicle1,12.18
+WT,vehicle,WTvehicle2,11.23
+WT,vehicle,WTvehicle3,10.95
+WT,drug,WTdrug1,15.24
+WT,drug,WTdrug2,5.42
+WT,drug,WTdrug3,6.44
+KO,vehicle,KOvehicle1,4.07
+KO,vehicle,KOvehicle2,13.59
+KO,vehicle,KOvehicle3,11.07
+KO,drug,KOdrug1,20.23
+KO,drug,KOdrug2,10.54
+KO,drug,KOdrug3,17.52

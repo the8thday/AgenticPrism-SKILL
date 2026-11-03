@@ -1,0 +1,27 @@
+{
+  "version": "0.15.4",
+  "archive_commit": "1d5a231bae2fece436603a6c3ba1c9b0ac9bb4ba",
+  "build_source": "clean git archive",
+  "python_source_files_exact": 131,
+  "packaged_r_scripts_exact": [
+    "agentic_prism/r_scripts/install.R",
+    "agentic_prism/r_scripts/packages.csv",
+    "agentic_prism/r_scripts/runner.R",
+    "agentic_prism/r_scripts_pk/packages.csv",
+    "agentic_prism/r_scripts_pk/pk_runner.R",
+    "agentic_prism/r_scripts_pop/install_pop.R",
+    "agentic_prism/r_scripts_pop/packages.csv",
+    "agentic_prism/r_scripts_pop/pop_runner.R"
+  ],
+  "artifacts": [
+    {
+      "path": "dist/agentic_prism-0.15.4-py3-none-any.whl",
+      "sha256": "cfa6c2c415b0ebb274ab99ebd56eee87239da5d1100b0a25738b6df642827021"
+    },
+    {
+      "path": "dist/agentic_prism-0.15.4.tar.gz",
+      "sha256": "f5e85ca20e26f77af60748f720e0f566b680fa69768139fe9a508e3ea896da06"
+    }
+  ],
+  "superseded_moved": []
+}

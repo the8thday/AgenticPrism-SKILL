@@ -1,0 +1,9 @@
+observation_id,independent_unit_id,factor_a,factor_b,value
+s1,m1,A1,B1,4.7277
+s2,m2,A1,B1,5.8102
+s3,m3,A1,B2,5.1177
+s4,m4,A1,B2,5.3721
+s5,m5,A2,B1,6.8779
+s6,m6,A2,B1,5.7157
+s7,m7,A2,B2,6.378
+s8,m8,A2,B2,7.1166

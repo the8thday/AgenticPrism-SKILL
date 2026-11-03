@@ -1,0 +1,23 @@
+{
+ "schema_version": 1,
+ "analysis_type": "factorial_anova",
+ "input": "unbalanced_additive.csv",
+ "source": "Synthetic 0.15.4 fixture (scripts/prepare_factorial_0154_fixtures.py, seed 20261103); not study data",
+ "assay": {
+  "independent_units": true,
+  "unit_definition": "one independently randomised animal",
+  "rationale": "Each row is one independent unit randomised to one crossed cell (fixture)",
+  "predeclared": true
+ },
+ "method": "two_way",
+ "confidence_level": 0.95,
+ "factorial": {
+  "ss_type": "II",
+  "ss_reason": "Declared before analysis (fixture)",
+  "interaction_alpha": 0.05,
+  "factor": "factor_b",
+  "scope": "marginal",
+  "adjustment": "holm",
+  "control": null
+ }
+}

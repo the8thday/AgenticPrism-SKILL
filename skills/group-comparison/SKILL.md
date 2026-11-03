@@ -51,6 +51,11 @@ is material. Contrast families and thresholds must be declared before analysis.
 For categorical outcomes, technical wells cannot supply independent subject
 counts. Disclose expected counts below five and exact versus Monte Carlo
 methods. All results, including older two/multi-group runs, have saved facts.
+Two-way evidence (0.15.4): NIST printed example, car/emmeans and a runtime
+calibration are in [the release record](../../validation/RELEASE_0.15.4.md). A
+non-significant interaction is weak evidence of additivity (the gate often misses
+real interactions); unequal variances inflate the tests; with two units per cell
+the Brown-Forsythe variance diagnostic is degenerate and must not be read.
 
 ## Nested replicates (0.13.2, `analysis_type=nested_comparison`)
 

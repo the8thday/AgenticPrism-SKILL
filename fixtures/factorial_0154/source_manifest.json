@@ -1,0 +1,60 @@
+{
+ "public_sources": {
+  "nist_machine_coolant.csv": {
+   "original": "CHARACTERIZE-3_2_3_2.DAT",
+   "url": "https://www.itl.nist.gov/div898/handbook/datasets/CHARACTERIZE-3_2_3_2.DAT",
+   "page": "https://www.itl.nist.gov/div898/handbook/ppc/section2/ppc232.htm",
+   "source": "NIST/SEMATECH e-Handbook of Statistical Methods; data provided by Barry Hembre of AMD",
+   "licence": "US Government work (NIST), public domain",
+   "mapping": "factor_a = M + MACHINE, factor_b = COOLANT, value = DIAMETER; row order kept"
+  }
+ },
+ "synthetic": {
+  "seed": 20261103,
+  "cell_sizes_factor_a_by_factor_b": [
+   [
+    2,
+    5,
+    3,
+    7
+   ],
+   [
+    6,
+    2,
+    4,
+    3
+   ],
+   [
+    3,
+    8,
+    2,
+    5
+   ]
+  ],
+  "a_effects": [
+   0.0,
+   1.0,
+   1.8
+  ],
+  "b_effects": [
+   0.0,
+   0.5,
+   -0.4,
+   1.2
+  ],
+  "interaction_cells_0_based": {
+   "1,2": 2.0,
+   "2,0": -1.5
+  },
+  "sd": 1.0,
+  "crossover": "mean 10 + 3 if (i + j) odd else 10 - 3, same cell sizes, sd 1"
+ },
+ "sha256": {
+  "CHARACTERIZE-3_2_3_2.DAT": "6326ae7507c28d47e5f6279bf8b0bd88be079611199e749c990e35e0c56d1c9a",
+  "minimal_2x2.csv": "1de98e82378ac17ddf526b6d55c04b7acd27681d50f1f15da64ee6cf51059270",
+  "nist_machine_coolant.csv": "1211ccd39fbbd293eac5fdbce3ab96df3421e9a53fdc5f99e2b31b0526f5a341",
+  "unbalanced_additive.csv": "a5b38a4abd4fd178c3cd2ddff41fa0a0a7f890b15c13b185ddeec6ae7de308c1",
+  "unbalanced_crossover.csv": "8a72562776d56beacaea9bbed75f8d47611c1e1e72665cb21a0eb5c7d85770d7",
+  "unbalanced_interaction.csv": "884a9a9d6b52ca0095b6639ddcecbbf322b876afeae2acf30f19e67deb20e76f"
+ }
+}

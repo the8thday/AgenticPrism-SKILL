@@ -101,6 +101,18 @@ Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
 
+## 0.15.4 (in development) — evidence for independent two-way ANOVA
+
+No new method: the evidence gates for the 0.11.1 independent two-way ANOVA (`group-comparison`,
+SS II/III, interaction first, Tukey/Dunnett/Sidak/Holm) are completed. The NIST/SEMATECH
+e-Handbook machine × coolant ANOVA table is reproduced at printed precision; 337/337 checks agree
+with R car/emmeans on balanced, unbalanced and minimal designs, including simultaneous interval
+limits; a registered calibration of this runtime passed 44/44 criteria (F-test size, family-wise
+error and simultaneous coverage). Unequal variances inflate the tests (false-positive rate up to
+0.44 when the most variable cells are the smallest), and the interaction test often misses a real
+interaction, so a non-significant interaction does not establish additivity; both are stated in
+every result. Live-agent misuse scenarios 6/6. See [release evidence](validation/RELEASE_0.15.4.md).
+
 ## 0.15.3 (in development) — quantal dose response and ordinal scores
 
 ED50/LD50 and other effective doses from responder or mortality counts (`quantal-dose-response`)

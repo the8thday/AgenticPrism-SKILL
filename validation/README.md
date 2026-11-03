@@ -1,4 +1,12 @@
-# Validation — AgenticPrism development 0.14.4
+# Validation — AgenticPrism development 0.15.4
+
+## 0.15.4 (in development) — two-way ANOVA evidence gates
+
+[Release evidence](RELEASE_0.15.4.md). No estimator change. NIST/SEMATECH e-Handbook 3.2.3.2 printed
+ANOVA reproduced (29/29); car/emmeans/mvtnorm oracle 337/337 on balanced, unbalanced and minimal
+designs (attempts 1 and 2 kept); registered runtime calibration 44/44 with heteroscedastic stress
+(F size up to 0.44) and low interaction-gate power disclosed; live-agent 6/6 (not blinded).
+Releases 0.15.0–0.15.3 are recorded in their RELEASE files.
 
 ## 0.14.4 (in development) — exploratory PCA and clustering
 

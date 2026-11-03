@@ -1,0 +1,23 @@
+{
+ "schema_version": 1,
+ "analysis_type": "factorial_anova",
+ "input": "nist_machine_coolant.csv",
+ "source": "NIST/SEMATECH e-Handbook of Statistical Methods, section 3.2.3.2 (machine x coolant pin diameters); CHARACTERIZE-3_2_3_2.DAT, public domain",
+ "assay": {
+  "independent_units": true,
+  "unit_definition": "one turned pin",
+  "rationale": "Each row is one independent unit randomised to one crossed cell (fixture)",
+  "predeclared": true
+ },
+ "method": "two_way",
+ "confidence_level": 0.95,
+ "factorial": {
+  "ss_type": "II",
+  "ss_reason": "Declared before analysis (fixture)",
+  "interaction_alpha": 0.05,
+  "factor": "factor_a",
+  "scope": "marginal",
+  "adjustment": "tukey",
+  "control": null
+ }
+}

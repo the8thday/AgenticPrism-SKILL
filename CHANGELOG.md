@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.4 (in development) — two-way ANOVA evidence gates
+
+- No estimator change. `factorial_anova` results and facts gain `validation_evidence_0154` and its `must_mention` lines; every other artifact is byte-identical to 0.15.3.
+- Evidence: NIST/SEMATECH e-Handbook 3.2.3.2 printed ANOVA reproduced (29/29); R car/emmeans/mvtnorm oracle 337/337 (attempt 1 with four Dunnett p misses from emmeans' default precision and attempt 2 without the withholding check kept); registered calibration of the runtime 44/44 with heteroscedastic, heavy-tail and gate-power rows disclosed; live-agent scenarios 6/6. The 0.11.1 calibration (statsmodels, not the runtime) and its interaction miss stay recorded. See `validation/RELEASE_0.15.4.md`.
+
 ## 0.15.3 (in development) — quantal dose response and ordinal scores
 
 - New `quantal_dose_response` (`quantal-dose-response` Skill): probit/logit/cloglog ML for responder counts, natural response none/Abbott/estimated, Finney heterogeneity policy, EDp with Fieller limits (withheld when unbounded, extrapolated or separated), parallel-line relative potency.

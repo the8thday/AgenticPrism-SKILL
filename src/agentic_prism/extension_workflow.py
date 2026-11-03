@@ -108,6 +108,9 @@ def analyze_extension(config_path,output,render=True):
    if r['analysis_type'] in EVIDENCE:
     r['validation_evidence']=EVIDENCE[r['analysis_type']];r['must_mention']+=r['validation_evidence']['must_mention']
   except ImportError:pass
+  if r['analysis_type']=='factorial_anova':
+   from .evidence_0154 import EVIDENCE as E154
+   r['validation_evidence_0154']=E154['factorial_anova'];r['must_mention']+=E154['factorial_anova']['must_mention']
   if r['analysis_type']=='epitope_binning':
    from .evidence_0121 import EVIDENCE
    r['validation_evidence']=EVIDENCE[r['analysis_type']];r['must_mention']+=r['validation_evidence']['must_mention']

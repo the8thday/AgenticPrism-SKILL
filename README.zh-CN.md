@@ -87,6 +87,10 @@ issue 反馈真实项目数据上的使用情况。
 各模块的具体限制见[模块登记表](skills/agentic-prism/references/module-registry.md)
 和对应的发布记录；所有校准失败都保留在 `validation/` 中。
 
+## 0.15.4（开发中）——独立样本双因素 ANOVA 的验证证据
+
+没有新增方法，只补齐 0.11.1 独立样本双因素 ANOVA（`group-comparison`：SS II/III、先看交互、Tukey/Dunnett/Sidak/Holm）的证据门槛。已在印刷精度上复现 NIST/SEMATECH e-Handbook 的机床 × 冷却液 ANOVA 表；在平衡、非平衡和最小设计上与 R car/emmeans 比对 337/337 项一致，包括同时置信区间端点；对本运行时的预注册校准 44/44 项通过（F 检验水平、族错误率和同时覆盖率）。方差不齐会使检验偏松（变异最大的格恰好样本最少时，假阳性率最高达 0.44）；交互检验也常常检测不到真实存在的交互，因此交互不显著并不能说明效应可加。这两点都会写进每次的结果。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.15.4.md)。
+
 ## 0.15.3（开发中）——定性剂量反应与有序评分
 
 由应答或死亡计数估计 ED50/LD50 及其他有效剂量（`quantal-dose-response`）：probit、logit 或 cloglog 最大似然，给出 Fieller 置信限，可处理对照组背景反应，支持 Finney 异质性校正和平行线相对效价；超出试验剂量范围或置信限无界的有效剂量暂不报告。病理分级等有序评分（`ordinal-scores`）用比例优势模型和轮廓似然区间分析，不再对平均分做 t 检验。已复现 Finney 书中印出的鱼藤酮算例。校准中 ED50 区间覆盖率为 95%；小样本有序评分的轮廓区间覆盖略低（0.924），比例优势检验的检验效能也很低，两者都会写明。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.15.3.md)。
