@@ -1,5 +1,11 @@
 # Validation — AgenticPrism development 0.15.4
 
+## Plain-request install from GitHub (2026-11-10)
+
+[Results](agent-scenarios/0.15.4-install/RESULTS.md). Claude Code, Codex and Hermes, one run each, macOS, criteria fixed first:
+install criteria met 3/3; the full criteria 0/3, because the registered turns never answered the Skill's analysis choice. A
+post-hoc turn completed the comparison for Claude Code and Codex. The isolation sandbox failed for Hermes; two agents installed without asking first.
+
 ## 0.15.4 (in development) — two-way ANOVA evidence gates
 
 [Release evidence](RELEASE_0.15.4.md). No estimator change. NIST/SEMATECH e-Handbook 3.2.3.2 printed
