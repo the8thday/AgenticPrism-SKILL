@@ -1,6 +1,13 @@
 # Changelog
 
-## 0.15.4 (in development) — two-way ANOVA evidence gates
+## Documentation sync (2026-11-10)
+
+No code or numerical change; still 0.15.4. READMEs, install and development notes, the registry entry
+for Prism extraction and package metadata now describe the current state: 45 Skills, R for KR, NCA and
+population PK, PK as runtime types, coverage and evidence tables through 0.15.4, and limits that later
+releases had removed. Prism extraction is labelled experimental. Tagged versions lose "in development".
+
+## 0.15.4 — two-way ANOVA evidence gates
 
 - No estimator change. `factorial_anova` results and facts gain `validation_evidence_0154` and its `must_mention` lines; every other artifact is byte-identical to 0.15.3.
 - Evidence: NIST/SEMATECH e-Handbook 3.2.3.2 printed ANOVA reproduced (29/29); R car/emmeans/mvtnorm oracle 337/337 (attempt 1 with four Dunnett p misses from emmeans' default precision and attempt 2 without the withholding check kept); registered calibration of the runtime 44/44 with heteroscedastic, heavy-tail and gate-power rows disclosed; live-agent scenarios 6/6. The 0.11.1 calibration (statsmodels, not the runtime) and its interaction miss stay recorded. See `validation/RELEASE_0.15.4.md`.
@@ -27,19 +34,19 @@
 - Evidence: WinNonlin values printed by Kim et al. 2018 (Theoph subject 8) reproduced to the printed digits; independent formula recheck of 1,034 values within 7e-15; registered calibration 6/6 (the power model rarely concludes proportionality in small studies, disclosed); live-agent scenarios 6/6 (first attempt rate-limited, kept). Legacy: 273 configurations byte-identical. See `validation/RELEASE_0.15.0.md`.
 - Population-PK template fixed for nlmixr2 7.x (`nlmixr2est::nlmixr2`) and executed. Roadmap 0.15-0.16 added.
 
-## Unreleased — Prism extraction review fixes (2026-10-23)
+## Experimental — Prism extraction review fixes (2026-10-23)
 
 - Native cell-flag tokens outside the publicly observed set (plus `EXCLUDED`) now raise `unrecognized_cell_attribute` and leave otherwise unmarked cells unknown instead of "not marked". Explicit `EXCLUDED` is unchanged. Row ranges accept ASCII digits only.
 - Non-string `formatVersion`, sheet/table uids and result `dataSheet` links become issues instead of aborting the import. `verify-prism` rejects files the manifest does not record. The validation script uses explicit checks that survive `python -O`.
 - Public demo extraction unchanged apart from the parser hash; schema stays `prism-extraction/2`; no statistical change. See [evidence](validation/PRISM_REVIEW_FIXES_2026-10-23.md).
 
-## Unreleased — native Prism compatibility follow-up (2026-10-20)
+## Experimental — native Prism compatibility follow-up (2026-10-20)
 
 - Add scoped `1-2-0` storage-role recognition and correctly separate implicit X series from physical CSV columns. The profile does not claim every table format supported by that Prism version.
 - Expose native EXCLUDED bits per row without removing values. Invalid or ambiguous default/range combinations remain unknown; stored exclusion is separate from analysis dataset selection. New independent synthetic tests contain no private file content.
 - Extraction schema advances to `prism-extraction/2`; existing /1 manifests remain verifiable. Runtime stays 0.14.4 and statistical methods are unchanged. See [evidence](validation/PRISM_NATIVE_SEMANTICS_2026-10-20.md).
 
-## Unreleased — Prism file extraction (2026-10-19)
+## Experimental — Prism file extraction (2026-10-19)
 
 - Add local `inspect-prism`, `import-prism`, `verify-prism` and an `import-prism` Skill for `.prism`/`.pzfx` stored data. Preserve raw strings, metadata, excluded values and original bytes; describe storage versus display formats without conversion or fitting.
 - Separate input tables, saved results and unlinked CSVs. Preserve opaque binary/template payloads in the source snapshot; unknown native versions receive unverified roles. No statistical changes or version bump. See [scope and checks](validation/PRISM_IMPORT_2026-10-19.md).
@@ -67,7 +74,7 @@
 - `growth-rate-inhibition` opt-in `fit.grmax_definition: fitted_minimum_top_two`: GRmax from the selected fit at the two highest doses; registered calibration 3/3 with mean bias near zero (authors' observed definition −0.007 to −0.037 on the same draws); runs high with under one control doubling (disclosed). Default unchanged.
 - Live-agent misuse scenarios for the three additions: 6/6 (one weaker than designed). Legacy check: 235 configurations, 1,689 artifacts byte-identical against 0.14.0.
 
-## 0.14.0 (in development) — discovery batch
+## 0.14.0 — discovery batch
 
 - New `censored_comparison` and `censored-data` Skill: group comparisons with values below/above quantification limits kept as censored (censored lognormal ML with geometric-mean ratios, or Peto-Peto rank test); no substitution. R survival oracle 6/6; registered calibration 10/10 with a retained convergence-check defect (fixed, post-hoc rerun 10/10); published-example gate unmet; live-agent scenarios 6/6. See `validation/RELEASE_0.14.0.md`.
 - New `potency_ranking` and `potency-ranking` Skill: many candidates against a same-experiment benchmark with Holm p values, Bonferroni simultaneous intervals, prespecified fold tiers and withholding of candidates with non-estimable runs. Base-R oracle 4/4; registered calibration 11/11 with low-power rows disclosed; published-example gate unmet; live-agent scenarios 6/6.

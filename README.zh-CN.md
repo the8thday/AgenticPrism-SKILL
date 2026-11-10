@@ -5,16 +5,16 @@
 [English](README.md) | **简体中文** | [版本历史（英文）](CHANGELOG.md)
 
 面向抗体与生物药研发的统计分析 Agent Skill 集合，覆盖从结合表征、体外功能、
-体内药效，到生物分析方法学验证、免疫原性和 CMC 质量（稳定性、效价、可比性、
-质量标准）。AI Agent 读取 Skill，先确认分析是否适用于这个实验，再写出明确的
-JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保存输入、配置、哈希、
+体内药效、药代动力学，到生物分析方法学验证、免疫原性和 CMC 质量（稳定性、效价、
+可比性、质量标准）。AI Agent 读取 Skill，先确认分析是否适用于这个实验，再写出明确的
+JSON 配置，调用同一个版本化的 Python 计算包（PK 估计交给锁定版本的 R 包完成）。每次运行都保存输入、配置、哈希、
 结果、诊断以及可离线打开的 HTML 报告。所有模块都会生成
 `interpretation_facts.json`，即 Agent 写结论必须依据的内容：主要结果、哪些可以
 报告或被扣留及原因、必须说明的事项和限制。已有的运行结果不会被改写。
 每个方法都与公认实现比对、用模拟做校准，并用真实 Agent 在误用场景下测试行为
 （[详见](#不只测数值还用真实-agent-测行为)）。
 
-## 读取 GraphPad 项目文件（本地开发版，尚未发布）
+## 读取 GraphPad 项目文件（实验性）
 
 新增 [import-prism](skills/import-prism/SKILL.md)，可以本地读取 `.prism` 和 `.pzfx`，
 客观保留文件内的值，并说明每张表、每列的含义。区分输入数据、已保存的分析结果和
@@ -35,19 +35,18 @@ JSON 配置，调用同一个版本化的 Python 计算包。每次运行都保�
 不需要安装 Prism、MCP 服务或新增依赖，也未改变已有统计方法。
 [数据契约](skills/import-prism/references/input-and-output.md) ·
 [检查记录](validation/PRISM_IMPORT_2026-10-19.md)。
+目前属于实验性功能：真实 Agent 场景测试和与 Prism 软件本身的对照尚未完成。
 
-## 基于 R 生态的 PK 指引初版
+## 通过 R 完成的 PK 分析
 
-2026-10-13 本地初稿将 [PK/NCA（PKNCA）](skills/pk-nca/SKILL.md) 与
-[群体 PK（nlmixr2）](skills/population-pk/SKILL.md) 分成两个 Skill。
-由成熟 R 包承担计算，Skill 负责研究设计、数据映射、调用流程、诊断和解释，
-不重写估计器，也不新增 Python CLI 分析类型。两个 Skill 均提供输入/输出契约和
-小型 R 教学模板；facts 和报告是分析时应遵循的指引，尚未实现自动生成。
-
-模板已做语法检查，但当前检查的 R 环境没有安装所需包，因此尚未跑通数值分析，
-也不宣称验证通过。PD、TMDD 和更广的 PK 模型留待后续扩展。
-运行时版本仍为 0.13.5；前文的 Python 工作流和验证描述适用于已有模块，
-不适用于这两个原型。见[初版范围与检查记录](validation/PK_R_SKILLS_PROTOTYPE_2026-10-13.md)。
+[PK/NCA（PKNCA）](skills/pk-nca/SKILL.md)（`pk_nca`，0.15.0）和
+[群体 PK（nlmixr2）](skills/population-pk/SKILL.md)（`population_pk`，0.15.1，含
+Michaelis-Menten 和 QSS-TMDD 模型）已是运行时分析类型。估计由成熟 R 包经固定且锁定版本的
+桥接完成，用 `python3 install.py --with-r-pk` 和 `--with-r-pop` 安装。NCA 仅支持单剂量；
+群体 PK 不含协变量、PD、M3 BLQ 处理和 VPC。PD 反应模型留待后续。
+这两个运行时类型取代了 2026-10-13 的指引原型。见
+[0.15.0](validation/RELEASE_0.15.0.md) 和 [0.15.1](validation/RELEASE_0.15.1.md)
+发布证据；历史情况见[原型记录](validation/PK_R_SKILLS_PROTOTYPE_2026-10-13.md)。
 
 ## 可选的分析前讨论
 
@@ -69,7 +68,7 @@ Prompt 中已经明确要讨论或跳过的，就不重复询问；转交专科 
 （interpretation facts），都是为了说明：由 Agent 完成的统计分析同样可以核对、
 可以复现、值得信任。
 
-## 状态：公开测试版 0.13.5
+## 状态：公开测试版 0.15.4
 
 AgenticPrism 供科研分析使用。它**没有**按 GLP/GMP 或法规申报要求（例如
 21 CFR Part 11）做过计算机化系统验证；如果某项决策依赖分析结果，仍需统计人员
@@ -79,15 +78,19 @@ issue 反馈真实项目数据上的使用情况。
 
 | 成熟度 | 模块 |
 |---|---|
-| 已与参考实现比对并完成校准 | 平衡 KD、1:1 动力学、4PL 剂量反应与相对效价、ELISA、两组与多组比较、秩检验、重复测量与 MMRM、生存分析、肿瘤生长、ADA cut point、方差组分、方法学验证、稳定性、效价测定、可比性、质量标准、常规统计（0.11.1） |
+| 已与参考实现比对并完成校准 | 平衡 KD、1:1 动力学、4PL 剂量反应与相对效价、ELISA、两组与多组比较、秩检验、重复测量与 MMRM、生存分析、肿瘤生长、ADA cut point、方差组分、方法学验证、稳定性、效价测定、可比性、质量标准、常规统计（0.11.1；双因素 ANOVA 的证据在 0.15.4 补齐） |
 | 可用，但有明确限制 | 亲和力扩展与细胞结合（无公开实例验证）、复杂表面动力学（默认设置下 bootstrap 区间未校准）、表位分选（无公开实例验证）、药物联用（Loewe/ZIP 与 synergyfinder 不完全一致） |
 | 探索性 | 使用默认预测 t 参考分布的 HTS 命中判定（全零假设下假命中率高于名义水平） |
 | 0.13.1 新增（真实 Agent 场景 10/10 通过；尚无公开实例验证） | 使用可选布局模拟参考分布的 HTS 命中、5PL 与钟形剂量反应、ISR 与 carry-over、样本量与功效、竞争风险、热稳定性 |
+| 0.13.2–0.13.5 日常分析（已做 R 参考比对和注册校准；公开实例验证大多未达到） | 嵌套比较、ANCOVA、曲线 AUC（含配对设计）、线性/二次标准曲线、qPCR、非线性模型库、4PL 充分性门槛与相对 ECx/ICx、单样本与比值检验（保留一项对数比值覆盖率未达标）、多变量回归/GLM |
+| 0.13.6–0.14.4（已做参考比对和注册校准，未达标项保留；部分有公开实例） | ROC 分析、评价者一致性（二分类 kappa 覆盖率未达标）、预先声明的离群值标记、删失数据、效价排序、GR 指标、带多重比较控制的面板比较、酶抑制、受体占有率、探索性 PCA 与聚类 |
+| 0.15.0–0.15.3 PK 与早期开发 | PKNCA 非房室分析（已复现公开的 WinNonlin 算例）、nlmixr2 群体 PK 与 TMDD（印出估计值的门槛未达到；仅凭 PK 数据很少能识别靶点参数）、首次人体剂量计算（仅用于设计；MABEL 和异速放大的公开算例未达到）、定性剂量反应（已复现公开算例）、有序评分（一项覆盖率未达标；印出数值的门槛未达到） |
+| 实验性 | GraphPad `.prism`/`.pzfx` 存储数据提取（尚无真实 Agent 场景测试，也未与 Prism 软件本身对照） |
 
 各模块的具体限制见[模块登记表](skills/agentic-prism/references/module-registry.md)
 和对应的发布记录；所有校准失败都保留在 `validation/` 中。
 
-## 0.15.4（开发中）——独立样本双因素 ANOVA 的验证证据
+## 0.15.4——独立样本双因素 ANOVA 的验证证据
 
 没有新增方法，只补齐 0.11.1 独立样本双因素 ANOVA（`group-comparison`：SS II/III、先看交互、Tukey/Dunnett/Sidak/Holm）的证据门槛。已在印刷精度上复现 NIST/SEMATECH e-Handbook 的机床 × 冷却液 ANOVA 表；在平衡、非平衡和最小设计上与 R car/emmeans 比对 337/337 项一致，包括同时置信区间端点；对本运行时的预注册校准 44/44 项通过（F 检验水平、族错误率和同时覆盖率）。方差不齐会使检验偏松（变异最大的格恰好样本最少时，假阳性率最高达 0.44）；交互检验也常常检测不到真实存在的交互，因此交互不显著并不能说明效应可加。这两点都会写进每次的结果。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.15.4.md)。
 
@@ -123,7 +126,7 @@ issue 反馈真实项目数据上的使用情况。
 
 同一批供者前后配对采样、且部分数值低于定量下限时，现在可以直接比较，不删样本，也不替换数值（`censored-data`）：可选 Helsel 删失配对差值法或删失符号检验。结果与 NADA2 参考代码和 R survival 一致，包括 NADA2 自带的示例数据。第一次预注册校准沿用 NADA2 的 z 检验推断，在 20 对样本下偏乐观；这份记录保留。改用小样本 t 校正作为默认后，第二次预注册校准全部通过。面板比较可通过可选的 `censoring` 设置纳入含删失值的指标，不必把它们剔除。GR 分析可以声明用拟合曲线定义 GRmax，校准中消除了作者定义的偏低问题。这些新增内容都没有找到已发表的数值示例。真实 Agent 误用场景 6/6 通过。见[发布证据](validation/RELEASE_0.14.1.md)。
 
-## 0.14.0（开发中）——早研批次
+## 0.14.0——早研批次
 
 低于定量下限的值按删失处理，不再替换为 0 或 LLOQ/2（`censored_comparison`）：删失对数正态最大似然给出几何均值比，Peto-Peto 秩检验比较分布。所有固定数据集与 R survival 一致。预注册校准中，过严的收敛判定误把部分已收敛的拟合标为暂不报告；修正后的事后补充校准全部判据通过。未找到已发表的数值示例。见[发布证据](validation/RELEASE_0.14.0.md)。
 
@@ -225,7 +228,25 @@ Bliss、Loewe、HSA、ZIP 组合参考模型与独立矩阵不确定性；HTS �
 | 各阶段通用 | 衰减、结合、增长与酶动力学 | [nonlinear-models](skills/nonlinear-models/SKILL.md) | 一相/两相衰减、结合、指数与 logistic 增长、Michaelis–Menten；profile 区间、半衰期与设计支持门槛 |
 | 各阶段通用 | 样本量与功效规划 | [sample-size](skills/sample-size/SKILL.md) | 精确非中心 t/F 与 TOST 功效，反正弦或合并正态的比例检验，Schoenfeld log-rank 事件数；假设须注明来源，附功效曲线与敏感性分析 |
 | 各阶段通用 | 单样本与比值检验 | [group-comparison](skills/group-comparison/SKILL.md) | 有来源的理论值与单样本 t；正值几何均值检验、配对及独立比值 |
-| 各阶段通用 | 组间比较 | [group-comparison](skills/group-comparison/SKILL.md) | Welch 或配对 t 检验，单因素 ANOVA 加 Dunnett/Tukey/Games-Howell/Holm 比较族，Mann–Whitney 与 signed-rank（Hodges–Lehmann），Kruskal–Wallis + Dunn，Friedman |
+| 各阶段通用 | 组间比较 | [group-comparison](skills/group-comparison/SKILL.md) | Welch 或配对 t 检验，单因素 ANOVA 加 Dunnett/Tukey/Games-Howell/Holm 比较族，独立样本双因素 ANOVA（SS II/III，先看交互），Mann–Whitney 与 signed-rank（Hodges–Lehmann），Kruskal–Wallis + Dunn，Friedman |
+| 各阶段通用 | 高于或低于定量限的数值 | [censored-data](skills/censored-data/SKILL.md) | 删失对数正态最大似然、Peto-Peto、Helsel 配对差值和删失符号检验；不做替换 |
+| 各阶段通用 | 一次比较多个指标 | [panel-comparison](skills/panel-comparison/SKILL.md) | 声明指标族，Holm 或 Benjamini-Hochberg 校正；拒绝未声明的指标；可纳入删失指标 |
+| 各阶段通用 | 预先声明的离群值标记 | [outlier-flagging](skills/outlier-flagging/SKILL.md) | 在声明的分组内做 Grubbs、广义 ESD 和 ROUT；只标记，不删除数据 |
+| 各阶段通用 | 相关、线性预测与方法一致性 | [correlation-regression](skills/correlation-regression/SKILL.md) | Pearson/Spearman、OLS/WLS、声明误差比的 Deming、Passing-Bablok、一致性界限 |
+| 各阶段通用 | 单个结局、多个预测变量 | [multivariable-regression](skills/multivariable-regression/SKILL.md) | Gaussian OLS/HC3、二项 logit、带暴露量/偏移的 Poisson 和 quasi-Poisson；独立单位 |
+| 各阶段通用 | 诊断准确性 | [diagnostic-accuracy](skills/diagnostic-accuracy/SKILL.md) | 经验 AUC 与 DeLong logit 区间、配对 DeLong、声明切点的 Clopper-Pearson、探索性 Youden |
+| 各阶段通用 | 评价者之间的一致性 | [rater-agreement](skills/rater-agreement/SKILL.md) | Cohen kappa（加权或不加权）和预先声明的 McGraw-Wong ICC 形式 |
+| 各阶段通用 | 多变量结构 | [exploratory-multivariate](skills/exploratory-multivariate/SKILL.md) | PCA 与平行分析、k-means 或层次聚类、间隙统计量、bootstrap 稳定性；不给 p 值，聚类不等于亚型 |
+| 药理与筛选 | 校正生长速率的药物反应 | [growth-rate-inhibition](skills/growth-rate-inhibition/SKILL.md) | GR 值及 GR50/GEC50/GRinf/GRmax/GR_AOC（Hafner 2016） |
+| | 相对基准物的候选分子排序 | [potency-ranking](skills/potency-ranking/SKILL.md) | 同一实验内的配对 log EC50 差值、Holm p 值和 Bonferroni 同时区间 |
+| 体外功能 | 酶抑制 Ki 与机制 | [enzyme-inhibition](skills/enzyme-inhibition/SKILL.md) | 声明机制的全局拟合、profile 区间、描述性模型比较、可选 Morrison 紧密结合 |
+| | 各剂量的应答或死亡计数 | [quantal-dose-response](skills/quantal-dose-response/SKILL.md) | Probit/logit/cloglog 估计 ED50/LD50 与 Fieller 置信限、自然反应、Finney 异质性、平行线相对效价 |
+| 体内药效 | 病理等有序评分 | [ordinal-scores](skills/ordinal-scores/SKILL.md) | 比例优势模型、轮廓似然区间和组间似然比检验 |
+| 药代动力学与早期开发 | 单剂量非房室 PK | [pk-nca](skills/pk-nca/SKILL.md) | R PKNCA：Cmax、AUC、半衰期、CL、Vz、MRT、Vss；声明 BLQ 和末端相规则；可选剂量比例性 |
+| | 群体 PK、非线性与 TMDD | [population-pk](skills/population-pk/SKILL.md) | R nlmixr2 FOCEi：二室线性、Michaelis-Menten 和 QSS-TMDD，带可识别性门槛 |
+| | 受体占有率 | [receptor-occupancy](skills/receptor-occupancy/SKILL.md) | 游离/基线、游离/总受体、结合/饱和；不截断；个体水平汇总；可选暴露–占有率 EC50 |
+| | 首次人体剂量计算 | [first-in-human-dose](skills/first-in-human-dose/SKILL.md) | NOAEL 到 HED/MRSD、MABEL、异速放大人体 PK 和敏感性表；只是设计用数字，绝不是推荐剂量 |
+| 数据导入 | GraphPad 项目文件 | [import-prism](skills/import-prism/SKILL.md) | 实验性：提取 `.prism`/`.pzfx` 存储值和表格角色；不做分析 |
 
 [总入口 Skill](skills/agentic-prism/SKILL.md) 按实验目的选择专用 Skill；
 [模块登记表](skills/agentic-prism/references/module-registry.md) 列出每个模块的确切能力和边界。
@@ -287,6 +308,26 @@ SET 和 Ki 覆盖率分别为 95.2%、95.8%。细胞相对加权和二次耗竭�
 | CMC 稳定性 | R `lm`/`anova`/`emmeans`；Koleva 回归示例 | 相对 3.49e-13 | 10 行中 6 行通过；4 行覆盖不足均披露；已发表有效期数值未复现 |
 | 跨运行效价 | R lme4；独立 MLS/MOVER 计算 | 相对 6.90e-7 | 12/12 行通过；未取得匹配的已发表完整算例 |
 | 可比性、质量标准 | R `tolerance`（EXACT 因子）、`t.test`；NIST/SEMATECH 印出的容忍因子与过程能力数值 | 相对 3.3e-9 | 15 行中 13 行通过；n = 10 的两行过程能力因蒙特卡洛误差未通过（10 万次补充检查为 94.9%、95.4%） |
+| 双因素 ANOVA（0.15.4） | R car/emmeans；NIST e-Handbook 3.2.3.2 印出的表 | 337/337 项；印出值 29/29 | 44/44 通过；方差不齐压力场景（假阳性率最高 0.44）和交互检验效能低均披露 |
+| 嵌套比较、ANCOVA、曲线 AUC、标准曲线、qPCR（0.13.2） | R lmerTest、emmeans/car、investr；独立 R 核心代码 | 全部一致（见记录） | 17/17 通过 |
+| 非线性模型（0.13.3） | R 核心 `nls`、`confint` | 18/18 组数据 | 11/11 通过 |
+| 4PL 充分性、ECx/ICx、配对 AUC、单样本与比值检验（0.13.4） | R 核心 | 20/25 项；5 项未通过均为仅供审计的 hook 估计 | 36/37 通过；单样本对数比值覆盖率未通过 |
+| 多变量回归、GLM（0.13.5） | R 核心 `lm`/`glm`、显式 HC3 | 11/11 组 | 15/15 通过；压力场景局限已披露 |
+| ROC、kappa、ICC（0.13.6） | R 核心公式；Hanley & McNeil、Shrout & Fleiss、Cohen 印出值 | 19/19 组，最大 2e-14 | 18/19 通过；二分类 kappa 覆盖率 0.924 未通过 |
+| 离群值标记（0.13.6） | R 核心公式；NIST 印出算例 | 14/14 组标记一致；印出值 24/24 | 5/5 假标记行通过；遮蔽效应和重尾误标已披露；ROUT 公开算例未达到 |
+| 删失数据（0.14.0–0.14.1） | R survival；NADA2 参考代码 | 6.3e-11 | 可报告拟合中 10/10（保留注册时的收敛判定缺陷，事后重跑 10/10）；配对 Wald z 2/7，小样本 t 7/7 |
+| 效价排序（0.14.0） | R 核心 | 3.2e-14 | 11/11 通过 |
+| GR 指标（0.14.0–0.14.1） | 作者 GRmetrics 结果（112 条曲线） | GRmax、GR_AOC 4.2e-15 | 6/7 通过，GRmax 覆盖率 0.913 未通过；可选的拟合 GRmax 3/3 |
+| 面板比较（0.14.0–0.14.1） | R 核心；R survival；Benjamini & Hochberg 1995 | 6.7e-15；删失指标 6.1e-11 | 9/9 和 9/9 通过 |
+| 酶抑制（0.14.2–0.14.3） | R 核心 `nls`；GraphPad 公开示例（末位数字部分一致） | 1.3e-5；Morrison 相对 5.0e-6 | 9/10 通过，汇总 Ki 0.874 未通过；Morrison 7/8，活性酶覆盖率 0.822 未通过 |
+| 受体占有率（0.14.2–0.14.3） | R 核心；clubSandwich | 1.0e-8；相对 2.7e-8 | 3/5 通过，EC50 bootstrap 0.770/0.767 未通过；可选 CR2 3/3 |
+| PCA、聚类（0.14.4） | R `prcomp`、`kmeans`、`hclust`、cluster；ISLR 印出的 PCA | 6/6 组 | 5/5 通过；间隙统计量偏保守 |
+| PK NCA（0.15.0） | 由 PKNCA 计算；独立公式重算；印出的 WinNonlin 算例 | 相对 7.0e-15（1,034 个数值） | 6/6 通过；剂量比例性检验效能低已披露 |
+| 群体 PK、TMDD（0.15.1） | 由 nlmixr2 计算；独立 SciPy IPRED 重算 | 1.7e-3，未达 1e-3 容差 | 9/9 通过；QSS 靶点参数仅 0.17 的拟合可报告 |
+| 首次人体剂量计算（0.15.2） | R 核心/deSolve；Nair & Jacob 2016 NOAEL 算例 | 29/29 个数值 | 不适用（确定性计算） |
+| 定性剂量反应、有序评分（0.15.3） | R `glm`、MASS、ordinal；Finney 1952 印出算例 | 85/85 项 | 9/10 通过；有序 OR-3 profile 覆盖率 0.924 未通过 |
+
+0.11.0–0.13.1 新增的模块（亲和力扩展、表面动力学机制、表位分选、联用与 HTS、5PL 和钟形曲线、样本量、竞争风险、热稳定性）见各自的发布记录。
 
 **不宣称与 GraphPad Prism 数值等价。**
 
@@ -315,6 +356,20 @@ Skill 就作答，可能顺从本该拒绝的要求，也可能把被扣留的�
 | 0.13.0 联用与 HTS | 4/4 通过 |
 | 0.13.1 HTS 参考分布、ISR、剂量模型、样本量、竞争风险、Tm | 10/10 通过（由实现者评分，非盲评） |
 | 0.13.2 嵌套比较、ANCOVA、曲线 AUC、标准曲线、qPCR | 10/10 通过（由实现者评分，非盲评） |
+| 0.13.3 非线性模型 | 5/6 通过（2026-10-16 运行，非盲评） |
+| 0.13.4 4PL 门槛、ECx/ICx、配对 AUC、位置检验 | 6/6 通过（由实现者评分） |
+| 0.13.5 多变量回归 | 6/6 通过（由实现者评分） |
+| 0.13.6 ROC 与评价者一致性；离群值标记 | 6/6 和 6/6 通过（非盲评） |
+| 0.14.0 删失数据；效价排序；GR 指标；面板比较 | 各 6/6 通过（非盲评） |
+| 0.14.1 配对删失、含删失指标的面板、拟合 GRmax | 6/6 通过（非盲评） |
+| 0.14.2 酶抑制、受体占有率 | 6/6 通过（非盲评） |
+| 0.14.3 受体占有率稳健区间、Morrison 紧密结合 | 6/6 通过（非盲评） |
+| 0.14.4 PCA 与聚类 | 6/6 通过（非盲评） |
+| 0.15.0 PK NCA | 重跑后 6/6 通过，非盲评（首次尝试因 API 限流中止，保留且未评分） |
+| 0.15.1 群体 PK 与 TMDD | 6/6 通过（非盲评） |
+| 0.15.2 首次人体剂量计算 | 6/6 通过（非盲评） |
+| 0.15.3 定性剂量反应、有序评分 | 6/6 通过（非盲评） |
+| 0.15.4 双因素 ANOVA | 6/6 通过（非盲评） |
 
 每个场景、评分标准和评分后的回答都在
 [validation/agent-scenarios](validation/agent-scenarios/README.md)，失败的也在。
@@ -345,10 +400,11 @@ python3 install.py --link-skills ~/.claude/skills
 
 它只创建符号链接，不会覆盖已有条目。不要复制 Skill 文件夹：复制出来的 Skill 找不到运行程序。
 每个 Skill 会按自身的真实位置定位运行程序，并用 `agentic-prism doctor --collection <克隆目录>` 检查
-（见[运行程序说明](skills/agentic-prism/references/runtime.md)）。21个 Skill 与计算包属于同一版本，需一起使用。
+（见[运行程序说明](skills/agentic-prism/references/runtime.md)）。45 个 Skill 与计算包属于同一版本，需一起使用。
 
-**可选 R。** 只有 MMRM 的 Kenward–Roger 需要 R。先安装 R，再用 `python3 install.py --with-r`
-安装固定版本的可选包到 `.r-lib/`；`doctor` 会显示它们。缺少 R 时只有这一方法拒绝运行，其余照常。
+**可选 R。** 有三项功能需要 R。先安装 R，再用 `python3 install.py --with-r`（MMRM Kenward–Roger）、
+`--with-r-pk`（PKNCA 非房室分析）或 `--with-r-pop`（nlmixr2 群体 PK）安装固定版本的可选包到 `.r-lib/`；
+`doctor` 会显示它们。缺少 R 时只有这些方法拒绝运行，其余照常。
 
 平台证据：安装与结果已在 macOS 上核对（uv + Python 3.13、pip + Python 3.14，结果完全一致）。
 Linux 和 Windows 预期可用，但 CI 尚未实际运行。见 [0.7.1 验证记录](validation/RELEASE_0.7.1.md)。
@@ -422,7 +478,8 @@ Linux 和 Windows 预期可用，但 CI 尚未实际运行。见 [0.7.1 验证�
 - **剂量反应：** 报告的是上下平台之间的**相对** EC50/IC50，平台固定为 0/100 时才等于响应值 50 处的浓度，也不等于 KD 或 Ki。默认的平行性 F 检验不是 USP <1032>/<1034> 推荐的等效性检验；等效性界限和 RP 接受界限必须来自实验室历史数据或已批准方案。
 - **ELISA：** 标准品回算规则是软件筛选规则，不是完整的 ICH M10 验证；未知浓度区间只反映本板标准曲线和孔噪声，不含板间、基质或稀释误差。
 - **组间比较：** 需要单位级数据和预先声明的比较族；Welch 类方法在组内少于 6 个单位时会提示可能偏宽松。
-- **体内与纵向数据：** 重复测量用复合对称随机截距、裂区 ANOVA 或边际 US/AR(1) MMRM；肿瘤生长为对数尺度的指数生长，仅支持 MAR 脱落；生存分析不含竞争风险、脆弱性模型或区间删失。小样本未通过项见验证记录。
-- **生物分析与免疫原性：** 方法学验证从回算浓度开始（不拟合标准曲线，不含残留和 ISR），接受标准必须由用户声明。ADA 切点需要单一试剂批次的完整平衡阴性样本组；动态切点未实现。阳性对照灵敏度不等于患者抗体的灵敏度。
+- **体内与纵向数据：** 重复测量用复合对称随机截距、裂区 ANOVA 或边际 US/AR(1) MMRM；肿瘤生长为对数尺度的指数生长，仅支持 MAR 脱落；生存分析已支持竞争风险（0.13.1 起），但不含脆弱性模型或区间删失。小样本未通过项见验证记录。
+- **生物分析与免疫原性：** 方法学验证从回算浓度开始（不拟合标准曲线；ISR 和残留自 0.13.1 起可选），接受标准必须由用户声明。ADA 切点需要单一试剂批次的完整平衡阴性样本组；动态切点未实现。阳性对照灵敏度不等于患者抗体的灵敏度。
+- **PK 与早期开发：** NCA 仅支持单剂量；群体 PK 不含协变量、PD、M3 BLQ 处理和 VPC，仅凭 PK 数据很少能识别 TMDD 靶点参数。首次人体剂量的输出是基于声明输入的设计计算，绝不是推荐或批准的剂量。
 - **CMC：** 稳定性采用 ICH Q1E 线性回归及 α = 0.25 的可合并性预检验，这种先检验再选模型的做法在部分设计下会降低覆盖率（已披露）；外推需要声明支持数据。效价合并要求每轮有重复测定。可比性一次只比较一个属性，不给出整体的生物类似性结论；容忍区间描述数据，本身不能作为质量标准。属性分级、界限、k 值和标准限都必须由用户声明。
 - **数据来源：** 公开 fixture 保留作者数据与来源校验值，只复现原研究的特定设置，不是通用默认值。未确认第三方数据的单独授权时，不代为指定许可证。

@@ -6,10 +6,11 @@
 
 Agent Skills for the statistical analyses of antibody and biologics research
 and development, from binding characterization to in vivo efficacy,
-bioanalytical validation, immunogenicity and CMC quality (stability,
-potency, comparability, specifications). An AI agent reads a Skill, checks
-that the analysis fits the experiment, writes an explicit JSON config and runs
-one versioned Python package. Every run saves its inputs, configuration,
+pharmacokinetics, bioanalytical validation, immunogenicity and CMC quality
+(stability, potency, comparability, specifications). An AI agent reads a Skill,
+checks that the analysis fits the experiment, writes an explicit JSON config and
+runs one versioned Python package (PK estimation is delegated to pinned R
+packages). Every run saves its inputs, configuration,
 hashes, results, diagnostics and an offline HTML report. Every module also
 writes `interpretation_facts.json`: the saved results the agent must base its
 narrative on (primary estimates, what is reportable or withheld and why,
@@ -18,7 +19,7 @@ Each method is checked against established implementations, calibrated by
 simulation, and tested with a real agent on misuse scenarios
 ([how](#tested-with-a-real-agent-not-only-numerically)).
 
-## Read GraphPad project files (local, unreleased)
+## Read GraphPad project files (experimental)
 
 [import-prism](skills/import-prism/SKILL.md) reads `.prism` and `.pzfx` locally,
 preserving stored values and describing table/column roles. It distinguishes
@@ -41,22 +42,20 @@ stay unknown. The `EXCLUDED` token has no public native example yet.
 [Compatibility follow-up](validation/PRISM_NATIVE_SEMANTICS_2026-10-20.md) ·
 [review fixes](validation/PRISM_REVIEW_FIXES_2026-10-23.md). No new dependency or statistical method.
 [Contract](skills/import-prism/references/input-and-output.md) ·
-[Evidence](validation/PRISM_IMPORT_2026-10-19.md).
+[Evidence](validation/PRISM_IMPORT_2026-10-19.md). Experimental: live-agent
+scenarios and a comparison against the native Prism application have not been done.
 
-## R-based PK guidance prototype
+## PK analyses run through R
 
-The local 2026-10-13 draft separates [PK/NCA with PKNCA](skills/pk-nca/SKILL.md)
-from [population PK with nlmixr2](skills/population-pk/SKILL.md). These Skills
-guide study design, data mapping, R-package execution and interpretation; they
-do not reimplement the estimators or add a Python CLI analysis type. Each has
-an input/output contract and a small R teaching template. Their facts/report
-requirements are guidance, not an automatic reporting implementation.
-
-The templates have been syntax-checked, but their R packages are absent from
-the checked environment, so no numerical fit or validation pass is claimed.
-PD, TMDD and broader PK extensions remain future work. Runtime stays at 0.13.5;
-the Python workflow and validation claims above apply to existing modules,
-not these prototypes. See [scope and checks](validation/PK_R_SKILLS_PROTOTYPE_2026-10-13.md).
+[PK/NCA with PKNCA](skills/pk-nca/SKILL.md) (`pk_nca`, 0.15.0) and
+[population PK with nlmixr2](skills/population-pk/SKILL.md) (`population_pk`, 0.15.1,
+including Michaelis-Menten and QSS-TMDD models) are runtime analysis types. Mature R
+packages do the estimation through fixed, version-pinned bridges; install them with
+`python3 install.py --with-r-pk` and `--with-r-pop`. NCA covers single doses; population
+PK has no covariates, PD, M3 BLQ handling or VPC. PD response models remain future work.
+These runtime types replace the 2026-10-13 guidance prototype. See the
+[0.15.0](validation/RELEASE_0.15.0.md) and [0.15.1](validation/RELEASE_0.15.1.md)
+evidence, and the [prototype record](validation/PK_R_SKILLS_PROTOTYPE_2026-10-13.md) for history.
 
 ## Optional discussion before analysis
 
@@ -80,7 +79,7 @@ first of doing it with an agent. Antibody and biologics R&D is where we start;
 the gates, saved configurations, hashes and interpretation facts are there to
 show that agent-driven analysis can be checked, reproduced and trusted.
 
-## Status: public beta 0.13.5
+## Status: public beta 0.15.4
 
 AgenticPrism is for research analysis. It has **not** been validated as a
 computerized system for GLP/GMP work or regulatory submissions (for example
@@ -92,16 +91,20 @@ data; feedback from real project data is welcome through GitHub issues.
 
 | Maturity | Modules |
 |---|---|
-| Validated against reference implementations and calibrated | Equilibrium KD, 1:1 kinetics, 4PL dose response and relative potency, ELISA, two-group and multi-group comparisons, rank tests, repeated measures and MMRM, time-to-event, tumor growth, ADA cut points, variance components, method validation, stability, potency assay, comparability, specifications, routine statistics (0.11.1) |
+| Validated against reference implementations and calibrated | Equilibrium KD, 1:1 kinetics, 4PL dose response and relative potency, ELISA, two-group and multi-group comparisons, rank tests, repeated measures and MMRM, time-to-event, tumor growth, ADA cut points, variance components, method validation, stability, potency assay, comparability, specifications, routine statistics (0.11.1; two-way ANOVA evidence completed in 0.15.4) |
 | Usable with stated limits | Affinity depth and cell binding (no published worked example), advanced surface kinetics (bootstrap intervals not calibrated at default settings), epitope binning (no published worked example), drug combination (Loewe/ZIP not identical to synergyfinder) |
 | Exploratory | HTS hit calling with the default predictive-t reference (false-hit rate above nominal under the global null) |
 | New in 0.13.1 (live-agent scenarios 10/10; no published worked examples) | HTS hits with the opt-in layout-simulation reference, 5PL and bell-shaped dose response, ISR and carry-over, sample size and power, competing risks, thermal stability |
+| 0.13.2–0.13.5 everyday analyses (R reference checks and registered calibration; published worked examples mostly unmet) | Nested comparisons, ANCOVA, curve AUC including paired designs, linear/quadratic standard curves, qPCR, nonlinear model library, 4PL adequacy gates and relative ECx/ICx, one-sample and ratio tests (one log-ratio coverage miss retained), multivariable regression/GLM |
+| 0.13.6–0.14.4 (reference checks and registered calibration with misses retained; published examples for some) | ROC analysis, rater agreement (binary-kappa coverage miss), prespecified outlier flagging, censored data, potency ranking, GR metrics, panels with multiplicity control, enzyme inhibition, receptor occupancy, exploratory PCA and clustering |
+| 0.15.0–0.15.3 PK and early development | NCA with PKNCA (published WinNonlin example reproduced), population PK and TMDD with nlmixr2 (printed-estimate gate unmet; PK data alone rarely identify target parameters), first-in-human calculations (design-only; MABEL and allometry worked examples unmet), quantal dose response (published example reproduced), ordinal scores (one coverage miss; printed-value gate unmet) |
+| Experimental | GraphPad `.prism`/`.pzfx` stored-data extraction (no live-agent scenarios or native Prism comparison yet) |
 
 Each module's exact limits are in the
 [module registry](skills/agentic-prism/references/module-registry.md) and the
 linked release records; every calibration miss is kept in `validation/`.
 
-## 0.15.4 (in development) — evidence for independent two-way ANOVA
+## 0.15.4 — evidence for independent two-way ANOVA
 
 No new method: the evidence gates for the 0.11.1 independent two-way ANOVA (`group-comparison`,
 SS II/III, interaction first, Tukey/Dunnett/Sidak/Holm) are completed. The NIST/SEMATECH
@@ -209,7 +212,7 @@ definition, which removed the low bias of the authors' definition in calibration
 Published worked examples were not found for these additions. Live-agent misuse
 scenarios 6/6. See [release evidence](validation/RELEASE_0.14.1.md).
 
-## 0.14.0 (in development) — discovery batch
+## 0.14.0 — discovery batch
 
 Values below a quantification limit are kept as censored rather than replaced by
 zero or LLOQ/2 (`censored_comparison`): censored lognormal maximum likelihood gives
@@ -345,7 +348,25 @@ See [release evidence](validation/RELEASE_0.12.1.md) for retained misses and unm
 | Any stage | Decay, association, growth and enzyme kinetics | [nonlinear-models](skills/nonlinear-models/SKILL.md) | One/two-phase decay, association, exponential and logistic growth, Michaelis–Menten; profile intervals, half-lives and design-support gates |
 | Any stage | Planning sample size or power | [sample-size](skills/sample-size/SKILL.md) | Exact noncentral t/F and TOST power, arcsine or pooled-normal proportions, Schoenfeld log-rank events; sourced assumptions, power curve and sensitivity grid |
 | Any stage | One-sample and ratio tests | [group-comparison](skills/group-comparison/SKILL.md) | Sourced-null one-sample t; positive geometric-mean tests and paired/independent ratios |
-| Any stage | Comparing groups | [group-comparison](skills/group-comparison/SKILL.md) | Welch or paired t, one-way ANOVA with Dunnett/Tukey/Games-Howell/Holm families, Mann–Whitney and signed-rank with Hodges–Lehmann, Kruskal–Wallis with Dunn, Friedman |
+| Any stage | Comparing groups | [group-comparison](skills/group-comparison/SKILL.md) | Welch or paired t, one-way ANOVA with Dunnett/Tukey/Games-Howell/Holm families, independent two-way ANOVA (SS II/III, interaction first), Mann–Whitney and signed-rank with Hodges–Lehmann, Kruskal–Wallis with Dunn, Friedman |
+| Any stage | Values below or above quantification limits | [censored-data](skills/censored-data/SKILL.md) | Censored lognormal ML, Peto-Peto, Helsel paired difference and censored sign test; no substitution |
+| Any stage | Many outcomes in one comparison | [panel-comparison](skills/panel-comparison/SKILL.md) | Declared outcome families with Holm or Benjamini-Hochberg; undeclared outcomes refused; optional censored outcomes |
+| Any stage | Prespecified outlier flags | [outlier-flagging](skills/outlier-flagging/SKILL.md) | Grubbs, generalized ESD and ROUT within declared groups; flags only, data never removed |
+| Any stage | Correlation, linear prediction, method agreement | [correlation-regression](skills/correlation-regression/SKILL.md) | Pearson/Spearman, OLS/WLS, Deming with a declared ratio, Passing-Bablok, limits of agreement |
+| Any stage | One outcome with several predictors | [multivariable-regression](skills/multivariable-regression/SKILL.md) | Gaussian OLS/HC3, binomial logit, Poisson with exposure/offset and quasi-Poisson; independent units |
+| Any stage | Diagnostic accuracy | [diagnostic-accuracy](skills/diagnostic-accuracy/SKILL.md) | Empirical AUC with DeLong logit interval, paired DeLong, Clopper-Pearson at declared cut-offs, exploratory Youden |
+| Any stage | Agreement between raters | [rater-agreement](skills/rater-agreement/SKILL.md) | Cohen's kappa (unweighted or weighted) and declared McGraw-Wong ICC forms |
+| Any stage | Multivariable structure | [exploratory-multivariate](skills/exploratory-multivariate/SKILL.md) | PCA with parallel analysis, k-means or hierarchical clustering, gap statistic, bootstrap stability; no p-values, clusters are not subtypes |
+| Pharmacology and screening | Growth-rate-corrected drug response | [growth-rate-inhibition](skills/growth-rate-inhibition/SKILL.md) | GR values and GR50/GEC50/GRinf/GRmax/GR_AOC (Hafner 2016) |
+| | Ranking candidates against a benchmark | [potency-ranking](skills/potency-ranking/SKILL.md) | Paired log EC50 differences within experiments, Holm p values and Bonferroni simultaneous intervals |
+| In vitro function | Enzyme inhibition Ki and mechanism | [enzyme-inhibition](skills/enzyme-inhibition/SKILL.md) | Declared-mechanism global fit, profile intervals, descriptive model comparison, opt-in Morrison tight binding |
+| | Responder or mortality counts per dose | [quantal-dose-response](skills/quantal-dose-response/SKILL.md) | Probit/logit/cloglog ED50/LD50 with Fieller limits, natural response, Finney heterogeneity, parallel-line potency |
+| In vivo efficacy | Pathology and other ordered scores | [ordinal-scores](skills/ordinal-scores/SKILL.md) | Proportional odds with profile intervals and group LR test |
+| Pharmacokinetics and early development | Single-dose noncompartmental PK | [pk-nca](skills/pk-nca/SKILL.md) | R PKNCA: Cmax, AUC, half-life, CL, Vz, MRT, Vss; declared BLQ and terminal-phase rules; optional dose proportionality |
+| | Population PK, nonlinear and TMDD | [population-pk](skills/population-pk/SKILL.md) | R nlmixr2 FOCEi: two-compartment linear, Michaelis-Menten and QSS-TMDD with identifiability gates |
+| | Receptor occupancy | [receptor-occupancy](skills/receptor-occupancy/SKILL.md) | Free/baseline, free/total, bound/saturation; no clipping; subject-level summaries; optional exposure-occupancy EC50 |
+| | First-in-human dose calculations | [first-in-human-dose](skills/first-in-human-dose/SKILL.md) | NOAEL to HED/MRSD, MABEL, allometric human PK and sensitivity tables; design numbers, never a recommended dose |
+| Data import | GraphPad project files | [import-prism](skills/import-prism/SKILL.md) | Experimental: extracts stored `.prism`/`.pzfx` values and table roles; no analysis |
 
 The [router Skill](skills/agentic-prism/SKILL.md) picks the specialist from the
 experiment; the [module registry](skills/agentic-prism/references/module-registry.md)
@@ -420,6 +441,26 @@ Details, scope and every number: [validation/README.md](validation/README.md).
 | CMC stability | R `lm`/`anova`/`emmeans`; Koleva regression example | 3.49e-13 relative | 6/10 rows pass; four coverage misses disclosed; printed shelf life not reproduced |
 | Potency across runs | R lme4; independent MLS/MOVER calculation | 6.90e-7 relative | 12/12 rows pass; matching published worked example unavailable |
 | Comparability, specifications | R `tolerance` (EXACT factors), `t.test`; NIST/SEMATECH printed tolerance and capability values | 3.3e-9 relative | 13/15 pass; the two n = 10 capability rows miss by Monte Carlo error (100,000-dataset check: 94.9%, 95.4%) |
+| Two-way ANOVA (0.15.4) | R car/emmeans; NIST e-Handbook 3.2.3.2 printed table | 337/337 checks; 29/29 printed values | 44/44 pass; heteroscedastic stress (false-positive rate up to 0.44) and low interaction-test power disclosed |
+| Nested, ANCOVA, curve AUC, standard curves, qPCR (0.13.2) | R lmerTest, emmeans/car, investr; independent base R | All agree (see record) | 17/17 pass |
+| Nonlinear models (0.13.3) | Base R `nls`, `confint` | 18/18 datasets | 11/11 pass |
+| 4PL adequacy, ECx/ICx, paired AUC, one-sample and ratio tests (0.13.4) | Base R | 20/25 checks; the 5 misses are audit-only hook estimates | 36/37 pass; one-sample log-ratio coverage misses |
+| Multivariable regression, GLM (0.13.5) | Base R `lm`/`glm`, explicit HC3 | 11/11 fixtures | 15/15 pass; stress limits disclosed |
+| ROC, kappa, ICC (0.13.6) | Base-R formulas; printed Hanley & McNeil, Shrout & Fleiss, Cohen values | 19/19 fixtures, largest 2e-14 | 18/19 pass; binary-kappa coverage 0.924 misses |
+| Outlier flagging (0.13.6) | Base-R formulas; NIST printed examples | 14/14 flag sets; printed values 24/24 | 5/5 false-flag rows pass; masking and heavy-tail false flags disclosed; ROUT published example unmet |
+| Censored data (0.14.0–0.14.1) | R survival; NADA2 reference code | 6.3e-11 | 10/10 among reportable fits (registered convergence defect kept, post-hoc rerun 10/10); paired Wald z 2/7, small-sample t 7/7 |
+| Potency ranking (0.14.0) | Base R | 3.2e-14 | 11/11 pass |
+| GR metrics (0.14.0–0.14.1) | Authors' GRmetrics output (112 curves) | GRmax, GR_AOC 4.2e-15 | 6/7 pass, GRmax coverage 0.913 misses; opt-in fitted GRmax 3/3 |
+| Panel comparison (0.14.0–0.14.1) | Base R; R survival; Benjamini & Hochberg 1995 | 6.7e-15; censored 6.1e-11 | 9/9 and 9/9 pass |
+| Enzyme inhibition (0.14.2–0.14.3) | Base R `nls`; GraphPad published example (last-digit partial match) | 1.3e-5; Morrison 5.0e-6 relative | 9/10 pass, summary Ki 0.874 misses; Morrison 7/8, active-enzyme coverage 0.822 misses |
+| Receptor occupancy (0.14.2–0.14.3) | Base R; clubSandwich | 1.0e-8; 2.7e-8 relative | 3/5 pass, EC50 bootstrap 0.770/0.767 misses; opt-in CR2 3/3 |
+| PCA, clustering (0.14.4) | R `prcomp`, `kmeans`, `hclust`, cluster; ISLR printed PCA | 6/6 fixtures | 5/5 pass; gap statistic is conservative |
+| PK NCA (0.15.0) | PKNCA computes; independent formula recheck; printed WinNonlin example | 7.0e-15 relative (1,034 values) | 6/6 pass; low dose-proportionality power disclosed |
+| Population PK, TMDD (0.15.1) | nlmixr2 computes; independent SciPy IPRED recheck | 1.7e-3, misses the 1e-3 tolerance | 9/9 pass; QSS target parameters reportable in 0.17 of fits |
+| First-in-human calculations (0.15.2) | Base R/deSolve; Nair & Jacob 2016 NOAEL examples | 29/29 numbers | Not applicable (deterministic) |
+| Quantal dose response, ordinal scores (0.15.3) | R `glm`, MASS, ordinal; Finney 1952 printed example | 85/85 checks | 9/10 pass; ordinal OR-3 profile coverage 0.924 misses |
+
+Modules added in 0.11.0–0.13.1 (affinity depth, surface mechanisms, epitope binning, combination and HTS, 5PL and bell-shaped curves, sample size, competing risks, thermal stability) are recorded in their release files.
 
 **No numerical equivalence to GraphPad Prism is claimed.**
 
@@ -454,6 +495,20 @@ cannot detect any of that. So each release is also tested behaviorally.
 | 0.13.0 combination and HTS | 4/4 passed |
 | 0.13.1 HTS reference, ISR, dose models, sample size, competing risks, Tm | 10/10 passed (scored by the implementer, not blinded) |
 | 0.13.2 nested, ANCOVA, curve AUC, standard curves, qPCR | 10/10 passed (scored by the implementer, not blinded) |
+| 0.13.3 nonlinear models | 5/6 passed (run 2026-10-16, not blinded) |
+| 0.13.4 4PL gates, ECx/ICx, paired AUC, location tests | 6/6 passed (implementer-scored) |
+| 0.13.5 multivariable regression | 6/6 passed (implementer-scored) |
+| 0.13.6 ROC and rater agreement; outlier flagging | 6/6 and 6/6 passed (not blinded) |
+| 0.14.0 censored data; potency ranking; GR metrics; panels | 6/6 each (not blinded) |
+| 0.14.1 paired censored, censored panels, fitted GRmax | 6/6 passed (not blinded) |
+| 0.14.2 enzyme inhibition, receptor occupancy | 6/6 passed (not blinded) |
+| 0.14.3 RO robust interval, Morrison tight binding | 6/6 passed (not blinded) |
+| 0.14.4 PCA and clustering | 6/6 passed (not blinded) |
+| 0.15.0 PK NCA | 6/6 passed on rerun, not blinded (first attempt stopped by API rate limits, kept and not scored) |
+| 0.15.1 population PK and TMDD | 6/6 passed (not blinded) |
+| 0.15.2 first-in-human calculations | 6/6 passed (not blinded) |
+| 0.15.3 quantal dose response, ordinal scores | 6/6 passed (not blinded) |
+| 0.15.4 two-way ANOVA | 6/6 passed (not blinded) |
 
 Every scenario, criterion and scored response is in
 [validation/agent-scenarios](validation/agent-scenarios/README.md), including the
@@ -492,15 +547,17 @@ This creates symlinks and never overwrites existing entries. Do not copy Skill
 folders: a copied Skill cannot find its runtime. Each Skill locates the runtime
 from its real location and checks it with `agentic-prism doctor --collection
 <clone>` ([runtime instructions](skills/agentic-prism/references/runtime.md)).
-The 21 Skills and the package are one version and must stay together.
+The 45 Skills and the package are one version and must stay together.
 
 Platform evidence: install and results were checked on macOS (uv with Python
 3.13, and pip with Python 3.14; identical results). Linux and Windows are
 expected to work but the CI workflow has not yet run. See [validation/RELEASE_0.7.1.md](validation/RELEASE_0.7.1.md).
 
-**Optional R.** Only MMRM Kenward–Roger needs R. After installing R, opt in with
-`python3 install.py --with-r`; pinned packages live in `.r-lib/`, and `doctor`
-reports them. Without R, only that method refuses; everything else runs.
+**Optional R.** Three capabilities need R. After installing R, opt in with
+`python3 install.py --with-r` (MMRM Kenward–Roger), `--with-r-pk` (PK NCA with
+PKNCA) or `--with-r-pop` (population PK with nlmixr2). Pinned packages live in
+`.r-lib/`, and `doctor` reports them. Without R, only those methods refuse;
+everything else runs.
 
 ## Usage
 
@@ -623,7 +680,7 @@ upper or lower bounds that imply statistical guarantees.
   ANOVA over ≥3 independent groups with a predeclared contrast family, on
   unit-level observations. Repeated measures across more than two conditions and scoped random-intercept
   mixed models use the separate repeated-measures specialist. Rank tests use the separate nonparametric contract; baseline numeric covariates
-  are supported only in the MMRM contract. Welch
+  use ANCOVA for independent units or the MMRM contract for repeated measures. Welch
   procedures with a group below six units are flagged as possibly liberal.
 - **Data provenance:** public fixtures keep the authors' data and source
   checksums, and reproduce specific published settings. They are not general
@@ -632,15 +689,19 @@ upper or lower bounds that imply statistical guarantees.
   asserted over third-party data.
 - **In vivo and longitudinal:** repeated measures use compound-symmetry random
   intercepts, split-plot ANOVA or marginal US/AR(1) MMRM; tumor growth is
-  exponential on the log scale with MAR removal; time-to-event has no competing
-  risks, frailty or interval censoring. Small-sample misses are listed in the
+  exponential on the log scale with MAR removal; time-to-event covers competing
+  risks (since 0.13.1) but not frailty or interval censoring. Small-sample misses are listed in the
   validation records.
 - **Bioanalysis and immunogenicity:** method validation starts from
-  back-calculated concentrations (no calibration-curve fitting, carry-over or
-  incurred-sample reanalysis); acceptance criteria are always user-declared.
+  back-calculated concentrations (no calibration-curve fitting; incurred-sample
+  reanalysis and carry-over are opt-in since 0.13.1); acceptance criteria are always user-declared.
   ADA cut points need complete balanced negative panels from one reagent lot;
   dynamic cut points are not implemented. Positive-control sensitivity is not
   the sensitivity for patients' antibodies.
+- **PK and early development:** NCA is single dose; population PK has no
+  covariates, PD, M3 BLQ handling or VPC, and PK data alone rarely identify TMDD
+  target parameters. First-in-human outputs are design calculations from declared
+  inputs, never a recommended or approved dose.
 - **CMC:** stability uses ICH Q1E linear regression with the α = 0.25
   poolability pre-tests, whose model selection lowers coverage in some designs
   (disclosed); extrapolation needs declared supporting data. Potency

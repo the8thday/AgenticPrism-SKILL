@@ -6,7 +6,7 @@ Human-oriented instructions are in [README.md](README.md).
 
 ## What you are installing
 
-Seven Agent Skills (`skills/`) plus one versioned Python runtime (`src/`,
+45 Agent Skills (`skills/`) plus one versioned Python runtime (`src/`,
 `install.py`). They are **one unit**: every Skill finds its runtime at
 `<root>/.venv`, where `<root>` is the cloned repository. Therefore:
 
@@ -54,6 +54,11 @@ python3 install.py        # Windows: py install.py
   `<root>/.python` instead; you do not need to set cache variables yourself.
 - Success ends with `self-check passed: analyze, render and verify work`. On
   failure, show the user the error text verbatim.
+- R is optional and needed for only three capabilities. Add the flag only when
+  the user needs that method and R is already installed: `--with-r` (MMRM
+  Kenward–Roger), `--with-r-pk` (PK NCA) or `--with-r-pop` (population PK). Each
+  downloads pinned R packages into `<root>/.r-lib`, so ask first. Do not install
+  R itself on your own.
 
 ## 4. Make the Skills discoverable (optional, with the user's consent)
 
