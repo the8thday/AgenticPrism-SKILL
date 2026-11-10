@@ -533,6 +533,13 @@ analysis, a render and a hash verification). Rerun it after `git pull`; the
 Skills check that the runtime and Skill versions match. Remove `.venv` to
 uninstall.
 
+Clone into a folder that is not synchronized by iCloud Drive (on macOS this
+includes Desktop and Documents when "Desktop & Documents Folders" is on),
+OneDrive, Dropbox or Google Drive, for example `~/AgenticPrism`. Sync services
+can hide or offload files in `.venv`; on macOS, Python then skips the hidden
+`.pth` files and the runtime fails with `No module named 'agentic_prism'`.
+`install.py` warns about such folders, and rerunning it clears the hidden flag.
+
 **Using the Skills with an agent.** Point the agent at the router Skill:
 
 > Use `<clone>/skills/agentic-prism/SKILL.md` to analyze my experiment files.

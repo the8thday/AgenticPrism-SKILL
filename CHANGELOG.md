@@ -1,5 +1,16 @@
 # Changelog
 
+## Installer: synchronized folders (2026-11-10)
+
+No runtime package or numerical change; still 0.15.4. A real install by the ChatGPT desktop app cloned into
+`~/Documents/Codex`, which iCloud Documents synchronized; about 1,600 files in `.venv` and `.git` then
+carried the macOS hidden flag, Python 3.13 skipped the hidden `.pth` files and `agentic-prism` failed with
+`No module named 'agentic_prism'`. Who set the flag was not established; iCloud is the likely source.
+`install.py` now warns when the clone is inside iCloud Drive (including synchronized Desktop/Documents),
+OneDrive, Dropbox or Google Drive, and clears the hidden flag on `.venv` `.pth` files on every run. The
+READMEs, the agent install notes and the shared runtime reference say to avoid synchronized folders and how
+to recover. Checked with two new installer tests and by reproducing the failure on a copied `.venv`.
+
 ## Documentation sync (2026-11-10)
 
 No code or numerical change; still 0.15.4. READMEs, install and development notes, the registry entry

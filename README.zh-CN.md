@@ -389,6 +389,11 @@ python3 install.py          # Windows：py install.py
 （分析、出图和哈希校验各跑一遍）。`git pull` 更新后请重新运行；Skill 会检查运行程序与 Skill 的版本是否一致。
 卸载时删除 `.venv` 即可。
 
+请克隆到不被 iCloud 云盘（macOS 开启"桌面与文稿文件夹"同步时也包括桌面和文稿）、OneDrive、Dropbox
+或 Google Drive 同步的文件夹，例如 `~/AgenticPrism`。同步服务可能把 `.venv` 里的文件设为隐藏或移到云端；
+在 macOS 上，Python 会跳过被隐藏的 `.pth` 文件，运行时报错 `No module named 'agentic_prism'`。
+`install.py` 遇到这类文件夹会给出警告，重新运行它可以清除隐藏标记。
+
 **在 Agent 中使用。** 把 Agent 指向总入口 Skill：
 
 > 使用 `<克隆目录>/skills/agentic-prism/SKILL.md` 分析我的实验文件。

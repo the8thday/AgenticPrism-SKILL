@@ -15,6 +15,7 @@ import argparse
 import json
 import os
 import shutil
+import stat
 import subprocess
 import sys
 import tempfile
@@ -67,6 +68,61 @@ def local_caches(tool, env):
             env[variable] = str(ROOT / local)
             say(f"{variable}: default location not writable here; using {env[variable]}")
     return env
+
+
+SYNC_FOLDER_NAMES = ("mobile documents", "cloudstorage", "icloud", "dropbox", "onedrive", "google drive", "box sync")
+
+
+def synced_folder(path):
+    """Describe the sync service if path is inside a cloud-synchronized folder, else None.
+
+    Sync services can mark files hidden or move them to the cloud, which breaks a
+    virtual environment. On macOS, iCloud also syncs ~/Desktop and ~/Documents
+    when "Desktop & Documents Folders" is on; those carry a File Provider attribute.
+    """
+    path = Path(path).expanduser().resolve()
+    for part in path.parts:
+        if any(name in part.lower() for name in SYNC_FOLDER_NAMES):
+            return f"{part} (cloud-synchronized folder)"
+    if sys.platform == "darwin" and shutil.which("xattr"):
+        home = Path.home().resolve()
+        for parent in (path, *path.parents):
+            if parent in (home, parent.parent):
+                break
+            found = subprocess.run(["xattr", "-p", "com.apple.file-provider-domain-id", str(parent)],
+                                   capture_output=True, text=True)
+            if found.returncode == 0:
+                return f"{parent} (synchronized by iCloud or another macOS File Provider)"
+    return None
+
+
+def warn_if_synced(path=ROOT):
+    where = synced_folder(path)
+    if where:
+        say(f"WARNING: {path} is inside {where}. Sync services can hide or offload files in .venv and break "
+            "the runtime. Recommended: clone into a folder that is not synchronized, for example ~/AgenticPrism, "
+            "and run install.py there.")
+    return where
+
+
+def unhide_pth_files(dry):
+    """Clear the macOS hidden flag on .venv .pth files; Python 3.13+ skips hidden .pth files.
+
+    Sync services (seen with iCloud Documents) can set the flag, after which the
+    editable install is ignored and `import agentic_prism` fails.
+    """
+    hidden = getattr(stat, "UF_HIDDEN", 0)
+    if not hidden or not hasattr(os, "chflags"):
+        return []
+    cleared = []
+    for pth in sorted(VENV.glob("lib/python*/site-packages/*.pth")):
+        flags = pth.lstat().st_flags
+        if flags & hidden:
+            say(f"clearing the hidden flag on {pth} (Python skips hidden .pth files)")
+            if not dry:
+                os.chflags(pth, flags & ~hidden)
+            cleared.append(pth)
+    return cleared
 
 
 def tool_command(tool):
@@ -173,7 +229,9 @@ def main():
     parser.add_argument("--skip-self-check", action="store_true", help=argparse.SUPPRESS)
     args = parser.parse_args()
     say(f"AgenticPrism {version()} at {ROOT}")
+    synced = warn_if_synced()
     create_environment(args)
+    unhide_pth_files(args.dry_run)
     if args.with_r:
         rscript = shutil.which("Rscript")
         if not rscript:
@@ -199,6 +257,8 @@ def main():
     say(f"Skills:  {ROOT / 'skills'} (start with {ROOT / 'skills/agentic-prism/SKILL.md'})")
     if report.get("status") == "warning":
         say("installed with warnings; see the doctor output above")
+    if synced:
+        warn_if_synced()
 
 
 if __name__ == "__main__":

@@ -23,6 +23,12 @@ Human-oriented instructions are in [README.md](README.md).
 Tell the user what will happen and get agreement on:
 
 - **Location** for the clone. Propose `~/AgenticPrism` unless they prefer another.
+  Do not use your own working folder by default, and avoid folders synchronized
+  by iCloud Drive (on macOS this includes `~/Desktop` and `~/Documents` when
+  "Desktop & Documents Folders" is on; Codex's default `~/Documents/Codex` is
+  often inside it), OneDrive, Dropbox or Google Drive: sync services can hide or
+  offload files in `.venv` and break the runtime. If `install.py` prints
+  `WARNING: … is inside …`, tell the user and recommend moving the clone.
 - **Downloads**: the git clone (about 180 MB) and Python packages (about
   220–300 MB in `<root>/.venv`). Internet access is required.
 - **Skill discovery** (optional): whether to link the Skills into your agent's
@@ -115,3 +121,4 @@ user for them.
 | Download or network errors | Network is blocked. Ask the user to allow network access for this step. |
 | `doctor` reports a version mismatch | The code was updated without reinstalling. Rerun `python3 install.py`. |
 | A Skill says the runtime is missing | Step 3 did not complete in this `<root>`. Rerun it. |
+| `No module named 'agentic_prism'` although `.venv` exists | On macOS a sync service probably marked the `.pth` files hidden, and Python skips hidden `.pth` files. Rerun `python3 install.py` (it clears the flag) and recommend moving `<root>` out of the synchronized folder. Do not copy the package into `site-packages` or add links by hand. |

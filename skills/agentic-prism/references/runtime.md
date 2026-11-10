@@ -19,6 +19,10 @@ interpreting saved results, and even if `which agentic-prism` returns nothing.
    `collection_version`. A warning means dependency versions differ from the
    lock file; report it. An existing executable that fails or has a version
    mismatch is an unusable/mismatched runtime, not evidence of no installation.
+   If it fails with `No module named 'agentic_prism'` on macOS, a sync service
+   (often iCloud Documents) has probably hidden the `.venv` `.pth` files: ask
+   before rerunning `install.py`, which clears the flag, and recommend moving
+   `<root>` out of the synchronized folder. Never patch `site-packages` by hand.
 5. Conclude **not installed** only after resolving the real Skill path, checking
    the collection executable, and checking the PATH fallback. State which paths
    were checked. For an absent or unusable runtime, explain the specific finding
