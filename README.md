@@ -4,6 +4,10 @@
 
 **English** | [简体中文](README.zh-CN.md) | [Changelog](CHANGELOG.md)
 
+> **AI agents:** to install this collection for a user, follow
+> [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md). Clone the whole repository. Do not
+> install individual Skill folders: a Skill separated from the repository cannot find its runtime.
+
 Agent Skills for the statistical analyses of antibody and biologics research
 and development, from binding characterization to in vivo efficacy,
 pharmacokinetics, bioanalytical validation, immunogenicity and CMC quality
@@ -313,9 +317,6 @@ See [release evidence](validation/RELEASE_0.13.0.md) for retained misses and unm
 Directed epitope binning with declared controls and thresholds, asymmetric-pair diagnostics, conditional bootstrap clustering stability and reciprocal-block communities.
 
 See [release evidence](validation/RELEASE_0.12.1.md) for retained misses and unmet gates. Live-agent review: 2/3 passed; the by-eye bin-merge scenario failed in 2 of 3 attempts, when the agent answered without reading the Skill. PK/PD remains deferred.
-
-> **AI agents:** to install this collection for a user, follow
-> [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md).
 
 ## What it covers
 

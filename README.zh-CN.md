@@ -4,6 +4,9 @@
 
 [English](README.md) | **简体中文** | [版本历史（英文）](CHANGELOG.md)
 
+> **AI Agent：** 如需替用户安装本集合，请按 [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md) 操作。
+> 必须 clone 整个仓库。不要单独安装某个 Skill 文件夹：离开仓库的 Skill 找不到运行环境。
+
 面向抗体与生物药研发的统计分析 Agent Skill 集合，覆盖从结合表征、体外功能、
 体内药效、药代动力学，到生物分析方法学验证、免疫原性和 CMC 质量（稳定性、效价、
 可比性、质量标准）。AI Agent 读取 Skill，先确认分析是否适用于这个实验，再写出明确的
@@ -194,8 +197,6 @@ Bliss、Loewe、HSA、ZIP 组合参考模型与独立矩阵不确定性；HTS �
 有向表位竞争矩阵：预先声明对照和阈值，保留不对称配对，提供条件 bootstrap 聚类稳定性与双向阻断图分组。
 
 见[发布证据](validation/RELEASE_0.12.1.md)。真实 Agent 场景 2/3 通过：“凭肉眼合并表位组”场景在三次尝试中有两次失败，原因是 Agent 未读 Skill 就作答；未达到的门槛与校准失败保留。PK/PD 延后。
-
-> **AI Agent：** 如需替用户安装本集合，请按 [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md) 操作。
 
 ## 覆盖范围
 

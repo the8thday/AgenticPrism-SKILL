@@ -5,7 +5,7 @@
 No code or numerical change; still 0.15.4. READMEs, install and development notes, the registry entry
 for Prism extraction and package metadata now describe the current state: 45 Skills, R for KR, NCA and
 population PK, PK as runtime types, coverage and evidence tables through 0.15.4, and limits that later
-releases had removed. Prism extraction is labelled experimental. Tagged versions lose "in development".
+releases had removed. Prism extraction is labelled experimental. Tagged versions lose "in development". The pointer for AI agents moved to the top of both READMEs, and the clone size in the agent install notes was corrected.
 
 ## 0.15.4 — two-way ANOVA evidence gates
 
